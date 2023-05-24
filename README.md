@@ -1,1 +1,0 @@
-# methodscamp.github.io
