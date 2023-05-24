@@ -1,0 +1,12 @@
+## Preface {.unnumbered}
+
+Preface text.
+
+## Preface subsection {.unnumbered}
+
+Preface subsection text.
+
+```{r}
+plot(mtcars$mpg)
+```
+
