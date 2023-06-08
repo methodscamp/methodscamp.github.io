@@ -5,16 +5,19 @@ project:
 book:
   title: "Methods Camp"
   subtitle: "August 2023" 
-  author: "Andrés Cruz"
-  author: "Matt Martin"
+  author: "Andrés Cruz and Matt Martin"
   chapters:
     - index.qmd
-    - topic1.qmd
-    - topic2.qmd
-    - topic3.qmd
-    - topic4.qmd
-    - topic5.qmd
-    - topic6.qmd
+    - R.qmd
+    - tidyverse1.qmd
+    - matrices.qmd
+    - tidyverse2.qmd
+    - functions.qmd
+    - calculus.qmd
+    - probability.qmd
+    - simulations.qmd
+    - textanalysis.qmd
+    - wrapup.qmd
     - references.qmd
   downloads: pdf
   site-url: https://methodscamp.github.io/
