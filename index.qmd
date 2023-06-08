@@ -1,6 +1,14 @@
 ## Class schedule
 
-
+| Date           | Time              | Location   |
+|----------------|-------------------|------------|
+| Fri, Aug. 11   | 9:00 AM - 4:00 PM | RLP 1.302B |
+| Sat, Aug. 12   | No class          | -          |
+| Sun, Aug. 13   | No class          | -          |
+| Mon, Aug. 14   | 9:00 AM - 4:00 PM | RLP 1.302B |
+| Tues, Aug. 15  | 9:00 AM - 4:00 PM | RLP 1.302B |
+| Weds, Aug. 16  | 9:00 AM - 4:00 PM | RLP 1.302B |
+| Thurs, Aug. 17 | 9:00 AM - 4:00 PM | RLP 1.302B |
 
 ## Description {.unnumbered}
 
