@@ -6,7 +6,6 @@ book:
   title: "Methods Camp"
   subtitle: "August 2023" 
   author: "Andrés Cruz and Matt Martin"
-  email: mjmartin@utexas.edu
   date: today
   chapters:
     - index.qmd
