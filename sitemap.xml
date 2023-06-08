@@ -2,38 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://methodscamp.github.io/index.html</loc>
-    <lastmod>2023-06-08T02:04:32.541Z</lastmod>
+    <lastmod>2023-06-08T02:22:13.646Z</lastmod>
   </url>
   <url>
-    <loc>https://methodscamp.github.io/topic1.html</loc>
-    <lastmod>2023-06-08T02:04:32.545Z</lastmod>
+    <loc>https://methodscamp.github.io/R.html</loc>
+    <lastmod>2023-06-08T02:22:13.650Z</lastmod>
   </url>
   <url>
-    <loc>https://methodscamp.github.io/topic2.html</loc>
-    <lastmod>2023-06-08T02:04:32.553Z</lastmod>
+    <loc>https://methodscamp.github.io/tidyverse1.html</loc>
+    <lastmod>2023-06-08T02:22:13.658Z</lastmod>
   </url>
   <url>
-    <loc>https://methodscamp.github.io/topic3.html</loc>
-    <lastmod>2023-06-08T02:04:32.557Z</lastmod>
+    <loc>https://methodscamp.github.io/matrices.html</loc>
+    <lastmod>2023-06-08T02:22:13.662Z</lastmod>
   </url>
   <url>
-    <loc>https://methodscamp.github.io/topic4.html</loc>
-    <lastmod>2023-06-08T02:04:32.565Z</lastmod>
+    <loc>https://methodscamp.github.io/tidyverse2.html</loc>
+    <lastmod>2023-06-08T02:22:13.666Z</lastmod>
   </url>
   <url>
-    <loc>https://methodscamp.github.io/topic5.html</loc>
-    <lastmod>2023-06-08T02:04:32.569Z</lastmod>
+    <loc>https://methodscamp.github.io/functions.html</loc>
+    <lastmod>2023-06-08T02:22:13.670Z</lastmod>
   </url>
   <url>
-    <loc>https://methodscamp.github.io/topic6.html</loc>
-    <lastmod>2023-06-08T02:04:32.573Z</lastmod>
+    <loc>https://methodscamp.github.io/calculus.html</loc>
+    <lastmod>2023-06-08T02:22:13.674Z</lastmod>
+  </url>
+  <url>
+    <loc>https://methodscamp.github.io/probability.html</loc>
+    <lastmod>2023-06-08T02:22:13.682Z</lastmod>
+  </url>
+  <url>
+    <loc>https://methodscamp.github.io/simulations.html</loc>
+    <lastmod>2023-06-08T02:22:13.686Z</lastmod>
+  </url>
+  <url>
+    <loc>https://methodscamp.github.io/textanalysis.html</loc>
+    <lastmod>2023-06-08T02:22:13.702Z</lastmod>
+  </url>
+  <url>
+    <loc>https://methodscamp.github.io/wrapup.html</loc>
+    <lastmod>2023-06-08T02:22:13.706Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/references.html</loc>
-    <lastmod>2023-06-08T02:04:32.577Z</lastmod>
+    <lastmod>2023-06-08T02:22:13.710Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/Methods-Camp.pdf</loc>
-    <lastmod>2023-06-08T02:04:32.445Z</lastmod>
+    <lastmod>2023-06-08T02:22:13.514Z</lastmod>
   </url>
 </urlset>

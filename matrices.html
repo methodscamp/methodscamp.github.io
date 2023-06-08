@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Andrés Cruz and Matt Martin">
 
-<title>Methods Camp</title>
+<title>Methods Camp - 3&nbsp; Matrices</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./R.html" rel="next">
+<link href="./tidyverse2.html" rel="next">
+<link href="./tidyverse1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Class schedule</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matrices.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Matrices</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Class schedule</span></a>
   </div>
 </li>
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./matrices.html" class="sidebar-item-text sidebar-link">
+  <a href="./matrices.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
   </div>
 </li>
@@ -183,35 +183,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#class-schedule" id="toc-class-schedule" class="nav-link active" data-scroll-target="#class-schedule">Class schedule</a></li>
-  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
-  <li><a href="#contact-info" id="toc-contact-info" class="nav-link" data-scroll-target="#contact-info">Contact info</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Methods Camp</h1>
-<p class="subtitle lead">August 2023</p>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Matrices</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Andrés Cruz and Matt Martin </p>
-          </div>
-  </div>
     
   
     
@@ -220,67 +205,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="class-schedule" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="class-schedule">Class schedule</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Date</th>
-<th>Time</th>
-<th>Location</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Fri, Aug.&nbsp;11</td>
-<td>9:00 AM - 4:00 PM</td>
-<td>RLP 1.302B</td>
-</tr>
-<tr class="even">
-<td>Sat, Aug.&nbsp;12</td>
-<td>No class</td>
-<td>-</td>
-</tr>
-<tr class="odd">
-<td>Sun, Aug.&nbsp;13</td>
-<td>No class</td>
-<td>-</td>
-</tr>
-<tr class="even">
-<td>Mon, Aug.&nbsp;14</td>
-<td>9:00 AM - 4:00 PM</td>
-<td>RLP 1.302B</td>
-</tr>
-<tr class="odd">
-<td>Tues, Aug.&nbsp;15</td>
-<td>9:00 AM - 4:00 PM</td>
-<td>RLP 1.302B</td>
-</tr>
-<tr class="even">
-<td>Weds, Aug.&nbsp;16</td>
-<td>9:00 AM - 4:00 PM</td>
-<td>RLP 1.302B</td>
-</tr>
-<tr class="odd">
-<td>Thurs, Aug.&nbsp;17</td>
-<td>9:00 AM - 4:00 PM</td>
-<td>RLP 1.302B</td>
-</tr>
-</tbody>
-</table>
-<p>On class days, we will have a lunch break from 12:00-1:00 PM. We’ll also take short breaks periodically during the morning and afternoon sessions as needed.</p>
-</section>
-<section id="description" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="description">Description</h2>
-<p>Welcome to Introduction to Methods for Political Science, aka “Methods Camp”! In the past our incoming students have told us their math skills are rusty and they would like to be better prepared for UT’s methods courses. Methods Camp is designed to give everyone a chance to brush up on some skills in preparation for the Stats I and Formal Theory I courses. The other goal of Methods Camp is to allow you to get to know your cohort. We hope that struggling with matrix algebra and the dreaded chain rule will still prove to be a good bonding exercise.</p>
-<p>As you can see from the above schedule, we’ll be meeting on Friday, August 11th as well as from Monday, August 14th through Thursday, August 17th. Classes at UT begin the start of the following week on Monday, August 22nd. Below is a tentaive schedule outlining what will be covered in the class, although we may rearrange things a bit if we find we’re going too slowly or too quickly through any of the material.</p>
-</section>
-<section id="contact-info" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="contact-info">Contact info</h2>
-<p>If you have any questions during or outside of methods camp, you can contact Andrés at <a href="andres.cruz@utexas.edu">andres.cruz@utexas.edu</a> and Matt at <a href="mjmartin@utexas.edu">mjmartin@utexas.edu</a>.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -633,10 +559,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./tidyverse1.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tidyverse Basics I</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./R.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">R and RStudio</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tidyverse2.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tidyverse basics II</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
