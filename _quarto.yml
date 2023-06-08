@@ -6,7 +6,7 @@ book:
   title: "Methods Camp"
   subtitle: "UT Austin, Department of Government" 
   author: "Andrés Cruz and Matt Martin"
-  date: "08/2023"
+  date: "08/11/2023"
   chapters:
     - index.qmd
     - R.qmd
