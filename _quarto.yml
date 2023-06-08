@@ -3,9 +3,10 @@ project:
   output-dir: _book
 
 book:
-  title: "Methods Camp 2023"
-  subtitle: "(work in progress)" 
+  title: "Methods Camp"
+  subtitle: "August 2023" 
   author: "Andrés Cruz and Matt Martin"
+  email: mjmartin@utexas.edu
   date: today
   chapters:
     - index.qmd
