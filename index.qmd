@@ -1,3 +1,19 @@
+## Class schedule
+
+\begin{table}[h]
+\centering
+	\begin{tabular}{lrcc}
+	\textbf{Date} & \multicolumn{1}{1}{\textbf{Time}} & \textbf{Location} \\
+	Friday 8/12/22		& 1:30 -- 4:30 PM   	& BAT 5.108 \\
+	Saturday 8/13/22	& \textbf{No class}		& -	\\
+	Sunday 8/14/22	    & \textbf{No class}		& -	\\
+	Monday 8/15/22		& 10:00 AM -- 4:30 PM 	& BAT 5.108\\
+	Tuesday 8/16/22		& 10:00 AM -- 4:30 PM 	& BAT 5.108 \\
+	Wednesday 8/17/22	& 10:00 AM -- 4:30 PM 	& BAT 5.108 \\
+	Thursday 8/18/22	& 10:00 AM -- 4:30 PM 	& BAT 5.108 \\
+	\end{tabular}
+\end{table}
+
 ## Description {.unnumbered}
 
 Welcome to Introduction to Math for Political Science, aka “Math Camp”! In the past our incoming students have told us their math skills are rusty and they would like to be better prepared for UT’s methods courses. Math Camp is designed to give everyone a chance to brush up on some skills in preparation for the Stats I and Formal Theory I courses. The other goal of Math Camp is to allow you to get to know your cohort. We hope that struggling with matrix algebra and the dreaded Chain Rule will still prove to be a good bonding exercise.
