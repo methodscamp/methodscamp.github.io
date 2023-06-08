@@ -1,4 +1,4 @@
-## Class schedule
+## Class schedule {.unnumbered}
 
 | Date           | Time              | Location   |
 |----------------|-------------------|------------|
