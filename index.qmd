@@ -20,11 +20,11 @@ As you can see from the above schedule, we’ll be meeting on Friday, August 11t
 
 ## Course outline {.unnumbered}
 
-1. Friday morning: R and RStudio 
-- Introductions
-- RStudio (materials are on the website as zipped RStudio projects)
-- Objects (vectors, matrices, data frames)
-- Basic functions (mean(), length(), etc.)
+**Friday morning: R and RStudio** 
+* Introductions
+* RStudio (materials are on the website as zipped RStudio projects)
+* Objects (vectors, matrices, data frames)
+* Basic functions (mean(), length(), etc.)
 
 02 Friday afternoon: Tidyverse basics I 
 - Packages: installation and loading (including the tidyverse)
