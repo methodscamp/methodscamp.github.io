@@ -5,8 +5,8 @@ project:
 book:
   title: "Methods Camp"
   subtitle: "August 2023" 
-  author: "Andrés Cruz and Matt Martin"
-  date: today
+  author: "Andrés Cruz"
+  author: "Matt Martin"
   chapters:
     - index.qmd
     - topic1.qmd
