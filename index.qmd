@@ -1,18 +1,6 @@
 ## Class schedule
 
-\begin{table}[h]
-\centering
-	\begin{tabular}{lrcc}
-	\textbf{Date} & \multicolumn{1}{1}{\textbf{Time}} & \textbf{Location} \\
-	Friday 8/12/22		& 1:30 -- 4:30 PM   	& BAT 5.108 \\
-	Saturday 8/13/22	& \textbf{No class}		& -	\\
-	Sunday 8/14/22	    & \textbf{No class}		& -	\\
-	Monday 8/15/22		& 10:00 AM -- 4:30 PM 	& BAT 5.108\\
-	Tuesday 8/16/22		& 10:00 AM -- 4:30 PM 	& BAT 5.108 \\
-	Wednesday 8/17/22	& 10:00 AM -- 4:30 PM 	& BAT 5.108 \\
-	Thursday 8/18/22	& 10:00 AM -- 4:30 PM 	& BAT 5.108 \\
-	\end{tabular}
-\end{table}
+
 
 ## Description {.unnumbered}
 
