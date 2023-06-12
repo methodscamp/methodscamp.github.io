@@ -63,9 +63,9 @@ $$\begin{bmatrix}
 \end{bmatrix}
 = A$$
 
--   We \[always\] refer to the dimensions of matrices by row then column (R x C).
+-   We always refer to the dimensions of matrices by row then column (R x C).
 
-    -   Find a way to remember that knowledge *permanently.*
+    -   Find a way to remember that knowledge [permanently].
 
 -   So, $A$ is a $3x3$ matrix.
 
@@ -75,7 +75,7 @@ $$\begin{bmatrix}
 
 -   How do we refer to specific elements of the matrix?
 
--   Matrix $A$ is an \$m\\times n\$ matrix where \$m=n=3\$
+-   Matrix $A$ is an $m\timesn$ matrix where $m=n=3$
 
 -   More generally, matrix $B$ is an $m\times n$ matrix where the elements look like this: $$B=
     \begin{bmatrix}
