@@ -75,7 +75,7 @@ $$\begin{bmatrix}
 
 -   How do we refer to specific elements of the matrix?
 
--   Matrix $A$ is an $m\timesn$ matrix where $m=n=3$
+-   Matrix $A$ is an $m\timesn$ matrix where $m=n=3$.
 
 -   More generally, matrix $B$ is an $m\times n$ matrix where the elements look like this: $$B=
     \begin{bmatrix}
