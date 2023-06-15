@@ -204,6 +204,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics"><span class="header-section-number">3.3.1</span> Basics</a></li>
   <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure"><span class="header-section-number">3.3.2</span> Structure</a></li>
   </ul></li>
+  <li><a href="#matrix-operations" id="toc-matrix-operations" class="nav-link" data-scroll-target="#matrix-operations"><span class="header-section-number">3.4</span> Matrix operations</a>
+  <ul class="collapse">
+  <li><a href="#addition-and-subtraction" id="toc-addition-and-subtraction" class="nav-link" data-scroll-target="#addition-and-subtraction"><span class="header-section-number">3.4.1</span> Addition and subtraction</a></li>
+  <li><a href="#scalar-multiplication" id="toc-scalar-multiplication" class="nav-link" data-scroll-target="#scalar-multiplication"><span class="header-section-number">3.4.2</span> Scalar multiplication</a></li>
+  <li><a href="#matrix-multiplication" id="toc-matrix-multiplication" class="nav-link" data-scroll-target="#matrix-multiplication"><span class="header-section-number">3.4.3</span> Matrix multiplication</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties"><span class="header-section-number">3.4.4</span> Properties</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -300,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>We always refer to the dimensions of matrices by row then column (R x C).</p>
 <ul>
-<li>Find a way to remember that knowledge [permanently].</li>
+<li>Find a way to remember that knowledge <em>permanently</em>.</li>
 </ul></li>
 <li><p>So, <span class="math inline">\(A\)</span> is a <span class="math inline">\(3x3\)</span> matrix.</p>
 <ul>
@@ -321,6 +328,138 @@ b_{21} &amp; b_{22} &amp; b_{23} &amp; \ldots &amp; b_{2n} \\
 b_{m1} &amp; b_{m2} &amp; b_{m3} &amp; \ldots &amp; b_{mn}
 \end{bmatrix}\]</span></p></li>
 <li><p>Thus <span class="math inline">\(b_{23}\)</span> refers to the second unit down and third across.</p></li>
+</ul>
+</section>
+</section>
+<section id="matrix-operations" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="matrix-operations"><span class="header-section-number">3.4</span> Matrix operations</h2>
+<section id="addition-and-subtraction" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="addition-and-subtraction"><span class="header-section-number">3.4.1</span> Addition and subtraction</h3>
+<ul>
+<li><p>Addition and subtraction are logical.</p></li>
+<li><p>Matrices have <em>exactly</em> the same dimensions for these operations.</p></li>
+<li><p>Add or subtract each element with the corresponding element from the other matrix:</p></li>
+</ul>
+<p><span class="math display">\[A \pm B=C\]</span></p>
+<p><span class="math display">\[c_{ij}=a_{ij} \pm b_{ij} \text{ }\forall i,j\]</span></p>
+<p><span class="math display">\[\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13}\\
+a_{21} &amp; a_{22} &amp; a_{23}\\
+a_{31} &amp; a_{32} &amp; a_{33}
+\end{bmatrix}
+\pm
+\begin{bmatrix}
+b_{11} &amp; b_{12} &amp; b_{13}\\
+b_{21} &amp; b_{22} &amp; b_{23}\\
+b_{31} &amp; b_{32} &amp; b_{33}
+\end{bmatrix}\]</span> <span class="math display">\[=\]</span> <span class="math display">\[\begin{bmatrix}
+a_{11}\pm b_{11} &amp; a_{12}\pm b_{12} &amp; a_{13}\pm b_{13}\\
+a_{21}\pm b_{21} &amp; a_{22}\pm b_{22} &amp; a_{23}\pm b_{23}\\
+a_{31}\pm b_{31} &amp; a_{32}\pm b_{32} &amp; a_{33}\pm b_{33}
+\end{bmatrix}\]</span> —</p>
+<p><strong>Practice</strong></p>
+<p><span class="math display">\[A= \begin{bmatrix}
+1 &amp; 4 &amp; 2 \\
+-2 &amp; -1 &amp; 0 \\
+0 &amp; -1 &amp; 3
+\end{bmatrix}\]</span></p>
+<p><span class="math display">\[B = \begin{bmatrix}
+5 &amp; 1 &amp; 0 \\
+2 &amp; -1 &amp; 0 \\
+7 &amp; 1 &amp; 2
+\end{bmatrix}\]</span></p>
+<p>Calculate <span class="math inline">\(A+B\)</span></p>
+<hr>
+<p><strong>Practice</strong></p>
+<p><span class="math display">\[A= \begin{bmatrix}
+6 &amp; -2 &amp; 8 &amp; 12 \\
+4 &amp; 42 &amp; 8 &amp; -6 \\
+-14 &amp; 5 &amp; 0 &amp; 0
+\end{bmatrix}\]</span></p>
+<p><span class="math display">\[B = \begin{bmatrix}
+18 &amp; 42 &amp; 3 &amp; 7 \\
+0 &amp; -42 &amp; 15 &amp; 4 \\
+-7 &amp; 0 &amp; 21 &amp; -18
+\end{bmatrix}\]</span></p>
+<p>Calculate <span class="math inline">\(A-B\)</span></p>
+</section>
+<section id="scalar-multiplication" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="scalar-multiplication"><span class="header-section-number">3.4.2</span> Scalar multiplication</h3>
+<ul>
+<li>Recall that a scalar is a single number.</li>
+<li>Multiply each value in the matrix by the scalar. <span class="math display">\[A =
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13}\\
+a_{21} &amp; a_{22} &amp; a_{23}\\
+a_{31} &amp; a_{32} &amp; a_{33}
+\end{bmatrix}\]</span> <span class="math display">\[cA =
+\begin{bmatrix}
+ca_{11} &amp; ca_{12} &amp; ca_{13}\\
+ca_{21} &amp; ca_{22} &amp; ca_{23}\\
+ca_{31} &amp; ca_{32} &amp; ca_{33}
+\end{bmatrix}\]</span> —</li>
+</ul>
+<p><strong>Practice</strong> <span class="math display">\[A= \begin{bmatrix}
+    1 &amp; 4 &amp; 2 \\
+    8 &amp; -1 &amp; 3 \\
+    0 &amp; -2 &amp; 3
+    \end{bmatrix}\]</span> <span class="math display">\[ B = \begin{bmatrix}
+    -15 &amp; 1 &amp; 5 \\
+    2 &amp; -42 &amp; 0 \\
+    7 &amp; 1 &amp; 6
+    \end{bmatrix}\]</span></p>
+<p>Find <span class="math inline">\(2\times A\)</span> and <span class="math inline">\(-3 \times B\)</span></p>
+</section>
+<section id="matrix-multiplication" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="matrix-multiplication"><span class="header-section-number">3.4.3</span> Matrix multiplication</h3>
+<ul>
+<li><p>Requirement: the two matrices must be <em>conformable</em>.</p></li>
+<li><p>This means that the number of columns in the first matrix<br>
+equals the number of rows in the second.</p></li>
+<li><p>When multiplying <span class="math inline">\(A \times B\)</span>, if <span class="math inline">\(A\)</span> is <span class="math inline">\(m \times n\)</span>, <span class="math inline">\(B\)</span> must have <span class="math inline">\(n\)</span> rows.</p></li>
+<li><p>The resulting matrix will have the number of rows in the first,<br>
+and the number of columns in the second.</p></li>
+<li><p>For example, if <span class="math inline">\(A\)</span> is <span class="math inline">\(i \times k\)</span> and <span class="math inline">\(B\)</span> is <span class="math inline">\(k \times j\)</span>, then <span class="math inline">\(A \times B\)</span> will be <span class="math inline">\(i \times j\)</span>.</p></li>
+</ul>
+<hr>
+<p>Which of the following can we multiply? What will be the dimensions of the resulting matrix? <span class="math display">\[b=
+\begin{bmatrix}
+2 \\
+3\\
+4\\
+1
+\end{bmatrix}\]</span> <span class="math display">\[M =
+\begin{bmatrix}
+1 &amp; 0 &amp; 2\\
+1 &amp; 2 &amp; 4\\
+2 &amp; 3 &amp; 2
+\end{bmatrix}\]</span> <span class="math display">\[L =
+\begin{bmatrix}
+6 &amp; 5 &amp; -1\\
+1 &amp; 4 &amp; 3
+\end{bmatrix}\]</span> Why can’t we multiply in the opposite order?</p>
+<hr>
+<ul>
+<li>Multiply each row by each column, summing up each pair of multiplied terms</li>
+<li>The element in position <span class="math inline">\(ij\)</span> is the sum of the products of elements in the <span class="math inline">\(i\)</span>th row of the first matrix (<span class="math inline">\(A\)</span>) and the corresponding elements in the <span class="math inline">\(j\)</span>th column of the second matrix (<span class="math inline">\(B\)</span>). <span class="math display">\[c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}\]</span></li>
+<li>Let’s do some examples on the board.</li>
+</ul>
+</section>
+<section id="properties" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="properties"><span class="header-section-number">3.4.4</span> Properties</h3>
+<ul>
+<li><p>Addition and subtraction:</p>
+<ul>
+<li><p>Associative: <span class="math inline">\((A \pm B) \pm C = A \pm (B \pm C)\)</span></p></li>
+<li><p>Communicative <span class="math inline">\(A \pm B = B \pm A\)</span></p></li>
+</ul></li>
+<li><p>Multiplication:</p>
+<ul>
+<li><p><span class="math inline">\(AB \neq BA\)</span></p></li>
+<li><p><span class="math inline">\(A(BC) = (AB)C\)</span></p></li>
+<li><p><span class="math inline">\(A(B+C) = AB + AC\)</span></p></li>
+<li><p><span class="math inline">\((A+B)C = AC + BC\)</span></p></li>
+</ul></li>
 </ul>
 
 
