@@ -194,26 +194,24 @@ Find $2\times A$ and $-3 \times B$
 
 ------------------------------------------------------------------------
 
-Which of the following can we multiply? What will be the dimensions of the resulting matrix? $$\begin{align}
-b=
+Which of the following can we multiply? What will be the dimensions of the resulting matrix? $$b=
 \begin{bmatrix}
 2 \\
 3\\
 4\\
 1
-\end{bmatrix}
-M = 
+\end{bmatrix}$$
+$$M = 
 \begin{bmatrix}
 1 & 0 & 2\\
 1 & 2 & 4\\
 2 & 3 & 2
-\end{bmatrix}
-L = 
+\end{bmatrix}$$
+$$L = 
 \begin{bmatrix}
 6 & 5 & -1\\
 1 & 4 & 3 
-\end{bmatrix}
-\end{align}$$ Why can't we multiply in the opposite order?
+\end{bmatrix}$$ Why can't we multiply in the opposite order?
 
 ------------------------------------------------------------------------
 
