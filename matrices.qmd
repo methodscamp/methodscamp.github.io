@@ -65,7 +65,7 @@ $$\begin{bmatrix}
 
 -   We always refer to the dimensions of matrices by row then column (R x C).
 
-    -   Find a way to remember that knowledge \[permanently\].
+    -   Find a way to remember that knowledge *permanently*.
 
 -   So, $A$ is a $3x3$ matrix.
 
