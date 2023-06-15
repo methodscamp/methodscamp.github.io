@@ -1,1 +1,8 @@
 # Calculus
+
+## Fundamentals
+
+- Calculus is about dealing with infinitesimal values.
+- We are going to focus on two big ideas:
+    - Derivatives
+    - Integrals
