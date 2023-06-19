@@ -200,6 +200,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#advanced-rules" id="toc-advanced-rules" class="nav-link" data-scroll-target="#advanced-rules"><span class="header-section-number">6.2</span> Advanced rules</a>
   <ul class="collapse">
   <li><a href="#product-rule" id="toc-product-rule" class="nav-link" data-scroll-target="#product-rule"><span class="header-section-number">6.2.1</span> Product rule</a></li>
+  <li><a href="#quotient-rule" id="toc-quotient-rule" class="nav-link" data-scroll-target="#quotient-rule"><span class="header-section-number">6.2.2</span> Quotient rule</a></li>
+  <li><a href="#chain-rule" id="toc-chain-rule" class="nav-link" data-scroll-target="#chain-rule"><span class="header-section-number">6.2.3</span> Chain rule</a></li>
+  <li><a href="#second-derivative" id="toc-second-derivative" class="nav-link" data-scroll-target="#second-derivative"><span class="header-section-number">6.2.4</span> Second derivative</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -315,6 +318,46 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="6.2" class="anchored" data-anchor-id="advanced-rules"><span class="header-section-number">6.2</span> Advanced rules</h2>
 <section id="product-rule" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="product-rule"><span class="header-section-number">6.2.1</span> Product rule</h3>
+<ul>
+<li>A little more complicated: <span class="math display">\[\frac{d (f(x) \times g(x))}{dx}=f'(x)g(x) + g'(x)f(x)\]</span></li>
+<li>Example: <span class="math inline">\(2x \times 3x\)</span></li>
+</ul>
+<hr>
+<p><strong>Practice</strong></p>
+<p>Take the derivative of each of these: <span class="math display">\[x^3 * x\]</span> <span class="math display">\[e^x * x^2\]</span> <span class="math display">\[ln(x) * x^{-3}\]</span></p>
+<p>Remember, <span class="math inline">\(\frac{d (f(x) * g(x))}{dx}=f'(x)g(x) + g'(x)f(x)\)</span>.</p>
+</section>
+<section id="quotient-rule" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="quotient-rule"><span class="header-section-number">6.2.2</span> Quotient rule</h3>
+<p><span class="math display">\[\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}\]</span> If you’re having trouble with this, just apply the product rule to: <span class="math display">\[\frac{d[f(x)*g^{-1}(x)]}{dx}\]</span></p>
+<p>Remember, <span class="math inline">\(\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}\)</span>.</p>
+</section>
+<section id="chain-rule" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="chain-rule"><span class="header-section-number">6.2.3</span> Chain rule</h3>
+<p><span class="math display">\[\frac{d [f(g(x))]}{dx}=f'(g(x)) * g'(x)\]</span></p>
+<p>Let’s take the derivative of a function of a function: <span class="math display">\[\frac{d[ln(x^2)]}{dx}\]</span> <span class="math display">\[f(x)=ln(x), g(x)=\color{red}{x^2}\]</span> <span class="math display">\[f'(x)=\color{blue}{\frac{1}{x}}\color{black}{, g'(x)=2x}\]</span> <span class="math display">\[ \frac{\color{blue}{1}}{\color{red}{x^2}}*2x = \frac{2}{x}\]</span></p>
+<hr>
+<p><strong>Practice</strong></p>
+<p>Take the derivative of each of these: <span class="math display">\[ (3x^4-8)^2 \]</span> <span class="math display">\[e^{x^2}\]</span> Remember, <span class="math inline">\(\frac{d (f(g(x))}{dx}=f'(g(x)) * g'(x)\)</span>.</p>
+</section>
+<section id="second-derivative" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="second-derivative"><span class="header-section-number">6.2.4</span> Second derivative</h3>
+<ul>
+<li>Same process as taking single derivative, except input for second derivative is output from first.</li>
+<li>Second derivative tells us whether the slope of a function is increasing, decreasing, or staying the same at any point <span class="math inline">\(x\)</span> on the function’s domain.</li>
+<li>Example: driving a car.
+<ul>
+<li><span class="math inline">\(f(x)\)</span> = distance traveled at time <span class="math inline">\(x\)</span></li>
+<li><span class="math inline">\(f'(x)\)</span> = speed at time <span class="math inline">\(x\)</span></li>
+<li><span class="math inline">\(f''(x)\)</span> = acceleration at time <span class="math inline">\(x\)</span></li>
+</ul></li>
+</ul>
+<hr>
+<p>Graph <span class="math inline">\(f(x) = x^2\)</span>, <span class="math inline">\(f'(x)\)</span>, and <span class="math inline">\(f''(x)\)</span>.</p>
+<hr>
+<p><span class="math display">\[\frac{d^2(x^4)}{dx^2}=f''(x^4)\]</span> - First, we take the first derivative: <span class="math display">\[f'(x^4)=4x^3\]</span> - Then we use that output to take the second derivative: <span class="math display">\[f''(x^4)=f'(4x^3)=12x^2\]</span></p>
+<p><strong>Practice</strong></p>
+<p>Take the second derivative of the following functions: <span class="math display">\[x^5\]</span> <span class="math display">\[6x^2\]</span> <span class="math display">\[4 ln(x)\]</span> <span class="math display">\[3x\]</span> <span class="math display">\[4x^{3/2}\]</span></p>
 
 
 </section>
