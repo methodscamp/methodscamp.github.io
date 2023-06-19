@@ -102,3 +102,52 @@ Take the derivative of each of these $$x^2 + x +5$$ $$x^4 - 4x^3 + 5x^2 + 8x - 6
 ### Product rule
 
 
+-   A little more complicated: $$\frac{d (f(x) \times g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$$
+-   Example: $2x \times 3x$
+
+------------------------------------------------------------------------
+
+**Practice**
+
+Take the derivative of each of these: $$x^3 * x$$ $$e^x * x^2$$ $$ln(x) * x^{-3}$$
+
+Remember, $\frac{d (f(x) * g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$.
+
+### Quotient rule
+
+$$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$ If you're having trouble with this, just apply the product rule to: $$\frac{d[f(x)*g^{-1}(x)]}{dx}$$
+
+Remember, $\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$.
+
+### Chain rule
+
+$$\frac{d [f(g(x))]}{dx}=f'(g(x)) * g'(x)$$
+
+Let's take the derivative of a function of a function: $$\frac{d[ln(x^2)]}{dx}$$ $$f(x)=ln(x), g(x)=\color{red}{x^2}$$ $$f'(x)=\color{blue}{\frac{1}{x}}\color{black}{, g'(x)=2x}$$ $$ \frac{\color{blue}{1}}{\color{red}{x^2}}*2x = \frac{2}{x}$$
+
+------------------------------------------------------------------------
+
+**Practice**
+
+Take the derivative of each of these: $$ (3x^4-8)^2 $$ $$e^{x^2}$$ Remember, $\frac{d (f(g(x))}{dx}=f'(g(x)) * g'(x)$.
+
+### Second derivative
+
+-   Same process as taking single derivative, except input for second derivative is output from first.
+-   Second derivative tells us whether the slope of a function is increasing, decreasing, or staying the same at any point $x$ on the function's domain.
+-   Example: driving a car.
+    -   $f(x)$ = distance traveled at time $x$
+    -   $f'(x)$ = speed at time $x$
+    -   $f''(x)$ = acceleration at time $x$
+
+------------------------------------------------------------------------
+
+Graph $f(x) = x^2$, $f'(x)$, and $f''(x)$.
+
+------------------------------------------------------------------------
+
+$$\frac{d^2(x^4)}{dx^2}=f''(x^4)$$ - First, we take the first derivative: $$f'(x^4)=4x^3$$ - Then we use that output to take the second derivative: $$f''(x^4)=f'(4x^3)=12x^2$$
+
+**Practice**
+
+Take the second derivative of the following functions: $$x^5$$ $$6x^2$$ $$4 ln(x)$$ $$3x$$ $$4x^{3/2}$$
