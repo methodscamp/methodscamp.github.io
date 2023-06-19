@@ -101,5 +101,8 @@ A few functions have particular rules
 - $\frac{dy}{dx}c=0$
 - $\frac{d (x^x)}{dx}=x^x (1+ln(x))$
 
+### Derivatives with addition and subtraction
+Easiest rule to remember: 
+- $\frac{d (f(x) \pm g(x))}{dx}=f'(x) \pm g'(x)$
 
 
