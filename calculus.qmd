@@ -46,5 +46,50 @@ Lagrange's prime notation:
 ---
 $$\displaystyle\frac{dy}{dx} = \frac{d}{dx} f(x) = f'(x) = \displaystyle\lim_{\Delta x\to 0 } \frac{f(x+\Delta x)-f(x)}{\Delta x}$$
 
+## Basic rules
+
+### Power rule
+
+- Power rule is important for differentiation by hand.
+- It tells us how to take the derivative of a polynomial.
+- $\dfrac{d(ax^n)}{dx}=anx^{n-1}$
+- Notation reminder: $\frac{dy}{dx}=f'(x)$
+
+---
+- What is $\dfrac{d(x^2)}{dx}$?
+        - $x^2$
+        - $2 x^{2-1}$
+        -$2x$
+
+---
+- What is $\frac{d(4x^3)}{dx}$?
+        - $4x^3$
+        - $4*3 x^{3-1}$
+        - $12x^2$
+
+--- 
+**Practice**
+
+Take the derivative of each of these.
+$$x^3$$
+$$3x^2$$ 
+$$60x^{11}$$ 
+$$x$$
+$$\frac{4}{x^2} $$
+$$9 \sqrt{x}$$
+$$6 x^{5/2}$$
+$$11,596,232$$
+
+---
+Evaluate the derivatives at $x=2$ and $x=-1$
+$$x^3$$
+$$3x^2$$ 
+$$60x^{11}$$ 
+$$x$$
+$$\frac{4}{x^2} $$
+$$9 \sqrt{x}$$
+$$6 x^{5/2}$$
+$$11,596,232$$
+
 
 
