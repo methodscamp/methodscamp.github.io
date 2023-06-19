@@ -64,6 +64,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -187,7 +189,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#fundamentals" id="toc-fundamentals" class="nav-link active" data-scroll-target="#fundamentals"><span class="header-section-number">6.1</span> Fundamentals</a></li>
+  <li><a href="#theory" id="toc-theory" class="nav-link active" data-scroll-target="#theory"><span class="header-section-number">6.1</span> Theory</a>
+  <ul class="collapse">
+  <li><a href="#derviative" id="toc-derviative" class="nav-link" data-scroll-target="#derviative"><span class="header-section-number">6.1.1</span> Derviative</a></li>
+  <li><a href="#calculating-derivatives" id="toc-calculating-derivatives" class="nav-link" data-scroll-target="#calculating-derivatives"><span class="header-section-number">6.1.2</span> Calculating derivatives</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -211,8 +217,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="fundamentals" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="fundamentals"><span class="header-section-number">6.1</span> Fundamentals</h2>
+<section id="theory" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="theory"><span class="header-section-number">6.1</span> Theory</h2>
 <ul>
 <li>Calculus is about dealing with infinitesimal values.</li>
 <li>We are going to focus on two big ideas:
@@ -221,8 +227,27 @@ ul.task-list li input[type="checkbox"] {
 <li>Integrals</li>
 </ul></li>
 </ul>
+<section id="derviative" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="derviative"><span class="header-section-number">6.1.1</span> Derviative</h3>
+<ul>
+<li>“Derivative” is just a fancy term for slope.</li>
+<li>Slope is the rate of change <span class="math inline">\(\frac{\delta y}{\delta x}\)</span> or <span class="math inline">\(\frac{d y}{d x}\)</span>.</li>
+<li>Specifically, the derivative is the <em>instantaneous</em> rate of change.</li>
+<li>We need slope for our statistics, which are all about fitting lines.</li>
+<li>We also need slope for taking maxima and minima</li>
+<li>The equation for a line is <span class="math inline">\(y = mx + b\)</span>. What is its slope?</li>
+</ul>
+</section>
+<section id="calculating-derivatives" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="calculating-derivatives"><span class="header-section-number">6.1.2</span> Calculating derivatives</h3>
+<ul>
+<li>Slope is rise over run, which is <span class="math inline">\(\dfrac{f(x+\Delta x)-f(x)}{\Delta x}\)</span></li>
+<li>To see why, consider the slope of a line connecting two points: <span class="math display">\[m = \displaystyle\frac{f(x_2) - f(x_1)}{x_2-x_1}\]</span></li>
+<li>We can define <span class="math inline">\(x_2 = x_1 + \Delta x\)</span> (or equivalently <span class="math inline">\(\Delta x = x_2 - x_1\)</span>) <span class="math display">\[m = \dfrac{f(x_1+ \Delta x) - f(x_1)}{\Delta x}\]</span></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
