@@ -40,7 +40,7 @@ $$\lim_{\Delta x\to 0} \frac{f(x+ \Delta x)-f(x)}{\Delta x}$$
 ---
 
 Lagrange's prime notation:
-- $f'(x)$ (read: ``$f$ prime $x$'') is the derivative of $f(x)$.
+- $f'(x)$ (read: "$f$ prime $x$") is the derivative of $f(x)$.
         - This is useful when it is clear which variable were are referring to (e.g., when there's only one).
 
 ---
