@@ -1,8 +1,26 @@
 # Calculus
 
-## Fundamentals
+## Theory
 
 - Calculus is about dealing with infinitesimal values.
 - We are going to focus on two big ideas:
     - Derivatives
     - Integrals
+
+### Derviative
+
+- “Derivative” is just a fancy term for slope.
+- Slope is the rate of change $\frac{\delta y}{\delta x}$ or $\frac{d y}{d x}$.
+- Specifically, the derivative is the *instantaneous* rate of change.
+- We need slope for our statistics, which are all about fitting lines.
+- We also need slope for taking maxima and minima
+- The equation for a line is $y = mx + b$. What is its slope?
+
+### Calculating derivatives
+
+- Slope is rise over run, which is $\dfrac{f(x+\Delta x)-f(x)}{\Delta x}$
+- To see why, consider the slope of a line connecting two points:
+$$m = \displaystyle\frac{f(x_2) - f(x_1)}{x_2-x_1}$$
+- We can define $x_2 = x_1 + \Delta x$ (or equivalently $\Delta x = x_2 - x_1$)
+$$m = \dfrac{f(x_1+ \Delta x) - f(x_1)}{\Delta x}$$
+
