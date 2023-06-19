@@ -24,3 +24,9 @@ $$m = \displaystyle\frac{f(x_2) - f(x_1)}{x_2-x_1}$$
 - We can define $x_2 = x_1 + \Delta x$ (or equivalently $\Delta x = x_2 - x_1$)
 $$m = \dfrac{f(x_1+ \Delta x) - f(x_1)}{\Delta x}$$
 
+---
+
+- As we've seen, for a curve, we need to be infinitely close for our line's defining points, yielding 
+$$\lim_{\Delta x\to 0} \frac{f(x+ \Delta x)-f(x)}{\Delta x}$$
+- This gives us this instantaneous slope (rate of change) of a function at every point on its domain. The above equation is the definition of the derivative.
+
