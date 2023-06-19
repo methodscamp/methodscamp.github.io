@@ -61,3 +61,44 @@ Evaluate the derivatives at $x=2$ and $x=-1$ $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$
 
 ------------------------------------------------------------------------
 
+**Practice**
+
+Take the derivative of each of these. $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
+
+------------------------------------------------------------------------
+
+Evaluate the derivatives at $x=2$ and $x=-1$ $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
+
+------------------------------------------------------------------------
+
+### Special functions
+
+A few functions have particular rules:
+
+-   $\frac{d (ln(x))}{dx}=\frac{1}{x}$
+
+-   $\dfrac{d (log_b(x))}{dx}=\dfrac{1}{x*ln(b)}$
+
+-   $\frac{d (e^x)}{dx}=e^x$
+
+-   $\frac{d (a^x)}{dx}=a^x ln(a)$
+
+-   $\frac{dy}{dx}c=0$
+
+-   $\frac{d (x^x)}{dx}=x^x (1+ln(x))$
+
+### Derivatives with addition and substraction
+
+-   Easiest rule to remember: $$\frac{d (f(x) \pm g(x))}{dx}=f'(x) \pm g'(x)$$
+
+------------------------------------------------------------------------
+
+**Practice**
+
+Take the derivative of each of these $$x^2 + x +5$$ $$x^4 - 4x^3 + 5x^2 + 8x - 6$$ $$3x^5 - 6x^2$$ $$5x^2 + 8 \sqrt{x} - \frac{1}{x}$$ $$ln(x) + 5e^x - 4x^3$$
+
+## Advanced rules
+
+### Product rule
+
+
