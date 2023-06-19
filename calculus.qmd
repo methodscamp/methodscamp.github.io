@@ -35,7 +35,16 @@ $$\lim_{\Delta x\to 0} \frac{f(x+ \Delta x)-f(x)}{\Delta x}$$
         - You can also say "The instantaneous rate of change in $f$ of $x$ with respect to $x$."
 - If $y=f(x)$, $\frac{dy}{dx}$ is "The derivative of $y$ with respect to $x$".
         - Warning: Do not try to cancel out the $d$'s, no matter how tempting it is.
-- Advantage of always specifying the variable with respect to which we're differentiating (it's the one in the denominator).
+- There is the advantage of always specifying the variable with respect to which we're differentiating (it's the one in the denominator).
+
+---
+
+Lagrange's prime notation:
+- $f'(x)$ (read: ``$f$ prime $x$'') is the derivative of $f(x)$.
+        - This is useful when it is clear which variable were are referring to (e.g., when there's only one).
+
+---
+$$\displaystyle\frac{dy}{dx} = \frac{d}{dx} f(x) = f'(x) = \displaystyle\lim_{\Delta x\to 0 } \frac{f(x+\Delta x)-f(x)}{\Delta x}$$
 
 
 
