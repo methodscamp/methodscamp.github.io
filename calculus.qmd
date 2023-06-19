@@ -49,10 +49,7 @@ $$\displaystyle\frac{dy}{dx} = \frac{d}{dx} f(x) = f'(x) = \displaystyle\lim_{\D
 ## Basic rules
 ### Power rule
 
-- The power rule is important for differentiation by hand.
-- It tells us how to take the derivative of a polynomial.
-- $\dfrac{d(ax^n)}{dx}=anx^{n-1}$
-- Notation reminder: $\frac{dy}{dx}=f'(x)$
+
 
 ---
 - What is $\dfrac{d(x^2)}{dx}$?
@@ -92,13 +89,6 @@ $$11,596,232$$
 
 ### Special functions
 
-- A few functions have particular rules
-        - $\frac{d (ln(x))}{dx}=\frac{1}{x}$
-        - $\dfrac{d (log_b(x))}{dx}=\dfrac{1}{x*ln(b)}$
-        - $\frac{d (e^x)}{dx}=e^x$
-        - $\frac{d (a^x)}{dx}=a^x ln(a)$
-        - $\frac{dy}{dx}c=0$
-        - $\frac{d (x^x)}{dx}=x^x (1+ln(x))$
 
 ### Derivatives with addition and subtraction
 Easiest rule to remember: 
