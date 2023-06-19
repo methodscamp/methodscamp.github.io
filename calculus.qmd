@@ -101,7 +101,6 @@ Take the derivative of each of these $$x^2 + x +5$$ $$x^4 - 4x^3 + 5x^2 + 8x - 6
 
 ### Product rule
 
-
 -   A little more complicated: $$\frac{d (f(x) \times g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$$
 -   Example: $2x \times 3x$
 
