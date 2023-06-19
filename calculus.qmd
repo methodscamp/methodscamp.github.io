@@ -2,108 +2,62 @@
 
 ## Theory
 
-- Calculus is about dealing with infinitesimal values.
-- We are going to focus on two big ideas:
-    - Derivatives
-    - Integrals
+-   Calculus is about dealing with infinitesimal values.
+-   We are going to focus on two big ideas:
+    -   Derivatives
+    -   Integrals
 
 ### Derviative
 
-- “Derivative” is just a fancy term for slope.
-- Slope is the rate of change $\frac{\delta y}{\delta x}$ or $\frac{d y}{d x}$.
-- Specifically, the derivative is the *instantaneous* rate of change.
-- We need slope for our statistics, which are all about fitting lines.
-- We also need slope for taking maxima and minima
-- The equation for a line is $y = mx + b$. What is its slope?
+-   "Derivative" is just a fancy term for slope.
+-   Slope is the rate of change $\frac{\delta y}{\delta x}$ or $\frac{d y}{d x}$.
+-   Specifically, the derivative is the *instantaneous* rate of change.
+-   We need slope for our statistics, which are all about fitting lines.
+-   We also need slope for taking maxima and minima.
+-   The equation for a line is $y = mx + b$. What is its slope?
 
 ### Calculating derivatives
 
-- Slope is rise over run, which is $\dfrac{f(x+\Delta x)-f(x)}{\Delta x}$
-- To see why, consider the slope of a line connecting two points:
-$$m = \displaystyle\frac{f(x_2) - f(x_1)}{x_2-x_1}$$
-- We can define $x_2 = x_1 + \Delta x$ (or equivalently $\Delta x = x_2 - x_1$)
-$$m = \dfrac{f(x_1+ \Delta x) - f(x_1)}{\Delta x}$$
+-   Slope is rise over run, which is $\dfrac{f(x+\Delta x)-f(x)}{\Delta x}$
+-   To see why, consider the slope of a line connecting two points: $$m = \displaystyle\frac{f(x_2) - f(x_1)}{x_2-x_1}$$
+-   We can define $x_2 = x_1 + \Delta x$ (or equivalently $\Delta x = x_2 - x_1$) $$m = \dfrac{f(x_1+ \Delta x) - f(x_1)}{\Delta x}$$
 
----
+------------------------------------------------------------------------
 
-- As we've seen, for a curve, we need to be infinitely close for our line's defining points, yielding 
-$$\lim_{\Delta x\to 0} \frac{f(x+ \Delta x)-f(x)}{\Delta x}$$
-- This gives us this instantaneous slope (rate of change) of a function at every point on its domain. The above equation is the definition of the derivative.
+-   As we've seen, for a curve, we need to be infinitely close for our line's defining points, yielding $$\lim_{\Delta x\to 0} \frac{f(x+ \Delta x)-f(x)}{\Delta x}$$
+-   This gives us this instantaneous slope (rate of change) of a function at every point on its domain. The above equation is the definition of the derivative.
 
 ### Notation
-- $\frac{d}{dx} f(x)$ is read "The derivative of $f$ of $x$ with respect to $x$."
-        - You can also say "The instantaneous rate of change in $f$ of $x$ with respect to $x$."
-- If $y=f(x)$, $\frac{dy}{dx}$ is "The derivative of $y$ with respect to $x$".
-        - Warning: Do not try to cancel out the $d$'s, no matter how tempting it is.
-- There is the advantage of always specifying the variable with respect to which we're differentiating (it's the one in the denominator).
 
----
+-   $\frac{d}{dx} f(x)$ is read "The derivative of $f$ of $x$ with respect to $x$." - You can also say "The instantaneous rate of change in $f$ of $x$ with respect to $x$."
+-   If $y=f(x)$, $\frac{dy}{dx}$ is "The derivative of $y$ with respect to $x$". - Warning: Do not try to cancel out the $d$'s, no matter how tempting it is.
+-   There is the advantage of always specifying the variable with respect to which we're differentiating (it's the one in the denominator).
 
-Lagrange's prime notation:
-- $f'(x)$ (read: "$f$ prime $x$") is the derivative of $f(x)$.
-        - This is useful when it is clear which variable were are referring to (e.g., when there's only one).
+------------------------------------------------------------------------
 
----
-$$\displaystyle\frac{dy}{dx} = \frac{d}{dx} f(x) = f'(x) = \displaystyle\lim_{\Delta x\to 0 } \frac{f(x+\Delta x)-f(x)}{\Delta x}$$
+Lagrange's prime notation: - $f'(x)$ (read: "$f$ prime $x$") is the derivative of $f(x)$. - This is useful when it is clear which variable were are referring to (e.g., when there's only one).
 
-## Basic rules
-### Power rule
+------------------------------------------------------------------------
 
+-   What is $\dfrac{d(x^2)}{dx}$? - $x^2$ - $2 x^{2-1}$ -$2x$
 
+-   What is $\frac{d(4x^3)}{dx}$?
 
----
-- What is $\dfrac{d(x^2)}{dx}$?
-        - $x^2$
-        - $2 x^{2-1}$
-        -$2x$
+    -   $4x^3$
 
----
-- What is $\frac{d(4x^3)}{dx}$?
-        - $4x^3$
-        - $4*3 x^{3-1}$
-        - $12x^2$
+    -   $4*3 x^{3-1}$
 
---- 
+    -   $12x^2$
+
+------------------------------------------------------------------------
+
 **Practice**
 
-Take the derivative of each of these.
-$$x^3$$
-$$3x^2$$ 
-$$60x^{11}$$ 
-$$x$$
-$$\frac{4}{x^2} $$
-$$9 \sqrt{x}$$
-$$6 x^{5/2}$$
-$$11,596,232$$
+Take the derivative of each of these. $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
 
----
-Evaluate the derivatives at $x=2$ and $x=-1$
-$$x^3$$
-$$3x^2$$ 
-$$60x^{11}$$ 
-$$x$$
-$$\frac{4}{x^2} $$
-$$9 \sqrt{x}$$
-$$6 x^{5/2}$$
-$$11,596,232$$
+------------------------------------------------------------------------
 
-### Special functions
+Evaluate the derivatives at $x=2$ and $x=-1$ $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
 
-
-### Derivatives with addition and subtraction
-Easiest rule to remember: 
-- $\frac{d (f(x) \pm g(x))}{dx}=f'(x) \pm g'(x)$
-
----
-**Practice**
-Take the derivative of each of these:
-$$x^2 + x +5$$
-$$x^4 - 4x^3 + 5x^2 + 8x - 6$$
-$$3x^5 - 6x^2$$
-$$5x^2 + 8 \sqrt{x} - \frac{1}{x}$$
-$$ln(x) + 5e^x - 4x^3$$ 
-
-## Advanced rules
-### Product rule
-
+------------------------------------------------------------------------
 
