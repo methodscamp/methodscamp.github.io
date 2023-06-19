@@ -91,5 +91,15 @@ $$9 \sqrt{x}$$
 $$6 x^{5/2}$$
 $$11,596,232$$
 
+### Special functions
+
+A few functions have particular rules
+- $\frac{d (ln(x))}{dx}=\frac{1}{x}$
+- $\dfrac{d (log_b(x))}{dx}=\dfrac{1}{x*ln(b)}$
+- $\frac{d (e^x)}{dx}=e^x$
+- $\frac{d (a^x)}{dx}=a^x ln(a)$
+- $\frac{dy}{dx}c=0$
+- $\frac{d (x^x)}{dx}=x^x (1+ln(x))$
+
 
 
