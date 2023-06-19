@@ -31,9 +31,9 @@ $$\lim_{\Delta x\to 0} \frac{f(x+ \Delta x)-f(x)}{\Delta x}$$
 - This gives us this instantaneous slope (rate of change) of a function at every point on its domain. The above equation is the definition of the derivative.
 
 ### Notation
-- $\frac{d}{dx} f(x)$ &rightarrow ``The derivative of $f$ of $x$ with respect to $x$''.
-        - You can also say``The instantaneous rate of change in $f$ of $x$ with respect to $x$''.
-- If $y=f(x)$, $\frac{dy}{dx}$ is ``The derivative of $y$ with respect to $x$''.
+- $\frac{d}{dx} f(x)$ &rightarrow "The derivative of $f$ of $x$ with respect to $x$."
+        - You can also say "The instantaneous rate of change in $f$ of $x$ with respect to $x$."
+- If $y=f(x)$, $\frac{dy}{dx}$ is "The derivative of $y$ with respect to $x$".
         - Warning: Do not try to cancel out the $d$'s, no matter how tempting it is.
 - Advantage of always specifying the variable with respect to which we're differentiating (it's the one in the denominator).
 
