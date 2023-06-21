@@ -204,6 +204,25 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#chain-rule" id="toc-chain-rule" class="nav-link" data-scroll-target="#chain-rule"><span class="header-section-number">6.2.3</span> Chain rule</a></li>
   <li><a href="#second-derivative" id="toc-second-derivative" class="nav-link" data-scroll-target="#second-derivative"><span class="header-section-number">6.2.4</span> Second derivative</a></li>
   </ul></li>
+  <li><a href="#calculus-2" id="toc-calculus-2" class="nav-link" data-scroll-target="#calculus-2"><span class="header-section-number">7</span> Calculus 2</a>
+  <ul class="collapse">
+  <li><a href="#differentiable-and-continuous-functions" id="toc-differentiable-and-continuous-functions" class="nav-link" data-scroll-target="#differentiable-and-continuous-functions"><span class="header-section-number">7.1</span> Differentiable and Continuous Functions</a>
+  <ul class="collapse">
+  <li><a href="#when-is-f-not-differentiable" id="toc-when-is-f-not-differentiable" class="nav-link" data-scroll-target="#when-is-f-not-differentiable"><span class="header-section-number">7.1.1</span> When is f not differentiable?</a></li>
+  </ul></li>
+  <li><a href="#extrema-and-optimization" id="toc-extrema-and-optimization" class="nav-link" data-scroll-target="#extrema-and-optimization"><span class="header-section-number">7.2</span> Extrema and optimization</a>
+  <ul class="collapse">
+  <li><a href="#extrema" id="toc-extrema" class="nav-link" data-scroll-target="#extrema"><span class="header-section-number">7.2.1</span> Extrema</a></li>
+  <li><a href="#identifying-extrema" id="toc-identifying-extrema" class="nav-link" data-scroll-target="#identifying-extrema"><span class="header-section-number">7.2.2</span> Identifying extrema</a></li>
+  <li><a href="#minimum-or-maximum" id="toc-minimum-or-maximum" class="nav-link" data-scroll-target="#minimum-or-maximum"><span class="header-section-number">7.2.3</span> Minimum or maximum?</a></li>
+  <li><a href="#second-derivatives" id="toc-second-derivatives" class="nav-link" data-scroll-target="#second-derivatives"><span class="header-section-number">7.2.4</span> Second derivatives</a></li>
+  <li><a href="#local-vs.-global-extrema" id="toc-local-vs.-global-extrema" class="nav-link" data-scroll-target="#local-vs.-global-extrema"><span class="header-section-number">7.2.5</span> Local vs.&nbsp;Global Extrema</a></li>
+  </ul></li>
+  <li><a href="#partial-derivatives" id="toc-partial-derivatives" class="nav-link" data-scroll-target="#partial-derivatives"><span class="header-section-number">7.3</span> Partial derivatives</a>
+  <ul class="collapse">
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">7.3.1</span> Application</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -358,8 +377,169 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math display">\[\frac{d^2(x^4)}{dx^2}=f''(x^4)\]</span> - First, we take the first derivative: <span class="math display">\[f'(x^4)=4x^3\]</span> - Then we use that output to take the second derivative: <span class="math display">\[f''(x^4)=f'(4x^3)=12x^2\]</span></p>
 <p><strong>Practice</strong></p>
 <p>Take the second derivative of the following functions: <span class="math display">\[x^5\]</span> <span class="math display">\[6x^2\]</span> <span class="math display">\[4 ln(x)\]</span> <span class="math display">\[3x\]</span> <span class="math display">\[4x^{3/2}\]</span></p>
+</section>
+</section>
+<section id="calculus-2" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Calculus 2</h1>
+<section id="differentiable-and-continuous-functions" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="differentiable-and-continuous-functions"><span class="header-section-number">7.1</span> Differentiable and Continuous Functions</h2>
+<ul>
+<li><p>Informally: A function is continuous at a point if its graph has no holes or breaks at that point</p></li>
+<li><p>Formally: A function is continuous at a point <span class="math inline">\(a\)</span> if: <span class="math display">\[\displaystyle\lim_{x \to a} f(x)=f(a)\]</span></p></li>
+</ul>
+<hr>
+<p>Continuity requires 3 conditions to hold:</p>
+<ul>
+<li><p><span class="math inline">\(f(a)\)</span> is defined (<span class="math inline">\(a\)</span> is in the domain of <span class="math inline">\(f\)</span>)</p></li>
+<li><p><span class="math inline">\(\displaystyle\lim_{x \to a} f(x)\)</span> exists</p></li>
+<li><p><span class="math inline">\(\displaystyle\lim_{x \to a} f(x) = f(a)\)</span> (the value of <span class="math inline">\(f\)</span> equals the limit of <span class="math inline">\(f\)</span> at <span class="math inline">\(a\)</span>)</p></li>
+</ul>
+<hr>
+<p>Differentiable:</p>
+<ul>
+<li><p>If <span class="math inline">\(f'(x)\)</span> exists, <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x\)</span>.</p></li>
+<li><p>If <span class="math inline">\(f\)</span> is differentiable at every point of an open interval <span class="math inline">\(I\)</span>, <span class="math inline">\(f\)</span> is differentiable on <span class="math inline">\(I\)</span>.</p></li>
+<li><p>Graph must have a (non-vertical) tangent line at each point, be relatively smooth, and not contain any breaks, bends, or cusps.</p></li>
+</ul>
+<hr>
+<ul>
+<li>If a function is differentiable at a point, it is also continuous at that point.</li>
+<li>If a function is continuous at a point, it is <em>not</em> necessarily differentiable at that point.</li>
+</ul>
+<section id="when-is-f-not-differentiable" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="when-is-f-not-differentiable"><span class="header-section-number">7.1.1</span> When is f not differentiable?</h3>
+<p>When does <span class="math inline">\(f'(x)\)</span> not exist?</p>
+<ul>
+<li>When the function is discontinuous at that point.
+<ul>
+<li>Jump or break in the graph.</li>
+</ul></li>
+<li>There are different slopes approaching the point from the left and from the right.
+<ul>
+<li>Corner point</li>
+</ul></li>
+<li>When the graph of the function has a vertical tangent line at that point.
+<ul>
+<li>Cusp</li>
+<li>Vertical inflection point</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="extrema-and-optimization" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="extrema-and-optimization"><span class="header-section-number">7.2</span> Extrema and optimization</h2>
+<p><em>Optimization</em> lets us find the minimum or maximum value a function takes.</p>
+<ul>
+<li>Formal theory
+<ul>
+<li>Utility maximization, continuous choices</li>
+</ul></li>
+<li>Ordinary Least Squares (OLS)
+<ul>
+<li>Focuses on <em>minimizing</em> the squared errors between observed data and values predicted by a regression</li>
+</ul></li>
+<li>Maximum Likelihood Estimation (MLE)
+<ul>
+<li>Focuses on <em>maximizing</em> a likelihood function, given observed values</li>
+</ul></li>
+</ul>
+<section id="extrema" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="extrema"><span class="header-section-number">7.2.1</span> Extrema</h3>
+<p>Informally, a maximum is just the highest value a function takes, and a minimum is the lowest value.</p>
+<ul>
+<li>Easy to identify extrema (maxima or minima) intuitively by looking at a graph of the function.
+<ul>
+<li>Maxima are high points (“peaks”)</li>
+<li>Minima are low points (“valleys”)</li>
+</ul></li>
+<li>Extrema can be <em>local</em> or <em>global</em>.</li>
+</ul>
+</section>
+<section id="identifying-extrema" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="identifying-extrema"><span class="header-section-number">7.2.2</span> Identifying extrema</h3>
+<p>The derivative of a function gives the rate of change. - When the derivative is zero (or fails to exist), the function has <em>usually</em> reached a (local) maximum or minimum.</p>
+<ul>
+<li>Why?</li>
+</ul>
+<hr>
+<p>At a maximum, the function must be increasing before the point and decreasing after it.</p>
+<p>At a minimum, the function must be decreasing before the point and increasing after it.</p>
+<p>So we’ll start by identifying points where this is the case (“critical points” or “stationary points”).</p>
+<hr>
+<p>A technical note:</p>
+<p>A point where <span class="math inline">\(f'(x)=0\)</span> or <span class="math inline">\(f'(x)\)</span> does not exist is called a <em>critical point</em> (or <em>stationary point</em>). Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex (“inflection points”). Sometimes the function is not differentiable at that point for other reasons, as discussed earlier.</p>
+<hr>
+<p>So we can find the local maxima and/or minima of a function by taking the derivative, setting it equal to zero, and solving for x (or whatever).</p>
+<p><span class="math display">\[f'(x)=0\]</span></p>
+<p>This gives us the first-order condition (FOC).</p>
+</section>
+<section id="minimum-or-maximum" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="minimum-or-maximum"><span class="header-section-number">7.2.3</span> Minimum or maximum?</h3>
+<p><strong>BUT</strong> we don’t know if we’ve found a maximum or minimum, or even if we’ve found an extremum or just an inflection point.</p>
+</section>
+<section id="second-derivatives" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="second-derivatives"><span class="header-section-number">7.2.4</span> Second derivatives</h3>
+<p>The second derivative gives us the rate of change of the rate of change of the original function. So it tells us whether the slope is getting larger or smaller.</p>
+<p><span class="math display">\[f(x) = x^2\]</span> <span class="math display">\[f'(x) = 2x\]</span> <span class="math display">\[f''(x) = 2\]</span></p>
+<hr>
+<p>Second Derivative Test - Start by identifying <span class="math inline">\(f''(x)\)</span></p>
+<ul>
+<li><p>Substitute in the stationary points <span class="math inline">\((x^*)\)</span> identified from the FOC</p></li>
+<li><p><span class="math inline">\(f''(x^*) &gt; 0\)</span> we have a local minimum</p></li>
+<li><p><span class="math inline">\(f''(x^*) &lt; 0\)</span> we have a local maximum</p></li>
+<li><p><span class="math inline">\(f''(x^*) = 0\)</span> we (may) have an inflection point - need to calculate higher-order derivatives (don’t worry about this now)</p></li>
+</ul>
+<p>Collectively these give use the Second-Order Condition (SOC).</p>
+</section>
+<section id="local-vs.-global-extrema" class="level3" data-number="7.2.5">
+<h3 data-number="7.2.5" class="anchored" data-anchor-id="local-vs.-global-extrema"><span class="header-section-number">7.2.5</span> Local vs.&nbsp;Global Extrema</h3>
+<p>To find the minimum/maximum on some interval, compare the local min/max to the value of the function at the interval’s endpoints.</p>
+<ul>
+<li><p>To find the global minimum/maximum, check the function’s limits as it approaches <span class="math inline">\(+ \infty\)</span> and <span class="math inline">\(- \infty\)</span>.</p></li>
+<li><p>Extreme value theorem: if a real-valued function <span class="math inline">\(f\)</span> is continuous on the closed interval [a,b], then <span class="math inline">\(f\)</span> must attain a (global) maximum and a (global) minimum.</p></li>
+</ul>
+</section>
+</section>
+<section id="partial-derivatives" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="partial-derivatives"><span class="header-section-number">7.3</span> Partial derivatives</h2>
+<ul>
+<li><p>Can take derivative with respect to different variables</p></li>
+<li><p>Notation: For a function <span class="math inline">\(fy=(x,z)=xz\)</span>, we might want to know how the function changes with <span class="math inline">\(x\)</span>:</p></li>
+</ul>
+<p><span class="math display">\[ \displaystyle\frac{\partial}{\partial_x}f(x,y) = \frac{\partial_y}{\partial_x} = \partial_x f\]</span></p>
+<ul>
+<li>Treat all other variables as constants and take derivative with respect to the variable of interest (here <span class="math inline">\(x\)</span>).</li>
+</ul>
+<hr>
+<p>How do we take a partial derivative?</p>
+<p>Treat all other variables as <em>constants</em> and take <em>derivative</em> with respect to the variable of interest.</p>
+<p>From our earlier example: <span class="math display">\[y = f(x,z) = xz \]</span> <span class="math display">\[ \displaystyle\frac{\partial_y}{\partial_x} = ?\]</span></p>
+<hr>
+<p><span class="math display">\[y = f(x,z) = xz \]</span> <span class="math display">\[ \displaystyle\frac{\partial_y}{\partial_x} = z\]</span></p>
+<p>Why? Because the partial derivative of <span class="math inline">\(xz\)</span> with respect to <span class="math inline">\(x\)</span> treats <span class="math inline">\(z\)</span> as a constant.</p>
+<p>What is <span class="math inline">\(\displaystyle\frac{\partial_y}{\partial_z}?\)</span></p>
+<section id="application" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="application"><span class="header-section-number">7.3.1</span> Application</h3>
+<ul>
+<li><p><span class="math inline">\(\frac{\partial (x^2y+xy^2-x)}{\partial x}\)</span></p></li>
+<li><p>We apply the addition rule to take the derivative of each term with respect to x.</p></li>
+<li><p><span class="math inline">\(\frac{\partial (x^2y)}{\partial x}\)</span>+<span class="math inline">\(\frac{\partial (xy^2)}{\partial x}\)</span>+<span class="math inline">\(\frac{\partial (-x)}{\partial x}\)</span></p></li>
+<li><p><span class="math inline">\(2xy+y^2-1\)</span></p></li>
+</ul>
+<hr>
+<ul>
+<li><p><span class="math inline">\(\frac{\partial (x^2y+xy^2-x)}{\partial y}\)</span></p></li>
+<li><p>We apply the addition rule to take the derivative of each term with respect to y</p></li>
+<li><p><span class="math inline">\(\frac{\partial (x^2y)}{\partial y}\)</span>+<span class="math inline">\(\frac{\partial (xy^2)}{\partial y}\)</span>+<span class="math inline">\(\frac{\partial (-x)}{\partial y}\)</span></p></li>
+<li><p><span class="math inline">\(x^2+2xy\)</span></p></li>
+</ul>
+<hr>
+<p><strong>Practice</strong></p>
+<p>Take the partial derivative with respect to x and to y of the following functions. What would the notation for each look like?</p>
+<p><span class="math display">\[3xy-x\]</span> <span class="math display">\[ln(xy)\]</span> <span class="math display">\[x^3+y^3+x^4y^4\]</span> <span class="math display">\[e^{xy}\]</span></p>
 
 
+</section>
 </section>
 </section>
 
