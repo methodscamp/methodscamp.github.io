@@ -5,8 +5,8 @@
 ### Required methods courses
 
 -   Scope and Methods of Political Science
-    -   Statistics I (statistics/linear regression)
--   Statistics II (linear regression and more)
+    -   Statistics I (Statistics/linear regression)
+-   Statistics II (Linear regression and more)
 -   Statistics III (Maximum likelihood estimation)
     -   Only required if your major field is methods
 
