@@ -449,11 +449,11 @@ $$\displaystyle\int_{1}^{7} x^2 \text{ } dx$$ $$\displaystyle\int_{1}^{10} 3x^2 
 
 ------------------------------------------------------------------------
 
-$$\begin{aligned}
-        \dfrac{d(f(x)g(x))}{d(x)} = f^{'}(x)g(x) + g^{'}(x)f(x)
-        \displaystyle\int \dfrac{d(f(x)g(x))}{d(x)} dx= \displaystyle\int [f^{'}(x)g(x) + g^{'}(x)f(x)]dx
-        f(x)g(x) = \displaystyle\int f^{'}(x)g(x)dx + \displaystyle\int g^{'}(x)f(x)dx
-\end{aligned}$$
+$$\dfrac{d(f(x)g(x))}{d(x)} = f^{'}(x)g(x) + g^{'}(x)f(x)$$
+
+$$\displaystyle\int \dfrac{d(f(x)g(x))}{d(x)} dx= \displaystyle\int [f^{'}(x)g(x) + g^{'}(x)f(x)]dx$$
+
+$$f(x)g(x) = \displaystyle\int f^{'}(x)g(x)dx + \displaystyle\int g^{'}(x)f(x)dx$$
 
 ------------------------------------------------------------------------
 
