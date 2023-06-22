@@ -1,1 +1,57 @@
 # Wrap up
+
+## Required methods courses
+
+-   Scope and Methods of Political Science
+    -   Statistics I (statistics/linear regression)
+-   Statistics II (linear regression and more)
+-   Statistics III (Maximum likelihood estimation)
+    -   Only required if your major field is methods
+
+## Other methods courses
+
+-   **Statistics/econometrics:**
+    -   Bayesian Statistics
+    -   Causal Inference
+    -   Math Methods for Political Analysis
+    -   Time Series and Panel Data
+    -   Panel and Multilevel Analysis
+
+## More courses
+
+-   **Formal Theory**
+    -   Intro to Formal Political Analysis
+    -   Formal Political Analysis II
+    -   Formal Theories of International Relations
+-   **Everything else**
+    -   Conceptualization and Measurement
+    -   Experimental Methods in Political Science
+    -   Qualitative Methods
+    -   Network Analysis
+    -   Seminar in Field Experiments
+
+## Other departments at UT
+
+You can also take courses through the Economics, Mathematics, or Statistics (Statistics and Data Science) departments.
+
+-   M.S. in Statistics
+
+Software and Topic Short Courses - R, Python, Stata, etc.
+
+-   More info [here](https://stat.utexas.edu/training/software-short-courses).
+
+## Other resources
+
+Summer programs at UT:
+
+-   Short courses in statistics
+    -   Department sometimes offers scholarships to cover part of the cost.
+
+Summer programs outside UT:
+
+-   ICPSR (Inter-university Consortium for Political and Social Research)
+    -   Ann Arbor, Michigan
+-   EITM (Empirical Implications of Theoretical Models).
+    -   Houston and other locations (Michigan, Duke, Berkeley, Emory).
+-   IQMR (Institute for Qualitative and Multi-Method Research)
+    -   Syracuse, NY
