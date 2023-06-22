@@ -64,6 +64,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -183,7 +185,51 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-probability" id="toc-what-is-probability" class="nav-link active" data-scroll-target="#what-is-probability"><span class="header-section-number">7.1</span> What is probability?</a></li>
+  <li><a href="#kolmogorovs-axioms" id="toc-kolmogorovs-axioms" class="nav-link" data-scroll-target="#kolmogorovs-axioms"><span class="header-section-number">7.2</span> Kolmogorov’s axioms</a></li>
+  <li><a href="#some-definitions" id="toc-some-definitions" class="nav-link" data-scroll-target="#some-definitions"><span class="header-section-number">7.3</span> Some definitions</a></li>
+  <li><a href="#discrete-probability" id="toc-discrete-probability" class="nav-link" data-scroll-target="#discrete-probability"><span class="header-section-number">7.4</span> Discrete probability</a>
+  <ul class="collapse">
+  <li><a href="#probability-mass-function-pmf" id="toc-probability-mass-function-pmf" class="nav-link" data-scroll-target="#probability-mass-function-pmf"><span class="header-section-number">7.4.1</span> Probability Mass Function (PMF)</a></li>
+  <li><a href="#discrete-distribution" id="toc-discrete-distribution" class="nav-link" data-scroll-target="#discrete-distribution"><span class="header-section-number">7.4.2</span> Discrete distribution</a></li>
+  </ul></li>
+  <li><a href="#continuous-probability" id="toc-continuous-probability" class="nav-link" data-scroll-target="#continuous-probability"><span class="header-section-number">7.5</span> Continuous probability</a>
+  <ul class="collapse">
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics"><span class="header-section-number">7.5.1</span> Basics</a></li>
+  <li><a href="#probability-density-function-pdf" id="toc-probability-density-function-pdf" class="nav-link" data-scroll-target="#probability-density-function-pdf"><span class="header-section-number">7.5.2</span> Probability Density Function (PDF)</a></li>
+  </ul></li>
+  <li><a href="#cumulative-density-function-cdf" id="toc-cumulative-density-function-cdf" class="nav-link" data-scroll-target="#cumulative-density-function-cdf"><span class="header-section-number">7.6</span> Cumulative Density Function (CDF)</a>
+  <ul class="collapse">
+  <li><a href="#discrete" id="toc-discrete" class="nav-link" data-scroll-target="#discrete"><span class="header-section-number">7.6.1</span> Discrete</a></li>
+  <li><a href="#continuous" id="toc-continuous" class="nav-link" data-scroll-target="#continuous"><span class="header-section-number">7.6.2</span> Continuous</a></li>
+  </ul></li>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics"><span class="header-section-number">7.7</span> Statistics</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">7.7.1</span> Introduction</a></li>
+  <li><a href="#univariate-statistics" id="toc-univariate-statistics" class="nav-link" data-scroll-target="#univariate-statistics"><span class="header-section-number">7.7.2</span> Univariate statistics</a></li>
+  <li><a href="#examples-of-univariate-statistics" id="toc-examples-of-univariate-statistics" class="nav-link" data-scroll-target="#examples-of-univariate-statistics"><span class="header-section-number">7.7.3</span> Examples of univariate statistics</a></li>
+  <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link" data-scroll-target="#measures-of-central-tendency"><span class="header-section-number">7.7.4</span> Measures of central tendency</a></li>
+  <li><a href="#deviations-from-central-tendency" id="toc-deviations-from-central-tendency" class="nav-link" data-scroll-target="#deviations-from-central-tendency"><span class="header-section-number">7.7.5</span> Deviations from central tendency</a></li>
+  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance"><span class="header-section-number">7.7.6</span> Variance</a></li>
+  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">7.7.7</span> Standard deviation</a></li>
+  </ul></li>
+  <li><a href="#bivariate-statistics" id="toc-bivariate-statistics" class="nav-link" data-scroll-target="#bivariate-statistics"><span class="header-section-number">7.8</span> Bivariate statistics</a>
+  <ul class="collapse">
+  <li><a href="#covariance" id="toc-covariance" class="nav-link" data-scroll-target="#covariance"><span class="header-section-number">7.8.1</span> Covariance</a></li>
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">7.8.2</span> Correlation</a></li>
+  </ul></li>
+  <li><a href="#regression" id="toc-regression" class="nav-link" data-scroll-target="#regression"><span class="header-section-number">7.9</span> Regression</a>
+  <ul class="collapse">
+  <li><a href="#ordinary-least-squares" id="toc-ordinary-least-squares" class="nav-link" data-scroll-target="#ordinary-least-squares"><span class="header-section-number">7.9.1</span> Ordinary least squares</a></li>
+  <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals"><span class="header-section-number">7.9.2</span> Residuals</a></li>
+  <li><a href="#finding-the-right-line" id="toc-finding-the-right-line" class="nav-link" data-scroll-target="#finding-the-right-line"><span class="header-section-number">7.9.3</span> Finding the right line</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -205,8 +251,317 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="what-is-probability" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="what-is-probability"><span class="header-section-number">7.1</span> What is probability?</h2>
+<ul>
+<li>Frequency with which an event occurs.
+<ul>
+<li>Typically: <span class="math display">\[Pr(A) = P(A) = \pi(A) = \dfrac{\text{Number of ways an event can occur}}{\text{Total number of possible outcomes}}\]</span></li>
+</ul></li>
+<li>Probability predicts real-world events using theoretical quantities.
+<ul>
+<li>Formally, it assigns a likelihood of occurrence to each event in sample space</li>
+<li>We use the probability space triplet (<span class="math inline">\(\Omega, S, P\)</span>), which are the sample space, event space, and probability mapping, respectively.</li>
+</ul></li>
+<li>We can consider probability as a function that maps <span class="math inline">\(\Omega \to \mathbb{R}\)</span>.</li>
+<li>We can conceive it in terms of relative frequency or subjective belief.</li>
+</ul>
+</section>
+<section id="kolmogorovs-axioms" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="kolmogorovs-axioms"><span class="header-section-number">7.2</span> Kolmogorov’s axioms</h2>
+<ul>
+<li><span class="math inline">\(Pr(S_i)\in\mathbb{R},\hspace{2mm} 1 \geq Pr(S_i)\geq 0 \qquad \forall S_i\in S\)</span>
+<ul>
+<li>Where <span class="math inline">\(S\)</span> is the event space, <span class="math inline">\(S_i\)</span> are events.</li>
+<li>Probabilities must be non-negative.</li>
+</ul></li>
+<li><span class="math inline">\(Pr(\Omega) = 1\)</span>
+<ul>
+<li>Where <span class="math inline">\(\Omega\)</span> is the sample space.</li>
+<li>Something has to happen.</li>
+<li>Probabilities sum/integrate to 1.</li>
+</ul></li>
+<li><span class="math inline">\(Pr\left(\bigcup_{i = 1}^\infty S_i\right) = \sum_{i=1}^\infty Pr(S_i) \iff Pr(S_i \cap S_j) = 0\hspace{2mm} \forall i\neq j\)</span>
+<ul>
+<li>The probability of disjoint (mutually exclusive) sets is equal to the sum of their individual probabilities.</li>
+</ul></li>
+</ul>
+</section>
+<section id="some-definitions" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="some-definitions"><span class="header-section-number">7.3</span> Some definitions</h2>
+<ul>
+<li><strong>Random variable</strong>: a variable whose value is determined by the outcome of a random process.
+<ul>
+<li>Sometimes also called a <em>stochastic variable</em>.</li>
+<li>May be discrete or continuous.</li>
+</ul></li>
+<li><strong>Distribution</strong> (of a random variable): the set of values the variable might take.
+<ul>
+<li>Probability mass function / probability density function defines the probability with which each value occurs.</li>
+<li>Always sums / integrates to 1.</li>
+</ul></li>
+<li><strong>Realization</strong> (of a random variable): a particular value taken by the variable.</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Population</strong>: the entire set of objects (people, cases, etc.) in which we are interested.
+<ul>
+<li>Often denoted <span class="math inline">\(N\)</span>.</li>
+</ul></li>
+<li><strong>Sample</strong>: a subset of the population we can observe, from which we try to make generalizations about the population.
+<ul>
+<li>Often denoted <span class="math inline">\(n\)</span>.</li>
+</ul></li>
+<li><strong>Frequency distribution</strong>: a count of how often a variable takes each of its possible values.
+<ul>
+<li>The number of members of a sample that take each value of a variable.</li>
+</ul></li>
+<li><strong>Independent random variables</strong>: two variables are statistically independent if the value of one does not affect the value of the other.
+<ul>
+<li>Formally, <span class="math inline">\(Pr(A \cap B)=Pr(A)Pr(B)\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="discrete-probability" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="discrete-probability"><span class="header-section-number">7.4</span> Discrete probability</h2>
+<ul>
+<li>A sample space in which there are a (finite or infinite) countable number of outcomes</li>
+<li>Each realization of random process has a discrete probability of occurring.
+<ul>
+<li><span class="math inline">\(f(X=x_i)=P(X=x_i)\)</span> is the probability the variable takes the value <span class="math inline">\(x_i\)</span>.</li>
+</ul></li>
+</ul>
+<section id="probability-mass-function-pmf" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="probability-mass-function-pmf"><span class="header-section-number">7.4.1</span> Probability Mass Function (PMF)</h3>
+<p>Probability of each occurrence encoded in probability mass function (PMF)</p>
+<ul>
+<li><span class="math inline">\(0 \leq f(x_i) \leq 1\)</span>
+<ul>
+<li>Probability of any value occurring must be between 0 and 1.</li>
+</ul></li>
+<li><span class="math inline">\(\displaystyle\sum_{x}f(x_i) = 1\)</span>
+<ul>
+<li>Probabilities of all values must sum to 1.</li>
+</ul></li>
+</ul>
+</section>
+<section id="discrete-distribution" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="discrete-distribution"><span class="header-section-number">7.4.2</span> Discrete distribution</h3>
+<ul>
+<li><p>What’s the probability that we’ll roll a 3 on one die roll: <span class="math display">\[Pr(y=3) = \dfrac{1}{6}\]</span></p></li>
+<li><p>If one roll of the die is an “experiment.”</p></li>
+<li><p>We can think of a 3 as a “success.”</p></li>
+<li><p><span class="math inline">\(Y \sim Bernoulli \left(\frac{1}{6} \right)\)</span></p></li>
+<li><p>Fair coins are <span class="math inline">\(\sim Bernoulli(.5)\)</span>, for example.</p></li>
+<li><p>More generally, <span class="math inline">\(Bernoulli(\pi )\)</span>.</p>
+<ul>
+<li><span class="math inline">\(\pi\)</span> represents the probability of success.</li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li><p>Drawing a specific card from a deck: <span class="math display">\[Pr(y=\text{ace of spades}) = \dfrac{1}{52}\]</span></p></li>
+<li><p>Drawing any card with a specific value from a deck: <span class="math display">\[Pr(y=ace) = \dfrac{4}{52}\]</span></p></li>
+<li><p>Getting a specific value on two dice rolls: <span class="math display">\[Pr(y=8) = \dfrac{5}{36}\]</span></p></li>
+<li><p>We can express the probability mass function in tabular format or in a graph.</p></li>
+</ul>
+</section>
+</section>
+<section id="continuous-probability" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="continuous-probability"><span class="header-section-number">7.5</span> Continuous probability</h2>
+<ul>
+<li>What happens when our outcome is continuous?</li>
+<li>There are an infinite number of outcomes.</li>
+<li>This makes the denominator of our fraction difficult to work with.</li>
+<li>The probability of the whole space must equal 1.</li>
+<li>Even if all events are equally likely, <span class="math inline">\(\dfrac{1}{\infty} =0\)</span></li>
+</ul>
+<section id="basics" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="basics"><span class="header-section-number">7.5.1</span> Basics</h3>
+<ul>
+<li>The domain may not span -<span class="math inline">\(\infty\)</span> to <span class="math inline">\(\infty\)</span>.
+<ul>
+<li>Even space between 0 and 1 is infinite.</li>
+</ul></li>
+<li>The domain is defined as the area under the probability density function.</li>
+<li>Two common examples are the uniform and bell curves.</li>
+</ul>
+</section>
+<section id="probability-density-function-pdf" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="probability-density-function-pdf"><span class="header-section-number">7.5.2</span> Probability Density Function (PDF)</h3>
+<ul>
+<li>Similar to PMF from before, but for continuous variables.</li>
+<li>Gives the probability a value falls within a particular interval
+<ul>
+<li><span class="math inline">\(P[a\le X\le b] = \displaystyle\int_a^b f(x) \, dx\)</span></li>
+<li>Total area under the curve is 1.</li>
+<li><span class="math inline">\(P(a &lt; X &lt; b)\)</span> is the area under the curve between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (where <span class="math inline">\(b &gt; a\)</span>).</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="cumulative-density-function-cdf" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="cumulative-density-function-cdf"><span class="header-section-number">7.6</span> Cumulative Density Function (CDF)</h2>
+<section id="discrete" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="discrete"><span class="header-section-number">7.6.1</span> Discrete</h3>
+<ul>
+<li>Cumulatve density function is probability X will take a value of x or lower.</li>
+<li>PDF is written <span class="math inline">\(f(x)\)</span>, and CDF is written <span class="math inline">\(F'(x)\)</span>. <span class="math display">\[F_X(x) = Pr(X\leq x)\]</span></li>
+<li>For discrete CDFs, that means summing up over all values.</li>
+<li>What is the probability of rolling a 6 or lower with two dice? <span class="math inline">\(F(6)=?\)</span></li>
+</ul>
+</section>
+<section id="continuous" class="level3" data-number="7.6.2">
+<h3 data-number="7.6.2" class="anchored" data-anchor-id="continuous"><span class="header-section-number">7.6.2</span> Continuous</h3>
+<ul>
+<li>We can’t sum probabilities for continuous distributions (remember the 0 problem).</li>
+<li>Solution: integration <span class="math display">\[F_Y(y) = \int_{-\infty}^{y} f(y) dy\]</span></li>
+<li>Examples of uniform distribution.</li>
+</ul>
+</section>
+</section>
+<section id="statistics" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="statistics"><span class="header-section-number">7.7</span> Statistics</h2>
+<section id="introduction" class="level3" data-number="7.7.1">
+<h3 data-number="7.7.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">7.7.1</span> Introduction</h3>
+<ul>
+<li>While probability allows us to make predictions about events using distributions, statistics uses events to make estimates about distributions and variables.</li>
+<li>It is the process of learning from data.</li>
+<li>A statistic is a summary of data, capturing some theoretically-relevant quantity.</li>
+<li>Broad categories of numerical and categorical.</li>
+</ul>
+</section>
+<section id="univariate-statistics" class="level3" data-number="7.7.2">
+<h3 data-number="7.7.2" class="anchored" data-anchor-id="univariate-statistics"><span class="header-section-number">7.7.2</span> Univariate statistics</h3>
+<ul>
+<li>These measure a single variable.</li>
+<li>Readily expressed in graphical form.</li>
+<li>Common examples:
+<ul>
+<li>Central tendency (mean, median, and mode)</li>
+<li>Variance</li>
+</ul></li>
+</ul>
+</section>
+<section id="examples-of-univariate-statistics" class="level3" data-number="7.7.3">
+<h3 data-number="7.7.3" class="anchored" data-anchor-id="examples-of-univariate-statistics"><span class="header-section-number">7.7.3</span> Examples of univariate statistics</h3>
+<ul>
+<li><p>The mean (<span class="math inline">\(\bar{x}\)</span>) is calculated by summing the data, then dividing by the number of observations: <span class="math display">\[\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i\]</span></p></li>
+<li><p>The median is found by ordering the observations from highest to lowest and finding the one in the middle.</p></li>
+<li><p>The mode is the most common number.</p></li>
+</ul>
+<p><span class="math display">\[x= \begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 6 &amp; 7 &amp; 8 &amp; 9 \end{bmatrix}\]</span></p>
+<ul>
+<li>What are the mean, median, and mode of x?</li>
+</ul>
+</section>
+<section id="measures-of-central-tendency" class="level3" data-number="7.7.4">
+<h3 data-number="7.7.4" class="anchored" data-anchor-id="measures-of-central-tendency"><span class="header-section-number">7.7.4</span> Measures of central tendency</h3>
+<ul>
+<li>Mean balances values on either side.</li>
+<li>Median balances observations on either side.</li>
+<li>Mode finds the most typical observation.</li>
+<li>Which is the best? Like most of what you’ll learn in statistics, it depends.</li>
+</ul>
+</section>
+<section id="deviations-from-central-tendency" class="level3" data-number="7.7.5">
+<h3 data-number="7.7.5" class="anchored" data-anchor-id="deviations-from-central-tendency"><span class="header-section-number">7.7.5</span> Deviations from central tendency</h3>
+<ul>
+<li><p>Consider two data sets: <span class="math display">\[\begin{aligned}
+x= \begin{bmatrix} 1 &amp; 1.5 &amp; 2 &amp; 2.5 &amp; 5.5 &amp; 8.5 &amp; 9 &amp; 9.5 &amp; 10 \end{bmatrix}
+\end{aligned}\]</span> <span class="math display">\[\begin{aligned}
+y= \begin{bmatrix} 4.5 &amp; 4.8 &amp; 5 &amp; 5.3 &amp; 5.5 &amp; 5.7 &amp; 6 &amp; 6.2 &amp; 6.5 \end{bmatrix}
+\end{aligned}\]</span></p></li>
+<li><p>What is the mean of each?</p></li>
+<li><p>What is the median of each?</p></li>
+<li><p>Are they similar distributions?</p></li>
+</ul>
+</section>
+<section id="variance" class="level3" data-number="7.7.6">
+<h3 data-number="7.7.6" class="anchored" data-anchor-id="variance"><span class="header-section-number">7.7.6</span> Variance</h3>
+<ul>
+<li>We use variance to measure the spread of a single variable.</li>
+<li>Formally defined as the squared deviation from the mean (<span class="math inline">\(\mu\)</span>).</li>
+<li>For discrete random variables, it is written <span class="math inline">\(Var(x)=\sigma^2=\displaystyle\frac{1}{n}\displaystyle\sum_{i=1}^n(x_i-\mu)^2\)</span></li>
+<li>For continuous random variables, it is written <span class="math inline">\(Var(x)=\sigma^2=\displaystyle\int (x-\mu)^2 f(x) \text{ }dx\)</span></li>
+</ul>
+</section>
+<section id="standard-deviation" class="level3" data-number="7.7.7">
+<h3 data-number="7.7.7" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">7.7.7</span> Standard deviation</h3>
+<ul>
+<li>Sometimes variance doesn’t make sense, either mathematically or conceptually.
+<ul>
+<li>Not always clear how to interpret “squared deviation from the mean.”</li>
+</ul></li>
+<li>Instead, will frequently see standard deviation, which is square root of variance.</li>
+<li>It is written <span class="math inline">\(\sigma\)</span>.</li>
+</ul>
+</section>
+</section>
+<section id="bivariate-statistics" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="bivariate-statistics"><span class="header-section-number">7.8</span> Bivariate statistics</h2>
+<section id="covariance" class="level3" data-number="7.8.1">
+<h3 data-number="7.8.1" class="anchored" data-anchor-id="covariance"><span class="header-section-number">7.8.1</span> Covariance</h3>
+<ul>
+<li>While measures of central tendency and variance/standard deviation provide useful summaries of a single variable, they don’t provide insights into relationships between variables.</li>
+<li>For that, we need bivariate statistics.</li>
+<li>Most common and straightforward is covariance.</li>
+</ul>
+<hr>
+<ul>
+<li>Colloquially, can think of covariance as measure of linear deviation from mean.</li>
+<li>When values from one variable are above their mean, are values from the other above or below their mean?</li>
+<li>Put another way, if I told you the value of x was high, would you expect values of y to be high or low?</li>
+<li>Formally, it is written as: <span class="math display">\[cov(X,Y)=E(X-E(X))(Y-E(Y))=E(XY)-E(X)E(Y)\]</span></li>
+<li>It is important to note that the magnitude is meaningless; only the direction is interpretable.</li>
+</ul>
+</section>
+<section id="correlation" class="level3" data-number="7.8.2">
+<h3 data-number="7.8.2" class="anchored" data-anchor-id="correlation"><span class="header-section-number">7.8.2</span> Correlation</h3>
+<ul>
+<li>Correlation is a normalized measure of covariance</li>
+<li>It is calculated as: <span class="math display">\[\rho_{X,Y}=\frac{cov(X,Y)}{\sigma_X \sigma_Y}\]</span></li>
+<li>It varies between -1 and 1.</li>
+<li>What is correlation of two independent variables?</li>
+</ul>
+</section>
+</section>
+<section id="regression" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="regression"><span class="header-section-number">7.9</span> Regression</h2>
+<section id="ordinary-least-squares" class="level3" data-number="7.9.1">
+<h3 data-number="7.9.1" class="anchored" data-anchor-id="ordinary-least-squares"><span class="header-section-number">7.9.1</span> Ordinary least squares</h3>
+<ul>
+<li>Ordinary least squares regression (OLS) is probably the most widely-used model in political science.</li>
+<li>It is all about drawing a line through data.</li>
+<li>This allows us to evaluate the relationship (the association) between <span class="math inline">\(x\)</span> on <span class="math inline">\(y\)</span>.</li>
+<li>The dependent variable, <span class="math inline">\(y\)</span>, must be continuous, generally speaking.</li>
+<li>The main question is which line to draw.</li>
+</ul>
+<hr>
+<p>Line and equation (<span class="math inline">\(\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_{i}\)</span>) on board</p>
+</section>
+<section id="residuals" class="level3" data-number="7.9.2">
+<h3 data-number="7.9.2" class="anchored" data-anchor-id="residuals"><span class="header-section-number">7.9.2</span> Residuals</h3>
+<ul>
+<li>In basically any set of data, no line can pass through every point (observation).</li>
+<li>We will always have make some error in predicting values.</li>
+<li>The error between the line and some point is referred to as the residual.</li>
+<li>If we refer to our predicted value as <span class="math inline">\(\hat{y}\)</span>, then we can calculate the residual for each observation with the following equation: <span class="math display">\[e_i = y_i - \hat{y}_i\]</span></li>
+</ul>
+</section>
+<section id="finding-the-right-line" class="level3" data-number="7.9.3">
+<h3 data-number="7.9.3" class="anchored" data-anchor-id="finding-the-right-line"><span class="header-section-number">7.9.3</span> Finding the right line</h3>
+<ul>
+<li>OLS determines the “best” line by minimizing the sum of squared residuals.</li>
+<li>Plug in all the values for the slope amd intercept and calculate the sum of squared residuals for these infinity combinations.</li>
+<li>That is a lot of work.</li>
+<li>The best solution turns out to be calculus.</li>
+<li>We want to minimize the sum of squared residuals with respect to our <span class="math inline">\(\beta\)</span>’s.</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
