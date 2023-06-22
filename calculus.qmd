@@ -439,7 +439,9 @@ $$\int x^2 \text{ } dx$$ $$\int 3x^2\text{ } dx$$ $$\int x\text{ } dx$$ $$\int 3
 
 **Practice --- definite integrals**
 
-$$\displaystyle\int_{1}^{7} x^2 \text{ } dx$$ $$\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$$ $$\int_7^7 x\text{ } dx$$ $$\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$$ $$\int_{1}^{e} \dfrac{2}{x}\text{ }dx$$ \### Integration by parts
+$$\displaystyle\int_{1}^{7} x^2 \text{ } dx$$ $$\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$$ $$\int_7^7 x\text{ } dx$$ $$\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$$ $$\int_{1}^{e} \dfrac{2}{x}\text{ }dx$$ 
+
+### Integration by parts
 
 -   What if we want to integrate the product of two functions? How to evaluate $\displaystyle\int [f(x)g(x)]dx$?
 -   There's a formula for that: integration by parts.
