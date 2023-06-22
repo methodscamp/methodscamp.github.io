@@ -1,6 +1,8 @@
-# Wrap up
+# Wrap u
 
-## Required methods courses
+## Methods at UTT
+
+### Required methods courses
 
 -   Scope and Methods of Political Science
     -   Statistics I (statistics/linear regression)
@@ -8,7 +10,7 @@
 -   Statistics III (Maximum likelihood estimation)
     -   Only required if your major field is methods
 
-## Other methods courses
+### Other methods courses
 
 -   **Statistics/econometrics:**
     -   Bayesian Statistics
@@ -17,7 +19,7 @@
     -   Time Series and Panel Data
     -   Panel and Multilevel Analysis
 
-## More courses
+### More courses
 
 -   **Formal Theory**
     -   Intro to Formal Political Analysis
@@ -30,7 +32,7 @@
     -   Network Analysis
     -   Seminar in Field Experiments
 
-## Other departments at UT
+### Other departments at UT
 
 You can also take courses through the Economics, Mathematics, or Statistics (Statistics and Data Science) departments.
 
@@ -40,7 +42,7 @@ Software and Topic Short Courses - R, Python, Stata, etc.
 
 -   More info [here](https://stat.utexas.edu/training/software-short-courses).
 
-## Other resources
+### Other resources
 
 Summer programs at UT:
 
