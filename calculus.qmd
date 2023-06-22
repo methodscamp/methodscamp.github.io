@@ -151,8 +151,6 @@ $$\frac{d^2(x^4)}{dx^2}=f''(x^4)$$ - First, we take the first derivative: $$f'(x
 
 Take the second derivative of the following functions: $$x^5$$ $$6x^2$$ $$4 ln(x)$$ $$3x$$ $$4x^{3/2}$$
 
-# Calculus 2
-
 ## Differentiable and Continuous Functions
 
 -   Informally: A function is continuous at a point if its graph has no holes or breaks at that point
@@ -329,8 +327,6 @@ What is $\displaystyle\frac{\partial_y}{\partial_z}?$
 Take the partial derivative with respect to x and to y of the following functions. What would the notation for each look like?
 
 $$3xy-x$$ $$ln(xy)$$ $$x^3+y^3+x^4y^4$$ $$e^{xy}$$
-
-# Calculus 3
 
 ## Integrals
 
