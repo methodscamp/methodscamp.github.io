@@ -330,3 +330,135 @@ Take the partial derivative with respect to x and to y of the following function
 
 $$3xy-x$$ $$ln(xy)$$ $$x^3+y^3+x^4y^4$$ $$e^{xy}$$
 
+# Calculus 3
+
+## Integrals
+
+### Area under a curve
+
+Often we want to find the area under a curve. - Net effect of change - Cumulative density functions (CDFs) - Expected values and utilities
+
+Sometimes this is easy. What's the area under the curve between $x=-1$ and $x=1$ for this function? $$f(x) = 
+\begin{cases}
+\frac{1}{3} & \text{for } x \in [0, 3] \\
+0 & \text{otherwise}
+\end{cases}$$
+
+Hint: We can draw this and look at the graph. Remember $Area = \ell*w$
+
+------------------------------------------------------------------------
+
+Sometimes (usually) finding the area under a curve is harder. But this is basically the question behind integration.
+
+### Integrals as summation
+
+You're familiar with summation notation.\
+$$\displaystyle\sum_{i=1}^{n} i$$
+
+But this only works when we have discrete values to add. When we need to add continuously, we have to use something else. Specifically, integrals.
+
+### Definite integrals
+
+Let's say we have a function $$ y = x^2 $$ And we want to find the area under the curve from $x=0$ to $x=1$. To find the area we're interested in here, we can use the definite integral.
+
+Generally speaking, the notation looks like this:\
+$$\displaystyle\int_{x=a}^{b} f(x),dx$$
+
+Here $a$ is the lower limit of integration, $b$ is the upper limit of integration, our function $f(x)$ is our integrand, and $x$ is our variable of integration.
+
+------------------------------------------------------------------------
+
+For our question, we're looking for $$\displaystyle\int_{x=0}^{1} f(x) dx$$
+
+Which will give us a real number denoting the area under the curve of our function ($y=x^2$) between $x=0$ and $x=1$.
+
+------------------------------------------------------------------------
+
+If $f$ is continuous on $[a,b]$ or bounded on $[a,b]$ with a finite number of discontinuities, then $f$ is integrable on $[a,b]$.
+
+### Indefinite integrals
+
+The *indefinite* integral, or *anti-derivative*, $F(x)$ is the inverse of the function $f'(x)$. $$F(x)= \displaystyle\int f(x) \text{ } dx$$ This means if you take the derivative of $F(x)$, you wind up back at $f(x)$. $$F' = f \text{ or } \displaystyle\frac{dF(x)}{dx} = f(x)$$
+
+This process is called anti-differentiation, or indefinite integration.
+
+------------------------------------------------------------------------
+
+While the definite integral gives us a real number (the total area under a curve), the indefinite integral gives us a function.
+
+We need the concept of indefinite integrals to help us solve definite integrals.
+
+### Solving definite integrals
+
+$$\displaystyle\int_{a}^{b} f(x) \text{ } dx = F(b)-F(a) = F(x)\bigg|_{a}^{b}$$ \### Constant of integraton
+
+A quick note:
+
+$C$ in the following slides is the called the "constant of integration." We need to add it when we define *all* antiderivatives (integrals) of a function because the anti-derivative "undoes" the derivative.
+
+Remember that the derivative of any constant is zero. So if we find an integral $F(x)$ whose derivative is $f(x)$, adding (or subtracting) any constant will give us another integral $F(x)+C$ whose derivative is *also* $f(x)$.
+
+### Rules of integration
+
+$$ \displaystyle\int_{a}^{a}f(x) \text{ }dx = 0$$
+
+$$\displaystyle\int_{a}^{b} f(x) \text{ } dx = -\displaystyle\int_{b}^{a}f(x)dx$$
+
+$$\int a \text{ }dx = ax + C \text { where $a$ is a constant}$$
+
+$$\displaystyle\int af(x)dx = a\displaystyle\int f(x) \text{ }dx \text{ where $a$ is a constant}$$
+
+### More rules
+
+$$\int (f(x) + g(x)) \text{ } dx = \int f(x) dx + \int g(x)dx$$
+
+$$\int x^n dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1$$
+
+$$\int x^{-1}dx = \ln |x| + C$$
+
+### Solving the problem
+
+Remember our function $y=x^2$ and our goal of finding the area under the curve from $x=0$ to $x=1$.
+
+-   Find the indefinite integral, $F(x)$
+    -   $\displaystyle\int x^2 \text{ } dx$
+    -   $\displaystyle\frac{x^3}{3}+C$
+
+------------------------------------------------------------------------
+
+-   Evaluate at our lowest and highest points, $F(0)$ and $F(1)$.
+    -   $F(0) = 0$
+    -   $F(1) = \displaystyle\frac{1}{3}$
+    -   Technically $0 + C$ and $\displaystyle\frac{1}{3} + C$, but the C's will fall out in the next step
+-   Calculate $F(1) - F(0)$
+    -   $\displaystyle\frac{1}{3} - 0 = \displaystyle\frac{1}{3}$
+
+------------------------------------------------------------------------
+
+**Practice --- indefinite integrals**
+
+$$\int x^2 \text{ } dx$$ $$\int 3x^2\text{ } dx$$ $$\int x\text{ } dx$$ $$\int 3x^2 + 2x - 7\text{ }dx$$ $$\int \dfrac{2}{x}\text{ }dx$$
+
+------------------------------------------------------------------------
+
+**Practice --- definite integrals**
+
+$$\displaystyle\int_{1}^{7} x^2 \text{ } dx$$ $$\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$$ $$\int_7^7 x\text{ } dx$$ $$\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$$ $$\int_{1}^{e} \dfrac{2}{x}\text{ }dx$$ \### Integration by parts
+
+-   What if we want to integrate the product of two functions? How to evaluate $\displaystyle\int [f(x)g(x)]dx$?
+-   There's a formula for that: integration by parts.
+-   We can derive the formula from the product rule for derivatives, which you already know.
+
+------------------------------------------------------------------------
+
+$$\begin{aligned}
+        \dfrac{d(f(x)g(x))}{d(x)} = f^{'}(x)g(x) + g^{'}(x)f(x) \\
+        \displaystyle\int \dfrac{d(f(x)g(x))}{d(x)} dx= \displaystyle\int [f^{'}(x)g(x) + g^{'}(x)f(x)]dx\\
+        f(x)g(x) = \displaystyle\int f^{'}(x)g(x)dx + \displaystyle\int g^{'}(x)f(x)dx
+\end{aligned}$$
+
+------------------------------------------------------------------------
+
+-   Note that we can't just plug in our two original functions into this formula. We have some work to do first.
+
+-   Board example: $$\int x \sqrt{x}dx$$
