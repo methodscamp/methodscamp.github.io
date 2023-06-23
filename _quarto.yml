@@ -9,7 +9,7 @@ book:
   date: "08/10/2023"
   chapters:
     - index.qmd
-    - R.qmd
+    - r_rstudio.qmd
     - tidyverse1.qmd
     - matrices.qmd
     - tidyverse2.qmd

@@ -1,0 +1,13 @@
+# R and RStudio
+
+## Installing R and RStudio
+
+TODO: installation, good options for RStudio.
+
+## Setting up for Methods Camp
+
+TODO: how to download the materials and open the RStudio project (include discussion on .zip files). How to make sure that everything's fine
+
+## Short intro to R
+
+TODO: objects and common functions. Explain how to run Quarto code blocks, and how to render a document to html.
