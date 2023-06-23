@@ -22,7 +22,7 @@ book:
     - references.qmd
   downloads: pdf
   site-url: https://methodscamp.github.io/
-
+  repo-url: https://github.com/methodscamp/methodscamp.github.io
 bibliography: references.bib
 
 format:
