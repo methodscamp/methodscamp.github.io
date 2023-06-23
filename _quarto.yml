@@ -23,6 +23,7 @@ book:
   downloads: pdf
   site-url: https://methodscamp.github.io/
   repo-url: https://github.com/methodscamp/methodscamp.github.io
+  search: true
 bibliography: references.bib
 
 format:
