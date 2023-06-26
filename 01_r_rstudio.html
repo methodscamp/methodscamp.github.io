@@ -216,7 +216,20 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="installing-r-and-rstudio" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="installing-r-and-rstudio"><span class="header-section-number">1.1</span> Installing R and RStudio</h2>
-<p>TODO: installation, good options for RStudio.</p>
+<p><a href="https://cran.r-project.org/">R</a> is a programming language optimized for statistics and data analysis. Most people use R from <a href="https://rstudio.com/">RStudio</a>, a graphical user interface (GUI) that includes a file pane, a graphics pane, and other goodies. Both R and RStudio are open source, i.e., free as in beer and free as in freedom!</p>
+<p>Your first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date—if not, follow the instructions below):</p>
+<ol type="1">
+<li><p>Download and install R from <a href="https://cran.r-project.org/">the official website, CRAN</a>. Click on “Download R for &lt;Windows/Mac&gt;” and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2 Macs and Intel for older Macs).</p></li>
+<li><p>Download and install RStudio from <a href="https://posit.co/download/rstudio-desktop/">the official website</a>. Scroll down and select the installer for your operating system.</p></li>
+</ol>
+<p>After these two steps, you can open RStudio in your system, as you would with any program. You should see something like this:</p>
+<p><img src="assets/images/rstudio_first.png" class="img-fluid"></p>
+<p>That’s it for the installation! We also <em>strongly</em> recommend that you change a couple of RStudio’s default settings:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<ul>
+<li><p>Tools &gt; Global Options &gt; General &gt; Uncheck “Restore .RData into workspace at startup”</p></li>
+<li><p>Tools &gt; Global Options &gt; General &gt; Sace workspace to .RData on Exit &gt; Select “Never”</p></li>
+<li><p>Tools &gt; Appearance to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes…</p></li>
+</ul>
 </section>
 <section id="setting-up-for-methods-camp" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="setting-up-for-methods-camp"><span class="header-section-number">1.2</span> Setting up for Methods Camp</h2>
@@ -227,6 +240,12 @@ ul.task-list li input[type="checkbox"] {
 <p>TODO: objects and common functions. Explain how to run Quarto code blocks, and how to render a document to html.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>The idea behind these settings is to start R afresh with each new session. No lingering objects avoids misunderstandings and helps with reproducibility!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
