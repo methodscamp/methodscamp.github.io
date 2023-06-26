@@ -2,7 +2,27 @@
 
 ## Installing R and RStudio
 
-TODO: installation, good options for RStudio.
+[R](https://cran.r-project.org/) is a programming language optimized for statistics and data analysis. Most people use R from [RStudio](https://rstudio.com/), a graphical user interface (GUI) that includes a file pane, a graphics pane, and other goodies. Both R and RStudio are open source, i.e., free as in beer and free as in freedom!
+
+Your first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date---if not, follow the instructions below):
+
+1. Download and install R from [the official website, CRAN](https://cran.r-project.org/). Click on "Download R for \<Windows/Mac\>" and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2 Macs and Intel for older Macs).
+
+2. Download and install RStudio from [the official website](https://posit.co/download/rstudio-desktop/). Scroll down and select the installer for your operating system.
+
+After these two steps, you can open RStudio in your system, as you would with any program. You should see something like this:
+
+![](assets/images/rstudio_first.png)
+
+That's it for the installation! We also *strongly* recommend that you change a couple of RStudio's default settings:[^settings]
+
+- Tools > Global Options > General > Uncheck "Restore .RData into workspace at startup"
+
+- Tools > Global Options > General > Sace workspace to .RData on Exit > Select "Never"
+
+- Tools > Appearance to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes...
+
+[^settings]: The idea behind these settings is to start R afresh with each new session. No lingering objects avoids misunderstandings and helps with reproducibility!
 
 ## Setting up for Methods Camp
 
