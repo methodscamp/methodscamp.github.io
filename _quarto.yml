@@ -9,16 +9,16 @@ book:
   date: "08/10/2023"
   chapters:
     - index.qmd
-    - r_rstudio.qmd
-    - tidyverse1.qmd
-    - matrices.qmd
-    - tidyverse2.qmd
-    - functions.qmd
-    - calculus.qmd
-    - probability.qmd
-    - simulations.qmd
-    - textanalysis.qmd
-    - wrapup.qmd
+    - 01_r_rstudio.qmd
+    - 02_tidyverse1.qmd
+    - 03_matrices.qmd
+    - 04_tidyverse2.qmd
+    - 05_functions.qmd
+    - 06_calculus.qmd
+    - 07_probability.qmd
+    - 08_simulations.qmd
+    - 09_textanalysis.qmd
+    - 10_wrapup.qmd
     - references.qmd
   downloads: pdf
   site-url: https://methodscamp.github.io/
