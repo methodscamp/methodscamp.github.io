@@ -74,7 +74,7 @@ $$y=ax^n + bx^{n-1} + ... + c$$
 
 ### Exponential
 
-$$y = ab^{x}$$, or $$f(x)=ab^x$$
+$$y = ab^{x}$$ or $$f(x)=ab^x$$
 
 -   Here our independent variable, or input ($x$), is the exponent.
 
