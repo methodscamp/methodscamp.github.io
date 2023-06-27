@@ -29,7 +29,11 @@ When graphed, we can't draw vertical line through a function. Why not?
 
 -   We can easily make a function that describes a line.
 
-$$y=mx+b$$ - $m$ is the slope (for every one unit increase in $x$, $y$ increases $m$ units). - $b$ is the y-intercept: the value of $y$ when $x=0$. - More generally, $y=a+bx$ - $a$ is the intercept and $b$ is the slope.
+$$y=mx+b$$ - $m$ is the slope (for every one unit increase in $x$, $y$ increases $m$ units). 
+
+- $b$ is the y-intercept: the value of $y$ when $x=0$.
+
+- More generally, $y=a+bx$ - $a$ is the intercept and $b$ is the slope.
 
 ### Quadratic
 
@@ -67,7 +71,7 @@ $$y=ax^n + bx^{n-1} + ... + c$$ - These functions have (maximum) $n-1$ changes i
 
 ### Exponential
 
-$$y = ab^{x}$, or $f(x)=ab^x$$
+$$y = ab^{x}$$, or $$f(x)=ab^x$$
 
 -   Here our independent variable, or input ($x$), is the exponent.
 
