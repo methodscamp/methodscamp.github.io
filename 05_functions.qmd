@@ -67,7 +67,10 @@ cub_curve
 
 ### Polynomial
 
-$$y=ax^n + bx^{n-1} + ... + c$$ - These functions have (maximum) $n-1$ changes in direction (turning points). - They also have (maximum) $n$ x-intercepts. - They can be made arbitrarily precise.
+$$y=ax^n + bx^{n-1} + ... + c$$ 
+- These functions have (maximum) $n-1$ changes in direction (turning points). 
+- They also have (maximum) $n$ x-intercepts. 
+- They can be made arbitrarily precise.
 
 ### Exponential
 
@@ -109,7 +112,9 @@ $$\log_x 1 = 0$$
 
 $$log_{x}x=1$$
 
-$$m^{\log_m(a)} = a$$ \### Natural logarithms
+$$m^{\log_m(a)} = a$$ 
+
+### Natural logarithms
 
 -   We most often use natural logarithms.
 -   This means log$_e(x)$, often written ln$(x)$.
