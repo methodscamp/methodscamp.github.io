@@ -26,7 +26,7 @@ That's it for the installation! We also *strongly* recommend that you change a c
 
 ## Setting up for Methods Camp
 
-TODO: how to download the materials and open the RStudio project (include discussion on .zip files). How to make sure that everything's fine
+TODO: how to download the materials and open the RStudio project (include discussion on .zip files). How to make sure that everything's fine (see top-right for RStudio project).
 
 ## Short intro to R
 
