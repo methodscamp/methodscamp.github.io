@@ -256,7 +256,7 @@ L =
 When multiplying matrices, *order matters*.
 :::
 
-Why can't we multiply in the opposite order?
+-   Why can't we multiply in the opposite order?
 
 ### Multiplication steps
 
@@ -351,7 +351,7 @@ $$
 
     -   Associative: $(A \pm B) \pm C = A \pm (B \pm C)$
 
-    -   Communicative $A \pm B = B \pm A$
+    -   Communicative: $A \pm B = B \pm A$
 
 -   Multiplication:
 
@@ -362,3 +362,33 @@ $$
     -   $A(B+C) = AB + AC$
 
     -   $(A+B)C = AC + BC$
+
+### Special matrices
+
+Square matrix:
+
+-   The **diagonal** of a square matrix is a set of numbers consisting of the elements on the line from the upper-left-hand to the lower-right-hand corner of the matrix. Only a square matrix has a diagonal.
+
+-   The **trace** of a matrix is simply the sum of the diagonal elements of the matrix. So, then, a matrix must be square to have a trace.
+
+Diagonal matrix:
+
+-   In a **diagonal matrix**, all of the elements of the matrix that are not on the diagonal are equal to zero.
+
+Scalar matrix:
+
+-   A **scalar matrix** is a diagonal matrix where the diagonal elements are all equal to each other. In other words, we're really only concerned with one scalar (or element) held in the diagonal.
+
+Identity matrix:
+
+-   The **identity matrix** is a scalar matrix with all of the diagonal elements equal to one.
+
+-   All of the off-diagonal elements are equal to zero.
+
+-   The capital letter I is reserved for the identity matrix.
+
+### Transpose
+
+![](images/transpose.png)
+
+### Inverse
