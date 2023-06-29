@@ -5,6 +5,7 @@
 ### Scalars
 
 -   One number (12, for example) is referred to as a scalar.
+
 -   Each scalar in a matrix is an *element* of that matrix.
 
 $$\begin{bmatrix}
@@ -18,17 +19,21 @@ This is also called a 1 x 1 ("one by one") matrix.
 ### Vectors
 
 -   We can put several scalars together to make a vector.
+
 -   Here is an example: $$\begin{bmatrix}
         12 \\
         14 \\
         15
         \end{bmatrix}
         = b$$
+
 -   Since this is a column of numbers, we cleverly refer to it as a *column vector*.
+
 -   Here is another example of a vector: $$\begin{bmatrix}
     12 & 14 & 15
     \end{bmatrix}
     = d$$
+
 -   This, in contrast, is called a *row vector*.
 
 ## Operators
@@ -71,6 +76,7 @@ $$\begin{bmatrix}
 = A$$
 
 -   The number of rows and columns of a matrix constitute the dimensions of the matrix.
+
 -   The first number ("r") is the number of rows and the second number ("c" here) is the number of columns in the matrix.
 
 ::: callout-important
@@ -97,21 +103,23 @@ Find a way to remember "r x c" *permanently*. The order of the dimensions never 
 
 -   Thus $b_{23}$ refers to the second unit down and third across.
 
-::: {.callout-tip}
+::: callout-tip
 ## Reminder
 
-When trying to identify a specific element, the first subscript is the element’s row and the second subscript is the element’s column (*always* in that order).
+When trying to identify a specific element, the first subscript is the element's row and the second subscript is the element's column (*always* in that order).
 :::
 
 ## Matrix operations
 
 ### Addition and subtraction
 
--   Addition and subtraction are logical.
+-   Addition and subtraction are straightforward operations.
 
--   Matrices have *exactly* the same dimensions for these operations.
+-   Matrices must have *exactly* the same dimensions for both of these operations.
 
--   Add or subtract each element with the corresponding element from the other matrix:
+-   We add or subtract each element with the corresponding element from the other matrix.
+
+-   This is expressed as follows:
 
 $$A \pm B=C$$
 
@@ -171,8 +179,13 @@ Calculate $A-B$
 
 ### Scalar multiplication
 
--   Recall that a scalar is a single number.
--   Multiply each value in the matrix by the scalar. $$A = 
+-   Scalar multiplication is very intuitive.
+
+-   As we know, a scalar is a single number, or a 1 x 1 matrix.
+
+-   We multiply each value in the matrix by the scalar to perform this operation.
+
+-   This is expressed as follows: $$A = 
     \begin{bmatrix}
     a_{11} & a_{12} & a_{13}\\
     a_{21} & a_{22} & a_{23}\\
@@ -196,19 +209,21 @@ Calculate $A-B$
     7 & 1 & 6
     \end{bmatrix}$$
 
-Find $2\times A$ and $-3 \times B$
+Calculate $2\times A$ and $-3 \times B$
 
 ### Matrix multiplication
 
--   Requirement: the two matrices must be *conformable*.
+-   Two matrices must be *conformable* for them to be multiplied together.
 
--   This means that the number of columns in the first matrix\
-    equals the number of rows in the second.
+-   This means that the number of columns in the first matrix equals the number of rows in the second.
 
 -   When multiplying $A \times B$, if $A$ is $m \times n$, $B$ must have $n$ rows.
 
--   The resulting matrix will have the number of rows in the first,\
-    and the number of columns in the second.
+::: callout-important
+The conformability requirement *never* changes. Before multiplying anything, check to make sure the matrices are indeed conformable.
+:::
+
+-   The resulting matrix will have the same number of rows as the first matrix and the number of columns in the second.
 
 -   For example, if $A$ is $i \times k$ and $B$ is $k \times j$, then $A \times B$ will be $i \times j$.
 
@@ -233,7 +248,10 @@ L =
 6 & 5 & -1\\
 1 & 4 & 3 
 \end{bmatrix}
-\end{aligned}$$ Why can't we multiply in the opposite order?
+\end{aligned}$$ 
+
+
+Why can't we multiply in the opposite order?
 
 ------------------------------------------------------------------------
 
