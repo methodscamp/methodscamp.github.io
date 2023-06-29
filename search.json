@@ -60,14 +60,14 @@
     "href": "03_matrices.html#introduction",
     "title": "3  Matrices",
     "section": "3.1 Introduction",
-    "text": "3.1 Introduction\n\n3.1.1 Scalars\n\nOne number (12, for example) is referred to as a scalar.\n\n\\[\\begin{bmatrix}\n12\n\\end{bmatrix}\\]\n\n\n\n\n\n\nNote\n\n\n\nThis is also called a 1 x 1 (“one by one”) matrix.\n\n\n\n\n3.1.2 Vectors\n\nWe can put several scalars together to make a vector.\nAn example is: \\[\\begin{bmatrix}\n    12 \\\\\n    14 \\\\\n    15\n    \\end{bmatrix}\n    = b\\]\nSince this is a column of numbers, we cleverly refer to it as a column vector.\nAnother example is: \\[\\begin{bmatrix}\n12 & 14 & 15\n\\end{bmatrix}\n= d\\]\nThis is called a row vector."
+    "text": "3.1 Introduction\n\n3.1.1 Scalars\n\nOne number (12, for example) is referred to as a scalar.\nEach scalar in a matrix is an element of that matrix.\n\n\\[\\begin{bmatrix}\n12\n\\end{bmatrix}\\]\n\n\n\n\n\n\nNote\n\n\n\nThis is also called a 1 x 1 (“one by one”) matrix.\n\n\n\n\n3.1.2 Vectors\n\nWe can put several scalars together to make a vector.\nHere is an example: \\[\\begin{bmatrix}\n    12 \\\\\n    14 \\\\\n    15\n    \\end{bmatrix}\n    = b\\]\nSince this is a column of numbers, we cleverly refer to it as a column vector.\nHere is another example of a vector: \\[\\begin{bmatrix}\n12 & 14 & 15\n\\end{bmatrix}\n= d\\]\nThis, in contrast, is called a row vector."
   },
   {
     "objectID": "03_matrices.html#operators",
     "href": "03_matrices.html#operators",
     "title": "3  Matrices",
     "section": "3.2 Operators",
-    "text": "3.2 Operators\n\n3.2.1 Summation\n\nRecall the summation operator \\(\\sum\\), which lets us perform an operation on a sequence of numbers (often but not always a vector)\n\n\\[x = \\begin{bmatrix}\n12 & 7 & -2 & 0 & 1\n\\end{bmatrix}\\]\n\nWe can then calculate… \\[\\sum_{i=1}^3 x_i\\]\nWhich is… \\[12+7+-2=17\\]\n\n\n\n3.2.2 Product\n\nRecall the product operator \\(\\prod\\), which can also perform operations over a sequence of numbers\n\n\\[z = \\begin{bmatrix}\n5 & -3 & 5 & 1\n\\end{bmatrix}\\]\n\nWe can then calculate… \\[\\prod_{i=1}^4 z_i\\]\nWhich multiplies out to… \\[5*-3*5*1=-75\\]"
+    "text": "3.2 Operators\n\n3.2.1 Summation\n\nThe summation operator, \\(\\sum\\), lets us perform an operation on a sequence of numbers, which is often but not always a vector.\n\n\\[x = \\begin{bmatrix}\n12 & 7 & -2 & 0 & 1\n\\end{bmatrix}\\]\n\nWe can then calculate the sum of the first three elements of the vector, which is expressed as follows: \\[\\sum_{i=1}^3 x_i\\]\nThen, we do the following math: \\[12+7+-2=17\\]\n\n\n\n3.2.2 Product\n\nThe product operator, \\(\\prod\\), can also perform operations over a sequence of elements in a vector.\n\n\\[z = \\begin{bmatrix}\n5 & -3 & 5 & 1\n\\end{bmatrix}\\]\n\nWe can then calculate the calculate the product of the four elements in the vector, which is expressed as follows: \\[\\prod_{i=1}^4 z_i\\]\nThen, we do the following math: \\[5*-3*5*1=-75\\]"
   },
   {
     "objectID": "03_matrices.html#matrices",
