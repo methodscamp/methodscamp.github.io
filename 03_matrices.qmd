@@ -248,20 +248,51 @@ L =
 6 & 5 & -1\\
 1 & 4 & 3 
 \end{bmatrix}
-\end{aligned}$$ 
-:::{.callout-warning}
+\end{aligned}$$
+
+::: callout-warning
 ## Warning
 
-When multiplying matrices, *order matters*. 
+When multiplying matrices, *order matters*.
 :::
 
 Why can't we multiply in the opposite order?
 
-------------------------------------------------------------------------
+### Multiplication steps
 
--   Multiply each row by each column, summing up each pair of multiplied terms
+-   Multiply each row by each column, summing up each pair of multiplied terms.
+
+::: callout-note
+This is sometimes to referred to as the "dot product," where we multiply matching members, then sum up.
+:::
+
 -   The element in position $ij$ is the sum of the products of elements in the $i$th row of the first matrix ($A$) and the corresponding elements in the $j$th column of the second matrix ($B$). $$c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$$
--   Let's do some examples on the board.
+
+### An example
+
+-   Suppose a company manufactures two kinds of furniture: chairs and sofas.
+
+    -   A chair costs `$`100 for wood, `$`270 for cloth, and `$`130 for feathers.
+
+    -   Each sofa costs `$`150 for wood, `$`420 for cloth, and `$`195 for feathers.
+
+|          | Chair | Sofa |
+|----------|-------|------|
+| Wood     | 100   | 150  |
+| Cloth    | 270   | 420  |
+| Feathers | 130   | 195  |
+
+-   The same information about unit cost ($C$) can be presented as a matrix.
+
+$$C = \begin{bmatrix}
+100 & 150\\
+270 & 420\\
+130 & 195
+\end{bmatrix}$$
+
+::: callout-note
+Note that each of the three rows of this 3 x 2 matrix represents a material (wood, cloth, or feathers), and each of the two columns represents a product (chair or coach). The elements are the unit cost (in USD).
+:::
 
 ### Properties
 
