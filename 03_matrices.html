@@ -245,15 +245,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#scalar-multiplication" id="toc-scalar-multiplication" class="nav-link" data-scroll-target="#scalar-multiplication"><span class="header-section-number">3.4.2</span> Scalar multiplication</a></li>
   <li><a href="#matrix-multiplication" id="toc-matrix-multiplication" class="nav-link" data-scroll-target="#matrix-multiplication"><span class="header-section-number">3.4.3</span> Matrix multiplication</a></li>
   <li><a href="#multiplication-steps" id="toc-multiplication-steps" class="nav-link" data-scroll-target="#multiplication-steps"><span class="header-section-number">3.4.4</span> Multiplication steps</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">3.4.5</span> Example</a></li>
-  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties"><span class="header-section-number">3.4.6</span> Properties</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties"><span class="header-section-number">3.4.5</span> Properties</a></li>
   </ul></li>
   <li><a href="#special-matrices" id="toc-special-matrices" class="nav-link" data-scroll-target="#special-matrices"><span class="header-section-number">3.5</span> Special matrices</a></li>
   <li><a href="#transpose" id="toc-transpose" class="nav-link" data-scroll-target="#transpose"><span class="header-section-number">3.6</span> Transpose</a></li>
-  <li><a href="#inverse" id="toc-inverse" class="nav-link" data-scroll-target="#inverse"><span class="header-section-number">3.7</span> Inverse</a>
-  <ul class="collapse">
-  <li><a href="#rstudio-example" id="toc-rstudio-example" class="nav-link" data-scroll-target="#rstudio-example"><span class="header-section-number">3.7.1</span> RStudio example</a></li>
-  </ul></li>
+  <li><a href="#inverse" id="toc-inverse" class="nav-link" data-scroll-target="#inverse"><span class="header-section-number">3.7</span> Inverse</a></li>
   </ul>
 </nav>
     </div>
@@ -581,9 +577,8 @@ Note
 <ul>
 <li>The element in position <span class="math inline">\(ij\)</span> is the sum of the products of elements in the <span class="math inline">\(i\)</span>th row of the first matrix (<span class="math inline">\(A\)</span>) and the corresponding elements in the <span class="math inline">\(j\)</span>th column of the second matrix (<span class="math inline">\(B\)</span>). <span class="math display">\[c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}\]</span></li>
 </ul>
-</section>
-<section id="example" class="level3" data-number="3.4.5">
-<h3 data-number="3.4.5" class="anchored" data-anchor-id="example"><span class="header-section-number">3.4.5</span> Example</h3>
+<section id="example" class="level4" data-number="3.4.4.1">
+<h4 data-number="3.4.4.1" class="anchored" data-anchor-id="example"><span class="header-section-number">3.4.4.1</span> Example</h4>
 <ul>
 <li><p>Suppose a company manufactures two kinds of furniture: chairs and sofas.</p>
 <ul>
@@ -700,8 +695,9 @@ Note
 </ul></li>
 </ul>
 </section>
-<section id="properties" class="level3" data-number="3.4.6">
-<h3 data-number="3.4.6" class="anchored" data-anchor-id="properties"><span class="header-section-number">3.4.6</span> Properties</h3>
+</section>
+<section id="properties" class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="properties"><span class="header-section-number">3.4.5</span> Properties</h3>
 <ul>
 <li><p>Addition and subtraction:</p>
 <ul>
@@ -770,11 +766,23 @@ Note
 </ul>
 <p><span class="math display">\[AA^{-1} = A^{-1}A = I\]</span></p>
 <ul>
-<li><p>Sometimes there is no inverse at all.</p></li>
-<li><p>For now, don’t worry about calculating the inverse of a matrix manually. This is the type of task we use RStudio for.</p></li>
+<li>Sometimes there is no inverse at all.</li>
 </ul>
-<section id="rstudio-example" class="level3" data-number="3.7.1">
-<h3 data-number="3.7.1" class="anchored" data-anchor-id="rstudio-example"><span class="header-section-number">3.7.1</span> RStudio example</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For now, don’t worry about calculating the inverse of a matrix manually. This is the type of task we use RStudio for.</p>
+</div>
+</div>
+<section id="example-1" class="level4" data-number="3.7.0.1">
+<h4 data-number="3.7.0.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">3.7.0.1</span> Example</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create 3 different vectors</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># using combine method.</span></span>
