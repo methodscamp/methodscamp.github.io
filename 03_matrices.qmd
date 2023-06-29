@@ -249,7 +249,11 @@ L =
 1 & 4 & 3 
 \end{bmatrix}
 \end{aligned}$$ 
+:::{.callout-warning}
+## Warning
 
+When multiplying matrices, *order matters*. 
+:::
 
 Why can't we multiply in the opposite order?
 
