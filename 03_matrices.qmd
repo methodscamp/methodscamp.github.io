@@ -5,6 +5,7 @@
 ### Scalars
 
 -   One number (12, for example) is referred to as a scalar.
+-   Each scalar in a matrix is an *element* of that matrix.
 
 $$\begin{bmatrix}
 12
@@ -17,44 +18,44 @@ This is also called a 1 x 1 ("one by one") matrix.
 ### Vectors
 
 -   We can put several scalars together to make a vector.
--   An example is: $$\begin{bmatrix}
+-   Here is an example: $$\begin{bmatrix}
         12 \\
         14 \\
         15
         \end{bmatrix}
         = b$$
--   Since this is a column of numbers, we cleverly refer to it as a column vector.
--   Another example is: $$\begin{bmatrix}
+-   Since this is a column of numbers, we cleverly refer to it as a *column vector*.
+-   Here is another example of a vector: $$\begin{bmatrix}
     12 & 14 & 15
     \end{bmatrix}
     = d$$
--   This is called a row vector.
+-   This, in contrast, is called a *row vector*.
 
 ## Operators
 
 ### Summation
 
--   Recall the summation operator $\sum$, which lets us perform an operation on a sequence of numbers (often but not always a vector)
+-   The summation operator, $\sum$, lets us perform an operation on a sequence of numbers, which is often but not always a vector.
 
 $$x = \begin{bmatrix}
 12 & 7 & -2 & 0 & 1
 \end{bmatrix}$$
 
--   We can then calculate... $$\sum_{i=1}^3 x_i$$
+-   We can then calculate the sum of the first three elements of the vector, which is expressed as follows: $$\sum_{i=1}^3 x_i$$
 
--   Which is... $$12+7+-2=17$$
+-   Then, we do the following math: $$12+7+-2=17$$
 
 ### Product
 
--   Recall the product operator $\prod$, which can also perform operations over a sequence of numbers
+-   The product operator, $\prod$, can also perform operations over a sequence of elements in a vector.
 
 $$z = \begin{bmatrix}
 5 & -3 & 5 & 1
 \end{bmatrix}$$
 
--   We can then calculate... $$\prod_{i=1}^4 z_i$$
+-   We can then calculate the calculate the product of the four elements in the vector, which is expressed as follows: $$\prod_{i=1}^4 z_i$$
 
--   Which multiplies out to... $$5*-3*5*1=-75$$
+-   Then, we do the following math: $$5*-3*5*1=-75$$
 
 ## Matrices
 
