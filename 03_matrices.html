@@ -250,7 +250,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#special-matrices" id="toc-special-matrices" class="nav-link" data-scroll-target="#special-matrices"><span class="header-section-number">3.5</span> Special matrices</a></li>
   <li><a href="#transpose" id="toc-transpose" class="nav-link" data-scroll-target="#transpose"><span class="header-section-number">3.6</span> Transpose</a></li>
-  <li><a href="#inverse" id="toc-inverse" class="nav-link" data-scroll-target="#inverse"><span class="header-section-number">3.7</span> Inverse</a></li>
+  <li><a href="#inverse" id="toc-inverse" class="nav-link" data-scroll-target="#inverse"><span class="header-section-number">3.7</span> Inverse</a>
+  <ul class="collapse">
+  <li><a href="#rstudio-example" id="toc-rstudio-example" class="nav-link" data-scroll-target="#rstudio-example"><span class="header-section-number">3.7.1</span> RStudio example</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -686,8 +689,7 @@ Note
 24,750 \\
 11,700
 \end{bmatrix}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <ul>
 <li><p>Multiplying the 3 x 2 Cost matrix (<span class="math inline">\(C\)</span>) times the 2 x 1 Quantity matrix (<span class="math inline">\(Q\)</span>) yields the 3 x 1 Expenditure matrix (<span class="math inline">\(E\)</span>).</p></li>
 <li><p>As a result of this matrix multiplication, we determine that this month the company will incur expenditures of:</p>
@@ -740,6 +742,21 @@ Note
 </section>
 <section id="transpose" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="transpose"><span class="header-section-number">3.6</span> Transpose</h2>
+<ul>
+<li><p>The transpose is the original matrix with the rows and the columns interchanged.</p></li>
+<li><p>The notation is either <span class="math inline">\(J'\)</span> (“J prime”) or <span class="math inline">\(J^T\)</span> (“J transpose”).</p></li>
+</ul>
+<p><span class="math display">\[J =
+\begin{bmatrix}
+4 &amp; 5\\
+3 &amp; 0\\
+7 &amp; -2
+\end{bmatrix}\]</span></p>
+<p><span class="math display">\[J' = J^T =
+\begin{bmatrix}
+4 &amp; 3 &amp; 7 \\
+5 &amp; 0 &amp; -2
+\end{bmatrix}\]</span></p>
 </section>
 <section id="inverse" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="inverse"><span class="header-section-number">3.7</span> Inverse</h2>
@@ -756,6 +773,8 @@ Note
 <li><p>Sometimes there is no inverse at all.</p></li>
 <li><p>For now, don’t worry about calculating the inverse of a matrix manually. This is the type of task we use RStudio for.</p></li>
 </ul>
+<section id="rstudio-example" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="rstudio-example"><span class="header-section-number">3.7.1</span> RStudio example</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create 3 different vectors</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># using combine method.</span></span>
@@ -790,6 +809,7 @@ a3    5    2    4</code></pre>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
