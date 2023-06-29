@@ -268,7 +268,7 @@ This is sometimes to referred to as the "dot product," where we multiply matchin
 
 -   The element in position $ij$ is the sum of the products of elements in the $i$th row of the first matrix ($A$) and the corresponding elements in the $j$th column of the second matrix ($B$). $$c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$$
 
-### An example
+### Example
 
 -   Suppose a company manufactures two kinds of furniture: chairs and sofas.
 
@@ -293,6 +293,57 @@ $$C = \begin{bmatrix}
 ::: callout-note
 Note that each of the three rows of this 3 x 2 matrix represents a material (wood, cloth, or feathers), and each of the two columns represents a product (chair or coach). The elements are the unit cost (in USD).
 :::
+
+------------------------------------------------------------------------
+
+-   Now, suppose that the company will produce 45 chairs and 30 sofas this month.
+
+-   This production quantity can be represented in the following table, and also as a 2 x 1 matrix ($Q$).
+
+| Product | Quantity |
+|---------|----------|
+| Chair   | 45       |
+| Sofa    | 30       |
+
+$$Q = \begin{bmatrix}
+45 \\
+30 
+\end{bmatrix}$$
+
+-   The "total expenditure" is equal to the "unit cost" times the "production quantity" (the number of units).
+
+-   The total expenditure ($E$) for each material this month is calculated by multiplying these two matrices.
+
+$$\begin{aligned} E = CQ =
+\begin{bmatrix}
+100 & 150\\
+270 & 420\\
+130 & 195
+\end{bmatrix}
+\begin{bmatrix}
+45 \\
+30 
+\end{bmatrix} =
+\begin{bmatrix}
+(100)(45) + (150)(30) \\
+(270)(45) + (420)(30) \\
+(130)(45) + (195)(30)
+\end{bmatrix} =
+\begin{bmatrix}
+9,000 \\
+24,750 \\
+11,700
+\end{bmatrix}
+\end{aligned}
+$$
+
+-   Multiplying the 3 x 2 Cost matrix ($C$) times the 2 x 1 Quantity matrix ($Q$) yields the 3 x 1 Expenditure matrix ($E$).
+
+-   As a result of this matrix multiplication, we determine that this month the company will incur expenditures of:
+
+    -   \$9,000 for wood
+    -   \$24,750 for cloth
+    -   \$11,700 for feathers.
 
 ### Properties
 
