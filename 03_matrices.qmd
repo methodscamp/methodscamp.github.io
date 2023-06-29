@@ -343,7 +343,7 @@ $$\begin{aligned} E = CQ =
     -   \$24,750 for cloth
     -   \$11,700 for feathers.
 
-### Properties
+## Properties
 
 -   Addition and subtraction:
 
