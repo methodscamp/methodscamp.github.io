@@ -70,13 +70,16 @@ $$\begin{bmatrix}
 \end{bmatrix}
 = A$$
 
--   We always refer to the dimensions of matrices by row then column (R x C).
+-   The number of rows and columns of a matrix constitute the dimensions of the matrix.
+-   The first number ("r") is the number of rows and the second number ("c" here) is the number of columns in the matrix.
 
-    -   Find a way to remember that knowledge *permanently*.
+::: callout-important
+Find a way to remember "r x c" *permanently*. The order of the dimensions never changes.
+:::
 
--   So, $A$ is a $3x3$ matrix.
+-   The matrix $A$ above, for example, is a $3x3$ matrix.
 
-    -   Note that matrices are usually designated by capital letters, and sometimes **bolded**, too.
+-   We often use capital letters (sometimes also **bold-faced**) to represent matrices.
 
 ### Structure
 
@@ -93,6 +96,12 @@ $$\begin{bmatrix}
     \end{bmatrix}$$
 
 -   Thus $b_{23}$ refers to the second unit down and third across.
+
+::: {.callout-tip}
+## Reminder
+
+When trying to identify a specific element, the first subscript is the element’s row and the second subscript is the element’s column (*always* in that order).
+:::
 
 ## Matrix operations
 
