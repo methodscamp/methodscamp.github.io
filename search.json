@@ -60,7 +60,7 @@
     "href": "03_matrices.html#introduction",
     "title": "3  Matrices",
     "section": "3.1 Introduction",
-    "text": "3.1 Introduction\n\n3.1.1 Scalars\n\nOne number (12, for example) is referred to as a scalar.\n\n\\[\\begin{bmatrix}\n12\n\\end{bmatrix}\\]\n\nThis can be thought of as a 1x1 matrix.\n\n\n\n3.1.2 Vectors\n\nWe can put several scalars together to make a vector.\nAn example is: \\[\\begin{bmatrix}\n    12 \\\\\n    14 \\\\\n    15\n    \\end{bmatrix}\n    = b\\]\nSince this is a column of numbers, we cleverly refer to it as a column vector.\nAnother example is: \\[\\begin{bmatrix}\n12 & 14 & 15\n\\end{bmatrix}\n= d\\]\nThis is called a row vector."
+    "text": "3.1 Introduction\n\n3.1.1 Scalars\n\nOne number (12, for example) is referred to as a scalar.\n\n\\[\\begin{bmatrix}\n12\n\\end{bmatrix}\\]\n\n\n\n\n\n\nNote\n\n\n\nThis is also called a 1 x 1 (“one by one”) matrix.\n\n\n\n\n3.1.2 Vectors\n\nWe can put several scalars together to make a vector.\nAn example is: \\[\\begin{bmatrix}\n    12 \\\\\n    14 \\\\\n    15\n    \\end{bmatrix}\n    = b\\]\nSince this is a column of numbers, we cleverly refer to it as a column vector.\nAnother example is: \\[\\begin{bmatrix}\n12 & 14 & 15\n\\end{bmatrix}\n= d\\]\nThis is called a row vector."
   },
   {
     "objectID": "03_matrices.html#operators",
