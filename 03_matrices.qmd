@@ -6,6 +6,10 @@
 
 -   One number (12, for example) is referred to as a scalar.
 
+$$\begin{bmatrix}
+12
+\end{bmatrix}$$
+
 -   This can be thought of as a 1x1 matrix.
 
 ### Vectors
@@ -115,7 +119,7 @@ b_{31} & b_{32} & b_{33}
 a_{11}\pm b_{11} & a_{12}\pm b_{12} & a_{13}\pm b_{13}\\
 a_{21}\pm b_{21} & a_{22}\pm b_{22} & a_{23}\pm b_{23}\\
 a_{31}\pm b_{31} & a_{32}\pm b_{32} & a_{33}\pm b_{33}
-\end{bmatrix}$$ 
+\end{bmatrix}$$
 
 ------------------------------------------------------------------------
 
@@ -166,7 +170,7 @@ Calculate $A-B$
     ca_{11} & ca_{12} & ca_{13}\\
     ca_{21} & ca_{22} & ca_{23}\\
     ca_{31} & ca_{32} & ca_{33}
-    \end{bmatrix}$$ 
+    \end{bmatrix}$$
 
 ------------------------------------------------------------------------
 
