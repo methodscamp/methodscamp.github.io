@@ -334,8 +334,7 @@ $$\begin{aligned} E = CQ =
 24,750 \\
 11,700
 \end{bmatrix}
-\end{aligned}
-$$
+\end{aligned}$$
 
 -   Multiplying the 3 x 2 Cost matrix ($C$) times the 2 x 1 Quantity matrix ($Q$) yields the 3 x 1 Expenditure matrix ($E$).
 
@@ -389,6 +388,23 @@ Identity matrix:
 
 ## Transpose
 
+-   The transpose is the original matrix with the rows and the columns interchanged.
+
+-   The notation is either $J'$ (“J prime”) or $J^T$ (“J transpose”).
+
+$$J =
+\begin{bmatrix}
+4 & 5\\
+3 & 0\\
+7 & -2
+\end{bmatrix}$$
+
+$$J' = J^T = 
+\begin{bmatrix}
+4 & 3 & 7 \\
+5 & 0 & -2
+\end{bmatrix}$$
+
 ## Inverse
 
 -   Just like a number has a reciprocal, a matrix has an inverse.
@@ -404,6 +420,8 @@ $$AA^{-1} = A^{-1}A = I$$
 -   Sometimes there is no inverse at all.
 
 -   For now, don't worry about calculating the inverse of a matrix manually. This is the type of task we use RStudio for.
+
+### RStudio example
 
 ```{r}
 # Create 3 different vectors
