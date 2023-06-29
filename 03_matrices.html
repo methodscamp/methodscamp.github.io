@@ -240,8 +240,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="scalars" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="scalars"><span class="header-section-number">3.1.1</span> Scalars</h3>
 <ul>
-<li>One number (12, for example) is referred to as a scalar.</li>
-<li>Each scalar in a matrix is an <em>element</em> of that matrix.</li>
+<li><p>One number (12, for example) is referred to as a scalar.</p></li>
+<li><p>Each scalar in a matrix is an <em>element</em> of that matrix.</p></li>
 </ul>
 <p><span class="math display">\[\begin{bmatrix}
 12
@@ -263,19 +263,19 @@ Note
 <section id="vectors" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="vectors"><span class="header-section-number">3.1.2</span> Vectors</h3>
 <ul>
-<li>We can put several scalars together to make a vector.</li>
-<li>Here is an example: <span class="math display">\[\begin{bmatrix}
+<li><p>We can put several scalars together to make a vector.</p></li>
+<li><p>Here is an example: <span class="math display">\[\begin{bmatrix}
     12 \\
     14 \\
     15
     \end{bmatrix}
-    = b\]</span></li>
-<li>Since this is a column of numbers, we cleverly refer to it as a <em>column vector</em>.</li>
-<li>Here is another example of a vector: <span class="math display">\[\begin{bmatrix}
+    = b\]</span></p></li>
+<li><p>Since this is a column of numbers, we cleverly refer to it as a <em>column vector</em>.</p></li>
+<li><p>Here is another example of a vector: <span class="math display">\[\begin{bmatrix}
 12 &amp; 14 &amp; 15
 \end{bmatrix}
-= d\]</span></li>
-<li>This, in contrast, is called a <em>row vector</em>.</li>
+= d\]</span></p></li>
+<li><p>This, in contrast, is called a <em>row vector</em>.</p></li>
 </ul>
 </section>
 </section>
@@ -322,8 +322,8 @@ Note
 \end{bmatrix}
 = A\]</span></p>
 <ul>
-<li>The number of rows and columns of a matrix constitute the dimensions of the matrix.</li>
-<li>The first number (“r”) is the number of rows and the second number (“c” here) is the number of columns in the matrix.</li>
+<li><p>The number of rows and columns of a matrix constitute the dimensions of the matrix.</p></li>
+<li><p>The first number (“r”) is the number of rows and the second number (“c” here) is the number of columns in the matrix.</p></li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -377,9 +377,10 @@ Reminder
 <section id="addition-and-subtraction" class="level3" data-number="3.4.1">
 <h3 data-number="3.4.1" class="anchored" data-anchor-id="addition-and-subtraction"><span class="header-section-number">3.4.1</span> Addition and subtraction</h3>
 <ul>
-<li><p>Addition and subtraction are logical.</p></li>
-<li><p>Matrices have <em>exactly</em> the same dimensions for these operations.</p></li>
-<li><p>Add or subtract each element with the corresponding element from the other matrix:</p></li>
+<li><p>Addition and subtraction are straightforward operations.</p></li>
+<li><p>Matrices must have <em>exactly</em> the same dimensions for both of these operations.</p></li>
+<li><p>We add or subtract each element with the corresponding element from the other matrix.</p></li>
+<li><p>This is expressed as follows:</p></li>
 </ul>
 <p><span class="math display">\[A \pm B=C\]</span></p>
 <p><span class="math display">\[c_{ij}=a_{ij} \pm b_{ij} \text{ }\forall i,j\]</span></p>
@@ -428,8 +429,10 @@ a_{31}\pm b_{31} &amp; a_{32}\pm b_{32} &amp; a_{33}\pm b_{33}
 <section id="scalar-multiplication" class="level3" data-number="3.4.2">
 <h3 data-number="3.4.2" class="anchored" data-anchor-id="scalar-multiplication"><span class="header-section-number">3.4.2</span> Scalar multiplication</h3>
 <ul>
-<li>Recall that a scalar is a single number.</li>
-<li>Multiply each value in the matrix by the scalar. <span class="math display">\[A =
+<li><p>Scalar multiplication is very intuitive.</p></li>
+<li><p>As we know, a scalar is a single number, or a 1 x 1 matrix.</p></li>
+<li><p>We multiply each value in the matrix by the scalar to perform this operation.</p></li>
+<li><p>This is expressed as follows: <span class="math display">\[A =
 \begin{bmatrix}
 a_{11} &amp; a_{12} &amp; a_{13}\\
 a_{21} &amp; a_{22} &amp; a_{23}\\
@@ -439,7 +442,7 @@ a_{31} &amp; a_{32} &amp; a_{33}
 ca_{11} &amp; ca_{12} &amp; ca_{13}\\
 ca_{21} &amp; ca_{22} &amp; ca_{23}\\
 ca_{31} &amp; ca_{32} &amp; ca_{33}
-\end{bmatrix}\]</span></li>
+\end{bmatrix}\]</span></p></li>
 </ul>
 <hr>
 <p><strong>Practice</strong> <span class="math display">\[A= \begin{bmatrix}
@@ -451,17 +454,30 @@ ca_{31} &amp; ca_{32} &amp; ca_{33}
     2 &amp; -42 &amp; 0 \\
     7 &amp; 1 &amp; 6
     \end{bmatrix}\]</span></p>
-<p>Find <span class="math inline">\(2\times A\)</span> and <span class="math inline">\(-3 \times B\)</span></p>
+<p>Calculate <span class="math inline">\(2\times A\)</span> and <span class="math inline">\(-3 \times B\)</span></p>
 </section>
 <section id="matrix-multiplication" class="level3" data-number="3.4.3">
 <h3 data-number="3.4.3" class="anchored" data-anchor-id="matrix-multiplication"><span class="header-section-number">3.4.3</span> Matrix multiplication</h3>
 <ul>
-<li><p>Requirement: the two matrices must be <em>conformable</em>.</p></li>
-<li><p>This means that the number of columns in the first matrix<br>
-equals the number of rows in the second.</p></li>
+<li><p>Two matrices must be <em>conformable</em> for them to be multiplied together.</p></li>
+<li><p>This means that the number of columns in the first matrix equals the number of rows in the second.</p></li>
 <li><p>When multiplying <span class="math inline">\(A \times B\)</span>, if <span class="math inline">\(A\)</span> is <span class="math inline">\(m \times n\)</span>, <span class="math inline">\(B\)</span> must have <span class="math inline">\(n\)</span> rows.</p></li>
-<li><p>The resulting matrix will have the number of rows in the first,<br>
-and the number of columns in the second.</p></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The conformability requirement <em>never</em> changes. Before multiplying anything, check to make sure the matrices are indeed conformable.</p>
+</div>
+</div>
+<ul>
+<li><p>The resulting matrix will have the same number of rows as the first matrix and the number of columns in the second.</p></li>
 <li><p>For example, if <span class="math inline">\(A\)</span> is <span class="math inline">\(i \times k\)</span> and <span class="math inline">\(B\)</span> is <span class="math inline">\(k \times j\)</span>, then <span class="math inline">\(A \times B\)</span> will be <span class="math inline">\(i \times j\)</span>.</p></li>
 </ul>
 <hr>
@@ -484,7 +500,8 @@ L =
 6 &amp; 5 &amp; -1\\
 1 &amp; 4 &amp; 3
 \end{bmatrix}
-\end{aligned}\]</span> Why can’t we multiply in the opposite order?</p>
+\end{aligned}\]</span></p>
+<p>Why can’t we multiply in the opposite order?</p>
 <hr>
 <ul>
 <li>Multiply each row by each column, summing up each pair of multiplied terms</li>
