@@ -10,7 +10,9 @@ $$\begin{bmatrix}
 12
 \end{bmatrix}$$
 
--   This can be thought of as a 1x1 matrix.
+::: callout-note
+This is also called a 1 x 1 ("one by one") matrix.
+:::
 
 ### Vectors
 
