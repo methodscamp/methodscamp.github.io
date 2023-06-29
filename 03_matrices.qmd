@@ -268,7 +268,7 @@ This is sometimes to referred to as the "dot product," where we multiply matchin
 
 -   The element in position $ij$ is the sum of the products of elements in the $i$th row of the first matrix ($A$) and the corresponding elements in the $j$th column of the second matrix ($B$). $$c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$$
 
-### Example
+#### Example
 
 -   Suppose a company manufactures two kinds of furniture: chairs and sofas.
 
@@ -390,7 +390,7 @@ Identity matrix:
 
 -   The transpose is the original matrix with the rows and the columns interchanged.
 
--   The notation is either $J'$ (“J prime”) or $J^T$ (“J transpose”).
+-   The notation is either $J'$ ("J prime") or $J^T$ ("J transpose").
 
 $$J =
 \begin{bmatrix}
@@ -419,9 +419,11 @@ $$AA^{-1} = A^{-1}A = I$$
 
 -   Sometimes there is no inverse at all.
 
--   For now, don't worry about calculating the inverse of a matrix manually. This is the type of task we use RStudio for.
+::: callout-note
+For now, don't worry about calculating the inverse of a matrix manually. This is the type of task we use RStudio for.
+:::
 
-### RStudio example
+#### Example
 
 ```{r}
 # Create 3 different vectors
