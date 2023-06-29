@@ -363,7 +363,7 @@ $$
 
     -   $(A+B)C = AC + BC$
 
-### Special matrices
+## Special matrices
 
 Square matrix:
 
@@ -387,8 +387,42 @@ Identity matrix:
 
 -   The capital letter I is reserved for the identity matrix.
 
-### Transpose
+## Transpose
 
-![](images/transpose.png)
+## Inverse
 
-### Inverse
+-   Just like a number has a reciprocal, a matrix has an inverse.
+
+-   When we multiply a matrix by its inverse we get the identity matrix (which is like "1" for matrices).
+
+$$A × A^{-1} = I$$
+
+-   The inverse of A is A-1 only when:
+
+$$AA^{-1} = A^{-1}A = I$$
+
+-   Sometimes there is no inverse at all.
+
+-   For now, don't worry about calculating the inverse of a matrix manually. This is the type of task we use RStudio for.
+
+```{r}
+# Create 3 different vectors
+# using combine method.
+a1 <- c(3, 2, 5)
+a2 <- c(2, 3, 2)
+a3 <- c(5, 2, 4)
+  
+# bind the three vectors into a matrix 
+# using rbind() which is basically
+# row-wise binding.
+A <- rbind(a1, a2, a3)
+  
+# print the original matrix
+print(A)
+  
+# Use the solve() function to calculate the inverse.
+T1 <- solve(A)
+  
+# print the inverse of the matrix
+print(T1)
+```
