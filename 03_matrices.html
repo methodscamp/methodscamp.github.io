@@ -211,7 +211,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#scalar-multiplication" id="toc-scalar-multiplication" class="nav-link" data-scroll-target="#scalar-multiplication"><span class="header-section-number">3.4.2</span> Scalar multiplication</a></li>
   <li><a href="#matrix-multiplication" id="toc-matrix-multiplication" class="nav-link" data-scroll-target="#matrix-multiplication"><span class="header-section-number">3.4.3</span> Matrix multiplication</a></li>
   <li><a href="#multiplication-steps" id="toc-multiplication-steps" class="nav-link" data-scroll-target="#multiplication-steps"><span class="header-section-number">3.4.4</span> Multiplication steps</a></li>
-  <li><a href="#an-example" id="toc-an-example" class="nav-link" data-scroll-target="#an-example"><span class="header-section-number">3.4.5</span> An example</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">3.4.5</span> Example</a></li>
   <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties"><span class="header-section-number">3.4.6</span> Properties</a></li>
   </ul></li>
   </ul>
@@ -540,8 +540,8 @@ Note
 <li>The element in position <span class="math inline">\(ij\)</span> is the sum of the products of elements in the <span class="math inline">\(i\)</span>th row of the first matrix (<span class="math inline">\(A\)</span>) and the corresponding elements in the <span class="math inline">\(j\)</span>th column of the second matrix (<span class="math inline">\(B\)</span>). <span class="math display">\[c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}\]</span></li>
 </ul>
 </section>
-<section id="an-example" class="level3" data-number="3.4.5">
-<h3 data-number="3.4.5" class="anchored" data-anchor-id="an-example"><span class="header-section-number">3.4.5</span> An example</h3>
+<section id="example" class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="example"><span class="header-section-number">3.4.5</span> Example</h3>
 <ul>
 <li><p>Suppose a company manufactures two kinds of furniture: chairs and sofas.</p>
 <ul>
@@ -596,6 +596,68 @@ Note
 <p>Note that each of the three rows of this 3 x 2 matrix represents a material (wood, cloth, or feathers), and each of the two columns represents a product (chair or coach). The elements are the unit cost (in USD).</p>
 </div>
 </div>
+<hr>
+<ul>
+<li><p>Now, suppose that the company will produce 45 chairs and 30 sofas this month.</p></li>
+<li><p>This production quantity can be represented in the following table, and also as a 2 x 1 matrix (<span class="math inline">\(Q\)</span>).</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Product</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chair</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td>Sofa</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[Q = \begin{bmatrix}
+45 \\
+30
+\end{bmatrix}\]</span></p>
+<ul>
+<li><p>The “total expenditure” is equal to the “unit cost” times the “production quantity” (the number of units).</p></li>
+<li><p>The total expenditure (<span class="math inline">\(E\)</span>) for each material this month is calculated by multiplying these two matrices.</p></li>
+</ul>
+<p><span class="math display">\[\begin{aligned} E = CQ =
+\begin{bmatrix}
+100 &amp; 150\\
+270 &amp; 420\\
+130 &amp; 195
+\end{bmatrix}
+\begin{bmatrix}
+45 \\
+30
+\end{bmatrix} =
+\begin{bmatrix}
+(100)(45) + (150)(30) \\
+(270)(45) + (420)(30) \\
+(130)(45) + (195)(30)
+\end{bmatrix} =
+\begin{bmatrix}
+9,000 \\
+24,750 \\
+11,700
+\end{bmatrix}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><p>Multiplying the 3 x 2 Cost matrix (<span class="math inline">\(C\)</span>) times the 2 x 1 Quantity matrix (<span class="math inline">\(Q\)</span>) yields the 3 x 1 Expenditure matrix (<span class="math inline">\(E\)</span>).</p></li>
+<li><p>As a result of this matrix multiplication, we determine that this month the company will incur expenditures of:</p>
+<ul>
+<li>$9,000 for wood</li>
+<li>$24,750 for cloth</li>
+<li>$11,700 for feathers.</li>
+</ul></li>
+</ul>
 </section>
 <section id="properties" class="level3" data-number="3.4.6">
 <h3 data-number="3.4.6" class="anchored" data-anchor-id="properties"><span class="header-section-number">3.4.6</span> Properties</h3>
