@@ -213,6 +213,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#multiplication-steps" id="toc-multiplication-steps" class="nav-link" data-scroll-target="#multiplication-steps"><span class="header-section-number">3.4.4</span> Multiplication steps</a></li>
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">3.4.5</span> Example</a></li>
   <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties"><span class="header-section-number">3.4.6</span> Properties</a></li>
+  <li><a href="#special-matrices" id="toc-special-matrices" class="nav-link" data-scroll-target="#special-matrices"><span class="header-section-number">3.4.7</span> Special matrices</a></li>
+  <li><a href="#transpose" id="toc-transpose" class="nav-link" data-scroll-target="#transpose"><span class="header-section-number">3.4.8</span> Transpose</a></li>
+  <li><a href="#inverse" id="toc-inverse" class="nav-link" data-scroll-target="#inverse"><span class="header-section-number">3.4.9</span> Inverse</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -516,7 +519,9 @@ Warning
 <p>When multiplying matrices, <em>order matters</em>.</p>
 </div>
 </div>
-<p>Why can’t we multiply in the opposite order?</p>
+<ul>
+<li>Why can’t we multiply in the opposite order?</li>
+</ul>
 </section>
 <section id="multiplication-steps" class="level3" data-number="3.4.4">
 <h3 data-number="3.4.4" class="anchored" data-anchor-id="multiplication-steps"><span class="header-section-number">3.4.4</span> Multiplication steps</h3>
@@ -665,7 +670,7 @@ Note
 <li><p>Addition and subtraction:</p>
 <ul>
 <li><p>Associative: <span class="math inline">\((A \pm B) \pm C = A \pm (B \pm C)\)</span></p></li>
-<li><p>Communicative <span class="math inline">\(A \pm B = B \pm A\)</span></p></li>
+<li><p>Communicative: <span class="math inline">\(A \pm B = B \pm A\)</span></p></li>
 </ul></li>
 <li><p>Multiplication:</p>
 <ul>
@@ -675,6 +680,35 @@ Note
 <li><p><span class="math inline">\((A+B)C = AC + BC\)</span></p></li>
 </ul></li>
 </ul>
+</section>
+<section id="special-matrices" class="level3" data-number="3.4.7">
+<h3 data-number="3.4.7" class="anchored" data-anchor-id="special-matrices"><span class="header-section-number">3.4.7</span> Special matrices</h3>
+<p>Square matrix:</p>
+<ul>
+<li><p>The <strong>diagonal</strong> of a square matrix is a set of numbers consisting of the elements on the line from the upper-left-hand to the lower-right-hand corner of the matrix. Only a square matrix has a diagonal.</p></li>
+<li><p>The <strong>trace</strong> of a matrix is simply the sum of the diagonal elements of the matrix. So, then, a matrix must be square to have a trace.</p></li>
+</ul>
+<p>Diagonal matrix:</p>
+<ul>
+<li>In a <strong>diagonal matrix</strong>, all of the elements of the matrix that are not on the diagonal are equal to zero.</li>
+</ul>
+<p>Scalar matrix:</p>
+<ul>
+<li>A <strong>scalar matrix</strong> is a diagonal matrix where the diagonal elements are all equal to each other. In other words, we’re really only concerned with one scalar (or element) held in the diagonal.</li>
+</ul>
+<p>Identity matrix:</p>
+<ul>
+<li><p>The <strong>identity matrix</strong> is a scalar matrix with all of the diagonal elements equal to one.</p></li>
+<li><p>All of the off-diagonal elements are equal to zero.</p></li>
+<li><p>The capital letter I is reserved for the identity matrix.</p></li>
+</ul>
+</section>
+<section id="transpose" class="level3" data-number="3.4.8">
+<h3 data-number="3.4.8" class="anchored" data-anchor-id="transpose"><span class="header-section-number">3.4.8</span> Transpose</h3>
+<p><img src="images/transpose.png" class="img-fluid"></p>
+</section>
+<section id="inverse" class="level3" data-number="3.4.9">
+<h3 data-number="3.4.9" class="anchored" data-anchor-id="inverse"><span class="header-section-number">3.4.9</span> Inverse</h3>
 
 
 </section>
