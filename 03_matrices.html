@@ -233,23 +233,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#summation" id="toc-summation" class="nav-link" data-scroll-target="#summation"><span class="header-section-number">3.2.1</span> Summation</a></li>
   <li><a href="#product" id="toc-product" class="nav-link" data-scroll-target="#product"><span class="header-section-number">3.2.2</span> Product</a></li>
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics"><span class="header-section-number">3.2.3</span> Basics</a></li>
+  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure"><span class="header-section-number">3.2.4</span> Structure</a></li>
   </ul></li>
-  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">3.3</span> Matrices</a>
+  <li><a href="#matrix-operations" id="toc-matrix-operations" class="nav-link" data-scroll-target="#matrix-operations"><span class="header-section-number">3.3</span> Matrix operations</a>
   <ul class="collapse">
-  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics"><span class="header-section-number">3.3.1</span> Basics</a></li>
-  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure"><span class="header-section-number">3.3.2</span> Structure</a></li>
+  <li><a href="#addition-and-subtraction" id="toc-addition-and-subtraction" class="nav-link" data-scroll-target="#addition-and-subtraction"><span class="header-section-number">3.3.1</span> Addition and subtraction</a></li>
+  <li><a href="#scalar-multiplication" id="toc-scalar-multiplication" class="nav-link" data-scroll-target="#scalar-multiplication"><span class="header-section-number">3.3.2</span> Scalar multiplication</a></li>
+  <li><a href="#matrix-multiplication" id="toc-matrix-multiplication" class="nav-link" data-scroll-target="#matrix-multiplication"><span class="header-section-number">3.3.3</span> Matrix multiplication</a></li>
+  <li><a href="#multiplication-steps" id="toc-multiplication-steps" class="nav-link" data-scroll-target="#multiplication-steps"><span class="header-section-number">3.3.4</span> Multiplication steps</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties"><span class="header-section-number">3.3.5</span> Properties</a></li>
   </ul></li>
-  <li><a href="#matrix-operations" id="toc-matrix-operations" class="nav-link" data-scroll-target="#matrix-operations"><span class="header-section-number">3.4</span> Matrix operations</a>
-  <ul class="collapse">
-  <li><a href="#addition-and-subtraction" id="toc-addition-and-subtraction" class="nav-link" data-scroll-target="#addition-and-subtraction"><span class="header-section-number">3.4.1</span> Addition and subtraction</a></li>
-  <li><a href="#scalar-multiplication" id="toc-scalar-multiplication" class="nav-link" data-scroll-target="#scalar-multiplication"><span class="header-section-number">3.4.2</span> Scalar multiplication</a></li>
-  <li><a href="#matrix-multiplication" id="toc-matrix-multiplication" class="nav-link" data-scroll-target="#matrix-multiplication"><span class="header-section-number">3.4.3</span> Matrix multiplication</a></li>
-  <li><a href="#multiplication-steps" id="toc-multiplication-steps" class="nav-link" data-scroll-target="#multiplication-steps"><span class="header-section-number">3.4.4</span> Multiplication steps</a></li>
-  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties"><span class="header-section-number">3.4.5</span> Properties</a></li>
-  </ul></li>
-  <li><a href="#special-matrices" id="toc-special-matrices" class="nav-link" data-scroll-target="#special-matrices"><span class="header-section-number">3.5</span> Special matrices</a></li>
-  <li><a href="#transpose" id="toc-transpose" class="nav-link" data-scroll-target="#transpose"><span class="header-section-number">3.6</span> Transpose</a></li>
-  <li><a href="#inverse" id="toc-inverse" class="nav-link" data-scroll-target="#inverse"><span class="header-section-number">3.7</span> Inverse</a></li>
+  <li><a href="#special-matrices" id="toc-special-matrices" class="nav-link" data-scroll-target="#special-matrices"><span class="header-section-number">3.4</span> Special matrices</a></li>
+  <li><a href="#transpose" id="toc-transpose" class="nav-link" data-scroll-target="#transpose"><span class="header-section-number">3.5</span> Transpose</a></li>
+  <li><a href="#inverse" id="toc-inverse" class="nav-link" data-scroll-target="#inverse"><span class="header-section-number">3.6</span> Inverse</a></li>
   </ul>
 </nav>
     </div>
@@ -278,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="scalars" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="scalars"><span class="header-section-number">3.1.1</span> Scalars</h3>
 <ul>
-<li><p>One number (12, for example) is referred to as a scalar.</p></li>
+<li><p>One number (for example, 12) is referred to as a scalar.</p></li>
 <li><p>Each scalar in a matrix is an <em>element</em> of that matrix.</p></li>
 </ul>
 <p><span class="math display">\[\begin{bmatrix}
@@ -322,34 +319,31 @@ Note
 <section id="summation" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="summation"><span class="header-section-number">3.2.1</span> Summation</h3>
 <ul>
-<li>The summation operator, <span class="math inline">\(\sum\)</span>, lets us perform an operation on a sequence of numbers, which is often but not always a vector.</li>
+<li>The summation operator <span class="math inline">\(\sum\)</span> lets us perform an operation on a sequence of numbers, which is often but not always a vector.</li>
 </ul>
 <p><span class="math display">\[x = \begin{bmatrix}
 12 &amp; 7 &amp; -2 &amp; 0 &amp; 1
 \end{bmatrix}\]</span></p>
 <ul>
 <li><p>We can then calculate the sum of the first three elements of the vector, which is expressed as follows: <span class="math display">\[\sum_{i=1}^3 x_i\]</span></p></li>
-<li><p>Then, we do the following math: <span class="math display">\[12+7+-2=17\]</span></p></li>
+<li><p>Then, we do the following math: <span class="math display">\[12+7+(-2)=17\]</span></p></li>
 </ul>
 </section>
 <section id="product" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="product"><span class="header-section-number">3.2.2</span> Product</h3>
 <ul>
-<li>The product operator, <span class="math inline">\(\prod\)</span>, can also perform operations over a sequence of elements in a vector.</li>
+<li>The product operator <span class="math inline">\(\prod\)</span> can also perform operations over a sequence of elements in a vector.</li>
 </ul>
 <p><span class="math display">\[z = \begin{bmatrix}
 5 &amp; -3 &amp; 5 &amp; 1
 \end{bmatrix}\]</span></p>
 <ul>
 <li><p>We can then calculate the calculate the product of the four elements in the vector, which is expressed as follows: <span class="math display">\[\prod_{i=1}^4 z_i\]</span></p></li>
-<li><p>Then, we do the following math: <span class="math display">\[5*-3*5*1=-75\]</span></p></li>
+<li><p>Then, we do the following math: <span class="math display">\[5 \times -3 \times 5 \times 1=-75\]</span> ## Matrices</p></li>
 </ul>
 </section>
-</section>
-<section id="matrices" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="matrices"><span class="header-section-number">3.3</span> Matrices</h2>
-<section id="basics" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="basics"><span class="header-section-number">3.3.1</span> Basics</h3>
+<section id="basics" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="basics"><span class="header-section-number">3.2.3</span> Basics</h3>
 <ul>
 <li>We can append vectors together to form a matrix:</li>
 </ul>
@@ -361,7 +355,7 @@ Note
 = A\]</span></p>
 <ul>
 <li><p>The number of rows and columns of a matrix constitute the dimensions of the matrix.</p></li>
-<li><p>The first number (“r”) is the number of rows and the second number (“c” here) is the number of columns in the matrix.</p></li>
+<li><p>The first number is the number of rows (“r”) and the second number is the number of columns (“c”) in the matrix.</p></li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -377,12 +371,12 @@ Important
 </div>
 </div>
 <ul>
-<li><p>The matrix <span class="math inline">\(A\)</span> above, for example, is a <span class="math inline">\(3x3\)</span> matrix.</p></li>
-<li><p>We often use capital letters (sometimes also <strong>bold-faced</strong>) to represent matrices.</p></li>
+<li><p>Matrix <span class="math inline">\(A\)</span> above, for example, is a <span class="math inline">\(3x3\)</span> matrix.</p></li>
+<li><p>We often use capital letters (sometimes <strong>bold-faced</strong>) to represent matrices.</p></li>
 </ul>
 </section>
-<section id="structure" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="structure"><span class="header-section-number">3.3.2</span> Structure</h3>
+<section id="structure" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="structure"><span class="header-section-number">3.2.4</span> Structure</h3>
 <ul>
 <li><p>How do we refer to specific elements of the matrix?</p></li>
 <li><p>Matrix <span class="math inline">\(A\)</span> is an <span class="math inline">\(m\times n\)</span> matrix where <span class="math inline">\(m=n=3\)</span></p></li>
@@ -410,10 +404,10 @@ Reminder
 </div>
 </section>
 </section>
-<section id="matrix-operations" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="matrix-operations"><span class="header-section-number">3.4</span> Matrix operations</h2>
-<section id="addition-and-subtraction" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="addition-and-subtraction"><span class="header-section-number">3.4.1</span> Addition and subtraction</h3>
+<section id="matrix-operations" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="matrix-operations"><span class="header-section-number">3.3</span> Matrix operations</h2>
+<section id="addition-and-subtraction" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="addition-and-subtraction"><span class="header-section-number">3.3.1</span> Addition and subtraction</h3>
 <ul>
 <li><p>Addition and subtraction are straightforward operations.</p></li>
 <li><p>Matrices must have <em>exactly</em> the same dimensions for both of these operations.</p></li>
@@ -464,8 +458,8 @@ a_{31}\pm b_{31} &amp; a_{32}\pm b_{32} &amp; a_{33}\pm b_{33}
 \end{bmatrix}\]</span></p>
 <p>Calculate <span class="math inline">\(A-B\)</span></p>
 </section>
-<section id="scalar-multiplication" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="scalar-multiplication"><span class="header-section-number">3.4.2</span> Scalar multiplication</h3>
+<section id="scalar-multiplication" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="scalar-multiplication"><span class="header-section-number">3.3.2</span> Scalar multiplication</h3>
 <ul>
 <li><p>Scalar multiplication is very intuitive.</p></li>
 <li><p>As we know, a scalar is a single number, or a 1 x 1 matrix.</p></li>
@@ -494,8 +488,8 @@ ca_{31} &amp; ca_{32} &amp; ca_{33}
     \end{bmatrix}\]</span></p>
 <p>Calculate <span class="math inline">\(2\times A\)</span> and <span class="math inline">\(-3 \times B\)</span></p>
 </section>
-<section id="matrix-multiplication" class="level3" data-number="3.4.3">
-<h3 data-number="3.4.3" class="anchored" data-anchor-id="matrix-multiplication"><span class="header-section-number">3.4.3</span> Matrix multiplication</h3>
+<section id="matrix-multiplication" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="matrix-multiplication"><span class="header-section-number">3.3.3</span> Matrix multiplication</h3>
 <ul>
 <li><p>Two matrices must be <em>conformable</em> for them to be multiplied together.</p></li>
 <li><p>This means that the number of columns in the first matrix equals the number of rows in the second.</p></li>
@@ -520,7 +514,7 @@ Important
 </ul>
 <hr>
 <p>Which of the following can we multiply? What will be the dimensions of the resulting matrix? <span class="math display">\[\begin{aligned}
-b=
+B=
 \begin{bmatrix}
 2 \\
 3\\
@@ -556,8 +550,8 @@ Warning
 <li>Why can’t we multiply in the opposite order?</li>
 </ul>
 </section>
-<section id="multiplication-steps" class="level3" data-number="3.4.4">
-<h3 data-number="3.4.4" class="anchored" data-anchor-id="multiplication-steps"><span class="header-section-number">3.4.4</span> Multiplication steps</h3>
+<section id="multiplication-steps" class="level3" data-number="3.3.4">
+<h3 data-number="3.3.4" class="anchored" data-anchor-id="multiplication-steps"><span class="header-section-number">3.3.4</span> Multiplication steps</h3>
 <ul>
 <li>Multiply each row by each column, summing up each pair of multiplied terms.</li>
 </ul>
@@ -577,13 +571,13 @@ Note
 <ul>
 <li>The element in position <span class="math inline">\(ij\)</span> is the sum of the products of elements in the <span class="math inline">\(i\)</span>th row of the first matrix (<span class="math inline">\(A\)</span>) and the corresponding elements in the <span class="math inline">\(j\)</span>th column of the second matrix (<span class="math inline">\(B\)</span>). <span class="math display">\[c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}\]</span></li>
 </ul>
-<section id="example" class="level4" data-number="3.4.4.1">
-<h4 data-number="3.4.4.1" class="anchored" data-anchor-id="example"><span class="header-section-number">3.4.4.1</span> Example</h4>
+<section id="example" class="level4" data-number="3.3.4.1">
+<h4 data-number="3.3.4.1" class="anchored" data-anchor-id="example"><span class="header-section-number">3.3.4.1</span> Example</h4>
 <ul>
 <li><p>Suppose a company manufactures two kinds of furniture: chairs and sofas.</p>
 <ul>
-<li><p>A chair costs <code>$</code>100 for wood, <code>$</code>270 for cloth, and <code>$</code>130 for feathers.</p></li>
-<li><p>Each sofa costs <code>$</code>150 for wood, <code>$</code>420 for cloth, and <code>$</code>195 for feathers.</p></li>
+<li><p>A chair costs $100 for wood, $270 for cloth, and $130 for feathers.</p></li>
+<li><p>Each sofa costs $150 for wood, $420 for cloth, and $195 for feathers.</p></li>
 </ul></li>
 </ul>
 <table class="table">
@@ -696,8 +690,8 @@ Note
 </ul>
 </section>
 </section>
-<section id="properties" class="level3" data-number="3.4.5">
-<h3 data-number="3.4.5" class="anchored" data-anchor-id="properties"><span class="header-section-number">3.4.5</span> Properties</h3>
+<section id="properties" class="level3" data-number="3.3.5">
+<h3 data-number="3.3.5" class="anchored" data-anchor-id="properties"><span class="header-section-number">3.3.5</span> Properties</h3>
 <ul>
 <li><p>Addition and subtraction:</p>
 <ul>
@@ -714,8 +708,8 @@ Note
 </ul>
 </section>
 </section>
-<section id="special-matrices" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="special-matrices"><span class="header-section-number">3.5</span> Special matrices</h2>
+<section id="special-matrices" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="special-matrices"><span class="header-section-number">3.4</span> Special matrices</h2>
 <p>Square matrix:</p>
 <ul>
 <li><p>The <strong>diagonal</strong> of a square matrix is a set of numbers consisting of the elements on the line from the upper-left-hand to the lower-right-hand corner of the matrix. Only a square matrix has a diagonal.</p></li>
@@ -736,8 +730,8 @@ Note
 <li><p>The capital letter I is reserved for the identity matrix.</p></li>
 </ul>
 </section>
-<section id="transpose" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="transpose"><span class="header-section-number">3.6</span> Transpose</h2>
+<section id="transpose" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="transpose"><span class="header-section-number">3.5</span> Transpose</h2>
 <ul>
 <li><p>The transpose is the original matrix with the rows and the columns interchanged.</p></li>
 <li><p>The notation is either <span class="math inline">\(J'\)</span> (“J prime”) or <span class="math inline">\(J^T\)</span> (“J transpose”).</p></li>
@@ -754,8 +748,8 @@ Note
 5 &amp; 0 &amp; -2
 \end{bmatrix}\]</span></p>
 </section>
-<section id="inverse" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="inverse"><span class="header-section-number">3.7</span> Inverse</h2>
+<section id="inverse" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="inverse"><span class="header-section-number">3.6</span> Inverse</h2>
 <ul>
 <li><p>Just like a number has a reciprocal, a matrix has an inverse.</p></li>
 <li><p>When we multiply a matrix by its inverse we get the identity matrix (which is like “1” for matrices).</p></li>
@@ -781,8 +775,8 @@ Note
 <p>For now, don’t worry about calculating the inverse of a matrix manually. This is the type of task we use RStudio for.</p>
 </div>
 </div>
-<section id="example-1" class="level4" data-number="3.7.0.1">
-<h4 data-number="3.7.0.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">3.7.0.1</span> Example</h4>
+<section id="example-1" class="level4" data-number="3.6.0.1">
+<h4 data-number="3.6.0.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">3.6.0.1</span> Example</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create 3 different vectors</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># using combine method.</span></span>
