@@ -11,9 +11,9 @@ book:
     - index.qmd
     - 00_setup.qmd
     - 01_r_intro.qmd
-    - 02_tidyverse1.qmd
+    - 02_tidy_data1.qmd
     - 03_matrices.qmd
-    - 04_tidyverse2.qmd
+    - 04_tidy_data2.qmd
     - 05_functions.qmd
     - 06_calculus.qmd
     - 07_probability.qmd
