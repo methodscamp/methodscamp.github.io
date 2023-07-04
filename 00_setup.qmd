@@ -14,15 +14,17 @@ After these two steps, you can open RStudio in your system, as you would with an
 
 ![How RStudio looks after a clean installation.](images/rstudio_first.png){#fig-rstudio-first}
 
-That's it for the installation! We also *strongly* recommend that you change a couple of RStudio's default settings:[^settings]
+That's it for the installation! We also *strongly* recommend that you change a couple of RStudio's default settings.[^settings] You can change settings by clicking on `Tools > Global Options` in the menubar. Here are our recommendations:
 
-- `Tools > Global Options > General > Uncheck "Restore .RData into workspace at startup"`
+- `General > Uncheck "Restore .RData into workspace at startup"`
 
-- `Tools > Global Options > General > Save workspace to .RData on Exit > Select "Never"`
+- `General > Save workspace to .RData on Exit > Select "Never"`
 
-- `Tools > Appearance` to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes...
+- `Code > Check "Use native pipe operator"` 
 
-[^settings]: The idea behind these settings is to force R to start from scratch with each new session. No lingering objects avoids misunderstandings and helps with reproducibility!
+- `Tools > Global Options > Appearance` to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes...
+
+[^settings]: The idea behind these settings (or at least the first two) is to force R to start from scratch with each new session. No lingering objects from previous coding sessions avoids misunderstandings and helps with reproducibility!
 
 ## Setting up for Methods Camp
 
