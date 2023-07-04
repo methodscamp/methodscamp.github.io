@@ -536,6 +536,17 @@ $$J' = J^T =
 5 & 0 & -2
 \end{bmatrix}$$
 
+#### Transpose in RStudio
+
+-   We use `t()` to get the transpose.
+
+```{r}
+# Construct our matrix
+J <- matrix(c(4,5,3,0,7,-2), nrow = 3, byrow = TRUE,)
+J
+t(J)
+```
+
 ## Inverse
 
 -   Just like a number has a reciprocal, a matrix has an inverse.
@@ -557,7 +568,6 @@ For now, don't worry about calculating the inverse of a matrix manually. This is
 #### Examples
 
 -   We use the `solve()` function to calculate the inverse of a matrix.
--   We use `t()` to get the transpose.
 
 ```{r}
 # Create 3 different vectors
@@ -579,7 +589,4 @@ T1 <- solve(A)
   
 # print the inverse of the matrix
 print(T1)
-
-# find the transpose of the matrices
-t(A)
 ```
