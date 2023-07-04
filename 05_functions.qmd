@@ -15,13 +15,13 @@
 
 ### Function machine
 
-![](assets/images/Function_machine.jpg)
+![Function machine](images/function_machine.jpg){#fig-function-machine}
 
 ### Visualization
 
 When graphed, we can't draw vertical line through a function. Why not?
 
-![](assets/images/function_notfunction.jpg)
+![](images/function_notfunction.jpg)
 
 ## Types of functions
 

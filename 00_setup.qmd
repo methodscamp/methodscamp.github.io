@@ -1,0 +1,43 @@
+# Setup {.unnumbered}
+
+## Installing R and RStudio
+
+[R](https://cran.r-project.org/) is a programming language optimized for statistics and data analysis. Most people use R from [RStudio](https://rstudio.com/), a graphical user interface (GUI) that includes a file pane, a graphics pane, and other goodies. Both R and RStudio are open source, i.e., free as in beer and free as in freedom!
+
+Your first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date---if they are not, follow the instructions below):
+
+1. Download and install R from [the official website, CRAN](https://cran.r-project.org/). Click on "Download R for \<Windows/Mac\>" and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2 Macs and Intel for older Macs).
+
+2. Download and install RStudio from [the official website](https://posit.co/download/rstudio-desktop/). Scroll down and select the installer for your operating system.
+
+After these two steps, you can open RStudio in your system, as you would with any program. You should see something like this:
+
+![How RStudio looks after a clean installation.](images/rstudio_first.png){#fig-rstudio-first}
+
+That's it for the installation! We also *strongly* recommend that you change a couple of RStudio's default settings:[^settings]
+
+- `Tools > Global Options > General > Uncheck "Restore .RData into workspace at startup"`
+
+- `Tools > Global Options > General > Save workspace to .RData on Exit > Select "Never"`
+
+- `Tools > Appearance` to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes...
+
+[^settings]: The idea behind these settings is to force R to start from scratch with each new session. No lingering objects avoids misunderstandings and helps with reproducibility!
+
+## Setting up for Methods Camp
+
+All materials for Methods Camp are both on this website and an [RStudio project](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects). An RStudio project is simply a folder where one keeps scripts, datasets, and other files needed for a data analysis project. 
+
+You can [download our RStudio project here](), as a .zip compressed file. On MacOS, the file will be uncompressed automatically. On Windows, you should do `Right click > Extract all`. 
+
+::: {.callout-warning}
+Make sure to properly unzip the materials. Double-clicking the .zip file on most Windows systems *will not* unzip the folder---you must do `Right click > Extract all`. 
+:::
+
+You should now have a folder called `methodscamp/` on your computer. Navigate to the `methodscamp.Rproj` file within it and open it. RStudio should open the project right away. You should see `methodscamp` on the top-right of RStudio---this indicates that you are working in our RStudio project.
+
+![How the bottom-right corner of RStudio looks after opening our project.](images/rstudio_project.png){#fig-rstudio-project}
+
+That's all for setup! We can now start coding. After opening our RStudio project, we'll begin by opening the `01_r_rstudio.qmd` file from the "Files" panel, in the bottom-right portion of RStudio. This is a Quarto document,[^rmarkdown] which contains both code and explanations (you can also read in the next chapter of this website). 
+
+[^rmarkdown]: Perhaps you have used [R Markdown](https://rmarkdown.rstudio.com/) before. [Quarto](https://quarto.org/) is the next iteration of R Markdown, and is both more flexible and more powerful!
