@@ -36,6 +36,21 @@ This is also called a 1 x 1 ("one by one") matrix.
 
 -   This, in contrast, is called a *row vector*.
 
+#### Vector construction in RStudio
+
+-   Vectors are very easy to construct in RStudio.
+-   Here are two examples:
+
+```{r}
+# Making a simple column vector
+col_vector <- matrix(1:12)
+col_vector
+
+# Making a simple row vector
+row_vector <- 15:23
+row_vector
+```
+
 ## Operators
 
 ### Summation
@@ -60,8 +75,18 @@ $$z = \begin{bmatrix}
 
 -   We can then calculate the calculate the product of the four elements in the vector, which is expressed as follows: $$\prod_{i=1}^4 z_i$$
 
--   Then, we do the following math: $$5 \times -3 \times 5 \times 1=-75$$
-## Matrices
+-   Then, we do the following math: $$5 \times -3 \times 5 \times 1=-75$$ \## Matrices
+
+#### Operators in RStudio
+
+```{r}
+# Summation
+mat <- c(5,-3,5,1)
+sum(mat)
+
+# Product
+prod(mat)
+```
 
 ### Basics
 
@@ -86,6 +111,27 @@ Find a way to remember "r x c" *permanently*. The order of the dimensions never 
 
 -   We often use capital letters (sometimes **bold-faced**) to represent matrices.
 
+#### Appending in RStudio
+
+-   We use `rbind()` to create a matrix, in which each vector will be a row.
+-   If we use `cbind()`, then each vector will be a column.
+
+```{r}
+# Create some vectors
+vec_1 <- 1:4
+vec_2 <- 5:8
+vec_3 <- 9:12
+vec_4 <- 13:16
+
+# rbind
+rbind_mat <- rbind(vec_1, vec_2, vec_3, vec_4)
+rbind_mat
+
+# cbind
+cbind_mat <- cbind(vec_1, vec_2, vec_3, vec_4)
+cbind_mat
+```
+
 ### Structure
 
 -   How do we refer to specific elements of the matrix?
@@ -107,6 +153,41 @@ Find a way to remember "r x c" *permanently*. The order of the dimensions never 
 
 When trying to identify a specific element, the first subscript is the element's row and the second subscript is the element's column (*always* in that order).
 :::
+
+#### Constructing matrices in RStudio
+
+-   Matrices are very easy to construct in RStudio.
+-   The basic syntax is `matrix(data, nrow, ncol, byrow, dimnames)`.
+    -   `data` is the input vector which becomes the data elements of the matrix.
+    -   `nrow` is the number of rows to be created.
+    -   `ncol` is the number of columns to be created.
+    -   `byrow` is a logical clue. If TRUE then the input vector elements are arranged by row.
+    -   `dimname` is the names assigned to the rows and columns.
+-   Here are some examples:
+
+```{r}
+# Elements are arranged sequentially by row.
+M <- matrix(c(1:12), nrow = 4, byrow = TRUE)
+print(M)
+
+# Elements are arranged sequentially by column.
+N <- matrix(c(1:12), nrow = 4, byrow = FALSE)
+print(N)
+
+# Define the column and row names.
+rownames = c("row1", "row2", "row3", "row4")
+colnames = c("col1", "col2", "col3")
+
+P <- matrix(c(1:12), nrow = 4, byrow = TRUE, dimnames = list(rownames, colnames))
+
+print(P)
+
+# Access the element at 1st row and 3rd column.
+print(P[1,3])
+
+# Access the element at 4th row and 2nd column.
+print(P[4,2])
+```
 
 ## Matrix operations
 
@@ -139,6 +220,27 @@ a_{11}\pm b_{11} & a_{12}\pm b_{12} & a_{13}\pm b_{13}\\
 a_{21}\pm b_{21} & a_{22}\pm b_{22} & a_{23}\pm b_{23}\\
 a_{31}\pm b_{31} & a_{32}\pm b_{32} & a_{33}\pm b_{33}
 \end{bmatrix}$$
+
+#### Add and subtract in RStudio
+
+```{r}
+# Create two 2x3 matrices.
+matrix1 <- matrix(c(3, 9, -1, 4, 2, 6), nrow = 2)
+print(matrix1)
+
+matrix2 <- matrix(c(5, 2, 0, 9, 3, 4), nrow = 2)
+print(matrix2)
+
+# Add the matrices.
+result1 <- matrix1 + matrix2
+cat("Result of addition","\n")
+print(result1)
+
+# Subtract the matrices
+result2 <- matrix1 - matrix2
+cat("Result of subtraction","\n")
+print(result2)
+```
 
 ------------------------------------------------------------------------
 
@@ -195,6 +297,15 @@ Calculate $A-B$
     ca_{21} & ca_{22} & ca_{23}\\
     ca_{31} & ca_{32} & ca_{33}
     \end{bmatrix}$$
+    
+#### Scalar multiplication in RStudio
+
+-    All we need to do is take an established matrix and multiply it by some scalar.
+
+```{r}
+matrix1
+matrix1*3
+```
 
 ------------------------------------------------------------------------
 
@@ -342,6 +453,27 @@ $$\begin{aligned} E = CQ =
     -   \$9,000 for wood
     -   \$24,750 for cloth
     -   \$11,700 for feathers.
+    
+#### Matrix multiplication in RStudio
+
+-    We must make sure the matrices are conformable, as we do for our manual calculations.
+-   Then, we can multiply them together without issue.
+-   When multiplying together matrices in RStudio, remember to use the `%*%` operator, otherwise you will receive an error message.
+
+::: callout-warning
+If you have a missing value or `NA` in one of the matrices you are trying to multiply, you will have NAs in your resulting matrix.
+:::
+
+```{r}
+# Creating matrices
+m <- matrix(1:8, nrow=2) # 
+n <- matrix(8:15, nrow=4)
+m
+n
+
+# Multiplying matrices using operator
+m%*%n
+```
 
 ## Properties
 
@@ -404,6 +536,17 @@ $$J' = J^T =
 5 & 0 & -2
 \end{bmatrix}$$
 
+#### Transpose in RStudio
+
+-   We use `t()` to get the transpose.
+
+```{r}
+# Construct our matrix
+J <- matrix(c(4,5,3,0,7,-2), nrow = 3, byrow = TRUE,)
+J
+t(J)
+```
+
 ## Inverse
 
 -   Just like a number has a reciprocal, a matrix has an inverse.
@@ -422,7 +565,9 @@ $$AA^{-1} = A^{-1}A = I$$
 For now, don't worry about calculating the inverse of a matrix manually. This is the type of task we use RStudio for.
 :::
 
-#### Example
+#### Examples
+
+-   We use the `solve()` function to calculate the inverse of a matrix.
 
 ```{r}
 # Create 3 different vectors
