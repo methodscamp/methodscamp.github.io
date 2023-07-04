@@ -1,0 +1,14 @@
+{
+  "hash": "6d3a322a5f7f100725284b87a0004c2c",
+  "result": {
+    "markdown": "# Short intro to R\n\nIn Quarto documents like this one, we can write comments by just using plain text. In contrast, code needs to be within *code blocks*, like the one below. To execute a code block, you can click on the little \"Play\" button or press `Cmd/Ctrl + Shift + Enter` when your keyboard is hovering the code block. \n\n\n::: {.cell}\n\n```{.r .cell-code}\n2 + 2\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 4\n```\n:::\n:::\n\n\nThat was our first R command, a simple math operation. Of course, we can also do more complex arithmetic:\n\n\n::: {.cell}\n\n```{.r .cell-code}\n12345 ^ 2  / (200 + 25 - 6 * 2) # this is an inline comment, see the leading \"#\"\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 715488.4\n```\n:::\n:::\n\n\nIn order to *create* a code block, you can press `Cmd/Ctrl + Alt + i` or click on the little green \"+C\" icon on top of the script.\n\n::: {.callout-tip}\n\n## Exercise\n\nCreate your own code block below and run a math operation.\n\n:::\n\n### Objects\n\nA huge part of R is working with *objects*. Let's see how they work:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nmy_object <- 10\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nmy_object # to print the value of an object, just call its name\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 10\n```\n:::\n:::\n\n\nWe can now use this object in our operations:\n\n\n::: {.cell}\n\n```{.r .cell-code}\n2 ^ my_object\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 1024\n```\n:::\n:::\n\n\nOr even create another object out of it:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nmy_object2 <- my_object * 2\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nmy_object2\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 20\n```\n:::\n:::\n\n\n\n\n\n\nTODO: objects and common functions. Explain how to run Quarto code blocks, and how to render a document to html.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
