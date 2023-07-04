@@ -1,0 +1,247 @@
+# Short intro to R
+
+In Quarto documents like this one, we can write comments by just using plain text. In contrast, code needs to be within *code blocks*, like the one below. To execute a code block, you can click on the little "Play" button or press `Cmd/Ctrl + Shift + Enter` when your keyboard is hovering the code block.
+
+```{r}
+2 + 2
+```
+
+That was our first R command, a simple math operation. Of course, we can also do more complex arithmetic:
+
+```{r}
+12345 ^ 2  / (200 + 25 - 6 * 2) # this is an inline comment, see the leading "#"
+```
+
+In order to *create* a code block, you can press `Cmd/Ctrl + Alt + i` or click on the little green "+C" icon on top of the script.
+
+::: {.callout-tip}
+
+## Exercise
+
+Create your own code block below and run a math operation.
+
+:::
+
+## Objects
+
+A huge part of R is working with *objects*. Let's see how they work:
+
+```{r}
+my_object <- 10 # opt/alt + minus sign will make the arrow 
+```
+
+```{r}
+my_object # to print the value of an object, just call its name
+```
+
+We can now use this object in our operations:
+
+```{r}
+2 ^ my_object
+```
+
+Or even create another object out of it:
+
+```{r}
+my_object2 <- my_object * 2
+```
+
+```{r}
+my_object2
+```
+
+You can delete objects with the `rm()` function (for "remove"):
+
+```{r}
+rm(my_object2)
+```
+
+## Vectors and functions 
+
+Objects can be of different types. One of the most useful ones is the *vector*, which holds a series of values. To create one manually, we can use the `c()` function (for "combine"):
+
+```{r}
+my_vector <- c(6, -11, my_object, 0, 20)
+```
+
+```{r}
+my_vector
+```
+
+We can use square brackets to retrieve parts of vectors:
+
+```{r}
+my_vector[4] # fourth element
+```
+
+```{r}
+my_vector[1:2] # first two elements
+```
+
+Let's check out some basic functions we can use with numbers and numeric vectors:
+
+```{r}
+sqrt(my_object) # squared root
+```
+
+```{r}
+log(my_object) # logarithm (natural by default)
+```
+
+```{r}
+mean(my_vector)
+```
+
+```{r}
+median(my_vector)
+```
+
+```{r}
+sd(my_vector) # standard deviation
+```
+
+```{r}
+sum(my_vector)
+```
+
+```{r}
+min(my_vector) # minimum value
+```
+
+```{r}
+max(my_vector) # maximum value
+```
+
+```{r}
+length(my_vector) # length (number of elements)
+```
+
+Notice that if we wanted to save any of these results for later, we would need to *assign* them:
+
+```{r}
+my_mean <- mean(my_vector)
+```
+
+```{r}
+my_mean
+```
+
+These functions are quite simple: they take one object and do one operation. A lot of functions are a bit more complex---they take multiple objects or take options. For example, see the `sort()` function, which by default sorts a vector *increasingly*:
+
+```{r}
+sort(my_vector)
+```
+
+If we instead want to sort our vector *decreasingly*, we can use the `decreasing = TRUE` argument (`T` also works as an abbreviation for `TRUE`).  
+
+```{r}
+sort(my_vector, decreasing = TRUE)
+```
+
+::: {.callout-tip}
+
+If you use the argument values in order, you can avoid writing the argument names (see below). This is sometimes useful, but can also lead to confusing code---use it with caution.
+
+```{r}
+sort(my_vector, T)
+```
+
+:::
+
+To check the arguments of a function, you can examine its help file: look the function up on the "Help" panel on RStudio or use a command like the following: `?sort`.
+
+::: {.callout-tip}
+
+## Exercise
+
+Examine the help file of the `log()` function. How can we compute the the base-10 logarithm of `my_object`? Your code:
+
+:::
+
+Other than numeric vectors, character vectors are also useful:
+
+```{r}
+my_character_vector <- c("Apple", "Orange", "Watermelon", "Banana")
+```
+
+```{r}
+my_character_vector[3]
+```
+
+```{r}
+nchar(my_character_vector) # count number of characters
+```
+
+```{r}
+
+```
+
+
+## Data frames and lists
+
+Another useful object type is the *data frame*. Data frames can store multiple vectors in a tabular format. We can manually create one with the `data.frame()` function:
+
+```{r}
+my_data_frame <- data.frame(fruit = my_character_vector,
+                            calories_per_100g = c(52, 47, 30, 89),
+                            water_per_100g = c(85.6, 86.8, 91.4, 74.9))
+```
+
+```{r}
+my_data_frame
+```
+
+Now we have a little 4x3 data frame of fruits with their calorie counts and water composition. We gathered the nutritional information from the [USDA (2019)](https://fdc.nal.usda.gov/).
+
+We can use the `data_frame$column` construct to access the vectors within the data frame:
+
+```{r}
+mean(my_data_frame$calories_per_100g)
+```
+
+::: {.callout-tip}
+
+## Exercise
+
+Obtain the maximum value of water content per 100g in the data. Your code:
+
+:::
+
+We will learn much more about data frames in our next module on data analysis. 
+
+After talking about vectors and data frames, the last object type that we will cover is the *list*. Lists are super flexible objects that can contain just about anything:
+
+```{r}
+my_list <- list(my_object, my_vector, my_data_frame)
+```
+
+```{r}
+my_list
+```
+
+To retrieve the elements of a list, we need to use double square brackets:
+
+```{r}
+my_list[[1]]
+```
+
+Lists are sometimes useful due to their flexibility, but are much less common in routine data analysis compared to vectors or data frames.
+
+## Packages
+
+The R community has developed thousands of *packages*, which are specialized collections of functions, datasets, and other resources. To install one, you should use the `install.packages()` command. Below we will install the `tidyverse` package, a suite for data analysis that we will use in the next modules. You just need to install packages once, and then they will be available system-wide.
+
+```{r}
+#| eval: false
+install.packages("tidyverse") # this can take a couple of minutes
+```
+
+If you want to use an installed package in your script, you must load it with the `library()` function. Some packages, as shown below, will print descriptive messages once loaded.
+
+```{r}
+library(tidyverse)
+```
+
+::: {.callout-warning}
+Remember that `install.packages("package")` needs to be executed just once, while `library(package)` needs to be in each script in which you plan to use the package. In general, never include `install.packages("package")` as part of your scripts or Quarto documents!
+:::

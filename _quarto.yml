@@ -10,7 +10,7 @@ book:
   chapters:
     - index.qmd
     - 00_setup.qmd
-    - 01_r_rstudio.qmd
+    - 01_r_intro.qmd
     - 02_tidyverse1.qmd
     - 03_matrices.qmd
     - 04_tidyverse2.qmd
@@ -25,7 +25,9 @@ book:
   site-url: https://methodscamp.github.io/
   repo-url: https://github.com/methodscamp/methodscamp.github.io
   search: true
+
 bibliography: references.bib
+
 
 format:
   html:
