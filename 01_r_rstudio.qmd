@@ -1,33 +1,57 @@
-# R and RStudio
+# Short intro to R
 
-## Installing R and RStudio
+In Quarto documents like this one, we can write comments by just using plain text. In contrast, code needs to be within *code blocks*, like the one below. To execute a code block, you can click on the little "Play" button or press `Cmd/Ctrl + Shift + Enter` when your keyboard is hovering the code block. 
 
-[R](https://cran.r-project.org/) is a programming language optimized for statistics and data analysis. Most people use R from [RStudio](https://rstudio.com/), a graphical user interface (GUI) that includes a file pane, a graphics pane, and other goodies. Both R and RStudio are open source, i.e., free as in beer and free as in freedom!
+```{r}
+2 + 2
+```
 
-Your first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date---if not, follow the instructions below):
+That was our first R command, a simple math operation. Of course, we can also do more complex arithmetic:
 
-1. Download and install R from [the official website, CRAN](https://cran.r-project.org/). Click on "Download R for \<Windows/Mac\>" and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2 Macs and Intel for older Macs).
+```{r}
+12345 ^ 2  / (200 + 25 - 6 * 2) # this is an inline comment, see the leading "#"
+```
 
-2. Download and install RStudio from [the official website](https://posit.co/download/rstudio-desktop/). Scroll down and select the installer for your operating system.
+In order to *create* a code block, you can press `Cmd/Ctrl + Alt + i` or click on the little green "+C" icon on top of the script.
 
-After these two steps, you can open RStudio in your system, as you would with any program. You should see something like this:
+::: {.callout-tip}
 
-![](assets/images/rstudio_first.png)
+## Exercise
 
-That's it for the installation! We also *strongly* recommend that you change a couple of RStudio's default settings:[^settings]
+Create your own code block below and run a math operation.
 
-- `Tools > Global Options > General > Uncheck "Restore .RData into workspace at startup"`
+:::
 
-- `Tools > Global Options > General > Save workspace to .RData on Exit > Select "Never"`
+### Objects
 
-- `Tools > Appearance` to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes...
+A huge part of R is working with *objects*. Let's see how they work:
 
-[^settings]: The idea behind these settings is to force R to start from scratch with each new session. No lingering objects avoids misunderstandings and helps with reproducibility!
+```{r}
+my_object <- 10
+```
 
-## Setting up for Methods Camp
+```{r}
+my_object # to print the value of an object, just call its name
+```
 
-TODO: how to download the materials and open the RStudio project (include discussion on .zip files). How to make sure that everything's fine (see top-right for RStudio project).
+We can now use this object in our operations:
 
-## Short intro to R
+```{r}
+2 ^ my_object
+```
+
+Or even create another object out of it:
+
+```{r}
+my_object2 <- my_object * 2
+```
+
+```{r}
+my_object2
+```
+
+
+
+
 
 TODO: objects and common functions. Explain how to run Quarto code blocks, and how to render a document to html.
