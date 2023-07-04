@@ -32,7 +32,7 @@
     "href": "00_setup.html#installing-r-and-rstudio",
     "title": "Setup",
     "section": "Installing R and RStudio",
-    "text": "Installing R and RStudio\nR is a programming language optimized for statistics and data analysis. Most people use R from RStudio, a graphical user interface (GUI) that includes a file pane, a graphics pane, and other goodies. Both R and RStudio are open source, i.e., free as in beer and free as in freedom!\nYour first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date—if they are not, follow the instructions below):\n\nDownload and install R from the official website, CRAN. Click on “Download R for &lt;Windows/Mac&gt;” and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2 Macs and Intel for older Macs).\nDownload and install RStudio from the official website. Scroll down and select the installer for your operating system.\n\nAfter these two steps, you can open RStudio in your system, as you would with any program. You should see something like this:\n\n\n\nFigure 1: How RStudio looks after a clean installation.\n\n\nThat’s it for the installation! We also strongly recommend that you change a couple of RStudio’s default settings:1\n\nTools &gt; Global Options &gt; General &gt; Uncheck \"Restore .RData into workspace at startup\"\nTools &gt; Global Options &gt; General &gt; Save workspace to .RData on Exit &gt; Select \"Never\"\nTools &gt; Appearance to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes…"
+    "text": "Installing R and RStudio\nR is a programming language optimized for statistics and data analysis. Most people use R from RStudio, a graphical user interface (GUI) that includes a file pane, a graphics pane, and other goodies. Both R and RStudio are open source, i.e., free as in beer and free as in freedom!\nYour first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date—if they are not, follow the instructions below):\n\nDownload and install R from the official website, CRAN. Click on “Download R for &lt;Windows/Mac&gt;” and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2 Macs and Intel for older Macs).\nDownload and install RStudio from the official website. Scroll down and select the installer for your operating system.\n\nAfter these two steps, you can open RStudio in your system, as you would with any program. You should see something like this:\n\n\n\nFigure 1: How RStudio looks after a clean installation.\n\n\nThat’s it for the installation! We also strongly recommend that you change a couple of RStudio’s default settings.1 You can change settings by clicking on Tools &gt; Global Options in the menubar. Here are our recommendations:\n\nGeneral &gt; Uncheck \"Restore .RData into workspace at startup\"\nGeneral &gt; Save workspace to .RData on Exit &gt; Select \"Never\"\nCode &gt; Check \"Use native pipe operator\"\nTools &gt; Global Options &gt; Appearance to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes…"
   },
   {
     "objectID": "00_setup.html#setting-up-for-methods-camp",
@@ -46,35 +46,56 @@
     "href": "00_setup.html#footnotes",
     "title": "Setup",
     "section": "",
-    "text": "The idea behind these settings is to force R to start from scratch with each new session. No lingering objects avoids misunderstandings and helps with reproducibility!↩︎\nPerhaps you have used R Markdown before. Quarto is the next iteration of R Markdown, and is both more flexible and more powerful!↩︎"
+    "text": "The idea behind these settings (or at least the first two) is to force R to start from scratch with each new session. No lingering objects from previous coding sessions avoids misunderstandings and helps with reproducibility!↩︎\nPerhaps you have used R Markdown before. Quarto is the next iteration of R Markdown, and is both more flexible and more powerful!↩︎"
   },
   {
     "objectID": "01_r_intro.html#objects",
     "href": "01_r_intro.html#objects",
-    "title": "1  Short intro to R",
+    "title": "1  Intro to R",
     "section": "1.1 Objects",
     "text": "1.1 Objects\nA huge part of R is working with objects. Let’s see how they work:\n\nmy_object &lt;- 10 # opt/alt + minus sign will make the arrow \n\n\nmy_object # to print the value of an object, just call its name\n\n[1] 10\n\n\nWe can now use this object in our operations:\n\n2 ^ my_object\n\n[1] 1024\n\n\nOr even create another object out of it:\n\nmy_object2 &lt;- my_object * 2\n\n\nmy_object2\n\n[1] 20\n\n\nYou can delete objects with the rm() function (for “remove”):\n\nrm(my_object2)"
   },
   {
     "objectID": "01_r_intro.html#vectors-and-functions",
     "href": "01_r_intro.html#vectors-and-functions",
-    "title": "1  Short intro to R",
+    "title": "1  Intro to R",
     "section": "1.2 Vectors and functions",
     "text": "1.2 Vectors and functions\nObjects can be of different types. One of the most useful ones is the vector, which holds a series of values. To create one manually, we can use the c() function (for “combine”):\n\nmy_vector &lt;- c(6, -11, my_object, 0, 20)\n\n\nmy_vector\n\n[1]   6 -11  10   0  20\n\n\nWe can use square brackets to retrieve parts of vectors:\n\nmy_vector[4] # fourth element\n\n[1] 0\n\n\n\nmy_vector[1:2] # first two elements\n\n[1]   6 -11\n\n\nLet’s check out some basic functions we can use with numbers and numeric vectors:\n\nsqrt(my_object) # squared root\n\n[1] 3.162278\n\n\n\nlog(my_object) # logarithm (natural by default)\n\n[1] 2.302585\n\n\n\nmean(my_vector)\n\n[1] 5\n\n\n\nmedian(my_vector)\n\n[1] 6\n\n\n\nsd(my_vector) # standard deviation\n\n[1] 11.53256\n\n\n\nsum(my_vector)\n\n[1] 25\n\n\n\nmin(my_vector) # minimum value\n\n[1] -11\n\n\n\nmax(my_vector) # maximum value\n\n[1] 20\n\n\n\nlength(my_vector) # length (number of elements)\n\n[1] 5\n\n\nNotice that if we wanted to save any of these results for later, we would need to assign them:\n\nmy_mean &lt;- mean(my_vector)\n\n\nmy_mean\n\n[1] 5\n\n\nThese functions are quite simple: they take one object and do one operation. A lot of functions are a bit more complex—they take multiple objects or take options. For example, see the sort() function, which by default sorts a vector increasingly:\n\nsort(my_vector)\n\n[1] -11   0   6  10  20\n\n\nIf we instead want to sort our vector decreasingly, we can use the decreasing = TRUE argument (T also works as an abbreviation for TRUE).\n\nsort(my_vector, decreasing = TRUE)\n\n[1]  20  10   6   0 -11\n\n\n\n\n\n\n\n\nTip\n\n\n\nIf you use the argument values in order, you can avoid writing the argument names (see below). This is sometimes useful, but can also lead to confusing code—use it with caution.\n\nsort(my_vector, T)\n\n[1]  20  10   6   0 -11\n\n\n\n\nTo check the arguments of a function, you can examine its help file: look the function up on the “Help” panel on RStudio or use a command like the following: ?sort.\n\n\n\n\n\n\nExercise\n\n\n\nExamine the help file of the log() function. How can we compute the the base-10 logarithm of my_object? Your code:\n\n\nOther than numeric vectors, character vectors are also useful:\n\nmy_character_vector &lt;- c(\"Apple\", \"Orange\", \"Watermelon\", \"Banana\")\n\n\nmy_character_vector[3]\n\n[1] \"Watermelon\"\n\n\n\nnchar(my_character_vector) # count number of characters\n\n[1]  5  6 10  6"
   },
   {
     "objectID": "01_r_intro.html#data-frames-and-lists",
     "href": "01_r_intro.html#data-frames-and-lists",
-    "title": "1  Short intro to R",
+    "title": "1  Intro to R",
     "section": "1.3 Data frames and lists",
     "text": "1.3 Data frames and lists\nAnother useful object type is the data frame. Data frames can store multiple vectors in a tabular format. We can manually create one with the data.frame() function:\n\nmy_data_frame &lt;- data.frame(fruit = my_character_vector,\n                            calories_per_100g = c(52, 47, 30, 89),\n                            water_per_100g = c(85.6, 86.8, 91.4, 74.9))\n\n\nmy_data_frame\n\n       fruit calories_per_100g water_per_100g\n1      Apple                52           85.6\n2     Orange                47           86.8\n3 Watermelon                30           91.4\n4     Banana                89           74.9\n\n\nNow we have a little 4x3 data frame of fruits with their calorie counts and water composition. We gathered the nutritional information from the USDA (2019).\nWe can use the data_frame$column construct to access the vectors within the data frame:\n\nmean(my_data_frame$calories_per_100g)\n\n[1] 54.5\n\n\n\n\n\n\n\n\nExercise\n\n\n\nObtain the maximum value of water content per 100g in the data. Your code:\n\n\nWe will learn much more about data frames in our next module on data analysis.\nAfter talking about vectors and data frames, the last object type that we will cover is the list. Lists are super flexible objects that can contain just about anything:\n\nmy_list &lt;- list(my_object, my_vector, my_data_frame)\n\n\nmy_list\n\n[[1]]\n[1] 10\n\n[[2]]\n[1]   6 -11  10   0  20\n\n[[3]]\n       fruit calories_per_100g water_per_100g\n1      Apple                52           85.6\n2     Orange                47           86.8\n3 Watermelon                30           91.4\n4     Banana                89           74.9\n\n\nTo retrieve the elements of a list, we need to use double square brackets:\n\nmy_list[[1]]\n\n[1] 10\n\n\nLists are sometimes useful due to their flexibility, but are much less common in routine data analysis compared to vectors or data frames."
   },
   {
     "objectID": "01_r_intro.html#packages",
     "href": "01_r_intro.html#packages",
-    "title": "1  Short intro to R",
+    "title": "1  Intro to R",
     "section": "1.4 Packages",
     "text": "1.4 Packages\nThe R community has developed thousands of packages, which are specialized collections of functions, datasets, and other resources. To install one, you should use the install.packages() command. Below we will install the tidyverse package, a suite for data analysis that we will use in the next modules. You just need to install packages once, and then they will be available system-wide.\n\ninstall.packages(\"tidyverse\") # this can take a couple of minutes\n\nIf you want to use an installed package in your script, you must load it with the library() function. Some packages, as shown below, will print descriptive messages once loaded.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\n\n\n\n\n\nWarning\n\n\n\nRemember that install.packages(\"package\") needs to be executed just once, while library(package) needs to be in each script in which you plan to use the package. In general, never include install.packages(\"package\") as part of your scripts or Quarto documents!"
+  },
+  {
+    "objectID": "02_tidy_data1.html#loading-data",
+    "href": "02_tidy_data1.html#loading-data",
+    "title": "2  Tidy data analysis I",
+    "section": "2.1 Loading data",
+    "text": "2.1 Loading data\nThroughout this module we will work with a dataset of senators during the Trump presidency, which was adapted from FiveThirtyEight (2021).\nWe have stored the dataset in .csv format under the data/ subfolder. Loading it into R is simple (notice that we need to assign it to an object):\n\ntrump_scores &lt;- read_csv(\"data/trump_scores_538.csv\")\n\nRows: 122 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (4): id_bioguide, last_name, state, party\ndbl (3): num_votes, agree_trump, margin_trump\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\ntrump_scores # a \"tibble\" is a data frame in the tidyverse lingo\n\n# A tibble: 122 × 7\n   id_bioguide last_name  state party      num_votes agree_trump margin_trump\n   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;\n 1 A000360     Alexander  TN    Republican       118       0.890       26.0  \n 2 B000575     Blunt      MO    Republican       128       0.906       18.6  \n 3 B000944     Brown      OH    Democrat         128       0.258        8.13 \n 4 B001135     Burr       NC    Republican       121       0.893        3.66 \n 5 B001230     Baldwin    WI    Democrat         128       0.227        0.764\n 6 B001236     Boozman    AR    Republican       129       0.915       26.9  \n 7 B001243     Blackburn  TN    Republican       131       0.885       26.0  \n 8 B001261     Barrasso   WY    Republican       129       0.891       46.3  \n 9 B001267     Bennet     CO    Democrat         121       0.273       -4.91 \n10 B001277     Blumenthal CT    Democrat         128       0.203      -13.6  \n# ℹ 112 more rows\n\n\nLet’s review the dataset’s columns:\n\nid_bioguide: A unique ID for each politician, from the Congress Bioguide.\nlast_name\nstate\nparty\nnum_votes: Number of votes for which data was available.\nagree_trump: Proportion (0-1) of votes in which the senator voted in agreement with Trump.\nmargin_trump: Margin of victory (percentage points) of Trump in the senator’s state.\n\nWe can inspect our data by using the interface above. An alternative is to run the command View(trump_scores) or click on the object in RStudio’s environment panel (in the top-right section).\nDo you have any questions about the data?"
+  },
+  {
+    "objectID": "02_tidy_data1.html#wrangling-data-with-dplyr",
+    "href": "02_tidy_data1.html#wrangling-data-with-dplyr",
+    "title": "2  Tidy data analysis I",
+    "section": "2.2 Wrangling data with dplyr",
+    "text": "2.2 Wrangling data with dplyr\nWe often need to modify data to conduct our analyses, e.g., creating columns, filtering rows, etc. In the tidyverse, these operations are conducted with multiple verbs, which we will review now.\n\n2.2.1 Selecting observations"
+  },
+  {
+    "objectID": "02_tidy_data1.html#visualizing-data-with-ggplot2",
+    "href": "02_tidy_data1.html#visualizing-data-with-ggplot2",
+    "title": "2  Tidy data analysis I",
+    "section": "2.3 Visualizing data with ggplot2",
+    "text": "2.3 Visualizing data with ggplot2"
   },
   {
     "objectID": "03_matrices.html#introduction",
@@ -270,6 +291,6 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "U. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. “Department of Agriculture Agricultural Research Service.” https://fdc.nal.usda.gov/."
+    "text": "FiveThirtyEight. 2021. “Tracking Congress In The Age Of Trump [Dataset].” https://projects.fivethirtyeight.com/congress-trump-score/.\n\n\nU. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. “Department of Agriculture Agricultural Research Service.” https://fdc.nal.usda.gov/."
   }
 ]
