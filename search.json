@@ -28,32 +28,32 @@
     "text": "Contact info\nIf you have any questions during or outside of methods camp, you can contact Andrés at andres.cruz at utexas dot edu and Matt at mjmartin at utexas dot edu."
   },
   {
-    "objectID": "01_r_rstudio.html#installing-r-and-rstudio",
-    "href": "01_r_rstudio.html#installing-r-and-rstudio",
-    "title": "1  R and RStudio",
-    "section": "1.1 Installing R and RStudio",
-    "text": "1.1 Installing R and RStudio\nR is a programming language optimized for statistics and data analysis. Most people use R from RStudio, a graphical user interface (GUI) that includes a file pane, a graphics pane, and other goodies. Both R and RStudio are open source, i.e., free as in beer and free as in freedom!\nYour first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date—if not, follow the instructions below):\n\nDownload and install R from the official website, CRAN. Click on “Download R for &lt;Windows/Mac&gt;” and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2 Macs and Intel for older Macs).\nDownload and install RStudio from the official website. Scroll down and select the installer for your operating system.\n\nAfter these two steps, you can open RStudio in your system, as you would with any program. You should see something like this:\n\nThat’s it for the installation! We also strongly recommend that you change a couple of RStudio’s default settings:1\n\nTools &gt; Global Options &gt; General &gt; Uncheck \"Restore .RData into workspace at startup\"\nTools &gt; Global Options &gt; General &gt; Save workspace to .RData on Exit &gt; Select \"Never\"\nTools &gt; Appearance to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes…"
+    "objectID": "00_setup.html#installing-r-and-rstudio",
+    "href": "00_setup.html#installing-r-and-rstudio",
+    "title": "Setup",
+    "section": "Installing R and RStudio",
+    "text": "Installing R and RStudio\nR is a programming language optimized for statistics and data analysis. Most people use R from RStudio, a graphical user interface (GUI) that includes a file pane, a graphics pane, and other goodies. Both R and RStudio are open source, i.e., free as in beer and free as in freedom!\nYour first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date—if they are not, follow the instructions below):\n\nDownload and install R from the official website, CRAN. Click on “Download R for &lt;Windows/Mac&gt;” and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2 Macs and Intel for older Macs).\nDownload and install RStudio from the official website. Scroll down and select the installer for your operating system.\n\nAfter these two steps, you can open RStudio in your system, as you would with any program. You should see something like this:\n\n\n\nFigure 1: How RStudio looks after a clean installation.\n\n\nThat’s it for the installation! We also strongly recommend that you change a couple of RStudio’s default settings:1\n\nTools &gt; Global Options &gt; General &gt; Uncheck \"Restore .RData into workspace at startup\"\nTools &gt; Global Options &gt; General &gt; Save workspace to .RData on Exit &gt; Select \"Never\"\nTools &gt; Appearance to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes…"
   },
   {
-    "objectID": "01_r_rstudio.html#setting-up-for-methods-camp",
-    "href": "01_r_rstudio.html#setting-up-for-methods-camp",
-    "title": "1  R and RStudio",
-    "section": "1.2 Setting up for Methods Camp",
-    "text": "1.2 Setting up for Methods Camp\nTODO: how to download the materials and open the RStudio project (include discussion on .zip files). How to make sure that everything’s fine (see top-right for RStudio project)."
+    "objectID": "00_setup.html#setting-up-for-methods-camp",
+    "href": "00_setup.html#setting-up-for-methods-camp",
+    "title": "Setup",
+    "section": "Setting up for Methods Camp",
+    "text": "Setting up for Methods Camp\nAll materials for Methods Camp are both on this website and an RStudio project. An RStudio project is simply a folder where one keeps scripts, datasets, and other files needed for a data analysis project.\nYou can download our RStudio project here, as a .zip compressed file. On MacOS, the file will be uncompressed automatically. On Windows, you should do Right click &gt; Extract all.\n\n\n\n\n\n\nWarning\n\n\n\nMake sure to properly unzip the materials. Double-clicking the .zip file on most Windows systems will not unzip the folder—you must do Right click &gt; Extract all.\n\n\nYou should now have a folder called methodscamp/ on your computer. Navigate to the methodscamp.Rproj file within it and open it. RStudio should open the project right away. You should see methodscamp on the top-right of RStudio—this indicates that you are working in our RStudio project.\n\n\n\nFigure 2: How the bottom-right corner of RStudio looks after opening our project.\n\n\nThat’s all for setup! We can now start coding. After opening our RStudio project, we’ll begin by opening the 01_r_rstudio.qmd file from the “Files” panel, in the bottom-right portion of RStudio. This is a Quarto document,2 which contains both code and explanations (you can also read in the next chapter of this website)."
   },
   {
-    "objectID": "01_r_rstudio.html#short-intro-to-r",
-    "href": "01_r_rstudio.html#short-intro-to-r",
-    "title": "1  R and RStudio",
-    "section": "1.3 Short intro to R",
-    "text": "1.3 Short intro to R\nTODO: objects and common functions. Explain how to run Quarto code blocks, and how to render a document to html."
-  },
-  {
-    "objectID": "01_r_rstudio.html#footnotes",
-    "href": "01_r_rstudio.html#footnotes",
-    "title": "1  R and RStudio",
+    "objectID": "00_setup.html#footnotes",
+    "href": "00_setup.html#footnotes",
+    "title": "Setup",
     "section": "",
-    "text": "The idea behind these settings is to force R to start from scratch with each new session. No lingering objects avoids misunderstandings and helps with reproducibility!↩︎"
+    "text": "The idea behind these settings is to force R to start from scratch with each new session. No lingering objects avoids misunderstandings and helps with reproducibility!↩︎\nPerhaps you have used R Markdown before. Quarto is the next iteration of R Markdown, and is both more flexible and more powerful!↩︎"
+  },
+  {
+    "objectID": "01_r_rstudio.html",
+    "href": "01_r_rstudio.html",
+    "title": "1  Short intro to R",
+    "section": "",
+    "text": "In Quarto documents like this one, we can write comments by just using plain text. In contrast, code needs to be within code blocks, like the one below. To execute a code block, you can click on the little “Play” button or press Cmd/Ctrl + Shift + Enter when your keyboard is hovering the code block.\n\n2 + 2\n\n[1] 4\n\n\nThat was our first R command, a simple math operation. Of course, we can also do more complex arithmetic:\n\n12345 ^ 2  / (200 + 25 - 6 * 2) # this is an inline comment, see the leading \"#\"\n\n[1] 715488.4\n\n\nIn order to create a code block, you can press Cmd/Ctrl + Alt + i or click on the little green “+C” icon on top of the script.\n\n\n\n\n\n\nExercise\n\n\n\nCreate your own code block below and run a math operation.\n\n\n\n1.0.1 Objects\nA huge part of R is working with objects. Let’s see how they work:\n\nmy_object &lt;- 10\n\n\nmy_object # to print the value of an object, just call its name\n\n[1] 10\n\n\nWe can now use this object in our operations:\n\n2 ^ my_object\n\n[1] 1024\n\n\nOr even create another object out of it:\n\nmy_object2 &lt;- my_object * 2\n\n\nmy_object2\n\n[1] 20\n\n\nTODO: objects and common functions. Explain how to run Quarto code blocks, and how to render a document to html."
   },
   {
     "objectID": "03_matrices.html#introduction",
@@ -109,7 +109,7 @@
     "href": "05_functions.html#basics",
     "title": "5  Functions and loops",
     "section": "5.1 Basics",
-    "text": "5.1 Basics\n\n5.1.1 What is a function?\n\nAnything that takes input(s) and gives one defined output.\nThey assign a unique value in its range (\\(y\\) values) for each value in its domain ( \\(x\\) values).\nIn math, this usually looks something like \\(f(x) = 3x + 4\\).\n\n\\(x\\) is the argument that the function takes.\nFor any \\(x\\), multiply \\(x\\) by 3 and then add 4\nAlternative but equivalent notation: \\(y = 3x + 4\\)\n\\(y\\) is “a function of” \\(x\\), so \\(y\\) = \\(f(x)\\)\n\nWe describe functions with both equations and graphs.\n\n\n\n5.1.2 Function machine\n\n\n\n5.1.3 Visualization\nWhen graphed, we can’t draw vertical line through a function. Why not?"
+    "text": "5.1 Basics\n\n5.1.1 What is a function?\n\nAnything that takes input(s) and gives one defined output.\nThey assign a unique value in its range (\\(y\\) values) for each value in its domain ( \\(x\\) values).\nIn math, this usually looks something like \\(f(x) = 3x + 4\\).\n\n\\(x\\) is the argument that the function takes.\nFor any \\(x\\), multiply \\(x\\) by 3 and then add 4\nAlternative but equivalent notation: \\(y = 3x + 4\\)\n\\(y\\) is “a function of” \\(x\\), so \\(y\\) = \\(f(x)\\)\n\nWe describe functions with both equations and graphs.\n\n\n\n5.1.2 Function machine\n\n\n\nFigure 5.1: Function machine\n\n\n\n\n5.1.3 Visualization\nWhen graphed, we can’t draw vertical line through a function. Why not?"
   },
   {
     "objectID": "05_functions.html#types-of-functions",
