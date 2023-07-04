@@ -1,1 +1,54 @@
 # Tidy data analysis I
+
+The [`tidyverse`](https://www.tidyverse.org/) is a suite of packages that streamline data analysis in R. After installing the `tidyverse` with `install.packages("tidyverse")` (see the previous module), you can load it with:
+
+```{r}
+library(tidyverse)
+```
+
+::: {.callout-tip}
+
+Upon loading, the `tidyverse` prints a message like the one above. Notice that multiple packages (the constituent elements of the "suite") are actually loaded. For instance, `dplyr` and `tidyr` help with data transformation and wrangling, while `ggplot2` allows us to draw plots. In most cases, one just loads the `tidyverse` and forgets about these details, as the constituent packages work together nicely.
+
+:::
+
+Throughout this module, we will use `tidyverse` functions to load, wrangle, and visualize real data. 
+
+## Loading data
+
+Throughout this module we will work with a dataset of senators during the Trump presidency, which was adapted from [FiveThirtyEight (2021)](https://projects.fivethirtyeight.com/congress-trump-score/).
+
+We have stored the dataset in .csv format under the `data/` subfolder. Loading it into R is simple (notice that we need to assign it to an object):
+
+```{r}
+trump_scores <- read_csv("data/trump_scores_538.csv")
+```
+
+```{r}
+trump_scores # a "tibble" is a data frame in the tidyverse lingo
+```
+
+Let's review the dataset's columns:
+
+- `id_bioguide`: A unique ID for each politician, from the Congress Bioguide.
+- `last_name`
+- `state`
+- `party`
+- `num_votes`: Number of votes for which data was available.
+- `agree_trump`: Proportion (0-1) of votes in which the senator voted in agreement with Trump.
+- `margin_trump`: Margin of victory (percentage points) of Trump in the senator's state.
+
+We can inspect our data by using the interface above. An alternative is to run the command `View(trump_scores)` or click on the object in RStudio's environment panel (in the top-right section).
+
+Do you have any questions about the data?
+
+## Wrangling data with `dplyr`
+
+We often need to modify data to conduct our analyses, e.g., creating columns, filtering rows, etc. In the `tidyverse`, these operations are conducted with multiple *verbs*, which we will review now. 
+
+### Selecting observations
+
+
+
+## Visualizing data with `ggplot2`
+
