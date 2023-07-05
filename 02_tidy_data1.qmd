@@ -281,6 +281,13 @@ Obtain the maximum absolute difference in agreement with Trump (the `abs_diff_ag
 
 ## Visualizing data with `ggplot2`
 
+-   `ggplot2` is an `R` package dedicated to data visualization.
+-   We can build charts through layers using `geom_` functions. There are more than 20 options available such as the following:
+    -   `geom_bar` (bar plots)
+    -   `geom_boxplot` (box plots)
+    -   `geom_hist` (histograms)
+-   The `ggtitle()` function allows to add a title to the chart. 
+
 (TODO)
 
 ```{r}
