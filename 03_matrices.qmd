@@ -590,3 +590,151 @@ T1 <- solve(A)
 # print the inverse of the matrix
 print(T1)
 ```
+
+## Linear systems and matrices
+
+-   A system of equations can be represented by an *augmented matrix*.
+
+-   System of equations: $${\color{red}{3}}x + {\color{lightgreen}{6}}y = {\color{skyblue}{12}}$$ $${\color{red}{5}}x + {\color{lightgreen}{10}}y = {\color{skyblue}{25}}$$
+-   In an augmented matrix, each row represents one equation in the system and each column represents a variable or the constant terms.
+$$\begin{bmatrix}
+{\color{red}{3}} & {\color{lightgreen}{6}} & {\color{skyblue}{12}}\\
+{\color{red}{5}} & {\color{lightgreen}{10}} & {\color{skyblue}{25}}
+\end{bmatrix}$$
+
+## OLS and matrices
+
+-   We can use the logic above to calculate estimates for our ordinary least squares (OLS) models.
+
+-   OLS is a linear regression technique used to find the best-fitting line for a set of data points (observations) by minimizing the residuals (the differences between the observed and predicted values). 
+
+- We minimize the *sum of the squared errors*.
+
+### Dependent variable
+
+-   Suppose, for example, we have a sample consisting of $n$ observations.
+
+-   The dependent variable is denoted as an $n \times1$ column vector. 
+
+$$Y = \begin{bmatrix}
+y_1 \\
+y_2 \\
+y_3 \\
+\vdots \\
+y_n
+\end{bmatrix}$$
+
+### Independent variables
+
+-   Suppose there are $k$ independent variables and a constant term, meaning $k+1$ columns and $n$ rows.
+
+-   We can represent these variables as an $n \times (k+1)$ matrix, expressed as follows:
+
+$$X= \begin{bmatrix}
+1 & x_{11} & \dots & x_{1k} \\
+1 & x_{21} & \dots & x_{2k} \\
+\vdots & \vdots & \dots & \vdots \\
+1 & x_{n1} & \dots & x_{nk}
+\end{bmatrix}$$
+
+-   $x_{ij}$ is the $i$-th observation of the $j$-th independent variable.
+
+### Linear regression model
+
+-    Let's say we have 173 observations (n = 173) and 2 IVs (k = 3).
+
+-   This can be expressed as the following linear equation:
+$$y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \epsilon$$
+-   In matrix form, we have:
+$$\begin{aligned} \begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix} = \begin{bmatrix}
+1 & x_{11} & x_{21} \\
+1 & x_{21} & x_{22} \\
+\vdots & \vdots & \vdots \\
+1 & x_{1173} & x_{2173} 
+\end{bmatrix} \begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\beta_2 
+\end{bmatrix} + \begin{bmatrix}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_{173}
+\end{bmatrix}\end{aligned} $$
+-   All 173 equations can be represented by:
+$$y=X\beta+\epsilon$$
+### Estimates
+
+-   Without getting too much into the mechanics, we can calculate our coefficient estimates with matrix algebra using the following equation:
+
+$$\hat{\beta} = (X'X)^{-1}X'Y$$
+-   Read aloud, we say "X prime X inverse, X prime Y".
+
+-   The little hat on our beta ($\hat{\beta}$) signifies that these are estimates, that is our OLS estimators.
+
+-   Remember, the OLS method is to choose $\hat{\beta}$ such that the sum of squared residuals ("SSR") is minimized.
+
+#### Example in RStudio
+
+-   We will load the `mtcars` data set (our favorite) for this example, which contains data about many different car models.
+
+```{r}
+cars_df <- mtcars
+```
+
+-   Now, we want to estimate the association between `hp` (horsepower) and `wt` (weight), our independent variables, and `mpg` (miles per gallon), our dependent variable. 
+
+-  First, we transform our dependent variable into a matrix, using the `as.matrix` function and specifying the column of the `mtcars` data set to create a column vector of our observed values for the DV.
+
+```{r}
+Y <- as.matrix(cars_df[,1])
+Y
+```
+
+-   Next, we do the same thing for our independent variables of interest, and our constant.
+
+We are going to do the same thing for our independent variables of interest and our constant. First, create two separate matrices for our independent variables (hp and wt) using the `as.matrix` function we employed above. 
+
+```{r}
+# create two separate matrices for IVs
+X1 <- as.matrix(cars_df[,4])
+X2 <- as.matrix(cars_df[,6])
+
+# create constant column
+
+# bind them altogether into one matrix
+constant <-  rep(1,nrow(X1))
+X <- cbind(constant,X1,X2)
+X
+```
+
+-   Next, we calculate $X'X$, $X'Y$, and $(X'X)^{-1}$. 
+
+::: callout-reminder
+Don't forget to use `%*%` for matrix multiplication!
+:::
+
+```{r}
+# X prime X
+XpX <- t(X)%*%X
+
+# X prime X inverse
+XpXinv <- solve(XpX)
+
+# X prime Y
+XpY <- t(X)%*%Y
+
+# beta coefficient estimates
+bhat <- XpXinv %*% XpY
+bhat
+```
+
+## Predicted values
+
+We can also use matrix algebra to calculate the predicted (i.e., fitted) values for our DV based on our model. Remember that $\hat{Y} = X\hat{\beta}$. Calculate the predicted values in the chunk below. Then we will see how they compare to our observed values.
+
