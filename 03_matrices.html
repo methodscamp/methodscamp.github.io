@@ -259,6 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#dependent-variable" id="toc-dependent-variable" class="nav-link" data-scroll-target="#dependent-variable"><span class="header-section-number">3.9.1</span> Dependent variable</a></li>
   <li><a href="#independent-variables" id="toc-independent-variables" class="nav-link" data-scroll-target="#independent-variables"><span class="header-section-number">3.9.2</span> Independent variables</a></li>
   <li><a href="#linear-regression-model" id="toc-linear-regression-model" class="nav-link" data-scroll-target="#linear-regression-model"><span class="header-section-number">3.9.3</span> Linear regression model</a></li>
+  <li><a href="#estimates" id="toc-estimates" class="nav-link" data-scroll-target="#estimates"><span class="header-section-number">3.9.4</span> Estimates</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1179,16 +1180,22 @@ y_n
 \vdots \\
 \epsilon_{173}
 \end{bmatrix}\end{aligned} \]</span></p></li>
-<li><p>All 173 equations can be represented by: <span class="math display">\[y=X\beta+\epsilon\]</span> ### Estimates</p></li>
-<li><p>Without getting too much into the mechanics, we can calculate our coefficient estimates with matrix algebra using the following equation:</p></li>
+<li><p>All 173 equations can be represented by: <span class="math display">\[y=X\beta+\epsilon\]</span></p></li>
 </ul>
-<p><span class="math display">\[\hat{\beta} = (X'X)^{-1}X'Y\]</span> - Read aloud, we say “X prime X inverse, X prime Y”.</p>
+</section>
+<section id="estimates" class="level3" data-number="3.9.4">
+<h3 data-number="3.9.4" class="anchored" data-anchor-id="estimates"><span class="header-section-number">3.9.4</span> Estimates</h3>
 <ul>
+<li>Without getting too much into the mechanics, we can calculate our coefficient estimates with matrix algebra using the following equation:</li>
+</ul>
+<p><span class="math display">\[\hat{\beta} = (X'X)^{-1}X'Y\]</span></p>
+<ul>
+<li><p>Read aloud, we say “X prime X inverse, X prime Y”.</p></li>
 <li><p>The little hat on our beta (<span class="math inline">\(\hat{\beta}\)</span>) signifies that these are estimates, that is our OLS estimators.</p></li>
 <li><p>Remember, the OLS method is to choose <span class="math inline">\(\hat{\beta}\)</span> such that the sum of squared residuals (“SSR”) is minimized.</p></li>
 </ul>
-<section id="example-in-rstudio" class="level4" data-number="3.9.3.1">
-<h4 data-number="3.9.3.1" class="anchored" data-anchor-id="example-in-rstudio"><span class="header-section-number">3.9.3.1</span> Example in RStudio</h4>
+<section id="example-in-rstudio" class="level4" data-number="3.9.4.1">
+<h4 data-number="3.9.4.1" class="anchored" data-anchor-id="example-in-rstudio"><span class="header-section-number">3.9.4.1</span> Example in RStudio</h4>
 <ul>
 <li>We will load the <code>mtcars</code> data set (our favorite) for this example, which contains data about many different car models.</li>
 </ul>
@@ -1241,7 +1248,6 @@ y_n
 <ul>
 <li>Next, we do the same thing for our independent variables of interest, and our constant.</li>
 </ul>
-<p>We are going to do the same thing for our independent variables of interest and our constant. First, create two separate matrices for our independent variables (hp and wt) using the <code>as.matrix</code> function we employed above.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create two separate matrices for IVs</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>X1 <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(cars_df[,<span class="dv">4</span>])</span>
