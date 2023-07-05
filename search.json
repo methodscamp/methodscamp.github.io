@@ -95,7 +95,7 @@
     "href": "02_tidy_data1.html#visualizing-data-with-ggplot2",
     "title": "2  Tidy data analysis I",
     "section": "2.3 Visualizing data with ggplot2",
-    "text": "2.3 Visualizing data with ggplot2"
+    "text": "2.3 Visualizing data with ggplot2\n\nggplot2 is an R package dedicated to data visualization.\nWe can build charts through layers using geom_ functions. There are more than 20 options available such as the following:\n\ngeom_bar (bar plots)\ngeom_boxplot (box plots)\ngeom_hist (histograms)\n\nThe ggtitle() function allows to add a title to the chart."
   },
   {
     "objectID": "03_matrices.html#introduction",
