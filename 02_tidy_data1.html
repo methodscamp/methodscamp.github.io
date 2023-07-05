@@ -736,7 +736,7 @@ Exercise
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Add a new column to the data frame, called <code>diff_agree</code>, which subtracts <code>agree</code> and <code>agree_pred</code>. How would you create <code>abs_diff_agree</code>, defined as the absolute difference of <code>diff_agree</code>?</p></li>
+<li><p>Add a new column to the data frame, called <code>diff_agree</code>, which subtracts <code>agree</code> and <code>agree_pred</code>. How would you create <code>abs_diff_agree</code>, defined as the absolute value of <code>diff_agree</code>?</p></li>
 <li><p>Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:</p></li>
 <li><p>Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:</p></li>
 </ol>
@@ -842,15 +842,107 @@ Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Arrange the data by <code>diff_pred</code>, the difference between agreement and predicted agreement with Trump? (You should have code on how to create this variable from the last exercise).</p>
+<p>Arrange the data by <code>diff_pred</code>, the difference between agreement and predicted agreement with Trump. (You should have code on how to create this variable from the last exercise).</p>
 </div>
 </div>
 </section>
 <section id="summarizing-data" class="level3" data-number="2.2.6">
 <h3 data-number="2.2.6" class="anchored" data-anchor-id="summarizing-data"><span class="header-section-number">2.2.6</span> Summarizing data</h3>
+<p><code>dplyr</code> makes summarizing data a breeze using the <code>summarize()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_agree =</span> <span class="fu">mean</span>(agree),</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_agree_pred =</span> <span class="fu">mean</span>(agree_pred))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  mean_agree mean_agree_pred
+       &lt;dbl&gt;           &lt;dbl&gt;
+1      0.592           0.572</code></pre>
+</div>
+</div>
+<p>To make summaries, we can use any function that takes a vector and returns one value. Another example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(num_votes <span class="sc">&gt;=</span> <span class="dv">5</span>) <span class="sc">|&gt;</span> <span class="co"># to filter out senators with few data points</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">max_agree =</span> <span class="fu">max</span>(agree),</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_agree =</span> <span class="fu">min</span>(agree))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  max_agree min_agree
+      &lt;dbl&gt;     &lt;dbl&gt;
+1         1     0.124</code></pre>
+</div>
+</div>
+<p><em>Grouped summaries</em> allow us to disaggregate summaries according to other variables (usually categorical):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(num_votes <span class="sc">&gt;=</span> <span class="dv">5</span>) <span class="sc">|&gt;</span> <span class="co"># to filter out senators with few data points</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_agree =</span> <span class="fu">mean</span>(agree),</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_agree =</span> <span class="fu">max</span>(agree),</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_agree =</span> <span class="fu">min</span>(agree),</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> party) <span class="co"># to group by party</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  party mean_agree max_agree min_agree
+  &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 R          0.876     1         0.651
+2 D          0.272     0.548     0.124</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Obtain the maximum absolute difference in agreement with Trump (the <code>abs_diff_agree</code> variable from before) for each party.</p>
+</div>
+</div>
 </section>
 <section id="overview" class="level3" data-number="2.2.7">
 <h3 data-number="2.2.7" class="anchored" data-anchor-id="overview"><span class="header-section-number">2.2.7</span> Overview</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>select()</code></td>
+<td>Select columns</td>
+</tr>
+<tr class="even">
+<td><code>rename()</code></td>
+<td>Rename columns</td>
+</tr>
+<tr class="odd">
+<td><code>mutate()</code></td>
+<td>Creating columns</td>
+</tr>
+<tr class="even">
+<td><code>filter()</code></td>
+<td>Filtering rows</td>
+</tr>
+<tr class="odd">
+<td><code>arrange()</code></td>
+<td>Ordering rows</td>
+</tr>
+<tr class="even">
+<td><code>summarize()</code></td>
+<td>Summarizing data</td>
+</tr>
+<tr class="odd">
+<td><code>summarize(…, .by = )</code></td>
+<td>Summarizing data (by group)</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="visualizing-data-with-ggplot2" class="level2" data-number="2.3">
@@ -865,6 +957,64 @@ Exercise
 </ul></li>
 <li>The <code>ggtitle()</code> function allows to add a title to the chart.</li>
 </ul>
+<p>(TODO)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>trump_scores_ss <span class="ot">&lt;-</span> trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(num_votes <span class="sc">&gt;=</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(trump_scores_ss, <span class="fu">aes</span>(<span class="at">x =</span> party)) <span class="sc">+</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02_tidy_data1_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(trump_scores_ss, <span class="fu">aes</span>(<span class="at">x =</span> agree)) <span class="sc">+</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="02_tidy_data1_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(trump_scores_ss, <span class="fu">aes</span>(<span class="at">x =</span> agree, <span class="at">fill =</span> party)) <span class="sc">+</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="02_tidy_data1_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(trump_scores_ss, <span class="fu">aes</span>(<span class="at">x =</span> margin_trump, <span class="at">y =</span> agree)) <span class="sc">+</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02_tidy_data1_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(trump_scores_ss, <span class="fu">aes</span>(<span class="at">x =</span> margin_trump, <span class="at">y =</span> agree, <span class="at">color =</span> party)) <span class="sc">+</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02_tidy_data1_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(trump_scores, <span class="fu">aes</span>(<span class="at">x =</span> margin_trump, <span class="at">y =</span> agree, <span class="at">color =</span> party)) <span class="sc">+</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"D"</span> <span class="ot">=</span> <span class="st">"blue"</span>, <span class="st">"R"</span> <span class="ot">=</span> <span class="st">"red"</span>)) <span class="sc">+</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Trump margin in the senator's state (p.p.)"</span>,</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Votes in agreement with Trump (prop.)"</span>,</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Party"</span>,</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relationship between Trump margins and senators' votes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02_tidy_data1_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 </section>
