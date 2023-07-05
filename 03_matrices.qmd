@@ -595,11 +595,11 @@ print(T1)
 
 -   A system of equations can be represented by an *augmented matrix*.
 
--   System of equations: $${\color{red}{3}}x + {\color{lightgreen}{6}}y = {\color{skyblue}{12}}$$ $${\color{red}{5}}x + {\color{lightgreen}{10}}y = {\color{skyblue}{25}}$$
+-   System of equations: $${\color{red}{3}}x + {\color{green}{6}}y = {\color{skyblue}{12}}$$ $${\color{red}{5}}x + {\color{green}{10}}y = {\color{skyblue}{25}}$$
 -   In an augmented matrix, each row represents one equation in the system and each column represents a variable or the constant terms.
 $$\begin{bmatrix}
-{\color{red}{3}} & {\color{lightgreen}{6}} & {\color{skyblue}{12}}\\
-{\color{red}{5}} & {\color{lightgreen}{10}} & {\color{skyblue}{25}}
+{\color{red}{3}} & {\color{green}{6}} & {\color{skyblue}{12}}\\
+{\color{red}{5}} & {\color{green}{10}} & {\color{skyblue}{25}}
 \end{bmatrix}$$
 
 ## OLS and matrices
