@@ -46,9 +46,84 @@ Do you have any questions about the data?
 
 We often need to modify data to conduct our analyses, e.g., creating columns, filtering rows, etc. In the `tidyverse`, these operations are conducted with multiple *verbs*, which we will review now. 
 
-### Selecting observations
+### Selecting columns
+
+We can select specific columns in our dataset with the `select()` function.
+
+```{r}
+select(trump_scores, last_name, party)
+```
+
+All `dplyr` wrangling verbs take a data frame as their first argument. 
+
+This is a good moment to introduce the concept of "pipes." Notice how the code below produces the same output as the one above, but with a slightly different syntax. Pipes (`|>`) "kick" the object on the left of the pipe to the first argument of the function on the right. One can read pipes as "then," so the code below can be read as "take `trump_scores`, then select the columns `last_name` and `party`." Pipes are very useful to *chain multiple operations*, as we will see in a moment.
+
+```{r}
+trump_scores |> select(last_name, party)
+```
+
+::: {.callout-tip}
+
+You can insert a pipe with the `Cmd/Ctrl + Shift + M` shortcut. If you have not changed the default RStudio settings, an "old" pipe (`%>%`) might appear. While most of the functionality is the same, the `|>` "new" pipes are more readable. You can change this RStudio option in `Tools > Global Options > Code > Use native pipe operator`. Make sure to check the other suggested settings in our [Setup module](/00_setup.html)!
+
+:::
 
 
+Going back to selecting columns, you can select ranges:
+
+```{r}
+trump_scores |> select(id_bioguide:party)
+```
+
+And use a few helper functions, like `matches()`:
+
+```{r}
+trump_scores |> select(last_name, matches("trump"))
+```
+
+Or `everything()`, which we usually use to reorder columns:
+
+```{r}
+trump_scores |> select(last_name, everything())
+```
+
+::: {.callout-tip}
+
+Notice that all these commands have not edited our existent objects---they have just printed the requested outputs to the screen. In order to modify objects, you need to use the assignment operator (`<-`). For example:
+
+```{r}
+trump_scores_reduced <- trump_scores |> select(last_name, matches("trump"))
+```
+
+```{r}
+trump_scores_reduced
+```
+
+:::
+
+### Renaming columns
+
+We can use the `rename()` function to rename columns, with the syntax `new_name = old_name`. For example:
+
+```{r}
+trump_scores |> rename(prop_agree_trump = agree_trump)
+```
+
+This is a good occasion to show how pipes can chain operations. How do we read the following code out loud? (Remember that pipes are read as "then").
+
+```{r}
+trump_scores |> 
+  select(last_name, matches("trump")) |> 
+  rename(prop_agree_trump = agree_trump)
+```
+
+### Creating columns
+
+### Filtering rows
+
+### Summarizing data
+
+### Overview
 
 ## Visualizing data with `ggplot2`
 
