@@ -185,7 +185,7 @@ trump_scores |>
 ::: callout-note
 #### Exercise
 
-1. Add a new column to the data frame, called `diff_agree`, which substracts `agree` and `agree_pred`. Remember to use the assignment operator (`<-`)! Your code:
+1. Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute difference of `diff_agree`?
 
 2. Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:
 
@@ -195,7 +195,43 @@ trump_scores |>
 
 ### Ordering rows
 
+The `arrange()` function allows us to order rows according to values. For example, let's order based on the `agree` variable:
 
+```{r}
+trump_scores |> 
+  arrange(agree)
+```
+
+Maybe we only want senators with more than a few data points. Remember that we can chain operations:
+
+```{r}
+trump_scores |> 
+  filter(num_votes >= 10) |> 
+  arrange(agree)
+```
+
+By default, `arrange()` uses increasing order (like `sort()`). To use decreasing order, add a minus sign:
+
+```{r}
+trump_scores |> 
+  filter(num_votes >= 10) |> 
+  arrange(-agree)
+```
+
+You can also order rows by more than one variable. What this does is to order by the first variable, and resolve any ties by ordering by the second variable (and so forth if you have more than two ordering variables). For example, let's first order our data frame by party, and then within party order by agreement with Trump:
+
+```{r}
+trump_scores |> 
+  filter(num_votes >= 10) |> 
+  arrange(party, agree)
+```
+
+::: callout-note
+#### Exercise
+
+Arrange the data by `diff_pred`, the difference between agreement and predicted agreement with Trump? (You should have code on how to create this variable from the last exercise).   
+
+:::
 
 ### Summarizing data
 
