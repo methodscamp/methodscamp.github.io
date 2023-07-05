@@ -286,7 +286,7 @@ Obtain the maximum absolute difference in agreement with Trump (the `abs_diff_ag
     -   `geom_bar` (bar plots)
     -   `geom_boxplot` (box plots)
     -   `geom_hist` (histograms)
--   The `ggtitle()` function allows to add a title to the chart. 
+-   The `ggtitle()` function allows to add a title to the chart.
 
 (TODO)
 
