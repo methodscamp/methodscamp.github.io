@@ -734,7 +734,3 @@ bhat <- XpXinv %*% XpY
 bhat
 ```
 
-## Predicted values
-
-We can also use matrix algebra to calculate the predicted (i.e., fitted) values for our DV based on our model. Remember that $\hat{Y} = X\hat{\beta}$. Calculate the predicted values in the chunk below. Then we will see how they compare to our observed values.
-
