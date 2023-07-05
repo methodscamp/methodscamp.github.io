@@ -297,10 +297,10 @@ Calculate $A-B$
     ca_{21} & ca_{22} & ca_{23}\\
     ca_{31} & ca_{32} & ca_{33}
     \end{bmatrix}$$
-    
+
 #### Scalar multiplication in RStudio
 
--    All we need to do is take an established matrix and multiply it by some scalar.
+-   All we need to do is take an established matrix and multiply it by some scalar.
 
 ```{r}
 matrix1
@@ -453,10 +453,10 @@ $$\begin{aligned} E = CQ =
     -   \$9,000 for wood
     -   \$24,750 for cloth
     -   \$11,700 for feathers.
-    
+
 #### Matrix multiplication in RStudio
 
--    We must make sure the matrices are conformable, as we do for our manual calculations.
+-   We must make sure the matrices are conformable, as we do for our manual calculations.
 -   Then, we can multiply them together without issue.
 -   When multiplying together matrices in RStudio, remember to use the `%*%` operator, otherwise you will receive an error message.
 
@@ -596,25 +596,25 @@ print(T1)
 -   A system of equations can be represented by an *augmented matrix*.
 
 -   System of equations: $${\color{red}{3}}x + {\color{green}{6}}y = {\color{blue}{12}}$$ $${\color{red}{5}}x + {\color{green}{10}}y = {\color{blue}{25}}$$
--   In an augmented matrix, each row represents one equation in the system and each column represents a variable or the constant terms.
-$$\begin{bmatrix}
-{\color{red}{3}} & {\color{green}{6}} & {\color{blue}{12}}\\
-{\color{red}{5}} & {\color{green}{10}} & {\color{blue}{25}}
-\end{bmatrix}$$
+
+-   In an augmented matrix, each row represents one equation in the system and each column represents a variable or the constant terms. $$\begin{bmatrix}
+    {\color{red}{3}} & {\color{green}{6}} & {\color{blue}{12}}\\
+    {\color{red}{5}} & {\color{green}{10}} & {\color{blue}{25}}
+    \end{bmatrix}$$
 
 ## OLS and matrices
 
 -   We can use the logic above to calculate estimates for our ordinary least squares (OLS) models.
 
--   OLS is a linear regression technique used to find the best-fitting line for a set of data points (observations) by minimizing the residuals (the differences between the observed and predicted values). 
+-   OLS is a linear regression technique used to find the best-fitting line for a set of data points (observations) by minimizing the residuals (the differences between the observed and predicted values).
 
-- We minimize the *sum of the squared errors*.
+-   We minimize the *sum of the squared errors*.
 
 ### Dependent variable
 
 -   Suppose, for example, we have a sample consisting of $n$ observations.
 
--   The dependent variable is denoted as an $n \times1$ column vector. 
+-   The dependent variable is denoted as an $n \times1$ column vector.
 
 $$Y = \begin{bmatrix}
 y_1 \\
@@ -641,38 +641,39 @@ $$X= \begin{bmatrix}
 
 ### Linear regression model
 
--    Let's say we have 173 observations (n = 173) and 2 IVs (k = 3).
+-   Let's say we have 173 observations (n = 173) and 2 IVs (k = 3).
 
--   This can be expressed as the following linear equation:
-$$y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \epsilon$$
--   In matrix form, we have:
-$$\begin{aligned} \begin{bmatrix}
-y_1 \\
-y_2 \\
-\vdots \\
-y_n
-\end{bmatrix} = \begin{bmatrix}
-1 & x_{11} & x_{21} \\
-1 & x_{21} & x_{22} \\
-\vdots & \vdots & \vdots \\
-1 & x_{1173} & x_{2173} 
-\end{bmatrix} \begin{bmatrix}
-\beta_0 \\
-\beta_1 \\
-\beta_2 
-\end{bmatrix} + \begin{bmatrix}
-\epsilon_1 \\
-\epsilon_2 \\
-\vdots \\
-\epsilon_{173}
-\end{bmatrix}\end{aligned} $$
--   All 173 equations can be represented by:
-$$y=X\beta+\epsilon$$
+-   This can be expressed as the following linear equation: $$y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \epsilon$$
+
+-   In matrix form, we have: $$\begin{aligned} \begin{bmatrix}
+    y_1 \\
+    y_2 \\
+    \vdots \\
+    y_n
+    \end{bmatrix} = \begin{bmatrix}
+    1 & x_{11} & x_{21} \\
+    1 & x_{21} & x_{22} \\
+    \vdots & \vdots & \vdots \\
+    1 & x_{1173} & x_{2173} 
+    \end{bmatrix} \begin{bmatrix}
+    \beta_0 \\
+    \beta_1 \\
+    \beta_2 
+    \end{bmatrix} + \begin{bmatrix}
+    \epsilon_1 \\
+    \epsilon_2 \\
+    \vdots \\
+    \epsilon_{173}
+    \end{bmatrix}\end{aligned} $$
+
+-   All 173 equations can be represented by: $$y=X\beta+\epsilon$$
+
 ### Estimates
 
 -   Without getting too much into the mechanics, we can calculate our coefficient estimates with matrix algebra using the following equation:
 
 $$\hat{\beta} = (X'X)^{-1}X'Y$$
+
 -   Read aloud, we say "X prime X inverse, X prime Y".
 
 -   The little hat on our beta ($\hat{\beta}$) signifies that these are estimates, that is our OLS estimators.
@@ -687,9 +688,9 @@ $$\hat{\beta} = (X'X)^{-1}X'Y$$
 cars_df <- mtcars
 ```
 
--   Now, we want to estimate the association between `hp` (horsepower) and `wt` (weight), our independent variables, and `mpg` (miles per gallon), our dependent variable. 
+-   Now, we want to estimate the association between `hp` (horsepower) and `wt` (weight), our independent variables, and `mpg` (miles per gallon), our dependent variable.
 
--  First, we transform our dependent variable into a matrix, using the `as.matrix` function and specifying the column of the `mtcars` data set to create a column vector of our observed values for the DV.
+-   First, we transform our dependent variable into a matrix, using the `as.matrix` function and specifying the column of the `mtcars` data set to create a column vector of our observed values for the DV.
 
 ```{r}
 Y <- as.matrix(cars_df[,1])
@@ -697,8 +698,6 @@ Y
 ```
 
 -   Next, we do the same thing for our independent variables of interest, and our constant.
-
-We are going to do the same thing for our independent variables of interest and our constant. First, create two separate matrices for our independent variables (hp and wt) using the `as.matrix` function we employed above. 
 
 ```{r}
 # create two separate matrices for IVs
@@ -713,7 +712,7 @@ X <- cbind(constant,X1,X2)
 X
 ```
 
--   Next, we calculate $X'X$, $X'Y$, and $(X'X)^{-1}$. 
+-   Next, we calculate $X'X$, $X'Y$, and $(X'X)^{-1}$.
 
 ::: callout-reminder
 Don't forget to use `%*%` for matrix multiplication!
@@ -733,4 +732,3 @@ XpY <- t(X)%*%Y
 bhat <- XpXinv %*% XpY
 bhat
 ```
-
