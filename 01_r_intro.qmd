@@ -89,6 +89,11 @@ log(my_object) # logarithm (natural by default)
 ```
 
 ```{r}
+abs(-5) # absolute value
+```
+
+
+```{r}
 mean(my_vector)
 ```
 
