@@ -231,7 +231,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#loading-data" id="toc-loading-data" class="nav-link active" data-scroll-target="#loading-data"><span class="header-section-number">2.1</span> Loading data</a></li>
   <li><a href="#wrangling-data-with-dplyr" id="toc-wrangling-data-with-dplyr" class="nav-link" data-scroll-target="#wrangling-data-with-dplyr"><span class="header-section-number">2.2</span> Wrangling data with <code>dplyr</code></a>
   <ul class="collapse">
-  <li><a href="#selecting-observations" id="toc-selecting-observations" class="nav-link" data-scroll-target="#selecting-observations"><span class="header-section-number">2.2.1</span> Selecting observations</a></li>
+  <li><a href="#selecting-columns" id="toc-selecting-columns" class="nav-link" data-scroll-target="#selecting-columns"><span class="header-section-number">2.2.1</span> Selecting columns</a></li>
+  <li><a href="#renaming-columns" id="toc-renaming-columns" class="nav-link" data-scroll-target="#renaming-columns"><span class="header-section-number">2.2.2</span> Renaming columns</a></li>
+  <li><a href="#creating-columns" id="toc-creating-columns" class="nav-link" data-scroll-target="#creating-columns"><span class="header-section-number">2.2.3</span> Creating columns</a></li>
+  <li><a href="#filtering-rows" id="toc-filtering-rows" class="nav-link" data-scroll-target="#filtering-rows"><span class="header-section-number">2.2.4</span> Filtering rows</a></li>
+  <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link" data-scroll-target="#summarizing-data"><span class="header-section-number">2.2.5</span> Summarizing data</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">2.2.6</span> Overview</a></li>
   </ul></li>
   <li><a href="#visualizing-data-with-ggplot2" id="toc-visualizing-data-with-ggplot2" class="nav-link" data-scroll-target="#visualizing-data-with-ggplot2"><span class="header-section-number">2.3</span> Visualizing data with <code>ggplot2</code></a></li>
   </ul>
@@ -339,8 +344,214 @@ dbl (3): num_votes, agree_trump, margin_trump
 <section id="wrangling-data-with-dplyr" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="wrangling-data-with-dplyr"><span class="header-section-number">2.2</span> Wrangling data with <code>dplyr</code></h2>
 <p>We often need to modify data to conduct our analyses, e.g., creating columns, filtering rows, etc. In the <code>tidyverse</code>, these operations are conducted with multiple <em>verbs</em>, which we will review now.</p>
-<section id="selecting-observations" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="selecting-observations"><span class="header-section-number">2.2.1</span> Selecting observations</h3>
+<section id="selecting-columns" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="selecting-columns"><span class="header-section-number">2.2.1</span> Selecting columns</h3>
+<p>We can select specific columns in our dataset with the <code>select()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(trump_scores, last_name, party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 122 × 2
+   last_name  party     
+   &lt;chr&gt;      &lt;chr&gt;     
+ 1 Alexander  Republican
+ 2 Blunt      Republican
+ 3 Brown      Democrat  
+ 4 Burr       Republican
+ 5 Baldwin    Democrat  
+ 6 Boozman    Republican
+ 7 Blackburn  Republican
+ 8 Barrasso   Republican
+ 9 Bennet     Democrat  
+10 Blumenthal Democrat  
+# ℹ 112 more rows</code></pre>
+</div>
+</div>
+<p>All <code>dplyr</code> wrangling verbs take a data frame as their first argument.</p>
+<p>This is a good moment to introduce the concept of “pipes.” Notice how the code below produces the same output as the one above, but with a slightly different syntax. Pipes (<code>|&gt;</code>) “kick” the object on the left of the pipe to the first argument of the function on the right. One can read pipes as “then,” so the code below can be read as “take <code>trump_scores</code>, then select the columns <code>last_name</code> and <code>party</code>.” Pipes are very useful to <em>chain multiple operations</em>, as we will see in a moment.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> <span class="fu">select</span>(last_name, party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 122 × 2
+   last_name  party     
+   &lt;chr&gt;      &lt;chr&gt;     
+ 1 Alexander  Republican
+ 2 Blunt      Republican
+ 3 Brown      Democrat  
+ 4 Burr       Republican
+ 5 Baldwin    Democrat  
+ 6 Boozman    Republican
+ 7 Blackburn  Republican
+ 8 Barrasso   Republican
+ 9 Bennet     Democrat  
+10 Blumenthal Democrat  
+# ℹ 112 more rows</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can insert a pipe with the <code>Cmd/Ctrl + Shift + M</code> shortcut. If you have not changed the default RStudio settings, an “old” pipe (<code>%&gt;%</code>) might appear. While most of the functionality is the same, the <code>|&gt;</code> “new” pipes are more readable. You can change this RStudio option in <code>Tools &gt; Global Options &gt; Code &gt; Use native pipe operator</code>. Make sure to check the other suggested settings in our <a href="./00_setup.html">Setup module</a>!</p>
+</div>
+</div>
+<p>Going back to selecting columns, you can select ranges:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> <span class="fu">select</span>(id_bioguide<span class="sc">:</span>party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 122 × 4
+   id_bioguide last_name  state party     
+   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;     
+ 1 A000360     Alexander  TN    Republican
+ 2 B000575     Blunt      MO    Republican
+ 3 B000944     Brown      OH    Democrat  
+ 4 B001135     Burr       NC    Republican
+ 5 B001230     Baldwin    WI    Democrat  
+ 6 B001236     Boozman    AR    Republican
+ 7 B001243     Blackburn  TN    Republican
+ 8 B001261     Barrasso   WY    Republican
+ 9 B001267     Bennet     CO    Democrat  
+10 B001277     Blumenthal CT    Democrat  
+# ℹ 112 more rows</code></pre>
+</div>
+</div>
+<p>And use a few helper functions, like <code>matches()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> <span class="fu">select</span>(last_name, <span class="fu">matches</span>(<span class="st">"trump"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 122 × 3
+   last_name  agree_trump margin_trump
+   &lt;chr&gt;            &lt;dbl&gt;        &lt;dbl&gt;
+ 1 Alexander        0.890       26.0  
+ 2 Blunt            0.906       18.6  
+ 3 Brown            0.258        8.13 
+ 4 Burr             0.893        3.66 
+ 5 Baldwin          0.227        0.764
+ 6 Boozman          0.915       26.9  
+ 7 Blackburn        0.885       26.0  
+ 8 Barrasso         0.891       46.3  
+ 9 Bennet           0.273       -4.91 
+10 Blumenthal       0.203      -13.6  
+# ℹ 112 more rows</code></pre>
+</div>
+</div>
+<p>Or <code>everything()</code>, which we usually use to reorder columns:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> <span class="fu">select</span>(last_name, <span class="fu">everything</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 122 × 7
+   last_name  id_bioguide state party      num_votes agree_trump margin_trump
+   &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
+ 1 Alexander  A000360     TN    Republican       118       0.890       26.0  
+ 2 Blunt      B000575     MO    Republican       128       0.906       18.6  
+ 3 Brown      B000944     OH    Democrat         128       0.258        8.13 
+ 4 Burr       B001135     NC    Republican       121       0.893        3.66 
+ 5 Baldwin    B001230     WI    Democrat         128       0.227        0.764
+ 6 Boozman    B001236     AR    Republican       129       0.915       26.9  
+ 7 Blackburn  B001243     TN    Republican       131       0.885       26.0  
+ 8 Barrasso   B001261     WY    Republican       129       0.891       46.3  
+ 9 Bennet     B001267     CO    Democrat         121       0.273       -4.91 
+10 Blumenthal B001277     CT    Democrat         128       0.203      -13.6  
+# ℹ 112 more rows</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice that all these commands have not edited our existent objects—they have just printed the requested outputs to the screen. In order to modify objects, you need to use the assignment operator (<code>&lt;-</code>). For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>trump_scores_reduced <span class="ot">&lt;-</span> trump_scores <span class="sc">|&gt;</span> <span class="fu">select</span>(last_name, <span class="fu">matches</span>(<span class="st">"trump"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>trump_scores_reduced</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 122 × 3
+   last_name  agree_trump margin_trump
+   &lt;chr&gt;            &lt;dbl&gt;        &lt;dbl&gt;
+ 1 Alexander        0.890       26.0  
+ 2 Blunt            0.906       18.6  
+ 3 Brown            0.258        8.13 
+ 4 Burr             0.893        3.66 
+ 5 Baldwin          0.227        0.764
+ 6 Boozman          0.915       26.9  
+ 7 Blackburn        0.885       26.0  
+ 8 Barrasso         0.891       46.3  
+ 9 Bennet           0.273       -4.91 
+10 Blumenthal       0.203      -13.6  
+# ℹ 112 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="renaming-columns" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="renaming-columns"><span class="header-section-number">2.2.2</span> Renaming columns</h3>
+<p>We can use the <code>rename()</code> function to rename columns, with the syntax <code>new_name = old_name</code>. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">prop_agree_trump =</span> agree_trump)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 122 × 7
+   id_bioguide last_name  state party    num_votes prop_agree_trump margin_trump
+   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;            &lt;dbl&gt;        &lt;dbl&gt;
+ 1 A000360     Alexander  TN    Republi…       118            0.890       26.0  
+ 2 B000575     Blunt      MO    Republi…       128            0.906       18.6  
+ 3 B000944     Brown      OH    Democrat       128            0.258        8.13 
+ 4 B001135     Burr       NC    Republi…       121            0.893        3.66 
+ 5 B001230     Baldwin    WI    Democrat       128            0.227        0.764
+ 6 B001236     Boozman    AR    Republi…       129            0.915       26.9  
+ 7 B001243     Blackburn  TN    Republi…       131            0.885       26.0  
+ 8 B001261     Barrasso   WY    Republi…       129            0.891       46.3  
+ 9 B001267     Bennet     CO    Democrat       121            0.273       -4.91 
+10 B001277     Blumenthal CT    Democrat       128            0.203      -13.6  
+# ℹ 112 more rows</code></pre>
+</div>
+</div>
+<p>This is a good occasion to show how pipes can chain operations. How do we read the following code out loud? (Remember that pipes are read as “then”).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(last_name, <span class="fu">matches</span>(<span class="st">"trump"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">prop_agree_trump =</span> agree_trump)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 122 × 3
+   last_name  prop_agree_trump margin_trump
+   &lt;chr&gt;                 &lt;dbl&gt;        &lt;dbl&gt;
+ 1 Alexander             0.890       26.0  
+ 2 Blunt                 0.906       18.6  
+ 3 Brown                 0.258        8.13 
+ 4 Burr                  0.893        3.66 
+ 5 Baldwin               0.227        0.764
+ 6 Boozman               0.915       26.9  
+ 7 Blackburn             0.885       26.0  
+ 8 Barrasso              0.891       46.3  
+ 9 Bennet                0.273       -4.91 
+10 Blumenthal            0.203      -13.6  
+# ℹ 112 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-columns" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="creating-columns"><span class="header-section-number">2.2.3</span> Creating columns</h3>
+</section>
+<section id="filtering-rows" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="filtering-rows"><span class="header-section-number">2.2.4</span> Filtering rows</h3>
+</section>
+<section id="summarizing-data" class="level3" data-number="2.2.5">
+<h3 data-number="2.2.5" class="anchored" data-anchor-id="summarizing-data"><span class="header-section-number">2.2.5</span> Summarizing data</h3>
+</section>
+<section id="overview" class="level3" data-number="2.2.6">
+<h3 data-number="2.2.6" class="anchored" data-anchor-id="overview"><span class="header-section-number">2.2.6</span> Overview</h3>
 </section>
 </section>
 <section id="visualizing-data-with-ggplot2" class="level2" data-number="2.3">
