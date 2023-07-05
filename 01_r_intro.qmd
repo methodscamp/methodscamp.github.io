@@ -14,7 +14,7 @@ That was our first R command, a simple math operation. Of course, we can also do
 
 In order to *create* a code block, you can press `Cmd/Ctrl + Alt + i` or click on the little green "+C" icon on top of the script.
 
-::: {.callout-tip}
+::: {.callout-note}
 
 ## Exercise
 
@@ -150,7 +150,7 @@ sort(my_vector, T)
 
 To check the arguments of a function, you can examine its help file: look the function up on the "Help" panel on RStudio or use a command like the following: `?sort`.
 
-::: {.callout-tip}
+::: {.callout-note}
 
 ## Exercise
 
@@ -199,7 +199,7 @@ We can use the `data_frame$column` construct to access the vectors within the da
 mean(my_data_frame$calories_per_100g)
 ```
 
-::: {.callout-tip}
+::: {.callout-note}
 
 ## Exercise
 
