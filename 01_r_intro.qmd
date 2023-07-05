@@ -16,7 +16,7 @@ In order to *create* a code block, you can press `Cmd/Ctrl + Alt + i` or click o
 
 ::: {.callout-note}
 
-## Exercise
+#### Exercise
 
 Create your own code block below and run a math operation.
 
@@ -157,7 +157,7 @@ To check the arguments of a function, you can examine its help file: look the fu
 
 ::: {.callout-note}
 
-## Exercise
+#### Exercise
 
 Examine the help file of the `log()` function. How can we compute the the base-10 logarithm of `my_object`? Your code:
 
@@ -206,7 +206,7 @@ mean(my_data_frame$calories_per_100g)
 
 ::: {.callout-note}
 
-## Exercise
+#### Exercise
 
 Obtain the maximum value of water content per 100g in the data. Your code:
 

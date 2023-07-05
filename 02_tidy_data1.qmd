@@ -28,14 +28,14 @@ trump_scores
 
 Let's review the dataset's columns:
 
-- `bioguide`: A unique ID for each politician, from the Congress Bioguide.
-- `last_name`
-- `state`
-- `party`
-- `num_votes`: Number of votes for which data was available.
-- `agree`: Proportion (0-1) of votes in which the senator voted in agreement with Trump.
-- `agree_pred`: Predicted proportion of vote agreement, calculated using Trump's margin (see next variable). 
-- `margin_trump`: Margin of victory (percentage points) of Trump in the senator's state.
+-   `bioguide`: A unique ID for each politician, from the Congress Bioguide.
+-   `last_name`
+-   `state`
+-   `party`
+-   `num_votes`: Number of votes for which data was available.
+-   `agree`: Proportion (0-1) of votes in which the senator voted in agreement with Trump.
+-   `agree_pred`: Predicted proportion of vote agreement, calculated using Trump's margin (see next variable).
+-   `margin_trump`: Margin of victory (percentage points) of Trump in the senator's state.
 
 We can inspect our data by using the interface above. An alternative is to run the command `View(trump_scores)` or click on the object in RStudio's environment panel (in the top-right section).
 
@@ -99,7 +99,7 @@ trump_scores_reduced
 :::
 
 ::: callout-note
-## Exercise
+#### Exercise
 
 Select the variables `last_name`, `party`, `num_votes`, and `agree` from the data frame. Your code:
 :::
@@ -185,12 +185,11 @@ trump_scores |>
 ::: callout-note
 #### Exercise
 
-1. Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute difference of `diff_agree`?
+1.  Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute value of `diff_agree`?
 
-2. Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:
+2.  Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:
 
-3. Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:
-
+3.  Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:
 :::
 
 ### Ordering rows
@@ -229,12 +228,97 @@ trump_scores |>
 ::: callout-note
 #### Exercise
 
-Arrange the data by `diff_pred`, the difference between agreement and predicted agreement with Trump? (You should have code on how to create this variable from the last exercise).   
-
+Arrange the data by `diff_pred`, the difference between agreement and predicted agreement with Trump. (You should have code on how to create this variable from the last exercise).
 :::
 
 ### Summarizing data
 
+`dplyr` makes summarizing data a breeze using the `summarize()` function:
+
+```{r}
+trump_scores |> 
+  summarize(mean_agree = mean(agree),
+            mean_agree_pred = mean(agree_pred))
+```
+
+To make summaries, we can use any function that takes a vector and returns one value. Another example:
+
+```{r}
+trump_scores |> 
+  filter(num_votes >= 5) |> # to filter out senators with few data points
+  summarize(max_agree = max(agree),
+            min_agree = min(agree))
+```
+
+*Grouped summaries* allow us to disaggregate summaries according to other variables (usually categorical):
+
+```{r}
+trump_scores |> 
+  filter(num_votes >= 5) |> # to filter out senators with few data points
+  summarize(mean_agree = mean(agree),
+            max_agree = max(agree),
+            min_agree = min(agree),
+            .by = party) # to group by party
+```
+
+::: callout-note
+#### Exercise
+
+Obtain the maximum absolute difference in agreement with Trump (the `abs_diff_agree` variable from before) for each party.
+:::
+
 ### Overview
 
+| Function               | Purpose                     |
+|------------------------|-----------------------------|
+| `select()`             | Select columns              |
+| `rename()`             | Rename columns              |
+| `mutate()`             | Creating columns            |
+| `filter()`             | Filtering rows              |
+| `arrange()`            | Ordering rows               |
+| `summarize()`          | Summarizing data            |
+| `summarize(…, .by = )` | Summarizing data (by group) |
+
 ## Visualizing data with `ggplot2`
+
+(TODO)
+
+```{r}
+trump_scores_ss <- trump_scores |> 
+  filter(num_votes >= 10)
+```
+
+```{r}
+ggplot(trump_scores_ss, aes(x = party)) +
+  geom_bar()
+```
+
+```{r}
+ggplot(trump_scores_ss, aes(x = agree)) +
+  geom_histogram()
+```
+
+```{r}
+ggplot(trump_scores_ss, aes(x = agree, fill = party)) +
+  geom_histogram()
+```
+
+```{r}
+ggplot(trump_scores_ss, aes(x = margin_trump, y = agree)) +
+  geom_point()
+```
+
+```{r}
+ggplot(trump_scores_ss, aes(x = margin_trump, y = agree, color = party)) +
+  geom_point()
+```
+
+```{r}
+ggplot(trump_scores, aes(x = margin_trump, y = agree, color = party)) +
+  geom_point() +
+  scale_color_manual(values = c("D" = "blue", "R" = "red")) +
+  labs(x = "Trump margin in the senator's state (p.p.)",
+       y = "Votes in agreement with Trump (prop.)",
+       color = "Party",
+       title = "Relationship between Trump margins and senators' votes")
+```
