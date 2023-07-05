@@ -253,6 +253,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#special-matrices" id="toc-special-matrices" class="nav-link" data-scroll-target="#special-matrices"><span class="header-section-number">3.5</span> Special matrices</a></li>
   <li><a href="#transpose" id="toc-transpose" class="nav-link" data-scroll-target="#transpose"><span class="header-section-number">3.6</span> Transpose</a></li>
   <li><a href="#inverse" id="toc-inverse" class="nav-link" data-scroll-target="#inverse"><span class="header-section-number">3.7</span> Inverse</a></li>
+  <li><a href="#linear-systems-and-matrices" id="toc-linear-systems-and-matrices" class="nav-link" data-scroll-target="#linear-systems-and-matrices"><span class="header-section-number">3.8</span> Linear systems and matrices</a></li>
+  <li><a href="#ols-and-matrices" id="toc-ols-and-matrices" class="nav-link" data-scroll-target="#ols-and-matrices"><span class="header-section-number">3.9</span> OLS and matrices</a>
+  <ul class="collapse">
+  <li><a href="#dependent-variable" id="toc-dependent-variable" class="nav-link" data-scroll-target="#dependent-variable"><span class="header-section-number">3.9.1</span> Dependent variable</a></li>
+  <li><a href="#independent-variables" id="toc-independent-variables" class="nav-link" data-scroll-target="#independent-variables"><span class="header-section-number">3.9.2</span> Independent variables</a></li>
+  <li><a href="#linear-regression-model" id="toc-linear-regression-model" class="nav-link" data-scroll-target="#linear-regression-model"><span class="header-section-number">3.9.3</span> Linear regression model</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1097,8 +1104,220 @@ a3    5    2    4</code></pre>
 [3,]  0.40740741 -0.14814815 -0.1851852</code></pre>
 </div>
 </div>
+</section>
+</section>
+<section id="linear-systems-and-matrices" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="linear-systems-and-matrices"><span class="header-section-number">3.8</span> Linear systems and matrices</h2>
+<ul>
+<li><p>A system of equations can be represented by an <em>augmented matrix</em>.</p></li>
+<li><p>System of equations: <span class="math display">\[{\color{red}{3}}x + {\color{green}{6}}y = {\color{blue}{12}}\]</span> <span class="math display">\[{\color{red}{5}}x + {\color{green}{10}}y = {\color{blue}{25}}\]</span></p></li>
+<li><p>In an augmented matrix, each row represents one equation in the system and each column represents a variable or the constant terms. <span class="math display">\[\begin{bmatrix}
+{\color{red}{3}} &amp; {\color{green}{6}} &amp; {\color{blue}{12}}\\
+{\color{red}{5}} &amp; {\color{green}{10}} &amp; {\color{blue}{25}}
+\end{bmatrix}\]</span></p></li>
+</ul>
+</section>
+<section id="ols-and-matrices" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="ols-and-matrices"><span class="header-section-number">3.9</span> OLS and matrices</h2>
+<ul>
+<li><p>We can use the logic above to calculate estimates for our ordinary least squares (OLS) models.</p></li>
+<li><p>OLS is a linear regression technique used to find the best-fitting line for a set of data points (observations) by minimizing the residuals (the differences between the observed and predicted values).</p></li>
+<li><p>We minimize the <em>sum of the squared errors</em>.</p></li>
+</ul>
+<section id="dependent-variable" class="level3" data-number="3.9.1">
+<h3 data-number="3.9.1" class="anchored" data-anchor-id="dependent-variable"><span class="header-section-number">3.9.1</span> Dependent variable</h3>
+<ul>
+<li><p>Suppose, for example, we have a sample consisting of <span class="math inline">\(n\)</span> observations.</p></li>
+<li><p>The dependent variable is denoted as an <span class="math inline">\(n \times1\)</span> column vector.</p></li>
+</ul>
+<p><span class="math display">\[Y = \begin{bmatrix}
+y_1 \\
+y_2 \\
+y_3 \\
+\vdots \\
+y_n
+\end{bmatrix}\]</span></p>
+</section>
+<section id="independent-variables" class="level3" data-number="3.9.2">
+<h3 data-number="3.9.2" class="anchored" data-anchor-id="independent-variables"><span class="header-section-number">3.9.2</span> Independent variables</h3>
+<ul>
+<li><p>Suppose there are <span class="math inline">\(k\)</span> independent variables and a constant term, meaning <span class="math inline">\(k+1\)</span> columns and <span class="math inline">\(n\)</span> rows.</p></li>
+<li><p>We can represent these variables as an <span class="math inline">\(n \times (k+1)\)</span> matrix, expressed as follows:</p></li>
+</ul>
+<p><span class="math display">\[X= \begin{bmatrix}
+1 &amp; x_{11} &amp; \dots &amp; x_{1k} \\
+1 &amp; x_{21} &amp; \dots &amp; x_{2k} \\
+\vdots &amp; \vdots &amp; \dots &amp; \vdots \\
+1 &amp; x_{n1} &amp; \dots &amp; x_{nk}
+\end{bmatrix}\]</span></p>
+<ul>
+<li><span class="math inline">\(x_{ij}\)</span> is the <span class="math inline">\(i\)</span>-th observation of the <span class="math inline">\(j\)</span>-th independent variable.</li>
+</ul>
+</section>
+<section id="linear-regression-model" class="level3" data-number="3.9.3">
+<h3 data-number="3.9.3" class="anchored" data-anchor-id="linear-regression-model"><span class="header-section-number">3.9.3</span> Linear regression model</h3>
+<ul>
+<li><p>Let’s say we have 173 observations (n = 173) and 2 IVs (k = 3).</p></li>
+<li><p>This can be expressed as the following linear equation: <span class="math display">\[y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \epsilon\]</span></p></li>
+<li><p>In matrix form, we have: <span class="math display">\[\begin{aligned} \begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix} = \begin{bmatrix}
+1 &amp; x_{11} &amp; x_{21} \\
+1 &amp; x_{21} &amp; x_{22} \\
+\vdots &amp; \vdots &amp; \vdots \\
+1 &amp; x_{1173} &amp; x_{2173}
+\end{bmatrix} \begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\beta_2
+\end{bmatrix} + \begin{bmatrix}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_{173}
+\end{bmatrix}\end{aligned} \]</span></p></li>
+<li><p>All 173 equations can be represented by: <span class="math display">\[y=X\beta+\epsilon\]</span> ### Estimates</p></li>
+<li><p>Without getting too much into the mechanics, we can calculate our coefficient estimates with matrix algebra using the following equation:</p></li>
+</ul>
+<p><span class="math display">\[\hat{\beta} = (X'X)^{-1}X'Y\]</span> - Read aloud, we say “X prime X inverse, X prime Y”.</p>
+<ul>
+<li><p>The little hat on our beta (<span class="math inline">\(\hat{\beta}\)</span>) signifies that these are estimates, that is our OLS estimators.</p></li>
+<li><p>Remember, the OLS method is to choose <span class="math inline">\(\hat{\beta}\)</span> such that the sum of squared residuals (“SSR”) is minimized.</p></li>
+</ul>
+<section id="example-in-rstudio" class="level4" data-number="3.9.3.1">
+<h4 data-number="3.9.3.1" class="anchored" data-anchor-id="example-in-rstudio"><span class="header-section-number">3.9.3.1</span> Example in RStudio</h4>
+<ul>
+<li>We will load the <code>mtcars</code> data set (our favorite) for this example, which contains data about many different car models.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>cars_df <span class="ot">&lt;-</span> mtcars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Now, we want to estimate the association between <code>hp</code> (horsepower) and <code>wt</code> (weight), our independent variables, and <code>mpg</code> (miles per gallon), our dependent variable.</p></li>
+<li><p>First, we transform our dependent variable into a matrix, using the <code>as.matrix</code> function and specifying the column of the <code>mtcars</code> data set to create a column vector of our observed values for the DV.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(cars_df[,<span class="dv">1</span>])</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>Y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      [,1]
+ [1,] 21.0
+ [2,] 21.0
+ [3,] 22.8
+ [4,] 21.4
+ [5,] 18.7
+ [6,] 18.1
+ [7,] 14.3
+ [8,] 24.4
+ [9,] 22.8
+[10,] 19.2
+[11,] 17.8
+[12,] 16.4
+[13,] 17.3
+[14,] 15.2
+[15,] 10.4
+[16,] 10.4
+[17,] 14.7
+[18,] 32.4
+[19,] 30.4
+[20,] 33.9
+[21,] 21.5
+[22,] 15.5
+[23,] 15.2
+[24,] 13.3
+[25,] 19.2
+[26,] 27.3
+[27,] 26.0
+[28,] 30.4
+[29,] 15.8
+[30,] 19.7
+[31,] 15.0
+[32,] 21.4</code></pre>
+</div>
+</div>
+<ul>
+<li>Next, we do the same thing for our independent variables of interest, and our constant.</li>
+</ul>
+<p>We are going to do the same thing for our independent variables of interest and our constant. First, create two separate matrices for our independent variables (hp and wt) using the <code>as.matrix</code> function we employed above.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create two separate matrices for IVs</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>X1 <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(cars_df[,<span class="dv">4</span>])</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>X2 <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(cars_df[,<span class="dv">6</span>])</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create constant column</span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co"># bind them altogether into one matrix</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>constant <span class="ot">&lt;-</span>  <span class="fu">rep</span>(<span class="dv">1</span>,<span class="fu">nrow</span>(X1))</span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(constant,X1,X2)</span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      constant          
+ [1,]        1 110 2.620
+ [2,]        1 110 2.875
+ [3,]        1  93 2.320
+ [4,]        1 110 3.215
+ [5,]        1 175 3.440
+ [6,]        1 105 3.460
+ [7,]        1 245 3.570
+ [8,]        1  62 3.190
+ [9,]        1  95 3.150
+[10,]        1 123 3.440
+[11,]        1 123 3.440
+[12,]        1 180 4.070
+[13,]        1 180 3.730
+[14,]        1 180 3.780
+[15,]        1 205 5.250
+[16,]        1 215 5.424
+[17,]        1 230 5.345
+[18,]        1  66 2.200
+[19,]        1  52 1.615
+[20,]        1  65 1.835
+[21,]        1  97 2.465
+[22,]        1 150 3.520
+[23,]        1 150 3.435
+[24,]        1 245 3.840
+[25,]        1 175 3.845
+[26,]        1  66 1.935
+[27,]        1  91 2.140
+[28,]        1 113 1.513
+[29,]        1 264 3.170
+[30,]        1 175 2.770
+[31,]        1 335 3.570
+[32,]        1 109 2.780</code></pre>
+</div>
+</div>
+<ul>
+<li>Next, we calculate <span class="math inline">\(X'X\)</span>, <span class="math inline">\(X'Y\)</span>, and <span class="math inline">\((X'X)^{-1}\)</span>.</li>
+</ul>
+<div class="callout-reminder">
+<p>Don’t forget to use <code>%*%</code> for matrix multiplication!</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># X prime X</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>XpX <span class="ot">&lt;-</span> <span class="fu">t</span>(X)<span class="sc">%*%</span>X</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co"># X prime X inverse</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>XpXinv <span class="ot">&lt;-</span> <span class="fu">solve</span>(XpX)</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="co"># X prime Y</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>XpY <span class="ot">&lt;-</span> <span class="fu">t</span>(X)<span class="sc">%*%</span>Y</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="co"># beta coefficient estimates</span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>bhat <span class="ot">&lt;-</span> XpXinv <span class="sc">%*%</span> XpY</span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>bhat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                [,1]
+constant 37.22727012
+         -0.03177295
+         -3.87783074</code></pre>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 
