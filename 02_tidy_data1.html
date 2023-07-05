@@ -235,8 +235,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#renaming-columns" id="toc-renaming-columns" class="nav-link" data-scroll-target="#renaming-columns"><span class="header-section-number">2.2.2</span> Renaming columns</a></li>
   <li><a href="#creating-columns" id="toc-creating-columns" class="nav-link" data-scroll-target="#creating-columns"><span class="header-section-number">2.2.3</span> Creating columns</a></li>
   <li><a href="#filtering-rows" id="toc-filtering-rows" class="nav-link" data-scroll-target="#filtering-rows"><span class="header-section-number">2.2.4</span> Filtering rows</a></li>
-  <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link" data-scroll-target="#summarizing-data"><span class="header-section-number">2.2.5</span> Summarizing data</a></li>
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">2.2.6</span> Overview</a></li>
+  <li><a href="#ordering-rows" id="toc-ordering-rows" class="nav-link" data-scroll-target="#ordering-rows"><span class="header-section-number">2.2.5</span> Ordering rows</a></li>
+  <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link" data-scroll-target="#summarizing-data"><span class="header-section-number">2.2.6</span> Summarizing data</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">2.2.7</span> Overview</a></li>
   </ul></li>
   <li><a href="#visualizing-data-with-ggplot2" id="toc-visualizing-data-with-ggplot2" class="nav-link" data-scroll-target="#visualizing-data-with-ggplot2"><span class="header-section-number">2.3</span> Visualizing data with <code>ggplot2</code></a></li>
   </ul>
@@ -299,43 +300,44 @@ Tip
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/trump_scores_538.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Rows: 122 Columns: 7
+<pre><code>Rows: 122 Columns: 8
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
-chr (4): id_bioguide, last_name, state, party
-dbl (3): num_votes, agree_trump, margin_trump
+chr (4): bioguide, last_name, state, party
+dbl (4): num_votes, agree, agree_pred, margin_trump
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="co"># a "tibble" is a data frame in the tidyverse lingo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>trump_scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 122 × 7
-   id_bioguide last_name  state party      num_votes agree_trump margin_trump
-   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
- 1 A000360     Alexander  TN    Republican       118       0.890       26.0  
- 2 B000575     Blunt      MO    Republican       128       0.906       18.6  
- 3 B000944     Brown      OH    Democrat         128       0.258        8.13 
- 4 B001135     Burr       NC    Republican       121       0.893        3.66 
- 5 B001230     Baldwin    WI    Democrat         128       0.227        0.764
- 6 B001236     Boozman    AR    Republican       129       0.915       26.9  
- 7 B001243     Blackburn  TN    Republican       131       0.885       26.0  
- 8 B001261     Barrasso   WY    Republican       129       0.891       46.3  
- 9 B001267     Bennet     CO    Democrat         121       0.273       -4.91 
-10 B001277     Blumenthal CT    Democrat         128       0.203      -13.6  
+<pre><code># A tibble: 122 × 8
+   bioguide last_name  state party num_votes agree agree_pred margin_trump
+   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+ 1 A000360  Alexander  TN    R           118 0.890      0.856       26.0  
+ 2 B000575  Blunt      MO    R           128 0.906      0.787       18.6  
+ 3 B000944  Brown      OH    D           128 0.258      0.642        8.13 
+ 4 B001135  Burr       NC    R           121 0.893      0.560        3.66 
+ 5 B001230  Baldwin    WI    D           128 0.227      0.510        0.764
+ 6 B001236  Boozman    AR    R           129 0.915      0.851       26.9  
+ 7 B001243  Blackburn  TN    R           131 0.885      0.889       26.0  
+ 8 B001261  Barrasso   WY    R           129 0.891      0.895       46.3  
+ 9 B001267  Bennet     CO    D           121 0.273      0.417       -4.91 
+10 B001277  Blumenthal CT    D           128 0.203      0.294      -13.6  
 # ℹ 112 more rows</code></pre>
 </div>
 </div>
 <p>Let’s review the dataset’s columns:</p>
 <ul>
-<li><code>id_bioguide</code>: A unique ID for each politician, from the Congress Bioguide.</li>
+<li><code>bioguide</code>: A unique ID for each politician, from the Congress Bioguide.</li>
 <li><code>last_name</code></li>
 <li><code>state</code></li>
 <li><code>party</code></li>
 <li><code>num_votes</code>: Number of votes for which data was available.</li>
-<li><code>agree_trump</code>: Proportion (0-1) of votes in which the senator voted in agreement with Trump.</li>
+<li><code>agree</code>: Proportion (0-1) of votes in which the senator voted in agreement with Trump.</li>
+<li><code>agree_pred</code>: Predicted proportion of vote agreement, calculated using Trump’s margin (see next variable).</li>
 <li><code>margin_trump</code>: Margin of victory (percentage points) of Trump in the senator’s state.</li>
 </ul>
 <p>We can inspect our data by using the interface above. An alternative is to run the command <code>View(trump_scores)</code> or click on the object in RStudio’s environment panel (in the top-right section).</p>
@@ -346,44 +348,44 @@ dbl (3): num_votes, agree_trump, margin_trump
 <p>We often need to modify data to conduct our analyses, e.g., creating columns, filtering rows, etc. In the <code>tidyverse</code>, these operations are conducted with multiple <em>verbs</em>, which we will review now.</p>
 <section id="selecting-columns" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="selecting-columns"><span class="header-section-number">2.2.1</span> Selecting columns</h3>
-<p>We can select specific columns in our dataset with the <code>select()</code> function.</p>
+<p>We can select specific columns in our dataset with the <code>select()</code> function. All <code>dplyr</code> wrangling verbs take a data frame as their first argument—in this case, the columns we want to select are the other arguments.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(trump_scores, last_name, party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 122 × 2
-   last_name  party     
-   &lt;chr&gt;      &lt;chr&gt;     
- 1 Alexander  Republican
- 2 Blunt      Republican
- 3 Brown      Democrat  
- 4 Burr       Republican
- 5 Baldwin    Democrat  
- 6 Boozman    Republican
- 7 Blackburn  Republican
- 8 Barrasso   Republican
- 9 Bennet     Democrat  
-10 Blumenthal Democrat  
+   last_name  party
+   &lt;chr&gt;      &lt;chr&gt;
+ 1 Alexander  R    
+ 2 Blunt      R    
+ 3 Brown      D    
+ 4 Burr       R    
+ 5 Baldwin    D    
+ 6 Boozman    R    
+ 7 Blackburn  R    
+ 8 Barrasso   R    
+ 9 Bennet     D    
+10 Blumenthal D    
 # ℹ 112 more rows</code></pre>
 </div>
 </div>
-<p>All <code>dplyr</code> wrangling verbs take a data frame as their first argument.</p>
-<p>This is a good moment to introduce the concept of “pipes.” Notice how the code below produces the same output as the one above, but with a slightly different syntax. Pipes (<code>|&gt;</code>) “kick” the object on the left of the pipe to the first argument of the function on the right. One can read pipes as “then,” so the code below can be read as “take <code>trump_scores</code>, then select the columns <code>last_name</code> and <code>party</code>.” Pipes are very useful to <em>chain multiple operations</em>, as we will see in a moment.</p>
+<p>This is a good moment to talk about “pipes.” Notice how the code below produces the same output as the one above, but with a slightly different syntax. Pipes (<code>|&gt;</code>) “kick” the object on the left of the pipe to the first argument of the function on the right. One can read pipes as “then,” so the code below can be read as “take <code>trump_scores</code>, then select the columns <code>last_name</code> and <code>party</code>.” Pipes are very useful to <em>chain multiple operations</em>, as we will see in a moment.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> <span class="fu">select</span>(last_name, party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(last_name, party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 122 × 2
-   last_name  party     
-   &lt;chr&gt;      &lt;chr&gt;     
- 1 Alexander  Republican
- 2 Blunt      Republican
- 3 Brown      Democrat  
- 4 Burr       Republican
- 5 Baldwin    Democrat  
- 6 Boozman    Republican
- 7 Blackburn  Republican
- 8 Barrasso   Republican
- 9 Bennet     Democrat  
-10 Blumenthal Democrat  
+   last_name  party
+   &lt;chr&gt;      &lt;chr&gt;
+ 1 Alexander  R    
+ 2 Blunt      R    
+ 3 Brown      D    
+ 4 Burr       R    
+ 5 Baldwin    D    
+ 6 Boozman    R    
+ 7 Blackburn  R    
+ 8 Barrasso   R    
+ 9 Bennet     D    
+10 Blumenthal D    
 # ℹ 112 more rows</code></pre>
 </div>
 </div>
@@ -402,61 +404,64 @@ Tip
 </div>
 <p>Going back to selecting columns, you can select ranges:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> <span class="fu">select</span>(id_bioguide<span class="sc">:</span>party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(bioguide<span class="sc">:</span>party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 122 × 4
-   id_bioguide last_name  state party     
-   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;     
- 1 A000360     Alexander  TN    Republican
- 2 B000575     Blunt      MO    Republican
- 3 B000944     Brown      OH    Democrat  
- 4 B001135     Burr       NC    Republican
- 5 B001230     Baldwin    WI    Democrat  
- 6 B001236     Boozman    AR    Republican
- 7 B001243     Blackburn  TN    Republican
- 8 B001261     Barrasso   WY    Republican
- 9 B001267     Bennet     CO    Democrat  
-10 B001277     Blumenthal CT    Democrat  
+   bioguide last_name  state party
+   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;
+ 1 A000360  Alexander  TN    R    
+ 2 B000575  Blunt      MO    R    
+ 3 B000944  Brown      OH    D    
+ 4 B001135  Burr       NC    R    
+ 5 B001230  Baldwin    WI    D    
+ 6 B001236  Boozman    AR    R    
+ 7 B001243  Blackburn  TN    R    
+ 8 B001261  Barrasso   WY    R    
+ 9 B001267  Bennet     CO    D    
+10 B001277  Blumenthal CT    D    
 # ℹ 112 more rows</code></pre>
 </div>
 </div>
 <p>And use a few helper functions, like <code>matches()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> <span class="fu">select</span>(last_name, <span class="fu">matches</span>(<span class="st">"trump"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(last_name, <span class="fu">matches</span>(<span class="st">"agree"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 122 × 3
-   last_name  agree_trump margin_trump
-   &lt;chr&gt;            &lt;dbl&gt;        &lt;dbl&gt;
- 1 Alexander        0.890       26.0  
- 2 Blunt            0.906       18.6  
- 3 Brown            0.258        8.13 
- 4 Burr             0.893        3.66 
- 5 Baldwin          0.227        0.764
- 6 Boozman          0.915       26.9  
- 7 Blackburn        0.885       26.0  
- 8 Barrasso         0.891       46.3  
- 9 Bennet           0.273       -4.91 
-10 Blumenthal       0.203      -13.6  
+   last_name  agree agree_pred
+   &lt;chr&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Alexander  0.890      0.856
+ 2 Blunt      0.906      0.787
+ 3 Brown      0.258      0.642
+ 4 Burr       0.893      0.560
+ 5 Baldwin    0.227      0.510
+ 6 Boozman    0.915      0.851
+ 7 Blackburn  0.885      0.889
+ 8 Barrasso   0.891      0.895
+ 9 Bennet     0.273      0.417
+10 Blumenthal 0.203      0.294
 # ℹ 112 more rows</code></pre>
 </div>
 </div>
 <p>Or <code>everything()</code>, which we usually use to reorder columns:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> <span class="fu">select</span>(last_name, <span class="fu">everything</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(last_name, <span class="fu">everything</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 122 × 7
-   last_name  id_bioguide state party      num_votes agree_trump margin_trump
-   &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
- 1 Alexander  A000360     TN    Republican       118       0.890       26.0  
- 2 Blunt      B000575     MO    Republican       128       0.906       18.6  
- 3 Brown      B000944     OH    Democrat         128       0.258        8.13 
- 4 Burr       B001135     NC    Republican       121       0.893        3.66 
- 5 Baldwin    B001230     WI    Democrat         128       0.227        0.764
- 6 Boozman    B001236     AR    Republican       129       0.915       26.9  
- 7 Blackburn  B001243     TN    Republican       131       0.885       26.0  
- 8 Barrasso   B001261     WY    Republican       129       0.891       46.3  
- 9 Bennet     B001267     CO    Democrat         121       0.273       -4.91 
-10 Blumenthal B001277     CT    Democrat         128       0.203      -13.6  
+<pre><code># A tibble: 122 × 8
+   last_name  bioguide state party num_votes agree agree_pred margin_trump
+   &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+ 1 Alexander  A000360  TN    R           118 0.890      0.856       26.0  
+ 2 Blunt      B000575  MO    R           128 0.906      0.787       18.6  
+ 3 Brown      B000944  OH    D           128 0.258      0.642        8.13 
+ 4 Burr       B001135  NC    R           121 0.893      0.560        3.66 
+ 5 Baldwin    B001230  WI    D           128 0.227      0.510        0.764
+ 6 Boozman    B001236  AR    R           129 0.915      0.851       26.9  
+ 7 Blackburn  B001243  TN    R           131 0.885      0.889       26.0  
+ 8 Barrasso   B001261  WY    R           129 0.891      0.895       46.3  
+ 9 Bennet     B001267  CO    D           121 0.273      0.417       -4.91 
+10 Blumenthal B001277  CT    D           128 0.203      0.294      -13.6  
 # ℹ 112 more rows</code></pre>
 </div>
 </div>
@@ -472,27 +477,41 @@ Tip
 <div class="callout-body-container callout-body">
 <p>Notice that all these commands have not edited our existent objects—they have just printed the requested outputs to the screen. In order to modify objects, you need to use the assignment operator (<code>&lt;-</code>). For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>trump_scores_reduced <span class="ot">&lt;-</span> trump_scores <span class="sc">|&gt;</span> <span class="fu">select</span>(last_name, <span class="fu">matches</span>(<span class="st">"trump"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>trump_scores_reduced <span class="ot">&lt;-</span> trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(last_name, <span class="fu">matches</span>(<span class="st">"agree"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>trump_scores_reduced</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 122 × 3
-   last_name  agree_trump margin_trump
-   &lt;chr&gt;            &lt;dbl&gt;        &lt;dbl&gt;
- 1 Alexander        0.890       26.0  
- 2 Blunt            0.906       18.6  
- 3 Brown            0.258        8.13 
- 4 Burr             0.893        3.66 
- 5 Baldwin          0.227        0.764
- 6 Boozman          0.915       26.9  
- 7 Blackburn        0.885       26.0  
- 8 Barrasso         0.891       46.3  
- 9 Bennet           0.273       -4.91 
-10 Blumenthal       0.203      -13.6  
+   last_name  agree agree_pred
+   &lt;chr&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Alexander  0.890      0.856
+ 2 Blunt      0.906      0.787
+ 3 Brown      0.258      0.642
+ 4 Burr       0.893      0.560
+ 5 Baldwin    0.227      0.510
+ 6 Boozman    0.915      0.851
+ 7 Blackburn  0.885      0.889
+ 8 Barrasso   0.891      0.895
+ 9 Bennet     0.273      0.417
+10 Blumenthal 0.203      0.294
 # ℹ 112 more rows</code></pre>
 </div>
 </div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Select the variables <code>last_name</code>, <code>party</code>, <code>num_votes</code>, and <code>agree</code> from the data frame. Your code:</p>
 </div>
 </div>
 </section>
@@ -500,58 +519,238 @@ Tip
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="renaming-columns"><span class="header-section-number">2.2.2</span> Renaming columns</h3>
 <p>We can use the <code>rename()</code> function to rename columns, with the syntax <code>new_name = old_name</code>. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">prop_agree_trump =</span> agree_trump)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">prop_agree =</span> agree, <span class="at">prop_agree_pred =</span> agree_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 122 × 7
-   id_bioguide last_name  state party    num_votes prop_agree_trump margin_trump
-   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;            &lt;dbl&gt;        &lt;dbl&gt;
- 1 A000360     Alexander  TN    Republi…       118            0.890       26.0  
- 2 B000575     Blunt      MO    Republi…       128            0.906       18.6  
- 3 B000944     Brown      OH    Democrat       128            0.258        8.13 
- 4 B001135     Burr       NC    Republi…       121            0.893        3.66 
- 5 B001230     Baldwin    WI    Democrat       128            0.227        0.764
- 6 B001236     Boozman    AR    Republi…       129            0.915       26.9  
- 7 B001243     Blackburn  TN    Republi…       131            0.885       26.0  
- 8 B001261     Barrasso   WY    Republi…       129            0.891       46.3  
- 9 B001267     Bennet     CO    Democrat       121            0.273       -4.91 
-10 B001277     Blumenthal CT    Democrat       128            0.203      -13.6  
-# ℹ 112 more rows</code></pre>
+<pre><code># A tibble: 122 × 8
+   bioguide last_name  state party num_votes prop_agree prop_agree_pred
+   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;      &lt;dbl&gt;           &lt;dbl&gt;
+ 1 A000360  Alexander  TN    R           118      0.890           0.856
+ 2 B000575  Blunt      MO    R           128      0.906           0.787
+ 3 B000944  Brown      OH    D           128      0.258           0.642
+ 4 B001135  Burr       NC    R           121      0.893           0.560
+ 5 B001230  Baldwin    WI    D           128      0.227           0.510
+ 6 B001236  Boozman    AR    R           129      0.915           0.851
+ 7 B001243  Blackburn  TN    R           131      0.885           0.889
+ 8 B001261  Barrasso   WY    R           129      0.891           0.895
+ 9 B001267  Bennet     CO    D           121      0.273           0.417
+10 B001277  Blumenthal CT    D           128      0.203           0.294
+# ℹ 112 more rows
+# ℹ 1 more variable: margin_trump &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<p>This is a good occasion to show how pipes can chain operations. How do we read the following code out loud? (Remember that pipes are read as “then”).</p>
+<p>This is a good occasion to show how pipes allow us to chain operations. How do we read the following code out loud? (Remember that pipes are read as “then”).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(last_name, <span class="fu">matches</span>(<span class="st">"trump"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">prop_agree_trump =</span> agree_trump)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(last_name, <span class="fu">matches</span>(<span class="st">"agree"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">prop_agree =</span> agree, <span class="at">prop_agree_pred =</span> agree_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 122 × 3
-   last_name  prop_agree_trump margin_trump
-   &lt;chr&gt;                 &lt;dbl&gt;        &lt;dbl&gt;
- 1 Alexander             0.890       26.0  
- 2 Blunt                 0.906       18.6  
- 3 Brown                 0.258        8.13 
- 4 Burr                  0.893        3.66 
- 5 Baldwin               0.227        0.764
- 6 Boozman               0.915       26.9  
- 7 Blackburn             0.885       26.0  
- 8 Barrasso              0.891       46.3  
- 9 Bennet                0.273       -4.91 
-10 Blumenthal            0.203      -13.6  
+   last_name  prop_agree prop_agree_pred
+   &lt;chr&gt;           &lt;dbl&gt;           &lt;dbl&gt;
+ 1 Alexander       0.890           0.856
+ 2 Blunt           0.906           0.787
+ 3 Brown           0.258           0.642
+ 4 Burr            0.893           0.560
+ 5 Baldwin         0.227           0.510
+ 6 Boozman         0.915           0.851
+ 7 Blackburn       0.885           0.889
+ 8 Barrasso        0.891           0.895
+ 9 Bennet          0.273           0.417
+10 Blumenthal      0.203           0.294
 # ℹ 112 more rows</code></pre>
 </div>
 </div>
 </section>
 <section id="creating-columns" class="level3" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="creating-columns"><span class="header-section-number">2.2.3</span> Creating columns</h3>
+<p>It is common to want to create columns, based on existing ones. We can use <code>mutate()</code> to do so. For example, we could want our main variables of interest in terms of percentages instead of proportions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(last_name, agree, agree_pred) <span class="sc">|&gt;</span> <span class="co"># select just for clarity</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct_agree =</span> <span class="dv">100</span> <span class="sc">*</span> agree,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">pct_agree_pred =</span> <span class="dv">100</span> <span class="sc">*</span> agree_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 122 × 5
+   last_name  agree agree_pred pct_agree pct_agree_pred
+   &lt;chr&gt;      &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;
+ 1 Alexander  0.890      0.856      89.0           85.6
+ 2 Blunt      0.906      0.787      90.6           78.7
+ 3 Brown      0.258      0.642      25.8           64.2
+ 4 Burr       0.893      0.560      89.3           56.0
+ 5 Baldwin    0.227      0.510      22.7           51.0
+ 6 Boozman    0.915      0.851      91.5           85.1
+ 7 Blackburn  0.885      0.889      88.5           88.9
+ 8 Barrasso   0.891      0.895      89.1           89.5
+ 9 Bennet     0.273      0.417      27.3           41.7
+10 Blumenthal 0.203      0.294      20.3           29.4
+# ℹ 112 more rows</code></pre>
+</div>
+</div>
+<p>We can also use multiple columns for creating a new one. For example, let’s retrieve the total <em>number</em> of votes in which the senator agreed with Trump:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(last_name, num_votes, agree) <span class="sc">|&gt;</span> <span class="co"># select just for clarity</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">num_votes_agree =</span> num_votes <span class="sc">*</span> agree)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 122 × 4
+   last_name  num_votes agree num_votes_agree
+   &lt;chr&gt;          &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;
+ 1 Alexander        118 0.890           105  
+ 2 Blunt            128 0.906           116  
+ 3 Brown            128 0.258            33  
+ 4 Burr             121 0.893           108  
+ 5 Baldwin          128 0.227            29  
+ 6 Boozman          129 0.915           118  
+ 7 Blackburn        131 0.885           116  
+ 8 Barrasso         129 0.891           115  
+ 9 Bennet           121 0.273            33.0
+10 Blumenthal       128 0.203            26  
+# ℹ 112 more rows</code></pre>
+</div>
+</div>
 </section>
 <section id="filtering-rows" class="level3" data-number="2.2.4">
 <h3 data-number="2.2.4" class="anchored" data-anchor-id="filtering-rows"><span class="header-section-number">2.2.4</span> Filtering rows</h3>
+<p>Another common operation is to filter rows based on logical conditions. We can do so with the <code>filter()</code> function. For example, we can filter to only get Democrats:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(party <span class="sc">==</span> <span class="st">"D"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 55 × 8
+   bioguide last_name  state party num_votes agree agree_pred margin_trump
+   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+ 1 B000944  Brown      OH    D           128 0.258      0.642        8.13 
+ 2 B001230  Baldwin    WI    D           128 0.227      0.510        0.764
+ 3 B001267  Bennet     CO    D           121 0.273      0.417       -4.91 
+ 4 B001277  Blumenthal CT    D           128 0.203      0.294      -13.6  
+ 5 B001288  Booker     NJ    D           119 0.160      0.290      -14.1  
+ 6 C000127  Cantwell   WA    D           128 0.242      0.276      -15.5  
+ 7 C000141  Cardin     MD    D           128 0.25       0.209      -26.4  
+ 8 C000174  Carper     DE    D           129 0.295      0.318      -11.4  
+ 9 C001070  Casey      PA    D           129 0.287      0.508        0.724
+10 C001088  Coons      DE    D           128 0.289      0.319      -11.4  
+# ℹ 45 more rows</code></pre>
+</div>
+</div>
+<p>Notice that <code>==</code> here is a <em>logical operator</em>, read as “is equal to.” So our full chain of operations says the following: take <code>trump_scores</code>, then filter it to get rows where party is equal to “D”.</p>
+<p>There are other logical operators:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Logical operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>==</code></td>
+<td>“is equal to”</td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td>“is not equal to”</td>
+</tr>
+<tr class="odd">
+<td><code>&gt;</code></td>
+<td>“is greater than”</td>
+</tr>
+<tr class="even">
+<td><code>&lt;</code></td>
+<td>“is less than”</td>
+</tr>
+<tr class="odd">
+<td><code>&gt;=</code></td>
+<td>“is greater than or equal to”</td>
+</tr>
+<tr class="even">
+<td><code>&lt;=</code></td>
+<td>“is less than or equal to”</td>
+</tr>
+<tr class="odd">
+<td><code>%in%</code></td>
+<td>“is contained in”</td>
+</tr>
+<tr class="even">
+<td><code>&amp;</code></td>
+<td>“and” (intersection)</td>
+</tr>
+<tr class="odd">
+<td><code>|</code></td>
+<td>“or” (union)</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s see a couple of other examples.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(agree <span class="sc">&gt;</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 69 × 8
+   bioguide last_name state party num_votes agree agree_pred margin_trump
+   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+ 1 A000360  Alexander TN    R           118 0.890      0.856        26.0 
+ 2 B000575  Blunt     MO    R           128 0.906      0.787        18.6 
+ 3 B001135  Burr      NC    R           121 0.893      0.560         3.66
+ 4 B001236  Boozman   AR    R           129 0.915      0.851        26.9 
+ 5 B001243  Blackburn TN    R           131 0.885      0.889        26.0 
+ 6 B001261  Barrasso  WY    R           129 0.891      0.895        46.3 
+ 7 B001310  Braun     IN    R            44 0.909      0.713        19.2 
+ 8 C000567  Cochran   MS    R            68 0.971      0.830        17.8 
+ 9 C000880  Crapo     ID    R           125 0.904      0.870        31.8 
+10 C001035  Collins   ME    R           129 0.651      0.441        -2.96
+# ℹ 59 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"CA"</span>, <span class="st">"TX"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 8
+  bioguide last_name state party num_votes agree agree_pred margin_trump
+  &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+1 C001056  Cornyn    TX    R           129 0.922      0.659         9.00
+2 C001098  Cruz      TX    R           126 0.921      0.663         9.00
+3 F000062  Feinstein CA    D           128 0.242      0.201       -30.1 
+4 H001075  Harris    CA    D           116 0.164      0.209       -30.1 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"WV"</span> <span class="sc">&amp;</span> party <span class="sc">==</span> <span class="st">"D"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 8
+  bioguide last_name state party num_votes agree agree_pred margin_trump
+  &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+1 M001183  Manchin   WV    D           129 0.504      0.893         42.2</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Add a new column to the data frame, called <code>diff_agree</code>, which substracts <code>agree</code> and <code>agree_pred</code>. Remember to use the assignment operator (<code>&lt;-</code>)! Your code:</p></li>
+<li><p>Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:</p></li>
+<li><p>Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:</p></li>
+</ol>
+</div>
+</div>
 </section>
-<section id="summarizing-data" class="level3" data-number="2.2.5">
-<h3 data-number="2.2.5" class="anchored" data-anchor-id="summarizing-data"><span class="header-section-number">2.2.5</span> Summarizing data</h3>
+<section id="ordering-rows" class="level3" data-number="2.2.5">
+<h3 data-number="2.2.5" class="anchored" data-anchor-id="ordering-rows"><span class="header-section-number">2.2.5</span> Ordering rows</h3>
 </section>
-<section id="overview" class="level3" data-number="2.2.6">
-<h3 data-number="2.2.6" class="anchored" data-anchor-id="overview"><span class="header-section-number">2.2.6</span> Overview</h3>
+<section id="summarizing-data" class="level3" data-number="2.2.6">
+<h3 data-number="2.2.6" class="anchored" data-anchor-id="summarizing-data"><span class="header-section-number">2.2.6</span> Summarizing data</h3>
+</section>
+<section id="overview" class="level3" data-number="2.2.7">
+<h3 data-number="2.2.7" class="anchored" data-anchor-id="overview"><span class="header-section-number">2.2.7</span> Overview</h3>
 </section>
 </section>
 <section id="visualizing-data-with-ggplot2" class="level2" data-number="2.3">
