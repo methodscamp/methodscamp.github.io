@@ -736,7 +736,7 @@ Exercise
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Add a new column to the data frame, called <code>diff_agree</code>, which substracts <code>agree</code> and <code>agree_pred</code>. Remember to use the assignment operator (<code>&lt;-</code>)! Your code:</p></li>
+<li><p>Add a new column to the data frame, called <code>diff_agree</code>, which subtracts <code>agree</code> and <code>agree_pred</code>. How would you create <code>abs_diff_agree</code>, defined as the absolute difference of <code>diff_agree</code>?</p></li>
 <li><p>Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:</p></li>
 <li><p>Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:</p></li>
 </ol>
@@ -745,6 +745,106 @@ Exercise
 </section>
 <section id="ordering-rows" class="level3" data-number="2.2.5">
 <h3 data-number="2.2.5" class="anchored" data-anchor-id="ordering-rows"><span class="header-section-number">2.2.5</span> Ordering rows</h3>
+<p>The <code>arrange()</code> function allows us to order rows according to values. For example, let’s order based on the <code>agree</code> variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(agree)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 122 × 8
+   bioguide last_name    state party num_votes agree agree_pred margin_trump
+   &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+ 1 H000273  Hickenlooper CO    D             2 0         0.0302        -4.91
+ 2 H000601  Hagerty      TN    R             2 0         0.115         26.0 
+ 3 L000570  Luján        NM    D           186 0.124     0.243         -8.21
+ 4 G000555  Gillibrand   NY    D           121 0.124     0.242        -22.5 
+ 5 M001176  Merkley      OR    D           129 0.155     0.323        -11.0 
+ 6 W000817  Warren       MA    D           116 0.155     0.216        -27.2 
+ 7 B001288  Booker       NJ    D           119 0.160     0.290        -14.1 
+ 8 S000033  Sanders      VT    D           112 0.161     0.221        -26.4 
+ 9 H001075  Harris       CA    D           116 0.164     0.209        -30.1 
+10 M000133  Markey       MA    D           127 0.165     0.213        -27.2 
+# ℹ 112 more rows</code></pre>
+</div>
+</div>
+<p>Maybe we only want senators with more than a few data points. Remember that we can chain operations:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(num_votes <span class="sc">&gt;=</span> <span class="dv">10</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(agree)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 115 × 8
+   bioguide last_name  state party num_votes agree agree_pred margin_trump
+   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+ 1 L000570  Luján      NM    D           186 0.124      0.243        -8.21
+ 2 G000555  Gillibrand NY    D           121 0.124      0.242       -22.5 
+ 3 M001176  Merkley    OR    D           129 0.155      0.323       -11.0 
+ 4 W000817  Warren     MA    D           116 0.155      0.216       -27.2 
+ 5 B001288  Booker     NJ    D           119 0.160      0.290       -14.1 
+ 6 S000033  Sanders    VT    D           112 0.161      0.221       -26.4 
+ 7 H001075  Harris     CA    D           116 0.164      0.209       -30.1 
+ 8 M000133  Markey     MA    D           127 0.165      0.213       -27.2 
+ 9 W000779  Wyden      OR    D           129 0.186      0.323       -11.0 
+10 B001277  Blumenthal CT    D           128 0.203      0.294       -13.6 
+# ℹ 105 more rows</code></pre>
+</div>
+</div>
+<p>By default, <code>arrange()</code> uses increasing order (like <code>sort()</code>). To use decreasing order, add a minus sign:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(num_votes <span class="sc">&gt;=</span> <span class="dv">10</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="sc">-</span>agree)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 115 × 8
+   bioguide last_name state party num_votes agree agree_pred margin_trump
+   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+ 1 M001198  Marshall  KS    R           183 0.973      0.933        20.6 
+ 2 C000567  Cochran   MS    R            68 0.971      0.830        17.8 
+ 3 H000338  Hatch     UT    R            84 0.964      0.825        18.1 
+ 4 M001197  McSally   AZ    R           136 0.949      0.562         3.55
+ 5 P000612  Perdue    GA    R           119 0.941      0.606         5.16
+ 6 C001096  Cramer    ND    R           135 0.941      0.908        35.7 
+ 7 R000307  Roberts   KS    R           127 0.937      0.818        20.6 
+ 8 C001056  Cornyn    TX    R           129 0.922      0.659         9.00
+ 9 H001061  Hoeven    ND    R           129 0.922      0.883        35.7 
+10 C001047  Capito    WV    R           127 0.921      0.896        42.2 
+# ℹ 105 more rows</code></pre>
+</div>
+</div>
+<p>You can also order rows by more than one variable. What this does is to order by the first variable, and resolve any ties by ordering by the second variable (and so forth if you have more than two ordering variables). For example, let’s first order our data frame by party, and then within party order by agreement with Trump:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>trump_scores <span class="sc">|&gt;</span> </span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(num_votes <span class="sc">&gt;=</span> <span class="dv">10</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(party, agree)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 115 × 8
+   bioguide last_name  state party num_votes agree agree_pred margin_trump
+   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+ 1 L000570  Luján      NM    D           186 0.124      0.243        -8.21
+ 2 G000555  Gillibrand NY    D           121 0.124      0.242       -22.5 
+ 3 M001176  Merkley    OR    D           129 0.155      0.323       -11.0 
+ 4 W000817  Warren     MA    D           116 0.155      0.216       -27.2 
+ 5 B001288  Booker     NJ    D           119 0.160      0.290       -14.1 
+ 6 S000033  Sanders    VT    D           112 0.161      0.221       -26.4 
+ 7 H001075  Harris     CA    D           116 0.164      0.209       -30.1 
+ 8 M000133  Markey     MA    D           127 0.165      0.213       -27.2 
+ 9 W000779  Wyden      OR    D           129 0.186      0.323       -11.0 
+10 B001277  Blumenthal CT    D           128 0.203      0.294       -13.6 
+# ℹ 105 more rows</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Arrange the data by <code>diff_pred</code>, the difference between agreement and predicted agreement with Trump? (You should have code on how to create this variable from the last exercise).</p>
+</div>
+</div>
 </section>
 <section id="summarizing-data" class="level3" data-number="2.2.6">
 <h3 data-number="2.2.6" class="anchored" data-anchor-id="summarizing-data"><span class="header-section-number">2.2.6</span> Summarizing data</h3>
