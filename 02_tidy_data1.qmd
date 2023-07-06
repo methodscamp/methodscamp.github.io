@@ -41,6 +41,14 @@ We can inspect our data by using the interface above. An alternative is to run t
 
 Do you have any questions about the data?
 
+By the way, the `tidyverse` works amazingly with *tidy data*. If you can get your data to this format (and we will see ways to do this), your life will be much easier:
+
+::: {layout-nrow="2"}
+![](images/tidy_data.jpg)
+
+![Source: Illustrations from the [Openscapes](https://www.openscapes.org/) blog [*Tidy Data for reproducibility, efficiency, and collaboration*](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by Julia Lowndes and Allison Horst.](images/tidy_data2.jpg)
+:::
+
 ## Wrangling data with `dplyr`
 
 We often need to modify data to conduct our analyses, e.g., creating columns, filtering rows, etc. In the `tidyverse`, these operations are conducted with multiple *verbs*, which we will review now.
