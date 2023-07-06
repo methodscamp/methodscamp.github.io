@@ -281,24 +281,60 @@ Obtain the maximum absolute difference in agreement with Trump (the `abs_diff_ag
 
 ## Visualizing data with `ggplot2`
 
--   `ggplot2` is an `R` package dedicated to data visualization.
--   We can build charts through layers using `geom_` functions. There are more than 20 options available such as the following:
-    -   `geom_bar` (bar plots)
-    -   `geom_boxplot` (box plots)
-    -   `geom_hist` (histograms)
--   The `ggtitle()` function allows to add a title to the chart.
+`ggplot2` is the package in charge of data visualization in the `tidyverse`. It is extremely flexible and allows us to draw bar plots, box plots, histograms, scatter plots, and many other (see [examples at R Charts](https://r-charts.com/ggplot2/)).
 
-(TODO)
+Throughout this module we will use a subset of our data frame, which only includes senators with more than a few data points:
 
 ```{r}
 trump_scores_ss <- trump_scores |> 
   filter(num_votes >= 10)
 ```
 
+The `ggplot2` syntax provides a unifying interface (the "grammar of graphics" or "gg") for drawing all different types of plots. One draws plots by adding different "layers," and the core code always includes the following:
+
+-   A `ggplot()` command with a `data =` argument specifying a data frame and a `mapping = aes()` argument specifying "aesthetic mappings," i.e., how we want to use the columns in the data frame in the plot (for example, in the x-axis, as color, etc.).
+
+-   "geoms," such as `geom_bar()` or `geom_point()`, specifying what to draw on the plot.
+
+So *all* `ggplot2` commands will have at least three elements: data, aesthetic mappings, and geoms.
+
+### Univariate plots: categorical
+
+Let's see an example of a bar plot with a categorical variable:
+
+```{r}
+ggplot(data = trump_scores_ss, mapping = aes(x = party)) +
+  geom_bar()
+```
+
+::: callout-tip
+As with any other function, we can drop the argument names if we specify the argument values in order. This is common in `ggplot2` code:
+
 ```{r}
 ggplot(trump_scores_ss, aes(x = party)) +
   geom_bar()
 ```
+:::
+
+Notice how `geom_bar()` automatically computes the number of observations in each category for us. Sometimes we want to use numbers in our data frame as part of a bar plot. Here we can use the `geom_col()` geom specifying both `x` and `y` aesthetic mappings, in which is sometimes called a "column plot:"
+
+```{r}
+ggplot(trump_scores_ss |> filter(state == "ME"),
+       aes(x = last_name, y = agree)) +
+  geom_col()
+```
+
+::: callout-tip
+If we exchange the variables in the `x` and `y` aesthetic mappings, we can get a horizontal plot:
+
+```{r}
+ggplot(trump_scores_ss |> filter(state == "ME"),
+       aes(x = agree, y = last_name)) +
+  geom_col()
+```
+:::
+
+### Univariate plots: numerical
 
 ```{r}
 ggplot(trump_scores_ss, aes(x = agree)) +
@@ -307,7 +343,8 @@ ggplot(trump_scores_ss, aes(x = agree)) +
 
 ```{r}
 ggplot(trump_scores_ss, aes(x = agree, fill = party)) +
-  geom_histogram()
+  geom_histogram() + 
+  scale_fill_manual(values = c("D" = "blue", "R" = "red"))
 ```
 
 ```{r}
