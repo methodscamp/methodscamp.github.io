@@ -289,7 +289,7 @@ Obtain the maximum absolute difference in agreement with Trump (the `abs_diff_ag
 
 ## Visualizing data with `ggplot2`
 
-`ggplot2` is the package in charge of data visualization in the `tidyverse`. It is extremely flexible and allows us to draw bar plots, box plots, histograms, scatter plots, and many other (see [examples at R Charts](https://r-charts.com/ggplot2/)).
+`ggplot2` is the package in charge of data visualization in the `tidyverse`. It is extremely flexible and allows us to draw bar plots, box plots, histograms, scatter plots, and many other types of plots (see [examples at R Charts](https://r-charts.com/ggplot2/)).
 
 Throughout this module we will use a subset of our data frame, which only includes senators with more than a few data points:
 
@@ -340,26 +340,66 @@ Draw a column plot with the agreement with Trump of Bernie Sanders and Ted Cruz.
 
 ### Univariate plots: numerical
 
+We can draw a histogram with `geom_histogram()`:
+
 ```{r}
 ggplot(trump_scores_ss, aes(x = agree)) +
   geom_histogram()
 ```
 
+Notice the warning message above. It's telling us that, by default, `geom_histogram()` will draw 30 bins. Sometimes we want to modify this behavior. The following code has some common options for `geom_histogram()` and their explanations:
+
+```{r}
+ggplot(trump_scores_ss, aes(x = agree)) +
+  geom_histogram(binwidth = 0.05,   # draw bins every 0.05 jumps in x
+                 boundary = 0,      # don't shift bins to integers
+                 closed   = "left") # close bins on the left
+```
+
+Sometimes we want to manually alter a scale. Here we use . For example, to make the x-axis go from 0 to 1:
+
+```{r}
+ggplot(trump_scores_ss, aes(x = agree)) +
+  geom_histogram(binwidth = 0.05, boundary = 0, closed   = "left") +   
+  scale_x_continuous(limits = c(0, 1))
+```
+
+Adding the `fill` aesthetic mapping to a histogram will divide it according to a categorical variable. This is actually a bivariate plot!
+
 ```{r}
 ggplot(trump_scores_ss, aes(x = agree, fill = party)) +
-  geom_histogram() + 
+  geom_histogram(binwidth = 0.05, boundary = 0, closed   = "left") +   
+  scale_x_continuous(limits = c(0, 1)) +
+  # change default colors:
   scale_fill_manual(values = c("D" = "blue", "R" = "red"))
 ```
+
+### Bivariate plots
+
+Another common bivariate plot for categorical and numerical variables is the grouped box plot:
+
+```{r}
+ggplot(trump_scores_ss, aes(x = agree, y = party)) +
+  geom_boxplot() +
+  scale_x_continuous(limits = c(0, 1)) # same change as before
+```
+
+For bivariate plots of numerical variables, scatter plots are made with `geom_point()`:
 
 ```{r}
 ggplot(trump_scores_ss, aes(x = margin_trump, y = agree)) +
   geom_point()
 ```
 
+We can add the `color` aesthetic mapping to add a third variable:
+
 ```{r}
 ggplot(trump_scores_ss, aes(x = margin_trump, y = agree, color = party)) +
-  geom_point()
+  geom_point() +
+  scale_color_manual(values = c("D" = "blue", "R" = "red"))
 ```
+
+Let's finish our plot with the `labs()` function, which allows us to add labels to our aesthetic mappings, as well as titles and notes:
 
 ```{r}
 ggplot(trump_scores, aes(x = margin_trump, y = agree, color = party)) +
@@ -368,5 +408,6 @@ ggplot(trump_scores, aes(x = margin_trump, y = agree, color = party)) +
   labs(x = "Trump margin in the senator's state (p.p.)",
        y = "Votes in agreement with Trump (prop.)",
        color = "Party",
-       title = "Relationship between Trump margins and senators' votes")
+       title = "Relationship between Trump margins and senators' votes",
+       caption = "Data source: FiveThirtyEight (2021)")
 ```
