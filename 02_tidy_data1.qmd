@@ -185,7 +185,7 @@ trump_scores |>
 ::: callout-note
 #### Exercise
 
-1.  Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute value of `diff_agree`?
+1.  Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute value of `diff_agree`? Your code:
 
 2.  Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:
 
@@ -228,7 +228,7 @@ trump_scores |>
 ::: callout-note
 #### Exercise
 
-Arrange the data by `diff_pred`, the difference between agreement and predicted agreement with Trump. (You should have code on how to create this variable from the last exercise).
+Arrange the data by `diff_pred`, the difference between agreement and predicted agreement with Trump. (You should have code on how to create this variable from the last exercise). Your code:
 :::
 
 ### Summarizing data
@@ -324,14 +324,10 @@ ggplot(trump_scores_ss |> filter(state == "ME"),
   geom_col()
 ```
 
-::: callout-tip
-If we exchange the variables in the `x` and `y` aesthetic mappings, we can get a horizontal plot:
+::: callout-note
+## Exercise
 
-```{r}
-ggplot(trump_scores_ss |> filter(state == "ME"),
-       aes(x = agree, y = last_name)) +
-  geom_col()
-```
+Draw a column plot with the agreement with Trump of Bernie Sanders and Ted Cruz. What happens if you use `last_name` as the `y` aesthetic mapping and `agree` in the `x` aesthetic mapping? Your code:
 :::
 
 ### Univariate plots: numerical
