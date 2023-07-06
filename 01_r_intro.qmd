@@ -14,12 +14,10 @@ That was our first R command, a simple math operation. Of course, we can also do
 
 In order to *create* a code block, you can press `Cmd/Ctrl + Alt + i` or click on the little green "+C" icon on top of the script.
 
-::: {.callout-note}
-
+::: callout-note
 #### Exercise
 
 Create your own code block below and run a math operation.
-
 :::
 
 ## Objects
@@ -56,7 +54,7 @@ You can delete objects with the `rm()` function (for "remove"):
 rm(my_object2)
 ```
 
-## Vectors and functions 
+## Vectors and functions
 
 Objects can be of different types. One of the most useful ones is the *vector*, which holds a series of values. To create one manually, we can use the `c()` function (for "combine"):
 
@@ -91,7 +89,6 @@ log(my_object) # logarithm (natural by default)
 ```{r}
 abs(-5) # absolute value
 ```
-
 
 ```{r}
 mean(my_vector)
@@ -137,30 +134,26 @@ These functions are quite simple: they take one object and do one operation. A l
 sort(my_vector)
 ```
 
-If we instead want to sort our vector *decreasingly*, we can use the `decreasing = TRUE` argument (`T` also works as an abbreviation for `TRUE`).  
+If we instead want to sort our vector *decreasingly*, we can use the `decreasing = TRUE` argument (`T` also works as an abbreviation for `TRUE`).
 
 ```{r}
 sort(my_vector, decreasing = TRUE)
 ```
 
-::: {.callout-tip}
-
+::: callout-tip
 If you use the argument values in order, you can avoid writing the argument names (see below). This is sometimes useful, but can also lead to confusing code---use it with caution.
 
 ```{r}
 sort(my_vector, T)
 ```
-
 :::
 
 To check the arguments of a function, you can examine its help file: look the function up on the "Help" panel on RStudio or use a command like the following: `?sort`.
 
-::: {.callout-note}
-
+::: callout-note
 #### Exercise
 
 Examine the help file of the `log()` function. How can we compute the the base-10 logarithm of `my_object`? Your code:
-
 :::
 
 Other than numeric vectors, character vectors are also useful:
@@ -180,7 +173,6 @@ nchar(my_character_vector) # count number of characters
 ```{r}
 
 ```
-
 
 ## Data frames and lists
 
@@ -204,15 +196,27 @@ We can use the `data_frame$column` construct to access the vectors within the da
 mean(my_data_frame$calories_per_100g)
 ```
 
-::: {.callout-note}
-
+::: callout-note
 #### Exercise
 
 Obtain the maximum value of water content per 100g in the data. Your code:
-
 :::
 
-We will learn much more about data frames in our next module on data analysis. 
+Some useful commands to learn attributes of our data frame:
+
+```{r}
+dim(my_data_frame)
+```
+
+```{r}
+nrow(my_data_frame)
+```
+
+```{r}
+names(my_data_frame) # column names
+```
+
+We will learn much more about data frames in our next module on data analysis.
 
 After talking about vectors and data frames, the last object type that we will cover is the *list*. Lists are super flexible objects that can contain just about anything:
 
@@ -247,6 +251,6 @@ If you want to use an installed package in your script, you must load it with th
 library(tidyverse)
 ```
 
-::: {.callout-warning}
+::: callout-warning
 Remember that `install.packages("package")` needs to be executed just once, while `library(package)` needs to be in each script in which you plan to use the package. In general, never include `install.packages("package")` as part of your scripts or Quarto documents!
 :::
