@@ -225,23 +225,19 @@ Informally, a maximum is just the highest value a function takes, and a minimum 
 
 ### Identifying extrema
 
-The derivative of a function gives the rate of change. - When the derivative is zero (or fails to exist), the function has *usually* reached a (local) maximum or minimum.
+-   The derivative of a function gives the rate of change.
 
--   Why?
+-   When the derivative is zero (or fails to exist), the function has *usually* reached a (local) maximum or minimum.
 
-------------------------------------------------------------------------
+-   At a maximum, the function must be increasing before the point and decreasing after it.
 
-At a maximum, the function must be increasing before the point and decreasing after it.
+-   At a minimum, the function must be decreasing before the point and increasing after it.
 
-At a minimum, the function must be decreasing before the point and increasing after it.
+-   So we'll start by identifying points where this is the case ("critical points" or "stationary points").
 
-So we'll start by identifying points where this is the case ("critical points" or "stationary points").
-
-------------------------------------------------------------------------
-
-A technical note:
-
+:::{.callout-note}
 A point where $f'(x)=0$ or $f'(x)$ does not exist is called a *critical point* (or *stationary point*). Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex ("inflection points"). Sometimes the function is not differentiable at that point for other reasons, as discussed earlier.
+:::
 
 ------------------------------------------------------------------------
 
@@ -397,13 +393,13 @@ We need the concept of indefinite integrals to help us solve definite integrals.
 
 $$\displaystyle\int_{a}^{b} f(x) \text{ } dx = F(b)-F(a) = F(x)\bigg|_{a}^{b}$$
 
-### Constant of integraton
+### Constants
 
-A quick note:
-
+::: callout-note
 $C$ in the following slides is the called the "constant of integration." We need to add it when we define *all* antiderivatives (integrals) of a function because the anti-derivative "undoes" the derivative.
 
 Remember that the derivative of any constant is zero. So if we find an integral $F(x)$ whose derivative is $f(x)$, adding (or subtracting) any constant will give us another integral $F(x)+C$ whose derivative is *also* $f(x)$.
+:::
 
 ### Rules of integration
 
