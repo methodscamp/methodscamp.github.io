@@ -127,17 +127,18 @@ $$\frac{d (2x \times 3x)}{dx} = 6x + 6x = 12x$$
 
 **Practice**
 
-Take the derivative of each of these: $$x^3 * x$$ $$e^x * x^2$$ $$ln(x) * x^{-3}$$
+-   Take the derivative of each of these: $$x^3 * x$$ $$e^x * x^2$$ $$ln(x) * x^{-3}$$
 
-::: {.callout-tip title="Reminder"}
+::: {.callout-tip title="Reminder!"}
 $$\frac{d (f(x) * g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$$
 :::
 
 ### Quotient rule
 
-$$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$ If you're having trouble with this, just apply the product rule to: $$\frac{d[f(x)*g^{-1}(x)]}{dx}$$
+$$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$ 
+-   If you're having trouble with this, just apply the product rule to the following: $$\frac{d[f(x)*g^{-1}(x)]}{dx}$$
 
-::: {.callout-tip title="Reminder"}
+::: {.callout-tip title="Reminder!"}
 $$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$
 :::
 
@@ -145,15 +146,15 @@ $$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$
 
 $$\frac{d [f(g(x))]}{dx}=f'(g(x)) * g'(x)$$
 
-Let's take the derivative of a function of a function: $$\frac{d[ln(x^2)]}{dx}$$ $$f(x)=ln(x)$$ $$g(x)=x^2$$ $$f'(x)=\frac{1}{x}$$ $$g'(x)=2x$$ $$ \frac{1}{x^2}*2x = \frac{2}{x}$$
+-   Let's take the derivative of a function of a function: $$\frac{d[ln(x^2)]}{dx}$$ $$f(x)=ln(x)$$ $$g(x)=x^2$$ $$f'(x)=\frac{1}{x}$$ $$g'(x)=2x$$ $$ \frac{1}{x^2}*2x = \frac{2}{x}$$
 
 ------------------------------------------------------------------------
 
 **Practice**
 
-Take the derivative of each of these: $$ (3x^4-8)^2 $$ $$e^{x^2}$$
+-   Take the derivative of each of the following: $$ (3x^4-8)^2 $$ $$e^{x^2}$$
 
-::: {.callout-tip title="Reminder"}
+::: {.callout-tip title="Reminder!"}
 $$\frac{d (f(g(x))}{dx}=f'(g(x)) * g'(x)$$
 :::
 
@@ -187,29 +188,24 @@ Take the second derivative of the following functions: $$x^5$$ $$6x^2$$ $$4 ln(x
 
 -   Formally: A function is continuous at a point $a$ if: $$\displaystyle\lim_{x \to a} f(x)=f(a)$$
 
-------------------------------------------------------------------------
+-   Continuity requires 3 conditions to hold:
 
-Continuity requires 3 conditions to hold:
+    -   $f(a)$ is defined ($a$ is in the domain of $f$)
 
--   $f(a)$ is defined ($a$ is in the domain of $f$)
+    -   $\displaystyle\lim_{x \to a} f(x)$ exists
 
--   $\displaystyle\lim_{x \to a} f(x)$ exists
+    -   $\displaystyle\lim_{x \to a} f(x) = f(a)$ (the value of $f$ equals the limit of $f$ at $a$)
 
--   $\displaystyle\lim_{x \to a} f(x) = f(a)$ (the value of $f$ equals the limit of $f$ at $a$)
+-   Differentiable:
 
-------------------------------------------------------------------------
+    -   If $f'(x)$ exists, $f$ is differentiable at $x$.
 
-Differentiable:
+    -   If $f$ is differentiable at every point of an open interval $I$, $f$ is differentiable on $I$.
 
--   If $f'(x)$ exists, $f$ is differentiable at $x$.
-
--   If $f$ is differentiable at every point of an open interval $I$, $f$ is differentiable on $I$.
-
--   Graph must have a (non-vertical) tangent line at each point, be relatively smooth, and not contain any breaks, bends, or cusps.
-
-------------------------------------------------------------------------
+    -   Graph must have a (non-vertical) tangent line at each point, be relatively smooth, and not contain any breaks, bends, or cusps.
 
 -   If a function is differentiable at a point, it is also continuous at that point.
+
 -   If a function is continuous at a point, it is *not* necessarily differentiable at that point.
 
 ### When is f not differentiable?
@@ -217,11 +213,17 @@ Differentiable:
 When does $f'(x)$ not exist?
 
 -   When the function is discontinuous at that point.
+
     -   Jump or break in the graph.
+    
 -   There are different slopes approaching the point from the left and from the right.
+
     -   Corner point
+    
 -   When the graph of the function has a vertical tangent line at that point.
+
     -   Cusp
+    
     -   Vertical inflection point
 
 ## Extrema and optimization
@@ -229,19 +231,27 @@ When does $f'(x)$ not exist?
 *Optimization* lets us find the minimum or maximum value a function takes.
 
 -   Formal theory
+
     -   Utility maximization, continuous choices
+    
 -   Ordinary Least Squares (OLS)
-    -   Focuses on *minimizing* the squared errors between observed data and values predicted by a regression
+
+    -   Focuses on *minimizing* the squared errors between observed data and values predicted by a regression.
+    
 -   Maximum Likelihood Estimation (MLE)
-    -   Focuses on *maximizing* a likelihood function, given observed values
+
+    -   Focuses on *maximizing* a likelihood function, given observed values.
 
 ### Extrema
 
-Informally, a maximum is just the highest value a function takes, and a minimum is the lowest value.
+-   Informally, a maximum is just the highest value a function takes, and a minimum is the lowest value.
 
 -   Easy to identify extrema (maxima or minima) intuitively by looking at a graph of the function.
+
     -   Maxima are high points ("peaks")
+    
     -   Minima are low points ("valleys")
+    
 -   Extrema can be *local* or *global*.
 
 ### Identifying extrema
@@ -262,11 +272,11 @@ A point where $f'(x)=0$ or $f'(x)$ does not exist is called a *critical point* (
 
 ------------------------------------------------------------------------
 
-So we can find the local maxima and/or minima of a function by taking the derivative, setting it equal to zero, and solving for x (or whatever).
+-   We can find the local maxima and/or minima of a function by taking the derivative, setting it equal to zero, and solving for x (or whatever).
 
 $$f'(x)=0$$
 
-This gives us the first-order condition (FOC).
+-   This gives us the first-order condition (FOC).
 
 ### Minimum or maximum?
 
@@ -274,7 +284,7 @@ This gives us the first-order condition (FOC).
 
 ### Second derivatives
 
-The second derivative gives us the rate of change of the rate of change of the original function. So it tells us whether the slope is getting larger or smaller.
+-   The second derivative gives us the rate of change of the rate of change of the original function. It tells us whether the slope is getting larger or smaller.
 
 $$f(x) = x^2$$ $$f'(x) = 2x$$ $$f''(x) = 2$$
 
@@ -282,19 +292,19 @@ $$f(x) = x^2$$ $$f'(x) = 2x$$ $$f''(x) = 2$$
 
 Second Derivative Test - Start by identifying $f''(x)$
 
--   Substitute in the stationary points $(x^*)$ identified from the FOC
+-   Substitute in the stationary points $(x^*)$ identified from the FOC.
 
--   $f''(x^*) > 0$ we have a local minimum
+    -   $f''(x^*) > 0$ we have a local minimum
 
--   $f''(x^*) < 0$ we have a local maximum
+    -   $f''(x^*) < 0$ we have a local maximum
 
--   $f''(x^*) = 0$ we (may) have an inflection point - need to calculate higher-order derivatives (don't worry about this now)
+    -   $f''(x^*) = 0$ we (may) have an inflection point - need to calculate higher-order derivatives (don't worry about this now)
 
 Collectively these give use the Second-Order Condition (SOC).
 
 ### Local vs. Global Extrema
 
-To find the minimum/maximum on some interval, compare the local min/max to the value of the function at the interval's endpoints.
+-   To find the minimum/maximum on some interval, compare the local min/max to the value of the function at the interval's endpoints.
 
 -   To find the global minimum/maximum, check the function's limits as it approaches $+ \infty$ and $- \infty$.
 
@@ -302,13 +312,13 @@ To find the minimum/maximum on some interval, compare the local min/max to the v
 
 ## Partial derivatives
 
--   Can take derivative with respect to different variables
+-   We can take the derivative with respect to different variables.
 
--   Notation: For a function $fy=(x,z)=xz$, we might want to know how the function changes with $x$:
+-   For a function $fy=(x,z)=xz$, we might want to know how the function changes with $x$:
 
 $$ \displaystyle\frac{\partial}{\partial_x}f(x,y) = \frac{\partial_y}{\partial_x} = \partial_x f$$
 
--   Treat all other variables as constants and take derivative with respect to the variable of interest (here $x$).
+-   We treat all other variables as constants and take derivative with respect to the variable of interest (here $x$).
 
 ------------------------------------------------------------------------
 
