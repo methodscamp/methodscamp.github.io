@@ -63,41 +63,41 @@ Do not try to cancel out the $d$'s, no matter how tempting it is.
 
 **Practice**
 
-Take the derivative of each of these. $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
+-   Take the derivative of each of the following: $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
 
 ------------------------------------------------------------------------
 
 **Practice**
 
-Evaluate the derivatives at $x=2$ and $x=-1$ $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
+-   Evaluate the derivatives at $x=2$ and $x=-1$ $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
 
 ------------------------------------------------------------------------
 
 **Practice**
 
-Take the derivative of each of these. $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
+-   Take the derivative of each of the following: $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
 
 ------------------------------------------------------------------------
 
-Evaluate the derivatives at $x=2$ and $x=-1$ $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
+-   Evaluate the derivatives at $x=2$ and $x=-1$ $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
 
 ------------------------------------------------------------------------
 
 ### Special functions
 
-A few functions have particular rules:
+-   A few functions have particular rules:
 
--   $\frac{d (ln(x))}{dx}=\frac{1}{x}$
+$$\frac{d (ln(x))}{dx}=\frac{1}{x}$$
 
--   $\dfrac{d (log_b(x))}{dx}=\dfrac{1}{x*ln(b)}$
+$$\dfrac{d (log_b(x))}{dx}=\dfrac{1}{x*ln(b)}$$
 
--   $\frac{d (e^x)}{dx}=e^x$
+$$\frac{d (e^x)}{dx}=e^x$$
 
--   $\frac{d (a^x)}{dx}=a^x ln(a)$
+$$\frac{d (a^x)}{dx}=a^x ln(a)$$
 
--   $\frac{dy}{dx}c=0$
+$$\frac{dy}{dx}c=0$$
 
--   $\frac{d (x^x)}{dx}=x^x (1+ln(x))$
+$$\frac{d (x^x)}{dx}=x^x (1+ln(x))$$
 
 ### Derivatives with addition and substraction
 
@@ -107,14 +107,21 @@ A few functions have particular rules:
 
 **Practice**
 
-Take the derivative of each of these: $$x^2 + x +5$$ $$x^4 - 4x^3 + 5x^2 + 8x - 6$$ $$3x^5 - 6x^2$$ $$5x^2 + 8 \sqrt{x} - \frac{1}{x}$$ $$ln(x) + 5e^x - 4x^3$$
+-   Take the derivative of each of the following: $$x^2 + x +5$$ $$x^4 - 4x^3 + 5x^2 + 8x - 6$$ $$3x^5 - 6x^2$$ $$5x^2 + 8 \sqrt{x} - \frac{1}{x}$$ $$ln(x) + 5e^x - 4x^3$$
 
 ## Advanced rules
 
 ### Product rule
 
 -   This rule is more complicated: $$\frac{d (f(x) \times g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$$
--   Example: $2x \times 3x$
+-   Example: $$2x \times 3x$$
+$$ f(x)=2x$$
+$$g(x) = 3x$$
+$$f'(x) = 2$$
+$$g'(x) = 3$$
+$$f'(x)g(x) + g'(x)f(x) = 2 \times 3x + 3 \times 2x$$
+$$\frac{d (2x \times 3x)}{dx} = 6x + 6x = 12x$$
+
 
 ------------------------------------------------------------------------
 
