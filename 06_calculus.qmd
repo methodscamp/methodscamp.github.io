@@ -23,21 +23,24 @@
 ------------------------------------------------------------------------
 
 -   As we've seen, for a curve, we need to be infinitely close for our line's defining points, yielding $$\lim_{\Delta x\to 0} \frac{f(x+ \Delta x)-f(x)}{\Delta x}$$
+
 -   This gives us this instantaneous slope (rate of change) of a function at every point on its domain. The above equation is the definition of the derivative.
 
 ### Notation
 
--   $\frac{d}{dx} f(x)$ is read "The derivative of $f$ of $x$ with respect to $x$." - You can also say "The instantaneous rate of change in $f$ of $x$ with respect to $x$."
+-   $\frac{d}{dx} f(x)$ is read "The derivative of $f$ of $x$ with respect to $x$."
+
+    -   You can also say "The instantaneous rate of change in $f$ of $x$ with respect to $x$."
+
+-   Lagrange's prime notation: $f'(x)$ (read: "$f$ prime $x$") is the derivative of $f(x)$.
 
 -   If $y=f(x)$, $\frac{dy}{dx}$ is "The derivative of $y$ with respect to $x$".
+
+    -   The variable with respect to which we're differentiating is the one that appears in the denominator.
 
 ::: callout-warning
 Do not try to cancel out the $d$'s, no matter how tempting it is.
 :::
-
--   There is the advantage of always specifying the variable with respect to which we're differentiating (it's the one in the denominator).
-
--   Lagrange's prime notation: $f'(x)$ (read: "$f$ prime $x$") is the derivative of $f(x)$.
 
 ------------------------------------------------------------------------
 
@@ -357,7 +360,7 @@ Sometimes this is easy. What's the area under the curve between $x=-1$ and $x=1$
 \end{cases}$$
 
 ::: {.callout-tip title="\"Hint"}
-We can draw this and look at the graph. Remember, $area = \ell*w$.
+We can draw this and look at the graph. Remember: $$area = \ell*w$$
 :::
 
 ------------------------------------------------------------------------
