@@ -1,13 +1,11 @@
 # Calculus
 
-## Theory
-
 -   Calculus is about dealing with infinitesimal values.
 -   We are going to focus on two big ideas:
     -   Derivatives
     -   Integrals
 
-### Derviative
+## Derviatives
 
 -   "Derivative" is just a fancy term for slope.
 -   Slope is the rate of change $\frac{\delta y}{\delta x}$ or $\frac{d y}{d x}$.
@@ -233,10 +231,10 @@ Informally, a maximum is just the highest value a function takes, and a minimum 
 
 -   At a minimum, the function must be decreasing before the point and increasing after it.
 
--   So we'll start by identifying points where this is the case ("critical points" or "stationary points").
+-   We'll start by identifying points where this is the case ("critical points" or "stationary points").
 
 :::{.callout-note}
-A point where $f'(x)=0$ or $f'(x)$ does not exist is called a *critical point* (or *stationary point*). Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex ("inflection points"). Sometimes the function is not differentiable at that point for other reasons, as discussed earlier.
+A point where $f'(x)=0$ or $f'(x)$ does not exist is called a *critical point* (or *stationary point*). Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex ("inflection points"). Sometimes the function is not differentiable at that point for other reasons.
 :::
 
 ------------------------------------------------------------------------
