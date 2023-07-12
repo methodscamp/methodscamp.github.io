@@ -30,7 +30,13 @@
 ### Notation
 
 -   $\frac{d}{dx} f(x)$ is read "The derivative of $f$ of $x$ with respect to $x$." - You can also say "The instantaneous rate of change in $f$ of $x$ with respect to $x$."
--   If $y=f(x)$, $\frac{dy}{dx}$ is "The derivative of $y$ with respect to $x$". - Warning: Do not try to cancel out the $d$'s, no matter how tempting it is.
+
+-   If $y=f(x)$, $\frac{dy}{dx}$ is "The derivative of $y$ with respect to $x$".
+
+::: callout-warning
+Do not try to cancel out the $d$'s, no matter how tempting it is.
+:::
+
 -   There is the advantage of always specifying the variable with respect to which we're differentiating (it's the one in the denominator).
 
 ------------------------------------------------------------------------
@@ -122,7 +128,7 @@ Remember, $\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}
 
 $$\frac{d [f(g(x))]}{dx}=f'(g(x)) * g'(x)$$
 
-Let's take the derivative of a function of a function: $$\frac{d[ln(x^2)]}{dx}$$ $$f(x)=ln(x), g(x)=\color{red}{x^2}$$ $$f'(x)=\color{blue}{\frac{1}{x}}\color{black}{, g'(x)=2x}$$ $$ \frac{\color{blue}{1}}{\color{red}{x^2}}*2x = \frac{2}{x}$$
+Let's take the derivative of a function of a function: $$\frac{d[ln(x^2)]}{dx}$$ $$f(x)=ln(x)$$ $$g(x)=x^2$$ $$f'(x)=\frac{1}{x}$$ $$g'(x)=2x$$ $$ \frac{1}{x^2}*2x = \frac{2}{x}$$
 
 ------------------------------------------------------------------------
 
@@ -145,7 +151,10 @@ Graph $f(x) = x^2$, $f'(x)$, and $f''(x)$.
 
 ------------------------------------------------------------------------
 
-$$\frac{d^2(x^4)}{dx^2}=f''(x^4)$$ - First, we take the first derivative: $$f'(x^4)=4x^3$$ - Then we use that output to take the second derivative: $$f''(x^4)=f'(4x^3)=12x^2$$
+$$\frac{d^2(x^4)}{dx^2}=f''(x^4)$$
+
+-   First, we take the first derivative: $$f'(x^4)=4x^3$$
+-   Then we use that output to take the second derivative: $$f''(x^4)=f'(4x^3)=12x^2$$
 
 **Practice**
 
@@ -386,7 +395,9 @@ We need the concept of indefinite integrals to help us solve definite integrals.
 
 ### Solving definite integrals
 
-$$\displaystyle\int_{a}^{b} f(x) \text{ } dx = F(b)-F(a) = F(x)\bigg|_{a}^{b}$$ \### Constant of integraton
+$$\displaystyle\int_{a}^{b} f(x) \text{ } dx = F(b)-F(a) = F(x)\bigg|_{a}^{b}$$
+
+### Constant of integraton
 
 A quick note:
 
@@ -439,7 +450,7 @@ $$\int x^2 \text{ } dx$$ $$\int 3x^2\text{ } dx$$ $$\int x\text{ } dx$$ $$\int 3
 
 **Practice --- definite integrals**
 
-$$\displaystyle\int_{1}^{7} x^2 \text{ } dx$$ $$\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$$ $$\int_7^7 x\text{ } dx$$ $$\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$$ $$\int_{1}^{e} \dfrac{2}{x}\text{ }dx$$ 
+$$\displaystyle\int_{1}^{7} x^2 \text{ } dx$$ $$\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$$ $$\int_7^7 x\text{ } dx$$ $$\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$$ $$\int_{1}^{e} \dfrac{2}{x}\text{ }dx$$
 
 ### Integration by parts
 
