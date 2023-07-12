@@ -119,7 +119,7 @@ Take the derivative of each of these: $$x^2 + x +5$$ $$x^4 - 4x^3 + 5x^2 + 8x - 
 
 Take the derivative of each of these: $$x^3 * x$$ $$e^x * x^2$$ $$ln(x) * x^{-3}$$
 
-::: {.callout-tip title="\"Reminder"}
+::: {.callout-tip title="Reminder"}
 $$\frac{d (f(x) * g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$$
 :::
 
@@ -127,7 +127,7 @@ $$\frac{d (f(x) * g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$$
 
 $$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$ If you're having trouble with this, just apply the product rule to: $$\frac{d[f(x)*g^{-1}(x)]}{dx}$$
 
-::: {.callout-tip title="\"Reminder"}
+::: {.callout-tip title="Reminder"}
 $$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$
 :::
 
@@ -141,8 +141,9 @@ Let's take the derivative of a function of a function: $$\frac{d[ln(x^2)]}{dx}$$
 
 **Practice**
 
-Take the derivative of each of these: $$ (3x^4-8)^2 $$ $$e^{x^2}$$ 
-::: {.callout-tip title="\"Reminder"}
+Take the derivative of each of these: $$ (3x^4-8)^2 $$ $$e^{x^2}$$
+
+::: {.callout-tip title="Reminder"}
 $$\frac{d (f(g(x))}{dx}=f'(g(x)) * g'(x)$$
 :::
 
