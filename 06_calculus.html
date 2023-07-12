@@ -234,10 +234,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#definite-integrals" id="toc-definite-integrals" class="nav-link" data-scroll-target="#definite-integrals"><span class="header-section-number">6.6.3</span> Definite integrals</a></li>
   <li><a href="#indefinite-integrals" id="toc-indefinite-integrals" class="nav-link" data-scroll-target="#indefinite-integrals"><span class="header-section-number">6.6.4</span> Indefinite integrals</a></li>
   <li><a href="#solving-definite-integrals" id="toc-solving-definite-integrals" class="nav-link" data-scroll-target="#solving-definite-integrals"><span class="header-section-number">6.6.5</span> Solving definite integrals</a></li>
-  <li><a href="#rules-of-integration" id="toc-rules-of-integration" class="nav-link" data-scroll-target="#rules-of-integration"><span class="header-section-number">6.6.6</span> Rules of integration</a></li>
-  <li><a href="#more-rules" id="toc-more-rules" class="nav-link" data-scroll-target="#more-rules"><span class="header-section-number">6.6.7</span> More rules</a></li>
-  <li><a href="#solving-the-problem" id="toc-solving-the-problem" class="nav-link" data-scroll-target="#solving-the-problem"><span class="header-section-number">6.6.8</span> Solving the problem</a></li>
-  <li><a href="#integration-by-parts" id="toc-integration-by-parts" class="nav-link" data-scroll-target="#integration-by-parts"><span class="header-section-number">6.6.9</span> Integration by parts</a></li>
+  <li><a href="#constants" id="toc-constants" class="nav-link" data-scroll-target="#constants"><span class="header-section-number">6.6.6</span> Constants</a></li>
+  <li><a href="#rules-of-integration" id="toc-rules-of-integration" class="nav-link" data-scroll-target="#rules-of-integration"><span class="header-section-number">6.6.7</span> Rules of integration</a></li>
+  <li><a href="#more-rules" id="toc-more-rules" class="nav-link" data-scroll-target="#more-rules"><span class="header-section-number">6.6.8</span> More rules</a></li>
+  <li><a href="#solving-the-problem" id="toc-solving-the-problem" class="nav-link" data-scroll-target="#solving-the-problem"><span class="header-section-number">6.6.9</span> Solving the problem</a></li>
+  <li><a href="#integration-by-parts" id="toc-integration-by-parts" class="nav-link" data-scroll-target="#integration-by-parts"><span class="header-section-number">6.6.10</span> Integration by parts</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -299,8 +300,23 @@ ul.task-list li input[type="checkbox"] {
 <section id="notation" class="level3" data-number="6.1.3">
 <h3 data-number="6.1.3" class="anchored" data-anchor-id="notation"><span class="header-section-number">6.1.3</span> Notation</h3>
 <ul>
-<li><span class="math inline">\(\frac{d}{dx} f(x)\)</span> is read “The derivative of <span class="math inline">\(f\)</span> of <span class="math inline">\(x\)</span> with respect to <span class="math inline">\(x\)</span>.” - You can also say “The instantaneous rate of change in <span class="math inline">\(f\)</span> of <span class="math inline">\(x\)</span> with respect to <span class="math inline">\(x\)</span>.”</li>
-<li>If <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(\frac{dy}{dx}\)</span> is “The derivative of <span class="math inline">\(y\)</span> with respect to <span class="math inline">\(x\)</span>”. - Warning: Do not try to cancel out the <span class="math inline">\(d\)</span>’s, no matter how tempting it is.</li>
+<li><p><span class="math inline">\(\frac{d}{dx} f(x)\)</span> is read “The derivative of <span class="math inline">\(f\)</span> of <span class="math inline">\(x\)</span> with respect to <span class="math inline">\(x\)</span>.” - You can also say “The instantaneous rate of change in <span class="math inline">\(f\)</span> of <span class="math inline">\(x\)</span> with respect to <span class="math inline">\(x\)</span>.”</p></li>
+<li><p>If <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(\frac{dy}{dx}\)</span> is “The derivative of <span class="math inline">\(y\)</span> with respect to <span class="math inline">\(x\)</span>”.</p></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not try to cancel out the <span class="math inline">\(d\)</span>’s, no matter how tempting it is.</p>
+</div>
+</div>
+<ul>
 <li>There is the advantage of always specifying the variable with respect to which we’re differentiating (it’s the one in the denominator).</li>
 </ul>
 <hr>
@@ -370,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="chain-rule" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="chain-rule"><span class="header-section-number">6.2.3</span> Chain rule</h3>
 <p><span class="math display">\[\frac{d [f(g(x))]}{dx}=f'(g(x)) * g'(x)\]</span></p>
-<p>Let’s take the derivative of a function of a function: <span class="math display">\[\frac{d[ln(x^2)]}{dx}\]</span> <span class="math display">\[f(x)=ln(x), g(x)=\color{red}{x^2}\]</span> <span class="math display">\[f'(x)=\color{blue}{\frac{1}{x}}\color{black}{, g'(x)=2x}\]</span> <span class="math display">\[ \frac{\color{blue}{1}}{\color{red}{x^2}}*2x = \frac{2}{x}\]</span></p>
+<p>Let’s take the derivative of a function of a function: <span class="math display">\[\frac{d[ln(x^2)]}{dx}\]</span> <span class="math display">\[f(x)=ln(x)\]</span> <span class="math display">\[g(x)=x^2\]</span> <span class="math display">\[f'(x)=\frac{1}{x}\]</span> <span class="math display">\[g'(x)=2x\]</span> <span class="math display">\[ \frac{1}{x^2}*2x = \frac{2}{x}\]</span></p>
 <hr>
 <p><strong>Practice</strong></p>
 <p>Take the derivative of each of these: <span class="math display">\[ (3x^4-8)^2 \]</span> <span class="math display">\[e^{x^2}\]</span> Remember, <span class="math inline">\(\frac{d (f(g(x))}{dx}=f'(g(x)) * g'(x)\)</span>.</p>
@@ -390,7 +406,11 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <p>Graph <span class="math inline">\(f(x) = x^2\)</span>, <span class="math inline">\(f'(x)\)</span>, and <span class="math inline">\(f''(x)\)</span>.</p>
 <hr>
-<p><span class="math display">\[\frac{d^2(x^4)}{dx^2}=f''(x^4)\]</span> - First, we take the first derivative: <span class="math display">\[f'(x^4)=4x^3\]</span> - Then we use that output to take the second derivative: <span class="math display">\[f''(x^4)=f'(4x^3)=12x^2\]</span></p>
+<p><span class="math display">\[\frac{d^2(x^4)}{dx^2}=f''(x^4)\]</span></p>
+<ul>
+<li>First, we take the first derivative: <span class="math display">\[f'(x^4)=4x^3\]</span></li>
+<li>Then we use that output to take the second derivative: <span class="math display">\[f''(x^4)=f'(4x^3)=12x^2\]</span></li>
+</ul>
 <p><strong>Practice</strong></p>
 <p>Take the second derivative of the following functions: <span class="math display">\[x^5\]</span> <span class="math display">\[6x^2\]</span> <span class="math display">\[4 ln(x)\]</span> <span class="math display">\[3x\]</span> <span class="math display">\[4x^{3/2}\]</span></p>
 </section>
@@ -471,17 +491,26 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="identifying-extrema" class="level3" data-number="6.4.2">
 <h3 data-number="6.4.2" class="anchored" data-anchor-id="identifying-extrema"><span class="header-section-number">6.4.2</span> Identifying extrema</h3>
-<p>The derivative of a function gives the rate of change. - When the derivative is zero (or fails to exist), the function has <em>usually</em> reached a (local) maximum or minimum.</p>
 <ul>
-<li>Why?</li>
+<li><p>The derivative of a function gives the rate of change.</p></li>
+<li><p>When the derivative is zero (or fails to exist), the function has <em>usually</em> reached a (local) maximum or minimum.</p></li>
+<li><p>At a maximum, the function must be increasing before the point and decreasing after it.</p></li>
+<li><p>At a minimum, the function must be decreasing before the point and increasing after it.</p></li>
+<li><p>So we’ll start by identifying points where this is the case (“critical points” or “stationary points”).</p></li>
 </ul>
-<hr>
-<p>At a maximum, the function must be increasing before the point and decreasing after it.</p>
-<p>At a minimum, the function must be decreasing before the point and increasing after it.</p>
-<p>So we’ll start by identifying points where this is the case (“critical points” or “stationary points”).</p>
-<hr>
-<p>A technical note:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>A point where <span class="math inline">\(f'(x)=0\)</span> or <span class="math inline">\(f'(x)\)</span> does not exist is called a <em>critical point</em> (or <em>stationary point</em>). Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex (“inflection points”). Sometimes the function is not differentiable at that point for other reasons, as discussed earlier.</p>
+</div>
+</div>
 <hr>
 <p>So we can find the local maxima and/or minima of a function by taking the derivative, setting it equal to zero, and solving for x (or whatever).</p>
 <p><span class="math display">\[f'(x)=0\]</span></p>
@@ -595,26 +624,40 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="solving-definite-integrals" class="level3" data-number="6.6.5">
 <h3 data-number="6.6.5" class="anchored" data-anchor-id="solving-definite-integrals"><span class="header-section-number">6.6.5</span> Solving definite integrals</h3>
-<p><span class="math display">\[\displaystyle\int_{a}^{b} f(x) \text{ } dx = F(b)-F(a) = F(x)\bigg|_{a}^{b}\]</span> ### Constant of integraton</p>
-<p>A quick note:</p>
+<p><span class="math display">\[\displaystyle\int_{a}^{b} f(x) \text{ } dx = F(b)-F(a) = F(x)\bigg|_{a}^{b}\]</span></p>
+</section>
+<section id="constants" class="level3" data-number="6.6.6">
+<h3 data-number="6.6.6" class="anchored" data-anchor-id="constants"><span class="header-section-number">6.6.6</span> Constants</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><span class="math inline">\(C\)</span> in the following slides is the called the “constant of integration.” We need to add it when we define <em>all</em> antiderivatives (integrals) of a function because the anti-derivative “undoes” the derivative.</p>
 <p>Remember that the derivative of any constant is zero. So if we find an integral <span class="math inline">\(F(x)\)</span> whose derivative is <span class="math inline">\(f(x)\)</span>, adding (or subtracting) any constant will give us another integral <span class="math inline">\(F(x)+C\)</span> whose derivative is <em>also</em> <span class="math inline">\(f(x)\)</span>.</p>
+</div>
+</div>
 </section>
-<section id="rules-of-integration" class="level3" data-number="6.6.6">
-<h3 data-number="6.6.6" class="anchored" data-anchor-id="rules-of-integration"><span class="header-section-number">6.6.6</span> Rules of integration</h3>
+<section id="rules-of-integration" class="level3" data-number="6.6.7">
+<h3 data-number="6.6.7" class="anchored" data-anchor-id="rules-of-integration"><span class="header-section-number">6.6.7</span> Rules of integration</h3>
 <p><span class="math display">\[ \displaystyle\int_{a}^{a}f(x) \text{ }dx = 0\]</span></p>
 <p><span class="math display">\[\displaystyle\int_{a}^{b} f(x) \text{ } dx = -\displaystyle\int_{b}^{a}f(x)dx\]</span></p>
 <p><span class="math display">\[\int a \text{ }dx = ax + C \text { where $a$ is a constant}\]</span></p>
 <p><span class="math display">\[\displaystyle\int af(x)dx = a\displaystyle\int f(x) \text{ }dx \text{ where $a$ is a constant}\]</span></p>
 </section>
-<section id="more-rules" class="level3" data-number="6.6.7">
-<h3 data-number="6.6.7" class="anchored" data-anchor-id="more-rules"><span class="header-section-number">6.6.7</span> More rules</h3>
+<section id="more-rules" class="level3" data-number="6.6.8">
+<h3 data-number="6.6.8" class="anchored" data-anchor-id="more-rules"><span class="header-section-number">6.6.8</span> More rules</h3>
 <p><span class="math display">\[\int (f(x) + g(x)) \text{ } dx = \int f(x) dx + \int g(x)dx\]</span></p>
 <p><span class="math display">\[\int x^n dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1\]</span></p>
 <p><span class="math display">\[\int x^{-1}dx = \ln |x| + C\]</span></p>
 </section>
-<section id="solving-the-problem" class="level3" data-number="6.6.8">
-<h3 data-number="6.6.8" class="anchored" data-anchor-id="solving-the-problem"><span class="header-section-number">6.6.8</span> Solving the problem</h3>
+<section id="solving-the-problem" class="level3" data-number="6.6.9">
+<h3 data-number="6.6.9" class="anchored" data-anchor-id="solving-the-problem"><span class="header-section-number">6.6.9</span> Solving the problem</h3>
 <p>Remember our function <span class="math inline">\(y=x^2\)</span> and our goal of finding the area under the curve from <span class="math inline">\(x=0\)</span> to <span class="math inline">\(x=1\)</span>.</p>
 <ul>
 <li>Find the indefinite integral, <span class="math inline">\(F(x)\)</span>
@@ -643,8 +686,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Practice — definite integrals</strong></p>
 <p><span class="math display">\[\displaystyle\int_{1}^{7} x^2 \text{ } dx\]</span> <span class="math display">\[\displaystyle\int_{1}^{10} 3x^2 \text{ } dx\]</span> <span class="math display">\[\int_7^7 x\text{ } dx\]</span> <span class="math display">\[\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx\]</span> <span class="math display">\[\int_{1}^{e} \dfrac{2}{x}\text{ }dx\]</span></p>
 </section>
-<section id="integration-by-parts" class="level3" data-number="6.6.9">
-<h3 data-number="6.6.9" class="anchored" data-anchor-id="integration-by-parts"><span class="header-section-number">6.6.9</span> Integration by parts</h3>
+<section id="integration-by-parts" class="level3" data-number="6.6.10">
+<h3 data-number="6.6.10" class="anchored" data-anchor-id="integration-by-parts"><span class="header-section-number">6.6.10</span> Integration by parts</h3>
 <ul>
 <li>What if we want to integrate the product of two functions? How to evaluate <span class="math inline">\(\displaystyle\int [f(x)g(x)]dx\)</span>?</li>
 <li>There’s a formula for that: integration by parts.</li>
