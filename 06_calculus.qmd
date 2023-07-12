@@ -119,14 +119,16 @@ Take the derivative of each of these: $$x^2 + x +5$$ $$x^4 - 4x^3 + 5x^2 + 8x - 
 
 Take the derivative of each of these: $$x^3 * x$$ $$e^x * x^2$$ $$ln(x) * x^{-3}$$
 
-Remember, $\frac{d (f(x) * g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$.
+::: {.callout-tip title="\"Reminder"}
+$$\frac{d (f(x) * g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$$
+:::
 
 ### Quotient rule
 
 $$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$ If you're having trouble with this, just apply the product rule to: $$\frac{d[f(x)*g^{-1}(x)]}{dx}$$
 
 ::: {.callout-tip title="\"Reminder"}
-Remember, $\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$.
+$$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$
 :::
 
 ### Chain rule
@@ -139,7 +141,10 @@ Let's take the derivative of a function of a function: $$\frac{d[ln(x^2)]}{dx}$$
 
 **Practice**
 
-Take the derivative of each of these: $$ (3x^4-8)^2 $$ $$e^{x^2}$$ Remember, $\frac{d (f(g(x))}{dx}=f'(g(x)) * g'(x)$.
+Take the derivative of each of these: $$ (3x^4-8)^2 $$ $$e^{x^2}$$ 
+::: {.callout-tip title="\"Reminder"}
+$$\frac{d (f(g(x))}{dx}=f'(g(x)) * g'(x)$$
+:::
 
 ### Second derivative
 
@@ -350,7 +355,9 @@ Sometimes this is easy. What's the area under the curve between $x=-1$ and $x=1$
 0 & \text{otherwise}
 \end{cases}$$
 
-Hint: We can draw this and look at the graph. Remember $Area = \ell*w$
+::: {.callout-tip title="\"Hint"}
+We can draw this and look at the graph. Remember, $area = \ell*w$.
+:::
 
 ------------------------------------------------------------------------
 
