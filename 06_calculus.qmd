@@ -161,15 +161,25 @@ $$\frac{d (f(g(x))}{dx}=f'(g(x)) * g'(x)$$
 ### Second derivative
 
 -   Same process as taking single derivative, except input for second derivative is output from first.
+
 -   Second derivative tells us whether the slope of a function is increasing, decreasing, or staying the same at any point $x$ on the function's domain.
+
 -   Example: driving a car.
+
     -   $f(x)$ = distance traveled at time $x$
     -   $f'(x)$ = speed at time $x$
     -   $f''(x)$ = acceleration at time $x$
 
-------------------------------------------------------------------------
+-   Let's graph $f(x) = x^2$, $f'(x)$, and $f''(x)$.
 
-Graph $f(x) = x^2$, $f'(x)$, and $f''(x)$.
+```{r, echo=FALSE}
+library(ggplot2)
+sec_der <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
+  stat_function(fun = function(x){x^2}, color="red", lwd = 1) +
+  stat_function(fun = function(x){2*x}, color="blue", lwd = 1)  +
+  stat_function(fun = function(x){2}, color="green", lwd = 1) 
+sec_der
+```
 
 ------------------------------------------------------------------------
 
