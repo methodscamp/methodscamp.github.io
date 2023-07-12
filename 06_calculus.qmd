@@ -37,13 +37,16 @@ Do not try to cancel out the $d$'s, no matter how tempting it is.
 
 -   There is the advantage of always specifying the variable with respect to which we're differentiating (it's the one in the denominator).
 
-------------------------------------------------------------------------
-
-Lagrange's prime notation: - $f'(x)$ (read: "$f$ prime $x$") is the derivative of $f(x)$. - This is useful when it is clear which variable were are referring to (e.g., when there's only one).
+-   Lagrange's prime notation: $f'(x)$ (read: "$f$ prime $x$") is the derivative of $f(x)$.
 
 ------------------------------------------------------------------------
 
--   What is $\dfrac{d(x^2)}{dx}$? - $x^2$ - $2 x^{2-1}$ -$2x$
+**Examples**
+
+-   What is $\dfrac{d(x^2)}{dx}$?
+
+    -   $x^2$
+    -   $2 x^{2-1}$ -$2x$
 
 -   What is $\frac{d(4x^3)}{dx}$?
 
@@ -60,6 +63,8 @@ Lagrange's prime notation: - $f'(x)$ (read: "$f$ prime $x$") is the derivative o
 Take the derivative of each of these. $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
 
 ------------------------------------------------------------------------
+
+**Practice**
 
 Evaluate the derivatives at $x=2$ and $x=-1$ $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
 
@@ -93,19 +98,19 @@ A few functions have particular rules:
 
 ### Derivatives with addition and substraction
 
--   Easiest rule to remember: $$\frac{d (f(x) \pm g(x))}{dx}=f'(x) \pm g'(x)$$
+-   This is perhaps the rasiest rule to remember: $$\frac{d (f(x) \pm g(x))}{dx}=f'(x) \pm g'(x)$$
 
 ------------------------------------------------------------------------
 
 **Practice**
 
-Take the derivative of each of these $$x^2 + x +5$$ $$x^4 - 4x^3 + 5x^2 + 8x - 6$$ $$3x^5 - 6x^2$$ $$5x^2 + 8 \sqrt{x} - \frac{1}{x}$$ $$ln(x) + 5e^x - 4x^3$$
+Take the derivative of each of these: $$x^2 + x +5$$ $$x^4 - 4x^3 + 5x^2 + 8x - 6$$ $$3x^5 - 6x^2$$ $$5x^2 + 8 \sqrt{x} - \frac{1}{x}$$ $$ln(x) + 5e^x - 4x^3$$
 
 ## Advanced rules
 
 ### Product rule
 
--   A little more complicated: $$\frac{d (f(x) \times g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$$
+-   This rule is more complicated: $$\frac{d (f(x) \times g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$$
 -   Example: $2x \times 3x$
 
 ------------------------------------------------------------------------
@@ -120,7 +125,9 @@ Remember, $\frac{d (f(x) * g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$.
 
 $$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$ If you're having trouble with this, just apply the product rule to: $$\frac{d[f(x)*g^{-1}(x)]}{dx}$$
 
+::: {.callout-tip title="\"Reminder"}
 Remember, $\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$.
+:::
 
 ### Chain rule
 
@@ -233,7 +240,7 @@ Informally, a maximum is just the highest value a function takes, and a minimum 
 
 -   We'll start by identifying points where this is the case ("critical points" or "stationary points").
 
-:::{.callout-note}
+::: callout-note
 A point where $f'(x)=0$ or $f'(x)$ does not exist is called a *critical point* (or *stationary point*). Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex ("inflection points"). Sometimes the function is not differentiable at that point for other reasons.
 :::
 
