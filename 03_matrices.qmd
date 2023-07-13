@@ -4,190 +4,214 @@
 
 ### Scalars
 
--   One number (for example, 12) is referred to as a scalar.
+One number (for example, 12) is referred to as a scalar.
 
--   Each scalar in a matrix is an *element* of that matrix.
-
-$$\begin{bmatrix}
-12
-\end{bmatrix}$$
-
-::: callout-note
-This is also called a 1 x 1 ("one by one") matrix.
-:::
+$$
+a = 12
+$$
 
 ### Vectors
 
--   We can put several scalars together to make a vector.
+We can put several scalars together to make a vector. Here is an example:
 
--   Here is an example: $$\begin{bmatrix}
-        12 \\
-        14 \\
-        15
-        \end{bmatrix}
-        = b$$
+$$
+b = 
+\begin{bmatrix}
+  12 \\
+  14 \\
+  15
+\end{bmatrix}
+$$
 
--   Since this is a column of numbers, we cleverly refer to it as a *column vector*.
+Since this is a column of numbers, we cleverly refer to it as a *column vector*.
 
--   Here is another example of a vector: $$\begin{bmatrix}
-    12 & 14 & 15
-    \end{bmatrix}
-    = d$$
+Here is another example of a vector, this time represented as a *row vector*:
 
--   This, in contrast, is called a *row vector*.
+$$
+c = \begin{bmatrix}
+  12 & 14 & 15
+\end{bmatrix}
+$$
 
-#### Vector construction in RStudio
+Column vectors are possibly more common and useful, but we sometimes write things down using row vectors to
 
--   Vectors are very easy to construct in RStudio.
--   Here are two examples:
+Vectors are fairly easy to construct in R. As we saw before, we can use the `c()` function to combine elements:
 
 ```{r}
-# Making a simple column vector
-col_vector <- matrix(1:12)
-col_vector
+c(5, 25, -2, 1)
+```
 
-# Making a simple row vector
-row_vector <- 15:23
-row_vector
+::: callout-warning
+Remember that the code above does not *create* any objects. To do so, you'd need to use the assignment operator (`<-`):
+
+```{r}
+vector_example <- c(5, 25, -2, 1)
+vector_example
+```
+:::
+
+Or we can also create vectors from sequences with the `:` operator or the `seq()` function:
+
+```{r}
+10:20
+```
+
+```{r}
+seq(from = 3, to = 27, by = 3)
 ```
 
 ## Operators
 
 ### Summation
 
--   The summation operator $\sum$ lets us perform an operation on a sequence of numbers, which is often but not always a vector.
+The summation operator $\sum$ (i.e., the uppercase Sigma letter) lets us perform an operation on a sequence of numbers, which is often but not always a vector.
 
-$$x = \begin{bmatrix}
-12 & 7 & -2 & 0 & 1
+$$d = \begin{bmatrix}
+12 & 7 & -2 & 3 & -1
 \end{bmatrix}$$
 
--   We can then calculate the sum of the first three elements of the vector, which is expressed as follows: $$\sum_{i=1}^3 x_i$$
+We can then calculate the sum of the first three elements of the vector, which is expressed as follows: $$\sum_{i=1}^3 d_i$$
 
--   Then, we do the following math: $$12+7+(-2)=17$$
+Then we do the following math: $$12+7+(-2)=17$$
+
+It is also common to use $n$ in the superscript to indicate that we want to sum all elements:
+
+$$
+\sum_{i=1}^n d_i = 12 + 7 + (-2) + 3 + (-1) = 19
+$$ We can perform these operations using the `sum()` function in R:
+
+```{r}
+vector_d <- c(12, 7, -2, 3, -1)
+```
+
+```{r}
+sum(vector_d[1:3])
+```
+
+```{r}
+sum(vector_d)
+```
 
 ### Product
 
--   The product operator $\prod$ can also perform operations over a sequence of elements in a vector.
+The product operator $\prod$ (i.e., the uppercase Pi letter) can also perform operations over a sequence of elements in a vector. Recall our previous vector:
 
-$$z = \begin{bmatrix}
-5 & -3 & 5 & 1
+$$d = \begin{bmatrix}
+12 & 7 & -2 & 3 & 1
 \end{bmatrix}$$
 
--   We can then calculate the calculate the product of the four elements in the vector, which is expressed as follows: $$\prod_{i=1}^4 z_i$$
+We might want to calculate the product of all its elements, which is expressed as follows: $$\prod_{i=1}^n d_i = 12 \cdot 7 \cdot (-2) \cdot 3 \cdot (-1) = 504$$
 
--   Then, we do the following math: $$5 \times -3 \times 5 \times 1=-75$$ \## Matrices
-
-#### Operators in RStudio
+In R, we can compute products using the `prod()` function:
 
 ```{r}
-# Summation
-mat <- c(5,-3,5,1)
-sum(mat)
-
-# Product
-prod(mat)
+prod(vector_d)
 ```
+
+::: callout-note
+## Exercise
+
+Get the product of the first three elements of vector $d$. Write the notation by hand and use R to obtain the number.
+:::
+
+## Matrices
 
 ### Basics
 
--   We can append vectors together to form a matrix:
+We can append vectors together to form a matrix:
 
-$$\begin{bmatrix}
+$$A = \begin{bmatrix}
 12 & 14 & 15 \\
 115 & 22 & 127 \\
 193 & 29 & 219
-\end{bmatrix}
-= A$$
+\end{bmatrix}$$
 
--   The number of rows and columns of a matrix constitute the dimensions of the matrix.
-
--   The first number is the number of rows ("r") and the second number is the number of columns ("c") in the matrix.
+The number of rows and columns of a matrix constitute the *dimensions* of the matrix. The first number is the number of rows ("r") and the second number is the number of columns ("c") in the matrix.
 
 ::: callout-important
 Find a way to remember "r x c" *permanently*. The order of the dimensions never changes.
 :::
 
--   Matrix $A$ above, for example, is a $3x3$ matrix.
+Matrix $A$ above, for example, is a $3x3$ matrix. Sometimes we'd refer to it as $A_{3x3}$.
 
--   We often use capital letters (sometimes **bold-faced**) to represent matrices.
+::: callout-tip
+It is common to use capital letters (sometimes **bold-faced**) to represent matrices. In contrast, vectors are usually represented with lowercase letters.
+:::
 
-#### Appending in RStudio
+#### Constructing matrices in R {.unnumbered}
 
--   We use `rbind()` to create a matrix, in which each vector will be a row.
--   If we use `cbind()`, then each vector will be a column.
+There are different ways to create matrices in R. One of the simplest is via `rbind()` or `cbind()`, which paste vectors together (either by **r**ows or by **c**olumns):
 
 ```{r}
 # Create some vectors
-vec_1 <- 1:4
-vec_2 <- 5:8
-vec_3 <- 9:12
-vec_4 <- 13:16
+vector1 <- 1:4
+vector2 <- 5:8
+vector3 <- 9:12
+vector4 <- 13:16
+```
 
-# rbind
-rbind_mat <- rbind(vec_1, vec_2, vec_3, vec_4)
+```{r}
+# Using rbind(), each vector will be a row 
+rbind_mat <- rbind(vector1, vector2, vector3, vector4)
 rbind_mat
+```
 
-# cbind
-cbind_mat <- cbind(vec_1, vec_2, vec_3, vec_4)
+```{r}
+# Using cbind(), each vector will be a column
+cbind_mat <- cbind(vector1, vector2, vector3, vector4)
 cbind_mat
+```
+
+An alternative is to use to properly named `matrix()` function. The basic syntax is `matrix(data, nrow, ncol, byrow)`:
+
+-   `data` is the input vector which becomes the data elements of the matrix.
+-   `nrow` is the number of rows to be created.
+-   `ncol` is the number of columns to be created.
+-   `byrow` is a logical clue. If `TRUE` then the input vector elements are arranged by row. By default (`FALSE`), elements are arranged by column.
+
+Let's see some examples:
+
+```{r}
+# Elements are arranged sequentially by row.
+M <- matrix(c(1:12), nrow = 4, byrow = T)
+M
+```
+
+```{r}
+# Elements are arranged sequentially by column (byrow = F by default).
+N <- matrix(c(1:12), nrow = 4)
+N
 ```
 
 ### Structure
 
--   How do we refer to specific elements of the matrix?
+How do we refer to specific elements of the matrix? For example, matrix $A$ is an $m\times n$ matrix where $m=n=3$. This is sometimes called a *square matrix*.
 
--   Matrix $A$ is an $m\times n$ matrix where $m=n=3$
+More generally, matrix $B$ is an $m\times n$ matrix where the elements look like this: $$B=
+\begin{bmatrix}
+b_{11} & b_{12} & b_{13} & \ldots & b_{1n} \\
+b_{21} & b_{22} & b_{23} & \ldots & b_{2n} \\
+\vdots & \vdots & \vdots & \ldots & \vdots \\
+b_{m1} & b_{m2} & b_{m3} & \ldots & b_{mn}
+\end{bmatrix}$$
 
--   More generally, matrix $B$ is an $m\times n$ matrix where the elements look like this: $$B=
-    \begin{bmatrix}
-    b_{11} & b_{12} & b_{13} & \ldots & b_{1n} \\
-    b_{21} & b_{22} & b_{23} & \ldots & b_{2n} \\
-    \vdots & \vdots & \vdots & \ldots & \vdots \\
-    b_{m1} & b_{m2} & b_{m3} & \ldots & b_{mn}
-    \end{bmatrix}$$
+Thus $b_{23}$ refers to the second unit down and third across. More generally, we refer to row indices as $i$ and to column indices as $j$.
 
--   Thus $b_{23}$ refers to the second unit down and third across.
-
-::: callout-tip
-## Reminder
-
-When trying to identify a specific element, the first subscript is the element's row and the second subscript is the element's column (*always* in that order).
-:::
-
-#### Constructing matrices in RStudio
-
--   Matrices are very easy to construct in RStudio.
--   The basic syntax is `matrix(data, nrow, ncol, byrow, dimnames)`.
-    -   `data` is the input vector which becomes the data elements of the matrix.
-    -   `nrow` is the number of rows to be created.
-    -   `ncol` is the number of columns to be created.
-    -   `byrow` is a logical clue. If TRUE then the input vector elements are arranged by row.
-    -   `dimname` is the names assigned to the rows and columns.
--   Here are some examples:
+In R, we can access a matrix's elements using square brackets:
 
 ```{r}
-# Elements are arranged sequentially by row.
-M <- matrix(c(1:12), nrow = 4, byrow = TRUE)
-print(M)
-
-# Elements are arranged sequentially by column.
-N <- matrix(c(1:12), nrow = 4, byrow = FALSE)
-print(N)
-
-# Define the column and row names.
-rownames = c("row1", "row2", "row3", "row4")
-colnames = c("col1", "col2", "col3")
-
-P <- matrix(c(1:12), nrow = 4, byrow = TRUE, dimnames = list(rownames, colnames))
-
-print(P)
-
-# Access the element at 1st row and 3rd column.
-print(P[1,3])
-
-# Access the element at 4th row and 2nd column.
-print(P[4,2])
+# In matrix N, access the element at 1st row and 3rd column.
+N[1,3]
 ```
+
+```{r}
+# In matrix N, access the element at 4th row and 2nd column.
+N[4,2]
+```
+
+::: callout-tip
+When trying to identify a specific element, the first subscript is the element's row and the second subscript is the element's column (*always* in that order).
+:::
 
 ## Matrix operations
 
@@ -221,111 +245,108 @@ a_{21}\pm b_{21} & a_{22}\pm b_{22} & a_{23}\pm b_{23}\\
 a_{31}\pm b_{31} & a_{32}\pm b_{32} & a_{33}\pm b_{33}
 \end{bmatrix}$$
 
-#### Add and subtract in RStudio
+#### Addition and subtraction in R {.unnumbered}
+
+We start by creating two 2x3 matrices:
 
 ```{r}
 # Create two 2x3 matrices.
 matrix1 <- matrix(c(3, 9, -1, 4, 2, 6), nrow = 2)
-print(matrix1)
-
-matrix2 <- matrix(c(5, 2, 0, 9, 3, 4), nrow = 2)
-print(matrix2)
-
-# Add the matrices.
-result1 <- matrix1 + matrix2
-cat("Result of addition","\n")
-print(result1)
-
-# Subtract the matrices
-result2 <- matrix1 - matrix2
-cat("Result of subtraction","\n")
-print(result2)
+matrix1
 ```
 
-------------------------------------------------------------------------
+```{r}
+matrix2 <- matrix(c(5, 2, 0, 9, 3, 4), nrow = 2)
+matrix2
+```
 
-**Practice**
+We can simply use the `+` and `-` operators for addition and substraction:
+
+```{r}
+matrix1 + matrix2
+```
+
+```{r}
+matrix1 - matrix2
+```
+
+::: callout-note
+## Exercise
+
+(Use code for one of these and do the other one by hand!)
+
+1\) Calculate $A + B$
 
 $$A= \begin{bmatrix}
-1 & 4 & 2 \\
--2 & -1 & 0 \\
-0 & -1 & 3
+1 & 0 \\
+-2 & -1
 \end{bmatrix}$$
 
 $$B = \begin{bmatrix}
-5 & 1 & 0 \\
-2 & -1 & 0 \\
-7 & 1 & 2
-\end{bmatrix}$$
+5 & 1 \\
+2 & -1
+\end{bmatrix}$$\
 
-Calculate $A+B$
-
-------------------------------------------------------------------------
-
-**Practice**
+2\) Calculate $A - B$
 
 $$A= \begin{bmatrix}
 6 & -2 & 8 & 12 \\
-4 & 42 & 8 & -6 \\
--14 & 5 & 0 & 0
+4 & 42 & 8 & -6
 \end{bmatrix}$$
 
 $$B = \begin{bmatrix}
 18 & 42 & 3 & 7 \\
-0 & -42 & 15 & 4 \\
--7 & 0 & 21 & -18
+0 & -42 & 15 & 4
 \end{bmatrix}$$
-
-Calculate $A-B$
+:::
 
 ### Scalar multiplication
 
--   Scalar multiplication is very intuitive.
+Scalar multiplication is very intuitive. As we know, a scalar is a single number. We multiply each value in the matrix by the scalar to perform this operation.
 
--   As we know, a scalar is a single number, or a 1 x 1 matrix.
+Formally, this is expressed as follows: $$A = 
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{bmatrix}$$ $$cA = 
+\begin{bmatrix}
+ca_{11} & ca_{12} & ca_{13}\\
+ca_{21} & ca_{22} & ca_{23}\\
+ca_{31} & ca_{32} & ca_{33}
+\end{bmatrix}$$
 
--   We multiply each value in the matrix by the scalar to perform this operation.
-
--   This is expressed as follows: $$A = 
-    \begin{bmatrix}
-    a_{11} & a_{12} & a_{13}\\
-    a_{21} & a_{22} & a_{23}\\
-    a_{31} & a_{32} & a_{33}
-    \end{bmatrix}$$ $$cA = 
-    \begin{bmatrix}
-    ca_{11} & ca_{12} & ca_{13}\\
-    ca_{21} & ca_{22} & ca_{23}\\
-    ca_{31} & ca_{32} & ca_{33}
-    \end{bmatrix}$$
-
-#### Scalar multiplication in RStudio
-
--   All we need to do is take an established matrix and multiply it by some scalar.
+In R, all we need to do is take an established matrix and multiply it by some scalar:
 
 ```{r}
+# matrix1 from our previous example
 matrix1
-matrix1*3
 ```
 
-------------------------------------------------------------------------
+```{r}
+matrix1 * 3
+```
 
-**Practice** $$A= \begin{bmatrix}
-    1 & 4 & 2 \\
-    8 & -1 & 3 \\
-    0 & -2 & 3
+::: callout-note
+## Exercise
+
+Calculate $2\times A$ and $-3 \times B$. Again, do one by hand and the other one using R.
+
+$$A= \begin{bmatrix}
+    1 & 4 & 8 \\
+    0 & -1 & 3
     \end{bmatrix}$$ $$ B = \begin{bmatrix}
     -15 & 1 & 5 \\
     2 & -42 & 0 \\
     7 & 1 & 6
     \end{bmatrix}$$
-
-Calculate $2\times A$ and $-3 \times B$
+:::
 
 ### Matrix multiplication
 
--   Two matrices must be *conformable* for them to be multiplied together.
+-   Multiplying matrices is slightly trickier than multiplying scalars.
 
--   This means that the number of columns in the first matrix equals the number of rows in the second.
+-   Two matrices must be *conformable* for them to be multiplied together. This means that the number of columns in the first matrix equals the number of rows in the second.
 
 -   When multiplying $A \times B$, if $A$ is $m \times n$, $B$ must have $n$ rows.
 
@@ -333,9 +354,7 @@ Calculate $2\times A$ and $-3 \times B$
 The conformability requirement *never* changes. Before multiplying anything, check to make sure the matrices are indeed conformable.
 :::
 
--   The resulting matrix will have the same number of rows as the first matrix and the number of columns in the second.
-
--   For example, if $A$ is $i \times k$ and $B$ is $k \times j$, then $A \times B$ will be $i \times j$.
+-   The resulting matrix will have the same number of rows as the first matrix and the number of columns in the second. For example, if $A$ is $i \times k$ and $B$ is $k \times j$, then $A \times B$ will be $i \times j$.
 
 ------------------------------------------------------------------------
 
@@ -360,31 +379,29 @@ L =
 \end{bmatrix}
 \end{aligned}$$
 
-::: callout-warning
-## Warning
+Why can't we multiply in the opposite order?
 
-When multiplying matrices, *order matters*.
+::: callout-warning
+When multiplying matrices, *order matters*. Even if multiplication is possible in both directions, in general $AB \neq BA$.
 :::
 
--   Why can't we multiply in the opposite order?
-
-### Multiplication steps
+#### Multiplication steps {.unnumbered}
 
 -   Multiply each row by each column, summing up each pair of multiplied terms.
 
-::: callout-note
+::: callout-tip
 This is sometimes to referred to as the "dot product," where we multiply matching members, then sum up.
 :::
 
 -   The element in position $ij$ is the sum of the products of elements in the $i$th row of the first matrix ($A$) and the corresponding elements in the $j$th column of the second matrix ($B$). $$c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$$
 
-#### Example
+#### Example {.unnumbered}
 
--   Suppose a company manufactures two kinds of furniture: chairs and sofas.
+Suppose a company manufactures two kinds of furniture: chairs and sofas.
 
-    -   A chair costs \$100 for wood, \$270 for cloth, and \$130 for feathers.
+-   A chair costs \$100 for wood, \$270 for cloth, and \$130 for feathers.
 
-    -   Each sofa costs \$150 for wood, \$420 for cloth, and \$195 for feathers.
+-   Each sofa costs \$150 for wood, \$420 for cloth, and \$195 for feathers.
 
 |          | Chair | Sofa |
 |----------|-------|------|
@@ -392,7 +409,7 @@ This is sometimes to referred to as the "dot product," where we multiply matchin
 | Cloth    | 270   | 420  |
 | Feathers | 130   | 195  |
 
--   The same information about unit cost ($C$) can be presented as a matrix.
+The same information about unit cost ($C$) can be presented as a matrix.
 
 $$C = \begin{bmatrix}
 100 & 150\\
@@ -400,15 +417,11 @@ $$C = \begin{bmatrix}
 130 & 195
 \end{bmatrix}$$
 
-::: callout-note
 Note that each of the three rows of this 3 x 2 matrix represents a material (wood, cloth, or feathers), and each of the two columns represents a product (chair or coach). The elements are the unit cost (in USD).
-:::
 
 ------------------------------------------------------------------------
 
--   Now, suppose that the company will produce 45 chairs and 30 sofas this month.
-
--   This production quantity can be represented in the following table, and also as a 2 x 1 matrix ($Q$).
+Now, suppose that the company will produce 45 chairs and 30 sofas this month. This production quantity can be represented in the following table, and also as a 2 x 1 matrix ($Q$):
 
 | Product | Quantity |
 |---------|----------|
@@ -420,9 +433,9 @@ $$Q = \begin{bmatrix}
 30 
 \end{bmatrix}$$
 
--   The "total expenditure" is equal to the "unit cost" times the "production quantity" (the number of units).
+What will be the company's total cost? The "total expenditure" is equal to the "unit cost" times the "production quantity" (the number of units).
 
--   The total expenditure ($E$) for each material this month is calculated by multiplying these two matrices.
+The total expenditure ($E$) for each material this month is calculated by multiplying these two matrices.
 
 $$\begin{aligned} E = CQ =
 \begin{bmatrix}
@@ -446,36 +459,42 @@ $$\begin{aligned} E = CQ =
 \end{bmatrix}
 \end{aligned}$$
 
--   Multiplying the 3 x 2 Cost matrix ($C$) times the 2 x 1 Quantity matrix ($Q$) yields the 3 x 1 Expenditure matrix ($E$).
+Multiplying the 3x2 Cost matrix ($C$) times the 2x1 Quantity matrix ($Q$) yields the 3x1 Expenditure matrix ($E$).
 
--   As a result of this matrix multiplication, we determine that this month the company will incur expenditures of:
+As a result of this matrix multiplication, we determine that this month the company will incur expenditures of:
 
-    -   \$9,000 for wood
-    -   \$24,750 for cloth
-    -   \$11,700 for feathers.
+-   \$9,000 for wood
+-   \$24,750 for cloth
+-   \$11,700 for feathers.
 
-#### Matrix multiplication in RStudio
+#### Matrix multiplication in R {.unnumbered}
 
--   We must make sure the matrices are conformable, as we do for our manual calculations.
--   Then, we can multiply them together without issue.
--   When multiplying together matrices in RStudio, remember to use the `%*%` operator, otherwise you will receive an error message.
+Before attempting matrix multiplication, we must make sure the matrices are conformable (as we do for our manual calculations).
 
-::: callout-warning
-If you have a missing value or `NA` in one of the matrices you are trying to multiply, you will have NAs in your resulting matrix.
-:::
+Then we can multiply our matrices together using the `%*%` operator.
 
 ```{r}
-# Creating matrices
-m <- matrix(1:8, nrow=2) # 
-n <- matrix(8:15, nrow=4)
-m
-n
-
-# Multiplying matrices using operator
-m%*%n
+C <- matrix(c(100, 270, 130, 150, 420, 195), nrow = 3)
+C
 ```
 
-## Properties
+```{r}
+Q <- matrix(c(45, 30), nrow = 2)
+Q
+```
+
+```{r}
+C %*% Q
+```
+
+::: callout-warning
+If you have a missing value or `NA` in one of the matrices you are trying to multiply (something we will discuss in further detail in the next module), you will have `NA`s in your resulting matrix.
+:::
+
+```         
+```
+
+### Properties of operations
 
 -   Addition and subtraction:
 
@@ -495,33 +514,35 @@ m%*%n
 
 ## Special matrices
 
-Square matrix:
+**Square matrix**
 
--   The **diagonal** of a square matrix is a set of numbers consisting of the elements on the line from the upper-left-hand to the lower-right-hand corner of the matrix. Only a square matrix has a diagonal.
+-   In a square matrix, the number of rows equals the number of columns ($m=n$):
 
--   The **trace** of a matrix is simply the sum of the diagonal elements of the matrix. So, then, a matrix must be square to have a trace.
+-   The *diagonal* of a matrix is a set of numbers consisting of the elements on the line from the upper-left-hand to the lower-right-hand corner of the matrix. Diagonals are particularly useful in square matrices.
 
-Diagonal matrix:
+-   The *trace* of a matrix, denoted as $tr(A)$, is the sum of the diagonal elements of the matrix.
 
--   In a **diagonal matrix**, all of the elements of the matrix that are not on the diagonal are equal to zero.
+**Diagonal matrix:**
 
-Scalar matrix:
+-   In a diagonal matrix, all of the elements of the matrix that are not on the diagonal are equal to zero.
 
--   A **scalar matrix** is a diagonal matrix where the diagonal elements are all equal to each other. In other words, we're really only concerned with one scalar (or element) held in the diagonal.
+**Scalar matrix:**
 
-Identity matrix:
+-   A scalar matrix is a diagonal matrix where the diagonal elements are all equal to each other. In other words, we're really only concerned with one scalar (or element) held in the diagonal.
 
--   The **identity matrix** is a scalar matrix with all of the diagonal elements equal to one.
+**Identity matrix:**
 
--   All of the off-diagonal elements are equal to zero.
+-   The identity matrix is a scalar matrix with all of the diagonal elements equal to one.
 
--   The capital letter I is reserved for the identity matrix.
+-   Remember that, as with all diagonal matrices, the off-diagonal elements are equal to zero.
+
+-   The capital letter $I$ is reserved for the identity matrix. For convenience, a 3x3 identity matrix can be denoted as $I_3$.
 
 ## Transpose
 
--   The transpose is the original matrix with the rows and the columns interchanged.
+The transpose is the original matrix with the rows and the columns interchanged.
 
--   The notation is either $J'$ ("J prime") or $J^T$ ("J transpose").
+The notation is either $J'$ ("J prime") or $J^T$ ("J transpose").
 
 $$J =
 \begin{bmatrix}
@@ -536,14 +557,14 @@ $$J' = J^T =
 5 & 0 & -2
 \end{bmatrix}$$
 
-#### Transpose in RStudio
-
--   We use `t()` to get the transpose.
+In R, we use `t()` to get the transpose.
 
 ```{r}
-# Construct our matrix
-J <- matrix(c(4,5,3,0,7,-2), nrow = 3, byrow = TRUE,)
+J <- matrix(c(4, 3, 7, 5, 0, -2), ncol = 2)
 J
+```
+
+```{r}
 t(J)
 ```
 
@@ -555,40 +576,25 @@ t(J)
 
 $$A × A^{-1} = I$$
 
--   The inverse of A is A-1 only when:
+-   The inverse of A is $A^{-1}$ only when:
 
 $$AA^{-1} = A^{-1}A = I$$
 
 -   Sometimes there is no inverse at all.
 
 ::: callout-note
-For now, don't worry about calculating the inverse of a matrix manually. This is the type of task we use RStudio for.
+For now, don't worry about calculating the inverse of a matrix manually. This is the type of task we use R for.
 :::
 
-#### Examples
-
--   We use the `solve()` function to calculate the inverse of a matrix.
+-   In R, we use the `solve()` function to calculate the inverse of a matrix:
 
 ```{r}
-# Create 3 different vectors
-# using combine method.
-a1 <- c(3, 2, 5)
-a2 <- c(2, 3, 2)
-a3 <- c(5, 2, 4)
-  
-# bind the three vectors into a matrix 
-# using rbind() which is basically
-# row-wise binding.
-A <- rbind(a1, a2, a3)
-  
-# print the original matrix
-print(A)
-  
-# Use the solve() function to calculate the inverse.
-T1 <- solve(A)
-  
-# print the inverse of the matrix
-print(T1)
+A <- matrix(c(3, 2, 5, 2, 3, 2, 5, 2, 4), ncol = 3)
+A
+```
+
+```{r}
+solve(A)
 ```
 
 ## Linear systems and matrices
@@ -680,7 +686,7 @@ $$\hat{\beta} = (X'X)^{-1}X'Y$$
 
 -   Remember, the OLS method is to choose $\hat{\beta}$ such that the sum of squared residuals ("SSR") is minimized.
 
-#### Example in RStudio
+#### Example in R
 
 -   We will load the `mtcars` data set (our favorite) for this example, which contains data about many different car models.
 
