@@ -1,7 +1,5 @@
 # Matrices
 
-Matrices are
-
 ## Introduction
 
 ### Scalars
