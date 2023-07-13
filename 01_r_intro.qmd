@@ -66,6 +66,12 @@ my_vector <- c(6, -11, my_object, 0, 20)
 my_vector
 ```
 
+One can also define vectors by sequences:
+
+```{r}
+3:10
+```
+
 We can use square brackets to retrieve parts of vectors:
 
 ```{r}
@@ -148,6 +154,12 @@ sort(my_vector, T)
 ```
 :::
 
+A useful function to create vectors in sequence is `seq()`. Notice its arguments:
+
+```{r}
+seq(from = 30, to = 100, by = 5)
+```
+
 To check the arguments of a function, you can examine its help file: look the function up on the "Help" panel on RStudio or use a command like the following: `?sort`.
 
 ::: callout-note
@@ -168,10 +180,6 @@ my_character_vector[3]
 
 ```{r}
 nchar(my_character_vector) # count number of characters
-```
-
-```{r}
-
 ```
 
 ## Data frames and lists
