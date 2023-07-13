@@ -277,15 +277,15 @@ Obtain the maximum absolute difference in agreement with Trump (the `abs_diff_ag
 
 ### Overview
 
-| Function               | Purpose                     |
-|------------------------|-----------------------------|
-| `select()`             | Select columns              |
-| `rename()`             | Rename columns              |
-| `mutate()`             | Creating columns            |
-| `filter()`             | Filtering rows              |
-| `arrange()`            | Ordering rows               |
-| `summarize()`          | Summarizing data            |
-| `summarize(…, .by = )` | Summarizing data (by group) |
+| Function               | Purpose                      |
+|------------------------|------------------------------|
+| `select()`             | Select columns               |
+| `rename()`             | Rename columns               |
+| `mutate()`             | Creating columns             |
+| `filter()`             | Filtering rows               |
+| `arrange()`            | Ordering rows                |
+| `summarize()`          | Summarizing data             |
+| `summarize(…, .by = )` | Summarizing data (by groups) |
 
 ## Visualizing data with `ggplot2`
 
@@ -412,4 +412,4 @@ ggplot(trump_scores, aes(x = margin_trump, y = agree, color = party)) +
        caption = "Data source: FiveThirtyEight (2021)")
 ```
 
-We will review a few more customization options, including text labels and facets, in a future module.
+We will review a few more customization options, including text labels and facets, in a subsequent module.
