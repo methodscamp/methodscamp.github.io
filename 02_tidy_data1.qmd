@@ -411,3 +411,5 @@ ggplot(trump_scores, aes(x = margin_trump, y = agree, color = party)) +
        title = "Relationship between Trump margins and senators' votes",
        caption = "Data source: FiveThirtyEight (2021)")
 ```
+
+We will review a few more customization options, including text labels and facets, in a future module.
