@@ -1,5 +1,7 @@
 # Matrices
 
+Matrices are rectangular collections of numbers. In this module we will introduce them and review some basic operators, to then introduce a sneak peek of why matrices are useful (and cool).
+
 ## Introduction
 
 ### Scalars
