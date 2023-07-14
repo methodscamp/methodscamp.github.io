@@ -1077,7 +1077,7 @@ Exercise
 <p><img src="02_tidy_data1_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Sometimes we want to manually alter a scale. Here we use . For example, to make the x-axis go from 0 to 1:</p>
+<p>Sometimes we want to manually alter a scale. This is accomplished with the <code>scale_*()</code> family of <code>ggplot2</code> functions. Here we use the <code>scale_x_continuous()</code> function to make the x-axis go from 0 to 1:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(trump_scores_ss, <span class="fu">aes</span>(<span class="at">x =</span> agree)) <span class="sc">+</span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="at">closed   =</span> <span class="st">"left"</span>) <span class="sc">+</span>   </span>
