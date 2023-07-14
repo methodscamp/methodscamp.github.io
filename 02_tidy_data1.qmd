@@ -356,7 +356,7 @@ ggplot(trump_scores_ss, aes(x = agree)) +
                  closed   = "left") # close bins on the left
 ```
 
-Sometimes we want to manually alter a scale. Here we use . For example, to make the x-axis go from 0 to 1:
+Sometimes we want to manually alter a scale. This is accomplished with the `scale_*()` family of `ggplot2` functions. Here we use the `scale_x_continuous()` function to make the x-axis go from 0 to 1:
 
 ```{r}
 ggplot(trump_scores_ss, aes(x = agree)) +
