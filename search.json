@@ -319,7 +319,21 @@
     "href": "09_textanalysis.html#string-manipulation",
     "title": "9  Text analysis",
     "section": "9.2 String manipulation",
-    "text": "9.2 String manipulation\n\nOften, strings, and more broadly text, contain information that we want to extract for the purpose of our research.\n\n\n\n\n\nFiveThirtyEight. 2021. “Tracking Congress In The Age Of Trump [Dataset].” https://projects.fivethirtyeight.com/congress-trump-score/.\n\n\nU. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. “Department of Agriculture Agricultural Research Service.” https://fdc.nal.usda.gov/."
+    "text": "9.2 String manipulation\n\nOften, strings, and more broadly text, contain information that we want to extract for the purpose of our research.\n\nFor example, perhaps we wanted to count the number of times a certain country was mentioned during the U.S. President’s annual State of the Union Address.\n\nFor tasks such as these, we can use regular expressions (also known as ‘regex’), which search for one or more specified pattern of characters.\n\nThese patterns can be exact matches, or more general.\n\n\n\ntest &lt;- \"test\"\n\n\nRegular expressions can be used to:\n\nExtract information from text.\nParsing text.\nCleaning/replacing strings.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nFortunately, the syntax for regular expressions is relatively stable across all programming languages (e.g., Java, Python, R).\n\n\n\n9.2.1 Regular expression basics\n\nAnchors: ^ and"
+  },
+  {
+    "objectID": "09_textanalysis.html#stringr",
+    "href": "09_textanalysis.html#stringr",
+    "title": "9  Text analysis",
+    "section": "9.3 Stringr",
+    "text": "9.3 Stringr\n\nTo install \"stringr\" use the function install.packages(). Then, load it to your current session with library():\n\n\n# installing 'stringr'\ninstall.packages(\"stringr\")\n\nInstalling package into '/home/runner/work/_temp/Library'\n(as 'lib' is unspecified)\n\n# load 'stringr'\nlibrary(stringr)\n\n\nstringr provides functions for both (a) basic string manipulations and (b) regular expression operations. Some basic functions are listed below:\n\n\n\n\nFunction\nDescription\n\n\n\n\nstr_c()\nstring concatenation\n\n\nstr_length()\nnumber of characters\n\n\nstr_sub()\nextracts substrings\n\n\nstr_dup()\nduplicates characters\n\n\nstr_trim()\nremoves leading and trailing whitespace\n\n\nstr_pad()\npads a string\n\n\nstr_wrap()\nwraps a string paragraph\n\n\nstr_trim()\ntrims a string"
+  },
+  {
+    "objectID": "09_textanalysis.html#simple-text-analysis",
+    "href": "09_textanalysis.html#simple-text-analysis",
+    "title": "9  Text analysis",
+    "section": "9.4 Simple text analysis",
+    "text": "9.4 Simple text analysis\n\n9.4.1 Counts\n\n\n9.4.2 tf-idf\n\n\n\n\nFiveThirtyEight. 2021. “Tracking Congress In The Age Of Trump [Dataset].” https://projects.fivethirtyeight.com/congress-trump-score/.\n\n\nU. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. “Department of Agriculture Agricultural Research Service.” https://fdc.nal.usda.gov/."
   },
   {
     "objectID": "10_wrapup.html#methods-at-ut",

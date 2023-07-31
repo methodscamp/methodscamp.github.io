@@ -248,7 +248,16 @@ div.csl-indent {
    
   <ul>
   <li><a href="#strings" id="toc-strings" class="nav-link active" data-scroll-target="#strings"><span class="header-section-number">9.1</span> Strings</a></li>
-  <li><a href="#string-manipulation" id="toc-string-manipulation" class="nav-link" data-scroll-target="#string-manipulation"><span class="header-section-number">9.2</span> String manipulation</a></li>
+  <li><a href="#string-manipulation" id="toc-string-manipulation" class="nav-link" data-scroll-target="#string-manipulation"><span class="header-section-number">9.2</span> String manipulation</a>
+  <ul class="collapse">
+  <li><a href="#regular-expression-basics" id="toc-regular-expression-basics" class="nav-link" data-scroll-target="#regular-expression-basics"><span class="header-section-number">9.2.1</span> Regular expression basics</a></li>
+  </ul></li>
+  <li><a href="#stringr" id="toc-stringr" class="nav-link" data-scroll-target="#stringr"><span class="header-section-number">9.3</span> Stringr</a></li>
+  <li><a href="#simple-text-analysis" id="toc-simple-text-analysis" class="nav-link" data-scroll-target="#simple-text-analysis"><span class="header-section-number">9.4</span> Simple text analysis</a>
+  <ul class="collapse">
+  <li><a href="#counts" id="toc-counts" class="nav-link" data-scroll-target="#counts"><span class="header-section-number">9.4.1</span> Counts</a></li>
+  <li><a href="#tf-idf" id="toc-tf-idf" class="nav-link" data-scroll-target="#tf-idf"><span class="header-section-number">9.4.2</span> tf-idf</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -311,8 +320,114 @@ div.csl-indent {
 <section id="string-manipulation" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="string-manipulation"><span class="header-section-number">9.2</span> String manipulation</h2>
 <ul>
-<li>Often, strings, and more broadly text, contain information that we want to extract for the purpose of our research.</li>
+<li>Often, strings, and more broadly text, contain information that we want to extract for the purpose of our research.
+<ul>
+<li>For example, perhaps we wanted to count the number of times a certain country was mentioned during the U.S. President’s annual State of the Union Address.</li>
+</ul></li>
+<li>For tasks such as these, we can use regular expressions (also known as ‘regex’), which search for one or more specified pattern of characters.
+<ul>
+<li>These patterns can be exact matches, or more general.</li>
+</ul></li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="st">"test"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Regular expressions can be used to:
+<ul>
+<li>Extract information from text.</li>
+<li>Parsing text.</li>
+<li>Cleaning/replacing strings.</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fortunately, the syntax for regular expressions is relatively stable across all programming languages (e.g., Java, Python, R).</p>
+</div>
+</div>
+<section id="regular-expression-basics" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="regular-expression-basics"><span class="header-section-number">9.2.1</span> Regular expression basics</h3>
+<ul>
+<li>Anchors: ^ and</li>
+</ul>
+</section>
+</section>
+<section id="stringr" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="stringr"><span class="header-section-number">9.3</span> Stringr</h2>
+<ul>
+<li>To install <code>"stringr"</code> use the function <code>install.packages()</code>. Then, load it to your current session with <code>library()</code>:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># installing 'stringr'</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"stringr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into '/home/runner/work/_temp/Library'
+(as 'lib' is unspecified)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load 'stringr'</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><code>stringr</code> provides functions for both (a) basic string manipulations and (b) regular expression operations. Some basic functions are listed below:</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Function</strong></th>
+<th style="text-align: center;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>str_c()</code></td>
+<td style="text-align: center;">string concatenation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>str_length()</code></td>
+<td style="text-align: center;">number of characters</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>str_sub()</code></td>
+<td style="text-align: center;">extracts substrings</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>str_dup()</code></td>
+<td style="text-align: center;">duplicates characters</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>str_trim()</code></td>
+<td style="text-align: center;">removes leading and trailing whitespace</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>str_pad()</code></td>
+<td style="text-align: center;">pads a string</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>str_wrap()</code></td>
+<td style="text-align: center;">wraps a string paragraph</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>str_trim()</code></td>
+<td style="text-align: center;">trims a string</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="simple-text-analysis" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="simple-text-analysis"><span class="header-section-number">9.4</span> Simple text analysis</h2>
+<section id="counts" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="counts"><span class="header-section-number">9.4.1</span> Counts</h3>
+</section>
+<section id="tf-idf" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="tf-idf"><span class="header-section-number">9.4.2</span> tf-idf</h3>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -323,6 +438,7 @@ FiveThirtyEight. 2021. <span>“Tracking <span>Congress</span> <span>In</span> <
 U. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. <span>“Department of Agriculture Agricultural Research Service.”</span> <a href="https://fdc.nal.usda.gov/">https://fdc.nal.usda.gov/</a>.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
