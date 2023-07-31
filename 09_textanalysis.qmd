@@ -35,7 +35,7 @@ string3
     -   These patterns can be exact matches, or more general.
 
 ```{r}
-test <- 
+test <- "test"
 ```
 
 -   Regular expressions can be used to:
