@@ -6,8 +6,6 @@
 
 ### Zotero
 
-<div>
-
 ::: {style="float: left; position: relative; top: 0px; padding: 30px;"}
 ![](images/zotero_512x512x32.png){width="200"}
 :::
@@ -18,13 +16,24 @@
 
     -   This can save a lot of time, especially when you have to change citation styles for submission to another journal.
 
--   You can download the software for free [here](https://www.zotero.org/).
+-   You can download the software for free [here](https://www.zotero.org/). You can also find a guide on how to install it [here](https://www.zotero.org/support/installation).
 
 ::: callout-note
-Zotero is one of many other reference managers out there. You should choose whatever option best suits your needs. We, however, opine that Zotero has several major advantages compared to other alternatives such as Mendeley and EndNote.
+Zotero is one of many other reference managers out there. Alternatives include Mendeley and EndNote, among others. You should choose whatever option best suits your needs.
 :::
 
 #### Benefits of Zotero
+
+-   If you have not yet chosen a reference manager or are considering switching, below are some advantages of Zotero:
+    -   Works as a standalone desktop software with plugins for [Chrome](https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc), Safari, and Firefox.
+        -   Allows you to use Zotero in Google docs just as easily, if you prefer to write there.
+    -   Free plugin for Word and LibreOffice included.
+    -   Includes most popular citation styles and has additional style available on the [Zotero Style Repository](https://www.zotero.org/styles).
+    -   Drag and drop PDF files into the library, extracting metadata such as authors, title, publication year, etc.
+    -   Allows advanced searches of all content in your library using full-text PDF indexing.
+    -   Use cloud storage (optional) and sync libraries across devices.
+    -   Create unlimited private or public groups and collaborate by sharing files and citations.
+    -   300MB of free cloud storage and 2GB of storage for \$20 USD/year (equal to \$1.67 per month).
 
 ## Methods at UT
 
