@@ -4,9 +4,15 @@
 
 ### Overleaf
 
+::: {style="float: left; position: relative; top: 0px; padding: 30px;"}
+![](images/overleaf.png){width="250"}
+:::
+
 -   [Overleaf](https://www.overleaf.com/) is a collaborative cloud-based \LaTeX editor designed for writing, editing, and publishing documents.
 
     -   \LaTeX is a software used for typesetting technical documents. It is used widely in our discipline for the preparation for manuscripts to journals and other publishing venues.
+
+-   
 
 ::: callout-important
 \LaTeX is actually the markup language that powers this website! If you are curious about general syntax and commands, you can access [our repository](https://github.com/methodscamp/methodscamp.github.io) at any time to get a closer look.
