@@ -4,7 +4,7 @@
 
 ### Overleaf
 
-::: {style="float: left; position: relative; top: 0px; padding: 30px;"}
+::: {style="float: right; position: relative; top: 0px; padding: 30px;"}
 ![](images/overleaf.png){width="250"}
 :::
 
@@ -36,7 +36,7 @@ LaTeX is actually the markup language that powers this website! If you are curio
 
 ### Zotero
 
-::: {style="float: left; position: relative; top: 0px; padding: 30px;"}
+::: {style="float: right; position: relative; top: 0px; padding: 30px;"}
 ![](images/zotero_512x512x32.png){width="200"}
 :::
 
