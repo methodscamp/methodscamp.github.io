@@ -30,3 +30,56 @@ string3
 ## String manipulation
 
 -   Often, strings, and more broadly text, contain information that we want to extract for the purpose of our research.
+    -   For example, perhaps we wanted to count the number of times a certain country was mentioned during the U.S. President's annual State of the Union Address.
+-   For tasks such as these, we can use regular expressions (also known as 'regex'), which search for one or more specified pattern of characters.
+    -   These patterns can be exact matches, or more general.
+
+```{r}
+test <- 
+```
+
+-   Regular expressions can be used to:
+    -   Extract information from text.
+    -   Parsing text.
+    -   Cleaning/replacing strings.
+
+::: callout-important
+Fortunately, the syntax for regular expressions is relatively stable across all programming languages (e.g., Java, Python, R).
+:::
+
+### Regular expression basics
+
+-   Anchors: \^ and \$
+
+-   
+
+## Stringr
+
+-   To install `"stringr"` use the function `install.packages()`. Then, load it to your current session with `library()`:
+
+```{r}
+# installing 'stringr'
+install.packages("stringr")
+
+# load 'stringr'
+library(stringr)
+```
+
+-   `stringr` provides functions for both (a) basic string manipulations and (b) regular expression operations. Some basic functions are listed below:
+
+|  **Function**  |             **Description**             |
+|:--------------:|:---------------------------------------:|
+|   `str_c()`    |          string concatenation           |
+| `str_length()` |          number of characters           |
+|  `str_sub()`   |           extracts substrings           |
+|  `str_dup()`   |          duplicates characters          |
+|  `str_trim()`  | removes leading and trailing whitespace |
+|  `str_pad()`   |              pads a string              |
+|  `str_wrap()`  |        wraps a string paragraph         |
+|  `str_trim()`  |             trims a string              |
+
+## Simple text analysis
+
+### Counts
+
+### tf-idf
