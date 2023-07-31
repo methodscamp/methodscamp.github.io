@@ -85,14 +85,19 @@ Zotero is one of many other reference managers out there. Alternatives include M
 ### Required methods courses
 
 -   Scope and Methods of Political Science
+
     -   Statistics I (Statistics/linear regression)
+    
 -   Statistics II (Linear regression and more)
+
 -   Statistics III (Maximum likelihood estimation)
+
     -   Only required if your major field is methods
 
 ### Other methods courses
 
 -   **Statistics/econometrics:**
+
     -   Bayesian Statistics
     -   Causal Inference
     -   Math Methods for Political Analysis
@@ -102,10 +107,13 @@ Zotero is one of many other reference managers out there. Alternatives include M
 ### More courses
 
 -   **Formal Theory**
+
     -   Intro to Formal Political Analysis
     -   Formal Political Analysis II
     -   Formal Theories of International Relations
+    
 -   **Everything else**
+
     -   Conceptualization and Measurement
     -   Experimental Methods in Political Science
     -   Qualitative Methods
@@ -127,13 +135,19 @@ Software and Topic Short Courses - R, Python, Stata, etc.
 Summer programs at UT:
 
 -   Short courses in statistics
+
     -   Department sometimes offers scholarships to cover part of the cost.
 
 Summer programs outside UT:
 
 -   ICPSR (Inter-university Consortium for Political and Social Research)
+
     -   Ann Arbor, Michigan
+    
 -   EITM (Empirical Implications of Theoretical Models)
+
     -   Houston and other locations (Michigan, Duke, Berkeley, Emory)
+    
 -   IQMR (Institute for Qualitative and Multi-Method Research)
+
     -   Syracuse, NY
