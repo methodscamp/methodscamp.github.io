@@ -1,5 +1,15 @@
 # Wrap up
 
+## Project management
+
+### RStudio projects
+
+-   
+
+### Storing raw data
+
+-   
+
 ## Other resources
 
 ### Overleaf
