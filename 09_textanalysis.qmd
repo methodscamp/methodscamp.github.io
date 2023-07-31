@@ -1,1 +1,32 @@
 # Text analysis
+
+## Strings
+
+-   In R, a piece of text is represented as a sequence of characters (letters, numbers, and symbols).
+
+-   A string is a sequence of characters, which is used for storing text.
+
+    -   For example, "methods" is a string that includes characters: m, e, t, h, o, d, s.
+
+-   Creating strings is very straightforward in RStudio. We assign character values to a variable, being sure to enclose the character values (the text) in double or single quotation marks.
+
+    -   We can create strings of single words, or whole sentences if we so wish.
+
+```{r}
+string1 <- "camp" 
+string1
+
+string2 <- "I love methods camps."
+string2
+```
+
+-   We can also create a vector of strings.
+
+```{r}
+string3 <- c("I", "love", "methods", "camp", ".")
+string3
+```
+
+## String manipulation
+
+-   Often, strings, and more broadly text, contain information that we want to extract for the purpose of our research.
