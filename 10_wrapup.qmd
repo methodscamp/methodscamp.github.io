@@ -12,11 +12,23 @@
 
     -   LaTeX is a software used for typesetting technical documents. It is used widely in our discipline for the preparation for manuscripts to journals and other publishing venues.
 
--   UT Austin actually provides free access to Overleaf Professional to all graduate students.
+-   UT Austin actually provides free access to Overleaf Professional to all graduate students using your UT email.
 
 -   Overleaf Professional upgrades include:
 
-    -   
+    -   Real-time collaboration
+
+    -   Real-time track changes and visible collaborator cursor(s)
+
+    -   Real-time PDF preview of your document while editing and writing
+
+    -   Full history view of your documents
+
+    -   Two-way sync with Dropbox and GitHub
+
+    -   Reference manager sync and advanced reference search.
+
+    -   UT Austin resource portal, including UT Austin templates, FAQs, and resource links
 
 ::: callout-important
 LaTeX is actually the markup language that powers this website! If you are curious about general syntax and commands, you can access [our repository](https://github.com/methodscamp/methodscamp.github.io) at any time to get a closer look.
