@@ -4,90 +4,105 @@
 |----------------|-------------------|------------|
 | Thurs, Aug. 10 | 9:00 AM - 4:00 PM | RLP 1.302E |
 | Fri, Aug. 11   | 9:00 AM - 4:00 PM | RLP 1.302E |
-| Sat, Aug. 12   | No class          | -          |
-| Sun, Aug. 13   | No class          | -          |
+| Sat, Aug. 12   | No class          | \-         |
+| Sun, Aug. 13   | No class          | \-         |
 | Mon, Aug. 14   | 9:00 AM - 4:00 PM | RLP 1.302E |
 | Tues, Aug. 15  | 9:00 AM - 4:00 PM | RLP 1.302E |
 | Weds, Aug. 16  | 9:00 AM - 4:00 PM | RLP 1.302E |
 
-On class days, we will have a lunch break from 12:00-1:00 PM. We'll also take short breaks periodically during the morning and afternoon sessions as needed. 
+On class days, we will have a lunch break from 12:00-1:00 PM. We'll also take short breaks periodically during the morning and afternoon sessions as needed.
 
 ## Description {.unnumbered}
 
-Welcome to Introduction to Methods for Political Science, aka “Methods Camp”! In the past our incoming students have told us their math skills are rusty and they would like to be better prepared for UT’s methods courses. Methods Camp is designed to give everyone a chance to brush up on some skills in preparation for the Stats I and Formal Theory I courses. The other goal of Methods Camp is to allow you to get to know your cohort. We hope that struggling with matrix algebra and the dreaded chain rule will still prove to be a good bonding exercise.
+Welcome to Introduction to Methods for Political Science, aka "Methods Camp"! In the past our incoming students have told us their math skills are rusty and they would like to be better prepared for UT's methods courses. Methods Camp is designed to give everyone a chance to brush up on some skills in preparation for the Stats I and Formal Theory I courses. The other goal of Methods Camp is to allow you to get to know your cohort. We hope that struggling with matrix algebra and the dreaded chain rule will still prove to be a good bonding exercise.
 
-As you can see from the above schedule, we’ll be meeting on Thursday, August 10th and Friday, August 11th as well as from Monday, August 14th through Wednesday, August 16th. Classes at UT begin the start of the following week on Monday, August 22nd. Below is a tentaive schedule outlining what will be covered in the class, although we may rearrange things a bit if we find we’re going too slowly or too quickly through any of the material.
+As you can see from the above schedule, we'll be meeting on Thursday, August 10th and Friday, August 11th as well as from Monday, August 14th through Wednesday, August 16th. Classes at UT begin the start of the following week on Monday, August 22nd. Below is a tentaive schedule outlining what will be covered in the class, although we may rearrange things a bit if we find we're going too slowly or too quickly through any of the material.
 
 ## Course outline {.unnumbered}
 
-**1 Thursday morning: R and RStudio** 
+**1 Thursday morning: R and RStudio**
 
-- Introductions
-- RStudio (materials are on the website as zipped RStudio projects)
-- Objects (vectors, matrices, data frames)
-- Basic functions (`mean()`, `length()`, etc.)
+-   Introductions
+-   RStudio (materials are on the website as zipped RStudio projects)
+-   Objects (vectors, matrices, data frames)
+-   Basic functions (`mean()`, `length()`, etc.)
 
 **2 Thursday afternoon: `tidyverse` basics I**
 
-- Packages: installation and loading (including the tidyverse)
-- Data wrangling with dplyr (basic verbs, including the new `.by =` syntax)
-- Data visualization basics with `ggplot2`
-- Data loading (.csv, .rds, .dta, .xlsx)
-- Quarto fundamentals
+-   Packages: installation and loading (including the tidyverse)
+-   Data wrangling with dplyr (basic verbs, including the new `.by =` syntax)
+-   Data visualization basics with `ggplot2`
+-   Data loading (.csv, .rds, .dta, .xlsx)
+-   Quarto fundamentals
 
 **3 Friday morning: Matrices**
 
-- Matrices
-- Systems of linear equations
-- Matrix operations (multiplication, transpose, inverse, determinant).
-- Solving systems of linear equations in matrix form (and why that’s cool)
-- Introduction to OLS
+-   Matrices
+-   Systems of linear equations
+-   Matrix operations (multiplication, transpose, inverse, determinant).
+-   Solving systems of linear equations in matrix form (and why that's cool)
+-   Introduction to OLS
 
 **4 Friday afternoon: `tidyverse` basics II**
 
-- Data merging and pivoting (`*_join()`, `pivot_*()`)
-- Value recoding (`if_else()`, `case_when()`)
-- Missing values
-- Data visualization extensions: facets, text annotations
+-   Data merging and pivoting (`*_join()`, `pivot_*()`)
+-   Value recoding (`if_else()`, `case_when()`)
+-   Missing values
+-   Data visualization extensions: facets, text annotations
 
 **5 Monday morning: Functions and loops**
 
-- Functions
-- For-loops and `lapply()`
-- Finding R help (help files, effective Googling, ChatGPT)
+-   Functions
+-   For-loops and `lapply()`
+-   Finding R help (help files, effective Googling, ChatGPT)
 
 **6 Monday afternoon: Calculus**
 
-- Limits (not sure how to teach this in an R-centric way yet, but there must be a way)
-- Derivatives (symbolic, numerical, automatic)
-- Integrals
+-   Limits (not sure how to teach this in an R-centric way yet, but there must be a way)
+-   Derivatives (symbolic, numerical, automatic)
+-   Integrals
 
 **7 Tuesday morning: Probability**
 
-- Concepts: probability, random variables, etc.
-- PMF, PDF, CDF, etc.
-- Distributions (binomial, normal; different functions in R and how to use them)
-- Expectation and variance
+-   Concepts: probability, random variables, etc.
+-   PMF, PDF, CDF, etc.
+-   Distributions (binomial, normal; different functions in R and how to use them)
+-   Expectation and variance
 
 **8 Tuesday afternoon: Simulations**
 
-- Simulations (ideas, seed setting, etc.)
-- Sampling
-- Bootstrapping
+-   Simulations (ideas, seed setting, etc.)
+-   Sampling
+-   Bootstrapping
 
 **9 Wednesday morning: Text analysis**
 
-- String manipulation with `stringr`
-- Simple text analysis (counts, tf-idf, etc.) with `tidytext` and visualization
+-   String manipulation with `stringr`
+-   Simple text analysis (counts, tf-idf, etc.) with `tidytext` and visualization
 
 **10 Wednesday afternoon: Wrap-up**
 
-- Project management fundamentals (RStudio projects, keeping raw data, etc.)
-- Self-study resources and materials
-- Other software (Overleaf, Zotero, etc.)
-- Methods at UT
+-   Project management fundamentals (RStudio projects, keeping raw data, etc.)
+-   Self-study resources and materials
+-   Other software (Overleaf, Zotero, etc.)
+-   Methods at UT
 
 ## Contact info {.unnumbered}
 
-If you have any questions during or outside of methods camp, you can contact Andrés at [andres.cruz@utexas.edu](mailto:andres.cruz@utexas.edu) and Matt at [mjmartin@utexas.edu](mailto:mjmartin@utexas.edu). 
+If you have any questions during or outside of methods camp, you can contact us via email:
 
+-   Andrés Cruz: [andres.cruz\@utexas.edu](mailto:andres.cruz@utexas.edu)
+
+-   Matt Martin: [mjmartin\@utexas.edu](mailto:mjmartin@utexas.edu)
+
+If you are interested in learning more about our research, you can also check out our respective websites:
+
+-   Andrés Cruz via [GitHub Pages](https://arcruz0.github.io/)
+
+-   Matt Martin via [GitHub Pages](https://mattjamesmartin.github.io/)
+
+Or, follow us on Twitter (or should we say X...):
+
+[![https://twitter.com/arcruz0](https://img.shields.io/twitter/url/https/twitter.com/arcruz0.svg?style=social&label=Follow%20%40arcruz0)](https://twitter.com/arcruz0)
+
+[![https://twitter.com/mattj_martin](https://img.shields.io/twitter/url/https/twitter.com/mattj_martin.svg?style=social&label=Follow%20%40mattj_martin)](https://twitter.com/mattj_martin)
