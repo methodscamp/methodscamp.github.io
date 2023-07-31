@@ -43,7 +43,7 @@ test <- "test"
     -   Parsing text.
     -   Cleaning/replacing strings.
 
-::: callout-important
+::: callout-note
 Fortunately, the syntax for regular expressions is relatively stable across all programming languages (e.g., Java, Python, R).
 :::
 
