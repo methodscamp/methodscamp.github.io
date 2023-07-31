@@ -8,14 +8,18 @@
 ![](images/overleaf.png){width="250"}
 :::
 
--   [Overleaf](https://www.overleaf.com/) is a collaborative cloud-based \LaTeX editor designed for writing, editing, and publishing documents.
+-   [Overleaf](https://www.overleaf.com/) is a collaborative cloud-based LaTeX editor designed for writing, editing, and publishing documents.
 
-    -   \LaTeX is a software used for typesetting technical documents. It is used widely in our discipline for the preparation for manuscripts to journals and other publishing venues.
+    -   LaTeX is a software used for typesetting technical documents. It is used widely in our discipline for the preparation for manuscripts to journals and other publishing venues.
 
--   
+-   UT Austin actually provides free access to Overleaf Professional to all graduate students.
+
+-   Overleaf Professional upgrades include:
+
+    -   
 
 ::: callout-important
-\LaTeX is actually the markup language that powers this website! If you are curious about general syntax and commands, you can access [our repository](https://github.com/methodscamp/methodscamp.github.io) at any time to get a closer look.
+LaTeX is actually the markup language that powers this website! If you are curious about general syntax and commands, you can access [our repository](https://github.com/methodscamp/methodscamp.github.io) at any time to get a closer look.
 :::
 
 ### Zotero
@@ -30,7 +34,9 @@
 
     -   This can save a lot of time, especially when you have to change citation styles for submission to another journal.
 
--   You can download the software for free [here](https://www.zotero.org/). You can also find a guide on how to install it [here](https://www.zotero.org/support/installation).
+-   You can download the software for free [here](https://www.zotero.org/).
+
+    -   You can also find a guide on how to install it [here](https://www.zotero.org/support/installation).
 
 ::: callout-note
 Zotero is one of many other reference managers out there. Alternatives include Mendeley and EndNote, among others. You should choose whatever option best suits your needs.
