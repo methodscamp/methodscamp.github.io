@@ -1,5 +1,31 @@
 # Wrap up
 
+## Other resources
+
+### Overleaf
+
+### Zotero
+
+<div>
+
+::: {style="float: left; position: relative; top: 0px; padding: 30px;"}
+![](images/zotero_512x512x32.png){width="200"}
+:::
+
+-   Zotero is an open-source reference manager used to store, manage, and cite bibliographic references, such as books and articles.
+
+-   When it is time to write, you can insert your sources directly into your paper as in-text citations via a word processor plugin, which generates a bibliography in your style of choice.
+
+    -   This can save a lot of time, especially when you have to change citation styles for submission to another journal.
+
+-   You can download the software for free [here](https://www.zotero.org/).
+
+::: callout-note
+Zotero is one of many other reference managers out there. You should choose whatever option best suits your needs. We, however, opine that Zotero has several major advantages compared to other alternatives such as Mendeley and EndNote.
+:::
+
+#### Benefits of Zotero
+
 ## Methods at UT
 
 ### Required methods courses
