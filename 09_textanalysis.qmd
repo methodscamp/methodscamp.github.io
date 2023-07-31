@@ -49,9 +49,7 @@ Fortunately, the syntax for regular expressions is relatively stable across all 
 
 ### Regular expression basics
 
--   Anchors: \^ and \$
-
--   
+-   Anchors: \^ and
 
 ## Stringr
 
