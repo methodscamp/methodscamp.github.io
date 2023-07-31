@@ -27,17 +27,11 @@
 -   Overleaf Professional upgrades include:
 
     -   Real-time collaboration
-
     -   Real-time track changes and visible collaborator cursor(s)
-
     -   Real-time PDF preview of your document while editing and writing
-
     -   Full history view of your documents
-
     -   Two-way sync with Dropbox and GitHub
-
     -   Reference manager sync and advanced reference search.
-
     -   UT Austin resource portal, including UT Austin templates, FAQs, and resource links
 
 ::: callout-important
@@ -68,16 +62,16 @@ Zotero is one of many other reference managers out there. Alternatives include M
 
 -   If you have not yet chosen a reference manager or are considering switching, below are some advantages of Zotero:
 
-    -   Works as a standalone desktop software with plugins for [Chrome](https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc), Safari, and Firefox.
-        -   Allows you to use Zotero in Google docs just as easily, if you prefer to write there.
-    -   Free plugin for Word and LibreOffice included.
-    -   Includes most popular citation styles and has additional style available on the [Zotero Style Repository](https://www.zotero.org/styles).
-    -   Drag and drop PDF files into the library, extracting metadata such as authors, title, publication year, etc.
-    -   Allows advanced searches of all content in your library using full-text PDF indexing.
-    -   Use cloud storage (optional) and sync libraries across devices.
-    -   Create unlimited private or public groups and collaborate by sharing files and citations.
-    -   300MB of free cloud storage and 2GB of storage for \$20 USD/year (equal to \$1.67 per month).
-    
+    -   Works as a standalone desktop software with plugins for [Chrome](https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc), Safari, and Firefox
+    -   Full compatibility with Google docs
+    -   Free plugin for Word and LibreOffice included
+    -   Includes most popular citation styles with more styles available on the [Zotero Style Repository](https://www.zotero.org/styles)
+    -   Drag and drop PDF files into the library, extracting metadata such as authors, year, etc.
+    -   Allows advanced searches of all content in your library using full-text PDF indexing
+    -   Use cloud storage (optional) and sync libraries across devices
+    -   Create unlimited private or public groups and collaborate by sharing files and citations
+    -   300MB of free cloud storage and 2GB of storage for \$20 USD/year (equal to \$1.67 per month)
+
 -   [Here](https://www.zotero.org/support/quick_start_guide) is a comprehensive guide to unlocking all of Zotero's potential.
 
 ## Methods at UT
@@ -87,7 +81,7 @@ Zotero is one of many other reference managers out there. Alternatives include M
 -   Scope and Methods of Political Science
 
     -   Statistics I (Statistics/linear regression)
-    
+
 -   Statistics II (Linear regression and more)
 
 -   Statistics III (Maximum likelihood estimation)
@@ -111,7 +105,7 @@ Zotero is one of many other reference managers out there. Alternatives include M
     -   Intro to Formal Political Analysis
     -   Formal Political Analysis II
     -   Formal Theories of International Relations
-    
+
 -   **Everything else**
 
     -   Conceptualization and Measurement
@@ -143,11 +137,11 @@ Summer programs outside UT:
 -   ICPSR (Inter-university Consortium for Political and Social Research)
 
     -   Ann Arbor, Michigan
-    
+
 -   EITM (Empirical Implications of Theoretical Models)
 
     -   Houston and other locations (Michigan, Duke, Berkeley, Emory)
-    
+
 -   IQMR (Institute for Qualitative and Multi-Method Research)
 
     -   Syracuse, NY
