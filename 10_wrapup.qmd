@@ -4,7 +4,11 @@
 
 ### RStudio projects
 
--   
+-   RStudio projects are an excellent way to keep all the files associated with a project (data, R scripts, results, figures, etc.) in one place on your computer.
+
+-   To create a new project file, click `File > New Project`, then:
+
+
 
 ### Storing raw data
 
