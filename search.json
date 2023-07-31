@@ -308,11 +308,18 @@
     "text": "FiveThirtyEight. 2021. “Tracking Congress In The Age Of Trump [Dataset].” https://projects.fivethirtyeight.com/congress-trump-score/.\n\n\nU. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. “Department of Agriculture Agricultural Research Service.” https://fdc.nal.usda.gov/."
   },
   {
-    "objectID": "09_textanalysis.html",
-    "href": "09_textanalysis.html",
+    "objectID": "09_textanalysis.html#strings",
+    "href": "09_textanalysis.html#strings",
     "title": "9  Text analysis",
-    "section": "",
-    "text": "FiveThirtyEight. 2021. “Tracking Congress In The Age Of Trump [Dataset].” https://projects.fivethirtyeight.com/congress-trump-score/.\n\n\nU. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. “Department of Agriculture Agricultural Research Service.” https://fdc.nal.usda.gov/."
+    "section": "9.1 Strings",
+    "text": "9.1 Strings\n\nIn R, a piece of text is represented as a sequence of characters (letters, numbers, and symbols).\nA string is a sequence of characters, which is used for storing text.\n\nFor example, “methods” is a string that includes characters: m, e, t, h, o, d, s.\n\nCreating strings is very straightforward in RStudio. We assign character values to a variable, being sure to enclose the character values (the text) in double or single quotation marks.\n\nWe can create strings of single words, or whole sentences if we so wish.\n\n\n\nstring1 &lt;- \"camp\" \nstring1\n\n[1] \"camp\"\n\nstring2 &lt;- \"I love methods camps.\"\nstring2\n\n[1] \"I love methods camps.\"\n\n\n\nWe can also create a vector of strings.\n\n\nstring3 &lt;- c(\"I\", \"love\", \"methods\", \"camp\", \".\")\nstring3\n\n[1] \"I\"       \"love\"    \"methods\" \"camp\"    \".\""
+  },
+  {
+    "objectID": "09_textanalysis.html#string-manipulation",
+    "href": "09_textanalysis.html#string-manipulation",
+    "title": "9  Text analysis",
+    "section": "9.2 String manipulation",
+    "text": "9.2 String manipulation\n\nOften, strings, and more broadly text, contain information that we want to extract for the purpose of our research.\n\n\n\n\n\nFiveThirtyEight. 2021. “Tracking Congress In The Age Of Trump [Dataset].” https://projects.fivethirtyeight.com/congress-trump-score/.\n\n\nU. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. “Department of Agriculture Agricultural Research Service.” https://fdc.nal.usda.gov/."
   },
   {
     "objectID": "10_wrapup.html#methods-at-ut",
