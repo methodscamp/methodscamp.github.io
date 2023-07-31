@@ -67,6 +67,7 @@ Zotero is one of many other reference managers out there. Alternatives include M
 #### Benefits of Zotero
 
 -   If you have not yet chosen a reference manager or are considering switching, below are some advantages of Zotero:
+
     -   Works as a standalone desktop software with plugins for [Chrome](https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc), Safari, and Firefox.
         -   Allows you to use Zotero in Google docs just as easily, if you prefer to write there.
     -   Free plugin for Word and LibreOffice included.
@@ -76,6 +77,7 @@ Zotero is one of many other reference managers out there. Alternatives include M
     -   Use cloud storage (optional) and sync libraries across devices.
     -   Create unlimited private or public groups and collaborate by sharing files and citations.
     -   300MB of free cloud storage and 2GB of storage for \$20 USD/year (equal to \$1.67 per month).
+    
 -   [Here](https://www.zotero.org/support/quick_start_guide) is a comprehensive guide to unlocking all of Zotero's potential.
 
 ## Methods at UT
