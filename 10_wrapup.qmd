@@ -15,11 +15,7 @@
 
 -   To create a new project file, click `File > New Project`, then:
 
-    ![](images/Screenshot 2023-07-31 at 4.57.29 PM.png){width="400"}
-
-    ![](images/Screenshot 2023-07-31 at 4.57.55 PM.png){width="400"}
-
-    ![](images/Screenshot 2023-07-31 at 4.58.54 PM.png){width="400"}
+    ![](images/Screenshot%202023-07-31%20at%204.57.29%20PM.png){fig-align="center" width="400"} ![](images/Screenshot%202023-07-31%20at%204.57.55%20PM.png){fig-align="center" width="400"} ![](images/Screenshot%202023-07-31%20at%204.58.54%20PM.png){fig-align="center" width="400"}
 
 -   Call your project some version of "methodscamptest" and choose carefully where you wish to store the project on your machine.
 
@@ -37,7 +33,7 @@ getwd()
 
 -   Now, as an example, let's run the following commands in the script editor and save the files into the project directory.
 
-```{r}
+```{r, echo=FALSE, message=FALSE}
 library(tidyverse)
 
 ggplot(mtcars, aes(wt, mpg)) + 
@@ -50,7 +46,7 @@ write_csv(mtcars, "mtcars.csv")
 -   Quit RStudio and check out the folder associated with the project.
 
     -   You should see the PDF file for the plot, the .csv file for the data, and the `.Rproj` file for the project itself.
-    
+
 -   Double-click the `.Rproj` file to reopen the project and pick up where you left off! Everything you need should be ready to go.
 
 ### Storing raw data
