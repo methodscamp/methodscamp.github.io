@@ -302,7 +302,21 @@ div.csl-indent {
 <li>Keep outputs such as plots and cleaned data.</li>
 </ul></li>
 <li><p>To create a new project file, click <code>File &gt; New Project</code>, then:</p>
-<p><img src="images/Screenshot 2023-07-31 at 4.57.29 PM.png" class="img-fluid" data-fig-align="center" width="400"> <img src="images/Screenshot 2023-07-31 at 4.57.55 PM.png" class="img-fluid" data-fig-align="center" width="400"> <img src="images/Screenshot 2023-07-31 at 4.58.54 PM.png" class="img-fluid" data-fig-align="center" width="400"></p></li>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screenshot 2023-07-31 at 4.57.29 PM.png" class="img-fluid figure-img" width="400"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screenshot 2023-07-31 at 4.57.55 PM.png" class="img-fluid figure-img" width="400"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screenshot 2023-07-31 at 4.58.54 PM.png" class="img-fluid figure-img" width="400"></p>
+</figure>
+</div></li>
 <li><p>Call your project some version of “methodscamptest” and choose carefully where you wish to store the project on your machine.</p></li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -333,9 +347,16 @@ Warning
 <li>Now, as an example, let’s run the following commands in the script editor and save the files into the project directory.</li>
 </ul>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="10_wrapup_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"mtcars.pdf"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(mtcars, <span class="st">"mtcars.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><p>Quit RStudio and check out the folder associated with the project.</p>
