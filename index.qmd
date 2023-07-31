@@ -103,6 +103,6 @@ If you are interested in learning more about our research, you can also check ou
 
 Or, follow us on Twitter (or should we say X...):
 
-[![https://twitter.com/arcruz0](https://img.shields.io/twitter/url/https/twitter.com/arcruz0.svg?style=social&label=Follow%20%40arcruz0)](https://twitter.com/arcruz0)
+-   Andrés Cruz: <https://twitter.com/arcruz0>
 
-[![https://twitter.com/mattj_martin](https://img.shields.io/twitter/url/https/twitter.com/mattj_martin.svg?style=social&label=Follow%20%40mattj_martin)](https://twitter.com/mattj_martin)
+-   Matt Martin: <https://twitter.com/MattJ_Martin>
