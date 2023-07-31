@@ -340,7 +340,7 @@
     "href": "10_wrapup.html#project-management",
     "title": "10  Wrap up",
     "section": "10.1 Project management",
-    "text": "10.1 Project management\n\n10.1.1 RStudio projects\n\n\n\n\n\n10.1.2 Storing raw data"
+    "text": "10.1 Project management\n\n10.1.1 RStudio projects\n\nRStudio projects are an excellent way to keep all the files associated with a project (data, R scripts, results, figures, etc.) in one place on your computer.\nTo create a new project file, click File &gt; New Project, then:\n\n\n\n10.1.2 Storing raw data"
   },
   {
     "objectID": "10_wrapup.html#other-resources",
