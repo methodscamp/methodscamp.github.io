@@ -287,7 +287,7 @@ book_tf_idf %>%
 
 -   Let's end with a visualization for the high tf-idf words in each of Jane Austen's novels.
 
-    -   These results highlight that what distinguishes one novel from another within the collection of her works (the corpus) are the proper nouns, mainly the names of people and places. These are the terms that are "important" to each respective document.
+    -   These results highlight that what distinguishes one novel from another within the collection of her works (the corpus) are the proper nouns, mainly the names of people and places. These are the terms that are "important" for defining the character of each respective document.
 
 ```{r}
 library(forcats)
