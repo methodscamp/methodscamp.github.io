@@ -154,17 +154,21 @@ str_extract_all(cat_string,"\\w+")[[1]] # "word" characters
 
 -   We can use the `tidytext` package to conduct some basic text analysis using tidy data principles.
 
--   As \citet{JSSv059i10} reminds us, tidy data has a specific structure:
+-   As [Wickham 2014](https://www.tidytextmining.com/tidytext.html) reminds us, tidy data has a specific structure:
 
     -   Each variable is a column.
     -   Each observation is a row.
     -   Each type of observational unit is a table.
-    
--   We can thus define the format as a table with one-token-per-row. 
 
-    -   A token is a unit of text (e.g., word) that we use for analysis. Tokenization is the process of turning text into tokens. 
-    
--   
+-   We can thus define the format as a table with one-token-per-row.
+
+    -   A token is a unit of text (e.g., word) that we use for analysis. Tokenization is the process of turning text into tokens.
+
+-   As [Silge and Robinson (2017)](https://www.tidytextmining.com/tidytext.html) remind us, it is important to contrast this structure with the alternative ways that text is often structured and stored in text analysis:
+
+    -   String: Text can be stored as strings, i.e., character vectors. Text data is often first read into memory in this form.
+    -   Corpus: These objects usually contain raw strings annotated with metadata and details.
+    -   Document-term matrix: This sparse matrix describe a collection (i.e., a corpus) of documents with one row for each document and one column for each term. The value in the matrix is typically word count or tf-idf (term frequency-inverse document frequency).
 
 ### Counts
 
