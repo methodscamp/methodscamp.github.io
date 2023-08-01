@@ -3,5 +3,6 @@
 .RData
 .Ruserdata
 
-/.quarto/
+.quarto/
 _book/
+.freeze/
