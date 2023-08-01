@@ -254,7 +254,9 @@ div.csl-indent {
   <li><a href="#stata-and-spss-data-files" id="toc-stata-and-spss-data-files" class="nav-link" data-scroll-target="#stata-and-spss-data-files"><span class="header-section-number">4.1.3</span> Stata and SPSS data files</a></li>
   <li><a href="#our-data-for-this-session" id="toc-our-data-for-this-session" class="nav-link" data-scroll-target="#our-data-for-this-session"><span class="header-section-number">4.1.4</span> Our data for this session</a></li>
   </ul></li>
-  <li><a href="#pivoting-data" id="toc-pivoting-data" class="nav-link" data-scroll-target="#pivoting-data"><span class="header-section-number">4.2</span> Pivoting data</a></li>
+  <li><a href="#recoding-variables" id="toc-recoding-variables" class="nav-link" data-scroll-target="#recoding-variables"><span class="header-section-number">4.2</span> Recoding variables</a></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values"><span class="header-section-number">4.3</span> Missing values</a></li>
+  <li><a href="#pivoting-data" id="toc-pivoting-data" class="nav-link" data-scroll-target="#pivoting-data"><span class="header-section-number">4.4</span> Pivoting data</a></li>
   </ul>
 </nav>
     </div>
@@ -304,10 +306,10 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>qog_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sample_qog_bas_ts_jan23.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Rows: 1085 Columns: 7
+<pre><code>Rows: 1085 Columns: 8
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
-chr (3): cname, ccodealp, region
+chr (4): cname, ccodealp, region, ht_colonial
 dbl (4): year, wdi_pop, vdem_polyarchy, vdem_corr
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
@@ -369,27 +371,27 @@ Tip
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>qog <span class="ot">&lt;-</span> qog_csv</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>qog</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,085 × 7
-   cname               ccodealp  year region    wdi_pop vdem_polyarchy vdem_corr
-   &lt;chr&gt;               &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;
- 1 Antigua and Barbuda ATG       1990 Caribbean   63328             NA        NA
- 2 Antigua and Barbuda ATG       1991 Caribbean   63634             NA        NA
- 3 Antigua and Barbuda ATG       1992 Caribbean   64659             NA        NA
- 4 Antigua and Barbuda ATG       1993 Caribbean   65834             NA        NA
- 5 Antigua and Barbuda ATG       1994 Caribbean   67072             NA        NA
- 6 Antigua and Barbuda ATG       1995 Caribbean   68398             NA        NA
- 7 Antigua and Barbuda ATG       1996 Caribbean   69798             NA        NA
- 8 Antigua and Barbuda ATG       1997 Caribbean   71218             NA        NA
- 9 Antigua and Barbuda ATG       1998 Caribbean   72572             NA        NA
-10 Antigua and Barbuda ATG       1999 Caribbean   73821             NA        NA
+<pre><code># A tibble: 1,085 × 8
+   cname      ccodealp  year region wdi_pop vdem_polyarchy vdem_corr ht_colonial
+   &lt;chr&gt;      &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      
+ 1 Antigua a… ATG       1990 Carib…   63328             NA        NA British    
+ 2 Antigua a… ATG       1991 Carib…   63634             NA        NA British    
+ 3 Antigua a… ATG       1992 Carib…   64659             NA        NA British    
+ 4 Antigua a… ATG       1993 Carib…   65834             NA        NA British    
+ 5 Antigua a… ATG       1994 Carib…   67072             NA        NA British    
+ 6 Antigua a… ATG       1995 Carib…   68398             NA        NA British    
+ 7 Antigua a… ATG       1996 Carib…   69798             NA        NA British    
+ 8 Antigua a… ATG       1997 Carib…   71218             NA        NA British    
+ 9 Antigua a… ATG       1998 Carib…   72572             NA        NA British    
+10 Antigua a… ATG       1999 Carib…   73821             NA        NA British    
 # ℹ 1,075 more rows</code></pre>
 </div>
 </div>
-<p>This dataset is a small sample of QOG, which contains data for countries in the Americas from 1990 to 2020. You can access the <a href="https://www.qogdata.pol.gu.se/data/codebook_bas_jan23.pdf">full codebook</a> online. The variables are as follows:</p>
+<p>This dataset is a small sample of QOG, which contains data for countries in the Americas from 1990 to 2020. The observational unit is thus country-year. You can access the <a href="https://www.qogdata.pol.gu.se/data/codebook_bas_jan23.pdf">full codebook</a> online. The variables are as follows:</p>
 <table class="table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
+<col style="width: 27%">
+<col style="width: 72%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -426,12 +428,228 @@ Tip
 <td><code>vdem_corr</code></td>
 <td>V-Dem’s corruption index</td>
 </tr>
+<tr class="even">
+<td><code>ht_colonial</code></td>
+<td>Former colonial ruler</td>
+</tr>
 </tbody>
 </table>
 </section>
 </section>
-<section id="pivoting-data" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="pivoting-data"><span class="header-section-number">4.2</span> Pivoting data</h2>
+<section id="recoding-variables" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="recoding-variables"><span class="header-section-number">4.2</span> Recoding variables</h2>
+<p>Take a look at the <code>ht_colonial</code> variable. We can do a simple tabulation with <code>count()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>qog <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ht_colonial)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  ht_colonial         n
+  &lt;chr&gt;           &lt;int&gt;
+1 British           372
+2 Dutch              31
+3 French             31
+4 Never colonized    62
+5 Portuguese         31
+6 Spanish           558</code></pre>
+</div>
+</div>
+<p>We might want to recode this variable. For instance, we could create a <em>dummy</em>/<em>binary</em> variable for whether the country was a British colony. We can do this with <code>if_else()</code>, which works with logical conditions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>qog <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the arguments are condition, true (what to do if true), false</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">d_britishcol =</span> <span class="fu">if_else</span>(ht_colonial <span class="sc">==</span> <span class="st">"British"</span>, <span class="dv">1</span>, <span class="dv">0</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(d_britishcol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  d_britishcol     n
+         &lt;dbl&gt; &lt;int&gt;
+1            0   713
+2            1   372</code></pre>
+</div>
+</div>
+<p>Instead of a numeric classification (0 and 1), we could use characters:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>qog <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cat_britishcol =</span> <span class="fu">if_else</span>(ht_colonial <span class="sc">==</span> <span class="st">"British"</span>, <span class="st">"British"</span>, <span class="st">"Other"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(cat_britishcol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  cat_britishcol     n
+  &lt;chr&gt;          &lt;int&gt;
+1 British          372
+2 Other            713</code></pre>
+</div>
+</div>
+<p><code>if_else()</code> is great for binary recoding. But sometimes we want to create more than two categories. We can use <code>case_when()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>qog <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># syntax is condition ~ value</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cat_col =</span> <span class="fu">case_when</span>(</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    ht_colonial <span class="sc">==</span> <span class="st">"British"</span> <span class="sc">~</span> <span class="st">"British"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    ht_colonial <span class="sc">==</span> <span class="st">"Spanish"</span> <span class="sc">~</span> <span class="st">"Spanish"</span>, </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">.default =</span> <span class="st">"Other"</span> <span class="co"># what to do in all other cases</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(cat_col)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  cat_col     n
+  &lt;chr&gt;   &lt;int&gt;
+1 British   372
+2 Other     155
+3 Spanish   558</code></pre>
+</div>
+</div>
+<p>The <code>.default =</code> argument in <code>case_when()</code> can also be used to leave the variable as-is for non-specified cases. For example, let’s combine Portuguese and Spanish colonies:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>qog <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># syntax is condition ~ value</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cat_col =</span> <span class="fu">case_when</span>(</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    ht_colonial <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Spanish"</span>, <span class="st">"Portuguese"</span>) <span class="sc">~</span> <span class="st">"Spanish/Portuguese"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.default =</span> ht_colonial <span class="co"># what to do in all other cases</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(cat_col)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  cat_col                n
+  &lt;chr&gt;              &lt;int&gt;
+1 British              372
+2 Dutch                 31
+3 French                31
+4 Never colonized       62
+5 Spanish/Portuguese   589</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Create a dummy variable, <code>d_large_pop</code>, for whether the country-year has a population of more than 1 million. Then compute its mean. Your code:</p></li>
+<li><p>Which countries are recorded as “Never colonized”? Change their values to other reasonable codings and compute a tabulation with <code>count()</code>. Your code:</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="missing-values" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="missing-values"><span class="header-section-number">4.3</span> Missing values</h2>
+<p>Missing values are commonplace in real datasets. In R, missing values are a special type of value in vectors, denoted as <code>NA</code>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The special value <code>NA</code> is different from the character value “NA”. For example, notice that a numeric vector can have <code>NAs</code>, while it obviously cannot hold the character value “NA”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">5</span>, <span class="fl">4.6</span>, <span class="cn">NA</span>, <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.0 4.6  NA 8.0</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>A quick way to check for missing values in small datasets is with the <code>summary()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(qog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    cname             ccodealp              year         region         
+ Length:1085        Length:1085        Min.   :1990   Length:1085       
+ Class :character   Class :character   1st Qu.:1997   Class :character  
+ Mode  :character   Mode  :character   Median :2005   Mode  :character  
+                                       Mean   :2005                     
+                                       3rd Qu.:2013                     
+                                       Max.   :2020                     
+                                                                        
+    wdi_pop          vdem_polyarchy     vdem_corr      ht_colonial       
+ Min.   :    40542   Min.   :0.0710   Min.   :0.0260   Length:1085       
+ 1st Qu.:   389131   1st Qu.:0.5570   1st Qu.:0.1890   Class :character  
+ Median :  5687744   Median :0.7030   Median :0.5550   Mode  :character  
+ Mean   : 25004057   Mean   :0.6569   Mean   :0.4922                     
+ 3rd Qu.: 16195902   3rd Qu.:0.8030   3rd Qu.:0.7540                     
+ Max.   :331501080   Max.   :0.9160   Max.   :0.9630                     
+                     NA's   :248      NA's   :248                        </code></pre>
+</div>
+</div>
+<p>Notice that we have missingness in the <code>vdem_polyarchy</code> and <code>vdem_corr</code> variables. We might want to filter the dataset to see which observations are in this situation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>qog <span class="sc">|&gt;</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(vdem_polyarchy <span class="sc">==</span> <span class="cn">NA</span> <span class="sc">|</span> vdem_corr <span class="sc">==</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 0 × 8
+# ℹ 8 variables: cname &lt;chr&gt;, ccodealp &lt;chr&gt;, year &lt;dbl&gt;, region &lt;chr&gt;,
+#   wdi_pop &lt;dbl&gt;, vdem_polyarchy &lt;dbl&gt;, vdem_corr &lt;dbl&gt;, ht_colonial &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>But the code above doesn’t work! To refer to missing values in logical conditions, we cannot use <code>== NA</code>. Instead, we need to use the <code>is.na()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>qog <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(vdem_polyarchy) <span class="sc">|</span> <span class="fu">is.na</span>(vdem_corr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 248 × 8
+   cname      ccodealp  year region wdi_pop vdem_polyarchy vdem_corr ht_colonial
+   &lt;chr&gt;      &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      
+ 1 Antigua a… ATG       1990 Carib…   63328             NA        NA British    
+ 2 Antigua a… ATG       1991 Carib…   63634             NA        NA British    
+ 3 Antigua a… ATG       1992 Carib…   64659             NA        NA British    
+ 4 Antigua a… ATG       1993 Carib…   65834             NA        NA British    
+ 5 Antigua a… ATG       1994 Carib…   67072             NA        NA British    
+ 6 Antigua a… ATG       1995 Carib…   68398             NA        NA British    
+ 7 Antigua a… ATG       1996 Carib…   69798             NA        NA British    
+ 8 Antigua a… ATG       1997 Carib…   71218             NA        NA British    
+ 9 Antigua a… ATG       1998 Carib…   72572             NA        NA British    
+10 Antigua a… ATG       1999 Carib…   73821             NA        NA British    
+# ℹ 238 more rows</code></pre>
+</div>
+</div>
+<p>Notice that, in most R functions, missing values are “contagious.” This means that any missing value will “contamine” the results and carry over. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>qog <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_vdem_polyarchy =</span> <span class="fu">mean</span>(vdem_polyarchy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  mean_vdem_polyarchy
+                &lt;dbl&gt;
+1                  NA</code></pre>
+</div>
+</div>
+<p>Sometimes we’d like to perform our operations even in the presence of missing values, simply excluding them. Most basic R functions have an <code>na.rm =</code> argument to do this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>qog <span class="sc">|&gt;</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_vdem_polyarchy =</span> <span class="fu">mean</span>(vdem_polyarchy, <span class="at">na.rm =</span> T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  mean_vdem_polyarchy
+                &lt;dbl&gt;
+1               0.657</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Calculate the median value of the corruption variable for each region (i.e., perform a grouped summary). Your code:</p>
+</div>
+</div>
+</section>
+<section id="pivoting-data" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="pivoting-data"><span class="header-section-number">4.4</span> Pivoting data</h2>
 <p>TODO.</p>
 
 
