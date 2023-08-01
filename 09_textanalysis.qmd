@@ -52,17 +52,11 @@ Fortunately, the syntax for regular expressions is relatively stable across all 
 
 ## Stringr
 
--   To install `"stringr"` use the function `install.packages()`. Then, load it to your current session with `library()`:
-
 ```{r}
-# installing 'stringr'
-install.packages("stringr")
-
-# load 'stringr'
 library(stringr)
 ```
 
--   `stringr` provides functions for both (a) basic string manipulations and (b) regular expression operations. Some basic functions are listed below:
+-   `stringr` comes with the `tidyverse` and provides functions for both (a) basic string manipulations and (b) regular expression operations. Some basic functions are listed below:
 
 |  **Function**  |             **Description**             |
 |:--------------:|:---------------------------------------:|
