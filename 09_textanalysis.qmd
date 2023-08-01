@@ -192,8 +192,14 @@ Barbie_df
 
     -   The two basic arguments for the `unnest_tokens()` function are column names. We have the output column, `word`, created by unnesting the text, and we have the input column, `text`, where the text being unnested comes from.
 
-```{r, message=FALSE}
+```{r}
+#| eval: false
 install.packages("tidytext")
+```
+
+
+```{r}
+#| message: false
 library(tidytext)
 
 Barbie_df %>%
@@ -247,6 +253,11 @@ Opp_tok %>%
 -   We are going to take a look at the published novels of Jane Austen, an example from [Silge and Robinson (2017)](https://www.tidytextmining.com/tidytext.html).
 
     -   Let's start by calculating the term frequency.
+
+```{r}
+#| eval: false
+install.packages("janeaustenr")
+```
 
 ```{r, message=FALSE}
 library(janeaustenr)
