@@ -557,12 +557,239 @@ Note
 <li>Corpus: These objects usually contain raw strings annotated with metadata and details.</li>
 <li>Document-term matrix: This sparse matrix describe a collection (i.e., a corpus) of documents with one row for each document and one column for each term. The value in the matrix is typically word count or tf-idf (term frequency-inverse document frequency).</li>
 </ul></li>
+<li><p>Let’s try an example. To create a tidy text dataset, we need to first put some text into a data frame.</p>
+<ul>
+<li>We print out each line as a “tibble,” which has a convenient print method that does not convert strings to factors or use row names.</li>
+</ul></li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>Barbie <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"I'm a Barbie girl in the Barbie world"</span>,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Life in plastic, it's fantastic"</span>,</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"You can brush my hair, undress me everywhere"</span>,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Imagination, life is your creation"</span>)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>Barbie</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "I'm a Barbie girl in the Barbie world"       
+[2] "Life in plastic, it's fantastic"             
+[3] "You can brush my hair, undress me everywhere"
+[4] "Imagination, life is your creation"          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>Barbie_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">line =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">text =</span> Barbie)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>Barbie_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+   line text                                        
+  &lt;int&gt; &lt;chr&gt;                                       
+1     1 I'm a Barbie girl in the Barbie world       
+2     2 Life in plastic, it's fantastic             
+3     3 You can brush my hair, undress me everywhere
+4     4 Imagination, life is your creation          </code></pre>
+</div>
+</div>
+<ul>
+<li><p>We then break the text into individual tokens (tokenization) using tidytext’s <code>unnest_tokens()</code> function.</p>
+<ul>
+<li>The two basic arguments for the <code>unnest_tokens()</code> function are column names. We have the output column, <code>word</code>, created by unnesting the text, and we have the input column, <code>text</code>, where the text being unnested comes from.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidytext"</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>Barbie_df <span class="sc">%&gt;%</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 26 × 2
+    line word  
+   &lt;int&gt; &lt;chr&gt; 
+ 1     1 i'm   
+ 2     1 a     
+ 3     1 barbie
+ 4     1 girl  
+ 5     1 in    
+ 6     1 the   
+ 7     1 barbie
+ 8     1 world 
+ 9     2 life  
+10     2 in    
+# ℹ 16 more rows</code></pre>
+</div>
+</div>
 <section id="counts" class="level3" data-number="9.4.1">
 <h3 data-number="9.4.1" class="anchored" data-anchor-id="counts"><span class="header-section-number">9.4.1</span> Counts</h3>
+<ul>
+<li><p>Once we have our tidy structure, we can then perform very simple tasks such as finding the most common words in our text as a whole. Let’s instead work with a short passage from a famous interview with J. Robert Oppenheimer.</p>
+<ul>
+<li>We can use the <code>count()</code> function from the <code>dplyr</code> package with ease here.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>Oppenheimer <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"We knew the world would not be the same."</span>,</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"A few people laughed, a few people cried, most people were silent."</span>,</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"I remembered the line from the Hindu scripture, the Bhagavad-Gita."</span>,</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Vishnu is trying to persuade the Prince that he should do his duty and to impress him </span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="st">                 takes on his multi-armed form and says, “Now, I am become Death, the destroyer of </span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="st">                 worlds.”"</span>, </span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"I suppose we all thought that one way or another."</span>)</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>Opp_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">line =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">text =</span> Oppenheimer)</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>Opp_tok <span class="ot">&lt;-</span> <span class="fu">unnest_tokens</span>(Opp_df, word, text)</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>Opp_tok <span class="sc">%&gt;%</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 59 × 2
+   word       n
+   &lt;chr&gt;  &lt;int&gt;
+ 1 the        7
+ 2 i          3
+ 3 people     3
+ 4 a          2
+ 5 and        2
+ 6 few        2
+ 7 his        2
+ 8 that       2
+ 9 to         2
+10 we         2
+# ℹ 49 more rows</code></pre>
+</div>
+</div>
+<ul>
+<li>Our word counts are stored in a tidy data frame, which allows us to pipe these data directly to the <code>ggplot2</code> package and create a simple visualization of the most common words in the short excerpt.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>Opp_tok <span class="sc">%&gt;%</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word, n)) <span class="sc">%&gt;%</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(n, word)) <span class="sc">+</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="09_textanalysis_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
 <section id="tf-idf" class="level3" data-number="9.4.2">
 <h3 data-number="9.4.2" class="anchored" data-anchor-id="tf-idf"><span class="header-section-number">9.4.2</span> tf-idf</h3>
+<ul>
+<li><p>Another way to quantify what a document is about is to calculate a term’s <em>inverse document frequency</em> (idf), which decreases the weight for commonly used words and increases the weight for words that are not used as frequently in a corpus.</p></li>
+<li><p>If we multiply together the term frequency (tf) with the idf, we can calculate the tf-idf, the frequency of a term adjusted for how infrequently it is used.</p>
+<ul>
+<li>The tf-idf statistic measures how important a word is to document that is part of a corpus.</li>
+</ul></li>
+<li><p>We are going to take a look at the published novels of Jane Austen, an example from <a href="https://www.tidytextmining.com/tidytext.html">Silge and Robinson (2017)</a>.</p>
+<ul>
+<li>Let’s start by calculating the term frequency.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janeaustenr)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>book_words <span class="ot">&lt;-</span> <span class="fu">austen_books</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, text) <span class="sc">%&gt;%</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(book, word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>total_words <span class="ot">&lt;-</span> book_words <span class="sc">%&gt;%</span> </span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(book) <span class="sc">%&gt;%</span> </span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total =</span> <span class="fu">sum</span>(n))</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>book_words <span class="ot">&lt;-</span> <span class="fu">left_join</span>(book_words, total_words)</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>book_words</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 40,379 × 4
+   book              word      n  total
+   &lt;fct&gt;             &lt;chr&gt; &lt;int&gt;  &lt;int&gt;
+ 1 Mansfield Park    the    6206 160460
+ 2 Mansfield Park    to     5475 160460
+ 3 Mansfield Park    and    5438 160460
+ 4 Emma              to     5239 160996
+ 5 Emma              the    5201 160996
+ 6 Emma              and    4896 160996
+ 7 Mansfield Park    of     4778 160460
+ 8 Pride &amp; Prejudice the    4331 122204
+ 9 Emma              of     4291 160996
+10 Pride &amp; Prejudice to     4162 122204
+# ℹ 40,369 more rows</code></pre>
+</div>
+</div>
+<ul>
+<li>We can then take these data and visualize them for each of the books in the dataset.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(book_words, <span class="fu">aes</span>(n<span class="sc">/</span>total, <span class="at">fill =</span> book)) <span class="sc">+</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="cn">NA</span>, <span class="fl">0.0009</span>) <span class="sc">+</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>book, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 896 rows containing non-finite values (`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 6 rows containing missing values (`geom_bar()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="09_textanalysis_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ul>
+<li><p>The <code>bind_tf_idf()</code> function in the <code>tidytext</code> package then takes a dataset as input with one row per token (term) per document, calculating the tf-idf statistics. Let’s look at terms with high scores.</p>
+<ul>
+<li>Below we see all proper nouns, mostly names of characters. None of them occur across all of Jane Austen’s novels, which is why they are important, defining terms for each of the texts.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>book_tf_idf <span class="ot">&lt;-</span> book_words <span class="sc">%&gt;%</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_tf_idf</span>(word, book, n)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>book_tf_idf <span class="sc">%&gt;%</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>total) <span class="sc">%&gt;%</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(tf_idf))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 40,379 × 6
+   book                word          n      tf   idf  tf_idf
+   &lt;fct&gt;               &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+ 1 Sense &amp; Sensibility elinor      623 0.00519  1.79 0.00931
+ 2 Sense &amp; Sensibility marianne    492 0.00410  1.79 0.00735
+ 3 Mansfield Park      crawford    493 0.00307  1.79 0.00551
+ 4 Pride &amp; Prejudice   darcy       373 0.00305  1.79 0.00547
+ 5 Persuasion          elliot      254 0.00304  1.79 0.00544
+ 6 Emma                emma        786 0.00488  1.10 0.00536
+ 7 Northanger Abbey    tilney      196 0.00252  1.79 0.00452
+ 8 Emma                weston      389 0.00242  1.79 0.00433
+ 9 Pride &amp; Prejudice   bennet      294 0.00241  1.79 0.00431
+10 Persuasion          wentworth   191 0.00228  1.79 0.00409
+# ℹ 40,369 more rows</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Let’s end with a visualization for the high tf-idf words in each of Jane Austen’s novels.</p>
+<ul>
+<li>These results highlight that what distinguishes one novel from another within the collection of her works (the corpus) are the proper nouns, mainly the names of people and places. These are the terms that are “important” for defining the character of each document.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>book_tf_idf <span class="sc">%&gt;%</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(book) <span class="sc">%&gt;%</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(tf_idf, <span class="at">n =</span> <span class="dv">15</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(tf_idf, <span class="fu">fct_reorder</span>(word, tf_idf), <span class="at">fill =</span> book)) <span class="sc">+</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>book, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"tf-idf"</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="09_textanalysis_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
