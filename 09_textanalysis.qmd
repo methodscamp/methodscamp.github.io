@@ -193,6 +193,8 @@ Barbie_df
     -   The two basic arguments for the `unnest_tokens()` function are column names. We have the output column, `word`, created by unnesting the text, and we have the input column, `text`, where the text being unnested comes from.
 
 ```{r, message=FALSE}
+install.packages("tidytext")
+library(tidytext)
 
 Barbie_df %>%
   unnest_tokens(word, text)
