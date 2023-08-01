@@ -64,10 +64,10 @@ qog <- qog_csv
 qog
 ```
 
-This dataset is a small sample of QOG, which contains data for countries in the Americas from 1990 to 2020. You can access the [full codebook](https://www.qogdata.pol.gu.se/data/codebook_bas_jan23.pdf) online. The variables are as follows:
+This dataset is a small sample of QOG, which contains data for countries in the Americas from 1990 to 2020. The observational unit is thus country-year. You can access the [full codebook](https://www.qogdata.pol.gu.se/data/codebook_bas_jan23.pdf) online. The variables are as follows:
 
 | Variable         | Description                                                   |
-|------------------|------------------------------------------------------|
+|--------------------|----------------------------------------------------|
 | `cname`          | Country name                                                  |
 | `ccodealp`       | Country code (ISO-3 character convention)                     |
 | `year`           | Year                                                          |
@@ -75,6 +75,126 @@ This dataset is a small sample of QOG, which contains data for countries in the 
 | `wdi_pop`        | Total population, from the World Development Indicators       |
 | `vdem_polyarchy` | V-Dem's polyarchy index (electoral democracy)                 |
 | `vdem_corr`      | V-Dem's corruption index                                      |
+| `ht_colonial`    | Former colonial ruler                                         |
+
+## Recoding variables
+
+Take a look at the `ht_colonial` variable. We can do a simple tabulation with `count()`:
+
+```{r}
+qog |> 
+  count(ht_colonial)
+```
+
+We might want to recode this variable. For instance, we could create a *dummy*/*binary* variable for whether the country was a British colony. We can do this with `if_else()`, which works with logical conditions:
+
+```{r}
+qog |> 
+  # the arguments are condition, true (what to do if true), false
+  mutate(d_britishcol = if_else(ht_colonial == "British", 1, 0)) |> 
+  count(d_britishcol)
+```
+
+Instead of a numeric classification (0 and 1), we could use characters:
+
+```{r}
+qog |> 
+  mutate(cat_britishcol = if_else(ht_colonial == "British", "British", "Other")) |> 
+  count(cat_britishcol)
+```
+
+`if_else()` is great for binary recoding. But sometimes we want to create more than two categories. We can use `case_when()`:
+
+```{r}
+qog |> 
+  # syntax is condition ~ value
+  mutate(cat_col = case_when(
+    ht_colonial == "British" ~ "British",
+    ht_colonial == "Spanish" ~ "Spanish", 
+    .default = "Other" # what to do in all other cases
+  )) |> 
+  count(cat_col)
+```
+
+The `.default =` argument in `case_when()` can also be used to leave the variable as-is for non-specified cases. For example, let's combine Portuguese and Spanish colonies:
+
+```{r}
+qog |> 
+  # syntax is condition ~ value
+  mutate(cat_col = case_when(
+    ht_colonial %in% c("Spanish", "Portuguese") ~ "Spanish/Portuguese",
+    .default = ht_colonial # what to do in all other cases
+  )) |> 
+  count(cat_col)
+```
+
+::: callout-note
+
+#### Exercise
+
+1.  Create a dummy variable, `d_large_pop`, for whether the country-year has a population of more than 1 million. Then compute its mean. Your code:
+
+2.  Which countries are recorded as "Never colonized"? Change their values to other reasonable codings and compute a tabulation with `count()`. Your code:
+
+:::
+
+## Missing values
+
+Missing values are commonplace in real datasets. In R, missing values are a special type of value in vectors, denoted as `NA`.
+
+::: callout-warning
+
+The special value `NA` is different from the character value "NA". For example, notice that a numeric vector can have `NAs`, while it obviously cannot hold the character value "NA":
+
+```{r}
+c(5, 4.6, NA, 8)
+```
+
+:::
+
+A quick way to check for missing values in small datasets is with the `summary()` function:
+
+```{r}
+summary(qog)
+```
+
+Notice that we have missingness in the `vdem_polyarchy` and `vdem_corr` variables. We might want to filter the dataset to see which observations are in this situation:
+
+```{r}
+qog |> 
+  filter(vdem_polyarchy == NA | vdem_corr == NA)
+```
+
+But the code above doesn't work! To refer to missing values in logical conditions, we cannot use `== NA`. Instead, we need to use the `is.na()` function:
+
+```{r}
+qog |> 
+  filter(is.na(vdem_polyarchy) | is.na(vdem_corr))
+```
+
+Notice that, in most R functions, missing values are "contagious." This means that any missing value will "contamine" the results and carry over. For example:
+
+```{r}
+qog |> 
+  summarize(mean_vdem_polyarchy = mean(vdem_polyarchy))
+```
+
+Sometimes we'd like to perform our operations even in the presence of missing values, simply excluding them. Most basic R functions have an `na.rm =` argument to do this:
+
+```{r}
+qog |> 
+  summarize(mean_vdem_polyarchy = mean(vdem_polyarchy, na.rm = T))
+```
+
+::: callout-note
+
+#### Exercise
+
+Calculate the median value of the corruption variable for each region (i.e., perform a grouped summary). Your code:
+
+
+
+:::
 
 ## Pivoting data
 

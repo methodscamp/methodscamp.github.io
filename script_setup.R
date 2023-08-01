@@ -10,9 +10,19 @@ qog <- qog_raw |>
   filter(ht_region %in% c(2, 10) | 
            cname %in% c("Canada", "Mexico", "United States of America (the)")) |>
   filter(between(year, 1990, 2020)) |> 
-  mutate(region = countrycode::countrycode(ccodealp, "iso3c", "region23")) |> 
-  select(cname, ccodealp, year, region, wdi_pop, vdem_polyarchy, vdem_corr)
-
+  mutate(region = countrycode::countrycode(ccodealp, "iso3c", "region23"),
+         ht_colonial = case_match(
+           ht_colonial, 
+           0 ~ "Never colonized",
+           1 ~ "Dutch",
+           2 ~ "Spanish",
+           5 ~ "British",
+           6 ~ "French",
+           7 ~ "Portuguese"
+         )) |> 
+  select(cname, ccodealp, year, region, wdi_pop, vdem_polyarchy, vdem_corr,
+         ht_colonial)
+  
 write_rds(qog, "data/sample_qog_bas_ts_jan23.rds")
 write_csv(qog, "data/sample_qog_bas_ts_jan23.csv")
 write_dta(qog, "data/sample_qog_bas_ts_jan23.dta")
