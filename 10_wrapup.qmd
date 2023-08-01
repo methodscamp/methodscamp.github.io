@@ -1,18 +1,144 @@
 # Wrap up
 
+## Project management
+
+### RStudio projects
+
+-   RStudio projects are an excellent way to keep all the files associated with a project (data, R scripts, results, figures, etc.) in one place on your computer.
+
+-   This is one of the best ways to improve your workflow in RStudio, allowing you to:
+
+    -   Create a project for each paper or data analysis project.
+    -   Store data files in one place.
+    -   Save, edit, and run scripts.
+    -   Keep outputs such as plots and cleaned data.
+
+-   To create a new project file, click `File > New Project`, then:
+
+    ![](images/Screenshot%202023-07-31%20at%204.57.29%20PM.png){fig-align="center" width="400"}
+
+    ![](images/Screenshot%202023-07-31%20at%204.57.55%20PM.png){fig-align="center" width="400"}
+    
+    ![](images/Screenshot%202023-07-31%20at%204.58.54%20PM.png){fig-align="center" width="400"}
+
+-   Call your project some version of "methodscamptest" and choose carefully where you wish to store the project on your machine.
+
+::: callout-warning
+If you don't store your project (and your other files, too!) somewhere reasonable, it will be hard to find it in the future! We recommend creating a clear organizational scheme for yourself early on.
+:::
+
+#### Using RStudio projects
+
+-   Once you have created the project, check that the "home" directory is the current working directory:
+
+```{r}
+getwd()
+```
+
+-   Now, as an example, let's run the following commands in the script editor and save the files into the project directory.
+
+```{r, message=FALSE}
+library(tidyverse)
+
+ggplot(mtcars, aes(wt, mpg)) + 
+  geom_point()
+ggsave("mtcars.pdf")
+
+write_csv(mtcars, "mtcars.csv")
+```
+
+-   Quit RStudio and check out the folder associated with the project.
+
+    -   You should see the PDF file for the plot, the .csv file for the data, and the `.Rproj` file for the project itself.
+
+-   Double-click the `.Rproj` file to reopen the project and pick up where you left off! Everything you need should be ready to go.
+
+### Storing raw data
+
+-   
+
+## Other resources
+
+### Overleaf
+
+::: {style="float: right; position: relative; top: 0px; padding: 30px;"}
+![](images/overleaf.png){width="250"}
+:::
+
+-   [Overleaf](https://www.overleaf.com/) is a collaborative cloud-based LaTeX editor designed for writing, editing, and publishing documents.
+
+    -   LaTeX is a software used for typesetting technical documents. It is used widely in our discipline for the preparation for manuscripts to journals and other publishing venues.
+
+-   UT Austin actually provides free access to Overleaf Professional to all graduate students using your UT email.
+
+-   Overleaf Professional upgrades include:
+
+    -   Real-time collaboration
+    -   Real-time track changes and visible collaborator cursor(s)
+    -   Real-time PDF preview of your document while editing and writing
+    -   Full history view of your documents
+    -   Two-way sync with Dropbox and GitHub
+    -   Reference manager sync and advanced reference search.
+    -   UT Austin resource portal, including UT Austin templates, FAQs, and resource links
+
+::: callout-important
+LaTeX is actually the markup language that powers this website! If you are curious about general syntax and commands, you can access [our repository](https://github.com/methodscamp/methodscamp.github.io) at any time to get a closer look.
+:::
+
+### Zotero
+
+::: {style="float: right; position: relative; top: 0px; padding: 30px;"}
+![](images/zotero_512x512x32.png){width="200"}
+:::
+
+-   Zotero is an open-source reference manager used to store, manage, and cite bibliographic references, such as books and articles.
+
+-   When it is time to write, you can insert your sources directly into your paper as in-text citations via a word processor plugin, which generates a bibliography in your style of choice.
+
+    -   This can save a lot of time, especially when you have to change citation styles for submission to another journal.
+
+-   You can download the software for free [here](https://www.zotero.org/).
+
+    -   You can also find a guide on how to install it [here](https://www.zotero.org/support/installation).
+
+::: callout-note
+Zotero is one of many other reference managers out there. Alternatives include Mendeley and EndNote, among others. You should choose whatever option best suits your needs.
+:::
+
+#### Benefits of Zotero
+
+-   If you have not yet chosen a reference manager or are considering switching, below are some advantages of Zotero:
+
+    -   Works as a standalone desktop software with plugins for [Chrome](https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc), Safari, and Firefox
+    -   Full compatibility with Google docs
+    -   Free plugin for Word and LibreOffice included
+    -   Includes most popular citation styles with more styles available on the [Zotero Style Repository](https://www.zotero.org/styles)
+    -   Drag and drop PDF files into the library, extracting metadata such as authors, year, etc.
+    -   Allows advanced searches of all content in your library using full-text PDF indexing
+    -   Use cloud storage (optional) and sync libraries across devices
+    -   Create unlimited private or public groups and collaborate by sharing files and citations
+    -   300MB of free cloud storage and 2GB of storage for \$20 USD/year (equal to \$1.67 per month)
+
+-   [Here](https://www.zotero.org/support/quick_start_guide) is a comprehensive guide to unlocking all of Zotero's potential.
+
 ## Methods at UT
 
 ### Required methods courses
 
 -   Scope and Methods of Political Science
+
     -   Statistics I (Statistics/linear regression)
+
 -   Statistics II (Linear regression and more)
+
 -   Statistics III (Maximum likelihood estimation)
+
     -   Only required if your major field is methods
 
 ### Other methods courses
 
 -   **Statistics/econometrics:**
+
     -   Bayesian Statistics
     -   Causal Inference
     -   Math Methods for Political Analysis
@@ -22,10 +148,13 @@
 ### More courses
 
 -   **Formal Theory**
+
     -   Intro to Formal Political Analysis
     -   Formal Political Analysis II
     -   Formal Theories of International Relations
+
 -   **Everything else**
+
     -   Conceptualization and Measurement
     -   Experimental Methods in Political Science
     -   Qualitative Methods
@@ -47,13 +176,19 @@ Software and Topic Short Courses - R, Python, Stata, etc.
 Summer programs at UT:
 
 -   Short courses in statistics
+
     -   Department sometimes offers scholarships to cover part of the cost.
 
 Summer programs outside UT:
 
 -   ICPSR (Inter-university Consortium for Political and Social Research)
+
     -   Ann Arbor, Michigan
+
 -   EITM (Empirical Implications of Theoretical Models)
+
     -   Houston and other locations (Michigan, Duke, Berkeley, Emory)
+
 -   IQMR (Institute for Qualitative and Multi-Method Research)
+
     -   Syracuse, NY

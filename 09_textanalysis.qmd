@@ -1,1 +1,304 @@
 # Text analysis
+
+## Strings
+
+-   In R, a piece of text is represented as a sequence of characters (letters, numbers, and symbols).
+
+-   A string is a sequence of characters, which is used for storing text.
+
+    -   For example, "methods" is a string that includes characters: m, e, t, h, o, d, s.
+
+-   Creating strings is very straightforward in RStudio. We assign character values to a variable, being sure to enclose the character values (the text) in double or single quotation marks.
+
+    -   We can create strings of single words, or whole sentences if we so wish.
+
+```{r}
+string1 <- "camp" 
+string1
+
+string2 <- "I love methods camps."
+string2
+```
+
+-   We can also create a vector of strings.
+
+```{r}
+string3 <- c("I", "love", "methods", "camp", ".")
+string3
+```
+
+## String manipulation
+
+-   Often, strings, and more broadly text, contain information that we want to extract for the purpose of our research.
+
+    -   For example, perhaps we wanted to count the number of times a certain country was mentioned during the U.S. President's annual State of the Union Address.
+
+-   For tasks such as these, we can use regular expressions (also known as 'regex'), which search for one or more specified pattern of characters.
+
+    -   These patterns can be exact matches, or more general.
+
+```{r}
+test <- "test"
+```
+
+-   Regular expressions can be used to:
+    -   Extract information from text.
+    -   Parse text.
+    -   Clean/replace strings.
+
+::: callout-note
+Fortunately, the syntax for regular expressions is relatively stable across all programming languages (e.g., Java, Python, R).
+:::
+
+## Stringr
+
+-   To install `"stringr"` use the function `install.packages()`. Then, load it to your current session with `library()`:
+
+```{r}
+# installing 'stringr'
+install.packages("stringr")
+
+# load 'stringr'
+library(stringr)
+```
+
+-   `stringr` provides functions for both (a) basic string manipulations and (b) regular expression operations. Some basic functions are listed below:
+
+|  **Function**  |             **Description**             |
+|:--------------:|:---------------------------------------:|
+|   `str_c()`    |          string concatenation           |
+| `str_length()` |          number of characters           |
+|  `str_sub()`   |           extracts substrings           |
+|  `str_dup()`   |          duplicates characters          |
+|  `str_trim()`  | removes leading and trailing whitespace |
+|  `str_pad()`   |              pads a string              |
+|  `str_wrap()`  |        wraps a string paragraph         |
+|  `str_trim()`  |             trims a string              |
+
+### Basic string manipulation
+
+-   Let's try some examples of basic string manipulation using `stringr`:
+
+```{r, message=FALSE}
+my_string <- "I know people who have seen the Barbie movie 2, 3, even 4 times!"
+my_string
+```
+
+-   One common thing we want to do with strings is lowercase them:
+
+```{r, message=FALSE}
+lower_string <- tolower(my_string)
+lower_string
+```
+
+-   We can also combine (concatenate) strings using the `str_c` command:
+
+```{r, message=FALSE}
+my_string2 <- "I wonder if they have seen Oppenheimer, too."
+cat_string <- str_c(my_string, my_string2, sep = " ")
+cat_string
+```
+
+-   We can also split up strings on a particular character sequence.
+
+    -   ! denotes where split occurs and deletes the "!" The double bracket instructs to grab the first part of the split string.
+
+```{r}
+my_string_vector <- str_split(cat_string, "!")[[1]] 
+my_string_vector
+```
+
+-   We can also find which strings in a vector contain a particular character or sequence of characters.
+
+    -   The `grep` (Globally search for Regular Expression and Print) command will return any instance that (partially) matches the provided pattern.
+    -   Closely related to the `grep()` function is the `grepl()` function, which returns a logical for whether a string contains a character or sequence of characters.
+
+```{r}
+grep("Barbie",
+     cat_string,
+     value = FALSE,
+     ignore.case = TRUE)
+
+# To search for some special characters (e.g., "!"), you need to "escape" it
+grep("\\!", cat_string, value = TRUE)
+
+grepl("\\!", cat_string)
+```
+
+-   The `str_replace_all` function can be used to replace all instances of a given string, with an alternative string.
+
+```{r}
+str_replace_all(cat_string, "e","_")
+```
+
+-   We can also pull out all sub-strings matching a given string argument.
+
+    -   This becomes especially useful when we generalize the patterns of interest.
+
+```{r}
+str_extract_all(cat_string, "have")
+
+str_extract_all(cat_string,"[0-9]+")[[1]] 
+#   The square brackets define a set of possibilities.
+#   The "0-9" says the possibilities are any digit from 0 to 9.
+#   The "+" means "one or more of the just-named thing"
+
+str_extract_all(cat_string,"\\d+")[[1]] #   Instead of 0-9, we can just say "\\d" for digits
+
+str_extract_all(cat_string,"[a-zA-Z]+")[[1]] # letters
+
+str_extract_all(cat_string,"\\w+")[[1]] # "word" characters
+```
+
+## Simple text analysis
+
+-   We can use the `tidytext` package to conduct some basic text analysis using tidy data principles.
+
+-   As [Wickham 2014](https://www.tidytextmining.com/tidytext.html) reminds us, tidy data has a specific structure:
+
+    -   Each variable is a column.
+    -   Each observation is a row.
+    -   Each type of observational unit is a table.
+
+-   We can thus define the format as a table with one-token-per-row.
+
+    -   A token is a unit of text (e.g., word) that we use for analysis. Tokenization is the process of turning text into tokens.
+
+-   As [Silge and Robinson (2017)](https://www.tidytextmining.com/tidytext.html) remind us, it is important to contrast this structure with the alternative ways that text is often structured and stored in text analysis:
+
+    -   String: Text can be stored as strings, i.e., character vectors. Text data is often first read into memory in this form.
+    -   Corpus: These objects usually contain raw strings annotated with metadata and details.
+    -   Document-term matrix: This sparse matrix describe a collection (i.e., a corpus) of documents with one row for each document and one column for each term. The value in the matrix is typically word count or tf-idf (term frequency-inverse document frequency).
+
+-   Let's try an example. To create a tidy text dataset, we need to first put some text into a data frame.
+
+    -   We print out each line as a "tibble," which has a convenient print method that does not convert strings to factors or use row names.
+
+```{r, message=FALSE}
+library(dplyr)
+
+Barbie <- c("I'm a Barbie girl in the Barbie world",
+            "Life in plastic, it's fantastic",
+            "You can brush my hair, undress me everywhere",
+            "Imagination, life is your creation")
+Barbie
+
+Barbie_df <- tibble(line = 1:4, text = Barbie)
+Barbie_df
+
+```
+
+-   We then break the text into individual tokens (tokenization) using tidytext's `unnest_tokens()` function.
+
+    -   The two basic arguments for the `unnest_tokens()` function are column names. We have the output column, `word`, created by unnesting the text, and we have the input column, `text`, where the text being unnested comes from.
+
+```{r, message=FALSE}
+install.packages("tidytext")
+library(tidytext)
+
+Barbie_df %>%
+  unnest_tokens(word, text)
+```
+
+### Counts
+
+-   Once we have our tidy structure, we can then perform very simple tasks such as finding the most common words in our text as a whole. Let's instead work with a short passage from a famous interview with J. Robert Oppenheimer.
+
+    -   We can use the `count()` function from the `dplyr` package with ease here.
+
+```{r}
+Oppenheimer <- c("We knew the world would not be the same.",
+                 "A few people laughed, a few people cried, most people were silent.",
+                 "I remembered the line from the Hindu scripture, the Bhagavad-Gita.",
+                 "Vishnu is trying to persuade the Prince that he should do his duty and to impress him 
+                 takes on his multi-armed form and says, “Now, I am become Death, the destroyer of 
+                 worlds.”", 
+                 "I suppose we all thought that one way or another.")
+
+Opp_df <- tibble(line = 1:5, text = Oppenheimer)
+
+Opp_tok <- unnest_tokens(Opp_df, word, text)
+
+Opp_tok %>%
+  count(word, sort = TRUE)
+```
+
+-   Our word counts are stored in a tidy data frame, which allows us to pipe these data directly to the `ggplot2` package and create a simple visualization of the most common words in the short excerpt.
+
+```{r, message=FALSE}
+library(ggplot2)
+Opp_tok %>%
+  count(word, sort = TRUE) %>%
+  filter(n > 1) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(n, word)) +
+  geom_col() +
+  labs(y = NULL)
+```
+
+### tf-idf
+
+-   Another way to quantify what a document is about is to calculate a term's *inverse document frequency* (idf), which decreases the weight for commonly used words and increases the weight for words that are not used as frequently in a corpus.
+
+-   If we multiply together the term frequency (tf) with the idf, we can calculate the tf-idf, the frequency of a term adjusted for how infrequently it is used.
+
+    -   The tf-idf statistic measures how important a word is to document that is part of a corpus.
+
+-   We are going to take a look at the published novels of Jane Austen, an example from [Silge and Robinson (2017)](https://www.tidytextmining.com/tidytext.html).
+
+    -   Let's start by calculating the term frequency.
+
+```{r, message=FALSE}
+library(janeaustenr)
+
+book_words <- austen_books() %>%
+  unnest_tokens(word, text) %>%
+  count(book, word, sort = TRUE)
+
+total_words <- book_words %>% 
+  group_by(book) %>% 
+  summarize(total = sum(n))
+
+book_words <- left_join(book_words, total_words)
+
+book_words
+```
+
+-   We can then take these data and visualize them for each of the books in the dataset.
+
+```{r}
+ggplot(book_words, aes(n/total, fill = book)) +
+  geom_histogram(show.legend = FALSE) +
+  xlim(NA, 0.0009) +
+  facet_wrap(~book, ncol = 2, scales = "free_y")
+```
+
+-   The `bind_tf_idf()` function in the `tidytext` package then takes a dataset as input with one row per token (term) per document, calculating the tf-idf statistics. Let's look at terms with high scores.
+
+    -   Below we see all proper nouns, mostly names of characters. None of them occur across all of Jane Austen's novels, which is why they are important, defining terms for each of the texts.
+
+```{r}
+book_tf_idf <- book_words %>%
+  bind_tf_idf(word, book, n)
+
+book_tf_idf %>%
+  select(-total) %>%
+  arrange(desc(tf_idf))
+```
+
+-   Let's end with a visualization for the high tf-idf words in each of Jane Austen's novels.
+
+    -   These results highlight that what distinguishes one novel from another within the collection of her works (the corpus) are the proper nouns, mainly the names of people and places. These are the terms that are "important" for defining the character of each document.
+
+```{r}
+library(forcats)
+
+book_tf_idf %>%
+  group_by(book) %>%
+  slice_max(tf_idf, n = 15) %>%
+  ungroup() %>%
+  ggplot(aes(tf_idf, fct_reorder(word, tf_idf), fill = book)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~book, ncol = 2, scales = "free") +
+  labs(x = "tf-idf", y = NULL)
+```
