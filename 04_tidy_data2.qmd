@@ -1,1 +1,81 @@
 # Tidy data analysis II
+
+In this session, we'll cover a few more advanced topics related to data wrangling. Again we'll use the `tidyverse`:
+
+```{r}
+library(tidyverse)
+```
+
+## Loading data in different formats.
+
+In this module we will use cross-national data from the [Quality of Government (QoG) project](https://www.gu.se/en/quality-government/qog-data/data-downloads/basic-dataset) ([Dahlberg et al., 2023](https://www.gu.se/en/quality-government%20doi:10.18157/qogbasjan23)).
+
+Notice how in the `data/` folder we have multiple versions of the same dataset (a subset of the QOG basic dataset): .csv (comma-separated values), .rds (R), .xlsx (Excel), .dta (Stata), and .sav (SPSS).
+
+### CSV and R data files
+
+We can use the `read_csv()` and `read_rds()` functions from the `tidyverse`[^04_tidy_data2-1] to read the .csv and .rds (R) data files:
+
+[^04_tidy_data2-1]: Technically, the `read_csv()` and `read_rds()` functions come from `readr`, one of the `tidyverse` constituent packages.
+
+```{r}
+qog_csv <- read_csv("data/sample_qog_bas_ts_jan23.csv")
+```
+
+```{r}
+qog_rds <- read_rds("data/sample_qog_bas_ts_jan23.rds")
+```
+
+For reading files from other software (Excel, Stata, or SPSS), we need to load additional packages. Luckily, they are automatically installed when one installs the `tidyverse`.
+
+### Excel data files
+
+For Excel files (.xls or .xlsx files), the `readxl` package has a handy `read_excel()` function.
+
+```{r}
+library(readxl)
+qog_excel <- read_excel("data/sample_qog_bas_ts_jan23.xlsx")
+```
+
+::: callout-tip
+Useful arguments of the `read_excel()` function include `sheet =`, which reads particular sheets (specified via their positions or sheet names), and `range =`, which extracts a particular cell range (e.g., \`A5:E25\`).
+:::
+
+### Stata and SPSS data files
+
+To load files from Stata (.dta) or SPSS (.spss), one needs the `haven` package and its properly-named `read_stata()` and `read_spss()` functions:
+
+```{r}
+library(haven)
+qog_stata <- read_stata("data/sample_qog_bas_ts_jan23.dta")
+qog_spss <- read_spss("data/sample_qog_bas_ts_jan23.sav")
+```
+
+::: callout-tip
+Datasets from Stata and SPSS can have additional properties, like variable labels and special types of missing values. To learn more about this, check out the ["Labelled data" chapter](https://socialresearchcentre.github.io/r_survey_datasets/labelled-data.html) from Danny Smith's *Survey Research Datasets and R* [(2020)](https://socialresearchcentre.github.io/r_survey_datasets/).
+:::
+
+### Our data for this session
+
+We will rename one of our objects to `qog`:
+
+```{r}
+qog <- qog_csv
+qog
+```
+
+This dataset is a small sample of QOG, which contains data for countries in the Americas from 1990 to 2020. You can access the [full codebook](https://www.qogdata.pol.gu.se/data/codebook_bas_jan23.pdf) online. The variables are as follows:
+
+| Variable         | Description                                                   |
+|------------------|------------------------------------------------------|
+| `cname`          | Country name                                                  |
+| `ccodealp`       | Country code (ISO-3 character convention)                     |
+| `year`           | Year                                                          |
+| `region`         | Region (following legacy WDI convention). Added to QOG by us. |
+| `wdi_pop`        | Total population, from the World Development Indicators       |
+| `vdem_polyarchy` | V-Dem's polyarchy index (electoral democracy)                 |
+| `vdem_corr`      | V-Dem's corruption index                                      |
+
+## Pivoting data
+
+TODO.
