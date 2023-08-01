@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -209,7 +243,20 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#loading-data-in-different-formats." id="toc-loading-data-in-different-formats." class="nav-link active" data-scroll-target="#loading-data-in-different-formats."><span class="header-section-number">4.1</span> Loading data in different formats.</a>
+  <ul class="collapse">
+  <li><a href="#csv-and-r-data-files" id="toc-csv-and-r-data-files" class="nav-link" data-scroll-target="#csv-and-r-data-files"><span class="header-section-number">4.1.1</span> CSV and R data files</a></li>
+  <li><a href="#excel-data-files" id="toc-excel-data-files" class="nav-link" data-scroll-target="#excel-data-files"><span class="header-section-number">4.1.2</span> Excel data files</a></li>
+  <li><a href="#stata-and-spss-data-files" id="toc-stata-and-spss-data-files" class="nav-link" data-scroll-target="#stata-and-spss-data-files"><span class="header-section-number">4.1.3</span> Stata and SPSS data files</a></li>
+  <li><a href="#our-data-for-this-session" id="toc-our-data-for-this-session" class="nav-link" data-scroll-target="#our-data-for-this-session"><span class="header-section-number">4.1.4</span> Our data for this session</a></li>
+  </ul></li>
+  <li><a href="#pivoting-data" id="toc-pivoting-data" class="nav-link" data-scroll-target="#pivoting-data"><span class="header-section-number">4.2</span> Pivoting data</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -231,16 +278,184 @@ div.csl-indent {
 
 </header>
 
+<p>In this session, we’ll cover a few more advanced topics related to data wrangling. Again we’ll use the <code>tidyverse</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<section id="loading-data-in-different-formats." class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="loading-data-in-different-formats."><span class="header-section-number">4.1</span> Loading data in different formats.</h2>
+<p>In this module we will use cross-national data from the <a href="https://www.gu.se/en/quality-government/qog-data/data-downloads/basic-dataset">Quality of Government (QoG) project</a> (<a href="https://www.gu.se/en/quality-government%20doi:10.18157/qogbasjan23">Dahlberg et al., 2023</a>).</p>
+<p>Notice how in the <code>data/</code> folder we have multiple versions of the same dataset (a subset of the QOG basic dataset): .csv (comma-separated values), .rds (R), .xlsx (Excel), .dta (Stata), and .sav (SPSS).</p>
+<section id="csv-and-r-data-files" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="csv-and-r-data-files"><span class="header-section-number">4.1.1</span> CSV and R data files</h3>
+<p>We can use the <code>read_csv()</code> and <code>read_rds()</code> functions from the <code>tidyverse</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to read the .csv and .rds (R) data files:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>qog_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sample_qog_bas_ts_jan23.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1085 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): cname, ccodealp, region
+dbl (4): year, wdi_pop, vdem_polyarchy, vdem_corr
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>qog_rds <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"data/sample_qog_bas_ts_jan23.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For reading files from other software (Excel, Stata, or SPSS), we need to load additional packages. Luckily, they are automatically installed when one installs the <code>tidyverse</code>.</p>
+</section>
+<section id="excel-data-files" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="excel-data-files"><span class="header-section-number">4.1.2</span> Excel data files</h3>
+<p>For Excel files (.xls or .xlsx files), the <code>readxl</code> package has a handy <code>read_excel()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>qog_excel <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/sample_qog_bas_ts_jan23.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Useful arguments of the <code>read_excel()</code> function include <code>sheet =</code>, which reads particular sheets (specified via their positions or sheet names), and <code>range =</code>, which extracts a particular cell range (e.g., `A5:E25`).</p>
+</div>
+</div>
+</section>
+<section id="stata-and-spss-data-files" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="stata-and-spss-data-files"><span class="header-section-number">4.1.3</span> Stata and SPSS data files</h3>
+<p>To load files from Stata (.dta) or SPSS (.spss), one needs the <code>haven</code> package and its properly-named <code>read_stata()</code> and <code>read_spss()</code> functions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>qog_stata <span class="ot">&lt;-</span> <span class="fu">read_stata</span>(<span class="st">"data/sample_qog_bas_ts_jan23.dta"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>qog_spss <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">"data/sample_qog_bas_ts_jan23.sav"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Datasets from Stata and SPSS can have additional properties, like variable labels and special types of missing values. To learn more about this, check out the <a href="https://socialresearchcentre.github.io/r_survey_datasets/labelled-data.html">“Labelled data” chapter</a> from Danny Smith’s <em>Survey Research Datasets and R</em> <a href="https://socialresearchcentre.github.io/r_survey_datasets/">(2020)</a>.</p>
+</div>
+</div>
+</section>
+<section id="our-data-for-this-session" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="our-data-for-this-session"><span class="header-section-number">4.1.4</span> Our data for this session</h3>
+<p>We will rename one of our objects to <code>qog</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>qog <span class="ot">&lt;-</span> qog_csv</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>qog</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,085 × 7
+   cname               ccodealp  year region    wdi_pop vdem_polyarchy vdem_corr
+   &lt;chr&gt;               &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;          &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Antigua and Barbuda ATG       1990 Caribbean   63328             NA        NA
+ 2 Antigua and Barbuda ATG       1991 Caribbean   63634             NA        NA
+ 3 Antigua and Barbuda ATG       1992 Caribbean   64659             NA        NA
+ 4 Antigua and Barbuda ATG       1993 Caribbean   65834             NA        NA
+ 5 Antigua and Barbuda ATG       1994 Caribbean   67072             NA        NA
+ 6 Antigua and Barbuda ATG       1995 Caribbean   68398             NA        NA
+ 7 Antigua and Barbuda ATG       1996 Caribbean   69798             NA        NA
+ 8 Antigua and Barbuda ATG       1997 Caribbean   71218             NA        NA
+ 9 Antigua and Barbuda ATG       1998 Caribbean   72572             NA        NA
+10 Antigua and Barbuda ATG       1999 Caribbean   73821             NA        NA
+# ℹ 1,075 more rows</code></pre>
+</div>
+</div>
+<p>This dataset is a small sample of QOG, which contains data for countries in the Americas from 1990 to 2020. You can access the <a href="https://www.qogdata.pol.gu.se/data/codebook_bas_jan23.pdf">full codebook</a> online. The variables are as follows:</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>cname</code></td>
+<td>Country name</td>
+</tr>
+<tr class="even">
+<td><code>ccodealp</code></td>
+<td>Country code (ISO-3 character convention)</td>
+</tr>
+<tr class="odd">
+<td><code>year</code></td>
+<td>Year</td>
+</tr>
+<tr class="even">
+<td><code>region</code></td>
+<td>Region (following legacy WDI convention). Added to QOG by us.</td>
+</tr>
+<tr class="odd">
+<td><code>wdi_pop</code></td>
+<td>Total population, from the World Development Indicators</td>
+</tr>
+<tr class="even">
+<td><code>vdem_polyarchy</code></td>
+<td>V-Dem’s polyarchy index (electoral democracy)</td>
+</tr>
+<tr class="odd">
+<td><code>vdem_corr</code></td>
+<td>V-Dem’s corruption index</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="pivoting-data" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="pivoting-data"><span class="header-section-number">4.2</span> Pivoting data</h2>
+<p>TODO.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-qog" class="csl-entry" role="listitem">
+Dahlberg, Stefan, Aksen Sundström, Sören Holmberg, Bo Rothstein, Natalia Alvarado Pachon, Cem Mert Dalli, and Yente Meijers. 2023. <span>“The Quality of Government Basic Dataset, Version Jan23.”</span> University of Gothenburg: The Quality of Government Institute. <a href="https://www.gu.se/en/quality-government doi:10.18157/qogbasjan23">https://www.gu.se/en/quality-government doi:10.18157/qogbasjan23</a>.
+</div>
 <div id="ref-fivethirtyeight2021" class="csl-entry" role="listitem">
 FiveThirtyEight. 2021. <span>“Tracking <span>Congress</span> <span>In</span> <span>The</span> <span>Age</span> <span>Of</span> <span>Trump</span> [Dataset].”</span> <a href="https://projects.fivethirtyeight.com/congress-trump-score/">https://projects.fivethirtyeight.com/congress-trump-score/</a>.
+</div>
+<div id="ref-smith2020" class="csl-entry" role="listitem">
+Smith, Danny. 2020. <em>Survey Research Datasets and <span>R</span></em>. <a href="https://socialresearchcentre.github.io/r_survey_datasets/">https://socialresearchcentre.github.io/r_survey_datasets/</a>.
 </div>
 <div id="ref-usda2019" class="csl-entry" role="listitem">
 U. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. <span>“Department of Agriculture Agricultural Research Service.”</span> <a href="https://fdc.nal.usda.gov/">https://fdc.nal.usda.gov/</a>.
 </div>
 </div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Technically, the <code>read_csv()</code> and <code>read_rds()</code> functions come from <code>readr</code>, one of the <code>tidyverse</code> constituent packages.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
