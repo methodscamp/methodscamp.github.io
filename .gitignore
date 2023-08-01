@@ -5,4 +5,5 @@
 
 .quarto/
 _book/
-.freeze/
+_freeze/
+/.quarto/
