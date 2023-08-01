@@ -254,11 +254,6 @@ Opp_tok %>%
 
     -   Let's start by calculating the term frequency.
 
-```{r}
-#| eval: false
-install.packages("janeaustenr")
-```
-
 ```{r, message=FALSE}
 library(janeaustenr)
 
