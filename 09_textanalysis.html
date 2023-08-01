@@ -248,11 +248,11 @@ div.csl-indent {
    
   <ul>
   <li><a href="#strings" id="toc-strings" class="nav-link active" data-scroll-target="#strings"><span class="header-section-number">9.1</span> Strings</a></li>
-  <li><a href="#string-manipulation" id="toc-string-manipulation" class="nav-link" data-scroll-target="#string-manipulation"><span class="header-section-number">9.2</span> String manipulation</a>
+  <li><a href="#string-manipulation" id="toc-string-manipulation" class="nav-link" data-scroll-target="#string-manipulation"><span class="header-section-number">9.2</span> String manipulation</a></li>
+  <li><a href="#stringr" id="toc-stringr" class="nav-link" data-scroll-target="#stringr"><span class="header-section-number">9.3</span> Stringr</a>
   <ul class="collapse">
-  <li><a href="#regular-expression-basics" id="toc-regular-expression-basics" class="nav-link" data-scroll-target="#regular-expression-basics"><span class="header-section-number">9.2.1</span> Regular expression basics</a></li>
+  <li><a href="#basic-string-manipulation" id="toc-basic-string-manipulation" class="nav-link" data-scroll-target="#basic-string-manipulation"><span class="header-section-number">9.3.1</span> Basic string manipulation</a></li>
   </ul></li>
-  <li><a href="#stringr" id="toc-stringr" class="nav-link" data-scroll-target="#stringr"><span class="header-section-number">9.3</span> Stringr</a></li>
   <li><a href="#simple-text-analysis" id="toc-simple-text-analysis" class="nav-link" data-scroll-target="#simple-text-analysis"><span class="header-section-number">9.4</span> Simple text analysis</a>
   <ul class="collapse">
   <li><a href="#counts" id="toc-counts" class="nav-link" data-scroll-target="#counts"><span class="header-section-number">9.4.1</span> Counts</a></li>
@@ -320,11 +320,11 @@ div.csl-indent {
 <section id="string-manipulation" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="string-manipulation"><span class="header-section-number">9.2</span> String manipulation</h2>
 <ul>
-<li>Often, strings, and more broadly text, contain information that we want to extract for the purpose of our research.
+<li><p>Often, strings, and more broadly text, contain information that we want to extract for the purpose of our research.</p>
 <ul>
 <li>For example, perhaps we wanted to count the number of times a certain country was mentioned during the U.S. President’s annual State of the Union Address.</li>
 </ul></li>
-<li>For tasks such as these, we can use regular expressions (also known as ‘regex’), which search for one or more specified pattern of characters.
+<li><p>For tasks such as these, we can use regular expressions (also known as ‘regex’), which search for one or more specified pattern of characters.</p>
 <ul>
 <li>These patterns can be exact matches, or more general.</li>
 </ul></li>
@@ -336,8 +336,8 @@ div.csl-indent {
 <li>Regular expressions can be used to:
 <ul>
 <li>Extract information from text.</li>
-<li>Parsing text.</li>
-<li>Cleaning/replacing strings.</li>
+<li>Parse text.</li>
+<li>Clean/replace strings.</li>
 </ul></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -353,12 +353,6 @@ Note
 <p>Fortunately, the syntax for regular expressions is relatively stable across all programming languages (e.g., Java, Python, R).</p>
 </div>
 </div>
-<section id="regular-expression-basics" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="regular-expression-basics"><span class="header-section-number">9.2.1</span> Regular expression basics</h3>
-<ul>
-<li>Anchors: ^ and</li>
-</ul>
-</section>
 </section>
 <section id="stringr" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="stringr"><span class="header-section-number">9.3</span> Stringr</h2>
@@ -420,9 +414,150 @@ Note
 </tr>
 </tbody>
 </table>
+<section id="basic-string-manipulation" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="basic-string-manipulation"><span class="header-section-number">9.3.1</span> Basic string manipulation</h3>
+<ul>
+<li>Let’s try some examples of basic string manipulation using <code>stringr</code>:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my_string <span class="ot">&lt;-</span> <span class="st">"I know people who have seen the Barbie movie 2, 3, even 4 times!"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>my_string</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "I know people who have seen the Barbie movie 2, 3, even 4 times!"</code></pre>
+</div>
+</div>
+<ul>
+<li>One common thing we want to do with strings is lowercase them:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lower_string <span class="ot">&lt;-</span> <span class="fu">tolower</span>(my_string)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>lower_string</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "i know people who have seen the barbie movie 2, 3, even 4 times!"</code></pre>
+</div>
+</div>
+<ul>
+<li>We can also combine (concatenate) strings using the <code>str_c</code> command:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>my_string2 <span class="ot">&lt;-</span> <span class="st">"I wonder if they have seen Oppenheimer, too."</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>cat_string <span class="ot">&lt;-</span> <span class="fu">str_c</span>(my_string, my_string2, <span class="at">sep =</span> <span class="st">" "</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>cat_string</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "I know people who have seen the Barbie movie 2, 3, even 4 times! I wonder if they have seen Oppenheimer, too."</code></pre>
+</div>
+</div>
+<ul>
+<li><p>We can also split up strings on a particular character sequence.</p>
+<ul>
+<li>! denotes where split occurs and deletes the “!” The double bracket instructs to grab the first part of the split string.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_string_vector <span class="ot">&lt;-</span> <span class="fu">str_split</span>(cat_string, <span class="st">"!"</span>)[[<span class="dv">1</span>]] </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>my_string_vector</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "I know people who have seen the Barbie movie 2, 3, even 4 times"
+[2] " I wonder if they have seen Oppenheimer, too."                  </code></pre>
+</div>
+</div>
+<ul>
+<li><p>We can also find which strings in a vector contain a particular character or sequence of characters.</p>
+<ul>
+<li>The <code>grep</code> (Globally search for Regular Expression and Print) command will return any instance that (partially) matches the provided pattern.</li>
+<li>Closely related to the <code>grep()</code> function is the <code>grepl()</code> function, which returns a logical for whether a string contains a character or sequence of characters.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"Barbie"</span>,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>     cat_string,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">value =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ignore.case =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To search for some special characters (e.g., "!"), you need to "escape" it</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">!"</span>, cat_string, <span class="at">value =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "I know people who have seen the Barbie movie 2, 3, even 4 times! I wonder if they have seen Oppenheimer, too."</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grepl</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">!"</span>, cat_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<ul>
+<li>The <code>str_replace_all</code> function can be used to replace all instances of a given string, with an alternative string.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace_all</span>(cat_string, <span class="st">"e"</span>,<span class="st">"_"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "I know p_opl_ who hav_ s__n th_ Barbi_ movi_ 2, 3, _v_n 4 tim_s! I wond_r if th_y hav_ s__n Opp_nh_im_r, too."</code></pre>
+</div>
+</div>
+<ul>
+<li><p>We can also pull out all sub-strings matching a given string argument.</p>
+<ul>
+<li>This becomes especially useful when we generalize the patterns of interest.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract_all</span>(cat_string, <span class="st">"have"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "have" "have"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract_all</span>(cat_string,<span class="st">"[0-9]+"</span>)[[<span class="dv">1</span>]] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2" "3" "4"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#   The square brackets define a set of possibilities.</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   The "0-9" says the possibilities are any digit from 0 to 9.</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   The "+" means "one or more of the just-named thing"</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract_all</span>(cat_string,<span class="st">"</span><span class="sc">\\</span><span class="st">d+"</span>)[[<span class="dv">1</span>]] <span class="co">#   Instead of 0-9, we can just say "\\d" for digits</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2" "3" "4"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract_all</span>(cat_string,<span class="st">"[a-zA-Z]+"</span>)[[<span class="dv">1</span>]] <span class="co"># letters</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "I"           "know"        "people"      "who"         "have"       
+ [6] "seen"        "the"         "Barbie"      "movie"       "even"       
+[11] "times"       "I"           "wonder"      "if"          "they"       
+[16] "have"        "seen"        "Oppenheimer" "too"        </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract_all</span>(cat_string,<span class="st">"</span><span class="sc">\\</span><span class="st">w+"</span>)[[<span class="dv">1</span>]] <span class="co"># "word" characters</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "I"           "know"        "people"      "who"         "have"       
+ [6] "seen"        "the"         "Barbie"      "movie"       "2"          
+[11] "3"           "even"        "4"           "times"       "I"          
+[16] "wonder"      "if"          "they"        "have"        "seen"       
+[21] "Oppenheimer" "too"        </code></pre>
+</div>
+</div>
+</section>
 </section>
 <section id="simple-text-analysis" class="level2" data-number="9.4">
 <h2 data-number="9.4" class="anchored" data-anchor-id="simple-text-analysis"><span class="header-section-number">9.4</span> Simple text analysis</h2>
+<ul>
+<li><p>We can use the <code>tidytext</code> package to conduct some basic text analysis using tidy data principles.</p></li>
+<li><p>As <a href="https://www.tidytextmining.com/tidytext.html">Wickham 2014</a> reminds us, tidy data has a specific structure:</p>
+<ul>
+<li>Each variable is a column.</li>
+<li>Each observation is a row.</li>
+<li>Each type of observational unit is a table.</li>
+</ul></li>
+<li><p>We can thus define the format as a table with one-token-per-row.</p>
+<ul>
+<li>A token is a unit of text (e.g., word) that we use for analysis. Tokenization is the process of turning text into tokens.</li>
+</ul></li>
+<li><p>As <a href="https://www.tidytextmining.com/tidytext.html">Silge and Robinson (2017)</a> remind us, it is important to contrast this structure with the alternative ways that text is often structured and stored in text analysis:</p>
+<ul>
+<li>String: Text can be stored as strings, i.e., character vectors. Text data is often first read into memory in this form.</li>
+<li>Corpus: These objects usually contain raw strings annotated with metadata and details.</li>
+<li>Document-term matrix: This sparse matrix describe a collection (i.e., a corpus) of documents with one row for each document and one column for each term. The value in the matrix is typically word count or tf-idf (term frequency-inverse document frequency).</li>
+</ul></li>
+</ul>
 <section id="counts" class="level3" data-number="9.4.1">
 <h3 data-number="9.4.1" class="anchored" data-anchor-id="counts"><span class="header-section-number">9.4.1</span> Counts</h3>
 </section>
