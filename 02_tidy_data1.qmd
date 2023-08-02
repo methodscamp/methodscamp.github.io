@@ -79,6 +79,14 @@ trump_scores |>
   select(bioguide:party)
 ```
 
+You can also **de**select columns using a minus sign:
+
+```{r}
+trump_scores |> 
+  select(-last_name)
+```
+
+
 And use a few helper functions, like `matches()`:
 
 ```{r}
