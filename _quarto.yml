@@ -29,8 +29,7 @@ book:
 bibliography: references.bib
 
 nocite: |
-  @usda2019, @fivethirtyeight2021, @qog, @smith2020
-
+  @usda2019, @fivethirtyeight2021, @qog, @smith2020, @wdi, @countrycode, @fuzzyjoin
 format:
   html:
     theme: 
