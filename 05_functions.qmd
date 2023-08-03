@@ -28,7 +28,7 @@ $$f(x) = 3x + 4$$
 
 ### Function machine
 
-![](images/function_machine.jpg){#fig-function-machine}
+![](images/function_machine.jpg){#fig-function-machine fig-align="center"}
 
 -   The most common name to give a function is, predictably, "$f$", but we can have other names such as "$g$" or "$h$". The choice is yours.
 
@@ -66,7 +66,7 @@ $$y=mx+b$$
 
 -   Below is a graph of the function $y = 3x + 4$:
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, fig.align='center'}
 library(ggplot2)
 quad_curve <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
   stat_function(fun = function(x){3*x+4}, color="red", lwd = 1) 
@@ -85,7 +85,7 @@ quad_curve
 
 -   Below is a graph of the function $y = x^2$:
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, fig.align='center'}
 library(ggplot2)
 quad_curve <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
   stat_function(fun = function(x){x^2}, color="blue", lwd = 1) 
@@ -100,7 +100,7 @@ quad_curve
 
 -   $a$, $b$, $c$, and $d$ don't have well-defined meanings here.
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, fig.align='center'}
 cub_curve <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
   stat_function(fun = function(x){x^3}, color="green", lwd = 1) 
 cub_curve
