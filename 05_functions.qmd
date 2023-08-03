@@ -54,23 +54,28 @@ Two distinct inputs may have the same output ("many-to-one") ✅ . That is not a
 
 ### Linear functions
 
--   We can easily make a function that describes a line.
+-   Linear functions are those whose graph is a straight line.
 
-$$y=mx+b$$ 
+-   The form of a linear function is very familiar:
 
--   $m$ is the slope (for every one unit increase in $x$, $y$ increases $m$ units).
+$$y=mx+b$$
 
--   $b$ is the y-intercept: the value of $y$ when $x=0$.
+-   Let's break down the structure:
 
--   More generally, $y=a+bx$ - $a$ is the intercept and $b$ is the slope.
+    -   $m$ is the slope, or the coefficient of the independent variable (for every one unit increase in $x$, $y$ increases $m$ units).
+    -   $b$ is the y intercept, or the constant term (the value of $y$ when $x=0$).
+
+::: callout-note
+Linear functions can also be expressed more generally as $y=a+bx$, where $a$ is the y intercept and $b$ is the slope.
+:::
 
 -   Below is a graph of the function $y = 3x + 4$:
 
 ```{r, echo=FALSE, fig.align='center'}
 library(ggplot2)
-quad_curve <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
+lin_func <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
   stat_function(fun = function(x){3*x+4}, color="red", lwd = 1) 
-quad_curve
+lin_func
 ```
 
 ### Quadratic functions
@@ -100,6 +105,8 @@ quad_curve
 
 -   $a$, $b$, $c$, and $d$ don't have well-defined meanings here.
 
+-   Below is a graph of the function $y = x^3$:
+
 ```{r, echo=FALSE, fig.align='center'}
 cub_curve <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
   stat_function(fun = function(x){x^3}, color="green", lwd = 1) 
@@ -108,13 +115,19 @@ cub_curve
 
 ### Polynomial functions
 
-$$y=ax^n + bx^{n-1} + ... + c$$ 
+$$y=ax^n + bx^{n-1} + ... + c$$
 
--   These functions have (maximum) $n-1$ changes in direction (turning points). 
+-   These functions have (maximum) $n-1$ changes in direction (turning points).
 
--   They also have (maximum) $n$ x-intercepts. 
+-   They also have (maximum) $n$ x-intercepts.
 
 -   They can be made arbitrarily precise.
+
+```{r, echo=FALSE, fig.align='center'}
+poly_func <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
+  stat_function(fun = function(x){x^2+2*x+1}, color="darkorchid", lwd = 1) 
+poly_func
+```
 
 ### Exponential functions
 
@@ -122,11 +135,62 @@ $$y = ab^{x}$$ or $$f(x)=ab^x$$
 
 -   Here our independent variable, or input ($x$), is the exponent.
 
-### Trigonometric functions
+-   Below is a graph of the function $y = 2^x$:
 
--   These functions include sine, cosine, and tangent.
+```{r, echo=FALSE, fig.align='center'}
+exp_func <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
+  stat_function(fun = function(x){2^x}, color="darkorange1", lwd = 1) 
+exp_func
+```
 
--   They are interesting (to some), but not usually useful for social science.
+## Creating functions in R
+
+-   Each of the graphs above required me to define the corresponding function in RStudio.
+
+-   Often we need to create our own function to automate a particular task, such as calculating the output of a function for a particular set of values.
+
+-   To build our own functions, we use the keyword `function` alongside the following syntax:
+
+    -   `function_name <- function(parameters){   function body  }`
+    
+-   `function_name`: the name of the function object that will be stored in the R environment after the function definition and used for calling that function. Make the name concise and memorable!
+
+-   `function(parameters)`: the variable(s) in the function definition placed inside the parentheses (and separated with a comma if need be) that will be set to actual values (called arguments) each time we call the function.
+
+-   `{function body}`: a set of commands that are run in a predefined order every time we call the function.
+
+-   We define simple linear functions very easily:
+
+```{r}
+linear_func <- function(x){5*x + 13}
+linear_func(5)
+```
+
+-   We can also automate more complicated tasks such as calculating the area of a circle:
+
+```{r}
+circle_area <- function(r){
+    pi*r^2
+}
+circle_area(3)
+```
+
+-   We can even "nest" our functions, meaning that we can define a new function inside another function. 
+
+    -   For example, we can create a nested function that sums up the circle areas of 3 non-intersecting circles
+    
+```{r}
+sum_circle_ares <- function(r1, r2, r3){
+    circle_area <- function(r){
+        pi*r^2
+    }
+    circle_area(r1) + circle_area(r2) + circle_area(r3)
+}
+
+print(sum_circle_ares(2, 4, 6))
+```
+
+-   User-defined functions have endless possibilities! We encourage you to get creative and try to automate new tasks when possible, especially if they are repetitive.
 
 ## Logarithms and exponents
 
@@ -226,11 +290,11 @@ Solve the problems below, simplifying as much as you can. $$log_{10}(1000)$$ $$l
 -   PMF - probability mass function
 
     -   This gives the probability that a discrete random variable is exactly equal to some value.
-    
+
 -   PDF - probability density function
 
     -   This gives the probability that a continuous random variable falls within a particular range of values.
-    
+
 -   CDF - cumulative distribution function
 
     -   This gives the probability that a random variable X takes a value less than or equal to $x$.
