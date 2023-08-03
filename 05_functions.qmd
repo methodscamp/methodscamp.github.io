@@ -152,7 +152,7 @@ exp_func
 -   To build our own functions, we use the keyword `function` alongside the following syntax:
 
     -   `function_name <- function(parameters){   function body  }`
-    
+
 -   `function_name`: the name of the function object that will be stored in the R environment after the function definition and used for calling that function. Make the name concise and memorable!
 
 -   `function(parameters)`: the variable(s) in the function definition placed inside the parentheses (and separated with a comma if need be) that will be set to actual values (called arguments) each time we call the function.
@@ -175,10 +175,10 @@ circle_area <- function(r){
 circle_area(3)
 ```
 
--   We can even "nest" our functions, meaning that we can define a new function inside another function. 
+-   We can even "nest" our functions, meaning that we can define a new function inside another function.
 
     -   For example, we can create a nested function that sums up the circle areas of 3 non-intersecting circles
-    
+
 ```{r}
 sum_circle_ares <- function(r1, r2, r3){
     circle_area <- function(r){
@@ -200,13 +200,13 @@ print(sum_circle_ares(2, 4, 6))
 
 -   They ask how many times you must raise the base to get $x$.
 
--   $log_a(b)=x$ is asking "a raised to what power x gives b?
+-   $log_a(b)=x$ is asking "a raised to what power x gives b?"
 
 -   $\log_3(81) = 4$ because $3^4=81$
 
--   Logarithms can be undefined.
-
-    -   The base cannot be 0, 1, or negative.
+::: callout-warning
+Logarithms can be *undefined*. The base cannot be 0, 1, or negative.
+:::
 
 ### Relationships
 
@@ -232,11 +232,13 @@ $$m^{\log_m(a)} = a$$
 
 -   We most often use natural logarithms for our purposes.
 
--   This means $log_e(x)$, often written $ln(x)$.
+-   This means $log_e(x)$, which is usually written as $ln(x)$.
 
--   $e \approx 2.7183$.
+::: callout-important
+$e \approx 2.7183$.
+:::
 
--   $ln(x)$ and its exponent opposite, $e^x$, have nice properties when we hit calculus.
+-   $ln(x)$ and its exponent opposite, $e^x$, have nice properties when we perform calculus.
 
 ### Definition of e
 
