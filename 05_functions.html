@@ -272,11 +272,8 @@ div.csl-indent {
   <li><a href="#natural-logarithms" id="toc-natural-logarithms" class="nav-link" data-scroll-target="#natural-logarithms"><span class="header-section-number">5.4.4</span> Natural logarithms</a></li>
   <li><a href="#definition-of-e" id="toc-definition-of-e" class="nav-link" data-scroll-target="#definition-of-e"><span class="header-section-number">5.4.5</span> Definition of e</a></li>
   </ul></li>
-  <li><a href="#functions-of-functions" id="toc-functions-of-functions" class="nav-link" data-scroll-target="#functions-of-functions"><span class="header-section-number">5.5</span> Functions of functions</a>
-  <ul class="collapse">
-  <li><a href="#basics-1" id="toc-basics-1" class="nav-link" data-scroll-target="#basics-1"><span class="header-section-number">5.5.1</span> Basics</a></li>
-  <li><a href="#pmf-pdf-and-cdf" id="toc-pmf-pdf-and-cdf" class="nav-link" data-scroll-target="#pmf-pdf-and-cdf"><span class="header-section-number">5.5.2</span> PMF, PDF, and CDF</a></li>
-  </ul></li>
+  <li><a href="#functions-of-functions" id="toc-functions-of-functions" class="nav-link" data-scroll-target="#functions-of-functions"><span class="header-section-number">5.5</span> Functions of functions</a></li>
+  <li><a href="#pmf-pdf-and-cdf" id="toc-pmf-pdf-and-cdf" class="nav-link" data-scroll-target="#pmf-pdf-and-cdf"><span class="header-section-number">5.6</span> PMF, PDF, and CDF</a></li>
   </ul>
 </nav>
     </div>
@@ -610,25 +607,32 @@ Note
 <ul>
 <li>What will happen when the bank pays you once a month? Once a day?</li>
 </ul>
-<hr>
 <p><span class="math display">\[(1+\frac{1}{n})^{n}\]</span></p>
 <ul>
-<li>However, there is limit to what you can get</li>
+<li>However, there is limit to what you can get.</li>
 </ul>
 <p><span class="math display">\[\lim_{n\to\infty} (1 + \dfrac{1}{n})^n = 2.7183... = e\]</span></p>
 <ul>
-<li>For any interest rate <span class="math inline">\(k\)</span> and number of times the bank pays you <span class="math inline">\(t\)</span>: <span class="math display">\[\lim_{n\to\infty} (1 + \dfrac{k}{n})^{nt} = e^{kt}\]</span></li>
-<li><span class="math inline">\(e\)</span> is important for defining <em>exponential growth</em>. Since <span class="math inline">\(ln(e^x) = x\)</span>, the natural logarithm helps us turn exponential functions into linear ones.</li>
+<li><p>For any interest rate <span class="math inline">\(k\)</span> and number of times the bank pays you <span class="math inline">\(t\)</span>: <span class="math display">\[\lim_{n\to\infty} (1 + \dfrac{k}{n})^{nt} = e^{kt}\]</span></p></li>
+<li><p><span class="math inline">\(e\)</span> is important for defining <em>exponential growth</em>. Since <span class="math inline">\(ln(e^x) = x\)</span>, the natural logarithm helps us turn exponential functions into linear ones.</p></li>
 </ul>
-<hr>
-<p><strong>Practice</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Solve the problems below, simplifying as much as you can. <span class="math display">\[log_{10}(1000)\]</span> <span class="math display">\[log_2(\dfrac{8}{32})\]</span> <span class="math display">\[10^{log_{10}(300)}\]</span> <span class="math display">\[ln(1)\]</span> <span class="math display">\[ln(e^2)\]</span> <span class="math display">\[ln(5e)\]</span></p>
+</div>
+</div>
 </section>
 </section>
 <section id="functions-of-functions" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="functions-of-functions"><span class="header-section-number">5.5</span> Functions of functions</h2>
-<section id="basics-1" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="basics-1"><span class="header-section-number">5.5.1</span> Basics</h3>
 <ul>
 <li><p>Functions can take other functions as arguments.</p></li>
 <li><p>This means that outside function takes output of inside function as its input.</p></li>
@@ -638,18 +642,18 @@ Note
 <li><p>We write this <span class="math inline">\((x-3)^2\)</span>, NOT <span class="math inline">\(x^2-3\)</span>.</p></li>
 </ul>
 </section>
-<section id="pmf-pdf-and-cdf" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="pmf-pdf-and-cdf"><span class="header-section-number">5.5.2</span> PMF, PDF, and CDF</h3>
+<section id="pmf-pdf-and-cdf" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="pmf-pdf-and-cdf"><span class="header-section-number">5.6</span> PMF, PDF, and CDF</h2>
 <ul>
-<li><p>PMF - probability mass function</p>
+<li><p>Probability mass function (PMF)</p>
 <ul>
 <li>This gives the probability that a discrete random variable is exactly equal to some value.</li>
 </ul></li>
-<li><p>PDF - probability density function</p>
+<li><p>Probability density function (PDF)</p>
 <ul>
 <li>This gives the probability that a continuous random variable falls within a particular range of values.</li>
 </ul></li>
-<li><p>CDF - cumulative distribution function</p>
+<li><p>Cumulative distribution function (CDF)</p>
 <ul>
 <li>This gives the probability that a random variable X takes a value less than or equal to <span class="math inline">\(x\)</span>.</li>
 </ul></li>
@@ -679,7 +683,6 @@ Smith, Danny. 2020. <em>Survey Research Datasets and <span>R</span></em>. <a hre
 U. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. <span>“Department of Agriculture Agricultural Research Service.”</span> <a href="https://fdc.nal.usda.gov/">https://fdc.nal.usda.gov/</a>.
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->
