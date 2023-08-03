@@ -56,20 +56,34 @@ Two distinct inputs may have the same output ("many-to-one") ✅ . That is not a
 
 -   We can easily make a function that describes a line.
 
-$$y=mx+b$$ - $m$ is the slope (for every one unit increase in $x$, $y$ increases $m$ units).
+$$y=mx+b$$ 
+
+-   $m$ is the slope (for every one unit increase in $x$, $y$ increases $m$ units).
 
 -   $b$ is the y-intercept: the value of $y$ when $x=0$.
 
 -   More generally, $y=a+bx$ - $a$ is the intercept and $b$ is the slope.
 
-### Quadratic
+-   Below is a graph of the function $y = 3x + 4$:
+
+```{r, echo=FALSE}
+library(ggplot2)
+quad_curve <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
+  stat_function(fun = function(x){3*x+4}, color="red", lwd = 1) 
+quad_curve
+```
+
+### Quadratic functions
 
 -   These lines have one curve. $$y=ax^2 + bx + c$$
+
 -   $a$, $b$, and $c$ don't have well-defined meanings here.
+
 -   If $a$ is negative, the function opens downward; if $a$ is positive,it opens upward.
+
 -   Note that $x^2$ always returns positive values.
 
-------------------------------------------------------------------------
+-   Below is a graph of the function $y = x^2$:
 
 ```{r, echo=FALSE}
 library(ggplot2)
@@ -78,13 +92,13 @@ quad_curve <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
 quad_curve
 ```
 
-### Cubic
+### Cubic functions
 
 -   These lines (generally) have two curves (inflection points).
--   $y=ax^3 + bx^2 + cx +d$
--   $a$, $b$, $c$, and $d$ don't have well-defined meanings here.
 
-------------------------------------------------------------------------
+-   $y=ax^3 + bx^2 + cx +d$
+
+-   $a$, $b$, $c$, and $d$ don't have well-defined meanings here.
 
 ```{r, echo=FALSE}
 cub_curve <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
@@ -92,11 +106,17 @@ cub_curve <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
 cub_curve
 ```
 
-### Polynomial
+### Polynomial functions
 
-$$y=ax^n + bx^{n-1} + ... + c$$ - These functions have (maximum) $n-1$ changes in direction (turning points). - They also have (maximum) $n$ x-intercepts. - They can be made arbitrarily precise.
+$$y=ax^n + bx^{n-1} + ... + c$$ 
 
-### Exponential
+-   These functions have (maximum) $n-1$ changes in direction (turning points). 
+
+-   They also have (maximum) $n$ x-intercepts. 
+
+-   They can be made arbitrarily precise.
+
+### Exponential functions
 
 $$y = ab^{x}$$ or $$f(x)=ab^x$$
 
@@ -105,6 +125,7 @@ $$y = ab^{x}$$ or $$f(x)=ab^x$$
 ### Trigonometric functions
 
 -   These functions include sine, cosine, and tangent.
+
 -   They are interesting (to some), but not usually useful for social science.
 
 ## Logarithms and exponents
@@ -112,11 +133,16 @@ $$y = ab^{x}$$ or $$f(x)=ab^x$$
 ### Logarithms
 
 -   Logarithms are basically the opposite (inverse) of exponents.
+
 -   They ask how many times you must raise the base to get $x$.
+
 -   $log_a(b)=x$ is asking "a raised to what power x gives b?
+
 -   $\log_3(81) = 4$ because $3^4=81$
+
 -   Logarithms can be undefined.
--   The base cannot be 0, 1, or negative.
+
+    -   The base cannot be 0, 1, or negative.
 
 ### Relationships
 
@@ -140,14 +166,18 @@ $$m^{\log_m(a)} = a$$
 
 ### Natural logarithms
 
--   We most often use natural logarithms.
--   This means log$_e(x)$, often written ln$(x)$.
+-   We most often use natural logarithms for our purposes.
+
+-   This means $log_e(x)$, often written $ln(x)$.
+
 -   $e \approx 2.7183$.
--   ln(x) and its exponent opposite, $e^x$, have nice properties when we hit calculus.
+
+-   $ln(x)$ and its exponent opposite, $e^x$, have nice properties when we hit calculus.
 
 ### Definition of e
 
 -   Imagine you invest \$1 in a bank and receive 100% interest for one year, and the bank pays you back once a year: $$(1+1)^1= 2$$
+
 -   When it pays you twice a year with compound interest:
 
 $$(1+1/2)^2=2.25$$
@@ -194,8 +224,13 @@ Solve the problems below, simplifying as much as you can. $$log_{10}(1000)$$ $$l
 ### PMF, PDF, and CDF
 
 -   PMF - probability mass function
+
     -   This gives the probability that a discrete random variable is exactly equal to some value.
+    
 -   PDF - probability density function
+
     -   This gives the probability that a continuous random variable falls within a particular range of values.
+    
 -   CDF - cumulative distribution function
+
     -   This gives the probability that a random variable X takes a value less than or equal to $x$.
