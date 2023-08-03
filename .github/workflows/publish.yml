@@ -26,6 +26,7 @@ jobs:
             any::downlit
             any::xml2
             any::tidyverse
+            any::tidytext
       - name: Set up Quarto and TinyTeX
         uses: quarto-dev/quarto-actions/setup@v2
         with:

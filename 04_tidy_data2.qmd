@@ -1,1 +1,276 @@
 # Tidy data analysis II
+
+In this session, we'll cover a few more advanced topics related to data wrangling. Again we'll use the `tidyverse`:
+
+```{r}
+library(tidyverse)
+```
+
+## Loading data in different formats.
+
+In this module we will use cross-national data from the [Quality of Government (QoG) project](https://www.gu.se/en/quality-government/qog-data/data-downloads/basic-dataset) ([Dahlberg et al., 2023](https://www.gu.se/en/quality-government%20doi:10.18157/qogbasjan23)).
+
+Notice how in the `data/` folder we have multiple versions of the same dataset (a subset of the QOG basic dataset): .csv (comma-separated values), .rds (R), .xlsx (Excel), .dta (Stata), and .sav (SPSS).
+
+### CSV and R data files
+
+We can use the `read_csv()` and `read_rds()` functions from the `tidyverse`[^04_tidy_data2-1] to read the .csv and .rds (R) data files:
+
+[^04_tidy_data2-1]: Technically, the `read_csv()` and `read_rds()` functions come from `readr`, one of the `tidyverse` constituent packages.
+
+```{r}
+qog_csv <- read_csv("data/sample_qog_bas_ts_jan23.csv")
+```
+
+```{r}
+qog_rds <- read_rds("data/sample_qog_bas_ts_jan23.rds")
+```
+
+For reading files from other software (Excel, Stata, or SPSS), we need to load additional packages. Luckily, they are automatically installed when one installs the `tidyverse`.
+
+### Excel data files
+
+For Excel files (.xls or .xlsx files), the `readxl` package has a handy `read_excel()` function.
+
+```{r}
+library(readxl)
+qog_excel <- read_excel("data/sample_qog_bas_ts_jan23.xlsx")
+```
+
+::: callout-tip
+Useful arguments of the `read_excel()` function include `sheet =`, which reads particular sheets (specified via their positions or sheet names), and `range =`, which extracts a particular cell range (e.g., \`A5:E25\`).
+:::
+
+### Stata and SPSS data files
+
+To load files from Stata (.dta) or SPSS (.spss), one needs the `haven` package and its properly-named `read_stata()` and `read_spss()` functions:
+
+```{r}
+library(haven)
+qog_stata <- read_stata("data/sample_qog_bas_ts_jan23.dta")
+qog_spss <- read_spss("data/sample_qog_bas_ts_jan23.sav")
+```
+
+::: callout-tip
+Datasets from Stata and SPSS can have additional properties, like variable labels and special types of missing values. To learn more about this, check out the ["Labelled data" chapter](https://socialresearchcentre.github.io/r_survey_datasets/labelled-data.html) from Danny Smith's *Survey Research Datasets and R* [(2020)](https://socialresearchcentre.github.io/r_survey_datasets/).
+:::
+
+### Our data for this session
+
+We will rename one of our objects to `qog`:
+
+```{r}
+qog <- qog_csv
+qog
+```
+
+This dataset is a small sample of QOG, which contains data for countries in the Americas from 1990 to 2020. The observational unit is thus country-year. You can access the [full codebook](https://www.qogdata.pol.gu.se/data/codebook_bas_jan23.pdf) online. The variables are as follows:
+
+| Variable         | Description                                                   |
+|---------------------|---------------------------------------------------|
+| `cname`          | Country name                                                  |
+| `ccodealp`       | Country code (ISO-3 character convention)                     |
+| `year`           | Year                                                          |
+| `region`         | Region (following legacy WDI convention). Added to QOG by us. |
+| `wdi_pop`        | Total population, from the World Development Indicators       |
+| `vdem_polyarchy` | V-Dem's polyarchy index (electoral democracy)                 |
+| `vdem_corr`      | V-Dem's corruption index                                      |
+| `ht_colonial`    | Former colonial ruler                                         |
+
+## Recoding variables
+
+Take a look at the `ht_colonial` variable. We can do a simple tabulation with `count()`:
+
+```{r}
+qog |> 
+  count(ht_colonial)
+```
+
+We might want to recode this variable. For instance, we could create a *dummy*/*binary* variable for whether the country was a British colony. We can do this with `if_else()`, which works with logical conditions:
+
+```{r}
+qog |> 
+  # the arguments are condition, true (what to do if true), false
+  mutate(d_britishcol = if_else(ht_colonial == "British", 1, 0)) |> 
+  count(d_britishcol)
+```
+
+Instead of a numeric classification (0 and 1), we could use characters:
+
+```{r}
+qog |> 
+  mutate(cat_britishcol = if_else(ht_colonial == "British", "British", "Other")) |> 
+  count(cat_britishcol)
+```
+
+`if_else()` is great for binary recoding. But sometimes we want to create more than two categories. We can use `case_when()`:
+
+```{r}
+qog |> 
+  # syntax is condition ~ value
+  mutate(cat_col = case_when(
+    ht_colonial == "British" ~ "British",
+    ht_colonial == "Spanish" ~ "Spanish", 
+    .default = "Other" # what to do in all other cases
+  )) |> 
+  count(cat_col)
+```
+
+The `.default =` argument in `case_when()` can also be used to leave the variable as-is for non-specified cases. For example, let's combine Portuguese and Spanish colonies:
+
+```{r}
+qog |> 
+  # syntax is condition ~ value
+  mutate(cat_col = case_when(
+    ht_colonial %in% c("Spanish", "Portuguese") ~ "Spanish/Portuguese",
+    .default = ht_colonial # what to do in all other cases
+  )) |> 
+  count(cat_col)
+```
+
+::: callout-note
+#### Exercise
+
+1.  Create a dummy variable, `d_large_pop`, for whether the country-year has a population of more than 1 million. Then compute its mean. Your code:
+
+2.  Which countries are recorded as "Never colonized"? Change their values to other reasonable codings and compute a tabulation with `count()`. Your code:
+:::
+
+## Missing values
+
+Missing values are commonplace in real datasets. In R, missing values are a special type of value in vectors, denoted as `NA`.
+
+::: callout-warning
+The special value `NA` is different from the character value "NA". For example, notice that a numeric vector can have `NAs`, while it obviously cannot hold the character value "NA":
+
+```{r}
+c(5, 4.6, NA, 8)
+```
+:::
+
+A quick way to check for missing values in small datasets is with the `summary()` function:
+
+```{r}
+summary(qog)
+```
+
+Notice that we have missingness in the `vdem_polyarchy` and `vdem_corr` variables. We might want to filter the dataset to see which observations are in this situation:
+
+```{r}
+qog |> 
+  filter(vdem_polyarchy == NA | vdem_corr == NA)
+```
+
+But the code above doesn't work! To refer to missing values in logical conditions, we cannot use `== NA`. Instead, we need to use the `is.na()` function:
+
+```{r}
+qog |> 
+  filter(is.na(vdem_polyarchy) | is.na(vdem_corr))
+```
+
+Notice that, in most R functions, missing values are "contagious." This means that any missing value will contaminate the operation and carry over to the results. For example:
+
+```{r}
+qog |> 
+  summarize(mean_vdem_polyarchy = mean(vdem_polyarchy))
+```
+
+Sometimes we'd like to perform our operations even in the presence of missing values, simply excluding them. Most basic R functions have an `na.rm =` argument to do this:
+
+```{r}
+qog |> 
+  summarize(mean_vdem_polyarchy = mean(vdem_polyarchy, na.rm = T))
+```
+
+::: callout-note
+#### Exercise
+
+Calculate the median value of the corruption variable for each region (i.e., perform a grouped summary). Your code:
+:::
+
+## Pivoting data
+
+We will now load another time-series cross-sectional dataset, but in a slightly different format. It's adapted from the World Bank's World Development Indicators (WDI) ([2023](https://data.worldbank.org/)) and records gross domestic product at purchasing power parity (GDP PPP).
+
+```{r}
+gdp <- read_excel("data/wdi_gdp_ppp.xlsx")
+```
+
+```{r}
+gdp
+```
+
+Note how the information is recorded differently. Here columns are not variables, but years. We call datasets like this one **wide**, in contrast to the **long** datasets we have seen before. 
+In general, R and the `tidyverse` work much nicer with long datasets. Luckily, the `tidyr` package of the `tidyverse` makes it easy to convert datasets between these two formats.
+
+![Source: Illustration [by Allison Horst](https://github.com/allisonhorst/stats-illustrations), adapted [by Peter Higgins](https://github.com/allisonhorst/stats-illustrations/issues/6).](images/tidyr_pivoting.png)
+
+We will use the `pivot_longer()` function:
+
+```{r}
+gdp_long <- gdp |> 
+  pivot_longer(cols = -c(country_name, country_code), # cols to not pivot
+               names_to = "year", # how to name the column with names
+               values_to = "wdi_gdp_ppp",  # how to name the column with values
+               names_transform = as.integer) # make sure that years are numeric
+gdp_long
+```
+
+Done! This is a much friendlier format to work with. For example, we can now do summaries:
+
+```{r}
+gdp_long |> 
+  summarize(mean_gdp_ppp = mean(wdi_gdp_ppp, na.rm = T), .by = country_name)
+```
+
+::: callout-note
+#### Exercise
+
+Convert back `gdp_long` to a wide format using `pivot_wider()`. Check out the help file using `?pivot_wider`. Your code:
+
+
+
+:::
+
+## Merging datasets
+
+It is extremely common to want to integrate data from multiple sources. Combining information from two datasets is called *merging* or *joining*. 
+
+To do this, we need ID variables in common between the two data sets. Using our QOG and WDI datasets, these variables will be country code (which in this case is shared between the two datasets) and year. 
+
+::: callout-tip
+
+Standardized unit codes (like country codes) are extremely useful when merging data. It's harder than expected for a computer to realize that "Bolivia (Plurinational State of)" and "Bolivia" refer to the same unit. By default, these units will not be matched.[^fuzzyjoin]
+
+[^fuzzyjoin]: There are R packages to deal with these complications. [`fuzzyjoin`](https://github.com/dgrtwo/fuzzyjoin) matches units by their approximate distance, using some clever algorithms. [`countrycode`](https://vincentarelbundock.github.io/countrycode/) allows one to standardize country names and country codes across different conventions.
+
+:::
+
+Okay, now to the merging. Imagine we want to add information about GDP to our QOG main dataset. To do so, we can use the `left_join()` function, from the `tidyverse`'s `dplyr` package:
+
+```{r}
+qog_plus <- left_join(qog, # left data frame, which serves as a "base"
+                      gdp_long, # right data frame, from which to draw new columns
+                      by = c("ccodealp" = "country_code", # can define name equivalencies!
+                             "year"))
+```
+
+```{r}
+qog_plus |> 
+  # select variables for clarity
+  select(cname, ccodealp, year, wdi_pop, wdi_gdp_ppp)
+```
+
+::: callout-tip
+
+Most of the time, you'll want to do a `left_join()`, which is great for adding new information to a "base" dataset, without dropping information from the latter. In limited situations, other types of joins can be helpful. To learn more about them, you can read Jenny Bryan's [excelent tutorial](https://stat545.com/join-cheatsheet.html) on `dplyr` joins.
+
+:::
+
+::: callout-note
+
+#### Exercise
+
+There is a dataset on country's CO2 emissions, again from the World Bank ([2023](https://data.worldbank.org/)), in "data/wdi_co2.csv". Load the dataset into R and add a new variable with its information, `wdi_co2`, to our `qog_plus` data frame. Finally, compute the average values of CO2 emissines *per capita*, by country. Tip: this exercise requires you to do many steps---plan ahead before you start coding! Your code:
+
+:::

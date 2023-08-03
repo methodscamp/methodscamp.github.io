@@ -79,6 +79,14 @@ trump_scores |>
   select(bioguide:party)
 ```
 
+You can also **de**select columns using a minus sign:
+
+```{r}
+trump_scores |> 
+  select(-last_name)
+```
+
+
 And use a few helper functions, like `matches()`:
 
 ```{r}
@@ -195,7 +203,11 @@ trump_scores |>
 
 1.  Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute value of `diff_agree`? Your code:
 
+
+
 2.  Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:
+
+
 
 3.  Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:
 :::

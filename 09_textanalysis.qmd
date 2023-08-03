@@ -52,17 +52,11 @@ Fortunately, the syntax for regular expressions is relatively stable across all 
 
 ## Stringr
 
--   To install `"stringr"` use the function `install.packages()`. Then, load it to your current session with `library()`:
-
 ```{r}
-# installing 'stringr'
-install.packages("stringr")
-
-# load 'stringr'
 library(stringr)
 ```
 
--   `stringr` provides functions for both (a) basic string manipulations and (b) regular expression operations. Some basic functions are listed below:
+-   `stringr` comes with the `tidyverse` and provides functions for both (a) basic string manipulations and (b) regular expression operations. Some basic functions are listed below:
 
 |  **Function**  |             **Description**             |
 |:--------------:|:---------------------------------------:|
@@ -192,8 +186,14 @@ Barbie_df
 
     -   The two basic arguments for the `unnest_tokens()` function are column names. We have the output column, `word`, created by unnesting the text, and we have the input column, `text`, where the text being unnested comes from.
 
-```{r, message=FALSE}
+```{r}
+#| eval: false
 install.packages("tidytext")
+```
+
+
+```{r}
+#| message: false
 library(tidytext)
 
 Barbie_df %>%
