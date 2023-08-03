@@ -2,7 +2,7 @@
 
 | Date           | Time              | Location   |
 |----------------|-------------------|------------|
-| Thurs, Aug. 10 | 9:00 AM - 4:00 PM | RLP 1.302E |
+| Thurs, Aug. 10 | 9:00 AM - 4:00 PM | RLP 1.302D |
 | Fri, Aug. 11   | 9:00 AM - 4:00 PM | RLP 1.302E |
 | Sat, Aug. 12   | No class          | \-         |
 | Sun, Aug. 13   | No class          | \-         |
