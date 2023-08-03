@@ -4,22 +4,49 @@
 
 ### What is a function?
 
--   Anything that takes input(s) and gives one defined output.
--   They assign a unique value in its range ($y$ values) for each value in its domain ( $x$ values).
--   In math, this usually looks something like $f(x) = 3x + 4$.
-    -   $x$ is the *argument* that the function takes.
-    -   For any $x$, multiply $x$ by 3 and then add 4
-    -   Alternative but equivalent notation: $y = 3x + 4$
-    -   $y$ is "a function of" $x$, so $y$ = $f(x)$
--   We describe functions with both equations and graphs.
+-   A function, in layman's terms, is anything that takes input(s) and gives one defined output.
+
+-   There are always three main parts:
+
+    -   The input ($x$ values, or each value in the domain)
+    -   The relationship of interest
+    -   The output ($y$ values, or a unique value in the range)
+
+::: callout-note
+"$f(x) = \space ...$ is the classic notation for writing a function, but we can also use"$y = \space ...$". This is because $y$ is"a function of" $x$, so $y=f(x)$.
+:::
+
+-   Let's take a look at an example and break down the structure:
+
+$$f(x) = 3x + 4$$
+
+-   $x$ is the *input* (some value) that the function takes.
+
+-   For any $x$, we multiply by three and add 4, which is the *relationship*.
+
+-   Finally, $f(x)$ or $y$ is the unique result, or the *output*.
 
 ### Function machine
 
-![Function machine](images/function_machine.jpg){#fig-function-machine}
+![](images/function_machine.jpg){#fig-function-machine}
 
-### Visualization
+-   The most common name to give a function is, predictably, "$f$", but we can have other names such as "$g$" or "$h$". The choice is yours.
 
-When graphed, we can't draw vertical line through a function. Why not?
+::: callout-important
+When referring to functions, we say "\[name of function\] of x equals \[relationship\]. For example, $f(x) = x^2$ is referred to as"f of x equals x squared."
+:::
+
+### Vertical line test
+
+-   Functions are *single-valued*, meaning that it will not produce two or more results for the same input.
+
+::: callout-warning
+Two distinct inputs may have the same output ("many-to-one") ✅ . That is not a problem. A function, however, cannot have one input with more than one output ("one-to-many") 🚫 .
+:::
+
+-   The easiest visual test to test whether something is a function is known as the **vertical line test**.
+
+    -   This means that no vertical line ever crosses more than one value on a graph. It it does, we do not have a function.
 
 ![](images/function_notfunction.jpg)
 
@@ -29,11 +56,11 @@ When graphed, we can't draw vertical line through a function. Why not?
 
 -   We can easily make a function that describes a line.
 
-$$y=mx+b$$ - $m$ is the slope (for every one unit increase in $x$, $y$ increases $m$ units). 
+$$y=mx+b$$ - $m$ is the slope (for every one unit increase in $x$, $y$ increases $m$ units).
 
-- $b$ is the y-intercept: the value of $y$ when $x=0$.
+-   $b$ is the y-intercept: the value of $y$ when $x=0$.
 
-- More generally, $y=a+bx$ - $a$ is the intercept and $b$ is the slope.
+-   More generally, $y=a+bx$ - $a$ is the intercept and $b$ is the slope.
 
 ### Quadratic
 
@@ -67,10 +94,7 @@ cub_curve
 
 ### Polynomial
 
-$$y=ax^n + bx^{n-1} + ... + c$$ 
-- These functions have (maximum) $n-1$ changes in direction (turning points). 
-- They also have (maximum) $n$ x-intercepts. 
-- They can be made arbitrarily precise.
+$$y=ax^n + bx^{n-1} + ... + c$$ - These functions have (maximum) $n-1$ changes in direction (turning points). - They also have (maximum) $n$ x-intercepts. - They can be made arbitrarily precise.
 
 ### Exponential
 
@@ -112,7 +136,7 @@ $$\log_x 1 = 0$$
 
 $$log_{x}x=1$$
 
-$$m^{\log_m(a)} = a$$ 
+$$m^{\log_m(a)} = a$$
 
 ### Natural logarithms
 
