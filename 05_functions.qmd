@@ -252,26 +252,23 @@ $$(1+1/3)^3=2.37...$$
 
 -   What will happen when the bank pays you once a month? Once a day?
 
-------------------------------------------------------------------------
-
 $$(1+\frac{1}{n})^{n}$$
 
--   However, there is limit to what you can get
+-   However, there is limit to what you can get.
 
 $$\lim_{n\to\infty} (1 + \dfrac{1}{n})^n = 2.7183... = e$$
 
 -   For any interest rate $k$ and number of times the bank pays you $t$: $$\lim_{n\to\infty} (1 + \dfrac{k}{n})^{nt} = e^{kt}$$
+
 -   $e$ is important for defining *exponential growth*. Since $ln(e^x) = x$, the natural logarithm helps us turn exponential functions into linear ones.
 
-------------------------------------------------------------------------
-
-**Practice**
+::: callout-note
+## Exercise
 
 Solve the problems below, simplifying as much as you can. $$log_{10}(1000)$$ $$log_2(\dfrac{8}{32})$$ $$10^{log_{10}(300)}$$ $$ln(1)$$ $$ln(e^2)$$ $$ln(5e)$$
+:::
 
 ## Functions of functions
-
-### Basics
 
 -   Functions can take other functions as arguments.
 
@@ -285,16 +282,16 @@ Solve the problems below, simplifying as much as you can. $$log_{10}(1000)$$ $$l
 
 -   We write this $(x-3)^2$, NOT $x^2-3$.
 
-### PMF, PDF, and CDF
+## PMF, PDF, and CDF
 
--   PMF - probability mass function
+-   Probability mass function (PMF)
 
     -   This gives the probability that a discrete random variable is exactly equal to some value.
 
--   PDF - probability density function
+-   Probability density function (PDF)
 
     -   This gives the probability that a continuous random variable falls within a particular range of values.
 
--   CDF - cumulative distribution function
+-   Cumulative distribution function (CDF)
 
     -   This gives the probability that a random variable X takes a value less than or equal to $x$.
