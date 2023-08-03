@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -228,20 +262,20 @@ div.csl-indent {
   <li><a href="#cubic-functions" id="toc-cubic-functions" class="nav-link" data-scroll-target="#cubic-functions"><span class="header-section-number">5.2.3</span> Cubic functions</a></li>
   <li><a href="#polynomial-functions" id="toc-polynomial-functions" class="nav-link" data-scroll-target="#polynomial-functions"><span class="header-section-number">5.2.4</span> Polynomial functions</a></li>
   <li><a href="#exponential-functions" id="toc-exponential-functions" class="nav-link" data-scroll-target="#exponential-functions"><span class="header-section-number">5.2.5</span> Exponential functions</a></li>
-  <li><a href="#trigonometric-functions" id="toc-trigonometric-functions" class="nav-link" data-scroll-target="#trigonometric-functions"><span class="header-section-number">5.2.6</span> Trigonometric functions</a></li>
   </ul></li>
-  <li><a href="#logarithms-and-exponents" id="toc-logarithms-and-exponents" class="nav-link" data-scroll-target="#logarithms-and-exponents"><span class="header-section-number">5.3</span> Logarithms and exponents</a>
+  <li><a href="#creating-functions-in-r" id="toc-creating-functions-in-r" class="nav-link" data-scroll-target="#creating-functions-in-r"><span class="header-section-number">5.3</span> Creating functions in R</a></li>
+  <li><a href="#logarithms-and-exponents" id="toc-logarithms-and-exponents" class="nav-link" data-scroll-target="#logarithms-and-exponents"><span class="header-section-number">5.4</span> Logarithms and exponents</a>
   <ul class="collapse">
-  <li><a href="#logarithms" id="toc-logarithms" class="nav-link" data-scroll-target="#logarithms"><span class="header-section-number">5.3.1</span> Logarithms</a></li>
-  <li><a href="#relationships" id="toc-relationships" class="nav-link" data-scroll-target="#relationships"><span class="header-section-number">5.3.2</span> Relationships</a></li>
-  <li><a href="#basic-rules" id="toc-basic-rules" class="nav-link" data-scroll-target="#basic-rules"><span class="header-section-number">5.3.3</span> Basic rules</a></li>
-  <li><a href="#natural-logarithms" id="toc-natural-logarithms" class="nav-link" data-scroll-target="#natural-logarithms"><span class="header-section-number">5.3.4</span> Natural logarithms</a></li>
-  <li><a href="#definition-of-e" id="toc-definition-of-e" class="nav-link" data-scroll-target="#definition-of-e"><span class="header-section-number">5.3.5</span> Definition of e</a></li>
+  <li><a href="#logarithms" id="toc-logarithms" class="nav-link" data-scroll-target="#logarithms"><span class="header-section-number">5.4.1</span> Logarithms</a></li>
+  <li><a href="#relationships" id="toc-relationships" class="nav-link" data-scroll-target="#relationships"><span class="header-section-number">5.4.2</span> Relationships</a></li>
+  <li><a href="#basic-rules" id="toc-basic-rules" class="nav-link" data-scroll-target="#basic-rules"><span class="header-section-number">5.4.3</span> Basic rules</a></li>
+  <li><a href="#natural-logarithms" id="toc-natural-logarithms" class="nav-link" data-scroll-target="#natural-logarithms"><span class="header-section-number">5.4.4</span> Natural logarithms</a></li>
+  <li><a href="#definition-of-e" id="toc-definition-of-e" class="nav-link" data-scroll-target="#definition-of-e"><span class="header-section-number">5.4.5</span> Definition of e</a></li>
   </ul></li>
-  <li><a href="#functions-of-functions" id="toc-functions-of-functions" class="nav-link" data-scroll-target="#functions-of-functions"><span class="header-section-number">5.4</span> Functions of functions</a>
+  <li><a href="#functions-of-functions" id="toc-functions-of-functions" class="nav-link" data-scroll-target="#functions-of-functions"><span class="header-section-number">5.5</span> Functions of functions</a>
   <ul class="collapse">
-  <li><a href="#basics-1" id="toc-basics-1" class="nav-link" data-scroll-target="#basics-1"><span class="header-section-number">5.4.1</span> Basics</a></li>
-  <li><a href="#pmf-pdf-and-cdf" id="toc-pmf-pdf-and-cdf" class="nav-link" data-scroll-target="#pmf-pdf-and-cdf"><span class="header-section-number">5.4.2</span> PMF, PDF, and CDF</a></li>
+  <li><a href="#basics-1" id="toc-basics-1" class="nav-link" data-scroll-target="#basics-1"><span class="header-section-number">5.5.1</span> Basics</a></li>
+  <li><a href="#pmf-pdf-and-cdf" id="toc-pmf-pdf-and-cdf" class="nav-link" data-scroll-target="#pmf-pdf-and-cdf"><span class="header-section-number">5.5.2</span> PMF, PDF, and CDF</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -358,14 +392,32 @@ Warning
 <section id="linear-functions" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="linear-functions"><span class="header-section-number">5.2.1</span> Linear functions</h3>
 <ul>
-<li>We can easily make a function that describes a line.</li>
+<li><p>Linear functions are those whose graph is a straight line.</p></li>
+<li><p>The form of a linear function is very familiar:</p></li>
 </ul>
 <p><span class="math display">\[y=mx+b\]</span></p>
 <ul>
-<li><p><span class="math inline">\(m\)</span> is the slope (for every one unit increase in <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> increases <span class="math inline">\(m\)</span> units).</p></li>
-<li><p><span class="math inline">\(b\)</span> is the y-intercept: the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x=0\)</span>.</p></li>
-<li><p>More generally, <span class="math inline">\(y=a+bx\)</span> - <span class="math inline">\(a\)</span> is the intercept and <span class="math inline">\(b\)</span> is the slope.</p></li>
-<li><p>Below is a graph of the function <span class="math inline">\(y = 3x + 4\)</span>:</p></li>
+<li><p>Let’s break down the structure:</p>
+<ul>
+<li><span class="math inline">\(m\)</span> is the slope, or the coefficient of the independent variable (for every one unit increase in <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> increases <span class="math inline">\(m\)</span> units).</li>
+<li><span class="math inline">\(b\)</span> is the y intercept, or the constant term (the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x=0\)</span>).</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Linear functions can also be expressed more generally as <span class="math inline">\(y=a+bx\)</span>, where <span class="math inline">\(a\)</span> is the y intercept and <span class="math inline">\(b\)</span> is the slope.</p>
+</div>
+</div>
+<ul>
+<li>Below is a graph of the function <span class="math inline">\(y = 3x + 4\)</span>:</li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -402,6 +454,7 @@ Warning
 <li><p>These lines (generally) have two curves (inflection points).</p></li>
 <li><p><span class="math inline">\(y=ax^3 + bx^2 + cx +d\)</span></p></li>
 <li><p><span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, and <span class="math inline">\(d\)</span> don’t have well-defined meanings here.</p></li>
+<li><p>Below is a graph of the function <span class="math inline">\(y = x^3\)</span>:</p></li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -421,26 +474,94 @@ Warning
 <li><p>They also have (maximum) <span class="math inline">\(n\)</span> x-intercepts.</p></li>
 <li><p>They can be made arbitrarily precise.</p></li>
 </ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="05_functions_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="exponential-functions" class="level3" data-number="5.2.5">
 <h3 data-number="5.2.5" class="anchored" data-anchor-id="exponential-functions"><span class="header-section-number">5.2.5</span> Exponential functions</h3>
 <p><span class="math display">\[y = ab^{x}\]</span> or <span class="math display">\[f(x)=ab^x\]</span></p>
 <ul>
-<li>Here our independent variable, or input (<span class="math inline">\(x\)</span>), is the exponent.</li>
+<li><p>Here our independent variable, or input (<span class="math inline">\(x\)</span>), is the exponent.</p></li>
+<li><p>Below is a graph of the function <span class="math inline">\(y = 2^x\)</span>:</p></li>
 </ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="05_functions_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="trigonometric-functions" class="level3" data-number="5.2.6">
-<h3 data-number="5.2.6" class="anchored" data-anchor-id="trigonometric-functions"><span class="header-section-number">5.2.6</span> Trigonometric functions</h3>
+</section>
+<section id="creating-functions-in-r" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="creating-functions-in-r"><span class="header-section-number">5.3</span> Creating functions in R</h2>
 <ul>
-<li><p>These functions include sine, cosine, and tangent.</p></li>
-<li><p>They are interesting (to some), but not usually useful for social science.</p></li>
+<li><p>Each of the graphs above required me to define the corresponding function in RStudio.</p></li>
+<li><p>Often we need to create our own function to automate a particular task, such as calculating the output of a function for a particular set of values.</p></li>
+<li><p>To build our own functions, we use the keyword <code>function</code> alongside the following syntax:</p>
+<ul>
+<li><code>function_name &lt;- function(parameters){   function body  }</code></li>
+</ul></li>
+<li><p><code>function_name</code>: the name of the function object that will be stored in the R environment after the function definition and used for calling that function. Make the name concise and memorable!</p></li>
+<li><p><code>function(parameters)</code>: the variable(s) in the function definition placed inside the parentheses (and separated with a comma if need be) that will be set to actual values (called arguments) each time we call the function.</p></li>
+<li><p><code>{function body}</code>: a set of commands that are run in a predefined order every time we call the function.</p></li>
+<li><p>We define simple linear functions very easily:</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>linear_func <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="dv">5</span><span class="sc">*</span>x <span class="sc">+</span> <span class="dv">13</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_func</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 38</code></pre>
+</div>
+</div>
+<ul>
+<li>We can also automate more complicated tasks such as calculating the area of a circle:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>circle_area <span class="ot">&lt;-</span> <span class="cf">function</span>(r){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    pi<span class="sc">*</span>r<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">circle_area</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 28.27433</code></pre>
+</div>
+</div>
+<ul>
+<li><p>We can even “nest” our functions, meaning that we can define a new function inside another function.</p>
+<ul>
+<li>For example, we can create a nested function that sums up the circle areas of 3 non-intersecting circles</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sum_circle_ares <span class="ot">&lt;-</span> <span class="cf">function</span>(r1, r2, r3){</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    circle_area <span class="ot">&lt;-</span> <span class="cf">function</span>(r){</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        pi<span class="sc">*</span>r<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">circle_area</span>(r1) <span class="sc">+</span> <span class="fu">circle_area</span>(r2) <span class="sc">+</span> <span class="fu">circle_area</span>(r3)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">sum_circle_ares</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 175.9292</code></pre>
+</div>
+</div>
+<ul>
+<li>User-defined functions have endless possibilities! We encourage you to get creative and try to automate new tasks when possible, especially if they are repetitive.</li>
 </ul>
 </section>
-</section>
-<section id="logarithms-and-exponents" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="logarithms-and-exponents"><span class="header-section-number">5.3</span> Logarithms and exponents</h2>
-<section id="logarithms" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="logarithms"><span class="header-section-number">5.3.1</span> Logarithms</h3>
+<section id="logarithms-and-exponents" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="logarithms-and-exponents"><span class="header-section-number">5.4</span> Logarithms and exponents</h2>
+<section id="logarithms" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="logarithms"><span class="header-section-number">5.4.1</span> Logarithms</h3>
 <ul>
 <li><p>Logarithms are basically the opposite (inverse) of exponents.</p></li>
 <li><p>They ask how many times you must raise the base to get <span class="math inline">\(x\)</span>.</p></li>
@@ -452,12 +573,12 @@ Warning
 </ul></li>
 </ul>
 </section>
-<section id="relationships" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="relationships"><span class="header-section-number">5.3.2</span> Relationships</h3>
+<section id="relationships" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="relationships"><span class="header-section-number">5.4.2</span> Relationships</h3>
 <p>If, <span class="math display">\[ log_ax=b\]</span> then, <span class="math display">\[a^{log_{a}x}=a^b\]</span> and <span class="math display">\[x=a^b\]</span></p>
 </section>
-<section id="basic-rules" class="level3" data-number="5.3.3">
-<h3 data-number="5.3.3" class="anchored" data-anchor-id="basic-rules"><span class="header-section-number">5.3.3</span> Basic rules</h3>
+<section id="basic-rules" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="basic-rules"><span class="header-section-number">5.4.3</span> Basic rules</h3>
 <p><span class="math display">\[\dfrac{\log_x n}{\log_x m} = \log_m n\]</span></p>
 <p><span class="math display">\[\log_x(ab) = \log_xa + \log_xb \]</span></p>
 <p><span class="math display">\[\log_x\left(\frac{a}{b}\right) = \log_xa - \log_xb\]</span></p>
@@ -466,8 +587,8 @@ Warning
 <p><span class="math display">\[log_{x}x=1\]</span></p>
 <p><span class="math display">\[m^{\log_m(a)} = a\]</span></p>
 </section>
-<section id="natural-logarithms" class="level3" data-number="5.3.4">
-<h3 data-number="5.3.4" class="anchored" data-anchor-id="natural-logarithms"><span class="header-section-number">5.3.4</span> Natural logarithms</h3>
+<section id="natural-logarithms" class="level3" data-number="5.4.4">
+<h3 data-number="5.4.4" class="anchored" data-anchor-id="natural-logarithms"><span class="header-section-number">5.4.4</span> Natural logarithms</h3>
 <ul>
 <li><p>We most often use natural logarithms for our purposes.</p></li>
 <li><p>This means <span class="math inline">\(log_e(x)\)</span>, often written <span class="math inline">\(ln(x)\)</span>.</p></li>
@@ -475,8 +596,8 @@ Warning
 <li><p><span class="math inline">\(ln(x)\)</span> and its exponent opposite, <span class="math inline">\(e^x\)</span>, have nice properties when we hit calculus.</p></li>
 </ul>
 </section>
-<section id="definition-of-e" class="level3" data-number="5.3.5">
-<h3 data-number="5.3.5" class="anchored" data-anchor-id="definition-of-e"><span class="header-section-number">5.3.5</span> Definition of e</h3>
+<section id="definition-of-e" class="level3" data-number="5.4.5">
+<h3 data-number="5.4.5" class="anchored" data-anchor-id="definition-of-e"><span class="header-section-number">5.4.5</span> Definition of e</h3>
 <ul>
 <li><p>Imagine you invest $1 in a bank and receive 100% interest for one year, and the bank pays you back once a year: <span class="math display">\[(1+1)^1= 2\]</span></p></li>
 <li><p>When it pays you twice a year with compound interest:</p></li>
@@ -504,10 +625,10 @@ Warning
 <p>Solve the problems below, simplifying as much as you can. <span class="math display">\[log_{10}(1000)\]</span> <span class="math display">\[log_2(\dfrac{8}{32})\]</span> <span class="math display">\[10^{log_{10}(300)}\]</span> <span class="math display">\[ln(1)\]</span> <span class="math display">\[ln(e^2)\]</span> <span class="math display">\[ln(5e)\]</span></p>
 </section>
 </section>
-<section id="functions-of-functions" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="functions-of-functions"><span class="header-section-number">5.4</span> Functions of functions</h2>
-<section id="basics-1" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="basics-1"><span class="header-section-number">5.4.1</span> Basics</h3>
+<section id="functions-of-functions" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="functions-of-functions"><span class="header-section-number">5.5</span> Functions of functions</h2>
+<section id="basics-1" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="basics-1"><span class="header-section-number">5.5.1</span> Basics</h3>
 <ul>
 <li><p>Functions can take other functions as arguments.</p></li>
 <li><p>This means that outside function takes output of inside function as its input.</p></li>
@@ -517,8 +638,8 @@ Warning
 <li><p>We write this <span class="math inline">\((x-3)^2\)</span>, NOT <span class="math inline">\(x^2-3\)</span>.</p></li>
 </ul>
 </section>
-<section id="pmf-pdf-and-cdf" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="pmf-pdf-and-cdf"><span class="header-section-number">5.4.2</span> PMF, PDF, and CDF</h3>
+<section id="pmf-pdf-and-cdf" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="pmf-pdf-and-cdf"><span class="header-section-number">5.5.2</span> PMF, PDF, and CDF</h3>
 <ul>
 <li><p>PMF - probability mass function</p>
 <ul>
