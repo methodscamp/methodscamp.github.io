@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -250,7 +250,6 @@ div.csl-indent {
   <li><a href="#project-management" id="toc-project-management" class="nav-link active" data-scroll-target="#project-management"><span class="header-section-number">10.1</span> Project management</a>
   <ul class="collapse">
   <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects"><span class="header-section-number">10.1.1</span> RStudio projects</a></li>
-  <li><a href="#storing-raw-data" id="toc-storing-raw-data" class="nav-link" data-scroll-target="#storing-raw-data"><span class="header-section-number">10.1.2</span> Storing raw data</a></li>
   </ul></li>
   <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources"><span class="header-section-number">10.2</span> Other resources</a>
   <ul class="collapse">
@@ -304,17 +303,17 @@ div.csl-indent {
 <li><p>To create a new project file, click <code>File &gt; New Project</code>, then:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Screenshot 2023-07-31 at 4.57.29 PM.png" class="img-fluid figure-img" width="400"></p>
+<p><img src="images/new_project_step1.png" class="img-fluid figure-img" width="400"></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Screenshot 2023-07-31 at 4.57.55 PM.png" class="img-fluid figure-img" width="400"></p>
+<p><img src="images/new_project_step2.png" class="img-fluid figure-img" width="400"></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Screenshot 2023-07-31 at 4.58.54 PM.png" class="img-fluid figure-img" width="400"></p>
+<p><img src="images/new_project_step3.png" class="img-fluid figure-img" width="400"></p>
 </figure>
 </div></li>
 <li><p>Call your project some version of “methodscamptest” and choose carefully where you wish to store the project on your machine.</p></li>
@@ -334,44 +333,30 @@ Warning
 </div>
 <section id="using-rstudio-projects" class="level4" data-number="10.1.1.1">
 <h4 data-number="10.1.1.1" class="anchored" data-anchor-id="using-rstudio-projects"><span class="header-section-number">10.1.1.1</span> Using RStudio projects</h4>
-<ul>
-<li>Once you have created the project, check that the “home” directory is the current working directory:</li>
-</ul>
+<p>When using an RStudio project, you should see its name in the top-right corner of RStudio, next to a light blue icon. You can check with R the folder in which your project operates:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "/home/runner/work/methodscamp.github.io/methodscamp.github.io"</code></pre>
-</div>
 </div>
 <ul>
 <li>Now, as an example, let’s run the following commands in the script editor and save the files into the project directory.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="10_wrapup_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"mtcars.pdf"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(mtcars, <span class="st">"mtcars.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot =</span> my_plot,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">filename =</span> <span class="st">"plot_mtcars.pdf"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(mtcars, <span class="st">"mtcars.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li><p>Quit RStudio and check out the folder associated with the project.</p>
-<ul>
-<li>You should see the PDF file for the plot, the .csv file for the data, and the <code>.Rproj</code> file for the project itself.</li>
-</ul></li>
+<li><p>Quit RStudio and check out the folder associated with the project.</p></li>
+<li><p>You should see the PDF file for the plot, the .csv file for the data, and the <code>.Rproj</code> file for the project itself.</p></li>
 <li><p>Double-click the <code>.Rproj</code> file to reopen the project and pick up where you left off! Everything you need should be ready to go.</p></li>
 </ul>
 </section>
-</section>
-<section id="storing-raw-data" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="storing-raw-data"><span class="header-section-number">10.1.2</span> Storing raw data</h3>
-<ul>
-<li></li>
-</ul>
 </section>
 </section>
 <section id="other-resources" class="level2" data-number="10.2">
