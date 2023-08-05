@@ -4,19 +4,21 @@
 
 ### What is a function?
 
--   A function, in layman's terms, is anything that takes input(s) and gives one defined output.
+Informally, a function is anything that takes input(s) and gives one defined output. There are always three main parts:
 
--   There are always three main parts:
+- The input ($x$ values, or each value in the domain)
 
-    -   The input ($x$ values, or each value in the domain)
-    -   The relationship of interest
-    -   The output ($y$ values, or a unique value in the range)
+- The relationship of interest
+
+- The output ($y$ values, or a unique value in the range)
+
+![Function machine. Source: [Bill Bailey on Wikimedia Commons.](https://commons.wikimedia.org/wiki/File:Function_machine2.svg)](images/function_machine.png){#fig-function-machine width="400"}
 
 ::: callout-note
 "$f(x) = \space ...$ is the classic notation for writing a function, but we can also use"$y = \space ...$". This is because $y$ is"a function of" $x$, so $y=f(x)$.
 :::
 
--   Let's take a look at an example and break down the structure:
+Let's take a look at an example and break down the structure:
 
 $$f(x) = 3x + 4$$
 
@@ -26,61 +28,141 @@ $$f(x) = 3x + 4$$
 
 -   Finally, $f(x)$ or $y$ is the unique result, or the *output*.
 
-### Function machine
-
-![](images/function_machine.jpg){#fig-function-machine fig-align="center"}
-
--   The most common name to give a function is, predictably, "$f$", but we can have other names such as "$g$" or "$h$". The choice is yours.
+The most common name to give a function is, predictably, "$f$", but we can have other names such as "$g$" or "$h$". The choice is yours.
 
 ::: callout-important
-When referring to functions, we say "\[name of function\] of x equals \[relationship\]. For example, $f(x) = x^2$ is referred to as"f of x equals x squared."
+When reading out loud, we say "\[name of function\] of x equals \[relationship\]. For example, $f(x) = x^2$ is referred to as "f of x equals x squared."
 :::
 
 ### Vertical line test
 
--   Functions are *single-valued*, meaning that it will not produce two or more results for the same input.
+::: callout-note
+#### Exercise
 
-::: callout-warning
-Two distinct inputs may have the same output ("many-to-one") ✅ . That is not a problem. A function, however, cannot have one input with more than one output ("one-to-many") 🚫 .
+When graphed, vertical lines cannot touch functions at more than one point. Why?
+
+Which of the following represent functions? 
+
+![Vertical line test: examples.](images/vertical_line_test.png){#fig-vertical-line-test}
 :::
 
--   The easiest visual test to test whether something is a function is known as the **vertical line test**.
+## Functions in R
 
-    -   This means that no vertical line ever crosses more than one value on a graph. It it does, we do not have a function.
+Often we need to create our own functions in R. To build them: we use the keyword `function` alongside the following syntax: `function_name <- function(argumentnames){ operation }`
 
-![](images/function_notfunction.jpg)
+-  `function_name`: the name of the function, that will be stored as an object in the R environment. Make the name concise and memorable!
 
-## Types of functions
+-  `function(argumentnames)`: the inputs of the function.
+
+-  `{ operation }`: a set of commands that are run in a predefined order every time we call the function.
+
+For example, we can create a function that multiplies a number by 2:
+
+```{r}
+mult_by_two <- function(x){x * 2}
+```
+
+```{r}
+mult_by_two(x = 5) # we can also omit the argument name (x =)
+```
+
+If the function body works for vectors, our custom function will do too:
+
+```{r}
+mult_by_two(1:10)
+```
+
+We can also automate more complicated tasks such as calculating the area of a circle from its radius:
+
+```{r}
+calc_circle_area <- function(r){
+    pi * r ^ 2
+}
+calc_circle_area(r = 3)
+```
+
+::: callout-note
+#### Exercise
+
+Create a function that calculates the area of a circle *from its diameter*. So `your_function(d = 6)` should yield the same result as the example above. Your code:
+
+
+:::
+
+Functions can take more than one argument/input. In a silly example, let's generalize our first function:
+
+```{r}
+mult_by <- function(x, mult){x * mult}
+```
+
+```{r}
+mult_by(x = 1:5, mult = 10)
+```
+
+```{r}
+mult_by(1:5, mult = 10)
+```
+
+```{r}
+mult_by(1:5, 10)
+```
+
+To graph a function, we'll use our friend `ggplot2` and `stat_function()`:
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+ggplot() +
+  stat_function(fun = mult_by_two, 
+                xlim = c(-5, 5)) # domain over which we will plot the function
+```
+
+
+User-defined functions have endless possibilities! We encourage you to get creative and try to automate new tasks when possible, especially if they are repetitive.
+
+::: callout-tip
+
+Functions in R can also take non-numeric inputs. For example:
+
+```{r}
+say_my_name <- function(my_name){paste("My name is", my_name)}
+```
+
+```{r}
+say_my_name("Inigo Montoya")
+```
+
+While w
+
+:::
+
+## Common types of functions
 
 ### Linear functions
 
--   Linear functions are those whose graph is a straight line.
-
--   The form of a linear function is very familiar:
-
 $$y=mx+b$$
 
--   Let's break down the structure:
+Linear functions are those whose graph is a straight line (in two dimensions).
 
-    -   $m$ is the slope, or the coefficient of the independent variable (for every one unit increase in $x$, $y$ increases $m$ units).
-    -   $b$ is the y intercept, or the constant term (the value of $y$ when $x=0$).
+- $m$ is the slope, or the rate of change (common interpretation: for every one unit increase in $x$, $y$ increases $m$ units).
 
-::: callout-note
-Linear functions can also be expressed more generally as $y=a+bx$, where $a$ is the y intercept and $b$ is the slope.
-:::
+- $b$ is the y intercept, or the constant term (the value of $y$ when $x=0$).
 
--   Below is a graph of the function $y = 3x + 4$:
+Below is a graph of the function $y = 3x + 4$:
 
-```{r, echo=FALSE, fig.align='center'}
-library(ggplot2)
-lin_func <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
-  stat_function(fun = function(x){3*x+4}, color="red", lwd = 1) 
-lin_func
+```{r}
+ggplot() +
+  stat_function(fun = function(x){3 * x + 4}, # we don't need to create an object
+                xlim = c(-5, 5)) 
 ```
 
 ### Quadratic functions
 
--   These lines have one curve. $$y=ax^2 + bx + c$$
+$$y=ax^2 + bx + c$$
+
+-   These lines have one curve.
 
 -   $a$, $b$, and $c$ don't have well-defined meanings here.
 
@@ -90,107 +172,70 @@ lin_func
 
 -   Below is a graph of the function $y = x^2$:
 
-```{r, echo=FALSE, fig.align='center'}
-library(ggplot2)
-quad_curve <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
-  stat_function(fun = function(x){x^2}, color="blue", lwd = 1) 
-quad_curve
+```{r}
+ggplot() +
+  stat_function(fun = function(x){x ^ 2},
+                xlim = c(-5, 5)) 
 ```
+
+::: callout-note
+#### Exercise
+
+Social scientists commonly use linear or quadratic functions as theoretical simplifications of social phenomena. Can you give any examples?
+
+:::
 
 ### Cubic functions
 
--   These lines (generally) have two curves (inflection points).
+$$y=ax^3 + bx^2 + cx +d$$
 
--   $y=ax^3 + bx^2 + cx +d$
+-   These lines (generally) have two curves (inflection points).
 
 -   $a$, $b$, $c$, and $d$ don't have well-defined meanings here.
 
 -   Below is a graph of the function $y = x^3$:
 
-```{r, echo=FALSE, fig.align='center'}
-cub_curve <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
-  stat_function(fun = function(x){x^3}, color="green", lwd = 1) 
-cub_curve
+```{r}
+ggplot() +
+  stat_function(fun = function(x){x ^ 3},
+                xlim = c(-5, 5)) 
 ```
 
 ### Polynomial functions
 
-$$y=ax^n + bx^{n-1} + ... + c$$
+$$y=ax^n + bx^{n-1} + ... + c$$ 
 
--   These functions have (maximum) $n-1$ changes in direction (turning points).
+- These functions have (maximum) $n-1$ changes in direction (turning points). 
 
--   They also have (maximum) $n$ x-intercepts.
+- They also have (maximum) $n$ x-intercepts. - They can be made arbitrarily precise.
 
--   They can be made arbitrarily precise.
+- These functions have (maximum) $n-1$ changes in direction (turning points).
 
-```{r, echo=FALSE, fig.align='center'}
-poly_func <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
-  stat_function(fun = function(x){x^2+2*x+1}, color="darkorchid", lwd = 1) 
-poly_func
+- They also have (maximum) $n$ x-intercepts.
+
+- They can be made arbitrarily precise.
+
+- Below is a graph of the function $y = \frac{1}{4}x^4 - 5 x^2 + x$. 
+
+```{r}
+ggplot() +
+  stat_function(fun = function(x){1/4 * x ^ 4 - 5 * x ^ 2 + x},
+                xlim = c(-5, 5)) 
 ```
 
 ### Exponential functions
 
-$$y = ab^{x}$$ or $$f(x)=ab^x$$
+$$y = ab^{x}$$
 
--   Here our independent variable, or input ($x$), is the exponent.
+-   Here our input ($x$), is the exponent.
 
 -   Below is a graph of the function $y = 2^x$:
 
-```{r, echo=FALSE, fig.align='center'}
-exp_func <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
-  stat_function(fun = function(x){2^x}, color="darkorange1", lwd = 1) 
-exp_func
-```
-
-## Creating functions in R
-
--   Each of the graphs above required me to define the corresponding function in RStudio.
-
--   Often we need to create our own function to automate a particular task, such as calculating the output of a function for a particular set of values.
-
--   To build our own functions, we use the keyword `function` alongside the following syntax:
-
-    -   `function_name <- function(parameters){   function body  }`
-
--   `function_name`: the name of the function object that will be stored in the R environment after the function definition and used for calling that function. Make the name concise and memorable!
-
--   `function(parameters)`: the variable(s) in the function definition placed inside the parentheses (and separated with a comma if need be) that will be set to actual values (called arguments) each time we call the function.
-
--   `{function body}`: a set of commands that are run in a predefined order every time we call the function.
-
--   We define simple linear functions very easily:
-
 ```{r}
-linear_func <- function(x){5*x + 13}
-linear_func(5)
+ggplot() +
+  stat_function(fun = function(x){2 ^ x},
+                xlim = c(-5, 5)) 
 ```
-
--   We can also automate more complicated tasks such as calculating the area of a circle:
-
-```{r}
-circle_area <- function(r){
-    pi*r^2
-}
-circle_area(3)
-```
-
--   We can even "nest" our functions, meaning that we can define a new function inside another function.
-
-    -   For example, we can create a nested function that sums up the circle areas of 3 non-intersecting circles
-
-```{r}
-sum_circle_ares <- function(r1, r2, r3){
-    circle_area <- function(r){
-        pi*r^2
-    }
-    circle_area(r1) + circle_area(r2) + circle_area(r3)
-}
-
-print(sum_circle_ares(2, 4, 6))
-```
-
--   User-defined functions have endless possibilities! We encourage you to get creative and try to automate new tasks when possible, especially if they are repetitive.
 
 ## Logarithms and exponents
 
@@ -240,7 +285,7 @@ $e \approx 2.7183$.
 
 -   $ln(x)$ and its exponent opposite, $e^x$, have nice properties when we perform calculus.
 
-### Definition of e
+### Illustration of $e$
 
 -   Imagine you invest \$1 in a bank and receive 100% interest for one year, and the bank pays you back once a year: $$(1+1)^1= 2$$
 
@@ -270,30 +315,29 @@ $$\lim_{n\to\infty} (1 + \dfrac{1}{n})^n = 2.7183... = e$$
 Solve the problems below, simplifying as much as you can. $$log_{10}(1000)$$ $$log_2(\dfrac{8}{32})$$ $$10^{log_{10}(300)}$$ $$ln(1)$$ $$ln(e^2)$$ $$ln(5e)$$
 :::
 
-## Functions of functions
+### Logarithms in R
 
--   Functions can take other functions as arguments.
+By default, R's `log()` function computes natural logarithms:
 
--   This means that outside function takes output of inside function as its input.
+```{r}
+log(100)
+```
 
--   This is typically written as $f(g(x))$.
+We can change this behavior with the `base =` argument:
+
+```{r}
+log(100, base = 10)
+```
+
+
+## Composite functions (functions of functions)
+
+-   Functions can take other functions as inputs, e.g., $f(g(x))$.
+
+-   This means that the outside function takes the output of the inside function as its input.
 
 -   Say we have the exterior function f(x)=$x^2$ and the interior function g(x)=$x-3$.
 
 -   Then if we want f(g(x)), we would subtract 3 from any input, and then square the result.
 
--   We write this $(x-3)^2$, NOT $x^2-3$.
-
-## PMF, PDF, and CDF
-
--   Probability mass function (PMF)
-
-    -   This gives the probability that a discrete random variable is exactly equal to some value.
-
--   Probability density function (PDF)
-
-    -   This gives the probability that a continuous random variable falls within a particular range of values.
-
--   Cumulative distribution function (CDF)
-
-    -   This gives the probability that a random variable X takes a value less than or equal to $x$.
+-   We write this $(x-3)^2$, not $x^2-3$.
