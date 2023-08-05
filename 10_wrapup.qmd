@@ -15,11 +15,11 @@
 
 -   To create a new project file, click `File > New Project`, then:
 
-    ![](images/Screenshot%202023-07-31%20at%204.57.29%20PM.png){fig-align="center" width="400"}
+    ![](images/new_project_step1.png){fig-align="center" width="400"}
 
-    ![](images/Screenshot%202023-07-31%20at%204.57.55%20PM.png){fig-align="center" width="400"}
+    ![](images/new_project_step2.png){fig-align="center" width="400"}
     
-    ![](images/Screenshot%202023-07-31%20at%204.58.54%20PM.png){fig-align="center" width="400"}
+    ![](images/new_project_step3.png){fig-align="center" width="400"}
 
 -   Call your project some version of "methodscamptest" and choose carefully where you wish to store the project on your machine.
 
@@ -29,33 +29,33 @@ If you don't store your project (and your other files, too!) somewhere reasonabl
 
 #### Using RStudio projects
 
--   Once you have created the project, check that the "home" directory is the current working directory:
+When using an RStudio project, you should see its name in the top-right corner of RStudio, next to a light blue icon. You can check with R the folder in which your project operates:
 
 ```{r}
+#| eval: false
 getwd()
 ```
 
--   Now, as an example, let's run the following commands in the script editor and save the files into the project directory.
+- Now, as an example, let's run the following commands in the script editor and save the files into the project directory.
 
-```{r, message=FALSE}
+```{r}
+#| message: false
 library(tidyverse)
 
-ggplot(mtcars, aes(wt, mpg)) + 
+my_plot <- ggplot(mtcars, aes(wt, mpg)) + 
   geom_point()
-ggsave("mtcars.pdf")
+
+ggsave(plot = my_plot,
+       filename = "plot_mtcars.pdf")
 
 write_csv(mtcars, "mtcars.csv")
 ```
 
 -   Quit RStudio and check out the folder associated with the project.
 
-    -   You should see the PDF file for the plot, the .csv file for the data, and the `.Rproj` file for the project itself.
+-   You should see the PDF file for the plot, the .csv file for the data, and the `.Rproj` file for the project itself.
 
 -   Double-click the `.Rproj` file to reopen the project and pick up where you left off! Everything you need should be ready to go.
-
-### Storing raw data
-
--   
 
 ## Other resources
 
