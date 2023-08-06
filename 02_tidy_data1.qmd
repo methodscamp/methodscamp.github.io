@@ -350,6 +350,30 @@ ggplot(trump_scores_ss |> filter(state == "ME"),
 Draw a column plot with the agreement with Trump of Bernie Sanders and Ted Cruz. What happens if you use `last_name` as the `y` aesthetic mapping and `agree` in the `x` aesthetic mapping? Your code:
 :::
 
+A common use of `geom_col()` is to create "ranking plots." For example, who are the senators with highest agreement with Trump? We can start with something like this:
+
+```{r}
+ggplot(trump_scores_ss,
+       aes(x = agree, y = last_name)) +
+  geom_col()
+```
+
+We might want to (1) select the top 10 observations and (2) order the bars according to the `agree` values. We can do these operations with `slice_max()` and `fct_reorder()`, as shown below:
+
+```{r}
+ggplot(trump_scores_ss |> slice_max(agree, n = 10),
+       aes(x = agree, y = fct_reorder(last_name, agree))) +
+  geom_col()
+```
+
+We can also plot the senators with the *lowest* agreement with Trump using `slice_min()` and `fct_reorder()` with a minus sign in the ordering variable:
+
+```{r}
+ggplot(trump_scores_ss |> slice_min(agree, n = 10),
+       aes(x = agree, y = fct_reorder(last_name, -agree))) +
+  geom_col()
+```
+
 ### Univariate plots: numerical
 
 We can draw a histogram with `geom_histogram()`:
