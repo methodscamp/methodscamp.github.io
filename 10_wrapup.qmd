@@ -39,7 +39,8 @@ getwd()
 - Now, as an example, let's run the following commands in the script editor and save the files into the project directory.
 
 ```{r}
-#| message: false
+#| eval: false
+
 library(tidyverse)
 
 my_plot <- ggplot(mtcars, aes(wt, mpg)) + 
