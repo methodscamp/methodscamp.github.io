@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Methods Camp - 5&nbsp; Functions and loops</title>
+<title>Methods Camp - 5&nbsp; Functions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,7 +131,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_functions.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions and loops</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_functions.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -200,7 +200,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_functions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions and loops</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -281,7 +281,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions and loops</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions</span></h1>
 </div>
 
 
@@ -513,13 +513,9 @@ Tip
 <section id="quadratic-functions" class="level3" data-number="5.3.2">
 <h3 data-number="5.3.2" class="anchored" data-anchor-id="quadratic-functions"><span class="header-section-number">5.3.2</span> Quadratic functions</h3>
 <p><span class="math display">\[y=ax^2 + bx + c\]</span></p>
-<ul>
-<li><p>These lines have one curve.</p></li>
-<li><p><span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> don’t have well-defined meanings here.</p></li>
-<li><p>If <span class="math inline">\(a\)</span> is negative, the function opens downward; if <span class="math inline">\(a\)</span> is positive,it opens upward.</p></li>
-<li><p>Note that <span class="math inline">\(x^2\)</span> always returns positive values.</p></li>
-<li><p>Below is a graph of the function <span class="math inline">\(y = x^2\)</span>:</p></li>
-</ul>
+<p>Quadratic functions take “U” forms. If <span class="math inline">\(a\)</span> is positive, it is a regular “U” shape. If <span class="math inline">\(a\)</span> is negative, it is an “inverted U” shape.</p>
+<p>Note that <span class="math inline">\(x^2\)</span> always returns positive values.</p>
+<p>Below is a graph of the function <span class="math inline">\(y = x^2\)</span>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){x <span class="sc">^</span> <span class="dv">2</span>},</span>
@@ -541,15 +537,26 @@ Exercise
 <p>Social scientists commonly use linear or quadratic functions as theoretical simplifications of social phenomena. Can you give any examples?</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Graph the function <span class="math inline">\(y = x^2 + 2x - 10\)</span>, i.e., a quadratic function with <span class="math inline">\(a=1\)</span>, <span class="math inline">\(b=2\)</span>, and <span class="math inline">\(c=-10\)</span>.</p>
+<p>Next, try switching up these values and the <code>xlim =</code> argument. How do they each alter the function (and plot)?</p>
+</div>
+</div>
 </section>
 <section id="cubic-functions" class="level3" data-number="5.3.3">
 <h3 data-number="5.3.3" class="anchored" data-anchor-id="cubic-functions"><span class="header-section-number">5.3.3</span> Cubic functions</h3>
 <p><span class="math display">\[y=ax^3 + bx^2 + cx +d\]</span></p>
-<ul>
-<li><p>These lines (generally) have two curves (inflection points).</p></li>
-<li><p><span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, and <span class="math inline">\(d\)</span> don’t have well-defined meanings here.</p></li>
-<li><p>Below is a graph of the function <span class="math inline">\(y = x^3\)</span>:</p></li>
-</ul>
+<p>These lines (generally) have two curves (inflection points).</p>
+<p>Below is a graph of the function <span class="math inline">\(y = x^3\)</span>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){x <span class="sc">^</span> <span class="dv">3</span>},</span>
@@ -558,18 +565,26 @@ Exercise
 <p><img src="05_functions_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We’ll briefly introduce <a href="https://www.desmos.com/calculator">Desmos</a>, an online graphing calculator. Use Desmos to graph the following function <span class="math inline">\(y = 1x^3 + 1x^2 + 1x + 1\)</span>. What happens when you change the <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, and <span class="math inline">\(d\)</span> parameters?</p>
+</div>
+</div>
 </section>
 <section id="polynomial-functions" class="level3" data-number="5.3.4">
 <h3 data-number="5.3.4" class="anchored" data-anchor-id="polynomial-functions"><span class="header-section-number">5.3.4</span> Polynomial functions</h3>
 <p><span class="math display">\[y=ax^n + bx^{n-1} + ... + c\]</span></p>
-<ul>
-<li><p>These functions have (maximum) <span class="math inline">\(n-1\)</span> changes in direction (turning points).</p></li>
-<li><p>They also have (maximum) <span class="math inline">\(n\)</span> x-intercepts. - They can be made arbitrarily precise.</p></li>
-<li><p>These functions have (maximum) <span class="math inline">\(n-1\)</span> changes in direction (turning points).</p></li>
-<li><p>They also have (maximum) <span class="math inline">\(n\)</span> x-intercepts.</p></li>
-<li><p>They can be made arbitrarily precise.</p></li>
-<li><p>Below is a graph of the function <span class="math inline">\(y = \frac{1}{4}x^4 - 5 x^2 + x\)</span>.</p></li>
-</ul>
+<p>These functions have (a maximum of) <span class="math inline">\(n-1\)</span> changes in direction (turning points). They also have (a maximum of) <span class="math inline">\(n\)</span> x-intercepts.</p>
+<p>High-order polynomials can be made arbitrarily precise!</p>
+<p>Below is a graph of the function <span class="math inline">\(y = \frac{1}{4}x^4 - 5 x^2 + x\)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span> <span class="sc">*</span> x <span class="sc">^</span> <span class="dv">4</span> <span class="sc">-</span> <span class="dv">5</span> <span class="sc">*</span> x <span class="sc">^</span> <span class="dv">2</span> <span class="sc">+</span> x},</span>
@@ -582,10 +597,8 @@ Exercise
 <section id="exponential-functions" class="level3" data-number="5.3.5">
 <h3 data-number="5.3.5" class="anchored" data-anchor-id="exponential-functions"><span class="header-section-number">5.3.5</span> Exponential functions</h3>
 <p><span class="math display">\[y = ab^{x}\]</span></p>
-<ul>
-<li><p>Here our input (<span class="math inline">\(x\)</span>), is the exponent.</p></li>
-<li><p>Below is a graph of the function <span class="math inline">\(y = 2^x\)</span>:</p></li>
-</ul>
+<p>Here our input (<span class="math inline">\(x\)</span>), is the exponent.</p>
+<p>Below is a graph of the function <span class="math inline">\(y = 2^x\)</span>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){<span class="dv">2</span> <span class="sc">^</span> x},</span>
@@ -594,18 +607,27 @@ Exercise
 <p><img src="05_functions_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exponential <em>growth</em> appears quite frequently social science theories. Which variables can be theorized to have exponential growth over time?</p>
+</div>
+</div>
 </section>
 </section>
 <section id="logarithms-and-exponents" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="logarithms-and-exponents"><span class="header-section-number">5.4</span> Logarithms and exponents</h2>
 <section id="logarithms" class="level3" data-number="5.4.1">
 <h3 data-number="5.4.1" class="anchored" data-anchor-id="logarithms"><span class="header-section-number">5.4.1</span> Logarithms</h3>
-<ul>
-<li><p>Logarithms are basically the opposite (inverse) of exponents.</p></li>
-<li><p>They ask how many times you must raise the base to get <span class="math inline">\(x\)</span>.</p></li>
-<li><p><span class="math inline">\(log_a(b)=x\)</span> is asking “a raised to what power x gives b?”</p></li>
-<li><p><span class="math inline">\(\log_3(81) = 4\)</span> because <span class="math inline">\(3^4=81\)</span></p></li>
-</ul>
+<p>Logarithms are the opposite/inverse of exponents. They ask how many times you must raise the base to get <span class="math inline">\(x\)</span>.</p>
+<p>So <span class="math inline">\(log_a(b)=x\)</span> is asking “a raised to what power x gives b?” For example, <span class="math inline">\(\log_3(81) = 4\)</span> because <span class="math inline">\(3^4=81\)</span>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -616,7 +638,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Logarithms can be <em>undefined</em>. The base cannot be 0, 1, or negative.</p>
+<p>Logarithms are <em>undefined</em> if the base is <span class="math inline">\(\le 0\)</span> (at least in the real numbers).</p>
 </div>
 </div>
 </section>
@@ -659,27 +681,19 @@ Important
 </section>
 <section id="illustration-of-e" class="level3" data-number="5.4.5">
 <h3 data-number="5.4.5" class="anchored" data-anchor-id="illustration-of-e"><span class="header-section-number">5.4.5</span> Illustration of <span class="math inline">\(e\)</span></h3>
-<ul>
-<li><p>Imagine you invest $1 in a bank and receive 100% interest for one year, and the bank pays you back once a year: <span class="math display">\[(1+1)^1= 2\]</span></p></li>
-<li><p>When it pays you twice a year with compound interest:</p></li>
-</ul>
+<p>Imagine you invest $1 in a bank and receive 100% interest for one year, and the bank pays you back once a year: <span class="math display">\[(1+1)^1= 2\]</span>.</p>
+<p>When it pays you twice a year with compound interest:</p>
 <p><span class="math display">\[(1+1/2)^2=2.25\]</span></p>
-<ul>
-<li>If it pays you three times a year:</li>
-</ul>
+<p>If it pays you three times a year:</p>
 <p><span class="math display">\[(1+1/3)^3=2.37...\]</span></p>
-<ul>
-<li>What will happen when the bank pays you once a month? Once a day?</li>
-</ul>
+<p>What will happen when the bank pays you once a month? Once a day?</p>
 <p><span class="math display">\[(1+\frac{1}{n})^{n}\]</span></p>
-<ul>
-<li>However, there is limit to what you can get.</li>
-</ul>
+<p>However, there is limit to what you can get.</p>
 <p><span class="math display">\[\lim_{n\to\infty} (1 + \dfrac{1}{n})^n = 2.7183... = e\]</span></p>
-<ul>
-<li><p>For any interest rate <span class="math inline">\(k\)</span> and number of times the bank pays you <span class="math inline">\(t\)</span>: <span class="math display">\[\lim_{n\to\infty} (1 + \dfrac{k}{n})^{nt} = e^{kt}\]</span></p></li>
-<li><p><span class="math inline">\(e\)</span> is important for defining <em>exponential growth</em>. Since <span class="math inline">\(ln(e^x) = x\)</span>, the natural logarithm helps us turn exponential functions into linear ones.</p></li>
-</ul>
+<p>For any interest rate <span class="math inline">\(k\)</span> and number of times the bank pays you <span class="math inline">\(t\)</span>: <span class="math display">\[\lim_{n\to\infty} (1 + \dfrac{k}{n})^{nt} = e^{kt}\]</span></p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(e\)</span> is important for defining <em>exponential growth</em>. Since <span class="math inline">\(ln(e^x) = x\)</span>, the natural logarithm helps us turn exponential functions into linear ones.</p>
+</blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -710,17 +724,70 @@ Exercise
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
+<p>We can also plot logarithms. Remember that <span class="math inline">\(ln(x)\)</span> <span class="math inline">\(\forall x&lt;0\)</span> is undefined (at least in the real numbers), and <code>ggplot2</code> displays a nice warning letting us know!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){<span class="fu">log</span>(x)},</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in log(x): NaNs produced</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 50 rows containing missing values (`geom_function()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="05_functions_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){<span class="fu">log</span>(x)},</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">100</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="05_functions_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
 </section>
 <section id="composite-functions-functions-of-functions" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="composite-functions-functions-of-functions"><span class="header-section-number">5.5</span> Composite functions (functions of functions)</h2>
+<p>Functions can take other functions as inputs, e.g., <span class="math inline">\(f(g(x))\)</span>. This means that the outside function takes the output of the inside function as its input.</p>
+<p>Say we have the exterior function <span class="math inline">\(f(x)=x^2\)</span> and the interior function <span class="math inline">\(g(x)=x-3\)</span>. Then if we want <span class="math inline">\(f(g(x))\)</span>, we would subtract 3 from any input, and then square the result.</p>
 <ul>
-<li><p>Functions can take other functions as inputs, e.g., <span class="math inline">\(f(g(x))\)</span>.</p></li>
-<li><p>This means that the outside function takes the output of the inside function as its input.</p></li>
-<li><p>Say we have the exterior function f(x)=<span class="math inline">\(x^2\)</span> and the interior function g(x)=<span class="math inline">\(x-3\)</span>.</p></li>
-<li><p>Then if we want f(g(x)), we would subtract 3 from any input, and then square the result.</p></li>
-<li><p>We write this <span class="math inline">\((x-3)^2\)</span>, not <span class="math inline">\(x^2-3\)</span>.</p></li>
+<li>We write this as <span class="math inline">\((x-3)^2\)</span>, not <span class="math inline">\(x^2-3\)</span>!</li>
 </ul>
+<p>R can handle this just fine:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x){x <span class="sc">^</span> <span class="dv">2</span>}</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x){x <span class="sc">-</span> <span class="dv">3</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="fu">g</span>(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>Here we can also use pipes to make this code more readable (imagine if we were chaining multiple functions…). Remember that pipes can be inserted with the <code>Cmd/Ctrl + Shift + M</code> shortcut.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute g(5), THEN f() of that</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">g</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span> <span class="fu">f</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Compute <code>g(f(5))</code> using the definitions above. First do it manually, and then check your answer with R.</p>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

@@ -165,7 +165,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions and loops</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -218,6 +218,7 @@ div.csl-indent {
   <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
   <li><a href="#course-outline" id="toc-course-outline" class="nav-link" data-scroll-target="#course-outline">Course outline</a></li>
   <li><a href="#contact-info" id="toc-contact-info" class="nav-link" data-scroll-target="#contact-info">Contact info</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   </ul>
 </nav>
     </div>
@@ -306,77 +307,80 @@ div.csl-indent {
 </section>
 <section id="description" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="description">Description</h2>
-<p>Welcome to Introduction to Methods for Political Science, aka “Methods Camp”! In the past our incoming students have told us their math skills are rusty and they would like to be better prepared for UT’s methods courses. Methods Camp is designed to give everyone a chance to brush up on some skills in preparation for the Stats I and Formal Theory I courses. The other goal of Methods Camp is to allow you to get to know your cohort. We hope that struggling with matrix algebra and the dreaded chain rule will still prove to be a good bonding exercise.</p>
-<p>As you can see from the above schedule, we’ll be meeting on Thursday, August 10th and Friday, August 11th as well as from Monday, August 14th through Wednesday, August 16th. Classes at UT begin the start of the following week on Monday, August 22nd. Below is a tentaive schedule outlining what will be covered in the class, although we may rearrange things a bit if we find we’re going too slowly or too quickly through any of the material.</p>
+<p>Welcome to Introduction to Methods for Political Science, aka “Methods Camp”! Methods Camp is designed to give everyone a chance to brush up on some skills in preparation for the introductory Stats and Formal Theory courses. The other goal of Methods Camp is to allow you to get to know your cohort. We hope that matrix algebra and the chain rule will still prove to be good bonding exercises!</p>
+<p>As you can see from the above schedule, we’ll be meeting on Thursday, August 10th and Friday, August 11th as well as from Monday, August 14th through Wednesday, August 16th. Classes at UT begin the start of the following week on Monday, August 22nd. Below is a tentative schedule outlining what will be covered in the class, although we may rearrange things a bit if we find we’re going too slowly or too quickly through any of the material.</p>
 </section>
 <section id="course-outline" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="course-outline">Course outline</h2>
 <p><strong>1 Thursday morning: R and RStudio</strong></p>
 <ul>
 <li>Introductions</li>
-<li>RStudio (materials are on the website as zipped RStudio projects)</li>
-<li>Objects (vectors, matrices, data frames)</li>
+<li>R and RStudio: basics</li>
+<li>Objects (vectors, matrices, data frames, etc.)</li>
 <li>Basic functions (<code>mean()</code>, <code>length()</code>, etc.)</li>
+<li>Packages: installation and loading (including the tidyverse)</li>
 </ul>
 <p><strong>2 Thursday afternoon: <code>tidyverse</code> basics I</strong></p>
 <ul>
-<li>Packages: installation and loading (including the tidyverse)</li>
-<li>Data wrangling with dplyr (basic verbs, including the new <code>.by =</code> syntax)</li>
+<li>Tidy data</li>
+<li>Data wrangling with dplyr</li>
 <li>Data visualization basics with <code>ggplot2</code></li>
-<li>Data loading (.csv, .rds, .dta, .xlsx)</li>
-<li>Quarto fundamentals</li>
 </ul>
 <p><strong>3 Friday morning: Matrices</strong></p>
 <ul>
 <li>Matrices</li>
 <li>Systems of linear equations</li>
-<li>Matrix operations (multiplication, transpose, inverse, determinant).</li>
+<li>Matrix operations (multiplication, transpose, inverse, determinant)</li>
 <li>Solving systems of linear equations in matrix form (and why that’s cool)</li>
 <li>Introduction to OLS</li>
 </ul>
 <p><strong>4 Friday afternoon: <code>tidyverse</code> basics II</strong></p>
 <ul>
-<li>Data merging and pivoting (<code>*_join()</code>, <code>pivot_*()</code>)</li>
-<li>Value recoding (<code>if_else()</code>, <code>case_when()</code>)</li>
+<li>Loading data in different formats (.csv, R, Excel, Stata, SPSS)</li>
+<li>Recoding values (<code>if_else()</code>, <code>case_when()</code>)</li>
 <li>Missing values</li>
-<li>Data visualization extensions: facets, text annotations</li>
+<li>Pivoting data</li>
+<li>Merging data</li>
 </ul>
-<p><strong>5 Monday morning: Functions and loops</strong></p>
+<p><strong>5 Monday morning: Functions</strong></p>
 <ul>
-<li>Functions</li>
-<li>For-loops and <code>lapply()</code></li>
-<li>Finding R help (help files, effective Googling, ChatGPT)</li>
+<li>Definitions</li>
+<li>Functions in R</li>
+<li>Common types of functions</li>
+<li>Logarithms and exponents</li>
+<li>Composite functions</li>
 </ul>
 <p><strong>6 Monday afternoon: Calculus</strong></p>
 <ul>
-<li>Limits (not sure how to teach this in an R-centric way yet, but there must be a way)</li>
-<li>Derivatives (symbolic, numerical, automatic)</li>
+<li>Limits</li>
+<li>Derivatives</li>
 <li>Integrals</li>
+<li>Calculus in R</li>
 </ul>
 <p><strong>7 Tuesday morning: Probability</strong></p>
 <ul>
-<li>Concepts: probability, random variables, etc.</li>
-<li>PMF, PDF, CDF, etc.</li>
-<li>Distributions (binomial, normal; different functions in R and how to use them)</li>
-<li>Expectation and variance</li>
+<li>Basic concepts</li>
+<li>Random variables and their properties</li>
+<li>Common distributions</li>
 </ul>
 <p><strong>8 Tuesday afternoon: Simulations</strong></p>
 <ul>
-<li>Simulations (ideas, seed setting, etc.)</li>
+<li>Monte Carlo simulations</li>
 <li>Sampling</li>
+<li>Loops in R</li>
 <li>Bootstrapping</li>
 </ul>
 <p><strong>9 Wednesday morning: Text analysis</strong></p>
 <ul>
 <li>String manipulation with <code>stringr</code></li>
-<li>Simple text analysis (counts, tf-idf, etc.) with <code>tidytext</code> and visualization</li>
+<li>Simple text analysis with <code>tidytext</code> and visualization</li>
 </ul>
 <p><strong>10 Wednesday afternoon: Wrap-up</strong></p>
 <ul>
-<li>Project management fundamentals (RStudio projects, keeping raw data, etc.)</li>
+<li>Project management fundamentals</li>
 <li>Self-study resources and materials</li>
 <li>Other software (Overleaf, Zotero, etc.)</li>
-<li>Methods at UT</li>
+<li>Methods resources at UT</li>
 </ul>
 </section>
 <section id="contact-info" class="level2 unnumbered">
@@ -396,16 +400,15 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 // -->
 </script><noscript>mjmartin at utexas dot edu</noscript></p></li>
 </ul>
-<p>If you are interested in learning more about our research, you can also check out our respective websites:</p>
+<p>If you are interested in learning more about our research, you can also check out our respective websites and Twitter accounts (or should we say X…):</p>
 <ul>
-<li><p>Andrés Cruz via <a href="https://arcruz0.github.io/">GitHub Pages</a></p></li>
-<li><p>Matt Martin via <a href="https://mattjamesmartin.github.io/">GitHub Pages</a></p></li>
+<li><p>Andrés Cruz: <a href="https://arcruz0.github.io/">[Website]</a> <a href="https://twitter.com/arcruz0">[Twitter]</a></p></li>
+<li><p>Matt Martin: <a href="https://mattjamesmartin.github.io/">[Website]</a> <a href="https://twitter.com/MattJ_Martin">[Twitter]</a></p></li>
 </ul>
-<p>Or, follow us on Twitter (or should we say X…):</p>
-<ul>
-<li><p>Andrés Cruz: <a href="https://twitter.com/arcruz0" class="uri">https://twitter.com/arcruz0</a></p></li>
-<li><p>Matt Martin: <a href="https://twitter.com/MattJ_Martin" class="uri">https://twitter.com/MattJ_Martin</a></p></li>
-</ul>
+</section>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<p>We thank previous Methods Camp instructors for their accumulated experience and materials, which we have base ours upon. UT GOV professors Stephen Jessee, Connor Jerzak, and Dan Nielson have given us amazing feedback for this iteration of Methods Camp. All errors remain our own (and will hopefully be fixed with your help!).</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
