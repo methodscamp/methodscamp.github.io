@@ -28,18 +28,21 @@ That's it for the installation! We also *strongly* recommend that you change a c
 
 ## Setting up for Methods Camp
 
-All materials for Methods Camp are both on this website and an [RStudio project](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects). An RStudio project is simply a folder where one keeps scripts, datasets, and other files needed for a data analysis project. 
+All materials for Methods Camp are both on this website and available as [RStudio projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects) for you to execute locally. An RStudio project is simply a folder where one keeps scripts, datasets, and other files needed for a data analysis project. 
 
-You can [download our RStudio project here](), as a .zip compressed file. On MacOS, the file will be uncompressed automatically. On Windows, you should do `Right click > Extract all`. 
+There are two RStudio projects for you to download, available as .zip compressed files. On MacOS, the file will be uncompressed automatically. On Windows, you should do `Right click > Extract all`. 
+
+- [Download Part 1 of the class materials]().
+- Download Part 2 of the class materials (available soon).
 
 ::: {.callout-warning}
 Make sure to properly unzip the materials. Double-clicking the .zip file on most Windows systems *will not* unzip the folder---you must do `Right click > Extract all`. 
 :::
 
-You should now have a folder called `methodscamp/` on your computer. Navigate to the `methodscamp.Rproj` file within it and open it. RStudio should open the project right away. You should see `methodscamp` on the top-right of RStudio---this indicates that you are working in our RStudio project.
+You should now have a folder called `methodscamp_part1/` on your computer. Navigate to the `methodscamp_part1.Rproj` file within it and open it. RStudio should open the project right away. You should see `methodscamp_part1` on the top-right of RStudio---this indicates that you are working in our RStudio project.
 
 ![How the bottom-right corner of RStudio looks after opening our project.](images/rstudio_project.png){#fig-rstudio-project}
 
-That's all for setup! We can now start coding. After opening our RStudio project, we'll begin by opening the `01_r_intro.qmd` file from the "Files" panel, in the bottom-right portion of RStudio. This is a Quarto document,[^rmarkdown] which contains both code and explanations (you can also read in the next chapter of this website). 
+That's all for setup! We can now start coding. After opening our RStudio project, we'll begin by opening the `01_r_intro.qmd` file from the "Files" panel, in the bottom-right portion of RStudio. This is a Quarto document,[^rmarkdown] which contains both code and explanations (you can also read the materials in the next chapter of this website). 
 
 [^rmarkdown]: Perhaps you have used [R Markdown](https://rmarkdown.rstudio.com/) before. [Quarto](https://quarto.org/) is the next iteration of R Markdown, and is both more flexible and more powerful!
