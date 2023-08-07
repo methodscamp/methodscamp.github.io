@@ -49,6 +49,7 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 - Missing values
 - Pivoting data
 - Merging data
+- Plotting extensions (trend graphs, facets, customization)
 
 **5 Monday morning: Functions**
 
