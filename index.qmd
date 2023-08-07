@@ -107,4 +107,4 @@ If you are interested in learning more about our research, you can also check ou
 
 ## Acknowledgements
 
-We thank previous Methods Camp instructors for their accumulated experience and materials, which we have base ours upon. UT GOV professors Stephen Jessee, Connor Jerzak, and Dan Nielson have given us amazing feedback for this iteration of Methods Camp. All errors remain our own (and will hopefully be fixed with your help!).
+We thank previous Methods Camp instructors for their accumulated experience and materials, which we have based ours upon. UT GOV professors Stephen Jessee, Connor Jerzak, and Dan Nielson have given us amazing feedback for this iteration of Methods Camp. All errors remain our own (and will hopefully be fixed with your help!).
