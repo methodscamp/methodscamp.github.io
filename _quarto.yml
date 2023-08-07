@@ -15,13 +15,13 @@ book:
     - 03_matrices.qmd
     - 04_tidy_data2.qmd
     - 05_functions.qmd
-    - 06_calculus.qmd
-    - 07_probability.qmd
-    - 08_simulations.qmd
-    - 09_textanalysis.qmd
-    - 10_wrapup.qmd
+    # - 06_calculus.qmd
+    # - 07_probability.qmd
+    # - 08_simulations.qmd
+    # - 09_textanalysis.qmd
+    # - 10_wrapup.qmd
     - references.qmd
-  downloads: pdf
+  # downloads: pdf
   site-url: https://methodscamp.github.io/
   repo-url: https://github.com/methodscamp/methodscamp.github.io
   search: true
@@ -29,7 +29,7 @@ book:
 bibliography: references.bib
 
 nocite: |
-  @usda2019, @fivethirtyeight2021, @qog, @smith2020, @wdi, @countrycode, @fuzzyjoin
+  @usda2019, @fivethirtyeight2021, @qog, @smith2020, @wdi, @countrycode, @fuzzyjoin, @Vdemcodebook2022, @wickham_ggplot2
 format:
   html:
     theme: 
