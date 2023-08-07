@@ -701,7 +701,7 @@ cars_df <- mtcars
 -   First, we transform our dependent variable into a matrix, using the `as.matrix` function and specifying the column of the `mtcars` data set to create a column vector of our observed values for the DV.
 
 ```{r}
-Y <- as.matrix(cars_df[,1])
+Y <- as.matrix(cars_df$mpg)
 Y
 ```
 
@@ -709,14 +709,14 @@ Y
 
 ```{r}
 # create two separate matrices for IVs
-X1 <- as.matrix(cars_df[,4])
-X2 <- as.matrix(cars_df[,6])
+X1 <- as.matrix(cars_df$hp)
+X2 <- as.matrix(cars_df$wt)
 
 # create constant column
 
 # bind them altogether into one matrix
-constant <-  rep(1,nrow(X1))
-X <- cbind(constant,X1,X2)
+constant <-  rep(1, nrow(cars_df))
+X <- cbind(constant, X1, X2)
 X
 ```
 
@@ -728,13 +728,13 @@ Don't forget to use `%*%` for matrix multiplication!
 
 ```{r}
 # X prime X
-XpX <- t(X)%*%X
+XpX <- t(X) %*% X
 
 # X prime X inverse
 XpXinv <- solve(XpX)
 
 # X prime Y
-XpY <- t(X)%*%Y
+XpY <- t(X) %*% Y
 
 # beta coefficient estimates
 bhat <- XpXinv %*% XpY
