@@ -134,8 +134,6 @@ say_my_name <- function(my_name){paste("My name is", my_name)}
 say_my_name("Inigo Montoya")
 ```
 
-While w
-
 :::
 
 ## Common types of functions
