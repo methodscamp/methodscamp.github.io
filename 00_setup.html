@@ -111,9 +111,8 @@ div.csl-indent {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Methods Camp</a> 
-        <div class="sidebar-tools-main tools-wide">
+        <div class="sidebar-tools-main">
     <a href="https://github.com/methodscamp/methodscamp.github.io" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./Methods-Camp.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -165,36 +164,6 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="./05_functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./06_calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Calculus</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./07_probability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./08_simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Simulations</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./09_textanalysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Text analysis</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10_wrapup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrap up</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -263,8 +232,12 @@ div.csl-indent {
 </section>
 <section id="setting-up-for-methods-camp" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-for-methods-camp">Setting up for Methods Camp</h2>
-<p>All materials for Methods Camp are both on this website and an <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">RStudio project</a>. An RStudio project is simply a folder where one keeps scripts, datasets, and other files needed for a data analysis project.</p>
-<p>You can <a href="">download our RStudio project here</a>, as a .zip compressed file. On MacOS, the file will be uncompressed automatically. On Windows, you should do <code>Right click &gt; Extract all</code>.</p>
+<p>All materials for Methods Camp are both on this website and available as <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">RStudio projects</a> for you to execute locally. An RStudio project is simply a folder where one keeps scripts, datasets, and other files needed for a data analysis project.</p>
+<p>There are two RStudio projects for you to download, available as .zip compressed files. On MacOS, the file will be uncompressed automatically. On Windows, you should do <code>Right click &gt; Extract all</code>.</p>
+<ul>
+<li><a href="materials/methodscamp_part1.zip">Download Part 1 of the class materials</a>.</li>
+<li>Download Part 2 of the class materials (available soon).</li>
+</ul>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -278,14 +251,14 @@ Warning
 <p>Make sure to properly unzip the materials. Double-clicking the .zip file on most Windows systems <em>will not</em> unzip the folder—you must do <code>Right click &gt; Extract all</code>.</p>
 </div>
 </div>
-<p>You should now have a folder called <code>methodscamp/</code> on your computer. Navigate to the <code>methodscamp.Rproj</code> file within it and open it. RStudio should open the project right away. You should see <code>methodscamp</code> on the top-right of RStudio—this indicates that you are working in our RStudio project.</p>
+<p>You should now have a folder called <code>methodscamp_part1/</code> on your computer. Navigate to the <code>methodscamp_part1.Rproj</code> file within it and open it. RStudio should open the project right away. You should see <code>methodscamp_part1</code> on the top-right of RStudio—this indicates that you are working in our RStudio project.</p>
 <div id="fig-rstudio-project" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/rstudio_project.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;2: How the bottom-right corner of RStudio looks after opening our project.</figcaption>
 </figure>
 </div>
-<p>That’s all for setup! We can now start coding. After opening our RStudio project, we’ll begin by opening the <code>01_r_intro.qmd</code> file from the “Files” panel, in the bottom-right portion of RStudio. This is a Quarto document,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> which contains both code and explanations (you can also read in the next chapter of this website).</p>
+<p>That’s all for setup! We can now start coding. After opening our RStudio project, we’ll begin by opening the <code>01_r_intro.qmd</code> file from the “Files” panel, in the bottom-right portion of RStudio. This is a Quarto document,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> which contains both code and explanations (you can also read the materials in the next chapter of this website).</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -294,6 +267,9 @@ Arel-Bundock, Vincent, Nils Enevoldsen, and CJ Yetman. 2018. <span>“Countrycod
 </div>
 <div id="ref-wdi" class="csl-entry" role="listitem">
 Bank, World. 2023. <span>“World Bank Open Data.”</span> <a href="https://data.worldbank.org/">https://data.worldbank.org/</a>.
+</div>
+<div id="ref-Vdemcodebook2022" class="csl-entry" role="listitem">
+Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I. Lindberg, Jan Teorell, David Altman, Michael Bernhard, et al. 2022. <span>“V-Dem Codebook V12.”</span> <span>Varieties of Democracy (V-Dem) Project</span>. <a href="https://www.v-dem.net/dsarchive.html">https://www.v-dem.net/dsarchive.html</a>.
 </div>
 <div id="ref-qog" class="csl-entry" role="listitem">
 Dahlberg, Stefan, Aksen Sundström, Sören Holmberg, Bo Rothstein, Natalia Alvarado Pachon, Cem Mert Dalli, and Yente Meijers. 2023. <span>“The Quality of Government Basic Dataset, Version Jan23.”</span> University of Gothenburg: The Quality of Government Institute. <a href="https://www.gu.se/en/quality-government doi:10.18157/qogbasjan23">https://www.gu.se/en/quality-government doi:10.18157/qogbasjan23</a>.
@@ -309,6 +285,9 @@ Smith, Danny. 2020. <em>Survey Research Datasets and <span>R</span></em>. <a hre
 </div>
 <div id="ref-usda2019" class="csl-entry" role="listitem">
 U. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. <span>“Department of Agriculture Agricultural Research Service.”</span> <a href="https://fdc.nal.usda.gov/">https://fdc.nal.usda.gov/</a>.
+</div>
+<div id="ref-wickham_ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley, Danielle Navarro, and Thomas Lin Pedersen. 2023. <em>Ggplot2: <span>Elegant</span> <span>Graphics</span> for <span>Data</span> <span>Analysis</span></em>. 3rd ed. <a href="https://ggplot2-book.org/">https://ggplot2-book.org/</a>.
 </div>
 </div>
 </section>
