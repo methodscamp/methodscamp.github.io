@@ -263,7 +263,7 @@ qog_plus |>
 
 ::: callout-tip
 
-Most of the time, you'll want to do a `left_join()`, which is great for adding new information to a "base" dataset, without dropping information from the latter. In limited situations, other types of joins can be helpful. To learn more about them, you can read Jenny Bryan's [excelent tutorial](https://stat545.com/join-cheatsheet.html) on `dplyr` joins.
+Most of the time, you'll want to do a `left_join()`, which is great for adding new information to a "base" dataset, without dropping information from the latter. In limited situations, other types of joins can be helpful. To learn more about them, you can read Jenny Bryan's [excellent tutorial](https://stat545.com/join-cheatsheet.html) on `dplyr` joins.
 
 :::
 
