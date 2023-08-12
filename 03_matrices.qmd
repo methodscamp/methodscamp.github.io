@@ -684,7 +684,7 @@ $$\hat{\beta} = (X'X)^{-1}X'Y$$
 
 -   Read aloud, we say "X prime X inverse, X prime Y".
 
--   The little hat on our beta ($\hat{\beta}$) signifies that these are estimates, that is our OLS estimators.
+-   The little hat on our beta ($\hat{\beta}$) signifies that these are estimates.
 
 -   Remember, the OLS method is to choose $\hat{\beta}$ such that the sum of squared residuals ("SSR") is minimized.
 
