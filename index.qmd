@@ -82,7 +82,7 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 **9 Wednesday morning: Text analysis**
 
 - String manipulation with `stringr`
-- Simple text analysis with `tidytext` and visualization
+- Simple text analysis and visualization with `tidytext`
 
 **10 Wednesday afternoon: Wrap-up**
 
