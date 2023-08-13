@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Methods Camp - Setup</title>
+<title>Methods Camp - Solutions to exercises</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -49,8 +83,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_r_intro.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./05_functions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -95,7 +129,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00_setup.html">Setup</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./solutions.html">Solutions to exercises</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -132,7 +166,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00_setup.html" class="sidebar-item-text sidebar-link active">
+  <a href="./00_setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setup</span></a>
   </div>
 </li>
@@ -168,7 +202,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="./solutions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Solutions to exercises</span></a>
   </div>
 </li>
@@ -188,8 +222,7 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link active" data-scroll-target="#installing-r-and-rstudio">Installing R and RStudio</a></li>
-  <li><a href="#setting-up-for-methods-camp" id="toc-setting-up-for-methods-camp" class="nav-link" data-scroll-target="#setting-up-for-methods-camp">Setting up for Methods Camp</a></li>
+  <li><a href="#tidy-data-analysis-ii" id="toc-tidy-data-analysis-ii" class="nav-link active" data-scroll-target="#tidy-data-analysis-ii">4. Tidy data analysis II</a></li>
   </ul>
 </nav>
     </div>
@@ -198,7 +231,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup</h1>
+<h1 class="title">Solutions to exercises</h1>
 </div>
 
 
@@ -213,58 +246,94 @@ div.csl-indent {
 
 </header>
 
-<section id="installing-r-and-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="installing-r-and-rstudio">Installing R and RStudio</h2>
-<p><a href="https://cran.r-project.org/">R</a> is a programming language optimized for statistics and data analysis. Most people use R from <a href="https://rstudio.com/">RStudio</a>, a graphical user interface (GUI) that includes a file pane, a graphics pane, and other goodies. Both R and RStudio are open source, i.e., free as in beer and free as in freedom!</p>
-<p>Your first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date—if they are not, follow the instructions below):</p>
+<section id="tidy-data-analysis-ii" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="tidy-data-analysis-ii">4. Tidy data analysis II</h2>
+<blockquote class="blockquote">
+<p><strong>Exercise.</strong></p>
+<p>There is a dataset on country’s CO2 emissions, again from the World Bank (<a href="https://data.worldbank.org/">2023</a>), in “data/wdi_co2.csv”. Load the dataset into R and add a new variable with its information, <code>wdi_co2</code>, to our <code>qog_plus</code> data frame. Finally, compute the average values of CO2 emissions <em>per capita</em>, by country. Tip: this exercise requires you to do many steps—plan ahead before you start coding! Your code:</p>
+</blockquote>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setup: these steps were executed before the exercise</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>qog <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sample_qog_bas_ts_jan23.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>gdp <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"data/wdi_gdp_ppp.xlsx"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>gdp_long <span class="ot">&lt;-</span> gdp <span class="sc">|&gt;</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(country_name, country_code),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"wdi_gdp_ppp"</span>, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_transform =</span> as.integer)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>qog_plus <span class="ot">&lt;-</span> <span class="fu">left_join</span>(qog,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                      gdp_long,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ccodealp"</span> <span class="ot">=</span> <span class="st">"country_code"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <ol type="1">
-<li><p>Download and install R from <a href="https://cran.r-project.org/">the official website, CRAN</a>. Click on “Download R for &lt;Windows/Mac&gt;” and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2 Macs and Intel for older Macs).</p></li>
-<li><p>Download and install RStudio from <a href="https://posit.co/download/rstudio-desktop/">the official website</a>. Scroll down and select the installer for your operating system.</p></li>
+<li>Load data (notice the .csv format):</li>
 </ol>
-<p>After these two steps, you can open RStudio in your system, as you would with any program. You should see something like this:</p>
-<div id="fig-rstudio-first" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/rstudio_first.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: How RStudio looks after a clean installation.</figcaption>
-</figure>
-</div>
-<p>That’s it for the installation! We also <em>strongly</em> recommend that you change a couple of RStudio’s default settings.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> You can change settings by clicking on <code>Tools &gt; Global Options</code> in the menubar. Here are our recommendations:</p>
-<ul>
-<li><p><code>General &gt; Uncheck "Restore .RData into workspace at startup"</code></p></li>
-<li><p><code>General &gt; Save workspace to .RData on Exit &gt; Select "Never"</code></p></li>
-<li><p><code>Code &gt; Check "Use native pipe operator"</code></p></li>
-<li><p><code>Tools &gt; Global Options &gt; Appearance</code> to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes…</p></li>
-</ul>
-</section>
-<section id="setting-up-for-methods-camp" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-for-methods-camp">Setting up for Methods Camp</h2>
-<p>All materials for Methods Camp are both on this website and available as <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">RStudio projects</a> for you to execute locally. An RStudio project is simply a folder where one keeps scripts, datasets, and other files needed for a data analysis project.</p>
-<p>There are two RStudio projects for you to download, available as .zip compressed files. On MacOS, the file will be uncompressed automatically. On Windows, you should do <code>Right click &gt; Extract all</code>.</p>
-<ul>
-<li><a href="materials/methodscamp_part1.zip">Download Part 1 of the class materials</a>.</li>
-<li>Download Part 2 of the class materials (available soon).</li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>emissions <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/wdi_co2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 266 Columns: 35
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): country_name, country_code
+dbl (31): 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, ...
+lgl  (2): 2021, 2022
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Make sure to properly unzip the materials. Double-clicking the .zip file on most Windows systems <em>will not</em> unzip the folder—you must do <code>Right click &gt; Extract all</code>.</p>
+<ol start="2" type="1">
+<li>Pivot data to long, creating the “wdi_co2” variable:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>emissions_long <span class="ot">&lt;-</span> emissions <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(country_name, country_code),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"wdi_co2"</span>,  </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_transform =</span> as.integer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Merge-in information to our existing <code>qog_plus</code> data frame:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>qog_plus2 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(qog_plus,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                       emissions_long,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ccodealp"</span> <span class="ot">=</span> <span class="st">"country_code"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>Create column for emissions <em>per capita</em></li>
+<li>Summarize information to get mean values at the country level (remember that <code>na.rm = T</code> is always a conscious decision):</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>qog_plus2 <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">emissions_pc =</span> <span class="dv">1000</span> <span class="sc">*</span> wdi_co2 <span class="sc">/</span> wdi_pop) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">emissions_pc_country =</span> <span class="fu">mean</span>(emissions_pc, <span class="at">na.rm =</span> T),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> cname)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 35 × 2
+   cname               emissions_pc_country
+   &lt;chr&gt;                              &lt;dbl&gt;
+ 1 Antigua and Barbuda                 4.60
+ 2 Argentina                           3.71
+ 3 Bahamas (the)                       6.17
+ 4 Barbados                            4.53
+ 5 Bolivia                             1.36
+ 6 Brazil                              1.84
+ 7 Belize                              1.74
+ 8 Canada                             15.8 
+ 9 Chile                               3.64
+10 Colombia                            1.54
+# ℹ 25 more rows</code></pre>
 </div>
 </div>
-<p>You should now have a folder called <code>methodscamp_part1/</code> on your computer. Navigate to the <code>methodscamp_part1.Rproj</code> file within it and open it. RStudio should open the project right away. You should see <code>methodscamp_part1</code> on the top-right of RStudio—this indicates that you are working in our RStudio project.</p>
-<div id="fig-rstudio-project" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/rstudio_project.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: How the bottom-right corner of RStudio looks after opening our project.</figcaption>
-</figure>
-</div>
-<p>That’s all for setup! We can now start coding. After opening our RStudio project, we’ll begin by opening the <code>01_r_intro.qmd</code> file from the “Files” panel, in the bottom-right portion of RStudio. This is a Quarto document,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> which contains both code and explanations (you can also read the materials in the next chapter of this website).</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -296,13 +365,6 @@ U. S. Department of Agriculture [USDA], Agricultural Research Service. 2019. <sp
 Wickham, Hadley, Danielle Navarro, and Thomas Lin Pedersen. 2023. <em>Ggplot2: <span>Elegant</span> <span>Graphics</span> for <span>Data</span> <span>Analysis</span></em>. 3rd ed. <a href="https://ggplot2-book.org/">https://ggplot2-book.org/</a>.
 </div>
 </div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>The idea behind these settings (or at least the first two) is to force R to start from scratch with each new session. No lingering objects from previous coding sessions avoids misunderstandings and helps with reproducibility!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Perhaps you have used <a href="https://rmarkdown.rstudio.com/">R Markdown</a> before. <a href="https://quarto.org/">Quarto</a> is the next iteration of R Markdown, and is both more flexible and more powerful!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -656,13 +718,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Class schedule</span>
+      <a href="./05_functions.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_r_intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intro to R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
