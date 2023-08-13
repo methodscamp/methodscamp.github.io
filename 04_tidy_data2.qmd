@@ -86,6 +86,14 @@ qog |>
   count(ht_colonial)
 ```
 
+::: callout-tip
+Another common way to compute quick tabulations in R is with the `table()` function. Be aware that this takes a *vector* as the input:
+
+```{r}
+table(qog$ht_colonial)
+```
+:::
+
 We might want to recode this variable. For instance, we could create a *dummy*/*binary* variable for whether the country was a British colony. We can do this with `if_else()`, which works with logical conditions:
 
 ```{r}
