@@ -1,0 +1,62 @@
+# Solutions to exercises {.unnumbered}
+
+## 4. Tidy data analysis II {.unnumbered}
+
+> **Exercise.** 
+>
+> There is a dataset on country's CO2 emissions, again from the World Bank ([2023](https://data.worldbank.org/)), in "data/wdi_co2.csv". Load the dataset into R and add a new variable with its information, `wdi_co2`, to our `qog_plus` data frame. Finally, compute the average values of CO2 emissions *per capita*, by country. Tip: this exercise requires you to do many steps---plan ahead before you start coding! Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+# setup: these steps were executed before the exercise
+library(tidyverse)
+qog <- read_csv("data/sample_qog_bas_ts_jan23.csv")
+gdp <- readxl::read_excel("data/wdi_gdp_ppp.xlsx")
+
+gdp_long <- gdp |> 
+  pivot_longer(cols = -c(country_name, country_code),
+               names_to = "year",
+               values_to = "wdi_gdp_ppp", 
+               names_transform = as.integer)
+
+qog_plus <- left_join(qog,
+                      gdp_long,
+                      by = c("ccodealp" = "country_code",
+                             "year"))
+```
+
+1) Load data (notice the .csv format):
+
+```{r}
+emissions <- read_csv("data/wdi_co2.csv")
+```
+
+2) Pivot data to long, creating the "wdi_co2" variable:
+
+```{r}
+emissions_long <- emissions |> 
+  pivot_longer(cols = -c(country_name, country_code),
+               names_to = "year",
+               values_to = "wdi_co2",  
+               names_transform = as.integer)
+```
+
+3) Merge-in information to our existing `qog_plus` data frame:
+
+```{r}
+qog_plus2 <- left_join(qog_plus,
+                       emissions_long,
+                      by = c("ccodealp" = "country_code",
+                             "year"))
+```
+
+4) Create column for emissions *per capita*
+5) Summarize information to get mean values at the country level (remember that `na.rm = T` is always a conscious decision):
+
+```{r}
+qog_plus2 |> 
+  mutate(emissions_pc = 1000 * wdi_co2 / wdi_pop) |> 
+  summarize(emissions_pc_country = mean(emissions_pc, na.rm = T),
+            .by = cname)
+```

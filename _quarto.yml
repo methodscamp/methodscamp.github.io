@@ -20,6 +20,7 @@ book:
     # - 08_simulations.qmd
     # - 09_textanalysis.qmd
     # - 10_wrapup.qmd
+    - solutions.qmd
     - references.qmd
   # downloads: pdf
   site-url: https://methodscamp.github.io/
