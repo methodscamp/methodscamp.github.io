@@ -6,8 +6,8 @@
 | Fri, Aug. 11   | 9:00 AM - 4:00 PM | RLP 1.302E |
 | Sat, Aug. 12   | No class          | \-         |
 | Sun, Aug. 13   | No class          | \-         |
-| Mon, Aug. 14   | 9:00 AM - 4:00 PM | RLP 1.302E |
-| Tues, Aug. 15  | 9:00 AM - 4:00 PM | RLP 1.302E |
+| Mon, Aug. 14   | 9:00 AM - 4:00 PM | RLP 1.302D |
+| Tues, Aug. 15  | 9:00 AM - 4:00 PM | RLP 1.302D |
 | Weds, Aug. 16  | 9:00 AM - 4:00 PM | RLP 1.302E |
 
 On class days, we will have a lunch break from 12:00-1:00 PM. We'll also take short breaks periodically during the morning and afternoon sessions as needed.
@@ -82,7 +82,7 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 **9 Wednesday morning: Text analysis**
 
 - String manipulation with `stringr`
-- Simple text analysis with `tidytext` and visualization
+- Simple text analysis and visualization with `tidytext`
 
 **10 Wednesday afternoon: Wrap-up**
 

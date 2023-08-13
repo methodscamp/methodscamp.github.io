@@ -271,7 +271,7 @@ qog_plus |>
 
 ::: callout-tip
 
-Most of the time, you'll want to do a `left_join()`, which is great for adding new information to a "base" dataset, without dropping information from the latter. In limited situations, other types of joins can be helpful. To learn more about them, you can read Jenny Bryan's [excelent tutorial](https://stat545.com/join-cheatsheet.html) on `dplyr` joins.
+Most of the time, you'll want to do a `left_join()`, which is great for adding new information to a "base" dataset, without dropping information from the latter. In limited situations, other types of joins can be helpful. To learn more about them, you can read Jenny Bryan's [excellent tutorial](https://stat545.com/join-cheatsheet.html) on `dplyr` joins.
 
 :::
 
@@ -279,7 +279,7 @@ Most of the time, you'll want to do a `left_join()`, which is great for adding n
 
 #### Exercise
 
-There is a dataset on country's CO2 emissions, again from the World Bank ([2023](https://data.worldbank.org/)), in "data/wdi_co2.csv". Load the dataset into R and add a new variable with its information, `wdi_co2`, to our `qog_plus` data frame. Finally, compute the average values of CO2 emissines *per capita*, by country. Tip: this exercise requires you to do many steps---plan ahead before you start coding! Your code:
+There is a dataset on country's CO2 emissions, again from the World Bank ([2023](https://data.worldbank.org/)), in "data/wdi_co2.csv". Load the dataset into R and add a new variable with its information, `wdi_co2`, to our `qog_plus` data frame. Finally, compute the average values of CO2 emissions *per capita*, by country. Tip: this exercise requires you to do many steps---plan ahead before you start coding! Your code:
 
 :::
 
@@ -302,7 +302,7 @@ dem_yearly <- qog |>
 dem_yearly
 ```
 
-Now we can plot them with a scatteplot:
+Now we can plot them with a scatterplot:
 
 ```{r}
 ggplot(dem_yearly, aes(x = year, y = mean_dem)) +
