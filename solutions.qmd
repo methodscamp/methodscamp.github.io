@@ -51,7 +51,7 @@ qog_plus2 <- left_join(qog_plus,
                              "year"))
 ```
 
-4) Create column for emissions *per capita*
+4) Create column for emissions *per capita* (here we do per 1,000 people).
 5) Summarize information to get mean values at the country level (remember that `na.rm = T` is always a conscious decision):
 
 ```{r}
