@@ -15,7 +15,7 @@ book:
     - 03_matrices.qmd
     - 04_tidy_data2.qmd
     - 05_functions.qmd
-    # - 06_calculus.qmd
+    - 06_calculus.qmd
     # - 07_probability.qmd
     # - 08_simulations.qmd
     # - 09_textanalysis.qmd
