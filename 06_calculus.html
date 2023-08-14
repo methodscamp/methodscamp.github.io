@@ -243,13 +243,11 @@ div.csl-indent {
   </ul></li>
   <li><a href="#integrals" id="toc-integrals" class="nav-link" data-scroll-target="#integrals"><span class="header-section-number">6.3</span> Integrals</a>
   <ul class="collapse">
-  <li><a href="#area-under-a-curve" id="toc-area-under-a-curve" class="nav-link" data-scroll-target="#area-under-a-curve"><span class="header-section-number">6.3.1</span> Area under a curve</a></li>
-  <li><a href="#integrals-as-summation" id="toc-integrals-as-summation" class="nav-link" data-scroll-target="#integrals-as-summation"><span class="header-section-number">6.3.2</span> Integrals as summation</a></li>
-  <li><a href="#definite-integrals" id="toc-definite-integrals" class="nav-link" data-scroll-target="#definite-integrals"><span class="header-section-number">6.3.3</span> Definite integrals</a></li>
-  <li><a href="#indefinite-integrals" id="toc-indefinite-integrals" class="nav-link" data-scroll-target="#indefinite-integrals"><span class="header-section-number">6.3.4</span> Indefinite integrals</a></li>
-  <li><a href="#solving-definite-integrals" id="toc-solving-definite-integrals" class="nav-link" data-scroll-target="#solving-definite-integrals"><span class="header-section-number">6.3.5</span> Solving definite integrals</a></li>
-  <li><a href="#rules-of-integration" id="toc-rules-of-integration" class="nav-link" data-scroll-target="#rules-of-integration"><span class="header-section-number">6.3.6</span> Rules of integration</a></li>
-  <li><a href="#solving-the-problem" id="toc-solving-the-problem" class="nav-link" data-scroll-target="#solving-the-problem"><span class="header-section-number">6.3.7</span> Solving the problem</a></li>
+  <li><a href="#integrals-are-about-infinitesimals-too" id="toc-integrals-are-about-infinitesimals-too" class="nav-link" data-scroll-target="#integrals-are-about-infinitesimals-too"><span class="header-section-number">6.3.1</span> Integrals are about infinitesimals too</a></li>
+  <li><a href="#indefinite-integrals-as-antiderivatives" id="toc-indefinite-integrals-as-antiderivatives" class="nav-link" data-scroll-target="#indefinite-integrals-as-antiderivatives"><span class="header-section-number">6.3.2</span> Indefinite integrals as antiderivatives</a></li>
+  <li><a href="#solving-definite-integrals" id="toc-solving-definite-integrals" class="nav-link" data-scroll-target="#solving-definite-integrals"><span class="header-section-number">6.3.3</span> Solving definite integrals</a></li>
+  <li><a href="#rules-of-integration" id="toc-rules-of-integration" class="nav-link" data-scroll-target="#rules-of-integration"><span class="header-section-number">6.3.4</span> Rules of integration</a></li>
+  <li><a href="#solving-the-problem" id="toc-solving-the-problem" class="nav-link" data-scroll-target="#solving-the-problem"><span class="header-section-number">6.3.5</span> Solving the problem</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -337,7 +335,7 @@ m = \frac{f(x_1+ \Delta x) - f(x_1)}{\Delta x}
 \]</span></p>
 <p>A few points on notation:</p>
 <ul>
-<li><span class="math inline">\(\frac{d}{dx} f(x)\)</span> is read “The derivative of <span class="math inline">\(f\)</span> of <span class="math inline">\(x\)</span> with respect to <span class="math inline">\(x\)</span>.”
+<li><p><span class="math inline">\(\frac{d}{dx} f(x)\)</span> is read “The derivative of <span class="math inline">\(f\)</span> of <span class="math inline">\(x\)</span> with respect to <span class="math inline">\(x\)</span>.”</p>
 <ul>
 <li>The variable with respect to which we’re differentiating is the one that appears in the bottom (in the case above, this is <span class="math inline">\(x\)</span>).</li>
 </ul>
@@ -354,7 +352,7 @@ Warning
 <p>While the above looks like a fraction, it’s really not. Do not try to cancel out the <span class="math inline">\(d\)</span>s!</p>
 </div>
 </div></li>
-<li><span class="math inline">\(f'(x)\)</span> (read: “<span class="math inline">\(f\)</span> prime <span class="math inline">\(x\)</span>”) is the derivative of <span class="math inline">\(f(x)\)</span>. This is a more compact form to refer to derivatives when you have defined <span class="math inline">\(f(x)\)</span> elsewhere.</li>
+<li><p><span class="math inline">\(f'(x)\)</span> (read: “<span class="math inline">\(f\)</span> prime <span class="math inline">\(x\)</span>”) is the derivative of <span class="math inline">\(f(x)\)</span>. This is a more compact form to refer to derivatives when you have defined <span class="math inline">\(f(x)\)</span> elsewhere.</p></li>
 </ul>
 <section id="rules-of-differentiation" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="rules-of-differentiation"><span class="header-section-number">6.1.1</span> Rules of differentiation</h3>
@@ -637,79 +635,66 @@ Note
 </section>
 <section id="integrals" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="integrals"><span class="header-section-number">6.3</span> Integrals</h2>
-<section id="area-under-a-curve" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="area-under-a-curve"><span class="header-section-number">6.3.1</span> Area under a curve</h3>
-<ul>
-<li><p>Often we want to find the area under a curve.</p></li>
-<li><p>Sometimes finding the area is easy. What’s the area under the curve between <span class="math inline">\(x=-1\)</span> and <span class="math inline">\(x=1\)</span> for this function? <span class="math display">\[f(x) =
+<p>Informally, we can think of integrals as the flip side of derivatives.</p>
+<p>We can motivate integrals as a way of finding the area under a curve. Sometimes finding the area is easy. What’s the area under the curve between <span class="math inline">\(x=-1\)</span> and <span class="math inline">\(x=1\)</span> for this function?</p>
+<p><span class="math display">\[
+f(x) =
 \begin{cases}
 \frac{1}{3} &amp; \text{for } x \in [0, 3] \\
 0 &amp; \text{otherwise}
-\end{cases}\]</span></p></li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled" title="&quot;Hint">
+\end{cases}
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-“Hint
+Hint
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We can draw this and look at the graph. Remember: <span class="math display">\[area = \ell*w\]</span></p>
+<p>We can draw this and look at the graph. Remember:</p>
+<p><span class="math display">\[
+area = \ell*w
+\]</span></p>
 </div>
 </div>
-<ul>
-<li>Normally, finding the area under a curve is much harder. But this is basically the question behind integration.</li>
-</ul>
+<p>Normally, finding the area under a curve is much harder. But this is basically the question behind integration.</p>
+<section id="integrals-are-about-infinitesimals-too" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="integrals-are-about-infinitesimals-too"><span class="header-section-number">6.3.1</span> Integrals are about infinitesimals too</h3>
+<p>Let’s say we have a function <span class="math inline">\(y = x^2\)</span> And we want to find the area under the curve from <span class="math inline">\(x=0\)</span> to <span class="math inline">\(x=1\)</span>. How would we do this?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># draw main function</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){x <span class="sc">^</span> <span class="dv">2</span>}, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fill area under the curve between x=0 and x=1</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>), <span class="at">stat =</span> <span class="st">"function"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">fun =</span> <span class="cf">function</span>(x){x <span class="sc">^</span> <span class="dv">2</span>}, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">fill =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="06_calculus_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>One way to approximate this area is by drawing narrow rectangles that cover the area in red. Let’s draw this on the board.</p>
+<p>Our approximation is rough, but it gets better and better the narrower the rectangles are:</p>
+<p><span class="math display">\[
+Area = lim_{\Delta x \to 0}\sum_i^n{f(x) \cdot \Delta x}
+\]</span></p>
+<p>, where <span class="math inline">\(\Delta x\)</span> is the width of the rectangles and <span class="math inline">\(n\)</span> is their number.</p>
+<p>This is actually one way to define the <strong>definite integral</strong>, <span class="math inline">\(\displaystyle\int_a^bf(x)dx\)</span> (also known as the Riemann integral). We’ll learn how to compute these in just a moment.</p>
 </section>
-<section id="integrals-as-summation" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="integrals-as-summation"><span class="header-section-number">6.3.2</span> Integrals as summation</h3>
-<ul>
-<li><p>We are already familiar with summation notation. <span class="math display">\[\displaystyle\sum_{i=1}^{n} i\]</span></p></li>
-<li><p>This only works when we have discrete values to add.</p>
-<ul>
-<li>When we need to add continuously, we have to use something else. Specifically, integrals.</li>
-</ul></li>
-</ul>
+<section id="indefinite-integrals-as-antiderivatives" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="indefinite-integrals-as-antiderivatives"><span class="header-section-number">6.3.2</span> Indefinite integrals as antiderivatives</h3>
+<p>The <em>indefinite</em> integral, also known as the <em>anti-derivative</em>, <span class="math inline">\(F(x)\)</span> is the inverse of the function <span class="math inline">\(f'(x)\)</span>. <span class="math display">\[F(x)= \displaystyle\int f(x) \text{ } dx\]</span></p>
+<p>This means if you take the derivative of <span class="math inline">\(F(x)\)</span>, you wind up back at <span class="math inline">\(f(x)\)</span>. <span class="math display">\[F' = f \text{ or } \displaystyle\frac{dF(x)}{dx} = f(x)\]</span></p>
+<p>For example, what is the antiderivative of a constant function <span class="math inline">\(f(x) = 1\)</span>? Is there just one? (this example comes from <a href="https://press.princeton.edu/books/paperback/9780691159171/a-mathematics-course-for-political-and-social-research">Moore and Siegel, 2013</a>, p.&nbsp;137).</p>
+<p>This process is called <em>anti-differentiation</em>. We can use this concept to help us solve definite integrals!</p>
 </section>
-<section id="definite-integrals" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="definite-integrals"><span class="header-section-number">6.3.3</span> Definite integrals</h3>
-<ul>
-<li><p>Let’s say we have a function <span class="math display">\[ y = x^2 \]</span> And we want to find the area under the curve from <span class="math inline">\(x=0\)</span> to <span class="math inline">\(x=1\)</span>.</p></li>
-<li><p>To find the area we’re interested in here, we can use the definite integral.</p></li>
-<li><p>Generally speaking, the notation looks like this: <span class="math display">\[\displaystyle\int_{x=a}^{b} f(x),dx\]</span></p></li>
-<li><p>Here <span class="math inline">\(a\)</span> is the lower limit of integration, <span class="math inline">\(b\)</span> is the upper limit of integration, our function <span class="math inline">\(f(x)\)</span> is our integrand, and <span class="math inline">\(x\)</span> is our variable of integration.</p></li>
-</ul>
-<hr>
-<ul>
-<li><p>For our question, we’re looking for the following: <span class="math display">\[\displaystyle\int_{x=0}^{1} f(x) dx\]</span></p></li>
-<li><p>This will give us a real number denoting the area under the curve of our function (<span class="math inline">\(y=x^2\)</span>) between <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=1\)</span>.</p></li>
-<li><p>If <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a,b]\)</span> or bounded on <span class="math inline">\([a,b]\)</span> with a finite number of discontinuities, then <span class="math inline">\(f\)</span> is integrable on <span class="math inline">\([a,b]\)</span>.</p></li>
-</ul>
-</section>
-<section id="indefinite-integrals" class="level3" data-number="6.3.4">
-<h3 data-number="6.3.4" class="anchored" data-anchor-id="indefinite-integrals"><span class="header-section-number">6.3.4</span> Indefinite integrals</h3>
-<ul>
-<li><p>The <em>indefinite</em> integral, also known as the <em>anti-derivative</em>, <span class="math inline">\(F(x)\)</span> is the inverse of the function <span class="math inline">\(f'(x)\)</span>. <span class="math display">\[F(x)= \displaystyle\int f(x) \text{ } dx\]</span></p></li>
-<li><p>This means if you take the derivative of <span class="math inline">\(F(x)\)</span>, you wind up back at <span class="math inline">\(f(x)\)</span>. <span class="math display">\[F' = f \text{ or } \displaystyle\frac{dF(x)}{dx} = f(x)\]</span></p></li>
-<li><p>This process is called anti-differentiation, or indefinite integration.</p>
-<ul>
-<li>While the definite integral gives us a real number (the total area under a curve), the indefinite integral gives us a function.</li>
-</ul></li>
-<li><p>We need the concept of indefinite integrals to help us solve definite integrals.</p></li>
-</ul>
-</section>
-<section id="solving-definite-integrals" class="level3" data-number="6.3.5">
-<h3 data-number="6.3.5" class="anchored" data-anchor-id="solving-definite-integrals"><span class="header-section-number">6.3.5</span> Solving definite integrals</h3>
-<ul>
-<li>The easiest way to calculate definite integrals, known as the “fundamental theorem of calculus,” is shown below:</li>
-</ul>
+<section id="solving-definite-integrals" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="solving-definite-integrals"><span class="header-section-number">6.3.3</span> Solving definite integrals</h3>
+<p>One way to calculate definite integrals, known as the “fundamental theorem of calculus,” is shown below:</p>
 <p><span class="math display">\[\displaystyle\int_{a}^{b} f(x) \text{ } dx = F(b)-F(a) = F(x)\bigg|_{a}^{b}\]</span></p>
-<ul>
-<li>First we determine the antiderivative (indefinite integral) of <span class="math inline">\(f(x)\)</span> (and represent it <span class="math inline">\(F(x)\)</span>), substitute the upper limit first and then the lower limit one by one, and subtract the results in order.</li>
-</ul>
+<p>First we determine the antiderivative (indefinite integral) of <span class="math inline">\(f(x)\)</span> (and represent it <span class="math inline">\(F(x)\)</span>), substitute the upper limit first and then the lower limit one by one, and subtract the results in order.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -725,8 +710,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="rules-of-integration" class="level3" data-number="6.3.6">
-<h3 data-number="6.3.6" class="anchored" data-anchor-id="rules-of-integration"><span class="header-section-number">6.3.6</span> Rules of integration</h3>
+<section id="rules-of-integration" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="rules-of-integration"><span class="header-section-number">6.3.4</span> Rules of integration</h3>
 <p><span class="math display">\[ \displaystyle\int_{a}^{a}f(x) \text{ }dx = 0\]</span></p>
 <p><span class="math display">\[\displaystyle\int_{a}^{b} f(x) \text{ } dx = -\displaystyle\int_{b}^{a}f(x)dx\]</span></p>
 <p><span class="math display">\[\int a \text{ }dx = ax + C \text { where $a$ is a constant}\]</span></p>
@@ -735,8 +720,8 @@ Warning
 <p><span class="math display">\[\int x^n dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1\]</span></p>
 <p><span class="math display">\[\int x^{-1}dx = \ln |x| + C\]</span></p>
 </section>
-<section id="solving-the-problem" class="level3" data-number="6.3.7">
-<h3 data-number="6.3.7" class="anchored" data-anchor-id="solving-the-problem"><span class="header-section-number">6.3.7</span> Solving the problem</h3>
+<section id="solving-the-problem" class="level3" data-number="6.3.5">
+<h3 data-number="6.3.5" class="anchored" data-anchor-id="solving-the-problem"><span class="header-section-number">6.3.5</span> Solving the problem</h3>
 <p>Remember our function <span class="math inline">\(y=x^2\)</span> and our goal of finding the area under the curve from <span class="math inline">\(x=0\)</span> to <span class="math inline">\(x=1\)</span>.</p>
 <ul>
 <li><p>Find the indefinite integral, <span class="math inline">\(F(x)\)</span></p>
@@ -782,14 +767,14 @@ Exercise
 <li><p><span class="math inline">\(\int x^2 \text{ } dx\)</span></p></li>
 <li><p><span class="math inline">\(\int 3x^2\text{ } dx\)</span></p></li>
 <li><p><span class="math inline">\(\int x\text{ } dx\)</span></p></li>
-<li><p><span class="math inline">\(\int 3x^2 + 2x - 7\text{ }dx\)</span></p></li>
+<li><p><span class="math inline">\(\int (3x^2 + 2x - 7\text{ })dx\)</span></p></li>
 <li><p><span class="math inline">\(\int \dfrac{2}{x}\text{ }dx\)</span></p></li>
 </ol>
 <p>And solve the following definite integrals:</p>
 <ol type="1">
 <li><p><span class="math inline">\(\displaystyle\int_{1}^{7} x^2 \text{ } dx\)</span></p></li>
 <li><p><span class="math inline">\(\displaystyle\int_{1}^{10} 3x^2 \text{ } dx\)</span></p></li>
-<li><p><span class="math inline">\(\int_7^7 x\text{ } dx\)</span></p></li>
+<li><p><span class="math inline">\(\displaystyle\int_7^7 x\text{ } dx\)</span></p></li>
 <li><p><span class="math inline">\(\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx\)</span></p></li>
 <li><p><span class="math inline">\(\int_{1}^{e} \dfrac{2}{x}\text{ }dx\)</span></p></li>
 </ol>
@@ -813,8 +798,17 @@ Dahlberg, Stefan, Aksen Sundström, Sören Holmberg, Bo Rothstein, Natalia Alvar
 <div id="ref-fivethirtyeight2021" class="csl-entry" role="listitem">
 FiveThirtyEight. 2021. <span>“Tracking <span>Congress</span> <span>In</span> <span>The</span> <span>Age</span> <span>Of</span> <span>Trump</span> [Dataset].”</span> <a href="https://projects.fivethirtyeight.com/congress-trump-score/">https://projects.fivethirtyeight.com/congress-trump-score/</a>.
 </div>
+<div id="ref-imai_quantitative_2022" class="csl-entry" role="listitem">
+Imai, Kosuke, and Nora Webb Williams. 2022. <em>Quantitative Social Science: An Introduction in Tidyverse</em>. Princeton; Oxford: Princeton University Press.
+</div>
+<div id="ref-moore_mathematics_2013" class="csl-entry" role="listitem">
+Moore, Will H., and David A. Siegel. 2013. <em>A Mathematics Course for Political and Social Research</em>. Princeton, NJ: Princeton University Pres.
+</div>
 <div id="ref-fuzzyjoin" class="csl-entry" role="listitem">
 Robinson, David. 2020. <em>Fuzzyjoin: Join Tables Together on Inexact Matching</em>. <a href="https://github.com/dgrtwo/fuzzyjoin">https://github.com/dgrtwo/fuzzyjoin</a>.
+</div>
+<div id="ref-rossi1996mathematics" class="csl-entry" role="listitem">
+Rossi, Hugo. 1996. <span>“Mathematics Is an Edifice, Not a Toolbox.”</span> <em>Notices of the AMS</em> 43 (10): 1108.
 </div>
 <div id="ref-smith2020" class="csl-entry" role="listitem">
 Smith, Danny. 2020. <em>Survey Research Datasets and <span>R</span></em>. <a href="https://socialresearchcentre.github.io/r_survey_datasets/">https://socialresearchcentre.github.io/r_survey_datasets/</a>.
