@@ -1,318 +1,329 @@
 # Calculus
 
--   Calculus is about dealing with infinitesimal values.
--   We are going to focus on two big ideas:
-    -   Derivatives
-    -   Integrals
+In this section we'll focus on three big ideas from calculus: derivatives, optimization, and integrals.
 
-## Derviatives
+## Derivatives
 
--   "Derivative" is just a fancy term for slope.
--   Slope is the rate of change $\frac{\delta y}{\delta x}$ or $\frac{d y}{d x}$.
--   Specifically, the derivative is the *instantaneous* rate of change.
--   We need slope for our statistics, which are all about fitting lines.
--   We also need slope for taking maxima and minima.
--   The equation for a line is $y = mx + b$. What is its slope?
+Derivatives are about (instantaneous) rate of change.
 
-### Calculating derivatives
+> "In the fall of 1972 President Nixon announced that the rate of increase of inflation was decreasing. This was the first time a sitting president used the third derivative to advance his case for reelection" ([Rossi 1996](https://www.ams.org/notices/199610/page2.pdf))
 
--   Slope is rise over run, which is $\dfrac{f(x+\Delta x)-f(x)}{\Delta x}$
--   To see why, consider the slope of a line connecting two points: $$m = \displaystyle\frac{f(x_2) - f(x_1)}{x_2-x_1}$$
--   We can define $x_2 = x_1 + \Delta x$ (or equivalently $\Delta x = x_2 - x_1$) $$m = \dfrac{f(x_1+ \Delta x) - f(x_1)}{\Delta x}$$
+Let's dissect what Nixon might have said:
 
-------------------------------------------------------------------------
+> Inflation's \[first derivative, of prices\] rate of increase \[second derivative\] is going down \[third derivative\].
 
--   As we've seen, for a curve, we need to be infinitely close for our line's defining points, yielding $$\lim_{\Delta x\to 0} \frac{f(x+ \Delta x)-f(x)}{\Delta x}$$
+A more graphical way to think about a derivatives is as a *slope*. Let's consider a linear function of the form $y = 2 x$:
 
--   This gives us this instantaneous slope (rate of change) of a function at every point on its domain. The above equation is the definition of the derivative.
-
-### Notation
-
--   $\frac{d}{dx} f(x)$ is read "The derivative of $f$ of $x$ with respect to $x$."
-
-    -   You can also say "The instantaneous rate of change in $f$ of $x$ with respect to $x$."
-
--   Lagrange's prime notation: $f'(x)$ (read: "$f$ prime $x$") is the derivative of $f(x)$.
-
--   If $y=f(x)$, $\frac{dy}{dx}$ is "The derivative of $y$ with respect to $x$".
-
-    -   The variable with respect to which we're differentiating is the one that appears in the denominator.
-
-::: callout-warning
-Do not try to cancel out the $d$'s, no matter how tempting it is.
-:::
-
-------------------------------------------------------------------------
-
-**Examples**
-
--   What is $\dfrac{d(x^2)}{dx}$?
-
-    -   $x^2$
-    -   $2 x^{2-1}$ -$2x$
-
--   What is $\frac{d(4x^3)}{dx}$?
-
-    -   $4x^3$
-
-    -   $4*3 x^{3-1}$
-
-    -   $12x^2$
-
-------------------------------------------------------------------------
-
-**Practice**
-
--   Take the derivative of each of the following: $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
-
-------------------------------------------------------------------------
-
-**Practice**
-
--   Evaluate the derivatives at $x=2$ and $x=-1$ $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
-
-------------------------------------------------------------------------
-
-**Practice**
-
--   Take the derivative of each of the following: $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
-
-------------------------------------------------------------------------
-
--   Evaluate the derivatives at $x=2$ and $x=-1$ $$x^3$$ $$3x^2$$ $$60x^{11}$$ $$x$$ $$\frac{4}{x^2} $$ $$9 \sqrt{x}$$ $$6 x^{5/2}$$ $$11,596,232$$
-
-------------------------------------------------------------------------
-
-### Special functions
-
--   A few functions have particular rules:
-
-$$\frac{d (ln(x))}{dx}=\frac{1}{x}$$
-
-$$\dfrac{d (log_b(x))}{dx}=\dfrac{1}{x*ln(b)}$$
-
-$$\frac{d (e^x)}{dx}=e^x$$
-
-$$\frac{d (a^x)}{dx}=a^x ln(a)$$
-
-$$\frac{dy}{dx}c=0$$
-
-$$\frac{d (x^x)}{dx}=x^x (1+ln(x))$$
-
-### Derivatives with addition and substraction
-
--   This is perhaps the rasiest rule to remember: $$\frac{d (f(x) \pm g(x))}{dx}=f'(x) \pm g'(x)$$
-
-------------------------------------------------------------------------
-
-**Practice**
-
--   Take the derivative of each of the following: $$x^2 + x +5$$ $$x^4 - 4x^3 + 5x^2 + 8x - 6$$ $$3x^5 - 6x^2$$ $$5x^2 + 8 \sqrt{x} - \frac{1}{x}$$ $$ln(x) + 5e^x - 4x^3$$
-
-## Advanced rules
-
-### Product rule
-
--   This rule is more complicated: $$\frac{d (f(x) \times g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$$
--   Example: $$2x \times 3x$$
-$$ f(x)=2x$$
-$$g(x) = 3x$$
-$$f'(x) = 2$$
-$$g'(x) = 3$$
-$$f'(x)g(x) + g'(x)f(x) = 2 \times 3x + 3 \times 2x$$
-$$\frac{d (2x \times 3x)}{dx} = 6x + 6x = 12x$$
-
-
-------------------------------------------------------------------------
-
-**Practice**
-
--   Take the derivative of each of these: $$x^3 * x$$ $$e^x * x^2$$ $$ln(x) * x^{-3}$$
-
-::: {.callout-tip title="Reminder!"}
-$$\frac{d (f(x) * g(x))}{dx}=f'(x)g(x) + g'(x)f(x)$$
-:::
-
-### Quotient rule
-
-$$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$ 
--   If you're having trouble with this, just apply the product rule to the following: $$\frac{d[f(x)*g^{-1}(x)]}{dx}$$
-
-::: {.callout-tip title="Reminder!"}
-$$\frac{d \frac{f(x)}{g(x)}}{dx}=\frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$$
-:::
-
-### Chain rule
-
-$$\frac{d [f(g(x))]}{dx}=f'(g(x)) * g'(x)$$
-
--   Let's take the derivative of a function of a function: $$\frac{d[ln(x^2)]}{dx}$$ $$f(x)=ln(x)$$ $$g(x)=x^2$$ $$f'(x)=\frac{1}{x}$$ $$g'(x)=2x$$ $$ \frac{1}{x^2}*2x = \frac{2}{x}$$
-
-------------------------------------------------------------------------
-
-**Practice**
-
--   Take the derivative of each of the following: $$ (3x^4-8)^2 $$ $$e^{x^2}$$
-
-::: {.callout-tip title="Reminder!"}
-$$\frac{d (f(g(x))}{dx}=f'(g(x)) * g'(x)$$
-:::
-
-### Second derivative
-
--   Same process as taking single derivative, except input for second derivative is output from first.
-
--   Second derivative tells us whether the slope of a function is increasing, decreasing, or staying the same at any point $x$ on the function's domain.
-
--   Example: driving a car.
-
-    -   $f(x)$ = distance traveled at time $x$
-    -   $f'(x)$ = speed at time $x$
-    -   $f''(x)$ = acceleration at time $x$
-
--   Let's graph $f(x) = x^2$, $f'(x)$, and $f''(x)$.
-
-```{r, echo=FALSE}
-library(ggplot2)
-sec_der <- ggplot (data.frame(x = c(-5, 5)), aes(x = x)) +
-  stat_function(fun = function(x){x^2}, color="red", lwd = 1) +
-  stat_function(fun = function(x){2*x}, color="blue", lwd = 1)  +
-  stat_function(fun = function(x){2}, color="green", lwd = 1) 
-sec_der
+```{r}
+#| message: false
+library(tidyverse) # could also just do library(ggplot2)
+ggplot() +
+  stat_function(fun = function(x){2 * x}, 
+                xlim = c(-10, 10))
 ```
 
-------------------------------------------------------------------------
+We can imagine any political variables in the x- and y-axes. What is the rate of change? In other words, what is the derivative? Remember that we can calculate the slope with:
 
-$$\frac{d^2(x^4)}{dx^2}=f''(x^4)$$
+$$
+m = \frac{f(x_2) - f(x_1)}{x_2-x_1}
+$$ 
 
--   First, we take the first derivative: $$f'(x^4)=4x^3$$
--   Then we use that output to take the second derivative: $$f''(x^4)=f'(4x^3)=12x^2$$
+Now consider another slightly more complicated function, a quadratic one, $y = x^2$:
 
-**Practice**
+```{r}
+ggplot() +
+  stat_function(fun = function(x){x ^ 2}, 
+                xlim = c(-10, 10))
+```
 
-Take the second derivative of the following functions: $$x^5$$ $$6x^2$$ $$4 ln(x)$$ $$3x$$ $$4x^{3/2}$$
+What happens when we apply our slope function?
 
-## Differentiable and Continuous Functions
+::: callout-note
+#### Exercise
 
--   Informally: A function is continuous at a point if its graph has no holes or breaks at that point
+1) Use the slope formula to calculate the rate of change between 5 and 6.
 
--   Formally: A function is continuous at a point $a$ if: $$\displaystyle\lim_{x \to a} f(x)=f(a)$$
+2) Use the slope formula to calculate the rate of change between 5 and 5.5.
 
--   Continuity requires 3 conditions to hold:
+3) Use the slope formula to calculate the rate of change between 5 and 5.1.
+:::
 
-    -   $f(a)$ is defined ($a$ is in the domain of $f$)
+Takeaway: here the derivative depends on the value of $x$. It is actually $2x$.
 
-    -   $\displaystyle\lim_{x \to a} f(x)$ exists
+Differential calculus is about finding these derivatives in a more straightforward manner! We can generalize our slope formula as follows:
 
-    -   $\displaystyle\lim_{x \to a} f(x) = f(a)$ (the value of $f$ equals the limit of $f$ at $a$)
+$$
+m = \frac{f(x_1+ \Delta x) - f(x_1)}{\Delta x}
+$$
 
--   Differentiable:
+The point is that when $\Delta x$ is arbitrarily small, we'll get our rate of change. Formalizing this:
 
-    -   If $f'(x)$ exists, $f$ is differentiable at $x$.
+$$
+\lim_{\Delta x\to0} \frac{f(x_1+ \Delta x) - f(x_1)}{\Delta x} = \frac{d}{dx} f(x) = \frac{dy}{dx} = f'(x) 
+$$
 
-    -   If $f$ is differentiable at every point of an open interval $I$, $f$ is differentiable on $I$.
+A few points on notation:
 
-    -   Graph must have a (non-vertical) tangent line at each point, be relatively smooth, and not contain any breaks, bends, or cusps.
+- $\frac{d}{dx} f(x)$ is read "The derivative of $f$ of $x$ with respect to $x$."
+    + The variable with respect to which we're differentiating is the one that appears in the bottom (in the case above, this is $x$).
+
+  ::: callout-warning
+  While the above looks like a fraction, it's really not. Do not try to cancel out the $d$s!
+  :::
+
+- $f'(x)$ (read: "$f$ prime $x$") is the derivative of $f(x)$. This is a more compact form to refer to derivatives when you have defined $f(x)$ elsewhere. 
+
+
+### Rules of differentiation
+
+How to compute derivatives? Sometimes you can try a bunch of numbers and get at the answer. Sometimes you can use the limit-based formula above, if you know a few properties of limits. But in most cases you will either use software (more on this later) or the **rules of differentiation**, which we will cover now.
+
+**Constant rule:** $(c)' = 0$.
+
+There is no change in a constant:
+
+```{r}
+ggplot() +
+  stat_function(fun = function(x){2}, xlim = c(-10, 10))
+```
+
+**Coefficient rule:** $(c \cdot f(x))' = c \cdot f'(x)$.
+
+```{r}
+ggplot() +
+  stat_function(fun = function(x){2 * x}, xlim = c(-10, 10), aes(color = "y = 2x")) +
+  stat_function(fun = function(x){4 * x}, xlim = c(-10, 10), aes(color = "y = 4x")) +
+  scale_color_manual("Function", values = c("red", "blue"))
+```
+
+**Sum/difference rule:** $(f(x) \pm g(x))' = f'(x) \pm g'(x)$.
+
+The two rules above give us that the derivative is a *linear operator*.
+
+**Power rule:** $(x^n)'=nx^{(n-1)}$
+
+Remember when we wanted to calculate the derivative of $y=x^2$ above? We can use the power rule, with $n=2$: $\;nx^{(n-1)} = 2x^{(2-1)}=2x$. Let's try out $\frac{d}{dx}4x^3$ and $\frac{d}{dx}(x^2 + 2x)$ on the board.
+
+::: callout-note
+#### Exercise
+
+Use the differentiation rules we have covered so far to calculate the derivatives of $y$ with respect to $x$ of the following functions:
+
+1) $y = 2x^2 + 10$
+2) $y = 5x^4 - \frac{2}{3}x^3$
+3) $y = 9 \sqrt x$
+4) $y = \frac{4}{x^2}$
+5) $y = ax^3 + b$, where $a$ and $b$ are constants.
+6) $y = \frac{2w}{5}$
+:::
+
+**Exponent and logarithm rules:**
+
+$$
+\begin{aligned}
+(c^x)' &= c^x \cdot ln(c), & \forall x>0 \\
+(e^x)' &= e^x \\
+\\
+(log_a(x))' &= \frac{1}{x \cdot ln(a)}, & \forall x>0  \\
+(ln(x))' &= \frac{1}{x}, & \forall x>0 
+\end{aligned}
+$$
+
+We saw previously how Euler's number ($e$) arises from compound interest. The properties above make it very useful in a lot of calculus applications!
+
+::: callout-note
+#### Exercise
+
+Compute the following:
+
+1) $\frac{d}{dx}(10e^x)$
+2) $\frac{d}{dx}(ln(x) - \frac{e^2}{3})$
+:::
+
+Now we'll get to a couple of more advanced (and powerful) rules.
+
+
+**Product rule:** $(f(x)g(x))'=f'(x)g(x) + g'(x)f(x)$
+
+Let's calculate $\frac{d}{dx}(3 \cdot ln(x) \cdot x^2)$ on the board.
+
+**Quotient rule:** $\displaystyle(\frac{f(x)}{g(x)})' = \frac{f'(x)g(x) + g'(x)f(x)}{[g(x)]^2}$
+
+**Chain rule:** $(f(g(x))' = f'(g(x)) \cdot g'(x)$
+
+Let's compute $\frac{d}{dx}(e^{x^{2}})$ on the board.
+
+::: callout-note
+#### Exercise
+
+Use the differentiation rules we have covered so far to calculate the derivatives of $y$ with respect to $x$ of the following functions:
+
+1) $x^3 \cdot x$
+2) $e^x \cdot x^2$
+3) $(3x^4-8)^2$
+:::
+
+### Higher-order derivatives
+
+We saw how politicians can refer to higher-order derivatives. To compute them, you simply "pass the outputs," starting from the lowest order and going up.
+
+The second derivative tells us whether the slope of a function is increasing, decreasing, or staying the same at any point $x$ on the function's domain. For example, when driving a car:
+
+-  $f(x)$ = distance traveled at time $x$
+-  $f'(x)$ = speed at time $x$
+-  $f''(x)$ = acceleration at time $x$
+
+Let's compute the following second derivative:
+
+$$f''(x^4) = \frac{d^2(x^4)}{dx^2}$$
+
+- First, we take the first derivative: $f'(x^4)=4x^3$
+
+- Then we use that output to take the second derivative: $f''(x^4)=f'(4x^3)=12x^2$
+
+- We can keep going... for example, the third derivative: $$f'''(x^4) = f'(12x^2) = 24x$$
+
+::: callout-note
+#### Exercise
+
+Compute the following:
+
+1) $\frac{d^3}{dx^3}(x^5)$
+2) $f''(4x^{3/2})$
+3) $f''(4 \cdot ln(x))$
+:::
+
+### Partial derivatives
+
+For a function $f(x,z)$, we might want to know how the function changes with respect to $x$. We call this a *partial derivative*:
+
+$$ 
+\frac{\partial}{\partial_x}f(x,z) = \frac{\partial_y}{\partial_x} = \partial_x f
+$$
+
+To obtain a partial derivative, we treat all other variables as constants and take the derivative with respect to the variable of interest (here $x$). For example:
+
+$$
+\begin{aligned}
+y = f(x,z) &= xz \\
+\frac{\partial_y}{\partial_x} &= z
+\end{aligned}
+$$
+
+What is $\displaystyle\frac{\partial_y}{\partial_z}?$
+
+Let's solve $\displaystyle\frac{\partial (x^2y+xy^2-x)}{\partial x}$ and $\displaystyle\frac{\partial (x^2y+xy^2-x)}{\partial y}$ on the board.
+
+::: callout-tip
+#### Example
+
+Let's say that $y$ is how much I like a movie, $d$ is how many dogs a movie has, and $e$ is how many explosions a movie has. I claim that how much I like a movie can be expressed by a function of the type $y = f(d, e)$. Evaluate the following situations:
+
+1. I like dogs and I don't care about action. So I believe that the true relationship is $y = f(d, e) = 3 \cdot d$. What is $\displaystyle\frac{\partial_y}{\partial_d}$, and how can we interpret it?
+
+2. I like dogs and I like action. So I believe that the true relationship is $y = f(d, e) = 3 \cdot d + 1 \cdot e$. What is $\displaystyle\frac{\partial_y}{\partial_d}$, and how can we interpret it?
+
+3. I like dogs and I like action. *But I definitely don't like them together*---I don't want the dogs to be in danger! So I believe that the true relationship is $y = f(d, e) = 3 \cdot d + 1 \cdot e -10 \cdot d \cdot e$. What is $\displaystyle\frac{\partial_y}{\partial_d}$, and how can we interpret it?
+
+:::
+
+::: callout-note
+#### Exercise
+
+Take the partial derivative with respect to $x$ and with respect to $z$ of the following functions. What would the notation for each look like?
+
+1) $y = 3xz - x$
+2) $x^3+z^3+x^4z^4$
+3) $e^{xz}$
+:::
+
+
+### Differentiability of functions
+
+Not all functions are differentiable at every point of their domains! 
+
+An important concept here is whether functions are **continuous** at a point:
+
+- Informally: A function is continuous at a point if its graph has no holes or breaks at that point
+
+- Formally: A function is continuous at a point $a$ if: $\lim_{x \to a} f(x)=f(a)$
+
+When is a function **differentiable** at a point?
 
 -   If a function is differentiable at a point, it is also continuous at that point.
 
 -   If a function is continuous at a point, it is *not* necessarily differentiable at that point.
+    + Impossible to calculate derivative at sharp turns, cusps, or vertical tangents.
 
-### When is f not differentiable?
+```{r}
+ggplot() +
+  stat_function(fun = function(x){abs(x) + 2}, xlim = c(-4, 4), 
+                aes(color = "y = |x| + 2")) +
+  stat_function(fun = function(x){sqrt(abs(x)) + 1}, xlim = c(-4, 4), 
+                aes(color = "y = √(|x|) + 1")) +
+  stat_function(fun = function(x){sign(x) * abs(x)^(1 / 3)}, xlim = c(-4, 4), 
+                aes(color = "y = ₃√x")) +
+  scale_colour_manual("Function", values = c("red", "blue", "black")) +
+  labs(title = "Examples of functions that are not differentiable at x=0")
+```
 
-When does $f'(x)$ not exist?
 
--   When the function is discontinuous at that point.
+## Optimization
 
-    -   Jump or break in the graph.
+*Optimization* allows us to find the minimum or maximum values (or *extrema*) a function takes. It has many applications in the social sciences:
+
+-   Formal theory: utility maximization, continuous choices
     
--   There are different slopes approaching the point from the left and from the right.
-
-    -   Corner point
+-   Ordinary Least Squares (OLS): Focuses on *minimizing* the squared errors between observed data and model-estimated values
     
--   When the graph of the function has a vertical tangent line at that point.
+-   Maximum Likelihood Estimation (MLE): Focuses on *maximizing* a likelihood function, given observed values.
 
-    -   Cusp
+### Identifying *extrema* analytically
+
+On extrema: informally, a maximum is just the highest value a function takes, and a minimum is the lowest value.
+
+In some situations, it can be easy to identify extrema intuitively by looking at a graph of the function (see the graphs above).
+
+-   Maxima are high points ("peaks")
     
-    -   Vertical inflection point
+-   Minima are low points ("valleys")
 
-## Extrema and optimization
 
-*Optimization* lets us find the minimum or maximum value a function takes.
-
--   Formal theory
-
-    -   Utility maximization, continuous choices
-    
--   Ordinary Least Squares (OLS)
-
-    -   Focuses on *minimizing* the squared errors between observed data and values predicted by a regression.
-    
--   Maximum Likelihood Estimation (MLE)
-
-    -   Focuses on *maximizing* a likelihood function, given observed values.
-
-### Extrema
-
--   Informally, a maximum is just the highest value a function takes, and a minimum is the lowest value.
-
--   Easy to identify extrema (maxima or minima) intuitively by looking at a graph of the function.
-
-    -   Maxima are high points ("peaks")
-    
-    -   Minima are low points ("valleys")
-    
--   Extrema can be *local* or *global*.
-
-### Identifying extrema
-
--   The derivative of a function gives the rate of change.
+We can use derivatives (rates of change!) to get at extrema.
 
 -   When the derivative is zero (or fails to exist), the function has *usually* reached a (local) maximum or minimum.
 
--   At a maximum, the function must be increasing before the point and decreasing after it.
+    + At a maximum, the function must be increasing before the point and decreasing after it.
 
--   At a minimum, the function must be decreasing before the point and increasing after it.
+    + At a minimum, the function must be decreasing before the point and increasing after it.
 
 -   We'll start by identifying points where this is the case ("critical points" or "stationary points").
-
+  
 ::: callout-note
-A point where $f'(x)=0$ or $f'(x)$ does not exist is called a *critical point* (or *stationary point*). Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex ("inflection points"). Sometimes the function is not differentiable at that point for other reasons.
+A point where $f'(x)=0$ or $f'(x)$ does not exist is called a *critical point* (or *stationary point*). Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex ("inflection points"). Or sometimes the function is not differentiable at that point for other reasons.
 :::
 
-------------------------------------------------------------------------
+We can find the local maxima and/or minima of a function by taking the derivative, setting it equal to zero, and solving for $x$ (or whatever variable). This gives us the first-order condition (FOC).
 
--   We can find the local maxima and/or minima of a function by taking the derivative, setting it equal to zero, and solving for x (or whatever).
+$$FOC: f'(x)=0$$
 
-$$f'(x)=0$$
+Notice that after this we only know that there is a critical point. **BUT** we don't know if we've found a maximum or minimum, or even if we've found an extremum.
 
--   This gives us the first-order condition (FOC).
+To determine whether a we are seeing a (local) maximum or minimum, we can use the **Second Derivative Test**:
 
-### Minimum or maximum?
+- Start by identifying $f''(x)$
 
-**BUT** we don't know if we've found a maximum or minimum, or even if we've found an extremum or just an inflection point.
+- Substitute in the stationary points $(x^*)$ identified from the FOC.
 
-### Second derivatives
+    +   $f''(x^*) > 0$ we have a local minimum
 
--   The second derivative gives us the rate of change of the rate of change of the original function. It tells us whether the slope is getting larger or smaller.
+    +   $f''(x^*) < 0$ we have a local maximum
 
-$$f(x) = x^2$$ $$f'(x) = 2x$$ $$f''(x) = 2$$
+    +   $f''(x^*) = 0$ we (may) have an inflection point - need to calculate higher-order derivatives (don't worry about this now)
 
-------------------------------------------------------------------------
+Collectively these give use the **Second-Order Condition (SOC)**.
 
-Second Derivative Test - Start by identifying $f''(x)$
-
--   Substitute in the stationary points $(x^*)$ identified from the FOC.
-
-    -   $f''(x^*) > 0$ we have a local minimum
-
-    -   $f''(x^*) < 0$ we have a local maximum
-
-    -   $f''(x^*) = 0$ we (may) have an inflection point - need to calculate higher-order derivatives (don't worry about this now)
-
-Collectively these give use the Second-Order Condition (SOC).
-
-### Local vs. Global Extrema
+Now when it comes to knowing whether extrema are local or global:
 
 -   To find the minimum/maximum on some interval, compare the local min/max to the value of the function at the interval's endpoints.
 
@@ -320,59 +331,6 @@ Collectively these give use the Second-Order Condition (SOC).
 
 -   Extreme value theorem: if a real-valued function $f$ is continuous on the closed interval \[a,b\], then $f$ must attain a (global) maximum and a (global) minimum.
 
-## Partial derivatives
-
--   We can take the derivative with respect to different variables.
-
--   For a function $fy=(x,z)=xz$, we might want to know how the function changes with $x$:
-
-$$ \displaystyle\frac{\partial}{\partial_x}f(x,y) = \frac{\partial_y}{\partial_x} = \partial_x f$$
-
--   We treat all other variables as constants and take derivative with respect to the variable of interest (here $x$).
-
-------------------------------------------------------------------------
-
-How do we take a partial derivative?
-
-Treat all other variables as *constants* and take *derivative* with respect to the variable of interest.
-
-From our earlier example: $$y = f(x,z) = xz $$ $$ \displaystyle\frac{\partial_y}{\partial_x} = ?$$
-
-------------------------------------------------------------------------
-
-$$y = f(x,z) = xz $$ $$ \displaystyle\frac{\partial_y}{\partial_x} = z$$
-
-Why? Because the partial derivative of $xz$ with respect to $x$ treats $z$ as a constant.
-
-What is $\displaystyle\frac{\partial_y}{\partial_z}?$
-
-### Application
-
--   $\frac{\partial (x^2y+xy^2-x)}{\partial x}$
-
--   We apply the addition rule to take the derivative of each term with respect to x.
-
--   $\frac{\partial (x^2y)}{\partial x}$+$\frac{\partial (xy^2)}{\partial x}$+$\frac{\partial (-x)}{\partial x}$
-
--   $2xy+y^2-1$
-
-------------------------------------------------------------------------
-
--   $\frac{\partial (x^2y+xy^2-x)}{\partial y}$
-
--   We apply the addition rule to take the derivative of each term with respect to y
-
--   $\frac{\partial (x^2y)}{\partial y}$+$\frac{\partial (xy^2)}{\partial y}$+$\frac{\partial (-x)}{\partial y}$
-
--   $x^2+2xy$
-
-------------------------------------------------------------------------
-
-**Practice**
-
-Take the partial derivative with respect to x and to y of the following functions. What would the notation for each look like?
-
-$$3xy-x$$ $$ln(xy)$$ $$x^3+y^3+x^4y^4$$ $$e^{xy}$$
 
 ## Integrals
 
@@ -436,12 +394,11 @@ $$\displaystyle\int_{x=a}^{b} f(x),dx$$
 -   The easiest way to calculate definite integrals, known as the "fundamental theorem of calculus," is shown below:
 
 $$\displaystyle\int_{a}^{b} f(x) \text{ } dx = F(b)-F(a) = F(x)\bigg|_{a}^{b}$$
+
 -   First we determine the antiderivative (indefinite integral) of $f(x)$ (and represent it $F(x)$), substitute the upper limit first and then the lower limit one by one, and subtract the results in order.
 
-### Constants
-
-::: callout-note
-$C$ in the following slides is the called the "constant of integration." We need to add it when we define *all* antiderivatives (integrals) of a function because the anti-derivative "undoes" the derivative.
+::: callout-warning
+$C$ in the following definitions and rules is the called the "constant of integration." We need to add it when we define *all* antiderivatives (integrals) of a function because the anti-derivative "undoes" the derivative.
 
 Remember that the derivative of any constant is zero. So if we find an integral $F(x)$ whose derivative is $f(x)$, adding (or subtracting) any constant will give us another integral $F(x)+C$ whose derivative is *also* $f(x)$.
 :::
@@ -455,8 +412,6 @@ $$\displaystyle\int_{a}^{b} f(x) \text{ } dx = -\displaystyle\int_{b}^{a}f(x)dx$
 $$\int a \text{ }dx = ax + C \text { where $a$ is a constant}$$
 
 $$\displaystyle\int af(x)dx = a\displaystyle\int f(x) \text{ }dx \text{ where $a$ is a constant}$$
-
-### More rules
 
 $$\int (f(x) + g(x)) \text{ } dx = \int f(x) dx + \int g(x)dx$$
 
@@ -489,14 +444,32 @@ We use the "power rule" of integration, which is the following: $$\int x^n dx = 
 -   Calculate $F(1) - F(0)$
 $$\displaystyle\frac{1}{3} - 0 = \displaystyle\frac{1}{3}$$
 
-------------------------------------------------------------------------
 
-**Practice --- indefinite integrals**
+::: callout-note
+#### Exercise
 
-$$\int x^2 \text{ } dx$$ $$\int 3x^2\text{ } dx$$ $$\int x\text{ } dx$$ $$\int 3x^2 + 2x - 7\text{ }dx$$ $$\int \dfrac{2}{x}\text{ }dx$$
+Solve the following indefinite integrals:
 
-------------------------------------------------------------------------
+1. $\int x^2 \text{ } dx$
 
-**Practice --- definite integrals**
+2. $\int 3x^2\text{ } dx$
 
-$$\displaystyle\int_{1}^{7} x^2 \text{ } dx$$ $$\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$$ $$\int_7^7 x\text{ } dx$$ $$\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$$ $$\int_{1}^{e} \dfrac{2}{x}\text{ }dx$$
+3. $\int x\text{ } dx$ 
+
+4. $\int 3x^2 + 2x - 7\text{ }dx$
+
+5. $\int \dfrac{2}{x}\text{ }dx$
+
+And solve the following definite integrals:
+
+1. $\displaystyle\int_{1}^{7} x^2 \text{ } dx$
+
+2. $\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$
+
+3. $\int_7^7 x\text{ } dx$
+
+4. $\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$ 
+
+5. $\int_{1}^{e} \dfrac{2}{x}\text{ }dx$
+
+:::
