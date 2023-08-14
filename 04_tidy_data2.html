@@ -270,7 +270,7 @@ div.csl-indent {
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.2     ✔ readr     2.1.4
 ✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ ggplot2   3.4.3     ✔ tibble    3.2.1
 ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
 ✔ purrr     1.0.2     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -938,7 +938,7 @@ Exercise
 <p><img src="04_tidy_data2_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>The scales are so disparate that unifying them yields a plot that’s hard to interpret. But if we’re interested in within-country trends, we can let each facet have its own scale with the <code>scales =</code> argument (with can be “fixed”, “free_x”, “free_y”, or “free”):</p>
+<p>The scales are so disparate that unifying them yields a plot that’s hard to interpret. But if we’re interested in within-country trends, we can let each facet have its own scale with the <code>scales =</code> argument (which can be “fixed”, “free_x”, “free_y”, or “free”):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(qog <span class="sc">|&gt;</span> <span class="fu">filter</span>(cname <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Canada"</span>, <span class="st">"United States"</span>)), </span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> wdi_pop)) <span class="sc">+</span></span>
