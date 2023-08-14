@@ -26,7 +26,7 @@ We can imagine any political variables in the x- and y-axes. What is the rate of
 
 $$
 m = \frac{f(x_2) - f(x_1)}{x_2-x_1}
-$$ 
+$$
 
 Now consider another slightly more complicated function, a quadratic one, $y = x^2$:
 
@@ -41,11 +41,11 @@ What happens when we apply our slope function?
 ::: callout-note
 #### Exercise
 
-1) Use the slope formula to calculate the rate of change between 5 and 6.
+1)  Use the slope formula to calculate the rate of change between 5 and 6.
 
-2) Use the slope formula to calculate the rate of change between 5 and 5.5.
+2)  Use the slope formula to calculate the rate of change between 5 and 5.5.
 
-3) Use the slope formula to calculate the rate of change between 5 and 5.1.
+3)  Use the slope formula to calculate the rate of change between 5 and 5.1.
 :::
 
 Takeaway: here the derivative depends on the value of $x$. It is actually $2x$.
@@ -64,15 +64,15 @@ $$
 
 A few points on notation:
 
-- $\frac{d}{dx} f(x)$ is read "The derivative of $f$ of $x$ with respect to $x$."
-    + The variable with respect to which we're differentiating is the one that appears in the bottom (in the case above, this is $x$).
+-   $\frac{d}{dx} f(x)$ is read "The derivative of $f$ of $x$ with respect to $x$."
 
-  ::: callout-warning
-  While the above looks like a fraction, it's really not. Do not try to cancel out the $d$s!
-  :::
+    -   The variable with respect to which we're differentiating is the one that appears in the bottom (in the case above, this is $x$).
 
-- $f'(x)$ (read: "$f$ prime $x$") is the derivative of $f(x)$. This is a more compact form to refer to derivatives when you have defined $f(x)$ elsewhere. 
+    ::: callout-warning
+    While the above looks like a fraction, it's really not. Do not try to cancel out the $d$s!
+    :::
 
+-   $f'(x)$ (read: "$f$ prime $x$") is the derivative of $f(x)$. This is a more compact form to refer to derivatives when you have defined $f(x)$ elsewhere.
 
 ### Rules of differentiation
 
@@ -109,12 +109,12 @@ Remember when we wanted to calculate the derivative of $y=x^2$ above? We can use
 
 Use the differentiation rules we have covered so far to calculate the derivatives of $y$ with respect to $x$ of the following functions:
 
-1) $y = 2x^2 + 10$
-2) $y = 5x^4 - \frac{2}{3}x^3$
-3) $y = 9 \sqrt x$
-4) $y = \frac{4}{x^2}$
-5) $y = ax^3 + b$, where $a$ and $b$ are constants.
-6) $y = \frac{2w}{5}$
+1)  $y = 2x^2 + 10$
+2)  $y = 5x^4 - \frac{2}{3}x^3$
+3)  $y = 9 \sqrt x$
+4)  $y = \frac{4}{x^2}$
+5)  $y = ax^3 + b$, where $a$ and $b$ are constants.
+6)  $y = \frac{2w}{5}$
 :::
 
 **Exponent and logarithm rules:**
@@ -136,12 +136,11 @@ We saw previously how Euler's number ($e$) arises from compound interest. The pr
 
 Compute the following:
 
-1) $\frac{d}{dx}(10e^x)$
-2) $\frac{d}{dx}(ln(x) - \frac{e^2}{3})$
+1)  $\frac{d}{dx}(10e^x)$
+2)  $\frac{d}{dx}(ln(x) - \frac{e^2}{3})$
 :::
 
 Now we'll get to a couple of more advanced (and powerful) rules.
-
 
 **Product rule:** $(f(x)g(x))'=f'(x)g(x) + g'(x)f(x)$
 
@@ -158,9 +157,9 @@ Let's compute $\frac{d}{dx}(e^{x^{2}})$ on the board.
 
 Use the differentiation rules we have covered so far to calculate the derivatives of $y$ with respect to $x$ of the following functions:
 
-1) $x^3 \cdot x$
-2) $e^x \cdot x^2$
-3) $(3x^4-8)^2$
+1)  $x^3 \cdot x$
+2)  $e^x \cdot x^2$
+3)  $(3x^4-8)^2$
 :::
 
 ### Higher-order derivatives
@@ -169,28 +168,28 @@ We saw how politicians can refer to higher-order derivatives. To compute them, y
 
 The second derivative tells us whether the slope of a function is increasing, decreasing, or staying the same at any point $x$ on the function's domain. For example, when driving a car:
 
--  $f(x)$ = distance traveled at time $x$
--  $f'(x)$ = speed at time $x$
--  $f''(x)$ = acceleration at time $x$
+-   $f(x)$ = distance traveled at time $x$
+-   $f'(x)$ = speed at time $x$
+-   $f''(x)$ = acceleration at time $x$
 
 Let's compute the following second derivative:
 
 $$f''(x^4) = \frac{d^2(x^4)}{dx^2}$$
 
-- First, we take the first derivative: $f'(x^4)=4x^3$
+-   First, we take the first derivative: $f'(x^4)=4x^3$
 
-- Then we use that output to take the second derivative: $f''(x^4)=f'(4x^3)=12x^2$
+-   Then we use that output to take the second derivative: $f''(x^4)=f'(4x^3)=12x^2$
 
-- We can keep going... for example, the third derivative: $$f'''(x^4) = f'(12x^2) = 24x$$
+-   We can keep going... for example, the third derivative: $$f'''(x^4) = f'(12x^2) = 24x$$
 
 ::: callout-note
 #### Exercise
 
 Compute the following:
 
-1) $\frac{d^3}{dx^3}(x^5)$
-2) $f''(4x^{3/2})$
-3) $f''(4 \cdot ln(x))$
+1)  $\frac{d^3}{dx^3}(x^5)$
+2)  $f''(4x^{3/2})$
+3)  $f''(4 \cdot ln(x))$
 :::
 
 ### Partial derivatives
@@ -219,12 +218,11 @@ Let's solve $\displaystyle\frac{\partial (x^2y+xy^2-x)}{\partial x}$ and $\displ
 
 Let's say that $y$ is how much I like a movie, $d$ is how many dogs a movie has, and $e$ is how many explosions a movie has. I claim that how much I like a movie can be expressed by a function of the type $y = f(d, e)$. Evaluate the following situations:
 
-1. I like dogs and I don't care about action. So I believe that the true relationship is $y = f(d, e) = 3 \cdot d$. What is $\displaystyle\frac{\partial_y}{\partial_d}$, and how can we interpret it?
+1.  I like dogs and I don't care about action. So I believe that the true relationship is $y = f(d, e) = 3 \cdot d$. What is $\displaystyle\frac{\partial_y}{\partial_d}$, and how can we interpret it?
 
-2. I like dogs and I like action. So I believe that the true relationship is $y = f(d, e) = 3 \cdot d + 1 \cdot e$. What is $\displaystyle\frac{\partial_y}{\partial_d}$, and how can we interpret it?
+2.  I like dogs and I like action. So I believe that the true relationship is $y = f(d, e) = 3 \cdot d + 1 \cdot e$. What is $\displaystyle\frac{\partial_y}{\partial_d}$, and how can we interpret it?
 
-3. I like dogs and I like action. *But I definitely don't like them together*---I don't want the dogs to be in danger! So I believe that the true relationship is $y = f(d, e) = 3 \cdot d + 1 \cdot e -10 \cdot d \cdot e$. What is $\displaystyle\frac{\partial_y}{\partial_d}$, and how can we interpret it?
-
+3.  I like dogs and I like action. *But I definitely don't like them together*---I don't want the dogs to be in danger! So I believe that the true relationship is $y = f(d, e) = 3 \cdot d + 1 \cdot e -10 \cdot d \cdot e$. What is $\displaystyle\frac{\partial_y}{\partial_d}$, and how can we interpret it?
 :::
 
 ::: callout-note
@@ -232,28 +230,28 @@ Let's say that $y$ is how much I like a movie, $d$ is how many dogs a movie has,
 
 Take the partial derivative with respect to $x$ and with respect to $z$ of the following functions. What would the notation for each look like?
 
-1) $y = 3xz - x$
-2) $x^3+z^3+x^4z^4$
-3) $e^{xz}$
+1)  $y = 3xz - x$
+2)  $x^3+z^3+x^4z^4$
+3)  $e^{xz}$
 :::
-
 
 ### Differentiability of functions
 
-Not all functions are differentiable at every point of their domains! 
+Not all functions are differentiable at every point of their domains!
 
 An important concept here is whether functions are **continuous** at a point:
 
-- Informally: A function is continuous at a point if its graph has no holes or breaks at that point
+-   Informally: A function is continuous at a point if its graph has no holes or breaks at that point
 
-- Formally: A function is continuous at a point $a$ if: $\lim_{x \to a} f(x)=f(a)$
+-   Formally: A function is continuous at a point $a$ if: $\lim_{x \to a} f(x)=f(a)$
 
 When is a function **differentiable** at a point?
 
 -   If a function is differentiable at a point, it is also continuous at that point.
 
 -   If a function is continuous at a point, it is *not* necessarily differentiable at that point.
-    + Impossible to calculate derivative at sharp turns, cusps, or vertical tangents.
+
+    -   Impossible to calculate derivative at sharp turns, cusps, or vertical tangents.
 
 ```{r}
 ggplot() +
@@ -267,15 +265,14 @@ ggplot() +
   labs(title = "Examples of functions that are not differentiable at x=0")
 ```
 
-
 ## Optimization
 
 *Optimization* allows us to find the minimum or maximum values (or *extrema*) a function takes. It has many applications in the social sciences:
 
 -   Formal theory: utility maximization, continuous choices
-    
+
 -   Ordinary Least Squares (OLS): Focuses on *minimizing* the squared errors between observed data and model-estimated values
-    
+
 -   Maximum Likelihood Estimation (MLE): Focuses on *maximizing* a likelihood function, given observed values.
 
 ### Identifying *extrema* analytically
@@ -285,20 +282,19 @@ On extrema: informally, a maximum is just the highest value a function takes, an
 In some situations, it can be easy to identify extrema intuitively by looking at a graph of the function (see the graphs above).
 
 -   Maxima are high points ("peaks")
-    
--   Minima are low points ("valleys")
 
+-   Minima are low points ("valleys")
 
 We can use derivatives (rates of change!) to get at extrema.
 
 -   When the derivative is zero (or fails to exist), the function has *usually* reached a (local) maximum or minimum.
 
-    + At a maximum, the function must be increasing before the point and decreasing after it.
+    -   At a maximum, the function must be increasing before the point and decreasing after it.
 
-    + At a minimum, the function must be decreasing before the point and increasing after it.
+    -   At a minimum, the function must be decreasing before the point and increasing after it.
 
 -   We'll start by identifying points where this is the case ("critical points" or "stationary points").
-  
+
 ::: callout-note
 A point where $f'(x)=0$ or $f'(x)$ does not exist is called a *critical point* (or *stationary point*). Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex ("inflection points"). Or sometimes the function is not differentiable at that point for other reasons.
 :::
@@ -311,15 +307,15 @@ Notice that after this we only know that there is a critical point. **BUT** we d
 
 To determine whether a we are seeing a (local) maximum or minimum, we can use the **Second Derivative Test**:
 
-- Start by identifying $f''(x)$
+-   Start by identifying $f''(x)$
 
-- Substitute in the stationary points $(x^*)$ identified from the FOC.
+-   Substitute in the stationary points $(x^*)$ identified from the FOC.
 
-    +   $f''(x^*) > 0$ we have a local minimum
+    -   $f''(x^*) > 0$ we have a local minimum
 
-    +   $f''(x^*) < 0$ we have a local maximum
+    -   $f''(x^*) < 0$ we have a local maximum
 
-    +   $f''(x^*) = 0$ we (may) have an inflection point - need to calculate higher-order derivatives (don't worry about this now)
+    -   $f''(x^*) = 0$ we (may) have an inflection point - need to calculate higher-order derivatives (don't worry about this now)
 
 Collectively these give use the **Second-Order Condition (SOC)**.
 
@@ -331,71 +327,74 @@ Now when it comes to knowing whether extrema are local or global:
 
 -   Extreme value theorem: if a real-valued function $f$ is continuous on the closed interval \[a,b\], then $f$ must attain a (global) maximum and a (global) minimum.
 
-
 ## Integrals
 
-### Area under a curve
+Informally, we can think of integrals as the flip side of derivatives.
 
--   Often we want to find the area under a curve. 
+We can motivate integrals as a way of finding the area under a curve. Sometimes finding the area is easy. What's the area under the curve between $x=-1$ and $x=1$ for this function? 
 
--   Sometimes finding the area is easy. What's the area under the curve between $x=-1$ and $x=1$ for this function? $$f(x) = 
+$$
+f(x) = 
 \begin{cases}
 \frac{1}{3} & \text{for } x \in [0, 3] \\
 0 & \text{otherwise}
-\end{cases}$$
+\end{cases}
+$$
 
-::: {.callout-tip title="\"Hint"}
-We can draw this and look at the graph. Remember: $$area = \ell*w$$
+::: callout-tip
+#### Hint
+
+We can draw this and look at the graph. Remember: 
+
+$$
+area = \ell*w
+$$
 :::
 
--   Normally, finding the area under a curve is much harder. But this is basically the question behind integration.
+Normally, finding the area under a curve is much harder. But this is basically the question behind integration.
 
-### Integrals as summation
+### Integrals are about infinitesimals too
 
--   We are already familiar with summation notation.
-$$\displaystyle\sum_{i=1}^{n} i$$
+Let's say we have a function $y = x^2$ And we want to find the area under the curve from $x=0$ to $x=1$. How would we do this?
 
--   This only works when we have discrete values to add. 
+```{r}
+ggplot() +
+  # draw main function
+  stat_function(fun = function(x){x ^ 2}, xlim = c(-2, 2)) +
+  # fill area under the curve between x=0 and x=1
+  geom_area(mapping = aes(x = 0), stat = "function",
+            fun = function(x){x ^ 2}, xlim = c(0, 1), fill = "red")
+```
 
-    -   When we need to add continuously, we have to use something else. Specifically, integrals.
+One way to approximate this area is by drawing narrow rectangles that cover the area in red. Let's draw this on the board.
 
-### Definite integrals
+Our approximation is rough, but it gets better and better the narrower the rectangles are:
 
--   Let's say we have a function $$ y = x^2 $$ And we want to find the area under the curve from $x=0$ to $x=1$. 
+$$
+Area = lim_{\Delta x \to 0}\sum_i^n{f(x) \cdot \Delta x}
+$$
 
--   To find the area we're interested in here, we can use the definite integral.
+, where $\Delta x$ is the width of the rectangles and $n$ is their number.
 
--   Generally speaking, the notation looks like this:
-$$\displaystyle\int_{x=a}^{b} f(x),dx$$
--   Here $a$ is the lower limit of integration, $b$ is the upper limit of integration, our function $f(x)$ is our integrand, and $x$ is our variable of integration.
+This is actually one way to define the **definite integral**, $\displaystyle\int_a^bf(x)dx$ (also known as the Riemann integral). We'll learn how to compute these in just a moment.
 
-------------------------------------------------------------------------
+### Indefinite integrals as antiderivatives
 
--   For our question, we're looking for the following: $$\displaystyle\int_{x=0}^{1} f(x) dx$$
+The *indefinite* integral, also known as the *anti-derivative*, $F(x)$ is the inverse of the function $f'(x)$. $$F(x)= \displaystyle\int f(x) \text{ } dx$$
 
--   This will give us a real number denoting the area under the curve of our function ($y=x^2$) between $x=0$ and $x=1$.
+This means if you take the derivative of $F(x)$, you wind up back at $f(x)$. $$F' = f \text{ or } \displaystyle\frac{dF(x)}{dx} = f(x)$$
 
--   If $f$ is continuous on $[a,b]$ or bounded on $[a,b]$ with a finite number of discontinuities, then $f$ is integrable on $[a,b]$.
+For example, what is the antiderivative of a constant function $f(x) = 1$? Is there just one? (this example comes from [Moore and Siegel, 2013](https://press.princeton.edu/books/paperback/9780691159171/a-mathematics-course-for-political-and-social-research), p. 137).
 
-### Indefinite integrals
-
--   The *indefinite* integral, also known as the *anti-derivative*, $F(x)$ is the inverse of the function $f'(x)$. $$F(x)= \displaystyle\int f(x) \text{ } dx$$ 
-
--   This means if you take the derivative of $F(x)$, you wind up back at $f(x)$. $$F' = f \text{ or } \displaystyle\frac{dF(x)}{dx} = f(x)$$
-
--   This process is called anti-differentiation, or indefinite integration.
-
-    -   While the definite integral gives us a real number (the total area under a curve), the indefinite integral gives us a function.
-
--   We need the concept of indefinite integrals to help us solve definite integrals.
+This process is called *anti-differentiation*. We can use this concept to help us solve definite integrals!
 
 ### Solving definite integrals
 
--   The easiest way to calculate definite integrals, known as the "fundamental theorem of calculus," is shown below:
+One way to calculate definite integrals, known as the "fundamental theorem of calculus," is shown below:
 
 $$\displaystyle\int_{a}^{b} f(x) \text{ } dx = F(b)-F(a) = F(x)\bigg|_{a}^{b}$$
 
--   First we determine the antiderivative (indefinite integral) of $f(x)$ (and represent it $F(x)$), substitute the upper limit first and then the lower limit one by one, and subtract the results in order.
+First we determine the antiderivative (indefinite integral) of $f(x)$ (and represent it $F(x)$), substitute the upper limit first and then the lower limit one by one, and subtract the results in order.
 
 ::: callout-warning
 $C$ in the following definitions and rules is the called the "constant of integration." We need to add it when we define *all* antiderivatives (integrals) of a function because the anti-derivative "undoes" the derivative.
@@ -426,50 +425,47 @@ Remember our function $y=x^2$ and our goal of finding the area under the curve f
 -   Find the indefinite integral, $F(x)$
 
     -   $\displaystyle\int x^2 \text{ } dx$
-    
+
     -   $\displaystyle\frac{x^3}{3}+C$
 
-:::{.callout-important}
+::: callout-important
 We use the "power rule" of integration, which is the following: $$\int x^n dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1$$
 :::
 
 -   Evaluate at our lowest and highest points, $F(0)$ and $F(1)$.
 
     -   $F(0) = 0$
-    
-    -   $F(1) = \displaystyle\frac{1}{3}$
-    
-    -   Technically $0 + C$ and $\displaystyle\frac{1}{3} + C$, but the C's will fall out in the next step
-    
--   Calculate $F(1) - F(0)$
-$$\displaystyle\frac{1}{3} - 0 = \displaystyle\frac{1}{3}$$
 
+    -   $F(1) = \displaystyle\frac{1}{3}$
+
+    -   Technically $0 + C$ and $\displaystyle\frac{1}{3} + C$, but the C's will fall out in the next step
+
+-   Calculate $F(1) - F(0)$ $$\displaystyle\frac{1}{3} - 0 = \displaystyle\frac{1}{3}$$
 
 ::: callout-note
 #### Exercise
 
 Solve the following indefinite integrals:
 
-1. $\int x^2 \text{ } dx$
+1.  $\int x^2 \text{ } dx$
 
-2. $\int 3x^2\text{ } dx$
+2.  $\int 3x^2\text{ } dx$
 
-3. $\int x\text{ } dx$ 
+3.  $\int x\text{ } dx$
 
-4. $\int 3x^2 + 2x - 7\text{ }dx$
+4.  $\int (3x^2 + 2x - 7\text{ })dx$
 
-5. $\int \dfrac{2}{x}\text{ }dx$
+5.  $\int \dfrac{2}{x}\text{ }dx$
 
 And solve the following definite integrals:
 
-1. $\displaystyle\int_{1}^{7} x^2 \text{ } dx$
+1.  $\displaystyle\int_{1}^{7} x^2 \text{ } dx$
 
-2. $\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$
+2.  $\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$
 
-3. $\int_7^7 x\text{ } dx$
+3.  $\displaystyle\int_7^7 x\text{ } dx$
 
-4. $\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$ 
+4.  $\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$
 
-5. $\int_{1}^{e} \dfrac{2}{x}\text{ }dx$
-
+5.  $\int_{1}^{e} \dfrac{2}{x}\text{ }dx$
 :::

@@ -30,7 +30,7 @@ book:
 bibliography: references.bib
 
 nocite: |
-  @usda2019, @fivethirtyeight2021, @qog, @smith2020, @wdi, @countrycode, @fuzzyjoin, @Vdemcodebook2022, @wickham_ggplot2
+  @usda2019, @fivethirtyeight2021, @qog, @smith2020, @wdi, @countrycode, @fuzzyjoin, @Vdemcodebook2022, @wickham_ggplot2, @imai_quantitative_2022, @rossi1996mathematics, @moore_mathematics_2013
 format:
   html:
     theme: 
