@@ -373,7 +373,7 @@ ggplot(qog |> filter(cname %in% c("Canada", "United States")),
   facet_wrap(~cname)
 ```
 
-The scales are so disparate that unifying them yields a plot that's hard to interpret. But if we're interested in within-country trends, we can let each facet have its own scale with the `scales =` argument (with can be "fixed", "free_x", "free_y", or "free"):
+The scales are so disparate that unifying them yields a plot that's hard to interpret. But if we're interested in within-country trends, we can let each facet have its own scale with the `scales =` argument (which can be "fixed", "free_x", "free_y", or "free"):
 
 ```{r}
 ggplot(qog |> filter(cname %in% c("Canada", "United States")), 
