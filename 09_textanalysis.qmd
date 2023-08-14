@@ -42,6 +42,7 @@ test <- "test"
 ```
 
 -   Regular expressions can be used to:
+
     -   Extract information from text.
     -   Parse text.
     -   Clean/replace strings.
@@ -144,6 +145,14 @@ str_extract_all(cat_string,"[a-zA-Z]+")[[1]] # letters
 str_extract_all(cat_string,"\\w+")[[1]] # "word" characters
 ```
 
+::: callout-note
+## Exercise
+
+What score (out of 10) would you give Barbie or Oppenheimer? Write your score in one sentence (e.g., I would give Barbie seven of ten stars.) If you have not seen either, write a sentence about which you would like to see more.
+
+Store that text as a string (`string3`) and combine it with our existing `cat_string` to produce a new concatenated string called `cat_string2`. Finally, count the total of characters within `cat_string2`. Your code:
+:::
+
 ## Simple text analysis
 
 -   We can use the `tidytext` package to conduct some basic text analysis using tidy data principles.
@@ -191,7 +200,6 @@ Barbie_df
 install.packages("tidytext")
 ```
 
-
 ```{r}
 #| message: false
 library(tidytext)
@@ -235,6 +243,16 @@ Opp_tok %>%
   geom_col() +
   labs(y = NULL)
 ```
+
+::: callout-exercise
+## Exercise
+
+Look up the lyrics to your favorite song at the moment (no guilty pleasures here!). Then, follow the process described above to count the words: store the text as a string, convert to a tibble, tokenize, and count.
+
+When you are done counting, create a visualization for the chorus using the `ggplot` code above. Your code:
+:::
+
+If you are curious about the repetitiveness of lyrics in pop music over time, I might recommend checking out this fun article and analysis done by Colin Morris at [*The Pudding.*](https://pudding.cool/2017/05/song-repetition/)
 
 ### tf-idf
 
