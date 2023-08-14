@@ -162,7 +162,7 @@ $$y=ax^2 + bx + c$$
 
 Quadratic functions take "U" forms. If $a$ is positive, it is a regular "U" shape. If $a$ is negative, it is an "inverted U" shape.
 
-Note that $x^2$ always returns positive values.
+Note that $x^2$ always returns positive values (or zero).
 
 Below is a graph of the function $y = x^2$:
 
