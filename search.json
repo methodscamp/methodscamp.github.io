@@ -277,7 +277,7 @@
     "href": "solutions.html#intro-to-r",
     "title": "Solutions to exercises",
     "section": "1. Intro to R",
-    "text": "1. Intro to R\n\nExercise\nCreate your own code block below and run a math operation.\n\n\npi * 2\n\n[1] 6.283185\n\n\n\nExercise\nExamine the help file of the log() function. How can we compute the the base-10 logarithm of my_object? Your code:\n\n\n\nCode\n# setup: these steps were executed before the exercise\nmy_object &lt;- 10\n?log\nlog10(my_object)\n\n\n[1] 1\n\n\n\nExamine the log() function.\n\n\n?log\n\n\nCompute the base-10 logarithm of my_object.\n\n\nlog10(my_object)\n\n[1] 1"
+    "text": "1. Intro to R\n\nExercise\nCreate your own code block below and run a math operation.\n\n\npi * 2\n\n[1] 6.283185\n\n\n\nExercise\nExamine the help file of the log() function. How can we compute the the base-10 logarithm of my_object? Your code:\n\n\n\nCode\n# setup: these steps were executed before the exercise\nmy_object &lt;- 10\n\n\n\nExamine the log() function.\n\n\n?log\n\n\nCompute the base-10 logarithm of my_object.\n\n\nlog10(my_object)\n\n[1] 1\n\n\n\nExercise\nObtain the maximum value of water content per 100g in the data. Your code:\n\n\n\nCode\n# setup: these steps were executed before the exercise\nmy_character_vector &lt;- c(\"Apple\", \"Orange\", \"Watermelon\", \"Banana\")\nmy_data_frame &lt;- data.frame(fruit = my_character_vector,\n                            calories_per_100g = c(52, 47, 30, 89),\n                            water_per_100g = c(85.6, 86.8, 91.4, 74.9))\nmy_data_frame\n\n\n\nmax(my_data_frame$water_per_100g)\n\n[1] 91.4"
   },
   {
     "objectID": "solutions.html#tidy-data-analysis-ii",
