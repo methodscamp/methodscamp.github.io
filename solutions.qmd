@@ -502,3 +502,60 @@ f(5) |> g() # pipeline approach
 ## 8. Simulations {.unnumbered}
 
 ## 9. Text Analysis {.unnumbered}
+
+> **Exercise**
+>
+> What score (out of 10) would you give Barbie or Oppenheimer? Write your score in one sentence (e.g., I would give Barbie seven of ten stars.) If you have not seen either, write a sentence about which you would like to see more.
+>
+> Store that text as a string (`string3`) and combine it with our existing `cat_string` to produce a new concatenated string called `cat_string2`. Finally, count the total of characters within `cat_string2`. Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+# setup: these steps were executed before the exercise
+library(stringr)
+my_string <- "I know people who have seen the Barbie movie 2, 3, even 4 times!"
+my_string2 <- "I wonder if they have seen Oppenheimer, too."
+cat_string <- str_c(my_string, my_string2, sep = " ")
+```
+
+```{r}
+
+```
+
+> **Exercise**
+>
+> Look up the lyrics to your favorite song at the moment (no guilty pleasures here!). Then, follow the process described above to count the words: store the text as a string, convert to a tibble, tokenize, and count.
+>
+> When you are done counting, create a visualization for the chorus using the `ggplot` code above. Your code:
+
+1. Store the text as a string.
+
+```{r}
+
+```
+
+2. Convert to a tibble.
+
+```{r}
+
+```
+
+3. Tokenize.
+
+```{r}
+
+```
+
+4. Count.
+
+```{r}
+
+```
+
+5. Visualize.
+
+```{r}
+
+```
+
