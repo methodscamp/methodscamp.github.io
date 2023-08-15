@@ -819,6 +819,41 @@ lgl  (2): 2021, 2022
 </section>
 <section id="text-analysis" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="text-analysis">9. Text Analysis</h2>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>What score (out of 10) would you give Barbie or Oppenheimer? Write your score in one sentence (e.g., I would give Barbie seven of ten stars.) If you have not seen either, write a sentence about which you would like to see more.</p>
+<p>Store that text as a string (<code>string3</code>) and combine it with our existing <code>cat_string</code> to produce a new concatenated string called <code>cat_string2</code>. Finally, count the total of characters within <code>cat_string2</code>. Your code:</p>
+</blockquote>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setup: these steps were executed before the exercise</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>my_string <span class="ot">&lt;-</span> <span class="st">"I know people who have seen the Barbie movie 2, 3, even 4 times!"</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>my_string2 <span class="ot">&lt;-</span> <span class="st">"I wonder if they have seen Oppenheimer, too."</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>cat_string <span class="ot">&lt;-</span> <span class="fu">str_c</span>(my_string, my_string2, <span class="at">sep =</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>Look up the lyrics to your favorite song at the moment (no guilty pleasures here!). Then, follow the process described above to count the words: store the text as a string, convert to a tibble, tokenize, and count.</p>
+<p>When you are done counting, create a visualization for the chorus using the <code>ggplot</code> code above. Your code:</p>
+</blockquote>
+<ol type="1">
+<li>Store the text as a string.</li>
+</ol>
+<ol start="2" type="1">
+<li>Convert to a tibble.</li>
+</ol>
+<ol start="3" type="1">
+<li>Tokenize.</li>
+</ol>
+<ol start="4" type="1">
+<li>Count.</li>
+</ol>
+<ol start="5" type="1">
+<li>Visualize.</li>
+</ol>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
