@@ -1,0 +1,440 @@
+# Probability, statistics, and simulations
+
+## What is probability?
+
+-   Informally, a probability is a number that describes how likely an event is.
+    +   It is, by definition, between 0 and 1.
+    +   What is the probability that a fair coin flip will result in heads?
+
+-   We can also think of a probability as an outcome's **relative frequency** after repeating an "experiment" many times.[^07_probability-1]
+    +   In this setting, an experiment is "an action or a set of actions that produce stochastic \[random\] events of interest" ([Imai and Williams 2022](https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science), p. 281). Not to confuse with scientific experiments!
+    +   If we were to flip a million fair coins, what will be the proportion of heads?
+
+[^07_probability-1]: This is sometimes called the *frequentist* interpretation of probability. There are other possibilities, such as *Bayesian* interpretations of probability, which describe probabilities as degrees of belief.
+
+-   A *probability space* $(\Omega, S, P)$ is a formal way to talk about a random process:
+    + The sample space ($\Omega$) is the set of all possible outcomes.
+    + The event space ($S$) is a collection of events (an event is a subset of $\Omega$).
+    + The probability measure ($P$) is a function that assigns a probability in $\mathbb{R}$ to every event in $S$. So $P: S \rightarrow \mathbb{R}$.
+
+- We can formalize our intuitions with the **probability axioms** (sometimes called Kolmogorov's axioms):
+    + $P(A) \ge 0, \; \forall A \in S$. 
+        - Probabilities must be non-negative.
+    + $P(\Omega) = 1$. 
+        - Something has to happen!
+        - Probabilities sum/integrate to 1.
+    + $P(A \cup B) = P(A) + P(B), \; \forall A, B \in S, \; A\cup B = \emptyset$.
+        - The probability of disjoint (mutually exclusive) events is equal to the sum of their individual probabilities.
+
+### Definitions and properties of probability
+
+- Joint probability: $P(A \cap B)$. The probability that the two events will occur in one realization of the experiment.
+
+- Law of total probability: $P(A) = P(A \cap B) + P(A \cap B^C)$.
+
+- Addition rule: $P(A \cup B) = P(A) + P(B) - P (A \cap B)$.
+
+- Conditional probability: $\displaystyle P(A|B)=\frac{P(A \cap B)}{P(B)}$
+
+- Bayes theorem: $\displaystyle P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}$
+
+### Random variables and probability distributions
+
+- **Random variables** are functions ($X: \Omega \to \mathbb{R}$) of the outcome of a random generative process. Informally, they are "placeholders" for whatever will be the output of a process we're studying.
+
+- **Probability distributions** describe how the random variable assigns probabilities to outcomes.
+
+- Random variables (and probability distributions) can be discrete or continuous.
+
+#### Discrete random variables and probability distributions
+
+-   A sample space in which there are a (finite or infinite) countable number of outcomes
+
+-   Each realization of random process has a discrete probability of occurring.
+    +   $f(X=x_i)=P(X=x_i)$ is the probability the variable takes the value $x_i$.
+
+##### An example {.unnumbered}
+
+-   What's the probability that we'll roll a 3 on one die roll: $$Pr(y=3) = \dfrac{1}{6}$$
+
+-   If one roll of the die is an "experiment," we can think of a 3 as a "success."
+
+-   $Y \sim Bernoulli \left(\frac{1}{6} \right)$
+
+-   Fair coins are $\sim Bernoulli(.5)$, for example.
+
+-   More generally, $Bernoulli(\pi )$. We'll talk about other probability distributions soon.
+
+    -   $\pi$ represents the probability of success.
+
+Let's do another example on the board, using the sum of two fair dice.
+
+#### Continuous random variables and probability distributions
+
+-   What happens when our outcome is continuous?
+-   There are an infinite number of outcomes. This makes the denominator of our fraction difficult to work with.
+-   The probability of the whole space must equal 1.
+-   The domain may not span -$\infty$ to $\infty$.
+    +   Even space between 0 and 1 is infinite!
+-   Two common examples are the uniform and normal probability distributions, which we will discuss below.
+
+### Functions describing probability distributions
+
+#### Probability Mass Function (PMF)
+
+Probability of each occurrence encoded in probability mass function (PMF)
+
+-   $0 \leq f(x_i) \leq 1$
+    -   Probability of any value occurring must be between 0 and 1.
+-   $\displaystyle\sum_{x}f(x_i) = 1$
+    -   Probabilities of all values must sum to 1.
+
+#### Probability Density Function (PDF)
+
+-   Similar to PMF from before, but for continuous variables.
+-   Using integration, it gives the probability a value falls within a particular interval
+    -   $P[a\le X\le b] = \displaystyle\int_a^b f(x) \, dx$
+    -   Total area under the curve is 1.
+    -   $P(a < X < b)$ is the area under the curve between $a$ and $b$ (where $b > a$).
+
+#### Cumulative Density Function (CDF)
+
+##### Discrete {.unnumbered}
+
+-   Cumulatve density function is probability X will take a value of x or lower.
+-   PDF is written $f(x)$, and CDF is written $F'(x)$. $$F_X(x) = Pr(X\leq x)$$
+-   For discrete CDFs, that means summing up over all values.
+-   What is the probability of rolling a 6 or lower with two dice? $F(6)=?$
+
+##### Continuous {.unnumbered}
+
+-   We can't sum probabilities for continuous distributions (remember the 0 problem).
+-   Solution: integration $$F_Y(y) = \int_{-\infty}^{y} f(y) dy$$
+-   Examples of uniform distribution.
+
+### Common types of probability distributions
+
+There are many useful probability distributions. In this section we will cover three of the most common ones: the binomial, uniform, and normal distributions.
+
+#### Binomial distribution
+
+A Binomial distribution is defined as follow: $X \sim Binomial(n, p)$
+
+PMF: 
+
+$$
+{n \choose k} p^k(1-p)^{n-k}
+$$
+, where $n$ is the number of trials, $p$ is the probability of success, and $k$ is the number of successes.
+
+Remember that:
+
+$$
+{n \choose k} = \frac{n!}{k!(n-k)!}
+$$
+
+For example, let's say that voters choose some candidate with probability 0.02. What is the probability of seeing exactly 0 voters of the candidate in a sample of 100 people?
+
+We can compute the PMF of a binomial distribution using R's `dbinom()` function.
+
+```{r}
+dbinom(x = 0, size = 100, prob = 0.01)
+```
+
+```{r}
+dbinom(x = 1, size = 100, prob = 0.01)
+```
+
+
+Similarly, we can compute the CDF using R's `pbinom()` function:
+
+```{r}
+pbinom(q = 0, size = 100, prob = 0.01)
+```
+
+```{r}
+pbinom(q = 100, size = 100, prob = 0.01)
+```
+
+```{r}
+pbinom(q = 1, size = 100, prob = 0.01)
+```
+
+::: callout-note
+#### Exercise
+
+Compute the probability of seeing between 1 and 10 voters of the candidate in a sample of 100 people.
+
+:::
+
+#### Uniform distribution
+
+A uniform distribution has two parameters: a minimum and a maximum. So $X \sim U(a, b)$.
+
+- PDF:
+
+$$
+\displaystyle{
+\begin{cases}
+  \frac{1}{b-a} & \text{, }{x \in [a, b]}\\
+  0             & \text{, otherwise}
+\end{cases}
+}
+$$
+
+- CDF:
+
+$$
+\displaystyle{
+\begin{cases}
+  0 & \text{, }{x < a}\\
+  \frac{x-a}{b-a} & \text{, }{x \in [a, b]}\\
+  1             & \text{, }{x>b}
+\end{cases}
+}
+$$
+
+In R, `dunif()` gives the PDF of a uniform distribution. By default, it is $X \sim U(0, 1)$.
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+```{r}
+ggplot() +
+  stat_function(fun = dunif, xlim = c(-4, 4))
+```
+
+Meanwhile, `punif()` evaluates the CDF of a uniform distribution.
+
+```{r}
+punif(q = .3)
+```
+
+::: callout-note
+#### Exercise
+
+Evaluate the CDF of $Y \sim U(-2, 2)$ at point $y = 1$. Use the formula and `punif()`.
+
+:::
+
+#### Normal distribution
+
+A normal distribution has two parameters: a mean and a standard deviation. So $X \sim N(\mu, \sigma)$.
+
+- PDF: $2 {\displaystyle {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}$
+
+In R, `dnorm()` gives us the PDF of a standard normal distribution ($Z \sim N(0, 1)$):
+
+```{r}
+ggplot() +
+  stat_function(fun = dnorm, xlim = c(-4, 4))
+```
+
+Like you might expect, `pnorm()` computes the CDF of a normal distribution (by default, the standard normal). 
+
+```{r}
+pnorm(0)
+```
+
+```{r}
+pnorm(1) - pnorm(-1)
+```
+
+::: callout-note
+#### Exercise
+
+What is the probability of obtaining a value above 1.96 or below -1.96 in a standard normal probability distribution? Hint: use the `pnorm()` function.
+
+:::
+
+## Statistics
+
+> The problems considered by probability and statistics are inverse to each other. In probability theory we consider some underlying process which has some randomness or uncertainty modeled by random variables, and we figure out what happens. In statistics we observe something that has happened, and try to figure out what underlying process would explain those observations. (quote attributed to [Persi Diaconis](https://stats.stackexchange.com/a/675))
+
+- In statistics we try to learn about a **data-generating process** (DGP) using our observed data. Example: GDP statistics.
+
+- Usually we are restrained to **samples**, while our DGPs of interest are **population-based**. 
+    + So we use **random sampling** or refer to **superpopulations** as a way to justify how the data we observe can reasonably approximate the population.
+
+- Statistics has two main targets:
+    + **Estimation**: how we find a reasonable guess of an unknown property (parameter) of a DGP
+    + **Inference**: how we describe uncertainty about our estimate
+    
+- We use an **estimator** ($\hat\theta$), which is a function that summarizes data, as guess about a parameter $\theta$.
+
+- Theoretical statistics is all about finding "good" estimators (let's see an example of different estimators). A few properties of good estimators:
+    + **Unbiasedness**: Across multiple random samples, an unbiased estimator gets the right answer on average.
+    + **Low variance**: Across multiple random samples, a low-variance estimator is more concentrated around the true paramater.
+    + BUT it's usually hard to get both unbiasedness and low variance. We usually quantify this via the mean squared error: $MSE = bias^2 + variance$. Comparing two estimators, the one with the lowest MSE is said to be more **efficient**.
+    + **Consistency**: A consistent estimator convergences in probability to the true value. "If we had enough data, the probability that our estimate would be far from the truth would be close to zero" ([Aronow and Miller 2019](https://www.cambridge.org/core/books/foundations-of-agnostic-statistics/684756357E7E9B3DFF0A8157FB2DCECA), p. 105).
+    
+- Applied statistics is about using these techniques reasonably in messy real-world situations...
+
+## Simulations
+
+- In simulations, we generate fake data following standard procedues. Why?
+    + To better understand how our estimators work in different settings (the methods reason)
+    + To get insights about complex processes with many moving parts (the substantive reason) (let's talk about gerrymandering).
+    
+Before we jump into an example, we'll review some R tools that will build up to simulations.
+
+### Random sampling from data
+
+In this module we will work with good ol' `mtcars`, one of R's most notable default datasets. We'll assign it to an object so it shows in our Environment pane:
+
+```{r}
+my_mtcars <- mtcars
+```
+
+::: callout-tip
+Default datasets such as `mtcars` and `iris` are useful because they are available to everyone, and once you become familiar with them, you can start thinking about the code instead of the intricacies of the data. These qualities also make default datasets ideal for building **reproducible examples** (see [Wickham 2014](http://adv-r.had.co.nz/Reproducibility.html))
+:::
+
+We can use the function `sample()` to obtain random values from a vector. The `size =` argument specifies how many values we want. For example, let's get one random value of the "mpg" column:
+
+```{r}
+sample(my_mtcars$mpg, size = 1)
+```
+
+Every time we run this command, we can get a different result:
+
+```{r}
+sample(my_mtcars$mpg, size = 1)
+```
+
+```{r}
+sample(my_mtcars$mpg, size = 1)
+```
+
+In some occasions we do want to get the same result consistently after running some random process multiple times. In this case, we *set a seed*, which takes advantage of R's pseudo-random number generator capabilities. No matter how many times we run the following code block, the result will be the same:
+
+```{r}
+set.seed(123)
+sample(my_mtcars$mpg, size = 1)
+```
+
+Sampling *with replacement* means that we can get the same value multiple times. For example:
+
+```{r}
+set.seed(12)
+sample(c("Banana", "Apple", "Orange"), size = 3, replace = T)
+```
+
+```{r}
+sample(my_mtcars$mpg, size = 100, replace = T)
+```
+
+In order to sample not from a vector but from a data frame's rows, we can use the `slice_sample()` function from `dplyr`:
+
+```{r}
+my_mtcars |> 
+  slice_sample(n = 2) # a number of rows
+```
+
+```{r}
+my_mtcars |> 
+  slice_sample(prop = 0.5) # a proportion of rows
+```
+
+Again, we can also use seeds here to ensure that we'll get the same result each time:
+
+```{r}
+set.seed(123)
+my_mtcars |> 
+  slice_sample(prop = 0.5)
+```
+
+And we can also sample with replacement:
+
+```{r}
+set.seed(123)
+my_mtcars |> 
+  slice_sample(prop = 1, replace = T)
+```
+
+### Random sampling from theoretical distributions
+
+We can also draw sample numbers from theoretical distributions.
+
+#### Uniform distribution {.unnumbered}
+
+For the uniform distribution, the arguments specify how many draws we want and the boundaries
+
+```{r}
+runif(n = 20, min = -3, max = 3)
+```
+
+When we draw a million times from the distribution, we can then plot it and see that it does look as we would expect:
+
+```{r}
+set.seed(123)
+my_runif <- runif(n = 1000000, min = -3, max = 3)
+```
+
+```{r}
+ggplot(data.frame(my_runif), aes(x = my_runif)) +
+  geom_histogram(binwidth = 0.25, boundary = 0, closed = "right") +
+  scale_x_continuous(breaks = seq(-5, 5, 1), limits = c(-5, 5))
+```
+
+#### Binomial distribution {.unnumbered}
+
+For the binomial distribution, we can specify the number of draws, how many trials each draw will have, and the probability of success.
+
+For instance, we can ask R to do the following twenty times: flip a fair coin one hundred times, and count the number of tails.
+
+```{r}
+rbinom(n = 20, size = 100, prob = 0.5)
+```
+
+With `prob =` , we can implement unfair coins:
+
+```{r}
+rbinom(n = 20, size = 100, prob = 0.9)
+```
+
+#### Normal distribution {.unnumbered}
+
+For the Normal or Gaussian distribution, we specify the number of draws, the mean, and standard deviation:
+
+```{r}
+rnorm(n = 20, mean = 0, sd = 1)
+```
+
+::: callout-note
+#### Exercise
+
+Compute and plot `my_rnorm`, a vector with one million draws from a Normal distribution $Z$ with mean equal to zero and standard deviation equal to one ($Z\sim N(0,1)$). You can recycle code from what we did for the uniform distribution!
+:::
+
+### Loops
+
+Loops allow us to repeat operations in R. The most common construct is the for-loop:
+
+```{r}
+for (i in 1:10){
+  print(i)
+}
+```
+
+> We talked about loops and various extensions in one of our methods workshops last year: [Speedy R](https://arcruz0.github.io/workshops/speedyr).
+
+
+### An example simulation: bootstrapping a sample mean
+
+Bootstrap (and its relatives) is one way in which we can do inference. We'll go through the intuition on the board.
+
+```{r}
+bootstrapped_means <- vector(mode = "numeric", length = 10000)
+for (i in 1:10000){
+  m <- my_mtcars |> slice_sample(prop = 1, replace = T)
+  bootstrapped_means[i] <- mean(m$mpg)
+}
+```
+
+```{r}
+ggplot(data.frame(bootstrapped_means), aes(x = bootstrapped_means)) +
+  geom_histogram(binwidth = 0.25, boundary = 0, closed = "right")
+```

@@ -16,10 +16,9 @@ book:
     - 04_tidy_data2.qmd
     - 05_functions.qmd
     - 06_calculus.qmd
-    # - 07_probability.qmd
-    # - 08_simulations.qmd
-    # - 09_textanalysis.qmd
-    # - 10_wrapup.qmd
+    - 07_probability_stats_sims.qmd
+    - 08_text_analysis.qmd
+    - 09_wrapup.qmd
     - solutions.qmd
     - references.qmd
   # downloads: pdf
@@ -34,7 +33,7 @@ nocite: |
   @fuzzyjoin, @Vdemcodebook2022, @wickham_ggplot2, @imai_quantitative_2022, 
   @rossi1996mathematics, @moore_mathematics_2013, 
   @baydinAutomaticDifferentiationMachine2017, @silge_text_2017, @Wickham2014,
-  @pontinOppenheimerGhost2007
+  @pontinOppenheimerGhost2007, @wickham2014advanced, @aronow2019foundations
 format:
   html:
     theme: 

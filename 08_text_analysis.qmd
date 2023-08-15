@@ -51,10 +51,10 @@ test <- "test"
 Fortunately, the syntax for regular expressions is relatively stable across all programming languages (e.g., Java, Python, R).
 :::
 
-## Stringr
+### Using the `stringr` package
 
 ```{r}
-library(stringr)
+library(tidyverse)
 ```
 
 -   `stringr` comes with the `tidyverse` and provides functions for both (a) basic string manipulations and (b) regular expression operations. Some basic functions are listed below:
@@ -70,8 +70,6 @@ library(stringr)
 |  `str_wrap()`  |        wraps a string paragraph         |
 |  `str_trim()`  |             trims a string              |
 
-### Basic string manipulation
-
 -   Let's try some examples of basic string manipulation using `stringr`:
 
 ```{r, message=FALSE}
@@ -82,11 +80,11 @@ my_string
 -   One common thing we want to do with strings is lowercase them:
 
 ```{r, message=FALSE}
-lower_string <- tolower(my_string)
+lower_string <- str_to_lower(my_string)
 lower_string
 ```
 
--   We can also combine (concatenate) strings using the `str_c` command:
+-   We can also combine (concatenate) strings using the `str_c()` command:
 
 ```{r, message=FALSE}
 my_string2 <- "I wonder if they have seen Oppenheimer, too."
@@ -105,7 +103,7 @@ my_string_vector
 
 -   We can also find which strings in a vector contain a particular character or sequence of characters.
 
-    -   The `grep` (Globally search for Regular Expression and Print) command will return any instance that (partially) matches the provided pattern.
+    -   The `grep()` (Globally search for Regular Expression and Print) command will return any instance that (partially) matches the provided pattern.
     -   Closely related to the `grep()` function is the `grepl()` function, which returns a logical for whether a string contains a character or sequence of characters.
 
 ```{r}
@@ -123,7 +121,7 @@ grepl("\\!", cat_string)
 -   The `str_replace_all` function can be used to replace all instances of a given string, with an alternative string.
 
 ```{r}
-str_replace_all(cat_string, "e","_")
+str_replace_all(cat_string, "e", "_")
 ```
 
 -   We can also pull out all sub-strings matching a given string argument.
@@ -146,9 +144,9 @@ str_extract_all(cat_string,"\\w+")[[1]] # "word" characters
 ```
 
 ::: callout-note
-## Exercise
+#### Exercise
 
-What score (out of 10) would you give Barbie or Oppenheimer? Write your score in one sentence (e.g., I would give Barbie seven of ten stars.) If you have not seen either, write a sentence about which you would like to see more.
+What score (out of 10) would you give Barbie or Oppenheimer? Write your score in one sentence (e.g., "I would give Barbie seven of ten stars".) If you have not seen either, write a sentence about which you would like to see more.
 
 Store that text as a string (`string3`) and combine it with our existing `cat_string` to produce a new concatenated string called `cat_string2`. Finally, count the total of characters within `cat_string2`. Your code:
 :::
@@ -157,7 +155,7 @@ Store that text as a string (`string3`) and combine it with our existing `cat_st
 
 -   We can use the `tidytext` package to conduct some basic text analysis using tidy data principles.
 
--   As [Wickham 2014](https://www.tidytextmining.com/tidytext.html) reminds us, tidy data has a specific structure:
+-   As [Wickham 2014](https://doi.org/10.18637/jss.v059.i10) reminds us, tidy data has a specific structure:
 
     -   Each variable is a column.
     -   Each observation is a row.
@@ -180,15 +178,16 @@ Store that text as a string (`string3`) and combine it with our existing `cat_st
 ```{r, message=FALSE}
 library(dplyr)
 
-Barbie <- c("I'm a Barbie girl in the Barbie world",
+barbie <- c("I'm a Barbie girl in the Barbie world",
             "Life in plastic, it's fantastic",
             "You can brush my hair, undress me everywhere",
             "Imagination, life is your creation")
-Barbie
+barbie
+```
 
-Barbie_df <- tibble(line = 1:4, text = Barbie)
-Barbie_df
-
+```{r, message=FALSE}
+barbie_df <- tibble(line = 1:4, text = barbie)
+barbie_df
 ```
 
 -   We then break the text into individual tokens (tokenization) using tidytext's `unnest_tokens()` function.
@@ -204,48 +203,49 @@ install.packages("tidytext")
 #| message: false
 library(tidytext)
 
-Barbie_df %>%
+barbie_df |>
   unnest_tokens(word, text)
 ```
 
 ### Counts
 
--   Once we have our tidy structure, we can then perform very simple tasks such as finding the most common words in our text as a whole. Let's instead work with a short passage from a famous interview with J. Robert Oppenheimer.
+-   Once we have our tidy structure, we can then perform very simple tasks such as finding the most common words in our text as a whole. Let's instead work with a short passage from a famous 1965 interview with J. Robert Oppenheimer ([Pontin 2007](https://www.technologyreview.com/2007/10/15/223531/oppenheimers-ghost-3/)).
 
     -   We can use the `count()` function from the `dplyr` package with ease here.
 
 ```{r}
-Oppenheimer <- c("We knew the world would not be the same.",
+oppenheimer <- c("We knew the world would not be the same.",
                  "A few people laughed, a few people cried, most people were silent.",
                  "I remembered the line from the Hindu scripture, the Bhagavad-Gita.",
                  "Vishnu is trying to persuade the Prince that he should do his duty and to impress him 
-                 takes on his multi-armed form and says, “Now, I am become Death, the destroyer of 
+                 takes on his multi-armed form and says, “Now, I am become Death, the destroyer of
                  worlds.”", 
                  "I suppose we all thought that one way or another.")
 
-Opp_df <- tibble(line = 1:5, text = Oppenheimer)
+opp_df <- tibble(line = 1:5, text = oppenheimer)
+```
 
-Opp_tok <- unnest_tokens(Opp_df, word, text)
+```{r}
+opp_tok <- unnest_tokens(opp_df, word, text)
 
-Opp_tok %>%
+opp_tok |>
   count(word, sort = TRUE)
 ```
 
 -   Our word counts are stored in a tidy data frame, which allows us to pipe these data directly to the `ggplot2` package and create a simple visualization of the most common words in the short excerpt.
 
 ```{r, message=FALSE}
-library(ggplot2)
-Opp_tok %>%
-  count(word, sort = TRUE) %>%
-  filter(n > 1) %>%
-  mutate(word = reorder(word, n)) %>%
+opp_tok |>
+  count(word, sort = TRUE) |>
+  filter(n > 1) |>
+  mutate(word = reorder(word, n)) |>
   ggplot(aes(n, word)) +
   geom_col() +
   labs(y = NULL)
 ```
 
-::: callout-exercise
-## Exercise
+::: callout-note
+#### Exercise
 
 Look up the lyrics to your favorite song at the moment (no guilty pleasures here!). Then, follow the process described above to count the words: store the text as a string, convert to a tibble, tokenize, and count.
 
@@ -269,13 +269,12 @@ If you are curious about the repetitiveness of lyrics in pop music over time, I 
 ```{r, message=FALSE}
 library(janeaustenr)
 
-book_words <- austen_books() %>%
-  unnest_tokens(word, text) %>%
+book_words <- austen_books() |>
+  unnest_tokens(word, text) |>
   count(book, word, sort = TRUE)
 
-total_words <- book_words %>% 
-  group_by(book) %>% 
-  summarize(total = sum(n))
+total_words <- book_words |> 
+  summarize(total = sum(n), .by = book)
 
 book_words <- left_join(book_words, total_words)
 
@@ -285,9 +284,9 @@ book_words
 -   We can then take these data and visualize them for each of the books in the dataset.
 
 ```{r}
-ggplot(book_words, aes(n/total, fill = book)) +
+ggplot(book_words, aes(x = n/total, fill = book)) +
   geom_histogram(show.legend = FALSE) +
-  xlim(NA, 0.0009) +
+  scale_x_continuous(limits = c(NA, 0.0009)) + # removes some observations
   facet_wrap(~book, ncol = 2, scales = "free_y")
 ```
 
@@ -296,12 +295,12 @@ ggplot(book_words, aes(n/total, fill = book)) +
     -   Below we see all proper nouns, mostly names of characters. None of them occur across all of Jane Austen's novels, which is why they are important, defining terms for each of the texts.
 
 ```{r}
-book_tf_idf <- book_words %>%
+book_tf_idf <- book_words |>
   bind_tf_idf(word, book, n)
 
-book_tf_idf %>%
-  select(-total) %>%
-  arrange(desc(tf_idf))
+book_tf_idf |>
+  select(-total) |>
+  arrange(-tf_idf)
 ```
 
 -   Let's end with a visualization for the high tf-idf words in each of Jane Austen's novels.
@@ -309,14 +308,11 @@ book_tf_idf %>%
     -   These results highlight that what distinguishes one novel from another within the collection of her works (the corpus) are the proper nouns, mainly the names of people and places. These are the terms that are "important" for defining the character of each document.
 
 ```{r}
-library(forcats)
-
-book_tf_idf %>%
-  group_by(book) %>%
-  slice_max(tf_idf, n = 15) %>%
-  ungroup() %>%
-  ggplot(aes(tf_idf, fct_reorder(word, tf_idf), fill = book)) +
-  geom_col(show.legend = FALSE) +
-  facet_wrap(~book, ncol = 2, scales = "free") +
-  labs(x = "tf-idf", y = NULL)
+#| fig-height: 10
+book_tf_idf |>
+  slice_max(tf_idf, n = 15, by = book) |>
+  ggplot(aes(x = tf_idf, y = fct_reorder(word, tf_idf), fill = book)) +
+    geom_col(show.legend = FALSE) +
+    facet_wrap(~book, ncol = 2, scales = "free") +
+    labs(x = "tf-idf", y = "")
 ```
