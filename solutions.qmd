@@ -2,7 +2,7 @@
 
 ## 1. Intro to R
 
-> **Exercise** 
+> **Exercise**
 >
 > Create your own code block below and run a math operation.
 
@@ -21,13 +21,13 @@ pi * 2
 my_object <- 10
 ```
 
-1) Examine the `log()` function.
+1)  Examine the `log()` function.
 
 ```{r}
 ?log
 ```
 
-2) Compute the base-10 logarithm of `my_object`.
+2)  Compute the base-10 logarithm of `my_object`.
 
 ```{r}
 log10(my_object)
@@ -53,9 +53,167 @@ my_data_frame
 max(my_data_frame$water_per_100g)
 ```
 
+## 2. Tidy data analysis I {.unnumbered}
+
+> **Exercise**
+>
+> Select the variables `last_name`, `party`, `num_votes`, and `agree` from the data frame. Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+
+
+```
+
+```{r}
+
+```
+
+> **Exercise**
+>
+> 1.  Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute value of `diff_agree`? Your code:
+>
+> 2.  Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:
+>
+> 3.  Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+
+
+```
+
+1)  Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute value of `diff_agree`? Your code:
+
+```{r}
+
+```
+
+2)  Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:
+
+```{r}
+
+```
+
+3)  Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:
+
+```{r}
+
+```
+
+> **Exercise**
+>
+> Arrange the data by `diff_pred`, the difference between agreement and predicted agreement with Trump. (You should have code on how to create this variable from the last exercise). Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+
+
+```
+
+```{r}
+
+```
+
+> **Exercise**
+>
+> Obtain the maximum absolute difference in agreement with Trump (the `abs_diff_agree` variable from before) for each party.
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+
+
+```
+
+```{r}
+
+```
+
+> **Exercise**
+>
+> Draw a column plot with the agreement with Trump of Bernie Sanders and Ted Cruz. What happens if you use `last_name` as the `y` aesthetic mapping and `agree` in the `x` aesthetic mapping? Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+
+
+```
+
+```{r}
+
+```
+
+## 3. Matrices {.unnumbered}
+
+> **Exercise**
+>
+> Get the product of the first three elements of vector $d$. Write the notation by hand and use R to obtain the number.
+>
+> $$\overrightarrow d = \begin{bmatrix}
+> 12 & 7 & -2 & 3 & 1
+> \end{bmatrix}$$
+
+```{r}
+#| code-fold: true
+#| message: false
+# setup: these steps were executed before the exercise
+vector_d <- c(12, 7, -2, 3, -1)
+```
+
+$$\prod_{i=1}^3 d_i = 12 \cdot 7 \cdot (-2) = -168$$
+```{r}
+prod(vector_d[1:3])
+```
+
+> **Exercise**
+>
+> 1)  Calculate $A + B$ $$A= \begin{bmatrix}
+>     1 & 0 \\
+>     -2 & -1
+>     \end{bmatrix}$$
+>
+> $$B = \begin{bmatrix}
+> 5 & 1 \\
+> 2 & -1
+> \end{bmatrix}$$\
+>
+> 2)  Calculate $A - B$ $$A= \begin{bmatrix}
+>     6 & -2 & 8 & 12 \\
+>     4 & 42 & 8 & -6
+>     \end{bmatrix}$$ $$B = \begin{bmatrix}
+>     18 & 42 & 3 & 7 \\
+>     0 & -42 & 15 & 4
+>     \end{bmatrix}$$
+
+> **Exercise**
+>
+> Calculate $2\times A$ and $-3 \times B$. Again, do one by hand and the other one using R. $$A= \begin{bmatrix}
+> 1 & 4 & 8 \\
+> 0 & -1 & 3
+> \end{bmatrix}$$ $$ B = \begin{bmatrix}
+> -15 & 1 & 5 \\
+> 2 & -42 & 0 \\
+> 7 & 1 & 6
+> \end{bmatrix}$$
+
 ## 4. Tidy data analysis II {.unnumbered}
 
-> **Exercise** 
+> **Exercise**
 >
 > There is a dataset on country's CO2 emissions, again from the World Bank ([2023](https://data.worldbank.org/)), in "data/wdi_co2.csv". Load the dataset into R and add a new variable with its information, `wdi_co2`, to our `qog_plus` data frame. Finally, compute the average values of CO2 emissions *per capita*, by country. Tip: this exercise requires you to do many steps---plan ahead before you start coding! Your code:
 
@@ -79,13 +237,13 @@ qog_plus <- left_join(qog,
                              "year"))
 ```
 
-1) Load data (notice the .csv format):
+1)  Load data (notice the .csv format):
 
 ```{r}
 emissions <- read_csv("data/wdi_co2.csv")
 ```
 
-2) Pivot data to long, creating the "wdi_co2" variable:
+2)  Pivot data to long, creating the "wdi_co2" variable:
 
 ```{r}
 emissions_long <- emissions |> 
@@ -95,7 +253,7 @@ emissions_long <- emissions |>
                names_transform = as.integer)
 ```
 
-3) Merge-in information to our existing `qog_plus` data frame:
+3)  Merge-in information to our existing `qog_plus` data frame:
 
 ```{r}
 qog_plus2 <- left_join(qog_plus,
@@ -104,8 +262,9 @@ qog_plus2 <- left_join(qog_plus,
                              "year"))
 ```
 
-4) Create column for emissions *per capita* (here we do per 1,000 people).
-5) Summarize information to get mean values at the country level (remember that `na.rm = T` is always a conscious decision):
+4)  Create column for emissions *per capita* (here we do per 1,000 people).
+
+5)  Summarize information to get mean values at the country level (remember that `na.rm = T` is always a conscious decision):
 
 ```{r}
 qog_plus2 |> 
@@ -113,3 +272,13 @@ qog_plus2 |>
   summarize(emissions_pc_country = mean(emissions_pc, na.rm = T),
             .by = cname)
 ```
+
+## 5. Functions {.unnumbered}
+
+## 6. Calculus {.unnumbered}
+
+## 7. Probability {.unnumbered}
+
+## 8. Simulations {.unnumbered}
+
+## 9. Text Analysis {.unnumbered}
