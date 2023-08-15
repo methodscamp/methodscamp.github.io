@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Methods Camp - Setup</title>
+<title>Methods Camp - 9&nbsp; Wrap up</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -49,8 +83,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_r_intro.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./solutions.html" rel="next">
+<link href="./08_text_analysis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -95,7 +129,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00_setup.html">Setup</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09_wrapup.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap up</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -132,7 +166,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00_setup.html" class="sidebar-item-text sidebar-link active">
+  <a href="./00_setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setup</span></a>
   </div>
 </li>
@@ -186,7 +220,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_wrapup.html" class="sidebar-item-text sidebar-link">
+  <a href="./09_wrapup.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap up</span></span></a>
   </div>
 </li>
@@ -212,8 +246,23 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link active" data-scroll-target="#installing-r-and-rstudio">Installing R and RStudio</a></li>
-  <li><a href="#setting-up-for-methods-camp" id="toc-setting-up-for-methods-camp" class="nav-link" data-scroll-target="#setting-up-for-methods-camp">Setting up for Methods Camp</a></li>
+  <li><a href="#project-management" id="toc-project-management" class="nav-link active" data-scroll-target="#project-management"><span class="header-section-number">9.1</span> Project management</a>
+  <ul class="collapse">
+  <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects"><span class="header-section-number">9.1.1</span> RStudio projects</a></li>
+  </ul></li>
+  <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources"><span class="header-section-number">9.2</span> Other resources</a>
+  <ul class="collapse">
+  <li><a href="#overleaf" id="toc-overleaf" class="nav-link" data-scroll-target="#overleaf"><span class="header-section-number">9.2.1</span> Overleaf</a></li>
+  <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero"><span class="header-section-number">9.2.2</span> Zotero</a></li>
+  </ul></li>
+  <li><a href="#methods-at-ut" id="toc-methods-at-ut" class="nav-link" data-scroll-target="#methods-at-ut"><span class="header-section-number">9.3</span> Methods at UT</a>
+  <ul class="collapse">
+  <li><a href="#required-methods-courses" id="toc-required-methods-courses" class="nav-link" data-scroll-target="#required-methods-courses"><span class="header-section-number">9.3.1</span> Required methods courses</a></li>
+  <li><a href="#other-methods-courses" id="toc-other-methods-courses" class="nav-link" data-scroll-target="#other-methods-courses"><span class="header-section-number">9.3.2</span> Other methods courses</a></li>
+  <li><a href="#more-courses" id="toc-more-courses" class="nav-link" data-scroll-target="#more-courses"><span class="header-section-number">9.3.3</span> More courses</a></li>
+  <li><a href="#other-departments-at-ut" id="toc-other-departments-at-ut" class="nav-link" data-scroll-target="#other-departments-at-ut"><span class="header-section-number">9.3.4</span> Other departments at UT</a></li>
+  <li><a href="#other-resources-1" id="toc-other-resources-1" class="nav-link" data-scroll-target="#other-resources-1"><span class="header-section-number">9.3.5</span> Other resources</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -222,7 +271,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup</h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap up</span></h1>
 </div>
 
 
@@ -237,36 +286,36 @@ div.csl-indent {
 
 </header>
 
-<section id="installing-r-and-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="installing-r-and-rstudio">Installing R and RStudio</h2>
-<p><a href="https://cran.r-project.org/">R</a> is a programming language optimized for statistics and data analysis. Most people use R from <a href="https://rstudio.com/">RStudio</a>, a graphical user interface (GUI) that includes a file pane, a graphics pane, and other goodies. Both R and RStudio are open source, i.e., free as in beer and free as in freedom!</p>
-<p>Your first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date—if they are not, follow the instructions below):</p>
-<ol type="1">
-<li><p>Download and install R from <a href="https://cran.r-project.org/">the official website, CRAN</a>. Click on “Download R for &lt;Windows/Mac&gt;” and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2 Macs and Intel for older Macs).</p></li>
-<li><p>Download and install RStudio from <a href="https://posit.co/download/rstudio-desktop/">the official website</a>. Scroll down and select the installer for your operating system.</p></li>
-</ol>
-<p>After these two steps, you can open RStudio in your system, as you would with any program. You should see something like this:</p>
-<div id="fig-rstudio-first" class="quarto-figure quarto-figure-center anchored">
+<section id="project-management" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="project-management"><span class="header-section-number">9.1</span> Project management</h2>
+<section id="rstudio-projects" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="rstudio-projects"><span class="header-section-number">9.1.1</span> RStudio projects</h3>
+<ul>
+<li><p>RStudio projects are an excellent way to keep all the files associated with a project (data, R scripts, results, figures, etc.) in one place on your computer.</p></li>
+<li><p>This is one of the best ways to improve your workflow in RStudio, allowing you to:</p>
+<ul>
+<li>Create a project for each paper or data analysis project.</li>
+<li>Store data files in one place.</li>
+<li>Save, edit, and run scripts.</li>
+<li>Keep outputs such as plots and cleaned data.</li>
+</ul></li>
+<li><p>To create a new project file, click <code>File &gt; New Project</code>, then:</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/rstudio_first.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: How RStudio looks after a clean installation.</figcaption>
+<p><img src="images/new_project_step1.png" class="img-fluid figure-img" width="400"></p>
 </figure>
 </div>
-<p>That’s it for the installation! We also <em>strongly</em> recommend that you change a couple of RStudio’s default settings.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> You can change settings by clicking on <code>Tools &gt; Global Options</code> in the menubar. Here are our recommendations:</p>
-<ul>
-<li><p><code>General &gt; Uncheck "Restore .RData into workspace at startup"</code></p></li>
-<li><p><code>General &gt; Save workspace to .RData on Exit &gt; Select "Never"</code></p></li>
-<li><p><code>Code &gt; Check "Use native pipe operator"</code></p></li>
-<li><p><code>Tools &gt; Global Options &gt; Appearance</code> to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes…</p></li>
-</ul>
-</section>
-<section id="setting-up-for-methods-camp" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-for-methods-camp">Setting up for Methods Camp</h2>
-<p>All materials for Methods Camp are both on this website and available as <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">RStudio projects</a> for you to execute locally. An RStudio project is simply a folder where one keeps scripts, datasets, and other files needed for a data analysis project.</p>
-<p>There are two RStudio projects for you to download, available as .zip compressed files. On MacOS, the file will be uncompressed automatically. On Windows, you should do <code>Right click &gt; Extract all</code>.</p>
-<ul>
-<li><a href="materials/methodscamp_part1.zip">Download Part 1 of the class materials</a>.</li>
-<li><a href="materials/methodscamp_part2.zip">Download Part 2 of the class materials</a></li>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/new_project_step2.png" class="img-fluid figure-img" width="400"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/new_project_step3.png" class="img-fluid figure-img" width="400"></p>
+</figure>
+</div></li>
+<li><p>Call your project some version of “methodscamptest” and choose carefully where you wish to store the project on your machine.</p></li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -278,17 +327,207 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Make sure to properly unzip the materials. Double-clicking the .zip file on most Windows systems <em>will not</em> unzip the folder—you must do <code>Right click &gt; Extract all</code>.</p>
+<p>If you don’t store your project (and your other files, too!) somewhere reasonable, it will be hard to find it in the future! We recommend creating a clear organizational scheme for yourself early on.</p>
 </div>
 </div>
-<p>You should now have a folder called <code>methodscamp_part1/</code> on your computer. Navigate to the <code>methodscamp_part1.Rproj</code> file within it and open it. RStudio should open the project right away. You should see <code>methodscamp_part1</code> on the top-right of RStudio—this indicates that you are working in our RStudio project.</p>
-<div id="fig-rstudio-project" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/rstudio_project.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: How the bottom-right corner of RStudio looks after opening our project.</figcaption>
-</figure>
+<section id="using-rstudio-projects" class="level4" data-number="9.1.1.1">
+<h4 data-number="9.1.1.1" class="anchored" data-anchor-id="using-rstudio-projects"><span class="header-section-number">9.1.1.1</span> Using RStudio projects</h4>
+<p>When using an RStudio project, you should see its name in the top-right corner of RStudio, next to a light blue icon. You can check with R the folder in which your project operates:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>That’s all for setup! We can now start coding. After opening our RStudio project, we’ll begin by opening the <code>01_r_intro.qmd</code> file from the “Files” panel, in the bottom-right portion of RStudio. This is a Quarto document,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> which contains both code and explanations (you can also read the materials in the next chapter of this website).</p>
+<ul>
+<li>Now, as an example, let’s run the following commands in the script editor and save the files into the project directory.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot =</span> my_plot,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">filename =</span> <span class="st">"plot_mtcars.pdf"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(mtcars, <span class="st">"mtcars.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Quit RStudio and check out the folder associated with the project.</p></li>
+<li><p>You should see the PDF file for the plot, the .csv file for the data, and the <code>.Rproj</code> file for the project itself.</p></li>
+<li><p>Double-click the <code>.Rproj</code> file to reopen the project and pick up where you left off! Everything you need should be ready to go.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="other-resources" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="other-resources"><span class="header-section-number">9.2</span> Other resources</h2>
+<section id="overleaf" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="overleaf"><span class="header-section-number">9.2.1</span> Overleaf</h3>
+<div style="float: right; position: relative; top: 0px; padding: 30px;">
+<p><img src="images/overleaf.png" class="img-fluid" width="250"></p>
+</div>
+<ul>
+<li><p><a href="https://www.overleaf.com/">Overleaf</a> is a collaborative cloud-based LaTeX editor designed for writing, editing, and publishing documents.</p>
+<ul>
+<li>LaTeX is a software used for typesetting technical documents. It is used widely in our discipline for the preparation for manuscripts to journals and other publishing venues.</li>
+</ul></li>
+<li><p>UT Austin actually provides free access to Overleaf Professional to all graduate students using your UT email.</p></li>
+<li><p>Overleaf Professional upgrades include:</p>
+<ul>
+<li>Real-time collaboration</li>
+<li>Real-time track changes and visible collaborator cursor(s)</li>
+<li>Real-time PDF preview of your document while editing and writing</li>
+<li>Full history view of your documents</li>
+<li>Two-way sync with Dropbox and GitHub</li>
+<li>Reference manager sync and advanced reference search.</li>
+<li>UT Austin resource portal, including UT Austin templates, FAQs, and resource links</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>LaTeX is actually the markup language that powers this website! If you are curious about general syntax and commands, you can access <a href="https://github.com/methodscamp/methodscamp.github.io">our repository</a> at any time to get a closer look.</p>
+</div>
+</div>
+</section>
+<section id="zotero" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="zotero"><span class="header-section-number">9.2.2</span> Zotero</h3>
+<div style="float: right; position: relative; top: 0px; padding: 30px;">
+<p><img src="images/zotero_512x512x32.png" class="img-fluid" width="200"></p>
+</div>
+<ul>
+<li><p>Zotero is an open-source reference manager used to store, manage, and cite bibliographic references, such as books and articles.</p></li>
+<li><p>When it is time to write, you can insert your sources directly into your paper as in-text citations via a word processor plugin, which generates a bibliography in your style of choice.</p>
+<ul>
+<li>This can save a lot of time, especially when you have to change citation styles for submission to another journal.</li>
+</ul></li>
+<li><p>You can download the software for free <a href="https://www.zotero.org/">here</a>.</p>
+<ul>
+<li>You can also find a guide on how to install it <a href="https://www.zotero.org/support/installation">here</a>.</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Zotero is one of many other reference managers out there. Alternatives include Mendeley and EndNote, among others. You should choose whatever option best suits your needs.</p>
+</div>
+</div>
+<section id="benefits-of-zotero" class="level4" data-number="9.2.2.1">
+<h4 data-number="9.2.2.1" class="anchored" data-anchor-id="benefits-of-zotero"><span class="header-section-number">9.2.2.1</span> Benefits of Zotero</h4>
+<ul>
+<li><p>If you have not yet chosen a reference manager or are considering switching, below are some advantages of Zotero:</p>
+<ul>
+<li>Works as a standalone desktop software with plugins for <a href="https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc">Chrome</a>, Safari, and Firefox</li>
+<li>Full compatibility with Google docs</li>
+<li>Free plugin for Word and LibreOffice included</li>
+<li>Includes most popular citation styles with more styles available on the <a href="https://www.zotero.org/styles">Zotero Style Repository</a></li>
+<li>Drag and drop PDF files into the library, extracting metadata such as authors, year, etc.</li>
+<li>Allows advanced searches of all content in your library using full-text PDF indexing</li>
+<li>Use cloud storage (optional) and sync libraries across devices</li>
+<li>Create unlimited private or public groups and collaborate by sharing files and citations</li>
+<li>300MB of free cloud storage and 2GB of storage for $20 USD/year (equal to $1.67 per month)</li>
+</ul></li>
+<li><p><a href="https://www.zotero.org/support/quick_start_guide">Here</a> is a comprehensive guide to unlocking all of Zotero’s potential.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="methods-at-ut" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="methods-at-ut"><span class="header-section-number">9.3</span> Methods at UT</h2>
+<section id="required-methods-courses" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="required-methods-courses"><span class="header-section-number">9.3.1</span> Required methods courses</h3>
+<ul>
+<li><p>Scope and Methods of Political Science</p>
+<ul>
+<li>Statistics I (Statistics/linear regression)</li>
+</ul></li>
+<li><p>Statistics II (Linear regression and more)</p></li>
+<li><p>Statistics III (Maximum likelihood estimation)</p>
+<ul>
+<li>Only required if your major field is methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="other-methods-courses" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="other-methods-courses"><span class="header-section-number">9.3.2</span> Other methods courses</h3>
+<ul>
+<li><p><strong>Statistics/econometrics:</strong></p>
+<ul>
+<li>Bayesian Statistics</li>
+<li>Causal Inference</li>
+<li>Math Methods for Political Analysis</li>
+<li>Time Series and Panel Data</li>
+<li>Panel and Multilevel Analysis</li>
+</ul></li>
+</ul>
+</section>
+<section id="more-courses" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="more-courses"><span class="header-section-number">9.3.3</span> More courses</h3>
+<ul>
+<li><p><strong>Formal Theory</strong></p>
+<ul>
+<li>Intro to Formal Political Analysis</li>
+<li>Formal Political Analysis II</li>
+<li>Formal Theories of International Relations</li>
+</ul></li>
+<li><p><strong>Everything else</strong></p>
+<ul>
+<li>Conceptualization and Measurement</li>
+<li>Experimental Methods in Political Science</li>
+<li>Qualitative Methods</li>
+<li>Network Analysis</li>
+<li>Seminar in Field Experiments</li>
+</ul></li>
+</ul>
+</section>
+<section id="other-departments-at-ut" class="level3" data-number="9.3.4">
+<h3 data-number="9.3.4" class="anchored" data-anchor-id="other-departments-at-ut"><span class="header-section-number">9.3.4</span> Other departments at UT</h3>
+<p>You can also take courses through the Economics, Mathematics, or Statistics (Statistics and Data Science) departments.</p>
+<ul>
+<li>M.S. in Statistics</li>
+</ul>
+<p>Software and Topic Short Courses - R, Python, Stata, etc.</p>
+<ul>
+<li>More info <a href="https://stat.utexas.edu/training/software-short-courses">here</a>.</li>
+</ul>
+</section>
+<section id="other-resources-1" class="level3" data-number="9.3.5">
+<h3 data-number="9.3.5" class="anchored" data-anchor-id="other-resources-1"><span class="header-section-number">9.3.5</span> Other resources</h3>
+<p>Summer programs at UT:</p>
+<ul>
+<li><p>Short courses in statistics</p>
+<ul>
+<li>Department sometimes offers scholarships to cover part of the cost.</li>
+</ul></li>
+</ul>
+<p>Summer programs outside UT:</p>
+<ul>
+<li><p>ICPSR (Inter-university Consortium for Political and Social Research)</p>
+<ul>
+<li>Ann Arbor, Michigan</li>
+</ul></li>
+<li><p>EITM (Empirical Implications of Theoretical Models)</p>
+<ul>
+<li>Houston and other locations (Michigan, Duke, Berkeley, Emory)</li>
+</ul></li>
+<li><p>IQMR (Institute for Qualitative and Multi-Method Research)</p>
+<ul>
+<li>Syracuse, NY</li>
+</ul></li>
+</ul>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -345,12 +584,6 @@ Wickham, Hadley, Danielle Navarro, and Thomas Lin Pedersen. 2023. <em>Ggplot2: <
 </div>
 </div>
 </section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>The idea behind these settings (or at least the first two) is to force R to start from scratch with each new session. No lingering objects from previous coding sessions avoids misunderstandings and helps with reproducibility!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Perhaps you have used <a href="https://rmarkdown.rstudio.com/">R Markdown</a> before. <a href="https://quarto.org/">Quarto</a> is the next iteration of R Markdown, and is both more flexible and more powerful!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -704,13 +937,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Class schedule</span>
+      <a href="./08_text_analysis.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Text analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_r_intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intro to R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./solutions.html" class="pagination-link">
+        <span class="nav-page-text">Solutions to exercises</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
