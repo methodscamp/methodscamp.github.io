@@ -256,7 +256,7 @@ div.csl-indent {
 <section id="intro-to-r" class="level2">
 <h2 class="anchored" data-anchor-id="intro-to-r">1. Intro to R</h2>
 <blockquote class="blockquote">
-<p><strong>Exercise.</strong></p>
+<p><strong>Exercise</strong></p>
 <p>Create your own code block below and run a math operation.</p>
 </blockquote>
 <div class="cell">
@@ -265,38 +265,69 @@ div.csl-indent {
 <pre><code>[1] 6.283185</code></pre>
 </div>
 </div>
-</section>
-<section id="tidy-data-analysis-ii" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="tidy-data-analysis-ii">4. Tidy data analysis II</h2>
 <blockquote class="blockquote">
-<p><strong>Exercise.</strong></p>
-<p>There is a dataset on country’s CO2 emissions, again from the World Bank (<a href="https://data.worldbank.org/">2023</a>), in “data/wdi_co2.csv”. Load the dataset into R and add a new variable with its information, <code>wdi_co2</code>, to our <code>qog_plus</code> data frame. Finally, compute the average values of CO2 emissions <em>per capita</em>, by country. Tip: this exercise requires you to do many steps—plan ahead before you start coding! Your code:</p>
+<p><strong>Exercise</strong></p>
+<p>Examine the help file of the <code>log()</code> function. How can we compute the the base-10 logarithm of my_object? Your code:</p>
 </blockquote>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setup: these steps were executed before the exercise</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>qog <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sample_qog_bas_ts_jan23.csv"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>gdp <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"data/wdi_gdp_ppp.xlsx"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>gdp_long <span class="ot">&lt;-</span> gdp <span class="sc">|&gt;</span> </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(country_name, country_code),</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"wdi_gdp_ppp"</span>, </span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_transform =</span> as.integer)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>qog_plus <span class="ot">&lt;-</span> <span class="fu">left_join</span>(qog,</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                      gdp_long,</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ccodealp"</span> <span class="ot">=</span> <span class="st">"country_code"</span>,</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_object <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>?log</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(my_object)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<ol type="1">
+<li>Examine the <code>log()</code> function.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>?log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Compute the base-10 logarithm of <code>my_object</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(my_object)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</section>
+<section id="tidy-data-analysis-ii" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="tidy-data-analysis-ii">4. Tidy data analysis II</h2>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>There is a dataset on country’s CO2 emissions, again from the World Bank (<a href="https://data.worldbank.org/">2023</a>), in “data/wdi_co2.csv”. Load the dataset into R and add a new variable with its information, <code>wdi_co2</code>, to our <code>qog_plus</code> data frame. Finally, compute the average values of CO2 emissions <em>per capita</em>, by country. Tip: this exercise requires you to do many steps—plan ahead before you start coding! Your code:</p>
+</blockquote>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setup: these steps were executed before the exercise</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>qog <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sample_qog_bas_ts_jan23.csv"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>gdp <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"data/wdi_gdp_ppp.xlsx"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>gdp_long <span class="ot">&lt;-</span> gdp <span class="sc">|&gt;</span> </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(country_name, country_code),</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"wdi_gdp_ppp"</span>, </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_transform =</span> as.integer)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>qog_plus <span class="ot">&lt;-</span> <span class="fu">left_join</span>(qog,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>                      gdp_long,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ccodealp"</span> <span class="ot">=</span> <span class="st">"country_code"</span>,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol type="1">
 <li>Load data (notice the .csv format):</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>emissions <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/wdi_co2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>emissions <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/wdi_co2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 266 Columns: 35
 ── Column specification ────────────────────────────────────────────────────────
@@ -313,30 +344,30 @@ lgl  (2): 2021, 2022
 <li>Pivot data to long, creating the “wdi_co2” variable:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>emissions_long <span class="ot">&lt;-</span> emissions <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(country_name, country_code),</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"wdi_co2"</span>,  </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_transform =</span> as.integer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>emissions_long <span class="ot">&lt;-</span> emissions <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(country_name, country_code),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"wdi_co2"</span>,  </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_transform =</span> as.integer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
 <li>Merge-in information to our existing <code>qog_plus</code> data frame:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>qog_plus2 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(qog_plus,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                       emissions_long,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ccodealp"</span> <span class="ot">=</span> <span class="st">"country_code"</span>,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>qog_plus2 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(qog_plus,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                       emissions_long,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ccodealp"</span> <span class="ot">=</span> <span class="st">"country_code"</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>Create column for emissions <em>per capita</em> (here we do per 1,000 people).</li>
 <li>Summarize information to get mean values at the country level (remember that <code>na.rm = T</code> is always a conscious decision):</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>qog_plus2 <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">emissions_pc =</span> <span class="dv">1000</span> <span class="sc">*</span> wdi_co2 <span class="sc">/</span> wdi_pop) <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">emissions_pc_country =</span> <span class="fu">mean</span>(emissions_pc, <span class="at">na.rm =</span> T),</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> cname)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>qog_plus2 <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">emissions_pc =</span> <span class="dv">1000</span> <span class="sc">*</span> wdi_co2 <span class="sc">/</span> wdi_pop) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">emissions_pc_country =</span> <span class="fu">mean</span>(emissions_pc, <span class="at">na.rm =</span> T),</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> cname)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 35 × 2
    cname               emissions_pc_country
