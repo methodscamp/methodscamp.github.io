@@ -1,5 +1,17 @@
 # Solutions to exercises {.unnumbered}
 
+## 1. Intro to R
+
+> **Exercise.** 
+>
+> Create your own code block below and run a math operation.
+
+```{r}
+pi * 2
+```
+
+
+
 ## 4. Tidy data analysis II {.unnumbered}
 
 > **Exercise.** 
