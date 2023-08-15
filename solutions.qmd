@@ -341,8 +341,7 @@ circ_area_d(d = 6)
 
 > **Exercise**
 >
-> Graph the function $y = x^2 + 2x - 10$, i.e., a quadratic function with $a=1$, $b=2$, and $c=-10$. 
-> Next, try switching up these values and the `xlim =` argument. How do they each alter the function (and plot)?
+> Graph the function $y = x^2 + 2x - 10$, i.e., a quadratic function with $a=1$, $b=2$, and $c=-10$. Next, try switching up these values and the `xlim =` argument. How do they each alter the function (and plot)?
 
 ```{r}
 #| code-fold: true
@@ -351,7 +350,7 @@ circ_area_d(d = 6)
 library(ggplot2)
 ```
 
-1) Graph $y = x^2 + 2x - 10$.
+1)  Graph $y = x^2 + 2x - 10$.
 
 ```{r}
 ggplot() +
@@ -359,7 +358,7 @@ ggplot() +
                 xlim = c(-5, 5)) 
 ```
 
-2) Switch up the values and the `xlim =` argument.
+2)  Switch up the values and the `xlim =` argument.
 
 ```{r}
 ggplot() +
@@ -368,10 +367,10 @@ ggplot() +
 ```
 
 > **Exercise**
-> 
+>
 > We'll briefly introduce [Desmos](https://www.desmos.com/calculator), an online graphing calculator. Use Desmos to graph the following function $y = 1x^3 + 1x^2 + 1x + 1$. What happens when you change the $a$, $b$, $c$, and $d$ parameters?
 
-1) Graph $y = 1x^3 + 1x^2 + 1x + 1$.
+1)  Graph $y = 1x^3 + 1x^2 + 1x + 1$.
 
 ```{r}
 ggplot() +
@@ -379,7 +378,7 @@ ggplot() +
                 xlim = c(-10, 10)) 
 ```
 
-2) Switch up the values.
+2)  Switch up the values.
 
 ```{r}
 ggplot() +
@@ -427,8 +426,7 @@ f <- function(x){x ^ 2}
 g <- function(x){x - 3}
 ```
 
-$$f(5) = 5^2 = 25$$
-$$g(25) = 25 - 3 = 22$$
+$$f(5) = 5^2 = 25$$ $$g(25) = 25 - 3 = 22$$
 
 ```{r}
 g(f(5)) # no pipeline approach
@@ -436,6 +434,68 @@ f(5) |> g() # pipeline approach
 ```
 
 ## 6. Calculus {.unnumbered}
+
+> **Exercise**
+>
+> 1)  Use the slope formula to calculate the rate of change between 5 and 6.
+> 2)  Use the slope formula to calculate the rate of change between 5 and 5.5.
+> 3)  Use the slope formula to calculate the rate of change between 5 and 5.1.
+
+> **Exercise**
+>
+> Use the differentiation rules we have covered so far to calculate the derivatives of $y$ with respect to $x$ of the following functions:
+>
+> 1.  $y = 2x^2 + 10$
+> 2.  $y = 5x^4 - \frac{2}{3}x^3$
+> 3.  $y = 9 \sqrt x$
+> 4.  $y = \frac{4}{x^2}$
+> 5.  $y = ax^3 + b$, where $a$ and $b$ are constants.
+> 6.  $y = \frac{2w}{5}$
+
+> **Exercise**
+>
+> Compute the following:
+>
+> 1.  $\frac{d}{dx}(10e^x)$
+> 2.  $\frac{d}{dx}(ln(x) - \frac{e^2}{3})$
+
+> **Exercise**
+>
+> Use the differentiation rules we have covered so far to calculate the derivatives of $y$ with respect to $x$ of the following functions:
+>
+> 1.  $x^3 \cdot x$
+> 2.  $e^x \cdot x^2$
+> 3.  $(3x^4-8)^2$
+
+> **Exercise**
+>
+> Take the partial derivative with respect to $x$ and with respect to $z$ of the following functions. What would the notation for each look like?
+>
+> 1.  $y = 3xz - x$
+> 2.  $x^3+z^3+x^4z^4$
+> 3.  $e^{xz}$
+
+> **Exercise**
+>
+> Identify the global extrema of the function $\displaystyle \frac{x^3}{3} - \frac{3}{2}x^2 -10x$ in the interval $[-6, 6]$.
+
+> **Exercise**
+>
+> Solve the following indefinite integrals:
+>
+> 1.  $\int x^2 \text{ } dx$
+> 2.  $\int 3x^2\text{ } dx$
+> 3.  $\int x\text{ } dx$
+> 4.  $\int (3x^2 + 2x - 7\text{ })dx$
+> 5.  $\int \dfrac{2}{x}\text{ }dx$
+>
+> And solve the following definite integrals:
+>
+> 1.  $\displaystyle\int_{1}^{7} x^2 \text{ } dx$
+> 2.  $\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$
+> 3.  $\displaystyle\int_7^7 x\text{ } dx$
+> 4.  $\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$
+> 5.  $\int_{1}^{e} \dfrac{2}{x}\text{ }dx$
 
 ## 7. Probability {.unnumbered}
 
