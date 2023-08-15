@@ -2,7 +2,7 @@
 
 ## 1. Intro to R
 
-> **Exercise.** 
+> **Exercise** 
 >
 > Create your own code block below and run a math operation.
 
@@ -10,11 +10,34 @@
 pi * 2
 ```
 
+> **Exercise**
+>
+> Examine the help file of the `log()` function. How can we compute the the base-10 logarithm of my_object? Your code:
 
+```{r}
+#| code-fold: true
+#| message: false
+# setup: these steps were executed before the exercise
+my_object <- 10
+?log
+log10(my_object)
+```
+
+1) Examine the `log()` function.
+
+```{r}
+?log
+```
+
+2) Compute the base-10 logarithm of `my_object`.
+
+```{r}
+log10(my_object)
+```
 
 ## 4. Tidy data analysis II {.unnumbered}
 
-> **Exercise.** 
+> **Exercise** 
 >
 > There is a dataset on country's CO2 emissions, again from the World Bank ([2023](https://data.worldbank.org/)), in "data/wdi_co2.csv". Load the dataset into R and add a new variable with its information, `wdi_co2`, to our `qog_plus` data frame. Finally, compute the average values of CO2 emissions *per capita*, by country. Tip: this exercise requires you to do many steps---plan ahead before you start coding! Your code:
 
