@@ -253,7 +253,7 @@ When is a function **differentiable** at a point?
 
     -   Impossible to calculate derivative at sharp turns, cusps, or vertical tangents.
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 ggplot() +
   stat_function(fun = function(x){abs(x) + 2}, xlim = c(-4, 4), 
                 aes(color = "y = |x| + 2")) +
