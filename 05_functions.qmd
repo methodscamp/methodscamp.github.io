@@ -75,10 +75,10 @@ mult_by_two(1:10)
 We can also automate more complicated tasks such as calculating the area of a circle from its radius:
 
 ```{r}
-calc_circle_area <- function(r){
+circ_area_r <- function(r){
     pi * r ^ 2
 }
-calc_circle_area(r = 3)
+circ_area_r(r = 3)
 ```
 
 ::: callout-note

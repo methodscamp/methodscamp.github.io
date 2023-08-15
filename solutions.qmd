@@ -1,8 +1,242 @@
 # Solutions to exercises {.unnumbered}
 
+## 1. Intro to R
+
+> **Exercise**
+>
+> Create your own code block below and run a math operation.
+
+```{r}
+pi * 2
+```
+
+> **Exercise**
+>
+> Examine the help file of the `log()` function. How can we compute the the base-10 logarithm of my_object? Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+# setup: these steps were executed before the exercise
+my_object <- 10
+```
+
+1)  Examine the `log()` function.
+
+```{r}
+?log
+```
+
+2)  Compute the base-10 logarithm of `my_object`.
+
+```{r}
+log10(my_object)
+```
+
+> **Exercise**
+>
+> Obtain the maximum value of water content per 100g in the data. Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+my_character_vector <- c("Apple", "Orange", "Watermelon", "Banana")
+my_data_frame <- data.frame(fruit = my_character_vector,
+                            calories_per_100g = c(52, 47, 30, 89),
+                            water_per_100g = c(85.6, 86.8, 91.4, 74.9))
+my_data_frame
+```
+
+```{r}
+max(my_data_frame$water_per_100g)
+```
+
+## 2. Tidy data analysis I {.unnumbered}
+
+> **Exercise**
+>
+> Select the variables `last_name`, `party`, `num_votes`, and `agree` from the data frame. Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+
+
+```
+
+```{r}
+
+```
+
+> **Exercise**
+>
+> 1.  Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute value of `diff_agree`? Your code:
+>
+> 2.  Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:
+>
+> 3.  Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+
+
+```
+
+1)  Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute value of `diff_agree`? Your code:
+
+```{r}
+
+```
+
+2)  Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:
+
+```{r}
+
+```
+
+3)  Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:
+
+```{r}
+
+```
+
+> **Exercise**
+>
+> Arrange the data by `diff_pred`, the difference between agreement and predicted agreement with Trump. (You should have code on how to create this variable from the last exercise). Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+
+
+```
+
+```{r}
+
+```
+
+> **Exercise**
+>
+> Obtain the maximum absolute difference in agreement with Trump (the `abs_diff_agree` variable from before) for each party.
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+
+
+```
+
+```{r}
+
+```
+
+> **Exercise**
+>
+> Draw a column plot with the agreement with Trump of Bernie Sanders and Ted Cruz. What happens if you use `last_name` as the `y` aesthetic mapping and `agree` in the `x` aesthetic mapping? Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+
+
+```
+
+```{r}
+
+```
+
+## 3. Matrices {.unnumbered}
+
+> **Exercise**
+>
+> Get the product of the first three elements of vector $d$. Write the notation by hand and use R to obtain the number.
+>
+> $$\overrightarrow d = \begin{bmatrix}
+> 12 & 7 & -2 & 3 & 1
+> \end{bmatrix}$$
+
+```{r}
+#| code-fold: true
+#| message: false
+# setup: these steps were executed before the exercise
+vector_d <- c(12, 7, -2, 3, -1)
+```
+
+$$\prod_{i=1}^3 d_i = 12 \cdot 7 \cdot (-2) = -168$$
+
+```{r}
+prod(vector_d[1:3])
+```
+
+> **Exercise**
+>
+> 1)  Calculate $A + B$ $$A= \begin{bmatrix}
+>     1 & 0 \\
+>     -2 & -1
+>     \end{bmatrix}$$
+>
+> $$B = \begin{bmatrix}
+> 5 & 1 \\
+> 2 & -1
+> \end{bmatrix}$$\
+>
+> 2)  Calculate $A - B$ $$A= \begin{bmatrix}
+>     6 & -2 & 8 & 12 \\
+>     4 & 42 & 8 & -6
+>     \end{bmatrix}$$ $$B = \begin{bmatrix}
+>     18 & 42 & 3 & 7 \\
+>     0 & -42 & 15 & 4
+>     \end{bmatrix}$$
+
+```{r}
+A1 <- matrix(c(1,-2,0,-1), nrow = 2)
+B1 <- matrix(c(5,2,1,-1), nrow = 2)
+A1 + B1
+```
+
+```{r}
+A2 <- matrix(c(6,4,-2,42,8,8,12,-6), nrow = 2)
+B2 <- matrix(c(18,0,42,-42,3,15,7,4), nrow = 2)
+A2 - B2
+```
+
+> **Exercise**
+>
+> Calculate $2\times A$ and $-3 \times B$. Again, do one by hand and the other one using R. $$A= \begin{bmatrix}
+> 1 & 4 & 8 \\
+> 0 & -1 & 3
+> \end{bmatrix}$$ $$ B = \begin{bmatrix}
+> -15 & 1 & 5 \\
+> 2 & -42 & 0 \\
+> 7 & 1 & 6
+> \end{bmatrix}$$
+
+```{r}
+A3 <- matrix(c(1,0,4,-1,8,3), nrow = 2)
+2 * A3
+```
+
+```{r}
+B3 <- matrix(c(-15,2,7,1,-42,1,5,0,6), nrow = 3)
+-3 * B3
+```
+
 ## 4. Tidy data analysis II {.unnumbered}
 
-> **Exercise.** 
+> **Exercise**
 >
 > There is a dataset on country's CO2 emissions, again from the World Bank ([2023](https://data.worldbank.org/)), in "data/wdi_co2.csv". Load the dataset into R and add a new variable with its information, `wdi_co2`, to our `qog_plus` data frame. Finally, compute the average values of CO2 emissions *per capita*, by country. Tip: this exercise requires you to do many steps---plan ahead before you start coding! Your code:
 
@@ -26,13 +260,13 @@ qog_plus <- left_join(qog,
                              "year"))
 ```
 
-1) Load data (notice the .csv format):
+1)  Load data (notice the .csv format):
 
 ```{r}
 emissions <- read_csv("data/wdi_co2.csv")
 ```
 
-2) Pivot data to long, creating the "wdi_co2" variable:
+2)  Pivot data to long, creating the "wdi_co2" variable:
 
 ```{r}
 emissions_long <- emissions |> 
@@ -42,7 +276,7 @@ emissions_long <- emissions |>
                names_transform = as.integer)
 ```
 
-3) Merge-in information to our existing `qog_plus` data frame:
+3)  Merge-in information to our existing `qog_plus` data frame:
 
 ```{r}
 qog_plus2 <- left_join(qog_plus,
@@ -51,8 +285,9 @@ qog_plus2 <- left_join(qog_plus,
                              "year"))
 ```
 
-4) Create column for emissions *per capita* (here we do per 1,000 people).
-5) Summarize information to get mean values at the country level (remember that `na.rm = T` is always a conscious decision):
+4)  Create column for emissions *per capita* (here we do per 1,000 people).
+
+5)  Summarize information to get mean values at the country level (remember that `na.rm = T` is always a conscious decision):
 
 ```{r}
 qog_plus2 |> 
@@ -60,3 +295,267 @@ qog_plus2 |>
   summarize(emissions_pc_country = mean(emissions_pc, na.rm = T),
             .by = cname)
 ```
+
+## 5. Functions {.unnumbered}
+
+> **Exercise** When graphed, vertical lines cannot touch functions at more than one point. Why? Which of the following represent functions?
+>
+> ![Vertical line test: examples.](images/vertical_line_test.png){#fig-vertical-line-test}
+
+A)  Function ✅
+
+B)  Function ✅
+
+C)  NOT a function 🚫
+
+D)  Function ✅
+
+E)  Function ✅
+
+F)  NOT a function 🚫
+
+G)  Function ✅
+
+H)  NOT a function 🚫
+
+> **Exercise**
+>
+> Create a function that calculates the area of a circle *from its diameter*. So `your_function(d = 6)` should yield the same result as the example above. Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+# setup: these steps were executed before the exercise
+circ_area_r <- function(r){
+    pi * r ^ 2
+}
+circ_area_r(r = 3)
+```
+
+```{r}
+circ_area_d <- function(d){
+    pi * (d/2) ^ 2
+}
+circ_area_d(d = 6)
+```
+
+> **Exercise**
+>
+> Graph the function $y = x^2 + 2x - 10$, i.e., a quadratic function with $a=1$, $b=2$, and $c=-10$. Next, try switching up these values and the `xlim =` argument. How do they each alter the function (and plot)?
+
+```{r}
+#| code-fold: true
+#| message: false
+# setup: these steps were executed before the exercise
+library(ggplot2)
+```
+
+1)  Graph $y = x^2 + 2x - 10$.
+
+```{r}
+ggplot() +
+  stat_function(fun = function(x){x^2 + 2*x - 10},
+                xlim = c(-5, 5)) 
+```
+
+2)  Switch up the values and the `xlim =` argument.
+
+```{r}
+ggplot() +
+  stat_function(fun = function(x){-3*x^2 - 6*x + 9},
+                xlim = c(-10, 10)) 
+```
+
+> **Exercise**
+>
+> We'll briefly introduce [Desmos](https://www.desmos.com/calculator), an online graphing calculator. Use Desmos to graph the following function $y = 1x^3 + 1x^2 + 1x + 1$. What happens when you change the $a$, $b$, $c$, and $d$ parameters?
+
+1)  Graph $y = 1x^3 + 1x^2 + 1x + 1$.
+
+```{r}
+ggplot() +
+  stat_function(fun = function(x){x^3 + x^2 + x + 1},
+                xlim = c(-10, 10)) 
+```
+
+2)  Switch up the values.
+
+```{r}
+ggplot() +
+  stat_function(fun = function(x){-2*x^3 + 4*x^2 + 8*x + 16},
+                xlim = c(-10, 10)) 
+```
+
+> **Exercise**
+>
+> Solve the problems below, simplifying as much as you can. $$log_{10}(1000)$$ $$log_2(\dfrac{8}{32})$$ $$10^{log_{10}(300)}$$ $$ln(1)$$ $$ln(e^2)$$ $$ln(5e)$$
+
+```{r}
+log10(1000)
+```
+
+```{r}
+log2(8/32)
+```
+
+```{r}
+10^(log10(300))
+```
+
+```{r}
+log(1)
+```
+
+```{r}
+log(exp(2))
+```
+
+```{r}
+log(5*exp(1))
+```
+
+> **Exercise**
+>
+> Compute `g(f(5))` using the definitions above. First do it manually, and then check your answer with R.
+
+```{r}
+#| code-fold: true
+#| message: false
+# setup: these steps were executed before the exercise
+f <- function(x){x ^ 2}
+g <- function(x){x - 3}
+```
+
+$$f(5) = 5^2 = 25$$ $$g(25) = 25 - 3 = 22$$
+
+```{r}
+g(f(5)) # no pipeline approach
+f(5) |> g() # pipeline approach
+```
+
+## 6. Calculus {.unnumbered}
+
+> **Exercise**
+>
+> 1)  Use the slope formula to calculate the rate of change between 5 and 6.
+> 2)  Use the slope formula to calculate the rate of change between 5 and 5.5.
+> 3)  Use the slope formula to calculate the rate of change between 5 and 5.1.
+
+> **Exercise**
+>
+> Use the differentiation rules we have covered so far to calculate the derivatives of $y$ with respect to $x$ of the following functions:
+>
+> 1.  $y = 2x^2 + 10$
+> 2.  $y = 5x^4 - \frac{2}{3}x^3$
+> 3.  $y = 9 \sqrt x$
+> 4.  $y = \frac{4}{x^2}$
+> 5.  $y = ax^3 + b$, where $a$ and $b$ are constants.
+> 6.  $y = \frac{2w}{5}$
+
+> **Exercise**
+>
+> Compute the following:
+>
+> 1.  $\frac{d}{dx}(10e^x)$
+> 2.  $\frac{d}{dx}(ln(x) - \frac{e^2}{3})$
+
+> **Exercise**
+>
+> Use the differentiation rules we have covered so far to calculate the derivatives of $y$ with respect to $x$ of the following functions:
+>
+> 1.  $x^3 \cdot x$
+> 2.  $e^x \cdot x^2$
+> 3.  $(3x^4-8)^2$
+
+> **Exercise**
+>
+> Take the partial derivative with respect to $x$ and with respect to $z$ of the following functions. What would the notation for each look like?
+>
+> 1.  $y = 3xz - x$
+> 2.  $x^3+z^3+x^4z^4$
+> 3.  $e^{xz}$
+
+> **Exercise**
+>
+> Identify the global extrema of the function $\displaystyle \frac{x^3}{3} - \frac{3}{2}x^2 -10x$ in the interval $[-6, 6]$.
+
+> **Exercise**
+>
+> Solve the following indefinite integrals:
+>
+> 1.  $\int x^2 \text{ } dx$
+> 2.  $\int 3x^2\text{ } dx$
+> 3.  $\int x\text{ } dx$
+> 4.  $\int (3x^2 + 2x - 7\text{ })dx$
+> 5.  $\int \dfrac{2}{x}\text{ }dx$
+>
+> And solve the following definite integrals:
+>
+> 1.  $\displaystyle\int_{1}^{7} x^2 \text{ } dx$
+> 2.  $\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$
+> 3.  $\displaystyle\int_7^7 x\text{ } dx$
+> 4.  $\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$
+> 5.  $\int_{1}^{e} \dfrac{2}{x}\text{ }dx$
+
+## 7. Probability {.unnumbered}
+
+## 8. Simulations {.unnumbered}
+
+## 9. Text Analysis {.unnumbered}
+
+> **Exercise**
+>
+> What score (out of 10) would you give Barbie or Oppenheimer? Write your score in one sentence (e.g., I would give Barbie seven of ten stars.) If you have not seen either, write a sentence about which you would like to see more.
+>
+> Store that text as a string (`string3`) and combine it with our existing `cat_string` to produce a new concatenated string called `cat_string2`. Finally, count the total of characters within `cat_string2`. Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+# setup: these steps were executed before the exercise
+library(stringr)
+my_string <- "I know people who have seen the Barbie movie 2, 3, even 4 times!"
+my_string2 <- "I wonder if they have seen Oppenheimer, too."
+cat_string <- str_c(my_string, my_string2, sep = " ")
+```
+
+```{r}
+
+```
+
+> **Exercise**
+>
+> Look up the lyrics to your favorite song at the moment (no guilty pleasures here!). Then, follow the process described above to count the words: store the text as a string, convert to a tibble, tokenize, and count.
+>
+> When you are done counting, create a visualization for the chorus using the `ggplot` code above. Your code:
+
+1. Store the text as a string.
+
+```{r}
+
+```
+
+2. Convert to a tibble.
+
+```{r}
+
+```
+
+3. Tokenize.
+
+```{r}
+
+```
+
+4. Count.
+
+```{r}
+
+```
+
+5. Visualize.
+
+```{r}
+
+```
+

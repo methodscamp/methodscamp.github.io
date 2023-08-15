@@ -20,69 +20,69 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 
 ## Course outline {.unnumbered}
 
-**1 Thursday morning: R and RStudio**
+**1 Thursday morning: [Intro to R](https://methodscamp.github.io/01_r_intro.html)**
 
-- Introductions
-- R and RStudio: basics
-- Objects (vectors, matrices, data frames, etc.)
-- Basic functions (`mean()`, `length()`, etc.)
-- Packages: installation and loading (including the tidyverse)
+-   Introductions
+-   R and RStudio: basics
+-   Objects (vectors, matrices, data frames, etc.)
+-   Basic functions (`mean()`, `length()`, etc.)
+-   Packages: installation and loading (including the tidyverse)
 
-**2 Thursday afternoon: `tidyverse` basics I**
+**2 Thursday afternoon: [`tidyverse` basics I](https://methodscamp.github.io/02_tidy_data1.html)**
 
-- Tidy data
-- Data wrangling with dplyr
-- Data visualization basics with `ggplot2`
+-   Tidy data
+-   Data wrangling with dplyr
+-   Data visualization basics with `ggplot2`
 
-**3 Friday morning: Matrices**
+**3 Friday morning: [Matrices](https://methodscamp.github.io/03_matrices.html)**
 
-- Matrices
-- Systems of linear equations
-- Matrix operations (multiplication, transpose, inverse, determinant)
-- Solving systems of linear equations in matrix form (and why that's cool)
-- Introduction to OLS
+-   Matrices
+-   Systems of linear equations
+-   Matrix operations (multiplication, transpose, inverse, determinant)
+-   Solving systems of linear equations in matrix form (and why that's cool)
+-   Introduction to OLS
 
-**4 Friday afternoon: `tidyverse` basics II**
+**4 Friday afternoon: [`tidyverse` basics II](https://methodscamp.github.io/04_tidy_data2.html)**
 
-- Loading data in different formats (.csv, R, Excel, Stata, SPSS)
-- Recoding values (`if_else()`, `case_when()`)
-- Missing values
-- Pivoting data
-- Merging data
-- Plotting extensions (trend graphs, facets, customization)
+-   Loading data in different formats (.csv, R, Excel, Stata, SPSS)
+-   Recoding values (`if_else()`, `case_when()`)
+-   Missing values
+-   Pivoting data
+-   Merging data
+-   Plotting extensions (trend graphs, facets, customization)
 
-**5 Monday morning: Functions**
+**5 Monday morning: [Functions](https://methodscamp.github.io/05_functions.html)**
 
-- Definitions
-- Functions in R
-- Common types of functions
-- Logarithms and exponents
-- Composite functions
+-   Definitions
+-   Functions in R
+-   Common types of functions
+-   Logarithms and exponents
+-   Composite functions
 
-**6 Monday afternoon: Calculus**
+**6 Monday afternoon: [Calculus](https://methodscamp.github.io/06_calculus.html)**
 
-- Limits
-- Derivatives
-- Integrals
-- Calculus in R
+-   Limits
+-   Derivatives
+-   Integrals
+-   Calculus in R
 
 **7 Tuesday morning: Probability**
 
-- Basic concepts
-- Random variables and their properties
-- Common distributions
+-   Basic concepts
+-   Random variables and their properties
+-   Common distributions
 
 **8 Tuesday afternoon: Simulations**
 
-- Monte Carlo simulations
-- Sampling
-- Loops in R
-- Bootstrapping
+-   Monte Carlo simulations
+-   Sampling
+-   Loops in R
+-   Bootstrapping
 
 **9 Wednesday morning: Text analysis**
 
-- String manipulation with `stringr`
-- Simple text analysis and visualization with `tidytext`
+-   String manipulation with `stringr`
+-   Simple text analysis and visualization with `tidytext`
 
 **10 Wednesday afternoon: Wrap-up**
 
@@ -101,9 +101,9 @@ If you have any questions during or outside of methods camp, you can contact us 
 
 If you are interested in learning more about our research, you can also check out our respective websites and Twitter accounts (or should we say X...):
 
--   Andrés Cruz: [[Website]](https://arcruz0.github.io/) [[Twitter]](https://twitter.com/arcruz0)
+-   Andrés Cruz: [\[Website\]](https://arcruz0.github.io/) [\[Twitter\]](https://twitter.com/arcruz0)
 
--   Matt Martin: [[Website]](https://mattjamesmartin.github.io/) [[Twitter]](https://twitter.com/MattJ_Martin)
+-   Matt Martin: [\[Website\]](https://mattjamesmartin.github.io/) [\[Twitter\]](https://twitter.com/MattJ_Martin)
 
 ## Acknowledgements
 
