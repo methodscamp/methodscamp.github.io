@@ -147,8 +147,9 @@ div.csl-indent {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Methods Camp</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/methodscamp/methodscamp.github.io" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Methods-Camp.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -254,9 +255,8 @@ div.csl-indent {
   <li><a href="#tidy-data-analysis-ii" id="toc-tidy-data-analysis-ii" class="nav-link" data-scroll-target="#tidy-data-analysis-ii">4. Tidy data analysis II</a></li>
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">5. Functions</a></li>
   <li><a href="#calculus" id="toc-calculus" class="nav-link" data-scroll-target="#calculus">6. Calculus</a></li>
-  <li><a href="#probability" id="toc-probability" class="nav-link" data-scroll-target="#probability">7. Probability</a></li>
-  <li><a href="#simulations" id="toc-simulations" class="nav-link" data-scroll-target="#simulations">8. Simulations</a></li>
-  <li><a href="#text-analysis" id="toc-text-analysis" class="nav-link" data-scroll-target="#text-analysis">9. Text Analysis</a></li>
+  <li><a href="#probability-statistics-and-simulations" id="toc-probability-statistics-and-simulations" class="nav-link" data-scroll-target="#probability-statistics-and-simulations">7. Probability, statistics, and simulations</a></li>
+  <li><a href="#text-analysis" id="toc-text-analysis" class="nav-link" data-scroll-target="#text-analysis">8. Text analysis</a></li>
   </ul>
 </nav>
     </div>
@@ -829,14 +829,27 @@ lgl  (2): 2021, 2022
 </ol>
 </blockquote>
 </section>
-<section id="probability" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="probability">7. Probability</h2>
-</section>
-<section id="simulations" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="simulations">8. Simulations</h2>
+<section id="probability-statistics-and-simulations" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="probability-statistics-and-simulations">7. Probability, statistics, and simulations</h2>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>Compute the probability of seeing between 1 and 10 voters of the candidate in a sample of 100 people.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>Evaluate the CDF of <span class="math inline">\(Y \sim U(-2, 2)\)</span> at point <span class="math inline">\(y = 1\)</span>. Use the formula and <code>punif()</code>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>What is the probability of obtaining a value above 1.96 or below -1.96 in a standard normal probability distribution? Hint: use the <code>pnorm()</code> function.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>Compute and plot <code>my_rnorm</code>, a vector with one million draws from a Normal distribution <span class="math inline">\(Z\)</span> with mean equal to zero and standard deviation equal to one (<span class="math inline">\(Z\sim N(0,1)\)</span>). You can recycle code from what we did for the uniform distribution!</p>
+</blockquote>
 </section>
 <section id="text-analysis" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="text-analysis">9. Text Analysis</h2>
+<h2 class="unnumbered anchored" data-anchor-id="text-analysis">8. Text analysis</h2>
 <blockquote class="blockquote">
 <p><strong>Exercise</strong></p>
 <p>What score (out of 10) would you give Barbie or Oppenheimer? Write your score in one sentence (e.g., I would give Barbie seven of ten stars.) If you have not seen either, write a sentence about which you would like to see more.</p>
