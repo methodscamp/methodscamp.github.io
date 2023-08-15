@@ -576,6 +576,168 @@ lgl  (2): 2021, 2022
 </section>
 <section id="functions" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="functions">5. Functions</h2>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong> When graphed, vertical lines cannot touch functions at more than one point. Why? Which of the following represent functions?</p>
+<img src="images/vertical_line_test.png" id="fig-vertical-line-test" class="img-fluid" alt="Vertical line test: examples.">
+</blockquote>
+<ol type="A">
+<li><p>Function ✅</p></li>
+<li><p>Function ✅</p></li>
+<li><p>NOT a function 🚫</p></li>
+<li><p>Function ✅</p></li>
+<li><p>Function ✅</p></li>
+<li><p>NOT a function 🚫</p></li>
+<li><p>Function ✅</p></li>
+<li><p>NOT a function 🚫</p></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>Create a function that calculates the area of a circle <em>from its diameter</em>. So <code>your_function(d = 6)</code> should yield the same result as the example above. Your code:</p>
+</blockquote>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setup: these steps were executed before the exercise</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>circ_area_r <span class="ot">&lt;-</span> <span class="cf">function</span>(r){</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    pi <span class="sc">*</span> r <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">circ_area_r</span>(<span class="at">r =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 28.27433</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>circ_area_d <span class="ot">&lt;-</span> <span class="cf">function</span>(d){</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    pi <span class="sc">*</span> (d<span class="sc">/</span><span class="dv">2</span>) <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">circ_area_d</span>(<span class="at">d =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 28.27433</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>Graph the function <span class="math inline">\(y = x^2 + 2x - 10\)</span>, i.e., a quadratic function with <span class="math inline">\(a=1\)</span>, <span class="math inline">\(b=2\)</span>, and <span class="math inline">\(c=-10\)</span>. Next, try switching up these values and the <code>xlim =</code> argument. How do they each alter the function (and plot)?</p>
+</blockquote>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setup: these steps were executed before the exercise</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol type="1">
+<li>Graph <span class="math inline">\(y = x^2 + 2x - 10\)</span>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>x <span class="sc">-</span> <span class="dv">10</span>},</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="solutions_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Switch up the values and the <code>xlim =</code> argument.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){<span class="sc">-</span><span class="dv">3</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">6</span><span class="sc">*</span>x <span class="sc">+</span> <span class="dv">9</span>},</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="solutions_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>We’ll briefly introduce <a href="https://www.desmos.com/calculator">Desmos</a>, an online graphing calculator. Use Desmos to graph the following function <span class="math inline">\(y = 1x^3 + 1x^2 + 1x + 1\)</span>. What happens when you change the <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, and <span class="math inline">\(d\)</span> parameters?</p>
+</blockquote>
+<ol type="1">
+<li>Graph <span class="math inline">\(y = 1x^3 + 1x^2 + 1x + 1\)</span>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){x<span class="sc">^</span><span class="dv">3</span> <span class="sc">+</span> x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> x <span class="sc">+</span> <span class="dv">1</span>},</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="solutions_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Switch up the values.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">8</span><span class="sc">*</span>x <span class="sc">+</span> <span class="dv">16</span>},</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="solutions_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>Solve the problems below, simplifying as much as you can. <span class="math display">\[log_{10}(1000)\]</span> <span class="math display">\[log_2(\dfrac{8}{32})\]</span> <span class="math display">\[10^{log_{10}(300)}\]</span> <span class="math display">\[ln(1)\]</span> <span class="math display">\[ln(e^2)\]</span> <span class="math display">\[ln(5e)\]</span></p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(<span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log2</span>(<span class="dv">8</span><span class="sc">/</span><span class="dv">32</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span><span class="sc">^</span>(<span class="fu">log10</span>(<span class="dv">300</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 300</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fu">exp</span>(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">5</span><span class="sc">*</span><span class="fu">exp</span>(<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.609438</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Exercise</strong></p>
+<p>Compute <code>g(f(5))</code> using the definitions above. First do it manually, and then check your answer with R.</p>
+</blockquote>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setup: these steps were executed before the exercise</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x){x <span class="sc">^</span> <span class="dv">2</span>}</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x){x <span class="sc">-</span> <span class="dv">3</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><span class="math display">\[f(5) = 5^2 = 25\]</span> <span class="math display">\[g(25) = 25 - 3 = 22\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">g</span>(<span class="fu">f</span>(<span class="dv">5</span>)) <span class="co"># no pipeline approach</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 22</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span> <span class="fu">g</span>() <span class="co"># pipeline approach</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 22</code></pre>
+</div>
+</div>
 </section>
 <section id="calculus" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="calculus">6. Calculus</h2>
