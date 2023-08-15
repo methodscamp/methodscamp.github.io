@@ -18,7 +18,7 @@
     ![](images/new_project_step1.png){fig-align="center" width="400"}
 
     ![](images/new_project_step2.png){fig-align="center" width="400"}
-    
+
     ![](images/new_project_step3.png){fig-align="center" width="400"}
 
 -   Call your project some version of "methodscamptest" and choose carefully where you wish to store the project on your machine.
@@ -36,7 +36,7 @@ When using an RStudio project, you should see its name in the top-right corner o
 getwd()
 ```
 
-- Now, as an example, let's run the following commands in the script editor and save the files into the project directory.
+-   Now, as an example, let's run the following commands in the script editor and save the files into the project directory.
 
 ```{r}
 #| eval: false
@@ -71,6 +71,12 @@ write_csv(mtcars, "mtcars.csv")
     -   LaTeX is a software used for typesetting technical documents. It is used widely in our discipline for the preparation for manuscripts to journals and other publishing venues.
 
 -   UT Austin actually provides free access to Overleaf Professional to all graduate students using your UT email.
+
+::: callout-note
+## Exercise
+
+Create an Overleaf Professional account using your UT email address. You can do so [here](https://www.overleaf.com/edu/utexas).
+:::
 
 -   Overleaf Professional upgrades include:
 
