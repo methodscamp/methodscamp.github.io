@@ -603,7 +603,7 @@ punif(q = 1, min = -2, max = 2)
 > What is the probability of obtaining a value above 1.96 or below -1.96 in a standard normal probability distribution? Hint: use the `pnorm()` function.
 
 ```{r}
-pnorm(1.96)
+pnorm(-1.96) + (1 - pnorm(1.96))
 ```
 
 > **Exercise**
