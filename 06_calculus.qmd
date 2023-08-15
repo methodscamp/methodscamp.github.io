@@ -265,6 +265,20 @@ ggplot() +
   labs(title = "Examples of functions that are not differentiable at x=0")
 ```
 
+> Informally, functions need to be continuous and reasonably smooth to be differentiable.
+
+### How do computers calculate derivatives?
+
+In quite a few statistics and machine learning problems, computers need to compute derivatives of arbitrarily complex functions, perhaps millions of times. How do they do it? (see [Baydin et al. 2018](https://dl.acm.org/doi/abs/10.5555/3122009.3242010) for discussion of these three approaches)
+
+-   Symbolic differentiation: automatically combine the rules of differentiation (power rule, product rule, etc.). It is what math solvers use, e.g., [WolframAlpha](https://www.wolframalpha.com/calculators/derivative-calculator/) or (presumably) [Symbolab](https://www.symbolab.com/solver/derivative-calculator).
+
+-   Numerical differentiation: infer the derivative by computing the function at different sample values (like we did with $y=x^2$ before. This is what, for example, R's `optim()` function does behind the scenes.
+
+-   Automatic differentiation: track how every function is constructed from (differentiable) elementary computer operations (e.g., binary arithmetic), and get the result using the chain rule. Implemented in the [`TensorFlow`](https://www.tensorflow.org/), [`PyTorch`](https://pytorch.org/), and [`JAX`](https://jax.readthedocs.io/en/) Python libraries, and the [`ReverseDiff.jl`](https://juliadiff.org/ReverseDiff.jl/) and [`Zygote.jl`](https://fluxml.ai/Zygote.jl/) Julia packages.
+
+![An example of computing the gradient of an esoteric function using Zygote.jl (from [its documentation](https://fluxml.ai/Zygote.jl/stable/#Taking-Gradients-1))](images/julia_zygote.png)
+
 ## Optimization
 
 *Optimization* allows us to find the minimum or maximum values (or *extrema*) a function takes. It has many applications in the social sciences:
@@ -275,33 +289,35 @@ ggplot() +
 
 -   Maximum Likelihood Estimation (MLE): Focuses on *maximizing* a likelihood function, given observed values.
 
-### Identifying *extrema* analytically
+### Extrema
 
-On extrema: informally, a maximum is just the highest value a function takes, and a minimum is the lowest value.
+On **extrema**: informally, a maximum is just the highest value a function takes, and a minimum is the lowest value.
 
-In some situations, it can be easy to identify extrema intuitively by looking at a graph of the function (see the graphs above).
+In some situations, it can be easy to identify extrema intuitively by looking at a graph of the function.
 
--   Maxima are high points ("peaks")
+- Maxima are high points ("peaks")
 
--   Minima are low points ("valleys")
+- Minima are low points ("valleys")
 
 We can use derivatives (rates of change!) to get at extrema.
 
--   When the derivative is zero (or fails to exist), the function has *usually* reached a (local) maximum or minimum.
+### Critical points and the First-Order Condition
 
-    -   At a maximum, the function must be increasing before the point and decreasing after it.
+At critical points (or stationary points), the derivative is zero or fails to exist. At these, the function has *usually* reached a (local) maximum or minimum.
 
-    -   At a minimum, the function must be decreasing before the point and increasing after it.
+- At a maximum, the function must be increasing before the point and decreasing after it.
 
--   We'll start by identifying points where this is the case ("critical points" or "stationary points").
+- At a minimum, the function must be decreasing before the point and increasing after it.
 
-::: callout-note
-A point where $f'(x)=0$ or $f'(x)$ does not exist is called a *critical point* (or *stationary point*). Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex ("inflection points"). Or sometimes the function is not differentiable at that point for other reasons.
+::: callout-warning
+Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex ("inflection points"). Or sometimes the function is not differentiable at that point for other reasons.
 :::
 
-We can find the local maxima and/or minima of a function by taking the derivative, setting it equal to zero, and solving for $x$ (or whatever variable). This gives us the first-order condition (FOC).
+We can find the local maxima and/or minima of a function by taking the derivative, setting it equal to zero, and solving for $x$ (or whatever variable). This gives us the First-Order Condition (FOC).
 
 $$FOC: f'(x)=0$$
+
+### Second-Order Condition
 
 Notice that after this we only know that there is a critical point. **BUT** we don't know if we've found a maximum or minimum, or even if we've found an extremum.
 
@@ -317,21 +333,31 @@ To determine whether a we are seeing a (local) maximum or minimum, we can use th
 
     -   $f''(x^*) = 0$ we (may) have an inflection point - need to calculate higher-order derivatives (don't worry about this now)
 
-Collectively these give use the **Second-Order Condition (SOC)**.
+Collectively these give us the **Second-Order Condition (SOC)**.
+
+Let's do this procedure and obtain the FOC and SOC for $\displaystyle y=\frac{1}{2} x^3 + 3 x^2 - 2$ on the board. What do we learn? Compare this with the plot of the function on [Desmos](https://www.desmos.com/calculator).
+
+### Local or global extrema?
 
 Now when it comes to knowing whether extrema are local or global:
 
--   To find the minimum/maximum on some interval, compare the local min/max to the value of the function at the interval's endpoints.
+-   Here we use the **Extreme value theorem**, which states that if a real-valued function is continuous on a closed and bounded (i.e., finite) interval, the function must have a global minimum and a global minimum on that interval at least once. Importantly, in this situation the global extrema exist, and **they are either at the local extrema or at the boundaries** (where we cannot even find critical points).
 
--   To find the global minimum/maximum, check the function's limits as it approaches $+ \infty$ and $- \infty$.
+-   So to find the minimum/maximum on some interval, compare the local min/max to the value of the function at the interval's endpoints. So, e.g., if the interval is $(-\infty, +\infty)$, check the function's limits as it approaches $-\infty$ and $+\infty$. 
 
--   Extreme value theorem: if a real-valued function $f$ is continuous on the closed interval \[a,b\], then $f$ must attain a (global) maximum and a (global) minimum.
+Let's try this last step for our example above, $\displaystyle y=\frac{1}{2} x^3 + 3 x^2 - 2$, to get the global extrema in the entire domain.
+
+::: callout-note
+#### Exercise
+
+Identify the global extrema of the function $\displaystyle \frac{x^3}{3} - \frac{3}{2}x^2 -10x$ in the interval $[-6, 6]$.
+:::
 
 ## Integrals
 
 Informally, we can think of integrals as the flip side of derivatives.
 
-We can motivate integrals as a way of finding the area under a curve. Sometimes finding the area is easy. What's the area under the curve between $x=-1$ and $x=1$ for this function? 
+We can motivate integrals as a way of finding the area under a curve. Sometimes finding the area is easy. What's the area under the curve between $x=-1$ and $x=1$ for this function?
 
 $$
 f(x) = 
@@ -340,16 +366,6 @@ f(x) =
 0 & \text{otherwise}
 \end{cases}
 $$
-
-::: callout-tip
-#### Hint
-
-We can draw this and look at the graph. Remember: 
-
-$$
-area = \ell*w
-$$
-:::
 
 Normally, finding the area under a curve is much harder. But this is basically the question behind integration.
 
@@ -361,7 +377,7 @@ Let's say we have a function $y = x^2$ And we want to find the area under the cu
 ggplot() +
   # draw main function
   stat_function(fun = function(x){x ^ 2}, xlim = c(-2, 2)) +
-  # fill area under the curve between x=0 and x=1
+  # fill area under the curve between x = 0 and x = 1
   geom_area(mapping = aes(x = 0), stat = "function",
             fun = function(x){x ^ 2}, xlim = c(0, 1), fill = "red")
 ```
@@ -376,15 +392,15 @@ $$
 
 , where $\Delta x$ is the width of the rectangles and $n$ is their number.
 
-This is actually one way to define the **definite integral**, $\displaystyle\int_a^bf(x)dx$ (also known as the Riemann integral). We'll learn how to compute these in just a moment.
+This is actually one way to define the **definite integral**, $\displaystyle\int_a^bf(x)dx$ (also known as the Riemann integral). We'll learn how to compute these in a few moments.
 
 ### Indefinite integrals as antiderivatives
 
-The *indefinite* integral, also known as the *anti-derivative*, $F(x)$ is the inverse of the function $f'(x)$. $$F(x)= \displaystyle\int f(x) \text{ } dx$$
+The **indefinite integral**, also known as the **antiderivative**, $F(x)$ is the inverse of the function $f'(x)$. $$F(x)= \displaystyle\int f(x) \text{ } dx$$
 
 This means if you take the derivative of $F(x)$, you wind up back at $f(x)$. $$F' = f \text{ or } \displaystyle\frac{dF(x)}{dx} = f(x)$$
 
-For example, what is the antiderivative of a constant function $f(x) = 1$? Is there just one? (this example comes from [Moore and Siegel, 2013](https://press.princeton.edu/books/paperback/9780691159171/a-mathematics-course-for-political-and-social-research), p. 137).
+For example, what is the antiderivative for a constant function $f(x) = 1$? Is there just one? (this example comes from [Moore and Siegel, 2013](https://press.princeton.edu/books/paperback/9780691159171/a-mathematics-course-for-political-and-social-research), p. 137).
 
 This process is called *anti-differentiation*. We can use this concept to help us solve definite integrals!
 
@@ -404,43 +420,66 @@ Remember that the derivative of any constant is zero. So if we find an integral 
 
 ### Rules of integration
 
-$$ \displaystyle\int_{a}^{a}f(x) \text{ }dx = 0$$
+Many of the rules of integetration have counterparts in differentiation.
 
-$$\displaystyle\int_{a}^{b} f(x) \text{ } dx = -\displaystyle\int_{b}^{a}f(x)dx$$
+**Coefficient rule:** $\displaystyle\int c f(x)\,dx = c \int f(x)\,dx$
 
-$$\int a \text{ }dx = ax + C \text { where $a$ is a constant}$$
+**Sum/difference rule:** $\displaystyle\int (f(x) \pm g(x))\,dx = \int f(x)\,dx \pm \int g(x)\,dx$
 
-$$\displaystyle\int af(x)dx = a\displaystyle\int f(x) \text{ }dx \text{ where $a$ is a constant}$$
+**Constant rule:** $\displaystyle\int c\,dx = cx + C$
 
-$$\int (f(x) + g(x)) \text{ } dx = \int f(x) dx + \int g(x)dx$$
+**Power rule:** $\displaystyle\int x^n\,dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1$
 
-$$\int x^n dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1$$
+**Inverse rule:**$\displaystyle\int \frac{1}{x}\,dx = \ln |x| + C$
 
-$$\int x^{-1}dx = \ln |x| + C$$
+**Exponent and logarithm rules:**
+
+$$
+\begin{aligned}
+\displaystyle \int e^x \,dx &= e^x+C \\
+\displaystyle \int c^x \,dx &= \frac{c^x}{ln(c)}+C\\
+\\
+\displaystyle \int ln(x) \,dx &= x \cdot ln(x) - x+C \\
+\displaystyle \int log_c(x) \,dx &= \frac{x \cdot log_c(x) - x}{log_c(x)}+C 
+\end{aligned}
+$$
+
+The final two rules are analog to the product rule and the chain rule:
+
+**Integration by parts:** $\displaystyle \int f(x)g'(x)\,dx = f(x)g(x) - \int f'(x)g(x)\,dx$
+
+**Integration by substitution:** 
+
+$$
+\begin{aligned}
+1.& \text{ Have }\displaystyle \int f(g(x))g'(x)\,dx \\
+2.& \text{ Set u=g(x)} \\
+3.& \text{ Compute } \int f(u)\,du \\
+4.& \text{ Replace u for g(x)}
+\end{aligned}
+$$
+
+Let's do an example on the board: $\displaystyle \int e^{x^2} 2x  \,dx$.
 
 ### Solving the problem
 
-Remember our function $y=x^2$ and our goal of finding the area under the curve from $x=0$ to $x=1$.
+Remember our function $y=x^2$ and our goal of finding the area under the curve from $x=0$ to $x=1$. We can describe this problem as $\displaystyle \int_0^1 x^2 dx$
 
--   Find the indefinite integral, $F(x)$
+Find the indefinite integral, $F(x)$:
 
-    -   $\displaystyle\int x^2 \text{ } dx$
+$$
+\displaystyle\int x^2 \text{ } dx = \displaystyle\frac{x^3}{3}+C
+$$
 
-    -   $\displaystyle\frac{x^3}{3}+C$
+Now we'll use the fundamental theory of calculus. Evaluate at our lowest and highest points, $F(0)$ and $F(1)$:
 
-::: callout-important
-We use the "power rule" of integration, which is the following: $$\int x^n dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1$$
-:::
+- $F(0) = 0$
 
--   Evaluate at our lowest and highest points, $F(0)$ and $F(1)$.
+- $F(1) = \displaystyle\frac{1}{3}$
 
-    -   $F(0) = 0$
+- Technically $0 + C$ and $\displaystyle\frac{1}{3} + C$, but the C's will fall out in the next step
 
-    -   $F(1) = \displaystyle\frac{1}{3}$
-
-    -   Technically $0 + C$ and $\displaystyle\frac{1}{3} + C$, but the C's will fall out in the next step
-
--   Calculate $F(1) - F(0)$ $$\displaystyle\frac{1}{3} - 0 = \displaystyle\frac{1}{3}$$
+Calculate $F(1) - F(0)$ $$\displaystyle\frac{1}{3} - 0 = \displaystyle\frac{1}{3}$$
 
 ::: callout-note
 #### Exercise
