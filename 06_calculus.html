@@ -236,10 +236,14 @@ div.csl-indent {
   <li><a href="#higher-order-derivatives" id="toc-higher-order-derivatives" class="nav-link" data-scroll-target="#higher-order-derivatives"><span class="header-section-number">6.1.2</span> Higher-order derivatives</a></li>
   <li><a href="#partial-derivatives" id="toc-partial-derivatives" class="nav-link" data-scroll-target="#partial-derivatives"><span class="header-section-number">6.1.3</span> Partial derivatives</a></li>
   <li><a href="#differentiability-of-functions" id="toc-differentiability-of-functions" class="nav-link" data-scroll-target="#differentiability-of-functions"><span class="header-section-number">6.1.4</span> Differentiability of functions</a></li>
+  <li><a href="#how-do-computers-calculate-derivatives" id="toc-how-do-computers-calculate-derivatives" class="nav-link" data-scroll-target="#how-do-computers-calculate-derivatives"><span class="header-section-number">6.1.5</span> How do computers calculate derivatives?</a></li>
   </ul></li>
   <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization"><span class="header-section-number">6.2</span> Optimization</a>
   <ul class="collapse">
-  <li><a href="#identifying-extrema-analytically" id="toc-identifying-extrema-analytically" class="nav-link" data-scroll-target="#identifying-extrema-analytically"><span class="header-section-number">6.2.1</span> Identifying <em>extrema</em> analytically</a></li>
+  <li><a href="#extrema" id="toc-extrema" class="nav-link" data-scroll-target="#extrema"><span class="header-section-number">6.2.1</span> Extrema</a></li>
+  <li><a href="#critical-points-and-the-first-order-condition" id="toc-critical-points-and-the-first-order-condition" class="nav-link" data-scroll-target="#critical-points-and-the-first-order-condition"><span class="header-section-number">6.2.2</span> Critical points and the First-Order Condition</a></li>
+  <li><a href="#second-order-condition" id="toc-second-order-condition" class="nav-link" data-scroll-target="#second-order-condition"><span class="header-section-number">6.2.3</span> Second-Order Condition</a></li>
+  <li><a href="#local-or-global-extrema" id="toc-local-or-global-extrema" class="nav-link" data-scroll-target="#local-or-global-extrema"><span class="header-section-number">6.2.4</span> Local or global extrema?</a></li>
   </ul></li>
   <li><a href="#integrals" id="toc-integrals" class="nav-link" data-scroll-target="#integrals"><span class="header-section-number">6.3</span> Integrals</a>
   <ul class="collapse">
@@ -571,6 +575,24 @@ Exercise
 <p><img src="06_calculus_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<blockquote class="blockquote">
+<p>Informally, functions need to be continuous and reasonably smooth to be differentiable.</p>
+</blockquote>
+</section>
+<section id="how-do-computers-calculate-derivatives" class="level3" data-number="6.1.5">
+<h3 data-number="6.1.5" class="anchored" data-anchor-id="how-do-computers-calculate-derivatives"><span class="header-section-number">6.1.5</span> How do computers calculate derivatives?</h3>
+<p>In quite a few statistics and machine learning problems, computers need to compute derivatives of arbitrarily complex functions, perhaps millions of times. How do they do it? (see <a href="https://dl.acm.org/doi/abs/10.5555/3122009.3242010">Baydin et al.&nbsp;2018</a> for discussion of these three approaches)</p>
+<ul>
+<li><p>Symbolic differentiation: automatically combine the rules of differentiation (power rule, product rule, etc.). It is what math solvers use, e.g., <a href="https://www.wolframalpha.com/calculators/derivative-calculator/">WolframAlpha</a> or (presumably) <a href="https://www.symbolab.com/solver/derivative-calculator">Symbolab</a>.</p></li>
+<li><p>Numerical differentiation: infer the derivative by computing the function at different sample values (like we did with <span class="math inline">\(y=x^2\)</span> before. This is what, for example, R’s <code>optim()</code> function does behind the scenes.</p></li>
+<li><p>Automatic differentiation: track how every function is constructed from (differentiable) elementary computer operations (e.g., binary arithmetic), and get the result using the chain rule. Implemented in the <a href="https://www.tensorflow.org/"><code>TensorFlow</code></a>, <a href="https://pytorch.org/"><code>PyTorch</code></a>, and <a href="https://jax.readthedocs.io/en/"><code>JAX</code></a> Python libraries, and the <a href="https://juliadiff.org/ReverseDiff.jl/"><code>ReverseDiff.jl</code></a> and <a href="https://fluxml.ai/Zygote.jl/"><code>Zygote.jl</code></a> Julia packages.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/julia_zygote.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">An example of computing the gradient of an esoteric function using Zygote.jl (from <a href="https://fluxml.ai/Zygote.jl/stable/#Taking-Gradients-1">its documentation</a>)</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="optimization" class="level2" data-number="6.2">
@@ -581,38 +603,41 @@ Exercise
 <li><p>Ordinary Least Squares (OLS): Focuses on <em>minimizing</em> the squared errors between observed data and model-estimated values</p></li>
 <li><p>Maximum Likelihood Estimation (MLE): Focuses on <em>maximizing</em> a likelihood function, given observed values.</p></li>
 </ul>
-<section id="identifying-extrema-analytically" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="identifying-extrema-analytically"><span class="header-section-number">6.2.1</span> Identifying <em>extrema</em> analytically</h3>
-<p>On extrema: informally, a maximum is just the highest value a function takes, and a minimum is the lowest value.</p>
-<p>In some situations, it can be easy to identify extrema intuitively by looking at a graph of the function (see the graphs above).</p>
+<section id="extrema" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="extrema"><span class="header-section-number">6.2.1</span> Extrema</h3>
+<p>On <strong>extrema</strong>: informally, a maximum is just the highest value a function takes, and a minimum is the lowest value.</p>
+<p>In some situations, it can be easy to identify extrema intuitively by looking at a graph of the function.</p>
 <ul>
 <li><p>Maxima are high points (“peaks”)</p></li>
 <li><p>Minima are low points (“valleys”)</p></li>
 </ul>
 <p>We can use derivatives (rates of change!) to get at extrema.</p>
-<ul>
-<li><p>When the derivative is zero (or fails to exist), the function has <em>usually</em> reached a (local) maximum or minimum.</p>
+</section>
+<section id="critical-points-and-the-first-order-condition" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="critical-points-and-the-first-order-condition"><span class="header-section-number">6.2.2</span> Critical points and the First-Order Condition</h3>
+<p>At critical points (or stationary points), the derivative is zero or fails to exist. At these, the function has <em>usually</em> reached a (local) maximum or minimum.</p>
 <ul>
 <li><p>At a maximum, the function must be increasing before the point and decreasing after it.</p></li>
 <li><p>At a minimum, the function must be decreasing before the point and increasing after it.</p></li>
-</ul></li>
-<li><p>We’ll start by identifying points where this is the case (“critical points” or “stationary points”).</p></li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A point where <span class="math inline">\(f'(x)=0\)</span> or <span class="math inline">\(f'(x)\)</span> does not exist is called a <em>critical point</em> (or <em>stationary point</em>). Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex (“inflection points”). Or sometimes the function is not differentiable at that point for other reasons.</p>
+<p>Local extrema occur at critical points, but not all critical points are extrema. For instance, sometimes the graph is changing between concave and convex (“inflection points”). Or sometimes the function is not differentiable at that point for other reasons.</p>
 </div>
 </div>
-<p>We can find the local maxima and/or minima of a function by taking the derivative, setting it equal to zero, and solving for <span class="math inline">\(x\)</span> (or whatever variable). This gives us the first-order condition (FOC).</p>
+<p>We can find the local maxima and/or minima of a function by taking the derivative, setting it equal to zero, and solving for <span class="math inline">\(x\)</span> (or whatever variable). This gives us the First-Order Condition (FOC).</p>
 <p><span class="math display">\[FOC: f'(x)=0\]</span></p>
+</section>
+<section id="second-order-condition" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="second-order-condition"><span class="header-section-number">6.2.3</span> Second-Order Condition</h3>
 <p>Notice that after this we only know that there is a critical point. <strong>BUT</strong> we don’t know if we’ve found a maximum or minimum, or even if we’ve found an extremum.</p>
 <p>To determine whether a we are seeing a (local) maximum or minimum, we can use the <strong>Second Derivative Test</strong>:</p>
 <ul>
@@ -624,13 +649,30 @@ Note
 <li><p><span class="math inline">\(f''(x^*) = 0\)</span> we (may) have an inflection point - need to calculate higher-order derivatives (don’t worry about this now)</p></li>
 </ul></li>
 </ul>
-<p>Collectively these give use the <strong>Second-Order Condition (SOC)</strong>.</p>
+<p>Collectively these give us the <strong>Second-Order Condition (SOC)</strong>.</p>
+<p>Let’s do this procedure and obtain the FOC and SOC for <span class="math inline">\(\displaystyle y=\frac{1}{2} x^3 + 3 x^2 - 2\)</span> on the board. What do we learn? Compare this with the plot of the function on <a href="https://www.desmos.com/calculator">Desmos</a>.</p>
+</section>
+<section id="local-or-global-extrema" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="local-or-global-extrema"><span class="header-section-number">6.2.4</span> Local or global extrema?</h3>
 <p>Now when it comes to knowing whether extrema are local or global:</p>
 <ul>
-<li><p>To find the minimum/maximum on some interval, compare the local min/max to the value of the function at the interval’s endpoints.</p></li>
-<li><p>To find the global minimum/maximum, check the function’s limits as it approaches <span class="math inline">\(+ \infty\)</span> and <span class="math inline">\(- \infty\)</span>.</p></li>
-<li><p>Extreme value theorem: if a real-valued function <span class="math inline">\(f\)</span> is continuous on the closed interval [a,b], then <span class="math inline">\(f\)</span> must attain a (global) maximum and a (global) minimum.</p></li>
+<li><p>Here we use the <strong>Extreme value theorem</strong>, which states that if a real-valued function is continuous on a closed and bounded (i.e., finite) interval, the function must have a global minimum and a global minimum on that interval at least once. Importantly, in this situation the global extrema exist, and <strong>they are either at the local extrema or at the boundaries</strong> (where we cannot even find critical points).</p></li>
+<li><p>So to find the minimum/maximum on some interval, compare the local min/max to the value of the function at the interval’s endpoints. So, e.g., if the interval is <span class="math inline">\((-\infty, +\infty)\)</span>, check the function’s limits as it approaches <span class="math inline">\(-\infty\)</span> and <span class="math inline">\(+\infty\)</span>.</p></li>
 </ul>
+<p>Let’s try this last step for our example above, <span class="math inline">\(\displaystyle y=\frac{1}{2} x^3 + 3 x^2 - 2\)</span>, to get the global extrema in the entire domain.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Identify the global extrema of the function <span class="math inline">\(\displaystyle \frac{x^3}{3} - \frac{3}{2}x^2 -10x\)</span> in the interval <span class="math inline">\([-6, 6]\)</span>.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="integrals" class="level2" data-number="6.3">
@@ -644,22 +686,6 @@ f(x) =
 0 &amp; \text{otherwise}
 \end{cases}
 \]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We can draw this and look at the graph. Remember:</p>
-<p><span class="math display">\[
-area = \ell*w
-\]</span></p>
-</div>
-</div>
 <p>Normally, finding the area under a curve is much harder. But this is basically the question behind integration.</p>
 <section id="integrals-are-about-infinitesimals-too" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="integrals-are-about-infinitesimals-too"><span class="header-section-number">6.3.1</span> Integrals are about infinitesimals too</h3>
@@ -668,7 +694,7 @@ area = \ell*w
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># draw main function</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x){x <span class="sc">^</span> <span class="dv">2</span>}, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fill area under the curve between x=0 and x=1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fill area under the curve between x = 0 and x = 1</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>), <span class="at">stat =</span> <span class="st">"function"</span>,</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">fun =</span> <span class="cf">function</span>(x){x <span class="sc">^</span> <span class="dv">2</span>}, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">fill =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -681,13 +707,13 @@ area = \ell*w
 Area = lim_{\Delta x \to 0}\sum_i^n{f(x) \cdot \Delta x}
 \]</span></p>
 <p>, where <span class="math inline">\(\Delta x\)</span> is the width of the rectangles and <span class="math inline">\(n\)</span> is their number.</p>
-<p>This is actually one way to define the <strong>definite integral</strong>, <span class="math inline">\(\displaystyle\int_a^bf(x)dx\)</span> (also known as the Riemann integral). We’ll learn how to compute these in just a moment.</p>
+<p>This is actually one way to define the <strong>definite integral</strong>, <span class="math inline">\(\displaystyle\int_a^bf(x)dx\)</span> (also known as the Riemann integral). We’ll learn how to compute these in a few moments.</p>
 </section>
 <section id="indefinite-integrals-as-antiderivatives" class="level3" data-number="6.3.2">
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="indefinite-integrals-as-antiderivatives"><span class="header-section-number">6.3.2</span> Indefinite integrals as antiderivatives</h3>
-<p>The <em>indefinite</em> integral, also known as the <em>anti-derivative</em>, <span class="math inline">\(F(x)\)</span> is the inverse of the function <span class="math inline">\(f'(x)\)</span>. <span class="math display">\[F(x)= \displaystyle\int f(x) \text{ } dx\]</span></p>
+<p>The <strong>indefinite integral</strong>, also known as the <strong>antiderivative</strong>, <span class="math inline">\(F(x)\)</span> is the inverse of the function <span class="math inline">\(f'(x)\)</span>. <span class="math display">\[F(x)= \displaystyle\int f(x) \text{ } dx\]</span></p>
 <p>This means if you take the derivative of <span class="math inline">\(F(x)\)</span>, you wind up back at <span class="math inline">\(f(x)\)</span>. <span class="math display">\[F' = f \text{ or } \displaystyle\frac{dF(x)}{dx} = f(x)\]</span></p>
-<p>For example, what is the antiderivative of a constant function <span class="math inline">\(f(x) = 1\)</span>? Is there just one? (this example comes from <a href="https://press.princeton.edu/books/paperback/9780691159171/a-mathematics-course-for-political-and-social-research">Moore and Siegel, 2013</a>, p.&nbsp;137).</p>
+<p>For example, what is the antiderivative for a constant function <span class="math inline">\(f(x) = 1\)</span>? Is there just one? (this example comes from <a href="https://press.princeton.edu/books/paperback/9780691159171/a-mathematics-course-for-political-and-social-research">Moore and Siegel, 2013</a>, p.&nbsp;137).</p>
 <p>This process is called <em>anti-differentiation</em>. We can use this concept to help us solve definite integrals!</p>
 </section>
 <section id="solving-definite-integrals" class="level3" data-number="6.3.3">
@@ -712,46 +738,49 @@ Warning
 </section>
 <section id="rules-of-integration" class="level3" data-number="6.3.4">
 <h3 data-number="6.3.4" class="anchored" data-anchor-id="rules-of-integration"><span class="header-section-number">6.3.4</span> Rules of integration</h3>
-<p><span class="math display">\[ \displaystyle\int_{a}^{a}f(x) \text{ }dx = 0\]</span></p>
-<p><span class="math display">\[\displaystyle\int_{a}^{b} f(x) \text{ } dx = -\displaystyle\int_{b}^{a}f(x)dx\]</span></p>
-<p><span class="math display">\[\int a \text{ }dx = ax + C \text { where $a$ is a constant}\]</span></p>
-<p><span class="math display">\[\displaystyle\int af(x)dx = a\displaystyle\int f(x) \text{ }dx \text{ where $a$ is a constant}\]</span></p>
-<p><span class="math display">\[\int (f(x) + g(x)) \text{ } dx = \int f(x) dx + \int g(x)dx\]</span></p>
-<p><span class="math display">\[\int x^n dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1\]</span></p>
-<p><span class="math display">\[\int x^{-1}dx = \ln |x| + C\]</span></p>
+<p>Many of the rules of integetration have counterparts in differentiation.</p>
+<p><strong>Coefficient rule:</strong> <span class="math inline">\(\displaystyle\int c f(x)\,dx = c \int f(x)\,dx\)</span></p>
+<p><strong>Sum/difference rule:</strong> <span class="math inline">\(\displaystyle\int (f(x) \pm g(x))\,dx = \int f(x)\,dx \pm \int g(x)\,dx\)</span></p>
+<p><strong>Constant rule:</strong> <span class="math inline">\(\displaystyle\int c\,dx = cx + C\)</span></p>
+<p><strong>Power rule:</strong> <span class="math inline">\(\displaystyle\int x^n\,dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1\)</span></p>
+<p><strong>Inverse rule:</strong><span class="math inline">\(\displaystyle\int \frac{1}{x}\,dx = \ln |x| + C\)</span></p>
+<p><strong>Exponent and logarithm rules:</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+\displaystyle \int e^x \,dx &amp;= e^x+C \\
+\displaystyle \int c^x \,dx &amp;= \frac{c^x}{ln(c)}+C\\
+\\
+\displaystyle \int ln(x) \,dx &amp;= x \cdot ln(x) - x+C \\
+\displaystyle \int log_c(x) \,dx &amp;= \frac{x \cdot log_c(x) - x}{log_c(x)}+C
+\end{aligned}
+\]</span></p>
+<p>The final two rules are analog to the product rule and the chain rule:</p>
+<p><strong>Integration by parts:</strong> <span class="math inline">\(\displaystyle \int f(x)g'(x)\,dx = f(x)g(x) - \int f'(x)g(x)\,dx\)</span></p>
+<p><strong>Integration by substitution:</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+1.&amp; \text{ Have }\displaystyle \int f(g(x))g'(x)\,dx \\
+2.&amp; \text{ Set u=g(x)} \\
+3.&amp; \text{ Compute } \int f(u)\,du \\
+4.&amp; \text{ Replace u for g(x)}
+\end{aligned}
+\]</span></p>
+<p>Let’s do an example on the board: <span class="math inline">\(\displaystyle \int e^{x^2} 2x \,dx\)</span>.</p>
 </section>
 <section id="solving-the-problem" class="level3" data-number="6.3.5">
 <h3 data-number="6.3.5" class="anchored" data-anchor-id="solving-the-problem"><span class="header-section-number">6.3.5</span> Solving the problem</h3>
-<p>Remember our function <span class="math inline">\(y=x^2\)</span> and our goal of finding the area under the curve from <span class="math inline">\(x=0\)</span> to <span class="math inline">\(x=1\)</span>.</p>
-<ul>
-<li><p>Find the indefinite integral, <span class="math inline">\(F(x)\)</span></p>
-<ul>
-<li><p><span class="math inline">\(\displaystyle\int x^2 \text{ } dx\)</span></p></li>
-<li><p><span class="math inline">\(\displaystyle\frac{x^3}{3}+C\)</span></p></li>
-</ul></li>
-</ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We use the “power rule” of integration, which is the following: <span class="math display">\[\int x^n dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1\]</span></p>
-</div>
-</div>
-<ul>
-<li><p>Evaluate at our lowest and highest points, <span class="math inline">\(F(0)\)</span> and <span class="math inline">\(F(1)\)</span>.</p>
+<p>Remember our function <span class="math inline">\(y=x^2\)</span> and our goal of finding the area under the curve from <span class="math inline">\(x=0\)</span> to <span class="math inline">\(x=1\)</span>. We can describe this problem as <span class="math inline">\(\displaystyle \int_0^1 x^2 dx\)</span></p>
+<p>Find the indefinite integral, <span class="math inline">\(F(x)\)</span>:</p>
+<p><span class="math display">\[
+\displaystyle\int x^2 \text{ } dx = \displaystyle\frac{x^3}{3}+C
+\]</span></p>
+<p>Now we’ll use the fundamental theory of calculus. Evaluate at our lowest and highest points, <span class="math inline">\(F(0)\)</span> and <span class="math inline">\(F(1)\)</span>:</p>
 <ul>
 <li><p><span class="math inline">\(F(0) = 0\)</span></p></li>
 <li><p><span class="math inline">\(F(1) = \displaystyle\frac{1}{3}\)</span></p></li>
 <li><p>Technically <span class="math inline">\(0 + C\)</span> and <span class="math inline">\(\displaystyle\frac{1}{3} + C\)</span>, but the C’s will fall out in the next step</p></li>
-</ul></li>
-<li><p>Calculate <span class="math inline">\(F(1) - F(0)\)</span> <span class="math display">\[\displaystyle\frac{1}{3} - 0 = \displaystyle\frac{1}{3}\]</span></p></li>
 </ul>
+<p>Calculate <span class="math inline">\(F(1) - F(0)\)</span> <span class="math display">\[\displaystyle\frac{1}{3} - 0 = \displaystyle\frac{1}{3}\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -788,6 +817,9 @@ Arel-Bundock, Vincent, Nils Enevoldsen, and CJ Yetman. 2018. <span>“Countrycod
 </div>
 <div id="ref-wdi" class="csl-entry" role="listitem">
 Bank, World. 2023. <span>“World Bank Open Data.”</span> <a href="https://data.worldbank.org/">https://data.worldbank.org/</a>.
+</div>
+<div id="ref-baydinAutomaticDifferentiationMachine2017" class="csl-entry" role="listitem">
+Baydin, Atılım Günes, Barak A. Pearlmutter, Alexey Andreyevich Radul, and Jeffrey Mark Siskind. 2017. <span>“Automatic Differentiation in Machine Learning: A Survey.”</span> <em>The Journal of Machine Learning Research</em> 18 (1): 5595–5637.
 </div>
 <div id="ref-Vdemcodebook2022" class="csl-entry" role="listitem">
 Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I. Lindberg, Jan Teorell, David Altman, Michael Bernhard, et al. 2022. <span>“V-Dem Codebook V12.”</span> <span>Varieties of Democracy (V-Dem) Project</span>. <a href="https://www.v-dem.net/dsarchive.html">https://www.v-dem.net/dsarchive.html</a>.
