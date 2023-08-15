@@ -19,8 +19,6 @@ pi * 2
 #| message: false
 # setup: these steps were executed before the exercise
 my_object <- 10
-?log
-log10(my_object)
 ```
 
 1) Examine the `log()` function.
@@ -33,6 +31,26 @@ log10(my_object)
 
 ```{r}
 log10(my_object)
+```
+
+> **Exercise**
+>
+> Obtain the maximum value of water content per 100g in the data. Your code:
+
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercise
+my_character_vector <- c("Apple", "Orange", "Watermelon", "Banana")
+my_data_frame <- data.frame(fruit = my_character_vector,
+                            calories_per_100g = c(52, 47, 30, 89),
+                            water_per_100g = c(85.6, 86.8, 91.4, 74.9))
+my_data_frame
+```
+
+```{r}
+max(my_data_frame$water_per_100g)
 ```
 
 ## 4. Tidy data analysis II {.unnumbered}
