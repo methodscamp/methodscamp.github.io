@@ -583,12 +583,19 @@ f(5) |> g() # pipeline approach
 >
 > Compute the probability of seeing between 1 and 10 voters of the candidate in a sample of 100 people.
 
+```{r}
+pbinom(q = 10, size = 100, prob = 0.02) - 
+  dbinom(x = 0, size = 100, prob = 0.02)
+```
+
 > **Exercise**
 >
 > Evaluate the CDF of $Y \sim U(-2, 2)$ at point $y = 1$. Use the formula and `punif()`.
 
-```{r}
+$$A = F(1) = P(Y\leq 1) = 3 \cdot(1/4) = 0.75$$
 
+```{r}
+punif(q = 1, min = -2, max = 2)
 ```
 
 > **Exercise**
@@ -596,7 +603,7 @@ f(5) |> g() # pipeline approach
 > What is the probability of obtaining a value above 1.96 or below -1.96 in a standard normal probability distribution? Hint: use the `pnorm()` function.
 
 ```{r}
-
+pnorm(1.96)
 ```
 
 > **Exercise**
