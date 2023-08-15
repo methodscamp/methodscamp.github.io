@@ -283,7 +283,7 @@ book_words
 
 -   We can then take these data and visualize them for each of the books in the dataset.
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 ggplot(book_words, aes(x = n/total, fill = book)) +
   geom_histogram(show.legend = FALSE) +
   scale_x_continuous(limits = c(NA, 0.0009)) + # removes some observations
