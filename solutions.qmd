@@ -649,6 +649,7 @@ str_length(cat_string2)
 1.  Store the text as a string.
 
 ```{r}
+library(tidytext)
 dummy <- c("I been goin' dummy (Huh)",
            "I been goin' dummy (Goin' dummy)",
            "I been goin' dummy (Goin' dummy)",
