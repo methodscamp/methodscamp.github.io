@@ -131,7 +131,7 @@ str_replace_all(cat_string, "e", "_")
 ```{r}
 str_extract_all(cat_string, "have")
 
-str_extract_all(cat_string,"[0-9]+")[[1]] 
+str_extract_all(cat_string,"[0-9]+")[[1]]
 #   The square brackets define a set of possibilities.
 #   The "0-9" says the possibilities are any digit from 0 to 9.
 #   The "+" means "one or more of the just-named thing"
@@ -148,7 +148,7 @@ str_extract_all(cat_string,"\\w+")[[1]] # "word" characters
 
 What score (out of 10) would you give Barbie or Oppenheimer? Write your score in one sentence (e.g., "I would give Barbie seven of ten stars".) If you have not seen either, write a sentence about which you would like to see more.
 
-Store that text as a string (`string3`) and combine it with our existing `cat_string` to produce a new concatenated string called `cat_string2`. Finally, count the total of characters within `cat_string2`. Your code:
+Store that text as a string (`string3`) and combine it with our existing `cat_string` to produce a new concatenated string called `cat_string2`. Finally, count the total number of characters within `cat_string2`. Your code:
 :::
 
 ## Simple text analysis
