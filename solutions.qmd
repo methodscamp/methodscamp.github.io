@@ -678,6 +678,7 @@ dummy_tok <- unnest_tokens(dummy_df, word, text)
 ```{r}
 dummy_tok |>
   count(word, sort = TRUE)
+
 ```
 
 5.  Visualize.
