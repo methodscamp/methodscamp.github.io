@@ -14,9 +14,9 @@ On class days, we will have a lunch break from 12:00-1:00 PM. We'll also take sh
 
 ## Description {.unnumbered}
 
-Welcome to Introduction to Methods for Political Science, aka "Methods Camp"! Methods Camp is designed to give everyone a chance to brush up on some skills in preparation for the introductory Stats and Formal Theory courses. The other goal of Methods Camp is to allow you to get to know your cohort. We hope that matrix algebra and the chain rule will still prove to be good bonding exercises!
+Welcome to Introduction to Methods for Political Science, aka "Methods Camp"! Methods Camp is designed to give everyone a chance to brush up on some skills in preparation for the introductory Statistics and Formal Theory courses. The other goal of Methods Camp is to allow you to get to know your cohort. We hope that matrix algebra and the chain rule will still prove to be good bonding exercises!
 
-As you can see from the above schedule, we'll be meeting on Thursday, August 10th and Friday, August 11th as well as from Monday, August 14th through Wednesday, August 16th. Classes at UT begin the start of the following week on Monday, August 22nd. Below is a tentative schedule outlining what will be covered in the class, although we may rearrange things a bit if we find we're going too slowly or too quickly through any of the material.
+As you can see from the above schedule, we'll be meeting on Thursday, August 10th and Friday, August 11th as well as from Monday, August 14th through Wednesday, August 16th. Classes at UT begin the start of the following week on Monday, August 22nd. Below is a tentative schedule outlining what will be covered in the class, although we may rearrange things if we find we're going too slowly or too quickly through the material.
 
 ## Course outline {.unnumbered}
 
@@ -66,25 +66,22 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 -   Integrals
 -   Calculus in R
 
-**7 Tuesday morning: Probability**
+**7 Tuesday: [Probability, statistics, and simulations](https://methodscamp.github.io/07_probability_stats_sims.html)**
 
 -   Basic concepts
 -   Random variables and their properties
 -   Common distributions
-
-**8 Tuesday afternoon: Simulations**
-
 -   Monte Carlo simulations
 -   Sampling
 -   Loops in R
 -   Bootstrapping
 
-**9 Wednesday morning: Text analysis**
+**8 Wednesday morning: [Text analysis](https://methodscamp.github.io/08_text_analysis.html)**
 
 -   String manipulation with `stringr`
 -   Simple text analysis and visualization with `tidytext`
 
-**10 Wednesday afternoon: Wrap-up**
+**9 Wednesday afternoon: [Wrap-up](https://methodscamp.github.io/09_wrapup.html)**
 
 -   Project management fundamentals
 -   Self-study resources and materials

@@ -21,7 +21,7 @@ book:
     - 09_wrapup.qmd
     - solutions.qmd
     - references.qmd
-  # downloads: pdf
+  downloads: pdf
   site-url: https://methodscamp.github.io/
   repo-url: https://github.com/methodscamp/methodscamp.github.io
   search: true
