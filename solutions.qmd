@@ -620,7 +620,7 @@ pnorm(-1.96) + (1 - pnorm(1.96))
 >
 > What score (out of 10) would you give Barbie or Oppenheimer? Write your score in one sentence (e.g., I would give Barbie seven of ten stars.) If you have not seen either, write a sentence about which you would like to see more.
 >
-> Store that text as a string (`string3`) and combine it with our existing `cat_string` to produce a new concatenated string called `cat_string2`. Finally, count the total of characters within `cat_string2`. Your code:
+> Store that text as a string (`string3`) and combine it with our existing `cat_string` to produce a new concatenated string called `cat_string2`. Finally, count the total number of characters within `cat_string2`. Your code:
 
 ```{r}
 #| code-fold: true
@@ -633,7 +633,11 @@ cat_string <- str_c(my_string, my_string2, sep = " ")
 ```
 
 ```{r}
-
+string3 <- "I would give Barbie 7 out of 10 stars."
+string3
+cat_string2 <- str_c(cat_string, string3, sep = " ")
+cat_string2
+str_length(cat_string2)
 ```
 
 > **Exercise**
@@ -645,29 +649,43 @@ cat_string <- str_c(my_string, my_string2, sep = " ")
 1.  Store the text as a string.
 
 ```{r}
-
+dummy <- c("I been goin' dummy (Huh)",
+           "I been goin' dummy (Goin' dummy)",
+           "I been goin' dummy (Goin' dummy)",
+           "I been goin' dummy (Goin' dummy)",
+           "I been goin' dummy (Yeah)",
+           "I been goin' dummy (Goin' dummy)",
+           "I been goin' dummy (Goin' dummy)",
+           "I been goin' dummy",
+           "Dumbass, I been goin' dummy")
 ```
 
 2.  Convert to a tibble.
 
 ```{r}
-
+dummy_df <- tibble(line = 1:9, text = dummy)
+dummy_df
 ```
 
 3.  Tokenize.
 
 ```{r}
-
+dummy_tok <- unnest_tokens(dummy_df, word, text)
 ```
 
 4.  Count.
 
 ```{r}
-
+dummy_tok |>
+  count(word, sort = TRUE)
 ```
 
 5.  Visualize.
 
 ```{r}
-
+dummy_tok |>
+  count(word, sort = TRUE) |>
+  mutate(word = reorder(word, n)) |>
+  ggplot(aes(n, word)) +
+  geom_col()
 ```
