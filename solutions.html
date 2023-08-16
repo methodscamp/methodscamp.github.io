@@ -970,7 +970,7 @@ lgl  (2): 2021, 2022
 <blockquote class="blockquote">
 <p><strong>Exercise</strong></p>
 <p>What score (out of 10) would you give Barbie or Oppenheimer? Write your score in one sentence (e.g., I would give Barbie seven of ten stars.) If you have not seen either, write a sentence about which you would like to see more.</p>
-<p>Store that text as a string (<code>string3</code>) and combine it with our existing <code>cat_string</code> to produce a new concatenated string called <code>cat_string2</code>. Finally, count the total of characters within <code>cat_string2</code>. Your code:</p>
+<p>Store that text as a string (<code>string3</code>) and combine it with our existing <code>cat_string</code> to produce a new concatenated string called <code>cat_string2</code>. Finally, count the total number of characters within <code>cat_string2</code>. Your code:</p>
 </blockquote>
 <div class="cell">
 <details>
@@ -982,6 +982,22 @@ lgl  (2): 2021, 2022
 <span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>cat_string <span class="ot">&lt;-</span> <span class="fu">str_c</span>(my_string, my_string2, <span class="at">sep =</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>string3 <span class="ot">&lt;-</span> <span class="st">"I would give Barbie 7 out of 10 stars."</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>string3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "I would give Barbie 7 out of 10 stars."</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>cat_string2 <span class="ot">&lt;-</span> <span class="fu">str_c</span>(cat_string, string3, <span class="at">sep =</span> <span class="st">" "</span>)</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>cat_string2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "I know people who have seen the Barbie movie 2, 3, even 4 times! I wonder if they have seen Oppenheimer, too. I would give Barbie 7 out of 10 stars."</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_length</span>(cat_string2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 148</code></pre>
+</div>
+</div>
 <blockquote class="blockquote">
 <p><strong>Exercise</strong></p>
 <p>Look up the lyrics to your favorite song at the moment (no guilty pleasures here!). Then, follow the process described above to count the words: store the text as a string, convert to a tibble, tokenize, and count.</p>
@@ -990,18 +1006,77 @@ lgl  (2): 2021, 2022
 <ol type="1">
 <li>Store the text as a string.</li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>dummy <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"I been goin' dummy (Huh)"</span>,</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>           <span class="st">"I been goin' dummy (Goin' dummy)"</span>,</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">"I been goin' dummy (Goin' dummy)"</span>,</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>           <span class="st">"I been goin' dummy (Goin' dummy)"</span>,</span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>           <span class="st">"I been goin' dummy (Yeah)"</span>,</span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a>           <span class="st">"I been goin' dummy (Goin' dummy)"</span>,</span>
+<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>           <span class="st">"I been goin' dummy (Goin' dummy)"</span>,</span>
+<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a>           <span class="st">"I been goin' dummy"</span>,</span>
+<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a>           <span class="st">"Dumbass, I been goin' dummy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ol start="2" type="1">
 <li>Convert to a tibble.</li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>dummy_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">line =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">text =</span> dummy)</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>dummy_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 2
+   line text                            
+  &lt;int&gt; &lt;chr&gt;                           
+1     1 I been goin' dummy (Huh)        
+2     2 I been goin' dummy (Goin' dummy)
+3     3 I been goin' dummy (Goin' dummy)
+4     4 I been goin' dummy (Goin' dummy)
+5     5 I been goin' dummy (Yeah)       
+6     6 I been goin' dummy (Goin' dummy)
+7     7 I been goin' dummy (Goin' dummy)
+8     8 I been goin' dummy              
+9     9 Dumbass, I been goin' dummy     </code></pre>
+</div>
+</div>
 <ol start="3" type="1">
 <li>Tokenize.</li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>dummy_tok <span class="ot">&lt;-</span> <span class="fu">unnest_tokens</span>(dummy_df, word, text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ol start="4" type="1">
 <li>Count.</li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>dummy_tok <span class="sc">|&gt;</span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 2
+  word        n
+  &lt;chr&gt;   &lt;int&gt;
+1 dummy      14
+2 goin       14
+3 been        9
+4 i           9
+5 dumbass     1
+6 huh         1
+7 yeah        1</code></pre>
+</div>
+</div>
 <ol start="5" type="1">
 <li>Visualize.</li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>dummy_tok <span class="sc">|&gt;</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word, n)) <span class="sc">|&gt;</span></span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(n, word)) <span class="sc">+</span></span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="solutions_files/figure-html/unnamed-chunk-63-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
