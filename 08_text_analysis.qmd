@@ -176,8 +176,6 @@ Store that text as a string (`string3`) and combine it with our existing `cat_st
     -   We print out each line as a "tibble," which has a convenient print method that does not convert strings to factors or use row names.
 
 ```{r, message=FALSE}
-library(dplyr)
-
 barbie <- c("I'm a Barbie girl in the Barbie world",
             "Life in plastic, it's fantastic",
             "You can brush my hair, undress me everywhere",
