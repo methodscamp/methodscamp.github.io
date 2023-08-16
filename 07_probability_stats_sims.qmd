@@ -138,26 +138,26 @@ For example, let's say that voters choose some candidate with probability 0.02. 
 We can compute the PMF of a binomial distribution using R's `dbinom()` function.
 
 ```{r}
-dbinom(x = 0, size = 100, prob = 0.01)
+dbinom(x = 0, size = 100, prob = 0.02)
 ```
 
 ```{r}
-dbinom(x = 1, size = 100, prob = 0.01)
+dbinom(x = 1, size = 100, prob = 0.02)
 ```
 
 
 Similarly, we can compute the CDF using R's `pbinom()` function:
 
 ```{r}
-pbinom(q = 0, size = 100, prob = 0.01)
+pbinom(q = 0, size = 100, prob = 0.02)
 ```
 
 ```{r}
-pbinom(q = 100, size = 100, prob = 0.01)
+pbinom(q = 100, size = 100, prob = 0.02)
 ```
 
 ```{r}
-pbinom(q = 1, size = 100, prob = 0.01)
+pbinom(q = 1, size = 100, prob = 0.02)
 ```
 
 ::: callout-note
@@ -266,15 +266,15 @@ What is the probability of obtaining a value above 1.96 or below -1.96 in a stan
 
 - Theoretical statistics is all about finding "good" estimators (let's see an example of different estimators). A few properties of good estimators:
     + **Unbiasedness**: Across multiple random samples, an unbiased estimator gets the right answer on average.
-    + **Low variance**: Across multiple random samples, a low-variance estimator is more concentrated around the true paramater.
+    + **Low variance**: Across multiple random samples, a low-variance estimator is more concentrated around the true parameter.
     + BUT it's usually hard to get both unbiasedness and low variance. We usually quantify this via the mean squared error: $MSE = bias^2 + variance$. Comparing two estimators, the one with the lowest MSE is said to be more **efficient**.
-    + **Consistency**: A consistent estimator convergences in probability to the true value. "If we had enough data, the probability that our estimate would be far from the truth would be close to zero" ([Aronow and Miller 2019](https://www.cambridge.org/core/books/foundations-of-agnostic-statistics/684756357E7E9B3DFF0A8157FB2DCECA), p. 105).
+    + **Consistency**: A consistent estimator converges in probability to the true value. "If we had enough data, the probability that our estimate would be far from the truth would be close to zero" ([Aronow and Miller 2019](https://www.cambridge.org/core/books/foundations-of-agnostic-statistics/684756357E7E9B3DFF0A8157FB2DCECA), p. 105).
     
 - Applied statistics is about using these techniques reasonably in messy real-world situations...
 
 ## Simulations
 
-- In simulations, we generate fake data following standard procedues. Why?
+- In simulations, we generate fake data following standard procedures. Why?
     + To better understand how our estimators work in different settings (the methods reason)
     + To get insights about complex processes with many moving parts (the substantive reason) (let's talk about gerrymandering).
     
@@ -420,7 +420,6 @@ for (i in 1:10){
 ```
 
 > We talked about loops and various extensions in one of our methods workshops last year: [Speedy R](https://arcruz0.github.io/workshops/speedyr).
-
 
 ### An example simulation: bootstrapping a sample mean
 

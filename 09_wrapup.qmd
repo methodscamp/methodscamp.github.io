@@ -58,7 +58,7 @@ write_csv(mtcars, "mtcars.csv")
 
 -   Double-click the `.Rproj` file to reopen the project and pick up where you left off! Everything you need should be ready to go.
 
-## Other resources
+## Other software resources
 
 ### Overleaf
 
@@ -89,7 +89,7 @@ Create an Overleaf Professional account using your UT email address. You can do 
     -   UT Austin resource portal, including UT Austin templates, FAQs, and resource links
 
 ::: callout-important
-LaTeX is actually the markup language that powers this website! If you are curious about general syntax and commands, you can access [our repository](https://github.com/methodscamp/methodscamp.github.io) at any time to get a closer look.
+LaTeX is actually the markup language that the math in Quarto and this website! If you are curious about general syntax and commands, you can access [our repository](https://github.com/methodscamp/methodscamp.github.io) at any time to get a closer look.
 :::
 
 ### Zotero
@@ -116,8 +116,8 @@ Zotero is one of many other reference managers out there. Alternatives include M
 
 -   If you have not yet chosen a reference manager or are considering switching, below are some advantages of Zotero:
 
-    -   Works as a standalone desktop software with plugins for [Chrome](https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc), Safari, and Firefox
-    -   Full compatibility with Google docs
+    -   Works as a standalone desktop software with plugins for [Chrome](https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc), [Safari](https://www.zotero.org/support/kb/safari_compatibility), and [Firefox](https://www.zotero.org/download/connectors)
+    -   Full compatibility with Google Docs
     -   Free plugin for Word and LibreOffice included
     -   Includes most popular citation styles with more styles available on the [Zotero Style Repository](https://www.zotero.org/styles)
     -   Drag and drop PDF files into the library, extracting metadata such as authors, year, etc.
@@ -134,25 +134,26 @@ Zotero is one of many other reference managers out there. Alternatives include M
 
 -   Scope and Methods of Political Science
 
-    -   Statistics I (Statistics/linear regression)
+-   Statistics I (Statistics/linear regression)
 
 -   Statistics II (Linear regression and more)
 
 -   Statistics III (Maximum likelihood estimation)
 
-    -   Only required if your major field is methods
+    +  Only required if your major field is methods
 
 ### Other methods courses
 
--   **Statistics/econometrics:**
+-   **Statistics / Econometrics / Machine Learning:**
 
-    -   Bayesian Statistics
     -   Causal Inference
+    -   Bayesian Statistics
     -   Math Methods for Political Analysis
     -   Time Series and Panel Data
     -   Panel and Multilevel Analysis
-
-### More courses
+    -   Network Analysis
+    -   Machine Learning in Political Science
+    -   Making Big Data
 
 -   **Formal Theory**
 
@@ -165,37 +166,32 @@ Zotero is one of many other reference managers out there. Alternatives include M
     -   Conceptualization and Measurement
     -   Experimental Methods in Political Science
     -   Qualitative Methods
-    -   Network Analysis
     -   Seminar in Field Experiments
 
 ### Other departments at UT
 
-You can also take courses through the Economics, Mathematics, or Statistics (Statistics and Data Science) departments.
+You can also take courses through the Economics, Business (IROM), Sociology, Mathematics, or Statistics (SDS) departments.
 
--   M.S. in Statistics
+- [M.S. in Statistics](https://stat.utexas.edu/academics/master-science-statistics)
 
-Software and Topic Short Courses - R, Python, Stata, etc.
-
--   More info [here](https://stat.utexas.edu/training/software-short-courses).
+- Software and Topic Short Courses at SDS (see their [Events](https://stat.utexas.edu/events) page): R, Python, Stata, etc.
 
 ### Other resources
 
 Summer programs at UT:
 
--   Short courses in statistics
-
-    -   Department sometimes offers scholarships to cover part of the cost.
+-   Short courses in statistics (department sometimes offers scholarships to cover part of the cost)
 
 Summer programs outside UT:
 
--   ICPSR (Inter-university Consortium for Political and Social Research)
+-   [ICPSR](https://www.icpsr.umich.edu/web/pages/) (Inter-university Consortium for Political and Social Research)
 
     -   Ann Arbor, Michigan
 
--   EITM (Empirical Implications of Theoretical Models)
+-   [EITM](https://eitminstitute.org/) (Empirical Implications of Theoretical Models)
 
     -   Houston and other locations (Michigan, Duke, Berkeley, Emory)
 
--   IQMR (Institute for Qualitative and Multi-Method Research)
+-   [IQMR](https://www.maxwell.syr.edu/research/center-for-qualitative-and-multi-method-inquiry/institute-for-qualitative-multi-method-research) (Institute for Qualitative and Multi-Method Research)
 
     -   Syracuse, NY
