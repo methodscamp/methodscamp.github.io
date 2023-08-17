@@ -430,7 +430,7 @@ Many of the rules of integetration have counterparts in differentiation.
 
 **Power rule:** $\displaystyle\int x^n\,dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1$
 
-**Inverse rule:**$\displaystyle\int \frac{1}{x}\,dx = \ln |x| + C$
+**Reciprocal rule:**$\displaystyle\int \frac{1}{x}\,dx = \ln(x) + C$
 
 **Exponent and logarithm rules:**
 
