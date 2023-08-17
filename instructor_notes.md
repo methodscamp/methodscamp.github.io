@@ -11,3 +11,4 @@ This document has notes with possible changes for future iterations:
 - Add more visuals and examples for the prob/stats/sims chapter. Drawing stuff on the board was okay, but it'd be better for the students to have everything on the materials.
 - For text analysis, maybe change and `grep()` `grepl()` for the `stringr` versions, so that everything is consistent. Also maybe have the tf-idf formula in there (good practice on interpreting simple formulas).
 - Maybe number the exercises automatically?
+- It'd be cool to have a hex logo. And stickers, perhaps...
