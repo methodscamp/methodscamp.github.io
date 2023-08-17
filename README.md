@@ -3,7 +3,7 @@
 This repository contains the source materials for the website above (Methods Camp at UT's Department of Government).
 
 
-## 🚀 Deployment instructors (for instructors)
+## 🚀 Deployment instructions (for instructors)
 
 - The website is a [Quarto book](https://quarto.org/docs/books/) published to GitHub pages [using GitHub Actions](https://quarto.org/docs/publishing/github-pages.html#github-action).
 - This means that *any* changes to the repository will be automatically knitted/rendered by GitHub. For example, you can use your browser to edit any plain-text .qmd file on GitHub and, after a couple of minutes, the book will reflect the changes. Check out the "Actions" tab of this repository to track the progress of automated rendering.
