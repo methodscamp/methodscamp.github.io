@@ -28,7 +28,7 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 -   Basic functions (`mean()`, `length()`, etc.)
 -   Packages: installation and loading (including the tidyverse)
 
-**2 Thursday afternoon: [`tidyverse` basics I](https://methodscamp.github.io/02_tidy_data1.html)**
+**2 Thursday afternoon: [Tidy data analysis I](https://methodscamp.github.io/02_tidy_data1.html)**
 
 -   Tidy data
 -   Data wrangling with dplyr
@@ -42,11 +42,11 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 -   Solving systems of linear equations in matrix form (and why that's cool)
 -   Introduction to OLS
 
-**4 Friday afternoon: [`tidyverse` basics II](https://methodscamp.github.io/04_tidy_data2.html)**
+**4 Friday afternoon: [Tidy data analysis II](https://methodscamp.github.io/04_tidy_data2.html)**
 
 -   Loading data in different formats (.csv, R, Excel, Stata, SPSS)
 -   Recoding values (`if_else()`, `case_when()`)
--   Missing values
+-   Handling missing values
 -   Pivoting data
 -   Merging data
 -   Plotting extensions (trend graphs, facets, customization)
@@ -61,20 +61,18 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 
 **6 Monday afternoon: [Calculus](https://methodscamp.github.io/06_calculus.html)**
 
--   Limits
 -   Derivatives
+-   Optimization
 -   Integrals
--   Calculus in R
 
 **7 Tuesday: [Probability, statistics, and simulations](https://methodscamp.github.io/07_probability_stats_sims.html)**
 
--   Basic concepts
--   Random variables and their properties
--   Common distributions
--   Monte Carlo simulations
--   Sampling
--   Loops in R
--   Bootstrapping
+-   Probability: basic concepts
+-   Random variables, probability distributions, and their properties
+-   Common probability distributions
+-   Statistics: basic concepts
+-   Random sampling and loops in R
+-   Simulation example: bootstrapping
 
 **8 Wednesday morning: [Text analysis](https://methodscamp.github.io/08_text_analysis.html)**
 
@@ -90,17 +88,11 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 
 ## Contact info {.unnumbered}
 
-If you have any questions during or outside of methods camp, you can contact us via email:
+If you have any questions during or outside of methods camp, you can contact us via email. Or if you are curious about our research, you can also check out our respective websites and Twitter accounts (or should we say X...):
 
--   Andrés Cruz: [andres.cruz\@utexas.edu](mailto:andres.cruz@utexas.edu)
+-   Andrés Cruz: [andres.cruz\@utexas.edu](mailto:andres.cruz@utexas.edu) [\[Website\]](https://arcruz0.github.io/) [\[Twitter\]](https://twitter.com/arcruz0)
 
--   Matt Martin: [mjmartin\@utexas.edu](mailto:mjmartin@utexas.edu)
-
-If you are interested in learning more about our research, you can also check out our respective websites and Twitter accounts (or should we say X...):
-
--   Andrés Cruz: [\[Website\]](https://arcruz0.github.io/) [\[Twitter\]](https://twitter.com/arcruz0)
-
--   Matt Martin: [\[Website\]](https://mattjamesmartin.github.io/) [\[Twitter\]](https://twitter.com/MattJ_Martin)
+-   Matt Martin: [mjmartin\@utexas.edu](mailto:mjmartin@utexas.edu) [\[Website\]](https://mattjamesmartin.github.io/) [\[Twitter\]](https://twitter.com/MattJ_Martin)
 
 ## Acknowledgements
 
