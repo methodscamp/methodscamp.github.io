@@ -5,8 +5,11 @@ project:
 book:
   title: "Methods Camp"
   subtitle: "UT Austin, Department of Government" 
-  author: "Andrés Cruz and Matt Martin"
-  date: "08/10/2023"
+  author: 
+    - "Andrés Cruz"
+    - "Matt Martin"
+  date: "August 2023"
+  date-format: "MMMM YYYY"
   chapters:
     - index.qmd
     - 00_setup.qmd
