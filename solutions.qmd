@@ -24,12 +24,18 @@ my_object <- 10
 1)  Examine the `log()` function.
 
 ```{r}
+#| eval: false
 ?log
 ```
 
 2)  Compute the base-10 logarithm of `my_object`.
 
 ```{r}
+log(my_object, base = 10)
+```
+
+```{r}
+# alternative:
 log10(my_object)
 ```
 
@@ -55,22 +61,30 @@ max(my_data_frame$water_per_100g)
 
 ## 2. Tidy data analysis I {.unnumbered}
 
+```{r}
+#| code-fold: true
+#| message: false
+#| results: hide
+# setup: these steps were executed before the exercises
+library(tidyverse)
+trump_scores <- read_csv("data/trump_scores_538.csv")
+```
+
 > **Exercise**
 >
 > Select the variables `last_name`, `party`, `num_votes`, and `agree` from the data frame. Your code:
 
 ```{r}
-#| code-fold: true
-#| message: false
-#| results: hide
-# setup: these steps were executed before the exercise
-
-
+trump_scores |> 
+  select(last_name, party, num_votes, agree)
 ```
 
 ```{r}
-
+# alternative
+trump_scores |> 
+  select(last_name, party:agree)
 ```
+
 
 > **Exercise**
 >
@@ -80,31 +94,32 @@ max(my_data_frame$water_per_100g)
 >
 > 3.  Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:
 
-```{r}
-#| code-fold: true
-#| message: false
-#| results: hide
-# setup: these steps were executed before the exercise
-
-
-```
-
 1)  Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute value of `diff_agree`? Your code:
 
 ```{r}
+trump_scores |> 
+  mutate(diff_agree = agree - agree_pred) |> 
+  select(last_name, matches("agree")) # just for clarity
+```
 
+```{r}
+trump_scores |> 
+  mutate(abs_diff_agree = abs(agree - agree_pred)) |> 
+  select(last_name, matches("agree")) # just for clarity
 ```
 
 2)  Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:
 
 ```{r}
-
+trump_scores |> 
+  filter(num_votes <= 5)
 ```
 
 3)  Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:
 
 ```{r}
-
+trump_scores |> 
+  filter(party == "D" & agree >= 0.3)
 ```
 
 > **Exercise**
@@ -112,16 +127,9 @@ max(my_data_frame$water_per_100g)
 > Arrange the data by `diff_pred`, the difference between agreement and predicted agreement with Trump. (You should have code on how to create this variable from the last exercise). Your code:
 
 ```{r}
-#| code-fold: true
-#| message: false
-#| results: hide
-# setup: these steps were executed before the exercise
-
-
-```
-
-```{r}
-
+trump_scores |> 
+  mutate(diff_agree = agree - agree_pred)  |> 
+  arrange(diff_agree)
 ```
 
 > **Exercise**
@@ -129,16 +137,10 @@ max(my_data_frame$water_per_100g)
 > Obtain the maximum absolute difference in agreement with Trump (the `abs_diff_agree` variable from before) for each party.
 
 ```{r}
-#| code-fold: true
-#| message: false
-#| results: hide
-# setup: these steps were executed before the exercise
-
-
-```
-
-```{r}
-
+trump_scores |> 
+  mutate(abs_diff_agree = abs(agree - agree_pred)) |> 
+  summarize(max_abs_diff = max(abs_diff_agree),
+            .by = party)
 ```
 
 > **Exercise**
@@ -149,13 +151,22 @@ max(my_data_frame$water_per_100g)
 #| code-fold: true
 #| message: false
 #| results: hide
-# setup: these steps were executed before the exercise
-
-
+# setup: this step was executed before the exercise
+trump_scores_ss <- trump_scores |> 
+  filter(num_votes >= 10)
 ```
 
 ```{r}
+ggplot(trump_scores_ss |> filter(last_name %in% c("Cruz", "Sanders")),
+       aes(y = last_name, x = agree)) +
+  geom_col()
+```
 
+```{r}
+# alternative
+ggplot(trump_scores_ss |> filter(last_name == "Cruz" | last_name == "Sanders"),
+       aes(y = last_name, x = agree)) +
+  geom_col()
 ```
 
 ## 3. Matrices {.unnumbered}
@@ -255,13 +266,25 @@ qog <- qog_csv
 ```{r}
 qog |> 
   mutate(d_large_pop = if_else(wdi_pop >= 1000000, 1, 0)) |> 
-  count(d_large_pop)
+  count(d_large_pop) # to check if it went well
 ```
 
 2.  Change the coding of "Never colonized" countries to something else, and compute a tabulation with `count()`.
 
 ```{r}
+qog |> 
+  filter(ht_colonial == "Never colonized") |> 
+  count(cname)
+```
 
+```{r}
+qog |> 
+  mutate(ht_colonial_recoded = case_when(
+    cname == "Canada" ~ "French/British",
+    cname == "United States" ~ "British",
+    .default = ht_colonial
+  )) |> 
+  count(ht_colonial_recoded)
 ```
 
 > **Exercise**
@@ -291,7 +314,10 @@ gdp_long <- gdp |>
 ```
 
 ```{r}
-
+gdp_long |> 
+  pivot_wider(id_cols = c(country_name, country_code), # can omit in this case too
+              values_from = wdi_gdp_ppp, 
+              names_from = year) 
 ```
 
 > **Exercise**
@@ -339,8 +365,8 @@ emissions_long <- emissions |>
 ```{r}
 qog_plus2 <- left_join(qog_plus,
                        emissions_long,
-                      by = c("ccodealp" = "country_code",
-                             "year"))
+                       by = c("ccodealp" = "country_code",
+                              "year"))
 ```
 
 4)  Create column for emissions *per capita* (here we do per 1,000 people).
@@ -450,6 +476,8 @@ ggplot() +
 >
 > We'll briefly introduce [Desmos](https://www.desmos.com/calculator), an online graphing calculator. Use Desmos to graph the following function $y = 1x^3 + 1x^2 + 1x + 1$. What happens when you change the $a$, $b$, $c$, and $d$ parameters?
 
+(we'll show how to do this in R here, but you could use Desmos)
+
 1)  Graph $y = 1x^3 + 1x^2 + 1x + 1$.
 
 ```{r}
@@ -521,6 +549,18 @@ f(5) |> g() # pipeline approach
 > 2)  Use the slope formula to calculate the rate of change between 5 and 5.5.
 > 3)  Use the slope formula to calculate the rate of change between 5 and 5.1.
 
+```{r}
+(6^2 - 5^2) / (6 - 5)
+```
+
+```{r}
+(5.5^2 - 5^2) / (5.5 - 5)
+```
+
+```{r}
+(5.1^2 - 5^2) / (5.1 - 5)
+```
+
 > **Exercise**
 >
 > Use the differentiation rules we have covered so far to calculate the derivatives of $y$ with respect to $x$ of the following functions:
@@ -532,12 +572,28 @@ f(5) |> g() # pipeline approach
 > 5.  $y = ax^3 + b$, where $a$ and $b$ are constants.
 > 6.  $y = \frac{2w}{5}$
 
+1) $4x$ (sum rule, constant rule, coefficient rule, power rule)
+
+2) $20x^3-2x^2$ (sum rule, coefficient rule, power rule)
+
+3) $\frac{-9}{2\sqrt x}$ (power rule)
+
+4) $-\frac{8}{x^3}$ (coefficient rule, power rule)
+
+5) $3ax^2$ (sum rule, constant rule, coefficient rule, power rule)
+
+6) $0$ (constant rule)
+
 > **Exercise**
 >
 > Compute the following:
 >
 > 1.  $\frac{d}{dx}(10e^x)$
 > 2.  $\frac{d}{dx}(ln(x) - \frac{e^2}{3})$
+
+1) $10e^x$ (coefficient rule, exponent rule)
+
+2) $\frac{1}{x}$ (difference rule, constant rule, logarithm rule)
 
 > **Exercise**
 >
@@ -547,6 +603,12 @@ f(5) |> g() # pipeline approach
 > 2.  $e^x \cdot x^2$
 > 3.  $(3x^4-8)^2$
 
+1) $4x^3$ (power rule)
+
+2) $e^x x^2 + 2xe^x$ (product rule, exponent rule, power rule)
+
+3) $24x^3(3x^4-8)$ (chain rule, difference rule, constant rule, power rule)
+
 > **Exercise**
 >
 > Take the partial derivative with respect to $x$ and with respect to $z$ of the following functions. What would the notation for each look like?
@@ -555,27 +617,95 @@ f(5) |> g() # pipeline approach
 > 2.  $x^3+z^3+x^4z^4$
 > 3.  $e^{xz}$
 
+1) 
+
+$\frac{\delta}{\delta x}(3xz - x) = 3z - 1$ (difference rule, coefficient rule, power rule)
+
+$\frac{\delta}{\delta z}(3xz - x) = 3x$ (difference rule, constant rule, coefficient rule)
+
+2) 
+
+$\frac{\delta}{\delta x}(x^3+z^3+x^4z^4) = 4x^3z^4+3x^2$ (add rule, coefficient rule, power rule)
+
+$\frac{\delta}{\delta z}(x^3+z^3+x^4z^4) = 4x^4z^3+3z^2$ (add rule, coefficient rule, power rule)
+
+3)
+
+$\frac{\delta}{\delta x}(e^{xz}) = e^{xz}z$ (chain rule, exponent rule, coefficient rule)
+
+$\frac{\delta}{\delta z}(e^{xz}) = e^{xz}x$ (chain rule, exponent rule, coefficient rule)
+
 > **Exercise**
 >
 > Identify the global extrema of the function $\displaystyle \frac{x^3}{3} - \frac{3}{2}x^2 -10x$ in the interval $[-6, 6]$.
+
+1) Take the first derivative
+
+$(\frac{x^3}{3} - \frac{3}{2}x^2 -10x)' = x^2 - 3x - 10$ (sum rule, coefficient rule, power rule)
+
+2) Set the derivative equal to zero and obtain its roots (F.O.C)
+
+$ x^2 - 3x - 10 = (x-5)(x+2)$
+
+$(x-5)(x+2) = 0$
+
+$x^*_1 = 5,\, x^*_2=-2$
+
+3) Calculate the second derivative and substitute the roots (S.O.C.)
+
+$(x^2 - 3x - 10)' = 2x -3$
+
+(i) $2x^*_1-3 = 2\cdot5-3 = 7$ (since it is positive, this is a minimum)
+
+(ii) $2x^*_2-3 = 2\cdot(-2)-3 = -7$ (since it is negative, this is a maximum)
+
+4) Adjudicate between these critical points or the bounds.
+
+Minimum critical point: $f(5) = \frac{(5)^3}{3} - \frac{3}{2}(5)^2 -10 \cdot (5) = −45.8\overline{3}$.
+
+Maximum critical point: $f(-2) = \frac{(-2)^3}{3} - \frac{3}{2}(-2)^2 -10 \cdot (-2) = 11.\overline{3}$.
+
+Lower bound: $f(-6) = \frac{(-6)^3}{3} - \frac{3}{2}(-6)^2 -10 \cdot (-6) = −66$
+
+Upper bound: $f(6) = \frac{(-6)^3}{3} - \frac{3}{2}(-6)^2 -10 \cdot (-6) = −42$
+
+So we conclude that, for the $[-6, 6]$ interval, the global minimum is at the lower bound ($x=-6$) and the global maximum is at the critical point at $x=-2$.
 
 > **Exercise**
 >
 > Solve the following indefinite integrals:
 >
-> 1.  $\int x^2 \text{ } dx$
-> 2.  $\int 3x^2\text{ } dx$
-> 3.  $\int x\text{ } dx$
-> 4.  $\int (3x^2 + 2x - 7\text{ })dx$
-> 5.  $\int \dfrac{2}{x}\text{ }dx$
->
+> 1.  $\int x^2 \, dx$
+> 2.  $\int 3x^2\, dx$
+> 3.  $\int x\, dx$
+> 4.  $\int (3x^2 + 2x - 7\,)dx$
+> 5.  $\int \dfrac{2}{x}\,dx$
+
+1. $\frac{x^3}{3} + C$ (power rule)
+
+2. $x^3 + C$ (coefficient rule, power rule)
+
+3. $\frac{x^2}{2} + C$ (power rule)
+
+4. $x^3 + x^2 - 7x + C$ (sum/difference rule, coefficient rule, power rule)
+
+5. $2 ln(x) + C$ (coefficient rule, reciprocal rule)
+
 > And solve the following definite integrals:
 >
-> 1.  $\displaystyle\int_{1}^{7} x^2 \text{ } dx$
-> 2.  $\displaystyle\int_{1}^{10} 3x^2 \text{ } dx$
-> 3.  $\displaystyle\int_7^7 x\text{ } dx$
-> 4.  $\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\text{ }dx$
-> 5.  $\int_{1}^{e} \dfrac{2}{x}\text{ }dx$
+> 1.  $\displaystyle\int_{1}^{7} x^2 \, dx$
+> 2.  $\displaystyle\int_{1}^{10} 3x^2 \, dx$
+> 3.  $\displaystyle\int_7^7 x\, dx$
+> 4.  $\displaystyle\int_{1}^{5} 3x^2 + 2x - 7\,dx$
+> 5.  $\int_{1}^{e} \dfrac{2}{x}\,dx$
+
+In the following, FTC stands for the Fundamental Theorem of Calculus
+
+1. $114$ (substitute from previous answer, FTC)
+2. $999$ (substitute from previous answer, FTC)
+3. $0$ (there is no area between 7 and 7)
+4. $120$ (substitute from previous answer, FTC)
+5. $2$ (substitute from previous answer, FTC)
 
 ## 7. Probability, statistics, and simulations {.unnumbered}
 
@@ -611,7 +741,12 @@ pnorm(-1.96) + (1 - pnorm(1.96))
 > Compute and plot `my_rnorm`, a vector with one million draws from a Normal distribution $Z$ with mean equal to zero and standard deviation equal to one ($Z\sim N(0,1)$). You can recycle code from what we did for the uniform distribution!
 
 ```{r}
+set.seed(1) # set a seed
+my_rnorm <- rnorm(n = 1000000)
 
+ggplot(data.frame(my_rnorm), aes(x = my_rnorm)) +
+  geom_histogram(binwidth = 0.25, boundary = 0, closed = "right") +
+  scale_x_continuous(breaks = seq(-5, 5, 1), limits = c(-5, 5))
 ```
 
 ## 8. Text analysis {.unnumbered}
@@ -679,7 +814,6 @@ dummy_tok <- unnest_tokens(dummy_df, word, text)
 ```{r}
 dummy_tok |>
   count(word, sort = TRUE)
-
 ```
 
 5.  Visualize.
