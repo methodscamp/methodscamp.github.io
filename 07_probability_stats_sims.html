@@ -338,8 +338,8 @@ div.csl-indent {
 <section id="random-variables-and-probability-distributions" class="level3" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="random-variables-and-probability-distributions"><span class="header-section-number">7.1.2</span> Random variables and probability distributions</h3>
 <ul>
-<li><p><strong>Random variables</strong> are functions (<span class="math inline">\(X: \Omega \to \mathbb{R}\)</span>) of the outcome of a random generative process. Informally, they are “placeholders” for whatever will be the output of a process we’re studying.</p></li>
-<li><p><strong>Probability distributions</strong> describe how the random variable assigns probabilities to outcomes.</p></li>
+<li><p>A <strong>random variable</strong> is a function (<span class="math inline">\(X: \Omega \to \mathbb{R}\)</span>) of the outcome of a random generative process. Informally, it is a “placeholder” for whatever will be the output of a process we’re studying.</p></li>
+<li><p>A <strong>probability distribution</strong> describes the probabilities associated with the values of a random variable.</p></li>
 <li><p>Random variables (and probability distributions) can be discrete or continuous.</p></li>
 </ul>
 <section id="discrete-random-variables-and-probability-distributions" class="level4" data-number="7.1.2.1">
@@ -651,20 +651,20 @@ Tip
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 21.4</code></pre>
+<pre><code>[1] 15</code></pre>
 </div>
 </div>
 <p>Every time we run this command, we can get a different result:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 30.4</code></pre>
+<pre><code>[1] 19.2</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 19.7</code></pre>
+<pre><code>[1] 22.8</code></pre>
 </div>
 </div>
 <p>In some occasions we do want to get the same result consistently after running some random process multiple times. In this case, we <em>set a seed</em>, which takes advantage of R’s pseudo-random number generator capabilities. No matter how many times we run the following code block, the result will be the same:</p>
