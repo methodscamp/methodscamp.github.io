@@ -40,9 +40,9 @@
 
 ### Random variables and probability distributions
 
-- **Random variables** are functions ($X: \Omega \to \mathbb{R}$) of the outcome of a random generative process. Informally, they are "placeholders" for whatever will be the output of a process we're studying.
+- A **random variable** is a function ($X: \Omega \to \mathbb{R}$) of the outcome of a random generative process. Informally, it is a "placeholder" for whatever will be the output of a process we're studying.
 
-- **Probability distributions** describe how the random variable assigns probabilities to outcomes.
+- A **probability distribution** describes the probabilities associated with the values of a random variable.
 
 - Random variables (and probability distributions) can be discrete or continuous.
 
