@@ -1,6 +1,9 @@
 project:
   type: book
   output-dir: _book
+  resources:
+    - "previous-editions/**"
+    - "previous-editions/2023/Methods-Camp.pdf"
 
 book:
   title: "Methods Camp"
