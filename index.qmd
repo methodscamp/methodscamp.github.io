@@ -1,14 +1,18 @@
+::: {.callout-caution title="WIP"}
+This year's edition is a work in progress. Click [here](/previous-editions/2023) to see last year's materials.
+:::
+
 ## Class schedule {.unnumbered}
 
-| Date           | Time              | Location   |
-|----------------|-------------------|------------|
-| Thurs, Aug. 10 | 9:00 AM - 4:00 PM | RLP 1.302D |
-| Fri, Aug. 11   | 9:00 AM - 4:00 PM | RLP 1.302E |
-| Sat, Aug. 12   | No class          | \-         |
-| Sun, Aug. 13   | No class          | \-         |
-| Mon, Aug. 14   | 9:00 AM - 4:00 PM | RLP 1.302D |
-| Tues, Aug. 15  | 9:00 AM - 4:00 PM | RLP 1.302D |
-| Weds, Aug. 16  | 9:00 AM - 4:00 PM | RLP 1.302E |
+| Date          | Time              | Location   |
+|---------------|-------------------|------------|
+| Fri, Aug. 16  | 9:00 AM - 4:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 2.606  |
+| Sat, Aug. 17  | No class          | \-         |
+| Sun, Aug. 18  | No class          | \-         |
+| Mon, Aug. 19  | 9:00 AM - 4:00 PM | [BAT](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/UTM/BAT/) 5.108  |
+| Tue, Aug. 20  | 9:00 AM - 4:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 2.606 |
+| Wed, Aug. 21  | 9:00 AM - 4:00 PM | [BAT](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/UTM/BAT/) 5.108 |
+| Thu, Aug. 22  | 9:00 AM - 4:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 2.606 |
 
 On class days, we will have a lunch break from 12:00-1:00 PM. We'll also take short breaks periodically during the morning and afternoon sessions as needed.
 
@@ -16,11 +20,11 @@ On class days, we will have a lunch break from 12:00-1:00 PM. We'll also take sh
 
 Welcome to Introduction to Methods for Political Science, aka "Methods Camp"! Methods Camp is designed to give everyone a chance to brush up on some skills in preparation for the introductory Statistics and Formal Theory courses. The other goal of Methods Camp is to allow you to get to know your cohort. We hope that matrix algebra and the chain rule will still prove to be good bonding exercises!
 
-As you can see from the above schedule, we'll be meeting on Thursday, August 10th and Friday, August 11th as well as from Monday, August 14th through Wednesday, August 16th. Classes at UT begin the start of the following week on Monday, August 22nd. Below is a tentative schedule outlining what will be covered in the class, although we may rearrange things if we find we're going too slowly or too quickly through the material.
+As you can see from the above schedule, we'll be meeting on Friday, August 16th as well as from Monday, August 19th through Thursday, August 22nd. Classes at UT begin the start of the following week on Monday, August 26th. Below is a tentative schedule outlining what will be covered in the class, although we may rearrange things if we find we're going too slowly or too quickly through the material.
 
 ## Course outline {.unnumbered}
 
-**1 Thursday morning: [Intro to R](https://methodscamp.github.io/01_r_intro.html)**
+**1 Friday morning: [Intro to R](https://methodscamp.github.io/01_r_intro.html)**
 
 -   Introductions
 -   R and RStudio: basics
@@ -28,13 +32,13 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 -   Basic functions (`mean()`, `length()`, etc.)
 -   Packages: installation and loading (including the tidyverse)
 
-**2 Thursday afternoon: [Tidy data analysis I](https://methodscamp.github.io/02_tidy_data1.html)**
+**2 Friday afternoon: [Tidy data analysis I](https://methodscamp.github.io/02_tidy_data1.html)**
 
 -   Tidy data
 -   Data wrangling with dplyr
 -   Data visualization basics with `ggplot2`
 
-**3 Friday morning: [Matrices](https://methodscamp.github.io/03_matrices.html)**
+**3 Monday morning: [Matrices](https://methodscamp.github.io/03_matrices.html)**
 
 -   Matrices
 -   Systems of linear equations
@@ -42,7 +46,7 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 -   Solving systems of linear equations in matrix form (and why that's cool)
 -   Introduction to OLS
 
-**4 Friday afternoon: [Tidy data analysis II](https://methodscamp.github.io/04_tidy_data2.html)**
+**4 Monday afternoon: [Tidy data analysis II](https://methodscamp.github.io/04_tidy_data2.html)**
 
 -   Loading data in different formats (.csv, R, Excel, Stata, SPSS)
 -   Recoding values (`if_else()`, `case_when()`)
@@ -51,7 +55,7 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 -   Merging data
 -   Plotting extensions (trend graphs, facets, customization)
 
-**5 Monday morning: [Functions](https://methodscamp.github.io/05_functions.html)**
+**5 Tuesday morning: [Functions](https://methodscamp.github.io/05_functions.html)**
 
 -   Definitions
 -   Functions in R
@@ -59,13 +63,13 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 -   Logarithms and exponents
 -   Composite functions
 
-**6 Monday afternoon: [Calculus](https://methodscamp.github.io/06_calculus.html)**
+**6 Tuesday afternoon: [Calculus](https://methodscamp.github.io/06_calculus.html)**
 
 -   Derivatives
 -   Optimization
 -   Integrals
 
-**7 Tuesday: [Probability, statistics, and simulations](https://methodscamp.github.io/07_probability_stats_sims.html)**
+**7 Wednesday: [Probability, statistics, and simulations](https://methodscamp.github.io/07_probability_stats_sims.html)**
 
 -   Probability: basic concepts
 -   Random variables, probability distributions, and their properties
@@ -74,12 +78,12 @@ As you can see from the above schedule, we'll be meeting on Thursday, August 10t
 -   Random sampling and loops in R
 -   Simulation example: bootstrapping
 
-**8 Wednesday morning: [Text analysis](https://methodscamp.github.io/08_text_analysis.html)**
+**8 Thursday morning: [Text analysis](https://methodscamp.github.io/08_text_analysis.html)**
 
 -   String manipulation with `stringr`
 -   Simple text analysis and visualization with `tidytext`
 
-**9 Wednesday afternoon: [Wrap-up](https://methodscamp.github.io/09_wrapup.html)**
+**9 Thursday afternoon: [Wrap-up](https://methodscamp.github.io/09_wrapup.html)**
 
 -   Project management fundamentals
 -   Self-study resources and materials
@@ -92,8 +96,12 @@ If you have any questions during or outside of methods camp, you can contact us 
 
 -   Andrés Cruz: [andres.cruz\@utexas.edu](mailto:andres.cruz@utexas.edu) [\[Website\]](https://arcruz0.github.io/) [\[Twitter\]](https://twitter.com/arcruz0)
 
--   Matt Martin: [mjmartin\@utexas.edu](mailto:mjmartin@utexas.edu) [\[Website\]](https://mattjamesmartin.github.io/) [\[Twitter\]](https://twitter.com/MattJ_Martin)
+-   Meiying Xu: [xu.meiying\@utexas.edu](mailto:xu.meiying@utexas.edu) [\[Website\]]() [\[Twitter\]]()
 
-## Acknowledgements
+## Acknowledgements {.unnumbered}
 
-We thank previous Methods Camp instructors for their accumulated experience and materials, which we have based ours upon. UT GOV professors Stephen Jessee, Connor Jerzak, and Dan Nielson have given us amazing feedback for this iteration of Methods Camp. All errors remain our own (and will hopefully be fixed with your help!).
+We thank previous Methods Camp instructors for their accumulated experience and materials, which we have based ours upon. All errors remain our own (and will hopefully be fixed with your help!).
+
+## Materials from previous editions {.unnumbered}
+
+- [2023](/previous-editions/2023): co-taught by Andrés Cruz and Matt Martin.

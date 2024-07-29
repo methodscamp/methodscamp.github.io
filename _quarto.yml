@@ -10,8 +10,8 @@ book:
   subtitle: "UT Austin, Department of Government" 
   author: 
     - "Andrés Cruz"
-    - "Matt Martin"
-  date: "August 2023"
+    - "Meiying Xu"
+  date: "August 2024"
   date-format: "MMMM YYYY"
   chapters:
     - index.qmd
