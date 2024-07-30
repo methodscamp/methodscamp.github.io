@@ -4,11 +4,11 @@
 
 [R](https://cran.r-project.org/) is a programming language optimized for statistics and data analysis. Most people use R from [RStudio](https://rstudio.com/), a graphical user interface (GUI) that includes a file pane, a graphics pane, and other goodies. Both R and RStudio are open source, i.e., free as in beer and free as in freedom!
 
-Your first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date---if they are not, follow the instructions below):
+Your first steps should be to install R and RStudio, in that order (if you have installed these programs before, make sure that your versions are up-to-date---if they are not, simply follow the instructions below to re-install them):
 
-1. Download and install R from [the official website, CRAN](https://cran.r-project.org/). Click on "Download R for \<Windows/Mac\>" and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2 Macs and Intel for older Macs).
+1. Download and install R from [the official website, CRAN](https://cran.r-project.org/). Click on "Download R for \<Windows/MacOS\>" and follow the instructions. If you have a Mac, make sure to select the version appropriate for your system (Apple Silicon for newer M1/M2/M3 Macs and Intel for older Macs).
 
-2. Download and install RStudio from [the official website](https://posit.co/download/rstudio-desktop/). Scroll down and select the installer for your operating system.
+2. Download and install RStudio from [the official website](https://posit.co/download/rstudio-desktop/). Scroll down and select the installer for your operating system (most likely the .exe for Windows 10/11 or the .dmg for  macOS 12+).
 
 After these two steps, you can open RStudio in your system, as you would with any program. You should see something like this:
 
