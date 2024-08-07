@@ -24,7 +24,7 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 
 ## Course outline {.unnumbered}
 
-**1 Friday morning: [Intro to R](https://methodscamp.github.io/01_r_intro.html)**
+**1 Friday morning: [Intro to R](01_r_intro.html)**
 
 -   Introductions
 -   R and RStudio: basics
@@ -32,13 +32,27 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 -   Basic functions (`mean()`, `length()`, etc.)
 -   Packages: installation and loading (including the tidyverse)
 
-**2 Friday afternoon: [Tidy data analysis I](https://methodscamp.github.io/02_tidy_data1.html)**
+**2 Friday afternoon: [Tidy data analysis I](02_tidy_data1.html)**
 
 -   Tidy data
 -   Data wrangling with dplyr
 -   Data visualization basics with `ggplot2`
 
-**3 Monday morning: [Matrices](https://methodscamp.github.io/03_matrices.html)**
+**3 Monday morning: [Functions](03_functions.html)**
+
+-   Definitions
+-   Functions in R
+-   Common types of functions
+-   Logarithms and exponents
+-   Composite functions
+
+**4 Monday afternoon: [Calculus](04_calculus.html)**
+
+-   Derivatives
+-   Optimization
+-   Integrals
+
+**5 Tuesday morning: [Matrices](05_matrices.html)**
 
 -   Matrices
 -   Systems of linear equations
@@ -46,7 +60,7 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 -   Solving systems of linear equations in matrix form (and why that's cool)
 -   Introduction to OLS
 
-**4 Monday afternoon: [Tidy data analysis II](https://methodscamp.github.io/04_tidy_data2.html)**
+**6 Tuesday afternoon: [Tidy data analysis II](06_tidy_data2.html)**
 
 -   Loading data in different formats (.csv, R, Excel, Stata, SPSS)
 -   Recoding values (`if_else()`, `case_when()`)
@@ -55,35 +69,24 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 -   Merging data
 -   Plotting extensions (trend graphs, facets, customization)
 
-**5 Tuesday morning: [Functions](https://methodscamp.github.io/05_functions.html)**
-
--   Definitions
--   Functions in R
--   Common types of functions
--   Logarithms and exponents
--   Composite functions
-
-**6 Tuesday afternoon: [Calculus](https://methodscamp.github.io/06_calculus.html)**
-
--   Derivatives
--   Optimization
--   Integrals
-
-**7 Wednesday: [Probability, statistics, and simulations](https://methodscamp.github.io/07_probability_stats_sims.html)**
+**7 Wednesday morning: [Probability](07_probability.html)**
 
 -   Probability: basic concepts
 -   Random variables, probability distributions, and their properties
 -   Common probability distributions
+
+**8 Wednesday afternoon: [Statistics and simulations](08_stats_sims.html)**
+
 -   Statistics: basic concepts
 -   Random sampling and loops in R
 -   Simulation example: bootstrapping
 
-**8 Thursday morning: [Text analysis](https://methodscamp.github.io/08_text_analysis.html)**
+**9 Thursday morning: [Coding with AI](09_coding_with_ai.html)**
 
--   String manipulation with `stringr`
--   Simple text analysis and visualization with `tidytext`
+-   TODO
+-   TODO
 
-**9 Thursday afternoon: [Wrap-up](https://methodscamp.github.io/09_wrapup.html)**
+**10 Thursday afternoon: [Wrap-up](10_wrapup.html)**
 
 -   Project management fundamentals
 -   Self-study resources and materials
