@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Tidy data analysis II – Methods Camp</title>
+<title>6&nbsp; Tidy data analysis II – Methods Camp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,8 +84,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./05_functions.html" rel="next">
-<link href="./03_matrices.html" rel="prev">
+<link href="./07_probability.html" rel="next">
+<link href="./05_matrices.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -137,7 +137,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_tidy_data2.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_tidy_data2.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -193,44 +193,50 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_matrices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
+  <a href="./03_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_tidy_data2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span></a>
+  <a href="./04_calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Calculus</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+  <a href="./05_matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06_calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Calculus</span></span></a>
+  <a href="./06_tidy_data2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07_probability_stats_sims.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability, statistics, and simulations</span></span></a>
+  <a href="./07_probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_text_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Text analysis</span></span></a>
+  <a href="./08_stats_sims.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_wrapup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap-up</span></span></a>
+  <a href="./09_coding_with_ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Coding with AI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_wrapup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrap-up</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,18 +261,18 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#loading-data-in-different-formats." id="toc-loading-data-in-different-formats." class="nav-link active" data-scroll-target="#loading-data-in-different-formats."><span class="header-section-number">4.1</span> Loading data in different formats.</a>
+  <li><a href="#loading-data-in-different-formats." id="toc-loading-data-in-different-formats." class="nav-link active" data-scroll-target="#loading-data-in-different-formats."><span class="header-section-number">6.1</span> Loading data in different formats.</a>
   <ul class="collapse">
-  <li><a href="#csv-and-r-data-files" id="toc-csv-and-r-data-files" class="nav-link" data-scroll-target="#csv-and-r-data-files"><span class="header-section-number">4.1.1</span> CSV and R data files</a></li>
-  <li><a href="#excel-data-files" id="toc-excel-data-files" class="nav-link" data-scroll-target="#excel-data-files"><span class="header-section-number">4.1.2</span> Excel data files</a></li>
-  <li><a href="#stata-and-spss-data-files" id="toc-stata-and-spss-data-files" class="nav-link" data-scroll-target="#stata-and-spss-data-files"><span class="header-section-number">4.1.3</span> Stata and SPSS data files</a></li>
-  <li><a href="#our-data-for-this-session" id="toc-our-data-for-this-session" class="nav-link" data-scroll-target="#our-data-for-this-session"><span class="header-section-number">4.1.4</span> Our data for this session</a></li>
+  <li><a href="#csv-and-r-data-files" id="toc-csv-and-r-data-files" class="nav-link" data-scroll-target="#csv-and-r-data-files"><span class="header-section-number">6.1.1</span> CSV and R data files</a></li>
+  <li><a href="#excel-data-files" id="toc-excel-data-files" class="nav-link" data-scroll-target="#excel-data-files"><span class="header-section-number">6.1.2</span> Excel data files</a></li>
+  <li><a href="#stata-and-spss-data-files" id="toc-stata-and-spss-data-files" class="nav-link" data-scroll-target="#stata-and-spss-data-files"><span class="header-section-number">6.1.3</span> Stata and SPSS data files</a></li>
+  <li><a href="#our-data-for-this-session" id="toc-our-data-for-this-session" class="nav-link" data-scroll-target="#our-data-for-this-session"><span class="header-section-number">6.1.4</span> Our data for this session</a></li>
   </ul></li>
-  <li><a href="#recoding-variables" id="toc-recoding-variables" class="nav-link" data-scroll-target="#recoding-variables"><span class="header-section-number">4.2</span> Recoding variables</a></li>
-  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values"><span class="header-section-number">4.3</span> Missing values</a></li>
-  <li><a href="#pivoting-data" id="toc-pivoting-data" class="nav-link" data-scroll-target="#pivoting-data"><span class="header-section-number">4.4</span> Pivoting data</a></li>
-  <li><a href="#merging-datasets" id="toc-merging-datasets" class="nav-link" data-scroll-target="#merging-datasets"><span class="header-section-number">4.5</span> Merging datasets</a></li>
-  <li><a href="#plotting-extensions-trend-graphs-facets-and-customization" id="toc-plotting-extensions-trend-graphs-facets-and-customization" class="nav-link" data-scroll-target="#plotting-extensions-trend-graphs-facets-and-customization"><span class="header-section-number">4.6</span> Plotting extensions: trend graphs, facets, and customization</a></li>
+  <li><a href="#recoding-variables" id="toc-recoding-variables" class="nav-link" data-scroll-target="#recoding-variables"><span class="header-section-number">6.2</span> Recoding variables</a></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values"><span class="header-section-number">6.3</span> Missing values</a></li>
+  <li><a href="#pivoting-data" id="toc-pivoting-data" class="nav-link" data-scroll-target="#pivoting-data"><span class="header-section-number">6.4</span> Pivoting data</a></li>
+  <li><a href="#merging-datasets" id="toc-merging-datasets" class="nav-link" data-scroll-target="#merging-datasets"><span class="header-section-number">6.5</span> Merging datasets</a></li>
+  <li><a href="#plotting-extensions-trend-graphs-facets-and-customization" id="toc-plotting-extensions-trend-graphs-facets-and-customization" class="nav-link" data-scroll-target="#plotting-extensions-trend-graphs-facets-and-customization"><span class="header-section-number">6.6</span> Plotting extensions: trend graphs, facets, and customization</a></li>
   </ul>
 </nav>
     </div>
@@ -275,7 +281,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></h1>
 </div>
 
 
@@ -308,12 +314,12 @@ div.csl-indent {
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
 </div>
-<section id="loading-data-in-different-formats." class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="loading-data-in-different-formats."><span class="header-section-number">4.1</span> Loading data in different formats.</h2>
+<section id="loading-data-in-different-formats." class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="loading-data-in-different-formats."><span class="header-section-number">6.1</span> Loading data in different formats.</h2>
 <p>In this module we will use cross-national data from the <a href="https://www.gu.se/en/quality-government/qog-data/data-downloads/basic-dataset">Quality of Government (QoG) project</a> (<a href="https://www.gu.se/en/quality-government%20doi:10.18157/qogbasjan23">Dahlberg et al., 2023</a>).</p>
 <p>Notice how in the <code>data/</code> folder we have multiple versions of the same dataset (a subset of the QOG basic dataset): .csv (comma-separated values), .rds (R), .xlsx (Excel), .dta (Stata), and .sav (SPSS).</p>
-<section id="csv-and-r-data-files" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="csv-and-r-data-files"><span class="header-section-number">4.1.1</span> CSV and R data files</h3>
+<section id="csv-and-r-data-files" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="csv-and-r-data-files"><span class="header-section-number">6.1.1</span> CSV and R data files</h3>
 <p>We can use the <code>read_csv()</code> and <code>read_rds()</code> functions from the <code>tidyverse</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to read the .csv and .rds (R) data files:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>qog_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sample_qog_bas_ts_jan23.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -333,8 +339,8 @@ dbl (4): year, wdi_pop, vdem_polyarchy, vdem_corr
 </div>
 <p>For reading files from other software (Excel, Stata, or SPSS), we need to load additional packages. Luckily, they are automatically installed when one installs the <code>tidyverse</code>.</p>
 </section>
-<section id="excel-data-files" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="excel-data-files"><span class="header-section-number">4.1.2</span> Excel data files</h3>
+<section id="excel-data-files" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="excel-data-files"><span class="header-section-number">6.1.2</span> Excel data files</h3>
 <p>For Excel files (.xls or .xlsx files), the <code>readxl</code> package has a handy <code>read_excel()</code> function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
@@ -354,8 +360,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="stata-and-spss-data-files" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="stata-and-spss-data-files"><span class="header-section-number">4.1.3</span> Stata and SPSS data files</h3>
+<section id="stata-and-spss-data-files" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="stata-and-spss-data-files"><span class="header-section-number">6.1.3</span> Stata and SPSS data files</h3>
 <p>To load files from Stata (.dta) or SPSS (.spss), one needs the <code>haven</code> package and its properly-named <code>read_stata()</code> and <code>read_spss()</code> functions:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
@@ -376,8 +382,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="our-data-for-this-session" class="level3" data-number="4.1.4">
-<h3 data-number="4.1.4" class="anchored" data-anchor-id="our-data-for-this-session"><span class="header-section-number">4.1.4</span> Our data for this session</h3>
+<section id="our-data-for-this-session" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="our-data-for-this-session"><span class="header-section-number">6.1.4</span> Our data for this session</h3>
 <p>We will rename one of our objects to <code>qog</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>qog <span class="ot">&lt;-</span> qog_csv</span>
@@ -448,8 +454,8 @@ Tip
 </table>
 </section>
 </section>
-<section id="recoding-variables" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="recoding-variables"><span class="header-section-number">4.2</span> Recoding variables</h2>
+<section id="recoding-variables" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="recoding-variables"><span class="header-section-number">6.2</span> Recoding variables</h2>
 <p>Take a look at the <code>ht_colonial</code> variable. We can do a simple tabulation with <code>count()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>qog <span class="sc">|&gt;</span> </span>
@@ -572,8 +578,8 @@ Exercise
 </div>
 </div>
 </section>
-<section id="missing-values" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="missing-values"><span class="header-section-number">4.3</span> Missing values</h2>
+<section id="missing-values" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="missing-values"><span class="header-section-number">6.3</span> Missing values</h2>
 <p>Missing values are commonplace in real datasets. In R, missing values are a special type of value in vectors, denoted as <code>NA</code>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -683,8 +689,8 @@ Exercise
 </div>
 </div>
 </section>
-<section id="pivoting-data" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="pivoting-data"><span class="header-section-number">4.4</span> Pivoting data</h2>
+<section id="pivoting-data" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="pivoting-data"><span class="header-section-number">6.4</span> Pivoting data</h2>
 <p>We will now load another time-series cross-sectional dataset, but in a slightly different format. It’s adapted from the World Bank’s World Development Indicators (WDI) (<a href="https://data.worldbank.org/">2023</a>) and records gross domestic product at purchasing power parity (GDP PPP).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>gdp <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/wdi_gdp_ppp.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -781,8 +787,8 @@ Exercise
 </div>
 </div>
 </section>
-<section id="merging-datasets" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="merging-datasets"><span class="header-section-number">4.5</span> Merging datasets</h2>
+<section id="merging-datasets" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="merging-datasets"><span class="header-section-number">6.5</span> Merging datasets</h2>
 <p>It is extremely common to want to integrate data from multiple sources. Combining information from two datasets is called <em>merging</em> or <em>joining</em>.</p>
 <p>To do this, we need ID variables in common between the two data sets. Using our QOG and WDI datasets, these variables will be country code (which in this case is shared between the two datasets) and year.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -853,8 +859,8 @@ Exercise
 </div>
 </div>
 </section>
-<section id="plotting-extensions-trend-graphs-facets-and-customization" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="plotting-extensions-trend-graphs-facets-and-customization"><span class="header-section-number">4.6</span> Plotting extensions: trend graphs, facets, and customization</h2>
+<section id="plotting-extensions-trend-graphs-facets-and-customization" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="plotting-extensions-trend-graphs-facets-and-customization"><span class="header-section-number">6.6</span> Plotting extensions: trend graphs, facets, and customization</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -897,7 +903,7 @@ Exercise
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04_tidy_data2_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="06_tidy_data2_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -910,7 +916,7 @@ Exercise
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04_tidy_data2_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="06_tidy_data2_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -922,7 +928,7 @@ Exercise
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04_tidy_data2_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="06_tidy_data2_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -938,7 +944,7 @@ Exercise
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04_tidy_data2_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="06_tidy_data2_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -953,7 +959,7 @@ Exercise
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04_tidy_data2_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="06_tidy_data2_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -966,7 +972,7 @@ Exercise
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04_tidy_data2_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="06_tidy_data2_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -980,7 +986,7 @@ Exercise
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04_tidy_data2_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="06_tidy_data2_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -994,7 +1000,7 @@ Exercise
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04_tidy_data2_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="06_tidy_data2_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1008,7 +1014,7 @@ Exercise
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04_tidy_data2_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="06_tidy_data2_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1038,7 +1044,7 @@ Tip
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04_tidy_data2_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="06_tidy_data2_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1097,9 +1103,6 @@ Robinson, David. 2020. <em>Fuzzyjoin: Join Tables Together on Inexact Matching</
 </div>
 <div id="ref-rossi1996mathematics" class="csl-entry" role="listitem">
 Rossi, Hugo. 1996. <span>“Mathematics Is an Edifice, Not a Toolbox.”</span> <em>Notices of the AMS</em> 43 (10): 1108.
-</div>
-<div id="ref-silge_text_2017" class="csl-entry" role="listitem">
-Silge, Julia, and David Robinson. 2017. <em>Text Mining with <span>R</span>: A Tidy Approach</em>. First edition. Beijing ; Boston: O’Reilly.
 </div>
 <div id="ref-smith2020" class="csl-entry" role="listitem">
 Smith, Danny. 2020. <em>Survey Research Datasets and <span>R</span></em>. <a href="https://socialresearchcentre.github.io/r_survey_datasets/">https://socialresearchcentre.github.io/r_survey_datasets/</a>.
@@ -1690,13 +1693,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03_matrices.html" class="pagination-link" aria-label="Matrices">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Matrices</span></span>
+      <a href="./05_matrices.html" class="pagination-link" aria-label="Matrices">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Matrices</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05_functions.html" class="pagination-link" aria-label="Functions">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07_probability.html" class="pagination-link" aria-label="Probability">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

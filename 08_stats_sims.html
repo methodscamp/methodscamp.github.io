@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Probability, statistics, and simulations – Methods Camp</title>
+<title>8&nbsp; Statistics and simulations – Methods Camp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,8 +84,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./08_text_analysis.html" rel="next">
-<link href="./06_calculus.html" rel="prev">
+<link href="./09_coding_with_ai.html" rel="next">
+<link href="./07_probability.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -166,7 +166,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_probability_stats_sims.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability, statistics, and simulations</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_stats_sims.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -222,44 +222,50 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_matrices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
+  <a href="./03_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_tidy_data2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span></a>
+  <a href="./04_calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Calculus</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+  <a href="./05_matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06_calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Calculus</span></span></a>
+  <a href="./06_tidy_data2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07_probability_stats_sims.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability, statistics, and simulations</span></span></a>
+  <a href="./07_probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_text_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Text analysis</span></span></a>
+  <a href="./08_stats_sims.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_wrapup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap-up</span></span></a>
+  <a href="./09_coding_with_ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Coding with AI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_wrapup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrap-up</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -284,20 +290,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-probability" id="toc-what-is-probability" class="nav-link active" data-scroll-target="#what-is-probability"><span class="header-section-number">7.1</span> What is probability?</a>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link active" data-scroll-target="#statistics"><span class="header-section-number">8.1</span> Statistics</a></li>
+  <li><a href="#simulations" id="toc-simulations" class="nav-link" data-scroll-target="#simulations"><span class="header-section-number">8.2</span> Simulations</a>
   <ul class="collapse">
-  <li><a href="#definitions-and-properties-of-probability" id="toc-definitions-and-properties-of-probability" class="nav-link" data-scroll-target="#definitions-and-properties-of-probability"><span class="header-section-number">7.1.1</span> Definitions and properties of probability</a></li>
-  <li><a href="#random-variables-and-probability-distributions" id="toc-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#random-variables-and-probability-distributions"><span class="header-section-number">7.1.2</span> Random variables and probability distributions</a></li>
-  <li><a href="#functions-describing-probability-distributions" id="toc-functions-describing-probability-distributions" class="nav-link" data-scroll-target="#functions-describing-probability-distributions"><span class="header-section-number">7.1.3</span> Functions describing probability distributions</a></li>
-  <li><a href="#common-types-of-probability-distributions" id="toc-common-types-of-probability-distributions" class="nav-link" data-scroll-target="#common-types-of-probability-distributions"><span class="header-section-number">7.1.4</span> Common types of probability distributions</a></li>
-  </ul></li>
-  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics"><span class="header-section-number">7.2</span> Statistics</a></li>
-  <li><a href="#simulations" id="toc-simulations" class="nav-link" data-scroll-target="#simulations"><span class="header-section-number">7.3</span> Simulations</a>
-  <ul class="collapse">
-  <li><a href="#random-sampling-from-data" id="toc-random-sampling-from-data" class="nav-link" data-scroll-target="#random-sampling-from-data"><span class="header-section-number">7.3.1</span> Random sampling from data</a></li>
-  <li><a href="#random-sampling-from-theoretical-distributions" id="toc-random-sampling-from-theoretical-distributions" class="nav-link" data-scroll-target="#random-sampling-from-theoretical-distributions"><span class="header-section-number">7.3.2</span> Random sampling from theoretical distributions</a></li>
-  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"><span class="header-section-number">7.3.3</span> Loops</a></li>
-  <li><a href="#an-example-simulation-bootstrapping-a-sample-mean" id="toc-an-example-simulation-bootstrapping-a-sample-mean" class="nav-link" data-scroll-target="#an-example-simulation-bootstrapping-a-sample-mean"><span class="header-section-number">7.3.4</span> An example simulation: bootstrapping a sample mean</a></li>
+  <li><a href="#random-sampling-from-data" id="toc-random-sampling-from-data" class="nav-link" data-scroll-target="#random-sampling-from-data"><span class="header-section-number">8.2.1</span> Random sampling from data</a></li>
+  <li><a href="#random-sampling-from-theoretical-distributions" id="toc-random-sampling-from-theoretical-distributions" class="nav-link" data-scroll-target="#random-sampling-from-theoretical-distributions"><span class="header-section-number">8.2.2</span> Random sampling from theoretical distributions</a></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"><span class="header-section-number">8.2.3</span> Loops</a></li>
+  <li><a href="#an-example-simulation-bootstrapping-a-sample-mean" id="toc-an-example-simulation-bootstrapping-a-sample-mean" class="nav-link" data-scroll-target="#an-example-simulation-bootstrapping-a-sample-mean"><span class="header-section-number">8.2.4</span> An example simulation: bootstrapping a sample mean</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -307,7 +306,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability, statistics, and simulations</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></h1>
 </div>
 
 
@@ -324,320 +323,8 @@ window.Quarto = {
 </header>
 
 
-<section id="what-is-probability" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="what-is-probability"><span class="header-section-number">7.1</span> What is probability?</h2>
-<ul>
-<li>Informally, a probability is a number that describes how likely an event is.
-<ul>
-<li>It is, by definition, between 0 and 1.</li>
-<li>What is the probability that a fair coin flip will result in heads?</li>
-</ul></li>
-<li>We can also think of a probability as an outcome’s <strong>relative frequency</strong> after repeating an “experiment” many times.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
-<ul>
-<li>In this setting, an experiment is “an action or a set of actions that produce stochastic [random] events of interest” (<a href="https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science">Imai and Williams 2022</a>, p.&nbsp;281). Not to confuse with scientific experiments!</li>
-<li>If we were to flip a million fair coins, what will be the proportion of heads?</li>
-</ul></li>
-</ul>
-<ul>
-<li>A <em>probability space</em> <span class="math inline">\((\Omega, S, P)\)</span> is a formal way to talk about a random process:
-<ul>
-<li>The sample space (<span class="math inline">\(\Omega\)</span>) is the set of all possible outcomes.</li>
-<li>The event space (<span class="math inline">\(S\)</span>) is a collection of events (an event is a subset of <span class="math inline">\(\Omega\)</span>).</li>
-<li>The probability measure (<span class="math inline">\(P\)</span>) is a function that assigns a probability in <span class="math inline">\(\mathbb{R}\)</span> to every event in <span class="math inline">\(S\)</span>. So <span class="math inline">\(P: S \rightarrow \mathbb{R}\)</span>.</li>
-</ul></li>
-<li>We can formalize our intuitions with the <strong>probability axioms</strong> (sometimes called Kolmogorov’s axioms):
-<ul>
-<li><span class="math inline">\(P(A) \ge 0, \; \forall A \in S\)</span>.
-<ul>
-<li>Probabilities must be non-negative.</li>
-</ul></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span>.
-<ul>
-<li>Something has to happen!</li>
-<li>Probabilities sum/integrate to 1.</li>
-</ul></li>
-<li><span class="math inline">\(P(A \cup B) = P(A) + P(B), \; \forall A, B \in S, \; A\cup B = \emptyset\)</span>.
-<ul>
-<li>The probability of disjoint (mutually exclusive) events is equal to the sum of their individual probabilities.</li>
-</ul></li>
-</ul></li>
-</ul>
-<section id="definitions-and-properties-of-probability" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="definitions-and-properties-of-probability"><span class="header-section-number">7.1.1</span> Definitions and properties of probability</h3>
-<ul>
-<li><p>Joint probability: <span class="math inline">\(P(A \cap B)\)</span>. The probability that the two events will occur in one realization of the experiment.</p></li>
-<li><p>Law of total probability: <span class="math inline">\(P(A) = P(A \cap B) + P(A \cap B^C)\)</span>.</p></li>
-<li><p>Addition rule: <span class="math inline">\(P(A \cup B) = P(A) + P(B) - P (A \cap B)\)</span>.</p></li>
-<li><p>Conditional probability: <span class="math inline">\(\displaystyle P(A|B)=\frac{P(A \cap B)}{P(B)}\)</span></p></li>
-<li><p>Bayes theorem: <span class="math inline">\(\displaystyle P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}\)</span></p></li>
-</ul>
-</section>
-<section id="random-variables-and-probability-distributions" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="random-variables-and-probability-distributions"><span class="header-section-number">7.1.2</span> Random variables and probability distributions</h3>
-<ul>
-<li><p>A <strong>random variable</strong> is a function (<span class="math inline">\(X: \Omega \to \mathbb{R}\)</span>) of the outcome of a random generative process. Informally, it is a “placeholder” for whatever will be the output of a process we’re studying.</p></li>
-<li><p>A <strong>probability distribution</strong> describes the probabilities associated with the values of a random variable.</p></li>
-<li><p>Random variables (and probability distributions) can be discrete or continuous.</p></li>
-</ul>
-<section id="discrete-random-variables-and-probability-distributions" class="level4" data-number="7.1.2.1">
-<h4 data-number="7.1.2.1" class="anchored" data-anchor-id="discrete-random-variables-and-probability-distributions"><span class="header-section-number">7.1.2.1</span> Discrete random variables and probability distributions</h4>
-<ul>
-<li><p>A sample space in which there are a (finite or infinite) countable number of outcomes</p></li>
-<li><p>Each realization of random process has a discrete probability of occurring.</p>
-<ul>
-<li><span class="math inline">\(f(X=x_i)=P(X=x_i)\)</span> is the probability the variable takes the value <span class="math inline">\(x_i\)</span>.</li>
-</ul></li>
-</ul>
-<section id="an-example" class="level5 unnumbered">
-<h5 class="unnumbered anchored" data-anchor-id="an-example">An example</h5>
-<ul>
-<li><p>What’s the probability that we’ll roll a 3 on one die roll: <span class="math display">\[Pr(y=3) = \dfrac{1}{6}\]</span></p></li>
-<li><p>If one roll of the die is an “experiment,” we can think of a 3 as a “success.”</p></li>
-<li><p><span class="math inline">\(Y \sim Bernoulli \left(\frac{1}{6} \right)\)</span></p></li>
-<li><p>Fair coins are <span class="math inline">\(\sim Bernoulli(.5)\)</span>, for example.</p></li>
-<li><p>More generally, <span class="math inline">\(Bernoulli(\pi )\)</span>. We’ll talk about other probability distributions soon.</p>
-<ul>
-<li><span class="math inline">\(\pi\)</span> represents the probability of success.</li>
-</ul></li>
-</ul>
-<p>Let’s do another example on the board, using the sum of two fair dice.</p>
-</section>
-</section>
-<section id="continuous-random-variables-and-probability-distributions" class="level4" data-number="7.1.2.2">
-<h4 data-number="7.1.2.2" class="anchored" data-anchor-id="continuous-random-variables-and-probability-distributions"><span class="header-section-number">7.1.2.2</span> Continuous random variables and probability distributions</h4>
-<ul>
-<li>What happens when our outcome is continuous?</li>
-<li>There are an infinite number of outcomes. This makes the denominator of our fraction difficult to work with.</li>
-<li>The probability of the whole space must equal 1.</li>
-<li>The domain may not span -<span class="math inline">\(\infty\)</span> to <span class="math inline">\(\infty\)</span>.
-<ul>
-<li>Even space between 0 and 1 is infinite!</li>
-</ul></li>
-<li>Two common examples are the uniform and normal probability distributions, which we will discuss below.</li>
-</ul>
-</section>
-</section>
-<section id="functions-describing-probability-distributions" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="functions-describing-probability-distributions"><span class="header-section-number">7.1.3</span> Functions describing probability distributions</h3>
-<section id="probability-mass-function-pmf" class="level4" data-number="7.1.3.1">
-<h4 data-number="7.1.3.1" class="anchored" data-anchor-id="probability-mass-function-pmf"><span class="header-section-number">7.1.3.1</span> Probability Mass Function (PMF)</h4>
-<p>Probability of each occurrence encoded in probability mass function (PMF)</p>
-<ul>
-<li><span class="math inline">\(0 \leq f(x_i) \leq 1\)</span>
-<ul>
-<li>Probability of any value occurring must be between 0 and 1.</li>
-</ul></li>
-<li><span class="math inline">\(\displaystyle\sum_{x}f(x_i) = 1\)</span>
-<ul>
-<li>Probabilities of all values must sum to 1.</li>
-</ul></li>
-</ul>
-</section>
-<section id="probability-density-function-pdf" class="level4" data-number="7.1.3.2">
-<h4 data-number="7.1.3.2" class="anchored" data-anchor-id="probability-density-function-pdf"><span class="header-section-number">7.1.3.2</span> Probability Density Function (PDF)</h4>
-<ul>
-<li>Similar to PMF from before, but for continuous variables.</li>
-<li>Using integration, it gives the probability a value falls within a particular interval
-<ul>
-<li><span class="math inline">\(P[a\le X\le b] = \displaystyle\int_a^b f(x) \, dx\)</span></li>
-<li>Total area under the curve is 1.</li>
-<li><span class="math inline">\(P(a &lt; X &lt; b)\)</span> is the area under the curve between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (where <span class="math inline">\(b &gt; a\)</span>).</li>
-</ul></li>
-</ul>
-</section>
-<section id="cumulative-density-function-cdf" class="level4" data-number="7.1.3.3">
-<h4 data-number="7.1.3.3" class="anchored" data-anchor-id="cumulative-density-function-cdf"><span class="header-section-number">7.1.3.3</span> Cumulative Density Function (CDF)</h4>
-<section id="discrete" class="level5 unnumbered">
-<h5 class="unnumbered anchored" data-anchor-id="discrete">Discrete</h5>
-<ul>
-<li>Cumulatve density function is probability X will take a value of x or lower.</li>
-<li>PDF is written <span class="math inline">\(f(x)\)</span>, and CDF is written <span class="math inline">\(F'(x)\)</span>. <span class="math display">\[F_X(x) = Pr(X\leq x)\]</span></li>
-<li>For discrete CDFs, that means summing up over all values.</li>
-<li>What is the probability of rolling a 6 or lower with two dice? <span class="math inline">\(F(6)=?\)</span></li>
-</ul>
-</section>
-<section id="continuous" class="level5 unnumbered">
-<h5 class="unnumbered anchored" data-anchor-id="continuous">Continuous</h5>
-<ul>
-<li>We can’t sum probabilities for continuous distributions (remember the 0 problem).</li>
-<li>Solution: integration <span class="math display">\[F_Y(y) = \int_{-\infty}^{y} f(y) dy\]</span></li>
-<li>Examples of uniform distribution.</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="common-types-of-probability-distributions" class="level3" data-number="7.1.4">
-<h3 data-number="7.1.4" class="anchored" data-anchor-id="common-types-of-probability-distributions"><span class="header-section-number">7.1.4</span> Common types of probability distributions</h3>
-<p>There are many useful probability distributions. In this section we will cover three of the most common ones: the binomial, uniform, and normal distributions.</p>
-<section id="binomial-distribution" class="level4" data-number="7.1.4.1">
-<h4 data-number="7.1.4.1" class="anchored" data-anchor-id="binomial-distribution"><span class="header-section-number">7.1.4.1</span> Binomial distribution</h4>
-<p>A Binomial distribution is defined as follow: <span class="math inline">\(X \sim Binomial(n, p)\)</span></p>
-<p>PMF:</p>
-<p><span class="math display">\[
-{n \choose k} p^k(1-p)^{n-k}
-\]</span> , where <span class="math inline">\(n\)</span> is the number of trials, <span class="math inline">\(p\)</span> is the probability of success, and <span class="math inline">\(k\)</span> is the number of successes.</p>
-<p>Remember that:</p>
-<p><span class="math display">\[
-{n \choose k} = \frac{n!}{k!(n-k)!}
-\]</span></p>
-<p>For example, let’s say that voters choose some candidate with probability 0.02. What is the probability of seeing exactly 0 voters of the candidate in a sample of 100 people?</p>
-<p>We can compute the PMF of a binomial distribution using R’s <code>dbinom()</code> function.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1326196</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2706522</code></pre>
-</div>
-</div>
-<p>Similarly, we can compute the CDF using R’s <code>pbinom()</code> function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1326196</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q =</span> <span class="dv">100</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4032717</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Compute the probability of seeing between 1 and 10 voters of the candidate in a sample of 100 people.</p>
-</div>
-</div>
-</section>
-<section id="uniform-distribution" class="level4" data-number="7.1.4.2">
-<h4 data-number="7.1.4.2" class="anchored" data-anchor-id="uniform-distribution"><span class="header-section-number">7.1.4.2</span> Uniform distribution</h4>
-<p>A uniform distribution has two parameters: a minimum and a maximum. So <span class="math inline">\(X \sim U(a, b)\)</span>.</p>
-<ul>
-<li>PDF:</li>
-</ul>
-<p><span class="math display">\[
-\displaystyle{
-\begin{cases}
-  \frac{1}{b-a} &amp; \text{, }{x \in [a, b]}\\
-  0             &amp; \text{, otherwise}
-\end{cases}
-}
-\]</span></p>
-<ul>
-<li>CDF:</li>
-</ul>
-<p><span class="math display">\[
-\displaystyle{
-\begin{cases}
-  0 &amp; \text{, }{x &lt; a}\\
-  \frac{x-a}{b-a} &amp; \text{, }{x \in [a, b]}\\
-  1             &amp; \text{, }{x&gt;b}
-\end{cases}
-}
-\]</span></p>
-<p>In R, <code>dunif()</code> gives the PDF of a uniform distribution. By default, it is <span class="math inline">\(X \sim U(0, 1)\)</span>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dunif, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07_probability_stats_sims_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Meanwhile, <code>punif()</code> evaluates the CDF of a uniform distribution.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">punif</span>(<span class="at">q =</span> .<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Evaluate the CDF of <span class="math inline">\(Y \sim U(-2, 2)\)</span> at point <span class="math inline">\(y = 1\)</span>. Use the formula and <code>punif()</code>.</p>
-</div>
-</div>
-</section>
-<section id="normal-distribution" class="level4" data-number="7.1.4.3">
-<h4 data-number="7.1.4.3" class="anchored" data-anchor-id="normal-distribution"><span class="header-section-number">7.1.4.3</span> Normal distribution</h4>
-<p>A normal distribution has two parameters: a mean and a standard deviation. So <span class="math inline">\(X \sim N(\mu, \sigma)\)</span>.</p>
-<ul>
-<li>PDF: <span class="math inline">\(2 {\displaystyle {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}\)</span></li>
-</ul>
-<p>In R, <code>dnorm()</code> gives us the PDF of a standard normal distribution (<span class="math inline">\(Z \sim N(0, 1)\)</span>):</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07_probability_stats_sims_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Like you might expect, <code>pnorm()</code> computes the CDF of a normal distribution (by default, the standard normal).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.5</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6826895</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What is the probability of obtaining a value above 1.96 or below -1.96 in a standard normal probability distribution? Hint: use the <code>pnorm()</code> function.</p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="statistics" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="statistics"><span class="header-section-number">7.2</span> Statistics</h2>
+<section id="statistics" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="statistics"><span class="header-section-number">8.1</span> Statistics</h2>
 <blockquote class="blockquote">
 <p>The problems considered by probability and statistics are inverse to each other. In probability theory we consider some underlying process which has some randomness or uncertainty modeled by random variables, and we figure out what happens. In statistics we observe something that has happened, and try to figure out what underlying process would explain those observations. (quote attributed to <a href="https://stats.stackexchange.com/a/675">Persi Diaconis</a>)</p>
 </blockquote>
@@ -663,8 +350,8 @@ Exercise
 <li><p>Applied statistics is about using these techniques reasonably in messy real-world situations…</p></li>
 </ul>
 </section>
-<section id="simulations" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="simulations"><span class="header-section-number">7.3</span> Simulations</h2>
+<section id="simulations" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="simulations"><span class="header-section-number">8.2</span> Simulations</h2>
 <ul>
 <li>In simulations, we generate fake data following standard procedures. Why?
 <ul>
@@ -673,11 +360,11 @@ Exercise
 </ul></li>
 </ul>
 <p>Before we jump into an example, we’ll review some R tools that will build up to simulations.</p>
-<section id="random-sampling-from-data" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="random-sampling-from-data"><span class="header-section-number">7.3.1</span> Random sampling from data</h3>
+<section id="random-sampling-from-data" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="random-sampling-from-data"><span class="header-section-number">8.2.1</span> Random sampling from data</h3>
 <p>In this module we will work with good ol’ <code>mtcars</code>, one of R’s most notable default datasets. We’ll assign it to an object so it shows in our Environment pane:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="ot">&lt;-</span> mtcars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="ot">&lt;-</span> mtcars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -694,42 +381,45 @@ Tip
 </div>
 <p>We can use the function <code>sample()</code> to obtain random values from a vector. The <code>size =</code> argument specifies how many values we want. For example, let’s get one random value of the “mpg” column:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 21.4</code></pre>
+<pre><code>[1] 16.4</code></pre>
 </div>
 </div>
 <p>Every time we run this command, we can get a different result:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 19.2</code></pre>
+<pre><code>[1] 15</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 30.4</code></pre>
+<pre><code>[1] 33.9</code></pre>
 </div>
 </div>
 <p>In some occasions we do want to get the same result consistently after running some random process multiple times. In this case, we <em>set a seed</em>, which takes advantage of R’s pseudo-random number generator capabilities. No matter how many times we run the following code block, the result will be the same:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 15</code></pre>
 </div>
 </div>
 <p>Sampling <em>with replacement</em> means that we can get the same value multiple times. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Banana"</span>, <span class="st">"Apple"</span>, <span class="st">"Orange"</span>), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Banana"</span>, <span class="st">"Apple"</span>, <span class="st">"Orange"</span>), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Apple"  "Apple"  "Orange"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [1] 26.0 15.2 18.7 18.7 30.4 21.0 24.4 26.0 32.4 15.8 32.4 19.2 18.1 16.4 19.2
  [16] 27.3 14.3 10.4 17.3 13.3 21.4 13.3 19.2 24.4 15.0 27.3 17.8 15.2 15.8 14.3
@@ -742,8 +432,8 @@ Tip
 </div>
 <p>In order to sample not from a vector but from a data frame’s rows, we can use the <code>slice_sample()</code> function from <code>dplyr</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">2</span>) <span class="co"># a number of rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">2</span>) <span class="co"># a number of rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                  mpg cyl disp  hp drat   wt  qsec vs am gear carb
 Dodge Challenger 15.5   8  318 150 2.76 3.52 16.87  0  0    3    2
@@ -751,8 +441,8 @@ Datsun 710       22.8   4  108  93 3.85 2.32 18.61  1  1    4    1</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.5</span>) <span class="co"># a proportion of rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.5</span>) <span class="co"># a proportion of rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
@@ -775,9 +465,9 @@ Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4</code></
 </div>
 <p>Again, we can also use seeds here to ensure that we’ll get the same result each time:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 Maserati Bora      15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
@@ -800,9 +490,9 @@ Lotus Europa       30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></p
 </div>
 <p>And we can also sample with replacement:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="dv">1</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="dv">1</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                        mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 Maserati Bora          15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
@@ -840,14 +530,14 @@ Ferrari Dino           19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6</code
 </div>
 </div>
 </section>
-<section id="random-sampling-from-theoretical-distributions" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="random-sampling-from-theoretical-distributions"><span class="header-section-number">7.3.2</span> Random sampling from theoretical distributions</h3>
+<section id="random-sampling-from-theoretical-distributions" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="random-sampling-from-theoretical-distributions"><span class="header-section-number">8.2.2</span> Random sampling from theoretical distributions</h3>
 <p>We can also draw sample numbers from theoretical distributions.</p>
-<section id="uniform-distribution-1" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="uniform-distribution-1">Uniform distribution</h4>
+<section id="uniform-distribution" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="uniform-distribution">Uniform distribution</h4>
 <p>For the uniform distribution, the arguments specify how many draws we want and the boundaries</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">max =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">max =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  1.1442317  1.7728045 -2.8523179 -0.1332242  1.5507572 -1.7015524
  [7] -1.0909140 -1.6102453 -2.1431999 -0.5127220 -0.5176540 -0.7869273
@@ -857,45 +547,45 @@ Ferrari Dino           19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6</code
 </div>
 <p>When we draw a million times from the distribution, we can then plot it and see that it does look as we would expect:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>my_runif <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">1000000</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">max =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>my_runif <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">1000000</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">max =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(my_runif), <span class="fu">aes</span>(<span class="at">x =</span> my_runif)) <span class="sc">+</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.25</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="at">closed =</span> <span class="st">"right"</span>) <span class="sc">+</span></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(my_runif), <span class="fu">aes</span>(<span class="at">x =</span> my_runif)) <span class="sc">+</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.25</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="at">closed =</span> <span class="st">"right"</span>) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07_probability_stats_sims_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="08_stats_sims_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="binomial-distribution-1" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="binomial-distribution-1">Binomial distribution</h4>
+<section id="binomial-distribution" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="binomial-distribution">Binomial distribution</h4>
 <p>For the binomial distribution, we can specify the number of draws, how many trials each draw will have, and the probability of success.</p>
 <p>For instance, we can ask R to do the following twenty times: flip a fair coin one hundred times, and count the number of tails.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 48 45 54 50 58 50 42 58 48 57 53 49 52 51 49 40 57 53 52 41</code></pre>
 </div>
 </div>
 <p>With <code>prob =</code> , we can implement unfair coins:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 88 87 93 95 93 92 91 94 87 91 90 92 93 89 90 95 91 90 86 88</code></pre>
 </div>
 </div>
 </section>
-<section id="normal-distribution-1" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="normal-distribution-1">Normal distribution</h4>
+<section id="normal-distribution" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="normal-distribution">Normal distribution</h4>
 <p>For the Normal or Gaussian distribution, we specify the number of draws, the mean, and standard deviation:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  1.10455864  0.06386693 -1.59684275  1.86298270 -0.90428935 -1.55158044
  [7]  1.27986282 -0.32420495 -0.70015076  2.17271578  0.89778913 -0.01338538
@@ -918,13 +608,13 @@ Exercise
 </div>
 </section>
 </section>
-<section id="loops" class="level3" data-number="7.3.3">
-<h3 data-number="7.3.3" class="anchored" data-anchor-id="loops"><span class="header-section-number">7.3.3</span> Loops</h3>
+<section id="loops" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="loops"><span class="header-section-number">8.2.3</span> Loops</h3>
 <p>Loops allow us to repeat operations in R. The most common construct is the for-loop:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -942,23 +632,23 @@ Exercise
 <p>We talked about loops and various extensions in one of our methods workshops last year: <a href="https://arcruz0.github.io/workshops/speedyr">Speedy R</a>.</p>
 </blockquote>
 </section>
-<section id="an-example-simulation-bootstrapping-a-sample-mean" class="level3" data-number="7.3.4">
-<h3 data-number="7.3.4" class="anchored" data-anchor-id="an-example-simulation-bootstrapping-a-sample-mean"><span class="header-section-number">7.3.4</span> An example simulation: bootstrapping a sample mean</h3>
+<section id="an-example-simulation-bootstrapping-a-sample-mean" class="level3" data-number="8.2.4">
+<h3 data-number="8.2.4" class="anchored" data-anchor-id="an-example-simulation-bootstrapping-a-sample-mean"><span class="header-section-number">8.2.4</span> An example simulation: bootstrapping a sample mean</h3>
 <p>Bootstrap (and its relatives) is one way in which we can do inference. We’ll go through the intuition on the board.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>bootstrapped_means <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>, <span class="at">length =</span> <span class="dv">10000</span>)</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>){</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> my_mtcars <span class="sc">|&gt;</span> <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="dv">1</span>, <span class="at">replace =</span> T)</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>  bootstrapped_means[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(m<span class="sc">$</span>mpg)</span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>bootstrapped_means <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>, <span class="at">length =</span> <span class="dv">10000</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>){</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> my_mtcars <span class="sc">|&gt;</span> <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="dv">1</span>, <span class="at">replace =</span> T)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  bootstrapped_means[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(m<span class="sc">$</span>mpg)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(bootstrapped_means), <span class="fu">aes</span>(<span class="at">x =</span> bootstrapped_means)) <span class="sc">+</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.25</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="at">closed =</span> <span class="st">"right"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(bootstrapped_means), <span class="fu">aes</span>(<span class="at">x =</span> bootstrapped_means)) <span class="sc">+</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.25</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="at">closed =</span> <span class="st">"right"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07_probability_stats_sims_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="08_stats_sims_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1002,9 +692,6 @@ Robinson, David. 2020. <em>Fuzzyjoin: Join Tables Together on Inexact Matching</
 <div id="ref-rossi1996mathematics" class="csl-entry" role="listitem">
 Rossi, Hugo. 1996. <span>“Mathematics Is an Edifice, Not a Toolbox.”</span> <em>Notices of the AMS</em> 43 (10): 1108.
 </div>
-<div id="ref-silge_text_2017" class="csl-entry" role="listitem">
-Silge, Julia, and David Robinson. 2017. <em>Text Mining with <span>R</span>: A Tidy Approach</em>. First edition. Beijing ; Boston: O’Reilly.
-</div>
 <div id="ref-smith2020" class="csl-entry" role="listitem">
 Smith, Danny. 2020. <em>Survey Research Datasets and <span>R</span></em>. <a href="https://socialresearchcentre.github.io/r_survey_datasets/">https://socialresearchcentre.github.io/r_survey_datasets/</a>.
 </div>
@@ -1019,12 +706,6 @@ Wickham, Hadley, Danielle Navarro, and Thomas Lin Pedersen. 2023. <em>Ggplot2: <
 </div>
 </div>
 </section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>This is sometimes called the <em>frequentist</em> interpretation of probability. There are other possibilities, such as <em>Bayesian</em> interpretations of probability, which describe probabilities as degrees of belief.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1594,13 +1275,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06_calculus.html" class="pagination-link" aria-label="Calculus">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Calculus</span></span>
+      <a href="./07_probability.html" class="pagination-link" aria-label="Probability">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08_text_analysis.html" class="pagination-link" aria-label="Text analysis">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Text analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./09_coding_with_ai.html" class="pagination-link" aria-label="Coding with AI">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Coding with AI</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

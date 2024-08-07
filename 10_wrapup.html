@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Andrés Cruz">
-<meta name="author" content="Meiying Xu">
 
-<title>Methods Camp</title>
+<title>10&nbsp; Wrap-up – Methods Camp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -52,7 +84,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./00_setup.html" rel="next">
+<link href="./solutions.html" rel="next">
+<link href="./09_coding_with_ai.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -104,7 +137,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Class schedule</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_wrapup.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrap-up</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,7 +169,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Class schedule</span></a>
   </div>
 </li>
@@ -202,7 +235,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_wrapup.html" class="sidebar-item-text sidebar-link">
+  <a href="./10_wrapup.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrap-up</span></span></a>
   </div>
 </li>
@@ -228,12 +261,22 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#class-schedule" id="toc-class-schedule" class="nav-link active" data-scroll-target="#class-schedule">Class schedule</a></li>
-  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
-  <li><a href="#course-outline" id="toc-course-outline" class="nav-link" data-scroll-target="#course-outline">Course outline</a></li>
-  <li><a href="#contact-info" id="toc-contact-info" class="nav-link" data-scroll-target="#contact-info">Contact info</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  <li><a href="#materials-from-previous-editions" id="toc-materials-from-previous-editions" class="nav-link" data-scroll-target="#materials-from-previous-editions">Materials from previous editions</a></li>
+  <li><a href="#project-management" id="toc-project-management" class="nav-link active" data-scroll-target="#project-management"><span class="header-section-number">10.1</span> Project management</a>
+  <ul class="collapse">
+  <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects"><span class="header-section-number">10.1.1</span> RStudio projects</a></li>
+  </ul></li>
+  <li><a href="#other-software-resources" id="toc-other-software-resources" class="nav-link" data-scroll-target="#other-software-resources"><span class="header-section-number">10.2</span> Other software resources</a>
+  <ul class="collapse">
+  <li><a href="#overleaf" id="toc-overleaf" class="nav-link" data-scroll-target="#overleaf"><span class="header-section-number">10.2.1</span> Overleaf</a></li>
+  <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero"><span class="header-section-number">10.2.2</span> Zotero</a></li>
+  </ul></li>
+  <li><a href="#methods-at-ut" id="toc-methods-at-ut" class="nav-link" data-scroll-target="#methods-at-ut"><span class="header-section-number">10.3</span> Methods at UT</a>
+  <ul class="collapse">
+  <li><a href="#required-methods-courses" id="toc-required-methods-courses" class="nav-link" data-scroll-target="#required-methods-courses"><span class="header-section-number">10.3.1</span> Required methods courses</a></li>
+  <li><a href="#other-methods-courses" id="toc-other-methods-courses" class="nav-link" data-scroll-target="#other-methods-courses"><span class="header-section-number">10.3.2</span> Other methods courses</a></li>
+  <li><a href="#other-departments-at-ut" id="toc-other-departments-at-ut" class="nav-link" data-scroll-target="#other-departments-at-ut"><span class="header-section-number">10.3.3</span> Other departments at UT</a></li>
+  <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources"><span class="header-section-number">10.3.4</span> Other resources</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -242,28 +285,14 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Methods Camp</h1>
-<p class="subtitle lead">UT Austin, Department of Government</p>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrap-up</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Andrés Cruz </p>
-             <p>Meiying Xu </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -273,172 +302,251 @@ div.csl-indent {
 </header>
 
 
-<div class="callout callout-style-default callout-caution callout-titled" title="WIP">
+<section id="project-management" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="project-management"><span class="header-section-number">10.1</span> Project management</h2>
+<section id="rstudio-projects" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="rstudio-projects"><span class="header-section-number">10.1.1</span> RStudio projects</h3>
+<ul>
+<li><p>RStudio projects are an excellent way to keep all the files associated with a project (data, R scripts, results, figures, etc.) in one place on your computer.</p></li>
+<li><p>This is one of the best ways to improve your workflow in RStudio, allowing you to:</p>
+<ul>
+<li>Create a project for each paper or data analysis project.</li>
+<li>Store data files in one place.</li>
+<li>Save, edit, and run scripts.</li>
+<li>Keep outputs such as plots and cleaned data.</li>
+</ul></li>
+<li><p>To create a new project file, click <code>File &gt; New Project</code>, then:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/new_project_step1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/new_project_step2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/new_project_step3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div></li>
+<li><p>Call your project some version of “methodscamptest” and choose carefully where you wish to store the project on your machine.</p></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-WIP
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This year’s edition is a work in progress. Click <a href="./previous-editions/2023">here</a> to see last year’s materials.</p>
+<p>If you don’t store your project (and your other files, too!) somewhere reasonable, it will be hard to find it in the future! We recommend creating a clear organizational scheme for yourself early on.</p>
 </div>
 </div>
-<section id="class-schedule" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="class-schedule">Class schedule</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Date</th>
-<th>Time</th>
-<th>Location</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Fri, Aug.&nbsp;16</td>
-<td>9:00 AM - 4:00 PM</td>
-<td><a href="https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/">RLP</a> 2.606</td>
-</tr>
-<tr class="even">
-<td>Sat, Aug.&nbsp;17</td>
-<td>No class</td>
-<td>-</td>
-</tr>
-<tr class="odd">
-<td>Sun, Aug.&nbsp;18</td>
-<td>No class</td>
-<td>-</td>
-</tr>
-<tr class="even">
-<td>Mon, Aug.&nbsp;19</td>
-<td>9:00 AM - 4:00 PM</td>
-<td><a href="https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/UTM/BAT/">BAT</a> 5.108</td>
-</tr>
-<tr class="odd">
-<td>Tue, Aug.&nbsp;20</td>
-<td>9:00 AM - 4:00 PM</td>
-<td><a href="https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/">RLP</a> 2.606</td>
-</tr>
-<tr class="even">
-<td>Wed, Aug.&nbsp;21</td>
-<td>9:00 AM - 4:00 PM</td>
-<td><a href="https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/UTM/BAT/">BAT</a> 5.108</td>
-</tr>
-<tr class="odd">
-<td>Thu, Aug.&nbsp;22</td>
-<td>9:00 AM - 4:00 PM</td>
-<td><a href="https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/">RLP</a> 2.606</td>
-</tr>
-</tbody>
-</table>
-<p>On class days, we will have a lunch break from 12:00-1:00 PM. We’ll also take short breaks periodically during the morning and afternoon sessions as needed.</p>
-</section>
-<section id="description" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="description">Description</h2>
-<p>Welcome to Introduction to Methods for Political Science, aka “Methods Camp”! Methods Camp is designed to give everyone a chance to brush up on some skills in preparation for the introductory Statistics and Formal Theory courses. The other goal of Methods Camp is to allow you to get to know your cohort. We hope that matrix algebra and the chain rule will still prove to be good bonding exercises!</p>
-<p>As you can see from the above schedule, we’ll be meeting on Friday, August 16th as well as from Monday, August 19th through Thursday, August 22nd. Classes at UT begin the start of the following week on Monday, August 26th. Below is a tentative schedule outlining what will be covered in the class, although we may rearrange things if we find we’re going too slowly or too quickly through the material.</p>
-</section>
-<section id="course-outline" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="course-outline">Course outline</h2>
-<p><strong>1 Friday morning: <a href="01_r_intro.html">Intro to R</a></strong></p>
+<section id="using-rstudio-projects" class="level4" data-number="10.1.1.1">
+<h4 data-number="10.1.1.1" class="anchored" data-anchor-id="using-rstudio-projects"><span class="header-section-number">10.1.1.1</span> Using RStudio projects</h4>
+<p>When using an RStudio project, you should see its name in the top-right corner of RStudio, next to a light blue icon. You can check with R the folder in which your project operates:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ul>
-<li>Introductions</li>
-<li>R and RStudio: basics</li>
-<li>Objects (vectors, matrices, data frames, etc.)</li>
-<li>Basic functions (<code>mean()</code>, <code>length()</code>, etc.)</li>
-<li>Packages: installation and loading (including the tidyverse)</li>
+<li>Now, as an example, let’s run the following commands in the script editor and save the files into the project directory.</li>
 </ul>
-<p><strong>2 Friday afternoon: <a href="02_tidy_data1.html">Tidy data analysis I</a></strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot =</span> my_plot,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">filename =</span> <span class="st">"plot_mtcars.pdf"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(mtcars, <span class="st">"mtcars.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ul>
-<li>Tidy data</li>
-<li>Data wrangling with dplyr</li>
-<li>Data visualization basics with <code>ggplot2</code></li>
-</ul>
-<p><strong>3 Monday morning: <a href="03_functions.html">Functions</a></strong></p>
-<ul>
-<li>Definitions</li>
-<li>Functions in R</li>
-<li>Common types of functions</li>
-<li>Logarithms and exponents</li>
-<li>Composite functions</li>
-</ul>
-<p><strong>4 Monday afternoon: <a href="04_calculus.html">Calculus</a></strong></p>
-<ul>
-<li>Derivatives</li>
-<li>Optimization</li>
-<li>Integrals</li>
-</ul>
-<p><strong>5 Tuesday morning: <a href="05_matrices.html">Matrices</a></strong></p>
-<ul>
-<li>Matrices</li>
-<li>Systems of linear equations</li>
-<li>Matrix operations (multiplication, transpose, inverse, determinant)</li>
-<li>Solving systems of linear equations in matrix form (and why that’s cool)</li>
-<li>Introduction to OLS</li>
-</ul>
-<p><strong>6 Tuesday afternoon: <a href="06_tidy_data2.html">Tidy data analysis II</a></strong></p>
-<ul>
-<li>Loading data in different formats (.csv, R, Excel, Stata, SPSS)</li>
-<li>Recoding values (<code>if_else()</code>, <code>case_when()</code>)</li>
-<li>Handling missing values</li>
-<li>Pivoting data</li>
-<li>Merging data</li>
-<li>Plotting extensions (trend graphs, facets, customization)</li>
-</ul>
-<p><strong>7 Wednesday morning: <a href="07_probability.html">Probability</a></strong></p>
-<ul>
-<li>Probability: basic concepts</li>
-<li>Random variables, probability distributions, and their properties</li>
-<li>Common probability distributions</li>
-</ul>
-<p><strong>8 Wednesday afternoon: <a href="08_stats_sims.html">Statistics and simulations</a></strong></p>
-<ul>
-<li>Statistics: basic concepts</li>
-<li>Random sampling and loops in R</li>
-<li>Simulation example: bootstrapping</li>
-</ul>
-<p><strong>9 Thursday morning: <a href="09_coding_with_ai.html">Coding with AI</a></strong></p>
-<ul>
-<li>TODO</li>
-<li>TODO</li>
-</ul>
-<p><strong>10 Thursday afternoon: <a href="10_wrapup.html">Wrap-up</a></strong></p>
-<ul>
-<li>Project management fundamentals</li>
-<li>Self-study resources and materials</li>
-<li>Other software (Overleaf, Zotero, etc.)</li>
-<li>Methods resources at UT</li>
+<li><p>Quit RStudio and check out the folder associated with the project.</p></li>
+<li><p>You should see the PDF file for the plot, the .csv file for the data, and the <code>.Rproj</code> file for the project itself.</p></li>
+<li><p>Double-click the <code>.Rproj</code> file to reopen the project and pick up where you left off! Everything you need should be ready to go.</p></li>
 </ul>
 </section>
-<section id="contact-info" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="contact-info">Contact info</h2>
-<p>If you have any questions during or outside of methods camp, you can contact us via email. Or if you are curious about our research, you can also check out our respective websites and Twitter accounts (or should we say X…):</p>
+</section>
+</section>
+<section id="other-software-resources" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="other-software-resources"><span class="header-section-number">10.2</span> Other software resources</h2>
+<section id="overleaf" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="overleaf"><span class="header-section-number">10.2.1</span> Overleaf</h3>
+<div style="float: right; position: relative; top: 0px; padding: 30px;">
+<p><img src="images/overleaf.png" class="img-fluid" width="250"></p>
+</div>
 <ul>
-<li><p>Andrés Cruz: <script type="text/javascript">
-<!--
-h='&#x75;&#116;&#x65;&#120;&#x61;&#x73;&#46;&#x65;&#100;&#x75;';a='&#64;';n='&#x61;&#110;&#100;&#114;&#x65;&#x73;&#46;&#x63;&#114;&#x75;&#122;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
-// -->
-</script><noscript>andres.cruz at utexas dot edu</noscript> <a href="https://arcruz0.github.io/">[Website]</a> <a href="https://twitter.com/arcruz0">[Twitter]</a></p></li>
-<li><p>Meiying Xu: <script type="text/javascript">
-<!--
-h='&#x75;&#116;&#x65;&#120;&#x61;&#x73;&#46;&#x65;&#100;&#x75;';a='&#64;';n='&#120;&#x75;&#46;&#x6d;&#x65;&#x69;&#x79;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
-// -->
-</script><noscript>xu.meiying at utexas dot edu</noscript> <a href="">[Website]</a> <a href="">[Twitter]</a></p></li>
+<li><p><a href="https://www.overleaf.com/">Overleaf</a> is a collaborative cloud-based LaTeX editor designed for writing, editing, and publishing documents.</p>
+<ul>
+<li>LaTeX is a software used for typesetting technical documents. It is used widely in our discipline for the preparation for manuscripts to journals and other publishing venues.</li>
+</ul></li>
+<li><p>UT Austin actually provides free access to Overleaf Professional to all graduate students using your UT email.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create an Overleaf Professional account using your UT email address. You can do so <a href="https://www.overleaf.com/edu/utexas">here</a>.</p>
+</div>
+</div>
+<ul>
+<li><p>Overleaf Professional upgrades include:</p>
+<ul>
+<li>Real-time collaboration</li>
+<li>Real-time track changes and visible collaborator cursor(s)</li>
+<li>Real-time PDF preview of your document while editing and writing</li>
+<li>Full history view of your documents</li>
+<li>Two-way sync with Dropbox and GitHub</li>
+<li>Reference manager sync and advanced reference search.</li>
+<li>UT Austin resource portal, including UT Austin templates, FAQs, and resource links</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>LaTeX is actually the markup language that the math in Quarto and this website! If you are curious about general syntax and commands, you can access <a href="https://github.com/methodscamp/methodscamp.github.io">our repository</a> at any time to get a closer look.</p>
+</div>
+</div>
+</section>
+<section id="zotero" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="zotero"><span class="header-section-number">10.2.2</span> Zotero</h3>
+<div style="float: right; position: relative; top: 0px; padding: 30px;">
+<p><img src="images/zotero_512x512x32.png" class="img-fluid" width="200"></p>
+</div>
+<ul>
+<li><p>Zotero is an open-source reference manager used to store, manage, and cite bibliographic references, such as books and articles.</p></li>
+<li><p>When it is time to write, you can insert your sources directly into your paper as in-text citations via a word processor plugin, which generates a bibliography in your style of choice.</p>
+<ul>
+<li>This can save a lot of time, especially when you have to change citation styles for submission to another journal.</li>
+</ul></li>
+<li><p>You can download the software for free <a href="https://www.zotero.org/">here</a>.</p>
+<ul>
+<li>You can also find a guide on how to install it <a href="https://www.zotero.org/support/installation">here</a>.</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Zotero is one of many other reference managers out there. Alternatives include Mendeley and EndNote, among others. You should choose whatever option best suits your needs.</p>
+</div>
+</div>
+<section id="benefits-of-zotero" class="level4" data-number="10.2.2.1">
+<h4 data-number="10.2.2.1" class="anchored" data-anchor-id="benefits-of-zotero"><span class="header-section-number">10.2.2.1</span> Benefits of Zotero</h4>
+<ul>
+<li><p>If you have not yet chosen a reference manager or are considering switching, below are some advantages of Zotero:</p>
+<ul>
+<li>Works as a standalone desktop software with plugins for <a href="https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc">Chrome</a>, <a href="https://www.zotero.org/support/kb/safari_compatibility">Safari</a>, and <a href="https://www.zotero.org/download/connectors">Firefox</a></li>
+<li>Full compatibility with Google Docs</li>
+<li>Free plugin for Word and LibreOffice included</li>
+<li>Includes most popular citation styles with more styles available on the <a href="https://www.zotero.org/styles">Zotero Style Repository</a></li>
+<li>Drag and drop PDF files into the library, extracting metadata such as authors, year, etc.</li>
+<li>Allows advanced searches of all content in your library using full-text PDF indexing</li>
+<li>Use cloud storage (optional) and sync libraries across devices</li>
+<li>Create unlimited private or public groups and collaborate by sharing files and citations</li>
+<li>300MB of free cloud storage and 2GB of storage for $20 USD/year (equal to $1.67 per month)</li>
+</ul></li>
+<li><p><a href="https://www.zotero.org/support/quick_start_guide">Here</a> is a comprehensive guide to unlocking all of Zotero’s potential.</p></li>
 </ul>
 </section>
-<section id="acknowledgements" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>We thank previous Methods Camp instructors for their accumulated experience and materials, which we have based ours upon. All errors remain our own (and will hopefully be fixed with your help!).</p>
 </section>
-<section id="materials-from-previous-editions" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="materials-from-previous-editions">Materials from previous editions</h2>
+</section>
+<section id="methods-at-ut" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="methods-at-ut"><span class="header-section-number">10.3</span> Methods at UT</h2>
+<section id="required-methods-courses" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="required-methods-courses"><span class="header-section-number">10.3.1</span> Required methods courses</h3>
 <ul>
-<li><a href="./previous-editions/2023">2023</a>: co-taught by Andrés Cruz and Matt Martin.</li>
+<li><p>Scope and Methods of Political Science</p></li>
+<li><p>Statistics I (Statistics/linear regression)</p></li>
+<li><p>Statistics II (Linear regression and more)</p></li>
+<li><p>Statistics III (Maximum likelihood estimation)</p>
+<ul>
+<li>Only required if your major field is methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="other-methods-courses" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="other-methods-courses"><span class="header-section-number">10.3.2</span> Other methods courses</h3>
+<ul>
+<li><p><strong>Statistics / Econometrics / Machine Learning:</strong></p>
+<ul>
+<li>Causal Inference</li>
+<li>Bayesian Statistics</li>
+<li>Math Methods for Political Analysis</li>
+<li>Time Series and Panel Data</li>
+<li>Panel and Multilevel Analysis</li>
+<li>Network Analysis</li>
+<li>Machine Learning in Political Science</li>
+<li>Making Big Data</li>
+</ul></li>
+<li><p><strong>Formal Theory</strong></p>
+<ul>
+<li>Intro to Formal Political Analysis</li>
+<li>Formal Political Analysis II</li>
+<li>Formal Theories of International Relations</li>
+</ul></li>
+<li><p><strong>Everything else</strong></p>
+<ul>
+<li>Conceptualization and Measurement</li>
+<li>Experimental Methods in Political Science</li>
+<li>Qualitative Methods</li>
+<li>Seminar in Field Experiments</li>
+</ul></li>
+</ul>
+</section>
+<section id="other-departments-at-ut" class="level3" data-number="10.3.3">
+<h3 data-number="10.3.3" class="anchored" data-anchor-id="other-departments-at-ut"><span class="header-section-number">10.3.3</span> Other departments at UT</h3>
+<p>You can also take courses through the Economics, Business (IROM), Sociology, Mathematics, or Statistics (SDS) departments.</p>
+<ul>
+<li><p><a href="https://stat.utexas.edu/academics/master-science-statistics">M.S. in Statistics</a></p></li>
+<li><p>Software and Topic Short Courses at SDS (see their <a href="https://stat.utexas.edu/events">Events</a> page): R, Python, Stata, etc.</p></li>
+</ul>
+</section>
+<section id="other-resources" class="level3" data-number="10.3.4">
+<h3 data-number="10.3.4" class="anchored" data-anchor-id="other-resources"><span class="header-section-number">10.3.4</span> Other resources</h3>
+<p>Summer programs at UT:</p>
+<ul>
+<li>Short courses in statistics (department sometimes offers scholarships to cover part of the cost)</li>
+</ul>
+<p>Summer programs outside UT:</p>
+<ul>
+<li><p><a href="https://www.icpsr.umich.edu/web/pages/">ICPSR</a> (Inter-university Consortium for Political and Social Research)</p>
+<ul>
+<li>Ann Arbor, Michigan</li>
+</ul></li>
+<li><p><a href="https://eitminstitute.org/">EITM</a> (Empirical Implications of Theoretical Models)</p>
+<ul>
+<li>Houston and other locations (Michigan, Duke, Berkeley, Emory)</li>
+</ul></li>
+<li><p><a href="https://www.maxwell.syr.edu/research/center-for-qualitative-and-multi-method-inquiry/institute-for-qualitative-multi-method-research">IQMR</a> (Institute for Qualitative and Multi-Method Research)</p>
+<ul>
+<li>Syracuse, NY</li>
+</ul></li>
 </ul>
 
 
@@ -492,6 +600,7 @@ Wickham, Hadley. 2014. <span>“Tidy Data.”</span> <em>Journal of Statistical 
 Wickham, Hadley, Danielle Navarro, and Thomas Lin Pedersen. 2023. <em>Ggplot2: <span>Elegant</span> <span>Graphics</span> for <span>Data</span> <span>Analysis</span></em>. 3rd ed. <a href="https://ggplot2-book.org/">https://ggplot2-book.org/</a>.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1061,10 +1170,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./09_coding_with_ai.html" class="pagination-link" aria-label="Coding with AI">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Coding with AI</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./00_setup.html" class="pagination-link" aria-label="Setup">
-        <span class="nav-page-text">Setup</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./solutions.html" class="pagination-link" aria-label="Solutions to exercises">
+        <span class="nav-page-text">Solutions to exercises</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
