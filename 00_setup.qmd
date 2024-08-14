@@ -14,6 +14,12 @@ After these two steps, you can open RStudio in your system, as you would with an
 
 ![How RStudio looks after a clean installation.](images/rstudio_first.png){#fig-rstudio-first}
 
+::: {.callout-note}
+## Note for Windows users
+
+While the installation steps above should be enough for most tasks, we also suggest that Windows users install [RTools](https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html) (click on the "Rtools44 installer" link at the middle of the package to get the .exe file). Rtools is needed on Windows to install some advanced packages, so it is a good idea to have it on your system.
+:::
+
 That's it for the installation! We also *strongly* recommend that you change a couple of RStudio's default settings.[^settings] You can change settings by clicking on `Tools > Global Options` in the menubar. Here are our recommendations:
 
 - `General > Uncheck "Restore .RData into workspace at startup"`
