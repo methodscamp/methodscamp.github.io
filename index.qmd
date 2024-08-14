@@ -1,5 +1,5 @@
 ::: {.callout-caution title="WIP"}
-This year's edition is a work in progress. Click [here](/previous-editions/2023) to see last year's materials.
+These are materials for the ongoing version of Methods Camp (2024). Click [here](/previous-editions/2023) to see last year's materials.
 :::
 
 ## Class schedule {.unnumbered}
@@ -38,7 +38,7 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 -   Data wrangling with dplyr
 -   Data visualization basics with `ggplot2`
 
-**3 Monday morning: [Functions](03_functions.html)**
+**3 Monday morning: Functions**
 
 -   Definitions
 -   Functions in R
@@ -46,13 +46,13 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 -   Logarithms and exponents
 -   Composite functions
 
-**4 Monday afternoon: [Calculus](04_calculus.html)**
+**4 Monday afternoon: Calculus**
 
 -   Derivatives
 -   Optimization
 -   Integrals
 
-**5 Tuesday morning: [Matrices](05_matrices.html)**
+**5 Tuesday morning: Matrices**
 
 -   Matrices
 -   Systems of linear equations
@@ -60,7 +60,7 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 -   Solving systems of linear equations in matrix form (and why that's cool)
 -   Introduction to OLS
 
-**6 Tuesday afternoon: [Tidy data analysis II](06_tidy_data2.html)**
+**6 Tuesday afternoon: Tidy data analysis II**
 
 -   Loading data in different formats (.csv, R, Excel, Stata, SPSS)
 -   Recoding values (`if_else()`, `case_when()`)
@@ -69,24 +69,25 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 -   Merging data
 -   Plotting extensions (trend graphs, facets, customization)
 
-**7 Wednesday morning: [Probability](07_probability.html)**
+**7 Wednesday morning: Probability**
 
 -   Probability: basic concepts
 -   Random variables, probability distributions, and their properties
 -   Common probability distributions
 
-**8 Wednesday afternoon: [Statistics and simulations](08_stats_sims.html)**
+**8 Wednesday afternoon: Statistics and simulations**
 
 -   Statistics: basic concepts
 -   Random sampling and loops in R
 -   Simulation example: bootstrapping
 
-**9 Thursday morning: [Coding with AI](09_coding_with_ai.html)**
+**9 Thursday morning: Coding with AI**
 
--   TODO
--   TODO
+-   Visualization tools
+-   ⁠Statistical testing and simulation
+-   ⁠Text analysis examples
 
-**10 Thursday afternoon: [Wrap-up](10_wrapup.html)**
+**10 Thursday afternoon: Wrap-up**
 
 -   Project management fundamentals
 -   Self-study resources and materials
@@ -103,7 +104,7 @@ If you have any questions during or outside of methods camp, you can contact us 
 
 ## Acknowledgements {.unnumbered}
 
-We thank previous Methods Camp instructors for their accumulated experience and materials, which we have based ours upon. All errors remain our own (and will hopefully be fixed with your help!).
+We thank previous Methods Camp instructors for their accumulated experience and materials, which we have based ours upon. UT Gov Prof. Max Goplerud gave us amazing feedback for this iteration of Methods Camp (2024). All errors remain our own (and will hopefully be fixed with your help!).
 
 ## Materials from previous editions {.unnumbered}
 

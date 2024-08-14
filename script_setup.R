@@ -102,8 +102,7 @@ library(stringr)
 
 # identify and read Quarto files
 
-files_part1 <- c("01_r_intro.qmd", "02_tidy_data1.qmd", "03_matrices.qmd",
-                 "04_tidy_data2.qmd", "05_functions.qmd")
+files_part1 <- c("01_r_intro.qmd", "02_tidy_data1.qmd")
 
 l_lines_part1 <- lapply(files_part1, readLines)
 
@@ -119,7 +118,7 @@ titles_part1 <- sapply(
 f_add_top <- function(body, title){
   to_add <- c("---", 
               sprintf("title: 'Methods Camp - %s'", title),
-              "date: 'Summer 2023'", 
+              "date: 'Summer 2024'", 
               "editor: visual",
               "---", 
               "")
@@ -132,6 +131,8 @@ l_lines_part1_edit <- lapply(seq_along(files_part1), function(i){
 })
 
 # save Quarto files
+
+dir.create("materials/methodscamp_part1/")
 
 for (i in seq_along(l_lines_part1_edit)){
   writeLines(l_lines_part1_edit[[i]], 

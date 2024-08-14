@@ -18,17 +18,8 @@ book:
     - 00_setup.qmd
     - 01_r_intro.qmd
     - 02_tidy_data1.qmd
-    - 03_functions.qmd
-    - 04_calculus.qmd
-    - 05_matrices.qmd
-    - 06_tidy_data2.qmd
-    - 07_probability.qmd
-    - 08_stats_sims.qmd
-    - 09_coding_with_ai.qmd
-    - 10_wrapup.qmd
-    - solutions.qmd
     - references.qmd
-  downloads: pdf
+  # downloads: pdf
   site-url: https://methodscamp.github.io/
   repo-url: https://github.com/methodscamp/methodscamp.github.io
   search: true
