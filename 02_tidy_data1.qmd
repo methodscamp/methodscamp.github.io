@@ -69,7 +69,7 @@ trump_scores |>
 ```
 
 ::: callout-tip
-You can insert a pipe with the `Cmd/Ctrl + Shift + M` shortcut. If you have not changed the default RStudio settings, an "old" pipe (`%>%`) might appear. While most of the functionality is the same, the `|>` "new" pipes are more readable. You can change this RStudio option in `Tools > Global Options > Code > Use native pipe operator`. Make sure to check the other suggested settings in our [Setup module](/00_setup.html)!
+You can insert a pipe with the `Cmd/Ctrl + Shift + M` shortcut. If you have not changed the default RStudio settings, an "old" pipe (`%>%`) might appear. While most of the functionality is the same, the `|>` "new" pipes are more readable and don't need any extra packages (to use `%>%` you need the `tidyverse` or one of its packages). You can change this RStudio option in `Tools > Global Options > Code > Use native pipe operator`. Make sure to check the other suggested settings in our [Setup module](/00_setup.html)!
 :::
 
 Going back to selecting columns, you can select ranges:
@@ -85,7 +85,6 @@ You can also **de**select columns using a minus sign:
 trump_scores |> 
   select(-last_name)
 ```
-
 
 And use a few helper functions, like `matches()`:
 
@@ -203,11 +202,7 @@ trump_scores |>
 
 1.  Add a new column to the data frame, called `diff_agree`, which subtracts `agree` and `agree_pred`. How would you create `abs_diff_agree`, defined as the absolute value of `diff_agree`? Your code:
 
-
-
 2.  Filter the data frame to only get senators for which we have information on fewer than (or equal to) five votes. Your code:
-
-
 
 3.  Filter the data frame to only get Democrats who agreed with Trump in at least 30% of votes. Your code:
 :::
