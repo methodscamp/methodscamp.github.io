@@ -276,11 +276,20 @@ a_{31}\pm b_{31} & a_{32}\pm b_{32} & a_{33}\pm b_{33}
 
 We start by creating two 2x3 matrices:
 
+$$A= \begin{bmatrix}
+3 & -1 & 2  \\
+9 & 4 & 6
+\end{bmatrix}$$
+
 ```{r}
 # Create two 2x3 matrices.
 matrix1 <- matrix(c(3, 9, -1, 4, 2, 6), nrow = 2)
 matrix1
 ```
+And $$B= \begin{bmatrix}
+5 & 2 & 0  \\
+9 & 3 & 4
+\end{bmatrix}$$
 
 ```{r}
 matrix2 <- matrix(c(5, 2, 0, 9, 3, 4), nrow = 2)
