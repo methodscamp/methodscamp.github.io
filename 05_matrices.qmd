@@ -215,6 +215,31 @@ N[4,2]
 When trying to identify a specific element, the first subscript is the element's row and the second subscript is the element's column (*always* in that order).
 :::
 
+::: callout-warning
+In R, indexing is 1-based, meaning that the first element of a vector, matrix, or any other data structure is accessed with index 1. In other programming tools such as Python, indexing is 0-based, meaning that the first element of a list, array, or any other data structure is accessed with index 0.
+```{r}
+# Create a 2x2 matrix in R
+matrix_A <- matrix(1:4, nrow = 2, ncol = 2)
+
+# Access the element in the first row, first column
+element <- matrix_A[1, 1]  # This will return 1
+```
+
+```python
+# Create a list in Python
+vector = [10, 20, 30, 40]
+
+# Access the first element
+first_element = vector[0]  # This will return 10
+import numpy as np
+
+# Create a 2x2 matrix in Python with NumPy
+matrix_A = np.array([[1, 2], [3, 4]])
+
+# Access the element in the first row, first column
+element = matrix_A[0, 0]  # This will return 1
+```
+:::
 ## Matrix operations
 
 ### Addition and subtraction
