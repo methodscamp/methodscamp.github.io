@@ -263,19 +263,19 @@ If, $$ log_ax=b$$ then, $$a^{log_{a}x}=a^b$$ and $$x=a^b$$
 
 ### Basic rules
 
-$$\dfrac{\log_x n}{\log_x m} = \log_m n$$
+* Change of Base rule: $\dfrac{\log_x n}{\log_x m} = \log_m n$
 
-$$\log_x(ab) = \log_xa + \log_xb $$
+* Product Rule: $\log_x(ab) = \log_xa + \log_xb$
 
-$$\log_x\left(\frac{a}{b}\right) = \log_xa - \log_xb$$
+* Quotient Rule: $\log_x\left(\frac{a}{b}\right) = \log_xa - \log_xb$
 
-$$\log_xa^b = b \log_x a$$
+* Power Rule: $\log_xa^b = b \log_x a$
 
-$$\log_x 1 = 0$$
+* Logarithm of 1: $\log_x 1 = 0$
 
-$$log_{x}x=1$$
+* Logarithm of the Base: $log_{x}x=1$
 
-$$m^{\log_m(a)} = a$$
+* Exponential Identity: $m^{\log_m(a)} = a$
 
 ### Natural logarithms
 
