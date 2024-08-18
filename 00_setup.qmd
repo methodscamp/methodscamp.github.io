@@ -39,6 +39,7 @@ All materials for Methods Camp are both on this website and available as [RStudi
 Below are RStudio projects for you to download, available as .zip compressed files. On MacOS, the file will be uncompressed automatically. On Windows, you should do `Right click > Extract all`. 
 
 - [Download Part 1 of the class materials](materials/methodscamp_part1.zip).
+- [Download Part 2 of the class materials](materials/methodscamp_part2.zip).
 - (Additional projects will be available in the following days).
 
 ::: {.callout-warning}

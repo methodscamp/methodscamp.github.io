@@ -275,7 +275,12 @@ In quite a few statistics and machine learning problems, computers need to compu
 
 -   Numerical differentiation: infer the derivative by computing the function at different sample values (like we did with $y=x^2$ before. This is what, for example, R's `optim()` function does behind the scenes.
 
--   Automatic differentiation: track how every function is constructed from (differentiable) elementary computer operations (e.g., binary arithmetic), and get the result using the chain rule. Implemented in the [`TensorFlow`](https://www.tensorflow.org/), [`PyTorch`](https://pytorch.org/), and [`JAX`](https://jax.readthedocs.io/en/) Python libraries, and the [`ReverseDiff.jl`](https://juliadiff.org/ReverseDiff.jl/) and [`Zygote.jl`](https://fluxml.ai/Zygote.jl/) Julia packages.
+```{r}
+# minimize the x^2 + 5 function:
+optim(par = 0, fn = function(x){x ^ 2 + 5}, method = "L-BFGS-B")
+```
+
+-   Automatic differentiation: track how every function is constructed from (differentiable) elementary computer operations (e.g., binary arithmetic), and get the result using the chain rule. Implemented in the [`torch`](https://torch.mlverse.org/) R package, the [`TensorFlow`](https://www.tensorflow.org/), [`PyTorch`](https://pytorch.org/), and [`JAX`](https://jax.readthedocs.io/en/) Python libraries, and the [`ReverseDiff.jl`](https://juliadiff.org/ReverseDiff.jl/) and [`Zygote.jl`](https://fluxml.ai/Zygote.jl/) Julia packages.
 
 ![An example of computing the gradient of an esoteric function using Zygote.jl (from [its documentation](https://fluxml.ai/Zygote.jl/stable/#Taking-Gradients-1))](images/julia_zygote.png)
 

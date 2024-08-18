@@ -102,7 +102,8 @@ library(stringr)
 
 # identify and read Quarto files
 
-files_part1 <- c("01_r_intro.qmd", "02_tidy_data1.qmd")
+files_part1 <- c("03_functions.qmd", "04_calculus.qmd", 
+                 "05_matrices.qmd", "06_tidy_data2.qmd")
 
 l_lines_part1 <- lapply(files_part1, readLines)
 
@@ -132,11 +133,11 @@ l_lines_part1_edit <- lapply(seq_along(files_part1), function(i){
 
 # save Quarto files
 
-dir.create("materials/methodscamp_part1/")
+dir.create("materials/methodscamp_part2/")
 
 for (i in seq_along(l_lines_part1_edit)){
   writeLines(l_lines_part1_edit[[i]], 
-             str_c("materials/methodscamp_part1/", files_part1[[i]]))
+             str_c("materials/methodscamp_part2/", files_part1[[i]]))
 }
 
 # copy images
@@ -146,7 +147,7 @@ imgs_part1 <- lapply(l_lines_part1, str_subset, "images/") |>
   str_extract("images/.*((jpg)|(png))") |> 
   na.omit()
 
-imgs_folder <- "materials/methodscamp_part1/images"
+imgs_folder <- "materials/methodscamp_part2/images"
 dir.create(imgs_folder)
 for (i in seq_along(imgs_part1)){
   file.copy(imgs_part1[[i]], imgs_folder)
@@ -159,7 +160,7 @@ data_part1 <- lapply(l_lines_part1, str_subset, "data/") |>
   str_extract("data/\\S*((rds)|(csv)|(xlsx)|(dta)|(sav)|(xls))") |> 
   na.omit()
 
-data_folder <- "materials/methodscamp_part1/data"
+data_folder <- "materials/methodscamp_part2/data"
 dir.create(data_folder)
 for (i in seq_along(data_part1)){
   file.copy(data_part1[[i]], data_folder)
@@ -181,14 +182,14 @@ text_rproj <- c("Version: 1.0",
                 "RnwWeave: Sweave", 
                 "LaTeX: pdfLaTeX")
 
-writeLines(text_rproj, "materials/methodscamp_part1/methodscamp_part1.Rproj")
+writeLines(text_rproj, "materials/methodscamp_part2/methodscamp_part2.Rproj")
 
 # create .zip file
 
 setwd("materials")
-zip(zipfile = "methodscamp_part1.zip", 
-    files = "methodscamp_part1/")
+zip(zipfile = "methodscamp_part2.zip", 
+    files = "methodscamp_part2/")
 
-unlink("methodscamp_part1/", recursive = T)
+unlink("methodscamp_part2/", recursive = T)
 
 setwd("..")

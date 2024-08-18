@@ -283,6 +283,30 @@ There is a dataset on country's CO2 emissions, again from the World Bank ([2023]
 
 :::
 
+### Sanity checks
+
+Sanity checks are small tests to make sure that your code is doing what you think it's doing. They are especially important in complex operations like joins, but the idea can be extended to pretty much any command.
+
+The `tidylog` package gives more information about `tidyverse` operations, and it's an easy/automatic way to check your work:
+
+```{r}
+#| message: false
+library(tidylog)
+```
+
+```{r}
+qog_plus <- left_join(qog, # left data frame, which serves as a "base"
+                      gdp_long, # right data frame, from which to draw new columns
+                      by = c("ccodealp" = "country_code", # can define name equivalencies!
+                             "year"))
+```
+
+You can also construct sanity checks manually. For instance, we know that a left join shouldn't modify a data frame's number of rows:
+
+```{r}
+nrow(qog) == nrow(qog_plus)
+```
+
 
 ## Plotting extensions: trend graphs, facets, and customization
 
@@ -389,7 +413,8 @@ This ability to visualize *within* time trends also makes facets appealing in ma
 Plots made with `ggplot2` are extremely customizable. For example, we could want to change the y-axis labels in the last plot to something more readable:
 
 ```{r}
-ggplot(qog |> filter(cname %in% c("Canada", "United States")), 
+# create as object "p" to use later
+p <- ggplot(qog |> filter(cname %in% c("Canada", "United States")), 
        aes(x = year, y = wdi_pop)) +
   geom_line() +
   facet_wrap(~cname, scales = "free_y") +
@@ -398,6 +423,7 @@ ggplot(qog |> filter(cname %in% c("Canada", "United States")),
   labs(x = "Year", y = "Population",
        title = "Population trends in Canada and the United States",
        caption = "Source: World Development Indicators (World Bank, 2023) in QOG dataset.")
+p
 ```
 
 While it's impossible for us to review all the customization options you might need, a fantastic reference is the ["ggplot2: Elegant Graphics for Data Analysis"](https://ggplot2-book.org/) book by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.
@@ -411,3 +437,32 @@ While it's impossible for us to review all the customization options you might n
 Using your merged dataset from the previous section, plot the trajectories of C02 per capita emissions for the US and Haiti. Use adequate scales.
 
 :::
+
+### Themes
+
+We can change the overall aspect of a `ggplot2` figure by changing its theme:
+
+```{r}
+p +
+  theme_minimal()
+```
+
+
+```{r}
+p +
+  theme_classic()
+```
+
+
+```{r}
+p + 
+  theme_bw()
+```
+
+If you are going to make multiple plots in a script, you can set the theme at the beginning with `theme_bw()`:
+
+```{r}
+theme_set(theme_bw())
+p
+```
+

@@ -18,6 +18,10 @@ book:
     - 00_setup.qmd
     - 01_r_intro.qmd
     - 02_tidy_data1.qmd
+    - 03_functions.qmd
+    - 04_calculus.qmd
+    - 05_matrices.qmd
+    - 06_tidy_data2.qmd
     - references.qmd
   # downloads: pdf
   site-url: https://methodscamp.github.io/
