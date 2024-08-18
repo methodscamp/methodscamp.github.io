@@ -134,7 +134,7 @@ The number of rows and columns of a matrix constitute the *dimensions* of the ma
 Find a way to remember "r x c" *permanently*. The order of the dimensions never changes.
 :::
 
-Matrix $A$ above, for example, is a $3x3$ matrix. Sometimes we'd refer to it as $A_{3x3}$.
+Matrix $A$ above, for example, is a $3 \times 3$ matrix. Sometimes we'd refer to it as $A_{3 \times 3}$.
 
 ::: callout-tip
 It is common to use capital letters (sometimes **bold-faced**) to represent matrices. In contrast, vectors are usually represented with either bold lowercase letters or lowercase letters with an arrow on top (e.g., $\overrightarrow v$).
