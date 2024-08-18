@@ -556,21 +556,53 @@ If you have a missing value or `NA` in one of the matrices you are trying to mul
 
 **Square matrix**
 
+$$
+A = \begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+$$
+
 -   In a square matrix, the number of rows equals the number of columns ($m=n$):
 
--   The *diagonal* of a matrix is a set of numbers consisting of the elements on the line from the upper-left-hand to the lower-right-hand corner of the matrix. Diagonals are particularly useful in square matrices.
+-   The *diagonal* of a matrix is a set of numbers consisting of the elements on the line from the upper-left-hand to the lower-right-hand corner of the matrix, as in $ d(A)=[1,5,9] $. Diagonals are particularly useful in square matrices.
 
--   The *trace* of a matrix, denoted as $tr(A)$, is the sum of the diagonal elements of the matrix.
+-   The *trace* of a matrix, denoted as $tr(A)$, is the sum of the diagonal elements of the matrix. $tr(A) = 1+5+9 = 15$
 
 **Diagonal matrix:**
 
 -   In a diagonal matrix, all of the elements of the matrix that are not on the diagonal are equal to zero.
+$$
+D = \begin{bmatrix}
+4 & 0 & 0 \\
+0 & 5 & 0 \\
+0 & 0 & 6
+\end{bmatrix}
+$$
+
 
 **Scalar matrix:**
 
 -   A scalar matrix is a diagonal matrix where the diagonal elements are all equal to each other. In other words, we're really only concerned with one scalar (or element) held in the diagonal.
 
+$$
+S = \begin{bmatrix}
+7 & 0 & 0 \\
+0 & 7 & 0 \\
+0 & 0 & 7
+\end{bmatrix}
+$$
+
 **Identity matrix:**
+
+$$
+I = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+$$
 
 -   The identity matrix is a scalar matrix with all of the diagonal elements equal to one.
 
