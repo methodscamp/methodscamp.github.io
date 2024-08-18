@@ -351,9 +351,14 @@ ggplot() +
 
 Functions can take other functions as inputs, e.g., $f(g(x))$. This means that the outside function takes the output of the inside function as its input.
 
-Say we have the exterior function $f(x)=x^2$ and the interior function $g(x)=x-3$. Then if we want $f(g(x))$, we would subtract 3 from any input, and then square the result.
+Say we have the exterior function $$f(x)=x^2$$
+and the interior function $$g(x)=x-3$$. 
 
-  - We write this as $(x-3)^2$, not $x^2-3$!
+Then if we want $f(g(x))$, we would subtract 3 from any input, and then square the result or $$f(g(x)) = (x-3)^2$$.
+
+:::callout-warning
+  We write this as $(x-3)^2$, not $x^2-3$!
+:::
   
 R can handle this just fine:
 
