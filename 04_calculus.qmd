@@ -142,15 +142,15 @@ Compute the following:
 
 Now we'll get to a couple of more advanced (and powerful) rules.
 
-**Product rule:** $(f(x)g(x))'=f'(x)g(x) + g'(x)f(x)$
+* **Product rule:** $(f(x)g(x))'=f'(x)g(x) + g'(x)f(x)$
 
-Let's calculate $\frac{d}{dx}(3 \cdot ln(x) \cdot x^2)$ on the board.
+* **Quotient rule:** $\displaystyle(\frac{f(x)}{g(x)})' = \frac{f'(x)g(x) + g'(x)f(x)}{[g(x)]^2}$
 
-**Quotient rule:** $\displaystyle(\frac{f(x)}{g(x)})' = \frac{f'(x)g(x) + g'(x)f(x)}{[g(x)]^2}$
+* **Chain rule:** $(f(g(x))' = f'(g(x)) \cdot g'(x)$
 
-**Chain rule:** $(f(g(x))' = f'(g(x)) \cdot g'(x)$
+> Let's calculate $\frac{d}{dx}(3 \cdot ln(x) \cdot x^2)$ on the board.
 
-Let's compute $\frac{d}{dx}(e^{x^{2}})$ on the board.
+> Let's compute $\frac{d}{dx}(e^{x^{2}})$ on the board.
 
 ::: callout-note
 #### Exercise
