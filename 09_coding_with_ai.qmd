@@ -1,3 +1,139 @@
-# Coding with AI
+# Doing Research with AI [^1]
+[^1]: This module was developed partially following Professor [Tse-min Lin](https://liberalarts.utexas.edu/government/faculty/lint)ʼs presentation at National Taiwan University on June 21, 2024.
 
-TODO.
+
+
+## GPT and Wittgenstein’s Language Philosophy
+
+| ![Ludwig Wittgenstein 1929](https://upload.wikimedia.org/wikipedia/commons/4/45/Ludwig_Wittgenstein_1929.jpg) | ![*Philosophical Investigations*, first English edition](https://upload.wikimedia.org/wikipedia/en/5/57/Philosophical_Investigations%2C_first_English_edition.jpg) |
+|:--:|:--:|
+| Ludwig Wittgenstein 1929 | *Philosophical Investigations*, First English Edition
+
+::: callout
+**I asked chat GPT the following question:**
+
+"The philosopher Ludwig Wittgenstein wrote two influential books on language, *Tractatus Logico-Philosophicus* and *Philosophical Investigations*. As a language model, which of Wittgenstein‘s books do you think is closer to your model?”
+
+**GPT replies:**
+
+As a language model, I would be more closely related to the ideas expressed in *Wittgenstein's later work, Philosophical Investigations*."
+
+"Tractatus Logico-Philosophicus" presents a picture theory of language, emphasizing logical structure and the correspondence between language and reality. This book operates within a framework where language's primary function is to describe the world through propositions that can be clearly analyzed.
+
+In contrast, "Philosophical Investigations" explores the idea that the meaning of language is derived from its use in various forms of life. Wittgenstein shifts from a rigid logical structure to a more fluid, context-dependent view of language, emphasizing the role of language in social interactions and everyday activities.
+
+As a language model, I generate responses based on patterns in data derived from a wide range of contexts and uses of language. My operation aligns more with the notion that meaning is use-dependent and context-driven, akin to the perspective in "Philosophical Investigations." This work's focus on the diverse ways language functions in different scenarios parallels how I process and generate text based on a vast array of linguistic inputs.
+:::
+
+
+::: callout-warning
+How to effectively use AI for programming 
+
+* GPT can help with programming, but you **must have domain knowledge**.
+* Interactions with ChatGPT are not exactly repeatable.
+* GPT can help with expediting search from Google or Stack Overflow, but it is not always correct.
+* You may have to separately install the necessary packages.
+* Read GPT’s explanation carefully to make sure it does what you want. **Do NOT copy and paste*. It is a tool to HELP YOU LEARN, not to do the work for you!
+* If GPT provides code in separate parts, ask it to combine them.
+* When errors occur, copy the error messages and paste them to GPT for troubleshooting.
+* You can continue with follow-up instructions to improve the results.
+* In case of a catch-22 situation, use your domain expertise.
+:::
+
+## Example 1: Translation
+
+Please translate the following text into your language of your choice using Google translate, Chat GPT and/or any other online translators, and compare the quality of translation. 
+
+::: callout-note
+### Texts
+
+##### Collaborative Multiracial Post-Election Survey (CMPS) 2016 [^2]
+
+[^2]: Source: [Collaborative Multiracial Post-Election Survey](https://cmpsurvey.org/) Barreto, Matt, Lorrie Frasure-Yokley, Edward Vargas and Janelle Wong. 2017. The Collaborative Multiracial Postelection Survey (CMPS), 2016.  Los Angeles, CA. 
+
+
+Methodology: A total of 10,145 completed interviews were collected online in a respondent self-administered format from December 3, 2016 to February 15, 2017.  The survey (and invitation) was available to respondents in English, Spanish, Chinese (simplified), Chinese (traditional), Korean, and Vietnamese. Because of the primary interest in the 2016 election, the project started with large sample of registered voters, to provide large sample size for analyses. The data also include an adult sample of non-registered voters as well, including non-citizens.  
+
+The full data are weighted within each racial group to match the adult population in the 2015 Census ACS 1-year data file for age, gender, education, nativity, ancestry, and voter registration status.  A post-stratification raking algorithm was used to balance each category within +/- 1 percent of the ACS estimates.  Data are not weighted to their national combined racial average.  That is, Whites account for 10 percent of all cases, and each racial group roughly 30 percent.  If users want to create nationally representative racial composition from the data they can consult the latest ACS data file. 
+ 
+In spring 2016, scholars were invited to collaborate on the 2016 Collaborative Multi-Racial Post-Election Survey (CMPS). The goal of the project was to create the first cooperative, 100% user content driven, multi-racial, multiethnic, multi-lingual, post-election online survey in race, ethnicity and politics (REP) in the United States. The survey’s main focus is on attitudes about the 2016 Election and candidates, debates over immigration, policing, and racial equality, and experiences with racial discrimination across many facets of American life.  
+ 
+Questions were user-generated from a team of 86 social scientists across 55 different universities who placed questions on the survey.  Users could submit questions for just one single racial group, or common questions across all four racial groups, depending on their interest.  In cases where two different users submitted very similar questions the PIs worked to create a single common question.  Overall, the survey contains 394 questions and median completion time of 43.2 minutes. 
+ 
+Data for registered voters comes from the national voter registration database email sample, and respondents were randomly selected to participate in the study, and confirmed they were registered to vote before starting the survey. For the non-registered sample, emails addresses were randomly selected from various online panel vendors.  In total, 298,159 email addresses were selected and sent invitations to participate in the survey and 29,489 people accepted the invitation and started the survey, for an effective response rate of 9.9%.  Among the 29,489 people who started the survey, 11,868 potential respondents were terminated due to quotas being full, which resulted in 17,621 who were eligible to take the survey of which 10,145 completed the full questionnaire for a cooperation rate of 57.6%. Respondents were given a $10 or $20 gift card as compensation for their participation. Non-registered voters were randomly selected from one of six online panels of respondents from Federated, Poder, Research Now, Netquest, SSI, and Prodege, and confirmed that they were not registered to vote before starting the survey. Programming and data collection for the full project were overseen by Pacific Market Research in Renton, WA. 
+ 
+In keeping with best practices and data transparency ethics in the social sciences, the original survey data shall be posted to Inter-University Consortium for Political and Social Research (ICPSR) after 4 years, which is expected to be early 2021. 
+
+
+:::
+
+## Example 2: Tidy up your writing
+
+**Task 1: Abstract Generation and Comparison**
+
+* Using the provided text about the Collaborative Multi-Racial Post-Election Survey (CMPS), ask ChatGPT to generate 10 different abstracts that could be considered suitable for academic journal publication.
+
+* Review and compare the 10 generated abstracts, identifying the strengths and weaknesses of each. Based on your comparison, synthesize a final abstract that incorporates the best elements of the generated versions, ensuring it meets the standards for academic publication.
+
+**Task 2: Translation Polishing**
+
+* Ask ChatGPT to refine the writing of the text it previously translated into your chosen non-English language. Ensure that the polished translation is of high quality, making it appropriate for publication in academic journals within your target non-English academic community. 
+
+## Example 3: Dealing with data
+
+Try to interact with ChatGPT with the following prompts and analyze a dataset about temperatures in Taipei:
+
+* I want to load a dataset, `Taipei.csv` into R. Please print the first 5 rows of my dataset, and the names of all the variables. Please do a summary statistis for all my variables.
+
+* My dataset contains the variables `high` for the highest temperature of the year and `low` for the lowest temperature of the year. Can you generate a `range` variable that shows the difference between the highest and lowest temperatures of the year?
+
+* Compute descriptive statistics of `high` and `low` variables
+
+* Create a dummy variable called `heat` with 1 representing extreme heat, defined as years whose
+high temperatore $>=37$ Celsius , and 0 representing normal summer, defined as years whose high temperature  $< 37$ Celsius.
+
+* To plot a bar chart showing the distribution of the `high` temperature variable and `low` temperature variable. 
+
+### Descriptive Statistics of Annual High Temperatures in Taipei
+
+::: callout-note
+#### Exercise
+Write R code to read the data from `Taipei.csv`, use `changepoint::cpt.mean` to identify the change point in the "high" column, plot the result, and print the change points in years
+:::
+
+```{r,message=FALSE, warning=FALSE, echo=FALSE}
+# Load required packages
+library(changepoint)
+
+# Step 1: Read the data from Taipei.csv
+taipei_data <- read.csv("Taipei.csv")
+
+# Ensure the Year column is treated as numeric
+taipei_data$Year <- as.numeric(taipei_data$year)
+
+# Step 2: Identify change points in the "high" column
+cpt_result <- cpt.mean(taipei_data$high)
+
+# Determine the change point
+change_points <- cpts(cpt_result)
+change_year <- taipei_data$year[change_points]
+
+# Calculate average temperature before and after the change point
+avg_before <- mean(taipei_data$high[1:change_points])
+avg_after <- mean(taipei_data$high[(change_points+1):nrow(taipei_data)])
+
+# Step 3: Plot the change point detection result with Year on the x-axis
+plot(taipei_data$year, taipei_data$high, type = "l",
+     main = "Change Points in Time Series of High Temperatures in Taipei",
+     xlab = "Year", ylab = "High Temperature")
+
+# Add horizontal line for the average temperature before the change point
+lines(x = c(min(taipei_data$year), change_year), y = rep(avg_before, 2), 
+col = "blue", lty = 1)
+
+# Add horizontal line for the average temperature after the change point
+lines(x = c(change_year, max(taipei_data$year)), y = rep(avg_after, 2), 
+col = "green", lty = 1)
+
+# Add vertical lines for change points at the correct years
+abline(v = taipei_data$Year[cpts(cpt_result)], col = "red", lty = 2)
