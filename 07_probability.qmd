@@ -78,19 +78,6 @@ Let's do another example on the board, using the sum of two fair dice.
 
 What's the probability that the sum of two fair dice equals 7?
 
-You can list the outcomes that result in a sum of 7:
-
-* (1, 6)
-* (2, 5)
-* (3, 4)
-* (4, 3)
-* (5, 2)
-* (6, 1)
-
-There are 6 outcomes that result in a sum of 7. Thus,
-
-$$ P(\text{sum of 7}) = \frac{6}{36} = \frac{1}{6} 
- $$
 :::
 
 #### Continuous random variables and probability distributions
