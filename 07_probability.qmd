@@ -28,15 +28,19 @@
 
 ### Definitions and properties of probability
 
-- Joint probability: $P(A \cap B)$. The probability that the two events will occur in one realization of the experiment.
+* Joint probability: $P(A \cap B)$. The probability that the two events will occur in one realization of the experiment.
 
-- Law of total probability: $P(A) = P(A \cap B) + P(A \cap B^C)$.
+* Law of total probability: $P(A) = P(A \cap B) + P(A \cap B^C)$.
 
-- Addition rule: $P(A \cup B) = P(A) + P(B) - P (A \cap B)$.
+* Addition rule: $P(A \cup B) = P(A) + P(B) - P (A \cap B)$.
 
-- Conditional probability: $\displaystyle P(A|B)=\frac{P(A \cap B)}{P(B)}$
+* Conditional probability: $\displaystyle P(A|B)=\frac{P(A \cap B)}{P(B)}$
+    + the probability of  event $A$ occurring given that event $B$ has already occurred is the probability that both $A$ and $B$ occur together devided by the probability that event $B$ occurs
 
-- Bayes theorem: $\displaystyle P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}$
+* Bayes theorem: $\displaystyle P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}$
+    + $P(A|B)$: the probability of event A occurring given that B is true 
+    + $P(B|A)$: the probability of event B occurring given that A is true.
+
 
 ### Random variables and probability distributions
 
@@ -44,7 +48,7 @@
 
 - A **probability distribution** describes the probabilities associated with the values of a random variable.
 
-- Random variables (and probability distributions) can be discrete or continuous.
+- Random variables (and probability distributions) can be **discrete** or **continuous**.
 
 #### Discrete random variables and probability distributions
 
@@ -69,6 +73,26 @@
 
 Let's do another example on the board, using the sum of two fair dice.
 
+:::callout-tip
+##### Exercise:
+
+What's the probability that the sum of two fair dice equals 7?
+
+You can list the outcomes that result in a sum of 7:
+
+* (1, 6)
+* (2, 5)
+* (3, 4)
+* (4, 3)
+* (5, 2)
+* (6, 1)
+
+There are 6 outcomes that result in a sum of 7. Thus,
+
+$$ P(\text{sum of 7}) = \frac{6}{36} = \frac{1}{6} 
+ $$
+:::
+
 #### Continuous random variables and probability distributions
 
 -   What happens when our outcome is continuous?
@@ -80,22 +104,57 @@ Let's do another example on the board, using the sum of two fair dice.
 
 ### Functions describing probability distributions
 
-#### Probability Mass Function (PMF)
+#### Probability Mass Function (PMF) -- Discrete Variables
 
 Probability of each occurrence encoded in probability mass function (PMF)
 
--   $0 \leq f(x_i) \leq 1$
-    -   Probability of any value occurring must be between 0 and 1.
--   $\displaystyle\sum_{x}f(x_i) = 1$
-    -   Probabilities of all values must sum to 1.
+- $0 \leq f(x_i) \leq 1$: Probability of any value occurring must be between 0 and 1.
+    
+-   $\displaystyle\sum_{x}f(x_i) = 1$: Probabilities of all values must sum to 1.
 
-#### Probability Density Function (PDF)
+```{r echo=FALSE}
+# Plot the PMF
+barplot(c(1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1) / 36, # sum of two dice
+        names.arg = 2:12, 
+        col = "skyblue", 
+        xlab = "Sum of Two Dice", 
+        ylab = "Probability", 
+        main = "PMF of Sum of Rolling Two Dice",
+        ylim = c(0, 0.2))
+```
 
--   Similar to PMF from before, but for continuous variables.
--   Using integration, it gives the probability a value falls within a particular interval
-    -   $P[a\le X\le b] = \displaystyle\int_a^b f(x) \, dx$
-    -   Total area under the curve is 1.
-    -   $P(a < X < b)$ is the area under the curve between $a$ and $b$ (where $b > a$).
+#### Probability Density Function (PDF) -- Continuous Variables
+
+- Similar to PMF from before, but for continuous variables.
+- Using integration, it gives the probability a value falls within a particular interval
+   
+   $$P[a\le X\le b] = \displaystyle\int_a^b f(x) \, dx$$
+   
+- Total area under the curve is 1.
+  
+-  $P(a < X < b)$ is the area under the curve between $a$ and $b$ (where $b > a$).
+
+```{r echo=FALSE}
+# Generate a sequence of values for the x-axis
+x <- seq(-4, 4, length.out = 100)
+
+# Calculate the corresponding y-values (PDF values) using the dnorm function
+y <- dnorm(x)
+
+# Plot the normal distribution curve
+plot(x, y, type = "l", lwd = 2, col = "blue", 
+     xlab = "X", ylab = "Density", 
+     main = "Normal Distribution Curve (PDF)")
+
+# Add a grid for better visualization
+grid()
+```
+
+
+
+![Box plot and PDF of a normal distribution $N(0, \sigma^2)$ ](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
+
+Source: [Wikipedia Commons](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
 
 #### Cumulative Density Function (CDF)
 
@@ -104,7 +163,13 @@ Probability of each occurrence encoded in probability mass function (PMF)
 -   Cumulatve density function is probability X will take a value of x or lower.
 -   PDF is written $f(x)$, and CDF is written $F'(x)$. $$F_X(x) = Pr(X\leq x)$$
 -   For discrete CDFs, that means summing up over all values.
--   What is the probability of rolling a 6 or lower with two dice? $F(6)=?$
+
+:::callout-tip
+##### Exercise:
+
+What is the probability of rolling a 6 or lower with two dice? $F(6)=?$
+
+:::
 
 ##### Continuous {.unnumbered}
 
