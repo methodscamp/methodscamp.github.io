@@ -22,6 +22,8 @@ book:
     - 04_calculus.qmd
     - 05_matrices.qmd
     - 06_tidy_data2.qmd
+    - 07_probability.qmd
+    - 08_stats_sims.qmd
     - references.qmd
   # downloads: pdf
   site-url: https://methodscamp.github.io/
@@ -35,7 +37,7 @@ nocite: |
   @fuzzyjoin, @Vdemcodebook2022, @wickham_ggplot2, @imai_quantitative_2022, 
   @rossi1996mathematics, @moore_mathematics_2013, 
   @baydinAutomaticDifferentiationMachine2017, @Wickham2014,
-  @pontinOppenheimerGhost2007, @wickham2014advanced, @aronow2019foundations
+  @pontinOppenheimerGhost2007, @wickham2014advanced, @aronow2019foundations, @whittinghill2001little
 format:
   html:
     theme: 

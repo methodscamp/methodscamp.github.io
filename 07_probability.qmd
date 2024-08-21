@@ -3,61 +3,64 @@
 ## What is probability?
 
 -   Informally, a probability is a number that describes how likely an event is.
-    +   It is, by definition, between 0 and 1.
-    +   What is the probability that a fair coin flip will result in heads?
-
+    -   It is, by definition, between 0 and 1.
+    -   What is the probability that a fair coin flip will result in heads?
 -   We can also think of a probability as an outcome's **relative frequency** after repeating an "experiment" many times.[^07_probability-1]
-    +   In this setting, an experiment is "an action or a set of actions that produce stochastic \[random\] events of interest" ([Imai and Williams 2022](https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science), p. 281). Not to confuse with scientific experiments!
-    +   If we were to flip a million fair coins, what will be the proportion of heads?
+    -   In this setting, an experiment is "an action or a set of actions that produce stochastic \[random\] events of interest" ([Imai and Williams 2022](https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science), p. 281). Not to confuse with scientific experiments!
+    -   If we were to flip a million fair coins, what will be the proportion of heads?
 
 [^07_probability-1]: This is sometimes called the *frequentist* interpretation of probability. There are other possibilities, such as *Bayesian* interpretations of probability, which describe probabilities as degrees of belief.
 
+```{=html}
+<!-- -->
+```
 -   A *probability space* $(\Omega, S, P)$ is a formal way to talk about a random process:
-    + The sample space ($\Omega$) is the set of all possible outcomes.
-    + The event space ($S$) is a collection of events (an event is a subset of $\Omega$).
-    + The probability measure ($P$) is a function that assigns a probability in $\mathbb{R}$ to every event in $S$. So $P: S \rightarrow \mathbb{R}$.
+    -   The sample space ($\Omega$) is the set of all possible outcomes.
+    -   The event space ($S$) is a collection of events (an event is a subset of $\Omega$).
+    -   The probability measure ($P$) is a function that assigns a probability in $\mathbb{R}$ to every event in $S$. So $P: S \rightarrow \mathbb{R}$.
+-   We can formalize our intuitions with the **probability axioms** (sometimes called Kolmogorov's axioms):
+    -   $P(A) \ge 0, \; \forall A \in S$.
+        -   Probabilities must be non-negative.
+    -   $P(\Omega) = 1$.
+        -   Something has to happen!
+        -   Probabilities sum/integrate to 1.
+    -   $P(A \cup B) = P(A) + P(B), \; \forall A, B \in S, \; A\cup B = \emptyset$.
+        -   The probability of disjoint (mutually exclusive) events is equal to the sum of their individual probabilities.
 
-- We can formalize our intuitions with the **probability axioms** (sometimes called Kolmogorov's axioms):
-    + $P(A) \ge 0, \; \forall A \in S$. 
-        - Probabilities must be non-negative.
-    + $P(\Omega) = 1$. 
-        - Something has to happen!
-        - Probabilities sum/integrate to 1.
-    + $P(A \cup B) = P(A) + P(B), \; \forall A, B \in S, \; A\cup B = \emptyset$.
-        - The probability of disjoint (mutually exclusive) events is equal to the sum of their individual probabilities.
+## Definitions and properties of probability
 
-### Definitions and properties of probability
+-   Joint probability: $P(A \cap B)$. The probability that the two events will occur in one realization of the experiment.
 
-* Joint probability: $P(A \cap B)$. The probability that the two events will occur in one realization of the experiment.
+-   Law of total probability: $P(A) = P(A \cap B) + P(A \cap B^C)$.
 
-* Law of total probability: $P(A) = P(A \cap B) + P(A \cap B^C)$.
+-   Addition rule: $P(A \cup B) = P(A) + P(B) - P (A \cap B)$.
 
-* Addition rule: $P(A \cup B) = P(A) + P(B) - P (A \cap B)$.
+-   Conditional probability: $\displaystyle P(A|B)=\frac{P(A \cap B)}{P(B)}$
 
-* Conditional probability: $\displaystyle P(A|B)=\frac{P(A \cap B)}{P(B)}$
-    + the probability of  event $A$ occurring given that event $B$ has already occurred is the probability that both $A$ and $B$ occur together devided by the probability that event $B$ occurs
+    -   the probability of event $A$ occurring given that event $B$ has already occurred is the probability that both $A$ and $B$ occur together devided by the probability that event $B$ occurs
 
-* Bayes theorem: $\displaystyle P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}$
-    + $P(A|B)$: the probability of event A occurring given that B is true 
-    + $P(B|A)$: the probability of event B occurring given that A is true.
+-   Bayes theorem: $\displaystyle P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}$
 
+    -   $P(A|B)$: the probability of event A occurring given that B is true
+    -   $P(B|A)$: the probability of event B occurring given that A is true.
 
-### Random variables and probability distributions
+## Random variables and probability distributions
 
-- A **random variable** is a function ($X: \Omega \to \mathbb{R}$) of the outcome of a random generative process. Informally, it is a "placeholder" for whatever will be the output of a process we're studying.
+-   A **random variable** is a function ($X: \Omega \to \mathbb{R}$) of the outcome of a random generative process. Informally, it is a "placeholder" for whatever will be the output of a process we're studying.
 
-- A **probability distribution** describes the probabilities associated with the values of a random variable.
+-   A **probability distribution** describes the probabilities associated with the values of a random variable.
 
-- Random variables (and probability distributions) can be **discrete** or **continuous**.
+-   Random variables (and probability distributions) can be **discrete** or **continuous**.
 
-#### Discrete random variables and probability distributions
+### Discrete random variables and probability distributions
 
 -   A sample space in which there are a (finite or infinite) countable number of outcomes
 
 -   Each realization of random process has a discrete probability of occurring.
-    +   $f(X=x_i)=P(X=x_i)$ is the probability the variable takes the value $x_i$.
 
-##### An example {.unnumbered}
+    -   $f(X=x_i)=P(X=x_i)$ is the probability the variable takes the value $x_i$.
+
+#### An example {.unnumbered}
 
 -   What's the probability that we'll roll a 3 on one die roll: $$Pr(y=3) = \dfrac{1}{6}$$
 
@@ -73,111 +76,84 @@
 
 Let's do another example on the board, using the sum of two fair dice.
 
-:::callout-tip
+::: callout-tip
 ##### Exercise:
 
 What's the probability that the sum of two fair dice equals 7?
-
 :::
 
-#### Continuous random variables and probability distributions
+### Continuous random variables and probability distributions
 
 -   What happens when our outcome is continuous?
 -   There are an infinite number of outcomes. This makes the denominator of our fraction difficult to work with.
 -   The probability of the whole space must equal 1.
 -   The domain may not span -$\infty$ to $\infty$.
-    +   Even space between 0 and 1 is infinite!
+    -   Even space between 0 and 1 is infinite!
 -   Two common examples are the uniform and normal probability distributions, which we will discuss below.
 
-### Functions describing probability distributions
+## Functions describing probability distributions
 
-#### Probability Mass Function (PMF) -- Discrete Variables
+### Probability Mass Function (PMF) -- Discrete Variables
 
 Probability of each occurrence encoded in probability mass function (PMF)
 
-- $0 \leq f(x_i) \leq 1$: Probability of any value occurring must be between 0 and 1.
-    
+-   $0 \leq f(x_i) \leq 1$: Probability of any value occurring must be between 0 and 1.
+
 -   $\displaystyle\sum_{x}f(x_i) = 1$: Probabilities of all values must sum to 1.
 
-```{r echo=FALSE}
-# Plot the PMF
-barplot(c(1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1) / 36, # sum of two dice
-        names.arg = 2:12, 
-        col = "skyblue", 
-        xlab = "Sum of Two Dice", 
-        ylab = "Probability", 
-        main = "PMF of Sum of Rolling Two Dice",
-        ylim = c(0, 0.2))
-```
+![](images/pmf.png)
 
-#### Probability Density Function (PDF) -- Continuous Variables
+### Probability Density Function (PDF) -- Continuous Variables
 
-- Similar to PMF from before, but for continuous variables.
-- Using integration, it gives the probability a value falls within a particular interval
-   
-   $$P[a\le X\le b] = \displaystyle\int_a^b f(x) \, dx$$
-   
-- Total area under the curve is 1.
-  
--  $P(a < X < b)$ is the area under the curve between $a$ and $b$ (where $b > a$).
+-   Similar to PMF from before, but for continuous variables.
 
-```{r echo=FALSE}
-# Generate a sequence of values for the x-axis
-x <- seq(-4, 4, length.out = 100)
+-   Using integration, it gives the probability a value falls within a particular interval
 
-# Calculate the corresponding y-values (PDF values) using the dnorm function
-y <- dnorm(x)
+    $$P[a\le X\le b] = \displaystyle\int_a^b f(x) \, dx$$
 
-# Plot the normal distribution curve
-plot(x, y, type = "l", lwd = 2, col = "blue", 
-     xlab = "X", ylab = "Density", 
-     main = "Normal Distribution Curve (PDF)")
+-   Total area under the curve is 1.
 
-# Add a grid for better visualization
-grid()
-```
+-   $P(a < X < b)$ is the area under the curve between $a$ and $b$ (where $b > a$).
 
+![](images/pdf.png)
 
-
-![Box plot and PDF of a normal distribution $N(0, \sigma^2)$ ](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
+![Box plot and PDF of a normal distribution $N(0, \sigma^2)$](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
 
 Source: [Wikipedia Commons](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
 
-#### Cumulative Density Function (CDF)
+### Cumulative Density Function (CDF)
 
-##### Discrete {.unnumbered}
+#### Discrete {.unnumbered}
 
 -   Cumulatve density function is probability X will take a value of x or lower.
 -   PDF is written $f(x)$, and CDF is written $F'(x)$. $$F_X(x) = Pr(X\leq x)$$
 -   For discrete CDFs, that means summing up over all values.
 
-:::callout-tip
+::: callout-tip
 ##### Exercise:
 
 What is the probability of rolling a 6 or lower with two dice? $F(6)=?$
-
 :::
 
-##### Continuous {.unnumbered}
+#### Continuous {.unnumbered}
 
 -   We can't sum probabilities for continuous distributions (remember the 0 problem).
 -   Solution: integration $$F_Y(y) = \int_{-\infty}^{y} f(y) dy$$
 -   Examples of uniform distribution.
 
-### Common types of probability distributions
+## Common types of probability distributions
 
 There are many useful probability distributions. In this section we will cover three of the most common ones: the binomial, uniform, and normal distributions.
 
-#### Binomial distribution
+### Binomial distribution
 
 A Binomial distribution is defined as follow: $X \sim Binomial(n, p)$
 
-PMF: 
+PMF:
 
 $$
 {n \choose k} p^k(1-p)^{n-k}
-$$
-, where $n$ is the number of trials, $p$ is the probability of success, and $k$ is the number of successes.
+$$ , where $n$ is the number of trials, $p$ is the probability of success, and $k$ is the number of successes.
 
 Remember that:
 
@@ -197,7 +173,6 @@ dbinom(x = 0, size = 100, prob = 0.02)
 dbinom(x = 1, size = 100, prob = 0.02)
 ```
 
-
 Similarly, we can compute the CDF using R's `pbinom()` function:
 
 ```{r}
@@ -216,14 +191,13 @@ pbinom(q = 1, size = 100, prob = 0.02)
 #### Exercise
 
 Compute the probability of seeing between 1 and 10 voters of the candidate in a sample of 100 people.
-
 :::
 
-#### Uniform distribution
+### Uniform distribution
 
 A uniform distribution has two parameters: a minimum and a maximum. So $X \sim U(a, b)$.
 
-- PDF:
+-   PDF:
 
 $$
 \displaystyle{
@@ -234,7 +208,7 @@ $$
 }
 $$
 
-- CDF:
+-   CDF:
 
 $$
 \displaystyle{
@@ -268,14 +242,13 @@ punif(q = .3)
 #### Exercise
 
 Evaluate the CDF of $Y \sim U(-2, 2)$ at point $y = 1$. Use the formula and `punif()`.
-
 :::
 
-#### Normal distribution
+### Normal distribution
 
 A normal distribution has two parameters: a mean and a standard deviation. So $X \sim N(\mu, \sigma)$.
 
-- PDF: $2 {\displaystyle {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}$
+-   PDF: $2 {\displaystyle {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}$
 
 In R, `dnorm()` gives us the PDF of a standard normal distribution ($Z \sim N(0, 1)$):
 
@@ -284,7 +257,7 @@ ggplot() +
   stat_function(fun = dnorm, xlim = c(-4, 4))
 ```
 
-Like you might expect, `pnorm()` computes the CDF of a normal distribution (by default, the standard normal). 
+Like you might expect, `pnorm()` computes the CDF of a normal distribution (by default, the standard normal).
 
 ```{r}
 pnorm(0)
@@ -298,5 +271,4 @@ pnorm(1) - pnorm(-1)
 #### Exercise
 
 What is the probability of obtaining a value above 1.96 or below -1.96 in a standard normal probability distribution? Hint: use the `pnorm()` function.
-
 :::

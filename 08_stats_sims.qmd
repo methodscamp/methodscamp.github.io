@@ -1,39 +1,70 @@
 # Statistics and simulations
 
-## Statistics
+```{r}
+#| message: false
+library(tidyverse)
+```
 
-> The problems considered by probability and statistics are inverse to each other. In probability theory we consider some underlying process which has some randomness or uncertainty modeled by random variables, and we figure out what happens. In statistics we observe something that has happened, and try to figure out what underlying process would explain those observations. (quote attributed to [Persi Diaconis](https://stats.stackexchange.com/a/675))
+## Random sampling
 
-- In statistics we try to learn about a **data-generating process** (DGP) using our observed data. Example: GDP statistics.
+Before we jump to statistics and simulations, we'll cover how to do random sampling in R.
 
-- Usually we are restrained to **samples**, while our DGPs of interest are **population-based**. 
-    + So we use **random sampling** or refer to **superpopulations** as a way to justify how the data we observe can reasonably approximate the population.
+### Random sampling from theoretical distributions
 
-- Statistics has two main targets:
-    + **Estimation**: how we find a reasonable guess of an unknown property (parameter) of a DGP
-    + **Inference**: how we describe uncertainty about our estimate
-    
-- We use an **estimator** ($\hat\theta$), which is a function that summarizes data, as guess about a parameter $\theta$.
+#### Uniform distribution {.unnumbered}
 
-- Theoretical statistics is all about finding "good" estimators (let's see an example of different estimators). A few properties of good estimators:
-    + **Unbiasedness**: Across multiple random samples, an unbiased estimator gets the right answer on average.
-    + **Low variance**: Across multiple random samples, a low-variance estimator is more concentrated around the true parameter.
-    + BUT it's usually hard to get both unbiasedness and low variance. We usually quantify this via the mean squared error: $MSE = bias^2 + variance$. Comparing two estimators, the one with the lowest MSE is said to be more **efficient**.
-    + **Consistency**: A consistent estimator converges in probability to the true value. "If we had enough data, the probability that our estimate would be far from the truth would be close to zero" ([Aronow and Miller 2019](https://www.cambridge.org/core/books/foundations-of-agnostic-statistics/684756357E7E9B3DFF0A8157FB2DCECA), p. 105).
-    
-- Applied statistics is about using these techniques reasonably in messy real-world situations...
+For the uniform distribution, the arguments specify how many draws we want and the boundaries
 
-## Simulations
+```{r}
+runif(n = 20, min = -3, max = 3)
+```
 
-- In simulations, we generate fake data following standard procedures. Why?
-    + To better understand how our estimators work in different settings (the methods reason)
-    + To get insights about complex processes with many moving parts (the substantive reason) (let's talk about gerrymandering).
-    
-Before we jump into an example, we'll review some R tools that will build up to simulations.
+When we draw a million times from the distribution, we can then plot it and see that it does look as we would expect:
+
+```{r}
+set.seed(123)
+my_runif <- runif(n = 1000000, min = -3, max = 3)
+```
+
+```{r}
+ggplot(data.frame(my_runif), aes(x = my_runif)) +
+  geom_histogram(binwidth = 0.25, boundary = 0, closed = "right") +
+  scale_x_continuous(breaks = seq(-5, 5, 1), limits = c(-5, 5))
+```
+
+#### Binomial distribution {.unnumbered}
+
+For the binomial distribution, we can specify the number of draws, how many trials each draw will have, and the probability of success.
+
+For instance, we can ask R to do the following twenty times: flip a fair coin one hundred times, and count the number of tails.
+
+```{r}
+rbinom(n = 20, size = 100, prob = 0.5)
+```
+
+With `prob =` , we can implement unfair coins:
+
+```{r}
+rbinom(n = 20, size = 100, prob = 0.9)
+```
+
+#### Normal distribution {.unnumbered}
+
+For the Normal or Gaussian distribution, we specify the number of draws, the mean, and standard deviation:
+
+```{r}
+rnorm(n = 20, mean = 0, sd = 1)
+```
+
+::: callout-note
+#### Exercise
+
+Compute and plot `my_rnorm`, a vector with 10,000 draws from a Normal distribution $X$ with mean equal to -10 and standard deviation equal to 2 ($X\sim N(-10,2)$). You can recycle code!
+:::
 
 ### Random sampling from data
 
-In this module we will work with good ol' `mtcars`, one of R's most notable default datasets. We'll assign it to an object so it shows in our Environment pane:
+In this section we will work with good ol' `mtcars`, one of R's most notable default datasets. We'll assign it to an object so it shows in our Environment pane:
 
 ```{r}
 my_mtcars <- mtcars
@@ -44,11 +75,6 @@ Default datasets such as `mtcars` and `iris` are useful because they are availab
 :::
 
 We can use the function `sample()` to obtain random values from a vector. The `size =` argument specifies how many values we want. For example, let's get one random value of the "mpg" column:
-
-```{r}
-#| message: false
-library(tidyverse)
-```
 
 ```{r}
 sample(my_mtcars$mpg, size = 1)
@@ -102,67 +128,58 @@ my_mtcars |>
   slice_sample(prop = 0.5)
 ```
 
-And we can also sample with replacement:
+::: callout-note
+#### Exercise
 
-```{r}
-set.seed(123)
-my_mtcars |> 
-  slice_sample(prop = 1, replace = T)
-```
+Use `slice_sample()` to sample 32 rows from `mtcars` *with replacement*.
+:::
 
-### Random sampling from theoretical distributions
+## Statistics
 
-We can also draw sample numbers from theoretical distributions.
+> The problems considered by probability and statistics are inverse to each other. In probability theory we consider some underlying process which has some randomness or uncertainty modeled by random variables, and we figure out what happens. In statistics we observe something that has happened, and try to figure out what underlying process would explain those observations. (quote attributed to [Persi Diaconis](https://stats.stackexchange.com/a/675))
 
-#### Uniform distribution {.unnumbered}
+-   In statistics we try to learn about a **data-generating process** (DGP) using our observed data. Examples: surveys, GDP statistics.
 
-For the uniform distribution, the arguments specify how many draws we want and the boundaries
+-   Usually we are restrained to **samples**, while our DGPs of interest are **population-based**.
 
-```{r}
-runif(n = 20, min = -3, max = 3)
-```
+    -   So we use **random sampling** or refer to **superpopulations** as a way to justify how the data we observe can approximate the population.
 
-When we draw a million times from the distribution, we can then plot it and see that it does look as we would expect:
+-   Statistics has two main targets:
 
-```{r}
-set.seed(123)
-my_runif <- runif(n = 1000000, min = -3, max = 3)
-```
+    -   **Estimation**: how we find a reasonable guess of an unknown property (parameter) of a DGP
+    -   **Inference**: how we describe uncertainty about our estimate
 
-```{r}
-ggplot(data.frame(my_runif), aes(x = my_runif)) +
-  geom_histogram(binwidth = 0.25, boundary = 0, closed = "right") +
-  scale_x_continuous(breaks = seq(-5, 5, 1), limits = c(-5, 5))
-```
-
-#### Binomial distribution {.unnumbered}
-
-For the binomial distribution, we can specify the number of draws, how many trials each draw will have, and the probability of success.
-
-For instance, we can ask R to do the following twenty times: flip a fair coin one hundred times, and count the number of tails.
-
-```{r}
-rbinom(n = 20, size = 100, prob = 0.5)
-```
-
-With `prob =` , we can implement unfair coins:
-
-```{r}
-rbinom(n = 20, size = 100, prob = 0.9)
-```
-
-#### Normal distribution {.unnumbered}
-
-For the Normal or Gaussian distribution, we specify the number of draws, the mean, and standard deviation:
-
-```{r}
-rnorm(n = 20, mean = 0, sd = 1)
-```
+-   We use an **estimator** $\hat\theta(\cdot)$, which is a function that summarizes data, as a guess about a parameter $\theta$. A guess generated by an estimator in a given sample is called an **estimate**.
 
 ::: callout-note
 #### Exercise
 
-Compute and plot `my_rnorm`, a vector with one million draws from a Normal distribution $Z$ with mean equal to zero and standard deviation equal to one ($Z\sim N(0,1)$). You can recycle code from what we did for the uniform distribution!
+Suppose there's a uniform distribution $X \sim U(0, \text{unknown})$ out there.[^08_stats_sims-1] We want to use a sample from this distribution (let's say of n=30 observations) to estimate the unknown upper bound.
+
+Discuss: would the sample maximum be a good estimator? Why or why not?
+:::
+
+[^08_stats_sims-1]: This is a fascinating distribution with a rich history, and it is used in many statistical textbooks ([Whittinghill and Hogg, 2001](https://www.tandfonline.com/doi/pdf/10.1080/10691898.2001.11910653)). It is thoroughly covered in the UT SDS [Mathematical Statistics](https://web.archive.org/web/20210716123200/https://web.ma.utexas.edu/users/parker/384/index.htm) sequence.
+
+-   Theoretical statistics is all about finding "good" estimators. A few properties of good estimators:
+
+    -   **Unbiasedness**: Across multiple random samples, an unbiased estimator gets the right answer on average.
+    -   **Low variance**: Across multiple random samples, a low-variance estimator is more concentrated around the true parameter.
+    -   BUT it's sometimes hard to get both unbiasedness and low variance. So we have to make sacrifices. We usually quantify this via the mean squared error: $MSE = bias^2 + variance$. Comparing two estimators, the one with the lowest MSE is said to be more **efficient**.
+    -   **Consistency**: A consistent estimator converges in probability to the true value. "If we had enough data, the probability that our estimate would be far from the truth would be close to zero" ([Aronow and Miller 2019](https://www.cambridge.org/core/books/foundations-of-agnostic-statistics/684756357E7E9B3DFF0A8157FB2DCECA), p. 105).
+
+-   Applied statistics is about using these techniques reasonably in messy real-world situations...
+
+## Simulations
+
+-   In simulations, we generate fake data following standard procedures. Why?
+    -   To better understand how our estimators work in different settings (the methods reason)
+    -   To get insights about complex processes with many moving parts (the substantive reason) (let's talk about gerrymandering).
+
+::: callout-note
+#### Exercise
+
+Simulate drawing an n=30 random sample from a $X \sim U(0, 10)$ distribution and take its maximum value.
 :::
 
 ### Loops
@@ -175,15 +192,81 @@ for (i in 1:10){
 }
 ```
 
-> We talked about loops and various extensions in one of our methods workshops last year: [Speedy R](https://arcruz0.github.io/workshops/speedyr).
-
-### An example simulation: bootstrapping a sample mean
-
-Bootstrap (and its relatives) is one way in which we can do inference. We'll go through the intuition on the board.
+It's common to perform operations at each step and save the results. We typically create an empty object and "fill it in" at each step:
 
 ```{r}
-bootstrapped_means <- vector(mode = "numeric", length = 10000)
-for (i in 1:10000){
+results <- double(10)
+for (i in 1:10){
+  results[i] <- i ^ 2
+}
+```
+
+```{r}
+results
+```
+
+::: callout-note
+#### Functional loops
+
+Another way to do loops is with the `*apply()` family of functions:
+
+```{r}
+sapply(1:10, function(x){x ^ 2})
+```
+:::
+
+> We talked about loops and various extensions in one of our methods workshops last year: [Speedy R](https://arcruz0.github.io/workshops/speedyr).
+
+### An example simulation
+
+We will simulate our exercise from above 10,000 times:
+
+```{r}
+set.seed(1)
+k <- 10000 # number of simulations
+n <- 30    # number of observations in each simulation
+
+# define an empty numeric object
+simulated_estimates <- double(k)
+
+# loop: at each step draw a random n=30 sample and get its maximum 
+for (i in 1:k){
+  random_sample <- runif(n, 0, 10)
+  simulated_estimates[i] <- max(random_sample)
+}
+```
+
+Now we can analyze our simulated estimates:
+
+```{r}
+mean(simulated_estimates)
+```
+
+```{r}
+ggplot(data.frame(x = simulated_estimates), aes(x = x)) +
+  geom_histogram(binwidth = 0.05, boundary = 0, closed = "right")
+```
+
+::: callout-note
+#### Exercise
+
+We just simulated to evaluate the sample maximum as an estimator. Modify the code above to evaluate the following two estimators:
+
+-   $\displaystyle\text{(sample maximum)} \cdot \frac{(n+1)}{n}$
+
+-   $\displaystyle 2 \cdot \text{(sample mean)}$
+:::
+
+### Another example simulation: bootstrapping
+
+Bootstrap (and its relatives) is one way in which we can do *inference*, i.e., assess uncertainty. (We'll go through the intuition on the board.)
+
+```{r}
+# set seed an number of simulations
+set.seed(1)
+k <- 10000
+bootstrapped_means <- double(k)
+for (i in 1:k){
   m <- my_mtcars |> slice_sample(prop = 1, replace = T)
   bootstrapped_means[i] <- mean(m$mpg)
 }

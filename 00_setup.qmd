@@ -40,6 +40,7 @@ Below are RStudio projects for you to download, available as .zip compressed fil
 
 - [Download Part 1 of the class materials](materials/methodscamp_part1.zip).
 - [Download Part 2 of the class materials](materials/methodscamp_part2.zip).
+- [Download Part 3 of the class materials](materials/methodscamp_part3.zip).
 - (Additional projects will be available in the following days).
 
 ::: {.callout-warning}
