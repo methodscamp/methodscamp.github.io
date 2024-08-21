@@ -44,8 +44,6 @@ format:
         light: flatly
         dark: darkly
     email-obfuscation: javascript
-  pdf:
-    documentclass: scrreprt
 
 editor: source
 
