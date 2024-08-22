@@ -1,0 +1,304 @@
+# Text analysis
+
+## String manipulation with `stringr`
+
+R stores text as strings, i.e., sequence of characters that can contain letters, numbers, and symbols.
+
+Often we want to manipulate strings in different ways, when the `stringr` package from the `tidyverse` comes in handy.
+
+```{r}
+library(tidyverse)
+```
+
+We can combine strings with `str_c()`, using any separator we want:
+
+```{r}
+str_c("Last name", "First name", "Address", sep = ", ")
+```
+
+Or we split strings with `str_split_1()`:
+
+```{r}
+str_split_1("Last name, First name, Address", pattern = ", ")
+```
+
+Also some `stringr` functions modify capitalization:
+
+```{r}
+str_to_title("joe biden")
+```
+
+Or remove unnecessary spaces:
+
+```{r}
+str_squish("    Joe    Biden   ")
+```
+
+We encourage you to check the [`stringr` cheatsheet](https://rstudio.github.io/cheatsheets/html/strings.html) for more string manipulation functions.
+
+Let's create a somewhat messy data frame of companies:
+
+```{r}
+companies <- data.frame(
+  id = c("A-20-322", "A-10-231", "B-20-865", "C-20-800", "A-20-900", "C-10-022",
+         "B-10-822", "C-20-029", "A-20-116"),
+  company = c("Pulse Solutions Co.", "Apex Engineering LLC", "NovaTech INC", 
+              "BetterPetFood Ltd", "Proxima Inc.", "MakerMind Studios LLC", 
+              "TerraVerde Co.", "PulsePlay Productions Ltd", "Kinetix Design Co"),
+  year_estab = c("c. 1990", "1995", "2000 APP", "1980", "2011", "circa 1950", 
+                 "1976 approx", "2010", "2016 appr")
+)
+```
+
+Perhaps we want to detect, extract, or replace the letter A in "id": 
+
+```{r}
+companies |> 
+  mutate(new = str_detect(id, "A"))
+```
+
+```{r}
+companies |> 
+  mutate(new = str_extract(id, "A"))
+```
+
+```{r}
+companies |> 
+  mutate(new = str_replace(id, "A", "Z"))
+```
+
+::: callout-note
+#### Exercise
+
+Filter the dataset to only get companies that have the "-20-" tag in their ID. Your code:
+
+
+:::
+
+A very useful tool in string manipulation is that of **regular expressions** (or **regex**). Regular expressions allow you to search for patterns in text.
+
+For example, let's extract the *uppercase letter* from "id" using the "[:upper:]" regular expression. NB: "[:lower:]" would pick up a lowercase letter and "[:alpha]" would pick up any letter. 
+
+```{r}
+companies |> 
+  mutate(new = str_extract(id, "[:upper:]"))
+```
+
+Or extract the actual number from "year_estab". The following pattern stands for "a digit, four consecutive times":
+
+```{r}
+companies |> 
+  mutate(new = str_extract(year_estab, "\\d{4}"))
+```
+
+Or detect the companies which are LLCs/Ltds:
+
+```{r}
+companies |> 
+  mutate(new = str_detect(company, "LLC|Ltd"))
+```
+
+::: callout-note
+#### Exercise
+
+1. Discuss: how would you identify companies for which there's uncertainty in the year of establishment? What's the pattern in them?
+
+2. Filter the dataset to only keep observations with uncertainty. Hint: you could use the "[:alpha:]" regular expression.
+
+:::
+
+## Tidy text analysis
+
+We can use the `tidytext` package to conduct some basic text analysis using tidy data principles. Remember that in tidy data ([Wickham 2014](https://doi.org/10.18637/jss.v059.i10)):
+
+    -   Each variable is a column.
+    -   Each observation is a row.
+    -   Each type of observational unit is a (separate) table.
+
+Here our observational unit will be the *token*, i.e., a unit of text that's meaningful on its own. In the most simple case, we'll use words as tokens.
+
+### Getting text data to a tidy format
+
+Let's say we have some text as lines (very common for speech, etc.):
+
+```{r}
+lyrics_lines <- data.frame(line = c("I hate every ape I see", 
+                                    "From chimpan-A to chimpan-Z",
+                                    "Oh my God, I was wrong",
+                                    "It was Earth all along",
+                                    "You finally made a monkey",
+                                    "Yes you finally made a monkey out of me"))
+lyrics_lines
+```
+
+We break the text into individual tokens (tokenization) using `tidytext`'s `unnest_tokens()` function.
+
+```{r}
+library(tidytext)
+```
+
+```{r}
+lyrics_words <- lyrics_lines |> 
+  unnest_tokens(output = "word", input = "line", # column names in output and input
+                token = "words")
+lyrics_words
+```
+
+
+### Counts
+
+Once we have our tidy structure, we can then perform very simple tasks such as finding the most common words in our text as a whole. 
+
+```{r}
+lyrics_words |> 
+  count(word, sort = T)
+```
+
+Since this is just a data frame, we can use all the tools we've learned. For example, let's make a ranking plot for words appearing at least twice:
+
+```{r}
+lyrics_words |> 
+  count(word, sort = T) |> 
+  filter(n >= 2) |> 
+  ggplot(aes(x = n, y = fct_reorder(word, n))) +
+    geom_col()
+```
+
+
+::: callout-note
+#### Exercise
+
+Look up the lyrics to your favorite song at the moment (no guilty pleasures here!). Then, follow the process described above to count the words in the chorus: store the text as a line-by-line dataset, tokenize by words, and count/plot.
+:::
+
+If you are curious about the repetitiveness of lyrics in pop music over time, I might recommend checking out this fun article and analysis done by Colin Morris at [*The Pudding.*](https://pudding.cool/2017/05/song-repetition/)
+
+### A richer corpus
+
+Let's use the text from a classic book: "A Vindication of the Rights of Woman" by Mary Wollstonecraft (1792). This and other classics are available for download in [Project Gutenberg](https://www.gutenberg.org/), and there's an R package for doing it: [`gutenbergr`](https://github.com/ropensci/gutenbergr).
+
+```{r}
+rights_of_women <- read_csv("data/rights_of_women.csv")
+```
+
+We can tokenize the text by words:
+
+```{r}
+rights_of_women_words <- rights_of_women |> 
+  unnest_tokens(output = "word", input = "text", # column names in output and input
+                token = "words")
+```
+
+And count the number of words:
+
+```{r}
+rights_of_women_words |> 
+  count(word, sort = T)
+```
+
+
+### Preprocessing 
+
+Why might want to do a bit of preprocessing and remove these "stop words". `tidytext` comes with a little dictionary of them:
+
+```{r}
+stop_words_smart <- stop_words |> 
+  filter(lexicon == "SMART")
+stop_words_smart
+```
+
+So you can do something like:
+
+```{r}
+rights_of_women_words_cl <- rights_of_women_words |> 
+  filter(!word %in% stop_words_smart$word)
+```
+
+```{r}
+rights_of_women_words_cl |> 
+  count(word, sort = T)
+```
+
+### Counts by document
+
+We might want to get the most common words in each "document," e.g., chapters in this book.
+
+```{r}
+count_by_chapter <- rights_of_women_words_cl |> 
+  # count words by chapter
+  count(word, chapter) |> 
+  # get the top 10 in each chapter
+  slice_max(n = 10, order_by = n, by = chapter)
+count_by_chapter
+```
+
+```{r}
+#| fig-height: 6
+ggplot(count_by_chapter, aes(x = n, 
+                             y = reorder_within(word, n, chapter))) +
+  geom_col() +
+  facet_wrap(~chapter, scales = "free") + 
+  scale_y_reordered()
+```
+
+### Most distinctive terms by document
+
+Another way to quantify what a document is about is to use TF-IDF (term frequency - inverse document frequency; [Silge and Robinson, 2017, ch. 3](https://www.tidytextmining.com/tfidf)).
+
+The idea is to balance two things:
+- TF: the relative frequency of a term
+- IDF: how common/uncommon the term is across documents 
+
+$$
+\begin{aligned}
+TFIDF_{i,d} &= TF_{i, d} \cdot IDF_i \\
+  TFIDF_{i,d} &= \frac{n_{i \text{ in d}}}{n_{\text{total in doc}}} \cdot \text{ln}(\frac{n_{\text{docs}}}{n_{\text{docs containing i}}})
+\end{aligned}
+$$
+For example, let's imagine we have 5 documents and we're trying to determine the TF-IDF of terms in a document with 100 total terms:
+
+```{r}
+(10 / 100) * # term appearing in 10% of terms in doc
+  log(6 / 6) # term present in all documents
+```
+
+```{r}
+(10 / 100) * # term appearing in 10% of terms in doc
+  log(6 / 3) # term present in half of documents
+```
+
+```{r}
+(10 / 100) * # term appearing in 10% of terms in doc
+  log(6 / 1) # term present in just one documents
+```
+
+The `bind_tf_idf()` adds TF-IDFs to a grouped token count:
+
+```{r}
+tfidf_by_chapter <- rights_of_women_words_cl |> 
+  # count words by chapter
+  count(word, chapter, sort = T) |> 
+  # add TF-IDF
+  bind_tf_idf(term = word, document = chapter, n = n) |> 
+  # get the top 10 in each chapter
+  slice_max(n = 10, order_by = tf_idf, by = chapter)
+tfidf_by_chapter
+```
+
+```{r}
+#| fig-height: 6
+ggplot(tfidf_by_chapter, aes(x = tf_idf, 
+                             y = reorder_within(word, tf_idf, chapter))) +
+  geom_col() +
+  facet_wrap(~chapter, scales = "free") + 
+  scale_y_reordered()
+```
+
+::: callout-note
+#### Exercise
+
+The "data/books.csv" dataset contains the text of two classics in political theory: Hobbes' "Leviathan" (1651) and Mill's "On Liberty" (1859). (Both come from Project Gutenberg as well).
+
+Make a plot with the most distinctive terms in each book, according to TF-IDF. Hint: think of what "documents" will be in this case (previously we used chapters).
+
+:::

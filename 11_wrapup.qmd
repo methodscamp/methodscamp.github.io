@@ -58,6 +58,12 @@ write_csv(mtcars, "mtcars.csv")
 
 -   Double-click the `.Rproj` file to reopen the project and pick up where you left off! Everything you need should be ready to go.
 
+## Quarto documents and R Scripts
+
+We have worked with .qmd scripts during Methods Camp. [Quarto](https://quarto.org/) is a very flexible format that allows code, math, and text. People use it to make reports (PDF or HTML), presentations, websites, etc. You can create a Quarto document from RStudio using `File > New File > Quarto Document`, and then compile it to its final form using the "Render" button.
+
+You should also be aware of regular R scripts, with a .R extension. They can be created in RStudio using `File > New File > R Script`. They just allow code: to add comments, you need to preface them by the pound sign (`#`).
+
 ## Other software resources
 
 ### Overleaf
@@ -70,7 +76,7 @@ write_csv(mtcars, "mtcars.csv")
 
     -   LaTeX is a software used for typesetting technical documents. It is used widely in our discipline for the preparation for manuscripts to journals and other publishing venues.
 
--   UT Austin actually provides free access to Overleaf Professional to all graduate students using your UT email.
+-   UT Austin actually provides free access to Overleaf Professional to graduate students using your UT email. (The Professional accounts allows more collaborators on projects and other goodies.)
 
 ::: callout-note
 ## Exercise
@@ -78,18 +84,14 @@ write_csv(mtcars, "mtcars.csv")
 Create an Overleaf Professional account using your UT email address. You can do so [here](https://www.overleaf.com/edu/utexas).
 :::
 
--   Overleaf Professional upgrades include:
-
-    -   Real-time collaboration
-    -   Real-time track changes and visible collaborator cursor(s)
-    -   Real-time PDF preview of your document while editing and writing
-    -   Full history view of your documents
-    -   Two-way sync with Dropbox and GitHub
-    -   Reference manager sync and advanced reference search.
-    -   UT Austin resource portal, including UT Austin templates, FAQs, and resource links
-
 ::: callout-important
+
+$$
+\hat{\beta} = (X'X)^{-1}X'Y
+$$
+
 LaTeX is actually the markup language that the math in Quarto and this website! If you are curious about general syntax and commands, you can access [our repository](https://github.com/methodscamp/methodscamp.github.io) at any time to get a closer look.
+
 :::
 
 ### Zotero
@@ -100,33 +102,15 @@ LaTeX is actually the markup language that the math in Quarto and this website! 
 
 -   Zotero is an open-source reference manager used to store, manage, and cite bibliographic references, such as books and articles.
 
--   When it is time to write, you can insert your sources directly into your paper as in-text citations via a word processor plugin, which generates a bibliography in your style of choice.
+-   When it is time to write, you can insert your sources directly into your paper as in-text citations via a word processor plugin, which generates a bibliography in your style of choice (e.g., APA). It works with Word, Google Docs, Overleaf, and RStudio.
 
     -   This can save a lot of time, especially when you have to change citation styles for submission to another journal.
 
 -   You can download the software for free [here](https://www.zotero.org/).
 
-    -   You can also find a guide on how to install it [here](https://www.zotero.org/support/installation).
-
 ::: callout-note
 Zotero is one of many other reference managers out there. Alternatives include Mendeley and EndNote, among others. You should choose whatever option best suits your needs.
 :::
-
-#### Benefits of Zotero
-
--   If you have not yet chosen a reference manager or are considering switching, below are some advantages of Zotero:
-
-    -   Works as a standalone desktop software with plugins for [Chrome](https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc), [Safari](https://www.zotero.org/support/kb/safari_compatibility), and [Firefox](https://www.zotero.org/download/connectors)
-    -   Full compatibility with Google Docs
-    -   Free plugin for Word and LibreOffice included
-    -   Includes most popular citation styles with more styles available on the [Zotero Style Repository](https://www.zotero.org/styles)
-    -   Drag and drop PDF files into the library, extracting metadata such as authors, year, etc.
-    -   Allows advanced searches of all content in your library using full-text PDF indexing
-    -   Use cloud storage (optional) and sync libraries across devices
-    -   Create unlimited private or public groups and collaborate by sharing files and citations
-    -   300MB of free cloud storage and 2GB of storage for \$20 USD/year (equal to \$1.67 per month)
-
--   [Here](https://www.zotero.org/support/quick_start_guide) is a comprehensive guide to unlocking all of Zotero's potential.
 
 ## Methods at UT
 
@@ -176,22 +160,38 @@ You can also take courses through the Economics, Business (IROM), Sociology, Mat
 
 - Software and Topic Short Courses at SDS (see their [Events](https://stat.utexas.edu/events) page): R, Python, Stata, etc.
 
-### Other resources
+### Methods Fellow
 
-Summer programs at UT:
+The Methods Fellow is a grad student who serves as a Methods TA for all other UT Gov grad students.
 
--   Short courses in statistics (department sometimes offers scholarships to cover part of the cost)
+- Holds office hours
+- Hosts a Methods Co-working Hour
+- Organizes workshops
 
-Summer programs outside UT:
+### Methods summer programs
 
 -   [ICPSR](https://www.icpsr.umich.edu/web/pages/) (Inter-university Consortium for Political and Social Research)
 
     -   Ann Arbor, Michigan
 
--   [EITM](https://eitminstitute.org/) (Empirical Implications of Theoretical Models)
-
-    -   Houston and other locations (Michigan, Duke, Berkeley, Emory)
-
 -   [IQMR](https://www.maxwell.syr.edu/research/center-for-qualitative-and-multi-method-inquiry/institute-for-qualitative-multi-method-research) (Institute for Qualitative and Multi-Method Research)
 
     -   Syracuse, NY
+    
+-   [EITM](https://eitminstitute.org/) (Empirical Implications of Theoretical Models)
+
+    -   Various locations
+
+### More methods camps!
+
+- [UT Methods Camp Website](https://methodscamp.github.io/)
+
+    + Check out the PDF download!
+    
+- [Harvard Math Prefresher](https://iqss.github.io/prefresher/)
+
+- [Northwestern Math Camp (2022)](https://github.com/NUpolisci/NU-math-camp?tab=readme-ov-file)
+
+- [Duke Math Camp (2019)](https://people.duke.edu/~das76/Math_Camp_Info_2019.pdf)
+
+    + Make sure to follow the links for the videos, etc.
