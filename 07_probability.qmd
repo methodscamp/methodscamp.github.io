@@ -117,9 +117,9 @@ Probability of each occurrence encoded in probability mass function (PMF)
 
 ![](images/pdf.png)
 
-![Box plot and PDF of a normal distribution $N(0, \sigma^2)$](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
+![Box plot and PDF of a normal distribution $N(0, \sigma^2)$](images/Boxplot_vs_PDF.png)
 
-Source: [Wikipedia Commons](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
+Source: [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Boxplot_vs_PDF.svg)
 
 ### Cumulative Density Function (CDF)
 

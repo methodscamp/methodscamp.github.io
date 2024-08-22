@@ -28,7 +28,7 @@ book:
     - 10_a_note_about_ai.qmd
     - 11_wrapup.qmd
     - references.qmd
-  # downloads: pdf
+  downloads: pdf
   site-url: https://methodscamp.github.io/
   repo-url: https://github.com/methodscamp/methodscamp.github.io
   search: true
@@ -47,6 +47,9 @@ format:
         light: flatly
         dark: darkly
     email-obfuscation: javascript
+    
+pdf:
+  documentclass: scrreprt
 
 editor: source
 
