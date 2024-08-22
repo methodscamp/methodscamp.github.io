@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Probability – Methods Camp</title>
+<title>10&nbsp; A Note about AI – Methods Camp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -84,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./08_stats_sims.html" rel="next">
-<link href="./06_tidy_data2.html" rel="prev">
+<link href="./11_wrapup.html" rel="next">
+<link href="./09_text_analysis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -125,35 +91,6 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -166,7 +103,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_probability.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_a_note_about_ai.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">A Note about AI</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -246,7 +183,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07_probability.html" class="sidebar-item-text sidebar-link active">
+  <a href="./07_probability.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
@@ -264,7 +201,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_a_note_about_ai.html" class="sidebar-item-text sidebar-link">
+  <a href="./10_a_note_about_ai.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">A Note about AI</span></span></a>
   </div>
 </li>
@@ -290,25 +227,10 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-probability" id="toc-what-is-probability" class="nav-link active" data-scroll-target="#what-is-probability"><span class="header-section-number">7.1</span> What is probability?</a></li>
-  <li><a href="#definitions-and-properties-of-probability" id="toc-definitions-and-properties-of-probability" class="nav-link" data-scroll-target="#definitions-and-properties-of-probability"><span class="header-section-number">7.2</span> Definitions and properties of probability</a></li>
-  <li><a href="#random-variables-and-probability-distributions" id="toc-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#random-variables-and-probability-distributions"><span class="header-section-number">7.3</span> Random variables and probability distributions</a>
-  <ul class="collapse">
-  <li><a href="#discrete-random-variables-and-probability-distributions" id="toc-discrete-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#discrete-random-variables-and-probability-distributions"><span class="header-section-number">7.3.1</span> Discrete random variables and probability distributions</a></li>
-  <li><a href="#continuous-random-variables-and-probability-distributions" id="toc-continuous-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#continuous-random-variables-and-probability-distributions"><span class="header-section-number">7.3.2</span> Continuous random variables and probability distributions</a></li>
-  </ul></li>
-  <li><a href="#functions-describing-probability-distributions" id="toc-functions-describing-probability-distributions" class="nav-link" data-scroll-target="#functions-describing-probability-distributions"><span class="header-section-number">7.4</span> Functions describing probability distributions</a>
-  <ul class="collapse">
-  <li><a href="#probability-mass-function-pmf-discrete-variables" id="toc-probability-mass-function-pmf-discrete-variables" class="nav-link" data-scroll-target="#probability-mass-function-pmf-discrete-variables"><span class="header-section-number">7.4.1</span> Probability Mass Function (PMF) – Discrete Variables</a></li>
-  <li><a href="#probability-density-function-pdf-continuous-variables" id="toc-probability-density-function-pdf-continuous-variables" class="nav-link" data-scroll-target="#probability-density-function-pdf-continuous-variables"><span class="header-section-number">7.4.2</span> Probability Density Function (PDF) – Continuous Variables</a></li>
-  <li><a href="#cumulative-density-function-cdf" id="toc-cumulative-density-function-cdf" class="nav-link" data-scroll-target="#cumulative-density-function-cdf"><span class="header-section-number">7.4.3</span> Cumulative Density Function (CDF)</a></li>
-  </ul></li>
-  <li><a href="#common-types-of-probability-distributions" id="toc-common-types-of-probability-distributions" class="nav-link" data-scroll-target="#common-types-of-probability-distributions"><span class="header-section-number">7.5</span> Common types of probability distributions</a>
-  <ul class="collapse">
-  <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution"><span class="header-section-number">7.5.1</span> Binomial distribution</a></li>
-  <li><a href="#uniform-distribution" id="toc-uniform-distribution" class="nav-link" data-scroll-target="#uniform-distribution"><span class="header-section-number">7.5.2</span> Uniform distribution</a></li>
-  <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><span class="header-section-number">7.5.3</span> Normal distribution</a></li>
-  </ul></li>
+  <li><a href="#gpt-and-wittgensteins-language-philosophy-1" id="toc-gpt-and-wittgensteins-language-philosophy-1" class="nav-link active" data-scroll-target="#gpt-and-wittgensteins-language-philosophy-1"><span class="header-section-number">10.1</span> GPT and Wittgenstein’s Language Philosophy </a></li>
+  <li><a href="#example-1-translation" id="toc-example-1-translation" class="nav-link" data-scroll-target="#example-1-translation"><span class="header-section-number">10.2</span> Example 1: Translation</a></li>
+  <li><a href="#example-2-tidy-up-your-writing" id="toc-example-2-tidy-up-your-writing" class="nav-link" data-scroll-target="#example-2-tidy-up-your-writing"><span class="header-section-number">10.3</span> Example 2: Tidy up your writing</a></li>
+  <li><a href="#example-3-dealing-with-data" id="toc-example-3-dealing-with-data" class="nav-link" data-scroll-target="#example-3-dealing-with-data"><span class="header-section-number">10.4</span> Example 3: Dealing with data</a></li>
   </ul>
 </nav>
     </div>
@@ -317,7 +239,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">A Note about AI</span></h1>
 </div>
 
 
@@ -334,350 +256,111 @@ window.Quarto = {
 </header>
 
 
-<section id="what-is-probability" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="what-is-probability"><span class="header-section-number">7.1</span> What is probability?</h2>
-<ul>
-<li>Informally, a probability is a number that describes how likely an event is.
-<ul>
-<li>It is, by definition, between 0 and 1.</li>
-<li>What is the probability that a fair coin flip will result in heads?</li>
-</ul></li>
-<li>We can also think of a probability as an outcome’s <strong>relative frequency</strong> after repeating an “experiment” many times.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
-<ul>
-<li>In this setting, an experiment is “an action or a set of actions that produce stochastic [random] events of interest” (<a href="https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science">Imai and Williams 2022</a>, p.&nbsp;281). Not to confuse with scientific experiments!</li>
-<li>If we were to flip a million fair coins, what will be the proportion of heads?</li>
-</ul></li>
-</ul>
-<!-- -->
-<ul>
-<li>A <em>probability space</em> <span class="math inline">\((\Omega, S, P)\)</span> is a formal way to talk about a random process:
-<ul>
-<li>The sample space (<span class="math inline">\(\Omega\)</span>) is the set of all possible outcomes.</li>
-<li>The event space (<span class="math inline">\(S\)</span>) is a collection of events (an event is a subset of <span class="math inline">\(\Omega\)</span>).</li>
-<li>The probability measure (<span class="math inline">\(P\)</span>) is a function that assigns a probability in <span class="math inline">\(\mathbb{R}\)</span> to every event in <span class="math inline">\(S\)</span>. So <span class="math inline">\(P: S \rightarrow \mathbb{R}\)</span>.</li>
-</ul></li>
-<li>We can formalize our intuitions with the <strong>probability axioms</strong> (sometimes called Kolmogorov’s axioms):
-<ul>
-<li><span class="math inline">\(P(A) \ge 0, \; \forall A \in S\)</span>.
-<ul>
-<li>Probabilities must be non-negative.</li>
-</ul></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span>.
-<ul>
-<li>Something has to happen!</li>
-<li>Probabilities sum/integrate to 1.</li>
-</ul></li>
-<li><span class="math inline">\(P(A \cup B) = P(A) + P(B), \; \forall A, B \in S, \; A\cup B = \emptyset\)</span>.
-<ul>
-<li>The probability of disjoint (mutually exclusive) events is equal to the sum of their individual probabilities.</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="definitions-and-properties-of-probability" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="definitions-and-properties-of-probability"><span class="header-section-number">7.2</span> Definitions and properties of probability</h2>
-<ul>
-<li><p>Joint probability: <span class="math inline">\(P(A \cap B)\)</span>. The probability that the two events will occur in one realization of the experiment.</p></li>
-<li><p>Law of total probability: <span class="math inline">\(P(A) = P(A \cap B) + P(A \cap B^C)\)</span>.</p></li>
-<li><p>Addition rule: <span class="math inline">\(P(A \cup B) = P(A) + P(B) - P (A \cap B)\)</span>.</p></li>
-<li><p>Conditional probability: <span class="math inline">\(\displaystyle P(A|B)=\frac{P(A \cap B)}{P(B)}\)</span></p>
-<ul>
-<li>the probability of event <span class="math inline">\(A\)</span> occurring given that event <span class="math inline">\(B\)</span> has already occurred is the probability that both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur together devided by the probability that event <span class="math inline">\(B\)</span> occurs</li>
-</ul></li>
-<li><p>Bayes theorem: <span class="math inline">\(\displaystyle P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}\)</span></p>
-<ul>
-<li><span class="math inline">\(P(A|B)\)</span>: the probability of event A occurring given that B is true</li>
-<li><span class="math inline">\(P(B|A)\)</span>: the probability of event B occurring given that A is true.</li>
-</ul></li>
-</ul>
-</section>
-<section id="random-variables-and-probability-distributions" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="random-variables-and-probability-distributions"><span class="header-section-number">7.3</span> Random variables and probability distributions</h2>
-<ul>
-<li><p>A <strong>random variable</strong> is a function (<span class="math inline">\(X: \Omega \to \mathbb{R}\)</span>) of the outcome of a random generative process. Informally, it is a “placeholder” for whatever will be the output of a process we’re studying.</p></li>
-<li><p>A <strong>probability distribution</strong> describes the probabilities associated with the values of a random variable.</p></li>
-<li><p>Random variables (and probability distributions) can be <strong>discrete</strong> or <strong>continuous</strong>.</p></li>
-</ul>
-<section id="discrete-random-variables-and-probability-distributions" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="discrete-random-variables-and-probability-distributions"><span class="header-section-number">7.3.1</span> Discrete random variables and probability distributions</h3>
-<ul>
-<li><p>A sample space in which there are a (finite or infinite) countable number of outcomes</p></li>
-<li><p>Each realization of random process has a discrete probability of occurring.</p>
-<ul>
-<li><span class="math inline">\(f(X=x_i)=P(X=x_i)\)</span> is the probability the variable takes the value <span class="math inline">\(x_i\)</span>.</li>
-</ul></li>
-</ul>
-<section id="an-example" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="an-example">An example</h4>
-<ul>
-<li><p>What’s the probability that we’ll roll a 3 on one die roll: <span class="math display">\[Pr(y=3) = \dfrac{1}{6}\]</span></p></li>
-<li><p>If one roll of the die is an “experiment,” we can think of a 3 as a “success.”</p></li>
-<li><p><span class="math inline">\(Y \sim Bernoulli \left(\frac{1}{6} \right)\)</span></p></li>
-<li><p>Fair coins are <span class="math inline">\(\sim Bernoulli(.5)\)</span>, for example.</p></li>
-<li><p>More generally, <span class="math inline">\(Bernoulli(\pi )\)</span>. We’ll talk about other probability distributions soon.</p>
-<ul>
-<li><span class="math inline">\(\pi\)</span> represents the probability of success.</li>
-</ul></li>
-</ul>
-<p>Let’s do another example on the board, using the sum of two fair dice.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<section id="gpt-and-wittgensteins-language-philosophy-1" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="gpt-and-wittgensteins-language-philosophy-1"><span class="header-section-number">10.1</span> GPT and Wittgenstein’s Language Philosophy <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Ludwig_Wittgenstein_1929.jpg" class="img-fluid" alt="Ludwig Wittgenstein 1929"></th>
+<th style="text-align: center;"><img src="https://upload.wikimedia.org/wikipedia/en/5/57/Philosophical_Investigations%2C_first_English_edition.jpg" class="img-fluid" alt="Philosophical Investigations, first English edition"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Ludwig Wittgenstein 1929</td>
+<td style="text-align: center;"><em>Philosophical Investigations</em>, First English Edition</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>I asked chat GPT the following question:</strong></p>
+<p>“The philosopher Ludwig Wittgenstein wrote two influential books on language, <em>Tractatus Logico-Philosophicus</em> and <em>Philosophical Investigations</em>. As a language model, which of Wittgenstein‘s books do you think is closer to your model?”</p>
+<p><strong>GPT replies:</strong></p>
+<p>As a language model, I would be more closely related to the ideas expressed in <em>Wittgenstein’s later work, Philosophical Investigations</em>.”</p>
+<p>“Tractatus Logico-Philosophicus” presents a picture theory of language, emphasizing logical structure and the correspondence between language and reality. This book operates within a framework where language’s primary function is to describe the world through propositions that can be clearly analyzed.</p>
+<p>In contrast, “Philosophical Investigations” explores the idea that the meaning of language is derived from its use in various forms of life. Wittgenstein shifts from a rigid logical structure to a more fluid, context-dependent view of language, emphasizing the role of language in social interactions and everyday activities.</p>
+<p>As a language model, I generate responses based on patterns in data derived from a wide range of contexts and uses of language. My operation aligns more with the notion that meaning is use-dependent and context-driven, akin to the perspective in “Philosophical Investigations.” This work’s focus on the diverse ways language functions in different scenarios parallels how I process and generate text based on a vast array of linguistic inputs.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise:
+Consume AI wisely!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What’s the probability that the sum of two fair dice equals 7?</p>
-</div>
-</div>
-</section>
-</section>
-<section id="continuous-random-variables-and-probability-distributions" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="continuous-random-variables-and-probability-distributions"><span class="header-section-number">7.3.2</span> Continuous random variables and probability distributions</h3>
 <ul>
-<li>What happens when our outcome is continuous?</li>
-<li>There are an infinite number of outcomes. This makes the denominator of our fraction difficult to work with.</li>
-<li>The probability of the whole space must equal 1.</li>
-<li>The domain may not span -<span class="math inline">\(\infty\)</span> to <span class="math inline">\(\infty\)</span>.
-<ul>
-<li>Even space between 0 and 1 is infinite!</li>
-</ul></li>
-<li>Two common examples are the uniform and normal probability distributions, which we will discuss below.</li>
+<li>GPT can help with programming, but you must have <a href="https://www.youtube.com/shorts/yj73GIEKmLI">domain knowledge</a>.</li>
+<li>Interactions with ChatGPT are not exactly repeatable.</li>
+<li>GPT can help with expediting search from Google or Stack Overflow for troubleshooting, but it is not always correct.</li>
+<li>Read GPT’s explanation carefully to make sure it does what you want. It is a tool to help you learn, not to do the work for you!</li>
+<li><strong>Try to type out the generated the code yourself, do NOT copy and paste</strong></li>
+<li>In your problem sets, always acknowledge that you have consulted AI for support.<br>
+</li>
+<li>When errors occur, copy the error messages and paste them to GPT for troubleshooting.</li>
+<li>You can continue with follow-up instructions to improve the results.</li>
+<li>In case of a catch-22 situation, use your domain expertise.</li>
 </ul>
-</section>
-</section>
-<section id="functions-describing-probability-distributions" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="functions-describing-probability-distributions"><span class="header-section-number">7.4</span> Functions describing probability distributions</h2>
-<section id="probability-mass-function-pmf-discrete-variables" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="probability-mass-function-pmf-discrete-variables"><span class="header-section-number">7.4.1</span> Probability Mass Function (PMF) – Discrete Variables</h3>
-<p>Probability of each occurrence encoded in probability mass function (PMF)</p>
-<ul>
-<li><p><span class="math inline">\(0 \leq f(x_i) \leq 1\)</span>: Probability of any value occurring must be between 0 and 1.</p></li>
-<li><p><span class="math inline">\(\displaystyle\sum_{x}f(x_i) = 1\)</span>: Probabilities of all values must sum to 1.</p></li>
-</ul>
-<p><img src="images/pmf.png" class="img-fluid"></p>
-</section>
-<section id="probability-density-function-pdf-continuous-variables" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="probability-density-function-pdf-continuous-variables"><span class="header-section-number">7.4.2</span> Probability Density Function (PDF) – Continuous Variables</h3>
-<ul>
-<li><p>Similar to PMF from before, but for continuous variables.</p></li>
-<li><p>Using integration, it gives the probability a value falls within a particular interval</p>
-<p><span class="math display">\[P[a\le X\le b] = \displaystyle\int_a^b f(x) \, dx\]</span></p></li>
-<li><p>Total area under the curve is 1.</p></li>
-<li><p><span class="math inline">\(P(a &lt; X &lt; b)\)</span> is the area under the curve between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (where <span class="math inline">\(b &gt; a\)</span>).</p></li>
-</ul>
-<p><img src="images/pdf.png" class="img-fluid"></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/Boxplot_vs_PDF.png" class="img-fluid figure-img"></p>
-<figcaption>Box plot and PDF of a normal distribution <span class="math inline">\(N(0, \sigma^2)\)</span></figcaption>
-</figure>
-</div>
-<p>Source: <a href="https://commons.wikimedia.org/wiki/File:Boxplot_vs_PDF.svg">Wikipedia Commons</a></p>
-</section>
-<section id="cumulative-density-function-cdf" class="level3" data-number="7.4.3">
-<h3 data-number="7.4.3" class="anchored" data-anchor-id="cumulative-density-function-cdf"><span class="header-section-number">7.4.3</span> Cumulative Density Function (CDF)</h3>
-<section id="discrete" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="discrete">Discrete</h4>
-<ul>
-<li>Cumulatve density function is probability X will take a value of x or lower.</li>
-<li>PDF is written <span class="math inline">\(f(x)\)</span>, and CDF is written <span class="math inline">\(F'(x)\)</span>. <span class="math display">\[F_X(x) = Pr(X\leq x)\]</span></li>
-<li>For discrete CDFs, that means summing up over all values.</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What is the probability of rolling a 6 or lower with two dice? <span class="math inline">\(F(6)=?\)</span></p>
 </div>
 </div>
 </section>
-<section id="continuous" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="continuous">Continuous</h4>
-<ul>
-<li>We can’t sum probabilities for continuous distributions (remember the 0 problem).</li>
-<li>Solution: integration <span class="math display">\[F_Y(y) = \int_{-\infty}^{y} f(y) dy\]</span></li>
-<li>Examples of uniform distribution.</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="common-types-of-probability-distributions" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="common-types-of-probability-distributions"><span class="header-section-number">7.5</span> Common types of probability distributions</h2>
-<p>There are many useful probability distributions. In this section we will cover three of the most common ones: the binomial, uniform, and normal distributions.</p>
-<section id="binomial-distribution" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="binomial-distribution"><span class="header-section-number">7.5.1</span> Binomial distribution</h3>
-<p>A Binomial distribution is defined as follow: <span class="math inline">\(X \sim Binomial(n, p)\)</span></p>
-<p>PMF:</p>
-<p><span class="math display">\[
-{n \choose k} p^k(1-p)^{n-k}
-\]</span> , where <span class="math inline">\(n\)</span> is the number of trials, <span class="math inline">\(p\)</span> is the probability of success, and <span class="math inline">\(k\)</span> is the number of successes.</p>
-<p>Remember that:</p>
-<p><span class="math display">\[
-{n \choose k} = \frac{n!}{k!(n-k)!}
-\]</span></p>
-<p>For example, let’s say that voters choose some candidate with probability 0.02. What is the probability of seeing exactly 0 voters of the candidate in a sample of 100 people?</p>
-<p>We can compute the PMF of a binomial distribution using R’s <code>dbinom()</code> function.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1326196</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2706522</code></pre>
-</div>
-</div>
-<p>Similarly, we can compute the CDF using R’s <code>pbinom()</code> function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1326196</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q =</span> <span class="dv">100</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4032717</code></pre>
-</div>
-</div>
+<section id="example-1-translation" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="example-1-translation"><span class="header-section-number">10.2</span> Example 1: Translation</h2>
+<p>Please translate the following text into your language of your choice using Google translate, Chat GPT and/or any other online translators, and compare the quality of translation.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise
+Texts
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Compute the probability of seeing between 1 and 10 voters of the candidate in a sample of 100 people.</p>
-</div>
+<section id="collaborative-multiracial-post-election-survey-cmps-2016-2" class="level5 callout-body-container callout-body" data-number="10.2.0.0.1">
+<h5 data-number="10.2.0.0.1" class="anchored" data-anchor-id="collaborative-multiracial-post-election-survey-cmps-2016-2"><span class="header-section-number">10.2.0.0.1</span> Collaborative Multiracial Post-Election Survey (CMPS) 2016 <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h5>
+<p>Methodology: A total of 10,145 completed interviews were collected online in a respondent self-administered format from December 3, 2016 to February 15, 2017. The survey (and invitation) was available to respondents in English, Spanish, Chinese (simplified), Chinese (traditional), Korean, and Vietnamese. Because of the primary interest in the 2016 election, the project started with large sample of registered voters, to provide large sample size for analyses. The data also include an adult sample of non-registered voters as well, including non-citizens.</p>
+<p>The full data are weighted within each racial group to match the adult population in the 2015 Census ACS 1-year data file for age, gender, education, nativity, ancestry, and voter registration status. A post-stratification raking algorithm was used to balance each category within +/- 1 percent of the ACS estimates. Data are not weighted to their national combined racial average. That is, Whites account for 10 percent of all cases, and each racial group roughly 30 percent. If users want to create nationally representative racial composition from the data they can consult the latest ACS data file.</p>
+<p>In spring 2016, scholars were invited to collaborate on the 2016 Collaborative Multi-Racial Post-Election Survey (CMPS). The goal of the project was to create the first cooperative, 100% user content driven, multi-racial, multiethnic, multi-lingual, post-election online survey in race, ethnicity and politics (REP) in the United States. The survey’s main focus is on attitudes about the 2016 Election and candidates, debates over immigration, policing, and racial equality, and experiences with racial discrimination across many facets of American life.</p>
+<p>Questions were user-generated from a team of 86 social scientists across 55 different universities who placed questions on the survey. Users could submit questions for just one single racial group, or common questions across all four racial groups, depending on their interest. In cases where two different users submitted very similar questions the PIs worked to create a single common question. Overall, the survey contains 394 questions and median completion time of 43.2 minutes.</p>
+<p>Data for registered voters comes from the national voter registration database email sample, and respondents were randomly selected to participate in the study, and confirmed they were registered to vote before starting the survey. For the non-registered sample, emails addresses were randomly selected from various online panel vendors. In total, 298,159 email addresses were selected and sent invitations to participate in the survey and 29,489 people accepted the invitation and started the survey, for an effective response rate of 9.9%. Among the 29,489 people who started the survey, 11,868 potential respondents were terminated due to quotas being full, which resulted in 17,621 who were eligible to take the survey of which 10,145 completed the full questionnaire for a cooperation rate of 57.6%. Respondents were given a $10 or $20 gift card as compensation for their participation. Non-registered voters were randomly selected from one of six online panels of respondents from Federated, Poder, Research Now, Netquest, SSI, and Prodege, and confirmed that they were not registered to vote before starting the survey. Programming and data collection for the full project were overseen by Pacific Market Research in Renton, WA.</p>
+<p>In keeping with best practices and data transparency ethics in the social sciences, the original survey data shall be posted to Inter-University Consortium for Political and Social Research (ICPSR) after 4 years, which is expected to be early 2021.</p>
+</section>
 </div>
 </section>
-<section id="uniform-distribution" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="uniform-distribution"><span class="header-section-number">7.5.2</span> Uniform distribution</h3>
-<p>A uniform distribution has two parameters: a minimum and a maximum. So <span class="math inline">\(X \sim U(a, b)\)</span>.</p>
+<section id="example-2-tidy-up-your-writing" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="example-2-tidy-up-your-writing"><span class="header-section-number">10.3</span> Example 2: Tidy up your writing</h2>
+<p><strong>Task 1: Abstract Generation and Comparison</strong></p>
 <ul>
-<li>PDF:</li>
+<li><p>Using the provided text about the Collaborative Multi-Racial Post-Election Survey (CMPS), ask ChatGPT to generate 10 different abstracts that could be considered suitable for academic journal publication.</p></li>
+<li><p>Review and compare the 10 generated abstracts, identifying the strengths and weaknesses of each. Based on your comparison, synthesize a final abstract that incorporates the best elements of the generated versions, ensuring it meets the standards for academic publication.</p></li>
 </ul>
-<p><span class="math display">\[
-\displaystyle{
-\begin{cases}
-  \frac{1}{b-a} &amp; \text{, }{x \in [a, b]}\\
-  0             &amp; \text{, otherwise}
-\end{cases}
-}
-\]</span></p>
+<p><strong>Task 2: Translation Polishing</strong></p>
 <ul>
-<li>CDF:</li>
+<li>Ask ChatGPT to refine the writing of the text it previously translated into your chosen non-English language. Ensure that the polished translation is of high quality, making it appropriate for publication in academic journals within your target non-English academic community.</li>
 </ul>
-<p><span class="math display">\[
-\displaystyle{
-\begin{cases}
-  0 &amp; \text{, }{x &lt; a}\\
-  \frac{x-a}{b-a} &amp; \text{, }{x \in [a, b]}\\
-  1             &amp; \text{, }{x&gt;b}
-\end{cases}
-}
-\]</span></p>
-<p>In R, <code>dunif()</code> gives the PDF of a uniform distribution. By default, it is <span class="math inline">\(X \sim U(0, 1)\)</span>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dunif, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07_probability_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Meanwhile, <code>punif()</code> evaluates the CDF of a uniform distribution.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">punif</span>(<span class="at">q =</span> .<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Evaluate the CDF of <span class="math inline">\(Y \sim U(-2, 2)\)</span> at point <span class="math inline">\(y = 1\)</span>. Use the formula and <code>punif()</code>.</p>
-</div>
-</div>
 </section>
-<section id="normal-distribution" class="level3" data-number="7.5.3">
-<h3 data-number="7.5.3" class="anchored" data-anchor-id="normal-distribution"><span class="header-section-number">7.5.3</span> Normal distribution</h3>
-<p>A normal distribution has two parameters: a mean and a standard deviation. So <span class="math inline">\(X \sim N(\mu, \sigma)\)</span>.</p>
+<section id="example-3-dealing-with-data" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="example-3-dealing-with-data"><span class="header-section-number">10.4</span> Example 3: Dealing with data</h2>
+<p>Try to interact with ChatGPT with the following prompts and analyze the <code>iris</code> dataset about 150 iris flowers from three different species. Try to read the generated code and see if you understand each line of it. Keep asking questions about the parts where you do not understand. Try to type out the code yourself!</p>
 <ul>
-<li>PDF: <span class="math inline">\(2 {\displaystyle {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}\)</span></li>
+<li><p>“I want to load a dataset, <code>iris</code> into R. Please print the first 5 rows of my dataset, and the names of all the variables”.</p></li>
+<li><p>“Compute summary statistics (mean, median, variance, standard deviation) for each of the numeric features”.</p></li>
+<li><p>“Create a scatter plots to visualize the distribution of the features and the relationships between them”.</p></li>
 </ul>
-<p>In R, <code>dnorm()</code> gives us the PDF of a standard normal distribution (<span class="math inline">\(Z \sim N(0, 1)\)</span>):</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07_probability_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Like you might expect, <code>pnorm()</code> computes the CDF of a normal distribution (by default, the standard normal).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.5</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6826895</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What is the probability of obtaining a value above 1.96 or below -1.96 in a standard normal probability distribution? Hint: use the <code>pnorm()</code> function.</p>
-</div>
-</div>
+<p>Pay attention to the generative results closely and see if you can identify any mistakes.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -734,11 +417,11 @@ Wickham, Hadley, Danielle Navarro, and Thomas Lin Pedersen. 2023. <em>Ggplot2: <
 </div>
 </div>
 </section>
-</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>This is sometimes called the <em>frequentist</em> interpretation of probability. There are other possibilities, such as <em>Bayesian</em> interpretations of probability, which describe probabilities as degrees of belief.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>This philosophical discussion was developed partially following Professor <a href="https://liberalarts.utexas.edu/government/faculty/lint">Tse-min Lin</a>ʼs presentation at National Taiwan University on June 21, 2024.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Source: <a href="https://cmpsurvey.org/">Collaborative Multiracial Post-Election Survey</a> Barreto, Matt, Lorrie Frasure-Yokley, Edward Vargas and Janelle Wong. 2017. The Collaborative Multiracial Postelection Survey (CMPS), 2016. Los Angeles, CA.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1309,13 +992,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06_tidy_data2.html" class="pagination-link" aria-label="Tidy data analysis II">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span>
+      <a href="./09_text_analysis.html" class="pagination-link" aria-label="Text analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Text analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08_stats_sims.html" class="pagination-link" aria-label="Statistics and simulations">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11_wrapup.html" class="pagination-link" aria-label="Wrap-up">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Wrap-up</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

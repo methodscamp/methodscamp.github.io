@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Probability – Methods Camp</title>
+<title>11&nbsp; Wrap-up – Methods Camp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,8 +84,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./08_stats_sims.html" rel="next">
-<link href="./06_tidy_data2.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./10_a_note_about_ai.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -166,7 +166,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_probability.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_wrapup.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Wrap-up</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -246,7 +246,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07_probability.html" class="sidebar-item-text sidebar-link active">
+  <a href="./07_probability.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
@@ -270,7 +270,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_wrapup.html" class="sidebar-item-text sidebar-link">
+  <a href="./11_wrapup.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Wrap-up</span></span></a>
   </div>
 </li>
@@ -290,24 +290,24 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-probability" id="toc-what-is-probability" class="nav-link active" data-scroll-target="#what-is-probability"><span class="header-section-number">7.1</span> What is probability?</a></li>
-  <li><a href="#definitions-and-properties-of-probability" id="toc-definitions-and-properties-of-probability" class="nav-link" data-scroll-target="#definitions-and-properties-of-probability"><span class="header-section-number">7.2</span> Definitions and properties of probability</a></li>
-  <li><a href="#random-variables-and-probability-distributions" id="toc-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#random-variables-and-probability-distributions"><span class="header-section-number">7.3</span> Random variables and probability distributions</a>
+  <li><a href="#project-management" id="toc-project-management" class="nav-link active" data-scroll-target="#project-management"><span class="header-section-number">11.1</span> Project management</a>
   <ul class="collapse">
-  <li><a href="#discrete-random-variables-and-probability-distributions" id="toc-discrete-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#discrete-random-variables-and-probability-distributions"><span class="header-section-number">7.3.1</span> Discrete random variables and probability distributions</a></li>
-  <li><a href="#continuous-random-variables-and-probability-distributions" id="toc-continuous-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#continuous-random-variables-and-probability-distributions"><span class="header-section-number">7.3.2</span> Continuous random variables and probability distributions</a></li>
+  <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects"><span class="header-section-number">11.1.1</span> RStudio projects</a></li>
   </ul></li>
-  <li><a href="#functions-describing-probability-distributions" id="toc-functions-describing-probability-distributions" class="nav-link" data-scroll-target="#functions-describing-probability-distributions"><span class="header-section-number">7.4</span> Functions describing probability distributions</a>
+  <li><a href="#quarto-documents-and-r-scripts" id="toc-quarto-documents-and-r-scripts" class="nav-link" data-scroll-target="#quarto-documents-and-r-scripts"><span class="header-section-number">11.2</span> Quarto documents and R Scripts</a></li>
+  <li><a href="#other-software-resources" id="toc-other-software-resources" class="nav-link" data-scroll-target="#other-software-resources"><span class="header-section-number">11.3</span> Other software resources</a>
   <ul class="collapse">
-  <li><a href="#probability-mass-function-pmf-discrete-variables" id="toc-probability-mass-function-pmf-discrete-variables" class="nav-link" data-scroll-target="#probability-mass-function-pmf-discrete-variables"><span class="header-section-number">7.4.1</span> Probability Mass Function (PMF) – Discrete Variables</a></li>
-  <li><a href="#probability-density-function-pdf-continuous-variables" id="toc-probability-density-function-pdf-continuous-variables" class="nav-link" data-scroll-target="#probability-density-function-pdf-continuous-variables"><span class="header-section-number">7.4.2</span> Probability Density Function (PDF) – Continuous Variables</a></li>
-  <li><a href="#cumulative-density-function-cdf" id="toc-cumulative-density-function-cdf" class="nav-link" data-scroll-target="#cumulative-density-function-cdf"><span class="header-section-number">7.4.3</span> Cumulative Density Function (CDF)</a></li>
+  <li><a href="#overleaf" id="toc-overleaf" class="nav-link" data-scroll-target="#overleaf"><span class="header-section-number">11.3.1</span> Overleaf</a></li>
+  <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero"><span class="header-section-number">11.3.2</span> Zotero</a></li>
   </ul></li>
-  <li><a href="#common-types-of-probability-distributions" id="toc-common-types-of-probability-distributions" class="nav-link" data-scroll-target="#common-types-of-probability-distributions"><span class="header-section-number">7.5</span> Common types of probability distributions</a>
+  <li><a href="#methods-at-ut" id="toc-methods-at-ut" class="nav-link" data-scroll-target="#methods-at-ut"><span class="header-section-number">11.4</span> Methods at UT</a>
   <ul class="collapse">
-  <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution"><span class="header-section-number">7.5.1</span> Binomial distribution</a></li>
-  <li><a href="#uniform-distribution" id="toc-uniform-distribution" class="nav-link" data-scroll-target="#uniform-distribution"><span class="header-section-number">7.5.2</span> Uniform distribution</a></li>
-  <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><span class="header-section-number">7.5.3</span> Normal distribution</a></li>
+  <li><a href="#required-methods-courses" id="toc-required-methods-courses" class="nav-link" data-scroll-target="#required-methods-courses"><span class="header-section-number">11.4.1</span> Required methods courses</a></li>
+  <li><a href="#other-methods-courses" id="toc-other-methods-courses" class="nav-link" data-scroll-target="#other-methods-courses"><span class="header-section-number">11.4.2</span> Other methods courses</a></li>
+  <li><a href="#other-departments-at-ut" id="toc-other-departments-at-ut" class="nav-link" data-scroll-target="#other-departments-at-ut"><span class="header-section-number">11.4.3</span> Other departments at UT</a></li>
+  <li><a href="#methods-fellow" id="toc-methods-fellow" class="nav-link" data-scroll-target="#methods-fellow"><span class="header-section-number">11.4.4</span> Methods Fellow</a></li>
+  <li><a href="#methods-summer-programs" id="toc-methods-summer-programs" class="nav-link" data-scroll-target="#methods-summer-programs"><span class="header-section-number">11.4.5</span> Methods summer programs</a></li>
+  <li><a href="#more-methods-camps" id="toc-more-methods-camps" class="nav-link" data-scroll-target="#more-methods-camps"><span class="header-section-number">11.4.6</span> More methods camps!</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -317,7 +317,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Wrap-up</span></h1>
 </div>
 
 
@@ -334,292 +334,97 @@ window.Quarto = {
 </header>
 
 
-<section id="what-is-probability" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="what-is-probability"><span class="header-section-number">7.1</span> What is probability?</h2>
+<section id="project-management" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="project-management"><span class="header-section-number">11.1</span> Project management</h2>
+<section id="rstudio-projects" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="rstudio-projects"><span class="header-section-number">11.1.1</span> RStudio projects</h3>
 <ul>
-<li>Informally, a probability is a number that describes how likely an event is.
+<li><p>RStudio projects are an excellent way to keep all the files associated with a project (data, R scripts, results, figures, etc.) in one place on your computer.</p></li>
+<li><p>This is one of the best ways to improve your workflow in RStudio, allowing you to:</p>
 <ul>
-<li>It is, by definition, between 0 and 1.</li>
-<li>What is the probability that a fair coin flip will result in heads?</li>
+<li>Create a project for each paper or data analysis project.</li>
+<li>Store data files in one place.</li>
+<li>Save, edit, and run scripts.</li>
+<li>Keep outputs such as plots and cleaned data.</li>
 </ul></li>
-<li>We can also think of a probability as an outcome’s <strong>relative frequency</strong> after repeating an “experiment” many times.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
-<ul>
-<li>In this setting, an experiment is “an action or a set of actions that produce stochastic [random] events of interest” (<a href="https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science">Imai and Williams 2022</a>, p.&nbsp;281). Not to confuse with scientific experiments!</li>
-<li>If we were to flip a million fair coins, what will be the proportion of heads?</li>
-</ul></li>
-</ul>
-<!-- -->
-<ul>
-<li>A <em>probability space</em> <span class="math inline">\((\Omega, S, P)\)</span> is a formal way to talk about a random process:
-<ul>
-<li>The sample space (<span class="math inline">\(\Omega\)</span>) is the set of all possible outcomes.</li>
-<li>The event space (<span class="math inline">\(S\)</span>) is a collection of events (an event is a subset of <span class="math inline">\(\Omega\)</span>).</li>
-<li>The probability measure (<span class="math inline">\(P\)</span>) is a function that assigns a probability in <span class="math inline">\(\mathbb{R}\)</span> to every event in <span class="math inline">\(S\)</span>. So <span class="math inline">\(P: S \rightarrow \mathbb{R}\)</span>.</li>
-</ul></li>
-<li>We can formalize our intuitions with the <strong>probability axioms</strong> (sometimes called Kolmogorov’s axioms):
-<ul>
-<li><span class="math inline">\(P(A) \ge 0, \; \forall A \in S\)</span>.
-<ul>
-<li>Probabilities must be non-negative.</li>
-</ul></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span>.
-<ul>
-<li>Something has to happen!</li>
-<li>Probabilities sum/integrate to 1.</li>
-</ul></li>
-<li><span class="math inline">\(P(A \cup B) = P(A) + P(B), \; \forall A, B \in S, \; A\cup B = \emptyset\)</span>.
-<ul>
-<li>The probability of disjoint (mutually exclusive) events is equal to the sum of their individual probabilities.</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="definitions-and-properties-of-probability" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="definitions-and-properties-of-probability"><span class="header-section-number">7.2</span> Definitions and properties of probability</h2>
-<ul>
-<li><p>Joint probability: <span class="math inline">\(P(A \cap B)\)</span>. The probability that the two events will occur in one realization of the experiment.</p></li>
-<li><p>Law of total probability: <span class="math inline">\(P(A) = P(A \cap B) + P(A \cap B^C)\)</span>.</p></li>
-<li><p>Addition rule: <span class="math inline">\(P(A \cup B) = P(A) + P(B) - P (A \cap B)\)</span>.</p></li>
-<li><p>Conditional probability: <span class="math inline">\(\displaystyle P(A|B)=\frac{P(A \cap B)}{P(B)}\)</span></p>
-<ul>
-<li>the probability of event <span class="math inline">\(A\)</span> occurring given that event <span class="math inline">\(B\)</span> has already occurred is the probability that both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur together devided by the probability that event <span class="math inline">\(B\)</span> occurs</li>
-</ul></li>
-<li><p>Bayes theorem: <span class="math inline">\(\displaystyle P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}\)</span></p>
-<ul>
-<li><span class="math inline">\(P(A|B)\)</span>: the probability of event A occurring given that B is true</li>
-<li><span class="math inline">\(P(B|A)\)</span>: the probability of event B occurring given that A is true.</li>
-</ul></li>
-</ul>
-</section>
-<section id="random-variables-and-probability-distributions" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="random-variables-and-probability-distributions"><span class="header-section-number">7.3</span> Random variables and probability distributions</h2>
-<ul>
-<li><p>A <strong>random variable</strong> is a function (<span class="math inline">\(X: \Omega \to \mathbb{R}\)</span>) of the outcome of a random generative process. Informally, it is a “placeholder” for whatever will be the output of a process we’re studying.</p></li>
-<li><p>A <strong>probability distribution</strong> describes the probabilities associated with the values of a random variable.</p></li>
-<li><p>Random variables (and probability distributions) can be <strong>discrete</strong> or <strong>continuous</strong>.</p></li>
-</ul>
-<section id="discrete-random-variables-and-probability-distributions" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="discrete-random-variables-and-probability-distributions"><span class="header-section-number">7.3.1</span> Discrete random variables and probability distributions</h3>
-<ul>
-<li><p>A sample space in which there are a (finite or infinite) countable number of outcomes</p></li>
-<li><p>Each realization of random process has a discrete probability of occurring.</p>
-<ul>
-<li><span class="math inline">\(f(X=x_i)=P(X=x_i)\)</span> is the probability the variable takes the value <span class="math inline">\(x_i\)</span>.</li>
-</ul></li>
-</ul>
-<section id="an-example" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="an-example">An example</h4>
-<ul>
-<li><p>What’s the probability that we’ll roll a 3 on one die roll: <span class="math display">\[Pr(y=3) = \dfrac{1}{6}\]</span></p></li>
-<li><p>If one roll of the die is an “experiment,” we can think of a 3 as a “success.”</p></li>
-<li><p><span class="math inline">\(Y \sim Bernoulli \left(\frac{1}{6} \right)\)</span></p></li>
-<li><p>Fair coins are <span class="math inline">\(\sim Bernoulli(.5)\)</span>, for example.</p></li>
-<li><p>More generally, <span class="math inline">\(Bernoulli(\pi )\)</span>. We’ll talk about other probability distributions soon.</p>
-<ul>
-<li><span class="math inline">\(\pi\)</span> represents the probability of success.</li>
-</ul></li>
-</ul>
-<p>Let’s do another example on the board, using the sum of two fair dice.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What’s the probability that the sum of two fair dice equals 7?</p>
-</div>
-</div>
-</section>
-</section>
-<section id="continuous-random-variables-and-probability-distributions" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="continuous-random-variables-and-probability-distributions"><span class="header-section-number">7.3.2</span> Continuous random variables and probability distributions</h3>
-<ul>
-<li>What happens when our outcome is continuous?</li>
-<li>There are an infinite number of outcomes. This makes the denominator of our fraction difficult to work with.</li>
-<li>The probability of the whole space must equal 1.</li>
-<li>The domain may not span -<span class="math inline">\(\infty\)</span> to <span class="math inline">\(\infty\)</span>.
-<ul>
-<li>Even space between 0 and 1 is infinite!</li>
-</ul></li>
-<li>Two common examples are the uniform and normal probability distributions, which we will discuss below.</li>
-</ul>
-</section>
-</section>
-<section id="functions-describing-probability-distributions" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="functions-describing-probability-distributions"><span class="header-section-number">7.4</span> Functions describing probability distributions</h2>
-<section id="probability-mass-function-pmf-discrete-variables" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="probability-mass-function-pmf-discrete-variables"><span class="header-section-number">7.4.1</span> Probability Mass Function (PMF) – Discrete Variables</h3>
-<p>Probability of each occurrence encoded in probability mass function (PMF)</p>
-<ul>
-<li><p><span class="math inline">\(0 \leq f(x_i) \leq 1\)</span>: Probability of any value occurring must be between 0 and 1.</p></li>
-<li><p><span class="math inline">\(\displaystyle\sum_{x}f(x_i) = 1\)</span>: Probabilities of all values must sum to 1.</p></li>
-</ul>
-<p><img src="images/pmf.png" class="img-fluid"></p>
-</section>
-<section id="probability-density-function-pdf-continuous-variables" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="probability-density-function-pdf-continuous-variables"><span class="header-section-number">7.4.2</span> Probability Density Function (PDF) – Continuous Variables</h3>
-<ul>
-<li><p>Similar to PMF from before, but for continuous variables.</p></li>
-<li><p>Using integration, it gives the probability a value falls within a particular interval</p>
-<p><span class="math display">\[P[a\le X\le b] = \displaystyle\int_a^b f(x) \, dx\]</span></p></li>
-<li><p>Total area under the curve is 1.</p></li>
-<li><p><span class="math inline">\(P(a &lt; X &lt; b)\)</span> is the area under the curve between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (where <span class="math inline">\(b &gt; a\)</span>).</p></li>
-</ul>
-<p><img src="images/pdf.png" class="img-fluid"></p>
+<li><p>To create a new project file, click <code>File &gt; New Project</code>, then:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Boxplot_vs_PDF.png" class="img-fluid figure-img"></p>
-<figcaption>Box plot and PDF of a normal distribution <span class="math inline">\(N(0, \sigma^2)\)</span></figcaption>
+<p><img src="images/new_project_step1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
 </figure>
 </div>
-<p>Source: <a href="https://commons.wikimedia.org/wiki/File:Boxplot_vs_PDF.svg">Wikipedia Commons</a></p>
-</section>
-<section id="cumulative-density-function-cdf" class="level3" data-number="7.4.3">
-<h3 data-number="7.4.3" class="anchored" data-anchor-id="cumulative-density-function-cdf"><span class="header-section-number">7.4.3</span> Cumulative Density Function (CDF)</h3>
-<section id="discrete" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="discrete">Discrete</h4>
-<ul>
-<li>Cumulatve density function is probability X will take a value of x or lower.</li>
-<li>PDF is written <span class="math inline">\(f(x)\)</span>, and CDF is written <span class="math inline">\(F'(x)\)</span>. <span class="math display">\[F_X(x) = Pr(X\leq x)\]</span></li>
-<li>For discrete CDFs, that means summing up over all values.</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What is the probability of rolling a 6 or lower with two dice? <span class="math inline">\(F(6)=?\)</span></p>
-</div>
-</div>
-</section>
-<section id="continuous" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="continuous">Continuous</h4>
-<ul>
-<li>We can’t sum probabilities for continuous distributions (remember the 0 problem).</li>
-<li>Solution: integration <span class="math display">\[F_Y(y) = \int_{-\infty}^{y} f(y) dy\]</span></li>
-<li>Examples of uniform distribution.</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="common-types-of-probability-distributions" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="common-types-of-probability-distributions"><span class="header-section-number">7.5</span> Common types of probability distributions</h2>
-<p>There are many useful probability distributions. In this section we will cover three of the most common ones: the binomial, uniform, and normal distributions.</p>
-<section id="binomial-distribution" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="binomial-distribution"><span class="header-section-number">7.5.1</span> Binomial distribution</h3>
-<p>A Binomial distribution is defined as follow: <span class="math inline">\(X \sim Binomial(n, p)\)</span></p>
-<p>PMF:</p>
-<p><span class="math display">\[
-{n \choose k} p^k(1-p)^{n-k}
-\]</span> , where <span class="math inline">\(n\)</span> is the number of trials, <span class="math inline">\(p\)</span> is the probability of success, and <span class="math inline">\(k\)</span> is the number of successes.</p>
-<p>Remember that:</p>
-<p><span class="math display">\[
-{n \choose k} = \frac{n!}{k!(n-k)!}
-\]</span></p>
-<p>For example, let’s say that voters choose some candidate with probability 0.02. What is the probability of seeing exactly 0 voters of the candidate in a sample of 100 people?</p>
-<p>We can compute the PMF of a binomial distribution using R’s <code>dbinom()</code> function.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1326196</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2706522</code></pre>
-</div>
-</div>
-<p>Similarly, we can compute the CDF using R’s <code>pbinom()</code> function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1326196</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q =</span> <span class="dv">100</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="at">q =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4032717</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Compute the probability of seeing between 1 and 10 voters of the candidate in a sample of 100 people.</p>
-</div>
-</div>
-</section>
-<section id="uniform-distribution" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="uniform-distribution"><span class="header-section-number">7.5.2</span> Uniform distribution</h3>
-<p>A uniform distribution has two parameters: a minimum and a maximum. So <span class="math inline">\(X \sim U(a, b)\)</span>.</p>
-<ul>
-<li>PDF:</li>
-</ul>
-<p><span class="math display">\[
-\displaystyle{
-\begin{cases}
-  \frac{1}{b-a} &amp; \text{, }{x \in [a, b]}\\
-  0             &amp; \text{, otherwise}
-\end{cases}
-}
-\]</span></p>
-<ul>
-<li>CDF:</li>
-</ul>
-<p><span class="math display">\[
-\displaystyle{
-\begin{cases}
-  0 &amp; \text{, }{x &lt; a}\\
-  \frac{x-a}{b-a} &amp; \text{, }{x \in [a, b]}\\
-  1             &amp; \text{, }{x&gt;b}
-\end{cases}
-}
-\]</span></p>
-<p>In R, <code>dunif()</code> gives the PDF of a uniform distribution. By default, it is <span class="math inline">\(X \sim U(0, 1)\)</span>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dunif, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="07_probability_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="images/new_project_step2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
 </figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/new_project_step3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div></li>
+<li><p>Call your project some version of “methodscamptest” and choose carefully where you wish to store the project on your machine.</p></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
 </div>
 </div>
-<p>Meanwhile, <code>punif()</code> evaluates the CDF of a uniform distribution.</p>
+<div class="callout-body-container callout-body">
+<p>If you don’t store your project (and your other files, too!) somewhere reasonable, it will be hard to find it in the future! We recommend creating a clear organizational scheme for yourself early on.</p>
+</div>
+</div>
+<section id="using-rstudio-projects" class="level4" data-number="11.1.1.1">
+<h4 data-number="11.1.1.1" class="anchored" data-anchor-id="using-rstudio-projects"><span class="header-section-number">11.1.1.1</span> Using RStudio projects</h4>
+<p>When using an RStudio project, you should see its name in the top-right corner of RStudio, next to a light blue icon. You can check with R the folder in which your project operates:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">punif</span>(<span class="at">q =</span> .<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li>Now, as an example, let’s run the following commands in the script editor and save the files into the project directory.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot =</span> my_plot,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">filename =</span> <span class="st">"plot_mtcars.pdf"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(mtcars, <span class="st">"mtcars.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li><p>Quit RStudio and check out the folder associated with the project.</p></li>
+<li><p>You should see the PDF file for the plot, the .csv file for the data, and the <code>.Rproj</code> file for the project itself.</p></li>
+<li><p>Double-click the <code>.Rproj</code> file to reopen the project and pick up where you left off! Everything you need should be ready to go.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="quarto-documents-and-r-scripts" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="quarto-documents-and-r-scripts"><span class="header-section-number">11.2</span> Quarto documents and R Scripts</h2>
+<p>We have worked with .qmd scripts during Methods Camp. <a href="https://quarto.org/">Quarto</a> is a very flexible format that allows code, math, and text. People use it to make reports (PDF or HTML), presentations, websites, etc. You can create a Quarto document from RStudio using <code>File &gt; New File &gt; Quarto Document</code>, and then compile it to its final form using the “Render” button.</p>
+<p>You should also be aware of regular R scripts, with a .R extension. They can be created in RStudio using <code>File &gt; New File &gt; R Script</code>. They just allow code: to add comments, you need to preface them by the pound sign (<code>#</code>).</p>
+</section>
+<section id="other-software-resources" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="other-software-resources"><span class="header-section-number">11.3</span> Other software resources</h2>
+<section id="overleaf" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="overleaf"><span class="header-section-number">11.3.1</span> Overleaf</h3>
+<div style="float: right; position: relative; top: 0px; padding: 30px;">
+<p><img src="images/overleaf.png" class="img-fluid" width="250"></p>
+</div>
+<ul>
+<li><p><a href="https://www.overleaf.com/">Overleaf</a> is a collaborative cloud-based LaTeX editor designed for writing, editing, and publishing documents.</p>
+<ul>
+<li>LaTeX is a software used for typesetting technical documents. It is used widely in our discipline for the preparation for manuscripts to journals and other publishing venues.</li>
+</ul></li>
+<li><p>UT Austin actually provides free access to Overleaf Professional to graduate students using your UT email. (The Professional accounts allows more collaborators on projects and other goodies.)</p></li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -630,54 +435,145 @@ Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Evaluate the CDF of <span class="math inline">\(Y \sim U(-2, 2)\)</span> at point <span class="math inline">\(y = 1\)</span>. Use the formula and <code>punif()</code>.</p>
+<p>Create an Overleaf Professional account using your UT email address. You can do so <a href="https://www.overleaf.com/edu/utexas">here</a>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\hat{\beta} = (X'X)^{-1}X'Y
+\]</span></p>
+<p>LaTeX is actually the markup language that the math in Quarto and this website! If you are curious about general syntax and commands, you can access <a href="https://github.com/methodscamp/methodscamp.github.io">our repository</a> at any time to get a closer look.</p>
 </div>
 </div>
 </section>
-<section id="normal-distribution" class="level3" data-number="7.5.3">
-<h3 data-number="7.5.3" class="anchored" data-anchor-id="normal-distribution"><span class="header-section-number">7.5.3</span> Normal distribution</h3>
-<p>A normal distribution has two parameters: a mean and a standard deviation. So <span class="math inline">\(X \sim N(\mu, \sigma)\)</span>.</p>
+<section id="zotero" class="level3" data-number="11.3.2">
+<h3 data-number="11.3.2" class="anchored" data-anchor-id="zotero"><span class="header-section-number">11.3.2</span> Zotero</h3>
+<div style="float: right; position: relative; top: 0px; padding: 30px;">
+<p><img src="images/zotero_512x512x32.png" class="img-fluid" width="200"></p>
+</div>
 <ul>
-<li>PDF: <span class="math inline">\(2 {\displaystyle {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}\)</span></li>
+<li><p>Zotero is an open-source reference manager used to store, manage, and cite bibliographic references, such as books and articles.</p></li>
+<li><p>When it is time to write, you can insert your sources directly into your paper as in-text citations via a word processor plugin, which generates a bibliography in your style of choice (e.g., APA). It works with Word, Google Docs, Overleaf, and RStudio.</p>
+<ul>
+<li>This can save a lot of time, especially when you have to change citation styles for submission to another journal.</li>
+</ul></li>
+<li><p>You can download the software for free <a href="https://www.zotero.org/">here</a>.</p></li>
 </ul>
-<p>In R, <code>dnorm()</code> gives us the PDF of a standard normal distribution (<span class="math inline">\(Z \sim N(0, 1)\)</span>):</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07_probability_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Like you might expect, <code>pnorm()</code> computes the CDF of a normal distribution (by default, the standard normal).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.5</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6826895</code></pre>
-</div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What is the probability of obtaining a value above 1.96 or below -1.96 in a standard normal probability distribution? Hint: use the <code>pnorm()</code> function.</p>
+<p>Zotero is one of many other reference managers out there. Alternatives include Mendeley and EndNote, among others. You should choose whatever option best suits your needs.</p>
 </div>
 </div>
+</section>
+</section>
+<section id="methods-at-ut" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="methods-at-ut"><span class="header-section-number">11.4</span> Methods at UT</h2>
+<section id="required-methods-courses" class="level3" data-number="11.4.1">
+<h3 data-number="11.4.1" class="anchored" data-anchor-id="required-methods-courses"><span class="header-section-number">11.4.1</span> Required methods courses</h3>
+<ul>
+<li><p>Scope and Methods of Political Science</p></li>
+<li><p>Statistics I (Statistics/linear regression)</p></li>
+<li><p>Statistics II (Linear regression and more)</p></li>
+<li><p>Statistics III (Maximum likelihood estimation)</p>
+<ul>
+<li>Only required if your major field is methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="other-methods-courses" class="level3" data-number="11.4.2">
+<h3 data-number="11.4.2" class="anchored" data-anchor-id="other-methods-courses"><span class="header-section-number">11.4.2</span> Other methods courses</h3>
+<ul>
+<li><p><strong>Statistics / Econometrics / Machine Learning:</strong></p>
+<ul>
+<li>Causal Inference</li>
+<li>Bayesian Statistics</li>
+<li>Math Methods for Political Analysis</li>
+<li>Time Series and Panel Data</li>
+<li>Panel and Multilevel Analysis</li>
+<li>Network Analysis</li>
+<li>Machine Learning in Political Science</li>
+<li>Making Big Data</li>
+</ul></li>
+<li><p><strong>Formal Theory</strong></p>
+<ul>
+<li>Intro to Formal Political Analysis</li>
+<li>Formal Political Analysis II</li>
+<li>Formal Theories of International Relations</li>
+</ul></li>
+<li><p><strong>Everything else</strong></p>
+<ul>
+<li>Conceptualization and Measurement</li>
+<li>Experimental Methods in Political Science</li>
+<li>Qualitative Methods</li>
+<li>Seminar in Field Experiments</li>
+</ul></li>
+</ul>
+</section>
+<section id="other-departments-at-ut" class="level3" data-number="11.4.3">
+<h3 data-number="11.4.3" class="anchored" data-anchor-id="other-departments-at-ut"><span class="header-section-number">11.4.3</span> Other departments at UT</h3>
+<p>You can also take courses through the Economics, Business (IROM), Sociology, Mathematics, or Statistics (SDS) departments.</p>
+<ul>
+<li><p><a href="https://stat.utexas.edu/academics/master-science-statistics">M.S. in Statistics</a></p></li>
+<li><p>Software and Topic Short Courses at SDS (see their <a href="https://stat.utexas.edu/events">Events</a> page): R, Python, Stata, etc.</p></li>
+</ul>
+</section>
+<section id="methods-fellow" class="level3" data-number="11.4.4">
+<h3 data-number="11.4.4" class="anchored" data-anchor-id="methods-fellow"><span class="header-section-number">11.4.4</span> Methods Fellow</h3>
+<p>The Methods Fellow is a grad student who serves as a Methods TA for all other UT Gov grad students.</p>
+<ul>
+<li>Holds office hours</li>
+<li>Hosts a Methods Co-working Hour</li>
+<li>Organizes workshops</li>
+</ul>
+</section>
+<section id="methods-summer-programs" class="level3" data-number="11.4.5">
+<h3 data-number="11.4.5" class="anchored" data-anchor-id="methods-summer-programs"><span class="header-section-number">11.4.5</span> Methods summer programs</h3>
+<ul>
+<li><p><a href="https://www.icpsr.umich.edu/web/pages/">ICPSR</a> (Inter-university Consortium for Political and Social Research)</p>
+<ul>
+<li>Ann Arbor, Michigan</li>
+</ul></li>
+<li><p><a href="https://www.maxwell.syr.edu/research/center-for-qualitative-and-multi-method-inquiry/institute-for-qualitative-multi-method-research">IQMR</a> (Institute for Qualitative and Multi-Method Research)</p>
+<ul>
+<li>Syracuse, NY</li>
+</ul></li>
+<li><p><a href="https://eitminstitute.org/">EITM</a> (Empirical Implications of Theoretical Models)</p>
+<ul>
+<li>Various locations</li>
+</ul></li>
+</ul>
+</section>
+<section id="more-methods-camps" class="level3" data-number="11.4.6">
+<h3 data-number="11.4.6" class="anchored" data-anchor-id="more-methods-camps"><span class="header-section-number">11.4.6</span> More methods camps!</h3>
+<ul>
+<li><p><a href="https://methodscamp.github.io/">UT Methods Camp Website</a></p>
+<ul>
+<li>Check out the PDF download!</li>
+</ul></li>
+<li><p><a href="https://iqss.github.io/prefresher/">Harvard Math Prefresher</a></p></li>
+<li><p><a href="https://github.com/NUpolisci/NU-math-camp?tab=readme-ov-file">Northwestern Math Camp (2022)</a></p></li>
+<li><p><a href="https://people.duke.edu/~das76/Math_Camp_Info_2019.pdf">Duke Math Camp (2019)</a></p>
+<ul>
+<li>Make sure to follow the links for the videos, etc.</li>
+</ul></li>
+</ul>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -734,12 +630,6 @@ Wickham, Hadley, Danielle Navarro, and Thomas Lin Pedersen. 2023. <em>Ggplot2: <
 </div>
 </div>
 </section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>This is sometimes called the <em>frequentist</em> interpretation of probability. There are other possibilities, such as <em>Bayesian</em> interpretations of probability, which describe probabilities as degrees of belief.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1309,13 +1199,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06_tidy_data2.html" class="pagination-link" aria-label="Tidy data analysis II">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span>
+      <a href="./10_a_note_about_ai.html" class="pagination-link" aria-label="A Note about AI">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">A Note about AI</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08_stats_sims.html" class="pagination-link" aria-label="Statistics and simulations">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
