@@ -1,9 +1,9 @@
-# Doing Research with AI [^1]
-[^1]: This module was developed partially following Professor [Tse-min Lin](https://liberalarts.utexas.edu/government/faculty/lint)ʼs presentation at National Taiwan University on June 21, 2024.
+# A Note about AI 
 
 
 
-## GPT and Wittgenstein’s Language Philosophy
+## GPT and Wittgenstein’s Language Philosophy [^1]
+[^1]: This philosophical discussion was developed partially following Professor [Tse-min Lin](https://liberalarts.utexas.edu/government/faculty/lint)ʼs presentation at National Taiwan University on June 21, 2024.
 
 | ![Ludwig Wittgenstein 1929](https://upload.wikimedia.org/wikipedia/commons/4/45/Ludwig_Wittgenstein_1929.jpg) | ![*Philosophical Investigations*, first English edition](https://upload.wikimedia.org/wikipedia/en/5/57/Philosophical_Investigations%2C_first_English_edition.jpg) |
 |:--:|:--:|
@@ -27,14 +27,14 @@ As a language model, I generate responses based on patterns in data derived from
 
 
 ::: callout-warning
-How to effectively use AI for programming 
+### Consume AI wisely! 
 
-* GPT can help with programming, but you **must have domain knowledge**.
+* GPT can help with programming, but you must have [domain knowledge](https://www.youtube.com/shorts/yj73GIEKmLI).
 * Interactions with ChatGPT are not exactly repeatable.
-* GPT can help with expediting search from Google or Stack Overflow, but it is not always correct.
-* You may have to separately install the necessary packages.
-* Read GPT’s explanation carefully to make sure it does what you want. **Do NOT copy and paste*. It is a tool to HELP YOU LEARN, not to do the work for you!
-* If GPT provides code in separate parts, ask it to combine them.
+* GPT can help with expediting search from Google or Stack Overflow for troubleshooting, but it is not always correct.
+* Read GPT’s explanation carefully to make sure it does what you want. It is a tool to help you learn, not to do the work for you!
+* **Try to type out the generated the code yourself, do NOT copy and paste**
+* In your problem sets, always acknowledge that you have consulted AI for support.  
 * When errors occur, copy the error messages and paste them to GPT for troubleshooting.
 * You can continue with follow-up instructions to improve the results.
 * In case of a catch-22 situation, use your domain expertise.
@@ -81,59 +81,11 @@ In keeping with best practices and data transparency ethics in the social scienc
 
 ## Example 3: Dealing with data
 
-Try to interact with ChatGPT with the following prompts and analyze a dataset about temperatures in Taipei:
+Try to interact with ChatGPT with the following prompts and analyze the `iris` dataset about 150 iris flowers from three different species. Try to read the generated code and see if you understand each line of it. Keep asking questions about the parts where you do not understand. Try to type out the code yourself! 
 
-* I want to load a dataset, `Taipei.csv` into R. Please print the first 5 rows of my dataset, and the names of all the variables. Please do a summary statistis for all my variables.
+* "I want to load a dataset, `iris` into R. Please print the first 5 rows of my dataset, and the names of all the variables". 
+* "Compute summary statistics (mean, median, variance, standard deviation) for each of the numeric features". 
 
-* My dataset contains the variables `high` for the highest temperature of the year and `low` for the lowest temperature of the year. Can you generate a `range` variable that shows the difference between the highest and lowest temperatures of the year?
+* "Create a scatter plots to visualize the distribution of the features and the relationships between them". 
 
-* Compute descriptive statistics of `high` and `low` variables
-
-* Create a dummy variable called `heat` with 1 representing extreme heat, defined as years whose
-high temperatore $>=37$ Celsius , and 0 representing normal summer, defined as years whose high temperature  $< 37$ Celsius.
-
-* To plot a bar chart showing the distribution of the `high` temperature variable and `low` temperature variable. 
-
-### Descriptive Statistics of Annual High Temperatures in Taipei
-
-::: callout-note
-#### Exercise
-Write R code to read the data from `Taipei.csv`, use `changepoint::cpt.mean` to identify the change point in the "high" column, plot the result, and print the change points in years
-:::
-
-```{r,message=FALSE, warning=FALSE, echo=FALSE}
-# Load required packages
-library(changepoint)
-
-# Step 1: Read the data from Taipei.csv
-taipei_data <- read.csv("Taipei.csv")
-
-# Ensure the Year column is treated as numeric
-taipei_data$Year <- as.numeric(taipei_data$year)
-
-# Step 2: Identify change points in the "high" column
-cpt_result <- cpt.mean(taipei_data$high)
-
-# Determine the change point
-change_points <- cpts(cpt_result)
-change_year <- taipei_data$year[change_points]
-
-# Calculate average temperature before and after the change point
-avg_before <- mean(taipei_data$high[1:change_points])
-avg_after <- mean(taipei_data$high[(change_points+1):nrow(taipei_data)])
-
-# Step 3: Plot the change point detection result with Year on the x-axis
-plot(taipei_data$year, taipei_data$high, type = "l",
-     main = "Change Points in Time Series of High Temperatures in Taipei",
-     xlab = "Year", ylab = "High Temperature")
-
-# Add horizontal line for the average temperature before the change point
-lines(x = c(min(taipei_data$year), change_year), y = rep(avg_before, 2), 
-col = "blue", lty = 1)
-
-# Add horizontal line for the average temperature after the change point
-lines(x = c(change_year, max(taipei_data$year)), y = rep(avg_after, 2), 
-col = "green", lty = 1)
-
-# Add vertical lines for change points at the correct years
-abline(v = taipei_data$Year[cpts(cpt_result)], col = "red", lty = 2)
+Pay attention to the generative results closely and see if you can identify any mistakes. 
