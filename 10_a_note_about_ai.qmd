@@ -45,12 +45,9 @@ As a language model, I generate responses based on patterns in data derived from
 Please translate the following text into your language of your choice using Google translate, Chat GPT and/or any other online translators, and compare the quality of translation. 
 
 ::: callout-note
-### Texts
-
-##### Collaborative Multiracial Post-Election Survey (CMPS) 2016 [^2]
+### Texts: Collaborative Multiracial Post-Election Survey (CMPS) 2016 [^2]
 
 [^2]: Source: [Collaborative Multiracial Post-Election Survey](https://cmpsurvey.org/) Barreto, Matt, Lorrie Frasure-Yokley, Edward Vargas and Janelle Wong. 2017. The Collaborative Multiracial Postelection Survey (CMPS), 2016.  Los Angeles, CA. 
-
 
 Methodology: A total of 10,145 completed interviews were collected online in a respondent self-administered format from December 3, 2016 to February 15, 2017.  The survey (and invitation) was available to respondents in English, Spanish, Chinese (simplified), Chinese (traditional), Korean, and Vietnamese. Because of the primary interest in the 2016 election, the project started with large sample of registered voters, to provide large sample size for analyses. The data also include an adult sample of non-registered voters as well, including non-citizens.  
 
