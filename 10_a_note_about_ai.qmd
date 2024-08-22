@@ -5,7 +5,7 @@
 ## GPT and Wittgenstein’s Language Philosophy [^1]
 [^1]: This philosophical discussion was developed partially following Professor [Tse-min Lin](https://liberalarts.utexas.edu/government/faculty/lint)ʼs presentation at National Taiwan University on June 21, 2024.
 
-| ![Ludwig Wittgenstein 1929](https://upload.wikimedia.org/wikipedia/commons/4/45/Ludwig_Wittgenstein_1929.jpg) | ![*Philosophical Investigations*, first English edition](https://upload.wikimedia.org/wikipedia/en/5/57/Philosophical_Investigations%2C_first_English_edition.jpg) |
+| ![Ludwig Wittgenstein 1929](images/Ludwig_Wittgenstein_1929.jpg) | ![*Philosophical Investigations*, first English edition](images/Philosophical_Investigations,_first_English_edition.jpg) |
 |:--:|:--:|
 | Ludwig Wittgenstein 1929 | *Philosophical Investigations*, First English Edition
 
