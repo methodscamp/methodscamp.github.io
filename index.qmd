@@ -1,7 +1,3 @@
-::: {.callout-caution title="WIP"}
-These are materials for the ongoing version of Methods Camp (2024). Click [here](/previous-editions/2023) to see last year's materials.
-:::
-
 ## Class schedule {.unnumbered}
 
 | Date          | Time              | Location   |
