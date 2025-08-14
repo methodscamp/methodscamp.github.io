@@ -8,9 +8,9 @@ book:
   title: "Methods Camp"
   subtitle: "UT Austin, Department of Government" 
   author: 
-    - "Andrés Cruz"
     - "Meiying Xu"
-  date: "August 2024"
+    - "Joel Yew"
+  date: "August 2025"
   date-format: "MMMM YYYY"
   chapters:
     - index.qmd
@@ -23,9 +23,7 @@ book:
     - 06_tidy_data2.qmd
     - 07_probability.qmd
     - 08_stats_sims.qmd
-    - 09_text_analysis.qmd
-    - 10_a_note_about_ai.qmd
-    - 11_wrapup.qmd
+    - 09_wrapup.qmd
     - references.qmd
   downloads: pdf
   site-url: https://methodscamp.github.io/
