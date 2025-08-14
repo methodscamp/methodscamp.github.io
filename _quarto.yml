@@ -3,8 +3,7 @@ project:
   output-dir: _book
   resources:
     - "previous-editions/**"
-    - "previous-editions/2023/Methods-Camp.pdf"
-
+    - "previous-editions/**/**"
 book:
   title: "Methods Camp"
   subtitle: "UT Austin, Department of Government" 
