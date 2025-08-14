@@ -23,7 +23,6 @@ book:
     - 06_tidy_data2.qmd
     - 07_probability.qmd
     - 08_stats_sims.qmd
-    - 09_wrapup.qmd
     - references.qmd
   downloads: pdf
   site-url: https://methodscamp.github.io/
