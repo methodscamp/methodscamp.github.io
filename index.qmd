@@ -9,7 +9,7 @@
 | Thu, Aug. 21  | 9:00 AM - 12:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 3.106 |
 |               | 1:00 AM - 4:30 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 3.106 |
 
-On class days, we will have a lunch break from 12:00-1:00 PM. We'll also take short breaks periodically during the morning and afternoon sessions as needed.
+We'll  take short breaks periodically during the morning and afternoon sessions as needed.
 
 ## Description {.unnumbered}
 
@@ -27,7 +27,7 @@ As you can see from the above schedule, we'll be meeting on Monday, August 18th,
 -   Basic functions (`mean()`, `length()`, etc.)
 -   Packages: installation and loading (including the tidyverse)
 
-**1 Monday afternoon: [Functions](03_functions.html)**
+**2 Monday afternoon: [Functions](03_functions.html)**
 
 -   Definitions
 -   Functions in R
