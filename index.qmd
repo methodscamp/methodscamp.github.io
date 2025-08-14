@@ -2,13 +2,12 @@
 
 | Date          | Time              | Location   |
 |---------------|-------------------|------------|
-| Fri, Aug. 16  | 9:00 AM - 4:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 2.606  |
-| Sat, Aug. 17  | No class          | \-         |
-| Sun, Aug. 18  | No class          | \-         |
-| Mon, Aug. 19  | 9:00 AM - 4:00 PM | [BAT](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/UTM/BAT/) 5.108  |
-| Tue, Aug. 20  | 9:00 AM - 4:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 2.606 |
-| Wed, Aug. 21  | 9:00 AM - 4:00 PM | [BAT](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/UTM/BAT/) 5.108 |
-| Thu, Aug. 22  | 9:00 AM - 4:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 2.606 |
+| Mon, Aug. 18  | 1:00 PM - 5:30 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/information/nlogon/maps/utm/rlp/) 2.606  |
+| Tue, Aug. 19  | 1:00 PM - 5:30 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/information/nlogon/maps/utm/rlp/) 2.606 |
+| Wed, Aug. 20  | 9:00 AM - 12:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/information/nlogon/maps/utm/rlp/)1.302D|
+|               | 1:00 PM - 4:30 PM  | [BAT](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/UTM/BAT/) 5.108 |
+| Thu, Aug. 21  | 9:00 AM - 12:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 3.106 |
+|               | 1:00 AM - 4:30 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 3.106 |
 
 On class days, we will have a lunch break from 12:00-1:00 PM. We'll also take short breaks periodically during the morning and afternoon sessions as needed.
 
@@ -16,11 +15,11 @@ On class days, we will have a lunch break from 12:00-1:00 PM. We'll also take sh
 
 Welcome to Introduction to Methods for Political Science, aka "Methods Camp"! Methods Camp is designed to give everyone a chance to brush up on some skills in preparation for the introductory Statistics and Formal Theory courses. The other goal of Methods Camp is to allow you to get to know your cohort. We hope that matrix algebra and the chain rule will still prove to be good bonding exercises!
 
-As you can see from the above schedule, we'll be meeting on Friday, August 16th as well as from Monday, August 19th through Thursday, August 22nd. Classes at UT begin the start of the following week on Monday, August 26th. Below is a tentative schedule outlining what will be covered in the class, although we may rearrange things if we find we're going too slowly or too quickly through the material.
+As you can see from the above schedule, we'll be meeting on Monday, August 18th, through Thursday, August 21st. Classes at UT begin the start of the following week on Monday, August 25th. Below is a tentative schedule outlining what will be covered in the class, although we may rearrange things if we find we're going too slowly or too quickly through the material.
 
 ## Course outline {.unnumbered}
 
-**1 Friday morning: [Intro to R](01_r_intro.html)**
+**1 Monday afternoon: [Intro to R](01_r_intro.html)**
 
 -   Introductions
 -   R and RStudio: basics
@@ -28,13 +27,7 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 -   Basic functions (`mean()`, `length()`, etc.)
 -   Packages: installation and loading (including the tidyverse)
 
-**2 Friday afternoon: [Tidy data analysis I](02_tidy_data1.html)**
-
--   Tidy data
--   Data wrangling with dplyr
--   Data visualization basics with `ggplot2`
-
-**3 Monday morning: [Functions](03_functions.html)**
+**1 Monday afternoon: [Functions](03_functions.html)**
 
 -   Definitions
 -   Functions in R
@@ -42,13 +35,19 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 -   Logarithms and exponents
 -   Composite functions
 
-**4 Monday afternoon: [Calculus](04_calculus.html)**
+**3 Tuesday afternoon: [Tidy data analysis I](02_tidy_data1.html)**
+
+-   Tidy data
+-   Data wrangling with dplyr
+-   Data visualization basics with `ggplot2`
+
+**4 Tuesday afternoon: [Calculus](04_calculus.html)**
 
 -   Derivatives
 -   Optimization
 -   Integrals
 
-**5 Tuesday morning: [Matrices](05_matrices.html)**
+**5 Wednesday morning: [Matrices](05_matrices.html)**
 
 -   Matrices
 -   Systems of linear equations
@@ -56,7 +55,7 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 -   Solving systems of linear equations in matrix form (and why that's cool)
 -   Introduction to OLS
 
-**6 Tuesday afternoon: [Tidy data analysis II](06_tidy_data2.html)**
+**6 Wednesday afternoon: [Tidy data analysis II](06_tidy_data2.html)**
 
 -   Loading data in different formats (.csv, R, Excel, Stata, SPSS)
 -   Recoding values (`if_else()`, `case_when()`)
@@ -65,28 +64,17 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 -   Merging data
 -   Plotting extensions (trend graphs, facets, customization)
 
-**7 Wednesday morning: Probability**
+**7 Thursday morning: Probability**
 
 -   Probability: basic concepts
 -   Random variables, probability distributions, and their properties
 -   Common probability distributions
 
-**8 Wednesday afternoon: Statistics and simulations**
+**8 Thursday afternoon: Statistics and simulations**
 
 -   Statistics: basic concepts
 -   Random sampling and loops in R
 -   Simulation example: bootstrapping
-
-**9 Thursday morning: Text analysis**
-
--   String manipulation with stringr
--   Simple text analysis and visualization with tidytext
-
-**10 Thursday morning: Coding with AI**
-
--   Visualization tools
--   ⁠Statistical testing and simulation
--   ⁠Text analysis examples
 
 **11 Thursday afternoon: Wrap-up**
 
@@ -97,15 +85,14 @@ As you can see from the above schedule, we'll be meeting on Friday, August 16th 
 
 ## Contact info {.unnumbered}
 
-If you have any questions during or outside of methods camp, you can contact us via email. Or if you are curious about our research, you can also check out our respective websites and Twitter accounts (or should we say X...):
+If you have any questions during or outside of the methods camp, you can contact us via email. Or if you are curious about our research, you can also check out our respective websites and Twitter accounts (or should we say X...):
 
--   Andrés Cruz: [andres.cruz\@utexas.edu](mailto:andres.cruz@utexas.edu) [\[Website\]](https://arcruz0.github.io/) [\[Twitter\]](https://twitter.com/arcruz0)
-
--   Meiying Xu: [xu.meiying\@utexas.edu](mailto:xu.meiying@utexas.edu) [\[Website\]]() [\[Twitter\]]()
+-   Meiying Xu: [xu.meiying\@utexas.edu](mailto:xu.meiying@utexas.edu) 
+-   Joel Yew: [joel.yew@utexas.edu](mailto:joel.yew@utexas.edu) 
 
 ## Acknowledgements {.unnumbered}
 
-We thank previous Methods Camp instructors for their accumulated experience and materials, which we have based ours upon. UT Gov Prof. Max Goplerud gave us amazing feedback for this iteration of Methods Camp (2024). All errors remain our own (and will hopefully be fixed with your help!).
+We thank previous Methods Camp instructors for their accumulated experience and materials, upon which we have based ours upon. UT Gov Prof. Max Goplerud gave us amazing feedback for this iteration of Methods Camp (2025). All errors remain our own (and will hopefully be fixed with your help!).
 
 ## Materials from previous editions {.unnumbered}
 
