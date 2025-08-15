@@ -27,19 +27,19 @@ As you can see from the above schedule, we'll be meeting on Monday, August 18th,
 -   Basic functions (`mean()`, `length()`, etc.)
 -   Packages: installation and loading (including the tidyverse)
 
-**2 Monday afternoon: [Functions](03_functions.html)**
+**2 Monday afternoon: [Tidy data analysis I](02_tidy_data1.html)**
+
+-   Tidy data
+-   Data wrangling with dplyr
+-   Data visualization basics with `ggplot2`
+
+**3 Tuesday morning: [Functions](03_functions.html)**
 
 -   Definitions
 -   Functions in R
 -   Common types of functions
 -   Logarithms and exponents
 -   Composite functions
-
-**3 Tuesday afternoon: [Tidy data analysis I](02_tidy_data1.html)**
-
--   Tidy data
--   Data wrangling with dplyr
--   Data visualization basics with `ggplot2`
 
 **4 Tuesday afternoon: [Calculus](04_calculus.html)**
 
@@ -64,13 +64,13 @@ As you can see from the above schedule, we'll be meeting on Monday, August 18th,
 -   Merging data
 -   Plotting extensions (trend graphs, facets, customization)
 
-**7 Thursday morning: Probability**
+**7 Thursday morning: [Probability](07_probability.html)**
 
 -   Probability: basic concepts
 -   Random variables, probability distributions, and their properties
 -   Common probability distributions
 
-**8 Thursday afternoon: Statistics and simulations**
+**8 Thursday afternoon: [Statistics and simulations](08_stats_sims.html)**
 
 -   Statistics: basic concepts
 -   Random sampling and loops in R
