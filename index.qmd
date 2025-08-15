@@ -76,7 +76,7 @@ As you can see from the above schedule, we'll be meeting on Monday, August 18th,
 -   Random sampling and loops in R
 -   Simulation example: bootstrapping
 
-**11 Thursday afternoon: Wrap-up**
+**9 Thursday afternoon: Wrap-up**
 
 -   Project management fundamentals
 -   Self-study resources and materials
