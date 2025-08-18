@@ -279,7 +279,7 @@ trump_scores |>
 ::: callout-note
 #### Exercise
 
-Obtain the maximum absolute difference in agreement with Trump (the `abs_diff_agree` variable from before) for each party.
+For each party, find the maximum absolute difference in agreement with Trump (the `abs_diff_agree` variable from before).
 :::
 
 ### Overview
