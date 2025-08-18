@@ -243,7 +243,7 @@ trump_scores |>
 ::: callout-note
 #### Exercise
 
-Arrange the data by `diff_pred`, the difference between agreement and predicted agreement with Trump. (You should have code on how to create this variable from the last exercise). Your code:
+Arrange the data by `diff_agree`, the difference between agreement and predicted agreement with Trump. (You should have code on how to create this variable from the last exercise). Your code:
 :::
 
 ### Summarizing data
