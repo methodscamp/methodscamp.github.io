@@ -144,7 +144,7 @@ Now we'll get to a couple of more advanced (and powerful) rules.
 
 * **Product rule:** $(f(x)g(x))'=f'(x)g(x) + g'(x)f(x)$
 
-* **Quotient rule:** $\displaystyle(\frac{f(x)}{g(x)})' = \frac{f'(x)g(x) + g'(x)f(x)}{[g(x)]^2}$
+* **Quotient rule:** $\displaystyle(\frac{f(x)}{g(x)})' = \frac{f'(x)g(x) - g'(x)f(x)}{[g(x)]^2}$
 
 * **Chain rule:** $(f(g(x))' = f'(g(x)) \cdot g'(x)$
 
