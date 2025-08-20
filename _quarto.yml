@@ -23,6 +23,7 @@ book:
     - 07_probability.qmd
     - 08_stats_sims.qmd
     - 05_matrices.qmd
+    - 11_wrapup.qmd
     - references.qmd
   downloads: pdf
   site-url: https://methodscamp.github.io/
