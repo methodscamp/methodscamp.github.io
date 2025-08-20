@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Statistics and simulations – Methods Camp</title>
+<title>7&nbsp; Statistics and simulations – Methods Camp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,7 +85,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./05_matrices.html" rel="next">
 <link href="./07_probability.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -332,7 +332,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_stats_sims.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_stats_sims.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -400,26 +400,26 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_matrices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./06_tidy_data2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_probability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08_stats_sims.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -438,17 +438,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#random-sampling" id="toc-random-sampling" class="nav-link active" data-scroll-target="#random-sampling"><span class="header-section-number">8.1</span> Random sampling</a>
+  <li><a href="#random-sampling" id="toc-random-sampling" class="nav-link active" data-scroll-target="#random-sampling"><span class="header-section-number">7.1</span> Random sampling</a>
   <ul class="collapse">
-  <li><a href="#random-sampling-from-theoretical-distributions" id="toc-random-sampling-from-theoretical-distributions" class="nav-link" data-scroll-target="#random-sampling-from-theoretical-distributions"><span class="header-section-number">8.1.1</span> Random sampling from theoretical distributions</a></li>
-  <li><a href="#random-sampling-from-data" id="toc-random-sampling-from-data" class="nav-link" data-scroll-target="#random-sampling-from-data"><span class="header-section-number">8.1.2</span> Random sampling from data</a></li>
+  <li><a href="#random-sampling-from-theoretical-distributions" id="toc-random-sampling-from-theoretical-distributions" class="nav-link" data-scroll-target="#random-sampling-from-theoretical-distributions"><span class="header-section-number">7.1.1</span> Random sampling from theoretical distributions</a></li>
+  <li><a href="#random-sampling-from-data" id="toc-random-sampling-from-data" class="nav-link" data-scroll-target="#random-sampling-from-data"><span class="header-section-number">7.1.2</span> Random sampling from data</a></li>
   </ul></li>
-  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics"><span class="header-section-number">8.2</span> Statistics</a></li>
-  <li><a href="#simulations" id="toc-simulations" class="nav-link" data-scroll-target="#simulations"><span class="header-section-number">8.3</span> Simulations</a>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics"><span class="header-section-number">7.2</span> Statistics</a></li>
+  <li><a href="#simulations" id="toc-simulations" class="nav-link" data-scroll-target="#simulations"><span class="header-section-number">7.3</span> Simulations</a>
   <ul class="collapse">
-  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"><span class="header-section-number">8.3.1</span> Loops</a></li>
-  <li><a href="#an-example-simulation" id="toc-an-example-simulation" class="nav-link" data-scroll-target="#an-example-simulation"><span class="header-section-number">8.3.2</span> An example simulation</a></li>
-  <li><a href="#another-example-simulation-bootstrapping" id="toc-another-example-simulation-bootstrapping" class="nav-link" data-scroll-target="#another-example-simulation-bootstrapping"><span class="header-section-number">8.3.3</span> Another example simulation: bootstrapping</a></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"><span class="header-section-number">7.3.1</span> Loops</a></li>
+  <li><a href="#an-example-simulation" id="toc-an-example-simulation" class="nav-link" data-scroll-target="#an-example-simulation"><span class="header-section-number">7.3.2</span> An example simulation</a></li>
+  <li><a href="#another-example-simulation-bootstrapping" id="toc-another-example-simulation-bootstrapping" class="nav-link" data-scroll-target="#another-example-simulation-bootstrapping"><span class="header-section-number">7.3.3</span> Another example simulation: bootstrapping</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -459,7 +459,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></h1>
 </div>
 
 
@@ -479,21 +479,21 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="random-sampling" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="random-sampling"><span class="header-section-number">8.1</span> Random sampling</h2>
+<section id="random-sampling" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="random-sampling"><span class="header-section-number">7.1</span> Random sampling</h2>
 <p>Before we jump to statistics and simulations, we’ll cover how to do random sampling in R.</p>
-<section id="random-sampling-from-theoretical-distributions" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="random-sampling-from-theoretical-distributions"><span class="header-section-number">8.1.1</span> Random sampling from theoretical distributions</h3>
+<section id="random-sampling-from-theoretical-distributions" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="random-sampling-from-theoretical-distributions"><span class="header-section-number">7.1.1</span> Random sampling from theoretical distributions</h3>
 <section id="uniform-distribution" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="uniform-distribution">Uniform distribution</h4>
 <p>For the uniform distribution, the arguments specify how many draws we want and the boundaries</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">max =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] -1.8224563 -1.3146149  1.9659519  1.0809883 -0.3324500  2.4444181
- [7]  0.6173892  1.2136997  0.9325744  1.5912007 -1.7716852 -0.9085152
-[13]  1.7604598  0.7482107 -1.3742738 -0.5138874  1.8668961 -2.8049887
-[19]  2.9986384  1.1611108</code></pre>
+<pre><code> [1]  2.8754277  0.9588949 -2.4951706  2.3881992 -1.3228206 -2.4820065
+ [7]  1.6670934  2.0775579  2.7520172 -2.0891893 -0.4823384  2.0149207
+[13]  1.8142354  1.8654562 -1.7251558  2.2545705  2.3244871 -2.1335509
+[19]  2.9374078 -0.3418355</code></pre>
 </div>
 </div>
 <p>When we draw a million times from the distribution, we can then plot it and see that it does look as we would expect:</p>
@@ -559,8 +559,8 @@ Exercise
 </div>
 </section>
 </section>
-<section id="random-sampling-from-data" class="level3" data-number="8.1.2">
-<h3 data-number="8.1.2" class="anchored" data-anchor-id="random-sampling-from-data"><span class="header-section-number">8.1.2</span> Random sampling from data</h3>
+<section id="random-sampling-from-data" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="random-sampling-from-data"><span class="header-section-number">7.1.2</span> Random sampling from data</h3>
 <p>In this section we will work with good ol’ <code>mtcars</code>, one of R’s most notable default datasets. We’ll assign it to an object so it shows in our Environment pane:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="ot">&lt;-</span> mtcars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -699,8 +699,8 @@ Exercise
 </div>
 </section>
 </section>
-<section id="statistics" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="statistics"><span class="header-section-number">8.2</span> Statistics</h2>
+<section id="statistics" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="statistics"><span class="header-section-number">7.2</span> Statistics</h2>
 <blockquote class="blockquote">
 <p>The problems considered by probability and statistics are inverse to each other. In probability theory we consider some underlying process which has some randomness or uncertainty modeled by random variables, and we figure out what happens. In statistics we observe something that has happened, and try to figure out what underlying process would explain those observations. (quote attributed to <a href="https://stats.stackexchange.com/a/675">Persi Diaconis</a>)</p>
 </blockquote>
@@ -742,8 +742,8 @@ Exercise
 <li><p>Applied statistics is about using these techniques reasonably in messy real-world situations…</p></li>
 </ul>
 </section>
-<section id="simulations" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="simulations"><span class="header-section-number">8.3</span> Simulations</h2>
+<section id="simulations" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="simulations"><span class="header-section-number">7.3</span> Simulations</h2>
 <ul>
 <li>In simulations, we generate fake data following standard procedures. Why?
 <ul>
@@ -764,8 +764,8 @@ Exercise
 <p>Simulate drawing an n=30 random sample from a <span class="math inline">\(X \sim U(0, 10)\)</span> distribution and take its maximum value.</p>
 </div>
 </div>
-<section id="loops" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="loops"><span class="header-section-number">8.3.1</span> Loops</h3>
+<section id="loops" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="loops"><span class="header-section-number">7.3.1</span> Loops</h3>
 <p>Loops allow us to repeat operations in R. The most common construct is the for-loop:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
@@ -820,8 +820,8 @@ Functional loops
 <p>We talked about loops and various extensions in one of our methods workshops last year: <a href="https://arcruz0.github.io/workshops/speedyr">Speedy R</a>.</p>
 </blockquote>
 </section>
-<section id="an-example-simulation" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="an-example-simulation"><span class="header-section-number">8.3.2</span> An example simulation</h3>
+<section id="an-example-simulation" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="an-example-simulation"><span class="header-section-number">7.3.2</span> An example simulation</h3>
 <p>We will simulate our exercise from above 10,000 times:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
@@ -873,8 +873,8 @@ Exercise
 </div>
 </div>
 </section>
-<section id="another-example-simulation-bootstrapping" class="level3" data-number="8.3.3">
-<h3 data-number="8.3.3" class="anchored" data-anchor-id="another-example-simulation-bootstrapping"><span class="header-section-number">8.3.3</span> Another example simulation: bootstrapping</h3>
+<section id="another-example-simulation-bootstrapping" class="level3" data-number="7.3.3">
+<h3 data-number="7.3.3" class="anchored" data-anchor-id="another-example-simulation-bootstrapping"><span class="header-section-number">7.3.3</span> Another example simulation: bootstrapping</h3>
 <p>Bootstrap (and its relatives) is one way in which we can do <em>inference</em>, i.e., assess uncertainty. (We’ll go through the intuition on the board.)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set seed an number of simulations</span></span>
@@ -1377,12 +1377,12 @@ Wickham, Hadley, Danielle Navarro, and Thomas Lin Pedersen. 2023. <em>Ggplot2: <
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./07_probability.html" class="pagination-link" aria-label="Probability">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probability</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05_matrices.html" class="pagination-link" aria-label="Matrices">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Matrices</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

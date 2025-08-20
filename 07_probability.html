@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Probability – Methods Camp</title>
+<title>6&nbsp; Probability – Methods Camp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -332,7 +332,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_probability.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_probability.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probability</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -400,26 +400,26 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_matrices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./06_tidy_data2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_probability.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08_stats_sims.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Matrices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -438,24 +438,24 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-probability" id="toc-what-is-probability" class="nav-link active" data-scroll-target="#what-is-probability"><span class="header-section-number">7.1</span> What is probability?</a></li>
-  <li><a href="#definitions-and-properties-of-probability" id="toc-definitions-and-properties-of-probability" class="nav-link" data-scroll-target="#definitions-and-properties-of-probability"><span class="header-section-number">7.2</span> Definitions and properties of probability</a></li>
-  <li><a href="#random-variables-and-probability-distributions" id="toc-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#random-variables-and-probability-distributions"><span class="header-section-number">7.3</span> Random variables and probability distributions</a>
+  <li><a href="#what-is-probability" id="toc-what-is-probability" class="nav-link active" data-scroll-target="#what-is-probability"><span class="header-section-number">6.1</span> What is probability?</a></li>
+  <li><a href="#definitions-and-properties-of-probability" id="toc-definitions-and-properties-of-probability" class="nav-link" data-scroll-target="#definitions-and-properties-of-probability"><span class="header-section-number">6.2</span> Definitions and properties of probability</a></li>
+  <li><a href="#random-variables-and-probability-distributions" id="toc-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#random-variables-and-probability-distributions"><span class="header-section-number">6.3</span> Random variables and probability distributions</a>
   <ul class="collapse">
-  <li><a href="#discrete-random-variables-and-probability-distributions" id="toc-discrete-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#discrete-random-variables-and-probability-distributions"><span class="header-section-number">7.3.1</span> Discrete random variables and probability distributions</a></li>
-  <li><a href="#continuous-random-variables-and-probability-distributions" id="toc-continuous-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#continuous-random-variables-and-probability-distributions"><span class="header-section-number">7.3.2</span> Continuous random variables and probability distributions</a></li>
+  <li><a href="#discrete-random-variables-and-probability-distributions" id="toc-discrete-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#discrete-random-variables-and-probability-distributions"><span class="header-section-number">6.3.1</span> Discrete random variables and probability distributions</a></li>
+  <li><a href="#continuous-random-variables-and-probability-distributions" id="toc-continuous-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#continuous-random-variables-and-probability-distributions"><span class="header-section-number">6.3.2</span> Continuous random variables and probability distributions</a></li>
   </ul></li>
-  <li><a href="#functions-describing-probability-distributions" id="toc-functions-describing-probability-distributions" class="nav-link" data-scroll-target="#functions-describing-probability-distributions"><span class="header-section-number">7.4</span> Functions describing probability distributions</a>
+  <li><a href="#functions-describing-probability-distributions" id="toc-functions-describing-probability-distributions" class="nav-link" data-scroll-target="#functions-describing-probability-distributions"><span class="header-section-number">6.4</span> Functions describing probability distributions</a>
   <ul class="collapse">
-  <li><a href="#probability-mass-function-pmf-discrete-variables" id="toc-probability-mass-function-pmf-discrete-variables" class="nav-link" data-scroll-target="#probability-mass-function-pmf-discrete-variables"><span class="header-section-number">7.4.1</span> Probability Mass Function (PMF) – Discrete Variables</a></li>
-  <li><a href="#probability-density-function-pdf-continuous-variables" id="toc-probability-density-function-pdf-continuous-variables" class="nav-link" data-scroll-target="#probability-density-function-pdf-continuous-variables"><span class="header-section-number">7.4.2</span> Probability Density Function (PDF) – Continuous Variables</a></li>
-  <li><a href="#cumulative-density-function-cdf" id="toc-cumulative-density-function-cdf" class="nav-link" data-scroll-target="#cumulative-density-function-cdf"><span class="header-section-number">7.4.3</span> Cumulative Density Function (CDF)</a></li>
+  <li><a href="#probability-mass-function-pmf-discrete-variables" id="toc-probability-mass-function-pmf-discrete-variables" class="nav-link" data-scroll-target="#probability-mass-function-pmf-discrete-variables"><span class="header-section-number">6.4.1</span> Probability Mass Function (PMF) – Discrete Variables</a></li>
+  <li><a href="#probability-density-function-pdf-continuous-variables" id="toc-probability-density-function-pdf-continuous-variables" class="nav-link" data-scroll-target="#probability-density-function-pdf-continuous-variables"><span class="header-section-number">6.4.2</span> Probability Density Function (PDF) – Continuous Variables</a></li>
+  <li><a href="#cumulative-density-function-cdf" id="toc-cumulative-density-function-cdf" class="nav-link" data-scroll-target="#cumulative-density-function-cdf"><span class="header-section-number">6.4.3</span> Cumulative Density Function (CDF)</a></li>
   </ul></li>
-  <li><a href="#common-types-of-probability-distributions" id="toc-common-types-of-probability-distributions" class="nav-link" data-scroll-target="#common-types-of-probability-distributions"><span class="header-section-number">7.5</span> Common types of probability distributions</a>
+  <li><a href="#common-types-of-probability-distributions" id="toc-common-types-of-probability-distributions" class="nav-link" data-scroll-target="#common-types-of-probability-distributions"><span class="header-section-number">6.5</span> Common types of probability distributions</a>
   <ul class="collapse">
-  <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution"><span class="header-section-number">7.5.1</span> Binomial distribution</a></li>
-  <li><a href="#uniform-distribution" id="toc-uniform-distribution" class="nav-link" data-scroll-target="#uniform-distribution"><span class="header-section-number">7.5.2</span> Uniform distribution</a></li>
-  <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><span class="header-section-number">7.5.3</span> Normal distribution</a></li>
+  <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution"><span class="header-section-number">6.5.1</span> Binomial distribution</a></li>
+  <li><a href="#uniform-distribution" id="toc-uniform-distribution" class="nav-link" data-scroll-target="#uniform-distribution"><span class="header-section-number">6.5.2</span> Uniform distribution</a></li>
+  <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><span class="header-section-number">6.5.3</span> Normal distribution</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -466,7 +466,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probability</span></h1>
 </div>
 
 
@@ -483,8 +483,8 @@ window.Quarto = {
 </header>
 
 
-<section id="what-is-probability" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="what-is-probability"><span class="header-section-number">7.1</span> What is probability?</h2>
+<section id="what-is-probability" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="what-is-probability"><span class="header-section-number">6.1</span> What is probability?</h2>
 <ul>
 <li>Informally, a probability is a number that describes how likely an event is.
 <ul>
@@ -523,8 +523,8 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
-<section id="definitions-and-properties-of-probability" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="definitions-and-properties-of-probability"><span class="header-section-number">7.2</span> Definitions and properties of probability</h2>
+<section id="definitions-and-properties-of-probability" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="definitions-and-properties-of-probability"><span class="header-section-number">6.2</span> Definitions and properties of probability</h2>
 <ul>
 <li><p>Joint probability: <span class="math inline">\(P(A \cap B)\)</span>. The probability that the two events will occur in one realization of the experiment.</p></li>
 <li><p>Law of total probability: <span class="math inline">\(P(A) = P(A \cap B) + P(A \cap B^C)\)</span>.</p></li>
@@ -540,15 +540,15 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
-<section id="random-variables-and-probability-distributions" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="random-variables-and-probability-distributions"><span class="header-section-number">7.3</span> Random variables and probability distributions</h2>
+<section id="random-variables-and-probability-distributions" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="random-variables-and-probability-distributions"><span class="header-section-number">6.3</span> Random variables and probability distributions</h2>
 <ul>
 <li><p>A <strong>random variable</strong> is a function (<span class="math inline">\(X: \Omega \to \mathbb{R}\)</span>) of the outcome of a random generative process. Informally, it is a “placeholder” for whatever will be the output of a process we’re studying.</p></li>
 <li><p>A <strong>probability distribution</strong> describes the probabilities associated with the values of a random variable.</p></li>
 <li><p>Random variables (and probability distributions) can be <strong>discrete</strong> or <strong>continuous</strong>.</p></li>
 </ul>
-<section id="discrete-random-variables-and-probability-distributions" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="discrete-random-variables-and-probability-distributions"><span class="header-section-number">7.3.1</span> Discrete random variables and probability distributions</h3>
+<section id="discrete-random-variables-and-probability-distributions" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="discrete-random-variables-and-probability-distributions"><span class="header-section-number">6.3.1</span> Discrete random variables and probability distributions</h3>
 <ul>
 <li><p>A sample space in which there are a (finite or infinite) countable number of outcomes</p></li>
 <li><p>Each realization of random process has a discrete probability of occurring.</p>
@@ -584,8 +584,8 @@ Exercise:
 </div>
 </section>
 </section>
-<section id="continuous-random-variables-and-probability-distributions" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="continuous-random-variables-and-probability-distributions"><span class="header-section-number">7.3.2</span> Continuous random variables and probability distributions</h3>
+<section id="continuous-random-variables-and-probability-distributions" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="continuous-random-variables-and-probability-distributions"><span class="header-section-number">6.3.2</span> Continuous random variables and probability distributions</h3>
 <ul>
 <li>What happens when our outcome is continuous?</li>
 <li>There are an infinite number of outcomes. This makes the denominator of our fraction difficult to work with.</li>
@@ -598,10 +598,10 @@ Exercise:
 </ul>
 </section>
 </section>
-<section id="functions-describing-probability-distributions" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="functions-describing-probability-distributions"><span class="header-section-number">7.4</span> Functions describing probability distributions</h2>
-<section id="probability-mass-function-pmf-discrete-variables" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="probability-mass-function-pmf-discrete-variables"><span class="header-section-number">7.4.1</span> Probability Mass Function (PMF) – Discrete Variables</h3>
+<section id="functions-describing-probability-distributions" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="functions-describing-probability-distributions"><span class="header-section-number">6.4</span> Functions describing probability distributions</h2>
+<section id="probability-mass-function-pmf-discrete-variables" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="probability-mass-function-pmf-discrete-variables"><span class="header-section-number">6.4.1</span> Probability Mass Function (PMF) – Discrete Variables</h3>
 <p>Probability of each occurrence encoded in probability mass function (PMF)</p>
 <ul>
 <li><p><span class="math inline">\(0 \leq f(x_i) \leq 1\)</span>: Probability of any value occurring must be between 0 and 1.</p></li>
@@ -609,8 +609,8 @@ Exercise:
 </ul>
 <p><img src="images/pmf.png" class="img-fluid"></p>
 </section>
-<section id="probability-density-function-pdf-continuous-variables" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="probability-density-function-pdf-continuous-variables"><span class="header-section-number">7.4.2</span> Probability Density Function (PDF) – Continuous Variables</h3>
+<section id="probability-density-function-pdf-continuous-variables" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="probability-density-function-pdf-continuous-variables"><span class="header-section-number">6.4.2</span> Probability Density Function (PDF) – Continuous Variables</h3>
 <ul>
 <li><p>Similar to PMF from before, but for continuous variables.</p></li>
 <li><p>Using integration, it gives the probability a value falls within a particular interval</p>
@@ -627,8 +627,8 @@ Exercise:
 </div>
 <p>Source: <a href="https://commons.wikimedia.org/wiki/File:Boxplot_vs_PDF.svg">Wikipedia Commons</a></p>
 </section>
-<section id="cumulative-density-function-cdf" class="level3" data-number="7.4.3">
-<h3 data-number="7.4.3" class="anchored" data-anchor-id="cumulative-density-function-cdf"><span class="header-section-number">7.4.3</span> Cumulative Density Function (CDF)</h3>
+<section id="cumulative-density-function-cdf" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="cumulative-density-function-cdf"><span class="header-section-number">6.4.3</span> Cumulative Density Function (CDF)</h3>
 <section id="discrete" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="discrete">Discrete</h4>
 <ul>
@@ -660,11 +660,11 @@ Exercise:
 </section>
 </section>
 </section>
-<section id="common-types-of-probability-distributions" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="common-types-of-probability-distributions"><span class="header-section-number">7.5</span> Common types of probability distributions</h2>
+<section id="common-types-of-probability-distributions" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="common-types-of-probability-distributions"><span class="header-section-number">6.5</span> Common types of probability distributions</h2>
 <p>There are many useful probability distributions. In this section we will cover three of the most common ones: the binomial, uniform, and normal distributions.</p>
-<section id="binomial-distribution" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="binomial-distribution"><span class="header-section-number">7.5.1</span> Binomial distribution</h3>
+<section id="binomial-distribution" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="binomial-distribution"><span class="header-section-number">6.5.1</span> Binomial distribution</h3>
 <p>A Binomial distribution is defined as follow: <span class="math inline">\(X \sim Binomial(n, p)\)</span></p>
 <p>PMF:</p>
 <p><span class="math display">\[
@@ -721,8 +721,8 @@ Exercise
 </div>
 </div>
 </section>
-<section id="uniform-distribution" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="uniform-distribution"><span class="header-section-number">7.5.2</span> Uniform distribution</h3>
+<section id="uniform-distribution" class="level3" data-number="6.5.2">
+<h3 data-number="6.5.2" class="anchored" data-anchor-id="uniform-distribution"><span class="header-section-number">6.5.2</span> Uniform distribution</h3>
 <p>A uniform distribution has two parameters: a minimum and a maximum. So <span class="math inline">\(X \sim U(a, b)\)</span>.</p>
 <ul>
 <li>PDF:</li>
@@ -783,8 +783,8 @@ Exercise
 </div>
 </div>
 </section>
-<section id="normal-distribution" class="level3" data-number="7.5.3">
-<h3 data-number="7.5.3" class="anchored" data-anchor-id="normal-distribution"><span class="header-section-number">7.5.3</span> Normal distribution</h3>
+<section id="normal-distribution" class="level3" data-number="6.5.3">
+<h3 data-number="6.5.3" class="anchored" data-anchor-id="normal-distribution"><span class="header-section-number">6.5.3</span> Normal distribution</h3>
 <p>A normal distribution has two parameters: a mean and a standard deviation. So <span class="math inline">\(X \sim N(\mu, \sigma)\)</span>.</p>
 <ul>
 <li>PDF: <span class="math inline">\(2 {\displaystyle {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}\)</span></li>
@@ -1307,12 +1307,12 @@ Wickham, Hadley, Danielle Navarro, and Thomas Lin Pedersen. 2023. <em>Ggplot2: <
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./06_tidy_data2.html" class="pagination-link" aria-label="Tidy data analysis II">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidy data analysis II</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./08_stats_sims.html" class="pagination-link" aria-label="Statistics and simulations">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
