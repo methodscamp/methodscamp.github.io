@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Statistics and simulations – Methods Camp</title>
+<title>9&nbsp; Wrap-up – Methods Camp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,8 +85,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./11_wrapup.html" rel="next">
-<link href="./07_probability.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./08_stats_sims.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -332,7 +332,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_stats_sims.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_wrapup.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap-up</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -418,13 +418,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_stats_sims.html" class="sidebar-item-text sidebar-link active">
+  <a href="./08_stats_sims.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_wrapup.html" class="sidebar-item-text sidebar-link">
+  <a href="./11_wrapup.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap-up</span></span></a>
   </div>
 </li>
@@ -444,17 +444,24 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#random-sampling" id="toc-random-sampling" class="nav-link active" data-scroll-target="#random-sampling"><span class="header-section-number">8.1</span> Random sampling</a>
+  <li><a href="#project-management" id="toc-project-management" class="nav-link active" data-scroll-target="#project-management"><span class="header-section-number">9.1</span> Project management</a>
   <ul class="collapse">
-  <li><a href="#random-sampling-from-theoretical-distributions" id="toc-random-sampling-from-theoretical-distributions" class="nav-link" data-scroll-target="#random-sampling-from-theoretical-distributions"><span class="header-section-number">8.1.1</span> Random sampling from theoretical distributions</a></li>
-  <li><a href="#random-sampling-from-data" id="toc-random-sampling-from-data" class="nav-link" data-scroll-target="#random-sampling-from-data"><span class="header-section-number">8.1.2</span> Random sampling from data</a></li>
+  <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects"><span class="header-section-number">9.1.1</span> RStudio projects</a></li>
   </ul></li>
-  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics"><span class="header-section-number">8.2</span> Statistics</a></li>
-  <li><a href="#simulations" id="toc-simulations" class="nav-link" data-scroll-target="#simulations"><span class="header-section-number">8.3</span> Simulations</a>
+  <li><a href="#quarto-documents-and-r-scripts" id="toc-quarto-documents-and-r-scripts" class="nav-link" data-scroll-target="#quarto-documents-and-r-scripts"><span class="header-section-number">9.2</span> Quarto documents and R Scripts</a></li>
+  <li><a href="#other-software-resources" id="toc-other-software-resources" class="nav-link" data-scroll-target="#other-software-resources"><span class="header-section-number">9.3</span> Other software resources</a>
   <ul class="collapse">
-  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"><span class="header-section-number">8.3.1</span> Loops</a></li>
-  <li><a href="#an-example-simulation" id="toc-an-example-simulation" class="nav-link" data-scroll-target="#an-example-simulation"><span class="header-section-number">8.3.2</span> An example simulation</a></li>
-  <li><a href="#another-example-simulation-bootstrapping" id="toc-another-example-simulation-bootstrapping" class="nav-link" data-scroll-target="#another-example-simulation-bootstrapping"><span class="header-section-number">8.3.3</span> Another example simulation: bootstrapping</a></li>
+  <li><a href="#overleaf" id="toc-overleaf" class="nav-link" data-scroll-target="#overleaf"><span class="header-section-number">9.3.1</span> Overleaf</a></li>
+  <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero"><span class="header-section-number">9.3.2</span> Zotero</a></li>
+  </ul></li>
+  <li><a href="#methods-at-ut" id="toc-methods-at-ut" class="nav-link" data-scroll-target="#methods-at-ut"><span class="header-section-number">9.4</span> Methods at UT</a>
+  <ul class="collapse">
+  <li><a href="#required-methods-courses" id="toc-required-methods-courses" class="nav-link" data-scroll-target="#required-methods-courses"><span class="header-section-number">9.4.1</span> Required methods courses</a></li>
+  <li><a href="#other-methods-courses" id="toc-other-methods-courses" class="nav-link" data-scroll-target="#other-methods-courses"><span class="header-section-number">9.4.2</span> Other methods courses</a></li>
+  <li><a href="#other-departments-at-ut" id="toc-other-departments-at-ut" class="nav-link" data-scroll-target="#other-departments-at-ut"><span class="header-section-number">9.4.3</span> Other departments at UT</a></li>
+  <li><a href="#methods-fellow" id="toc-methods-fellow" class="nav-link" data-scroll-target="#methods-fellow"><span class="header-section-number">9.4.4</span> Methods Fellow</a></li>
+  <li><a href="#methods-summer-programs" id="toc-methods-summer-programs" class="nav-link" data-scroll-target="#methods-summer-programs"><span class="header-section-number">9.4.5</span> Methods summer programs</a></li>
+  <li><a href="#more-methods-camps" id="toc-more-methods-camps" class="nav-link" data-scroll-target="#more-methods-camps"><span class="header-section-number">9.4.6</span> More methods camps!</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -465,7 +472,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap-up</span></h1>
 </div>
 
 
@@ -482,385 +489,97 @@ window.Quarto = {
 </header>
 
 
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="random-sampling" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="random-sampling"><span class="header-section-number">8.1</span> Random sampling</h2>
-<p>Before we jump to statistics and simulations, we’ll cover how to do random sampling in R.</p>
-<section id="random-sampling-from-theoretical-distributions" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="random-sampling-from-theoretical-distributions"><span class="header-section-number">8.1.1</span> Random sampling from theoretical distributions</h3>
-<section id="uniform-distribution" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="uniform-distribution">Uniform distribution</h4>
-<p>For the uniform distribution, the arguments specify how many draws we want and the boundaries</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">max =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1]  2.4173709 -1.5998902 -0.2690798  1.0528087 -2.3891525  2.9205388
- [7]  0.6548896 -1.1555373 -1.6818768  2.3439239 -0.2461326  2.1160048
-[13] -1.5746501  2.5875466  1.2225383 -0.2508785  2.1232467 -1.0951549
-[19] -2.8660158 -1.4033073</code></pre>
-</div>
-</div>
-<p>When we draw a million times from the distribution, we can then plot it and see that it does look as we would expect:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>my_runif <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">1000000</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">max =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(my_runif), <span class="fu">aes</span>(<span class="at">x =</span> my_runif)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.25</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="at">closed =</span> <span class="st">"right"</span>) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
+<section id="project-management" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="project-management"><span class="header-section-number">9.1</span> Project management</h2>
+<section id="rstudio-projects" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="rstudio-projects"><span class="header-section-number">9.1.1</span> RStudio projects</h3>
+<ul>
+<li><p>RStudio projects are an excellent way to keep all the files associated with a project (data, R scripts, results, figures, etc.) in one place on your computer.</p></li>
+<li><p>This is one of the best ways to improve your workflow in RStudio, allowing you to:</p>
+<ul>
+<li>Create a project for each paper or data analysis project.</li>
+<li>Store data files in one place.</li>
+<li>Save, edit, and run scripts.</li>
+<li>Keep outputs such as plots and cleaned data.</li>
+</ul></li>
+<li><p>To create a new project file, click <code>File &gt; New Project</code>, then:</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="08_stats_sims_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="images/new_project_step1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
 </figure>
 </div>
-</div>
-</div>
-</section>
-<section id="binomial-distribution" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="binomial-distribution">Binomial distribution</h4>
-<p>For the binomial distribution, we can specify the number of draws, how many trials each draw will have, and the probability of success.</p>
-<p>For instance, we can ask R to do the following twenty times: flip a fair coin one hundred times, and count the number of tails.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 48 45 54 50 58 50 42 58 48 57 53 49 52 51 49 40 57 53 52 41</code></pre>
-</div>
-</div>
-<p>With <code>prob =</code> , we can implement unfair coins:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 88 87 93 95 93 92 91 94 87 91 90 92 93 89 90 95 91 90 86 88</code></pre>
-</div>
-</div>
-</section>
-<section id="normal-distribution" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="normal-distribution">Normal distribution</h4>
-<p>For the Normal or Gaussian distribution, we specify the number of draws, the mean, and standard deviation:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1]  1.10455864  0.06386693 -1.59684275  1.86298270 -0.90428935 -1.55158044
- [7]  1.27986282 -0.32420495 -0.70015076  2.17271578  0.89778913 -0.01338538
-[13] -0.74074395  0.36772316 -0.66453402 -1.11498344 -1.15067439 -0.55098894
-[19]  0.10503154 -0.27183645</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Compute and plot <code>my_rnorm</code>, a vector with 10,000 draws from a Normal distribution <span class="math inline">\(X\)</span> with mean equal to -10 and standard deviation equal to 2 (<span class="math inline">\(X\sim N(-10,2)\)</span>). You can recycle code!</p>
-</div>
-</div>
-</section>
-</section>
-<section id="random-sampling-from-data" class="level3" data-number="8.1.2">
-<h3 data-number="8.1.2" class="anchored" data-anchor-id="random-sampling-from-data"><span class="header-section-number">8.1.2</span> Random sampling from data</h3>
-<p>In this section we will work with good ol’ <code>mtcars</code>, one of R’s most notable default datasets. We’ll assign it to an object so it shows in our Environment pane:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="ot">&lt;-</span> mtcars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Default datasets such as <code>mtcars</code> and <code>iris</code> are useful because they are available to everyone, and once you become familiar with them, you can start thinking about the code instead of the intricacies of the data. These qualities also make default datasets ideal for building <strong>reproducible examples</strong> (see <a href="http://adv-r.had.co.nz/Reproducibility.html">Wickham 2014</a>)</p>
-</div>
-</div>
-<p>We can use the function <code>sample()</code> to obtain random values from a vector. The <code>size =</code> argument specifies how many values we want. For example, let’s get one random value of the “mpg” column:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 24.4</code></pre>
-</div>
-</div>
-<p>Every time we run this command, we can get a different result:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 14.7</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 15.5</code></pre>
-</div>
-</div>
-<p>In some occasions we do want to get the same result consistently after running some random process multiple times. In this case, we <em>set a seed</em>, which takes advantage of R’s pseudo-random number generator capabilities. No matter how many times we run the following code block, the result will be the same:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 15</code></pre>
-</div>
-</div>
-<p>Sampling <em>with replacement</em> means that we can get the same value multiple times. For example:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Banana"</span>, <span class="st">"Apple"</span>, <span class="st">"Orange"</span>), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Apple"  "Apple"  "Orange"</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(my_mtcars<span class="sc">$</span>mpg, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  [1] 26.0 15.2 18.7 18.7 30.4 21.0 24.4 26.0 32.4 15.8 32.4 19.2 18.1 16.4 19.2
- [16] 27.3 14.3 10.4 17.3 13.3 21.4 13.3 19.2 24.4 15.0 27.3 17.8 15.2 15.8 14.3
- [31] 19.7 16.4 18.7 15.8 19.2 21.0 14.3 15.2 14.3 27.3 21.4 33.9 33.9 21.4 30.4
- [46] 33.9 21.4 17.3 17.3 10.4 26.0 18.7 15.2 30.4 10.4 10.4 15.5 14.3 26.0 17.3
- [61] 33.9 26.0 24.4 18.7 30.4 32.4 21.5 30.4 15.2 27.3 13.3 17.3 21.4 24.4 13.3
- [76] 22.8 33.9 13.3 21.5 14.3 19.2 30.4 24.4 26.0 15.8 10.4 24.4 14.3 15.2 10.4
- [91] 19.2 21.0 16.4 19.2 24.4 19.7 18.7 10.4 18.7 17.8</code></pre>
-</div>
-</div>
-<p>In order to sample not from a vector but from a data frame’s rows, we can use the <code>slice_sample()</code> function from <code>dplyr</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">2</span>) <span class="co"># a number of rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                  mpg cyl disp  hp drat   wt  qsec vs am gear carb
-Dodge Challenger 15.5   8  318 150 2.76 3.52 16.87  0  0    3    2
-Datsun 710       22.8   4  108  93 3.85 2.32 18.61  1  1    4    1</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.5</span>) <span class="co"># a proportion of rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
-Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
-Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
-Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
-Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
-Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
-Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
-Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
-Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
-Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
-Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
-Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4</code></pre>
-</div>
-</div>
-<p>Again, we can also use seeds here to ensure that we’ll get the same result each time:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-Maserati Bora      15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-Honda Civic        30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
-Merc 450SLC        15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
-Datsun 710         22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
-Merc 280           19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
-Fiat 128           32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
-Dodge Challenger   15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
-Merc 280C          17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
-Hornet Sportabout  18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
-Toyota Corolla     33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-Ford Pantera L     15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
-AMC Javelin        15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
-Ferrari Dino       19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
-Merc 230           22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
-Lotus Europa       30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Use <code>slice_sample()</code> to sample 32 rows from <code>mtcars</code> <em>with replacement</em>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="statistics" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="statistics"><span class="header-section-number">8.2</span> Statistics</h2>
-<blockquote class="blockquote">
-<p>The problems considered by probability and statistics are inverse to each other. In probability theory we consider some underlying process which has some randomness or uncertainty modeled by random variables, and we figure out what happens. In statistics we observe something that has happened, and try to figure out what underlying process would explain those observations. (quote attributed to <a href="https://stats.stackexchange.com/a/675">Persi Diaconis</a>)</p>
-</blockquote>
-<ul>
-<li><p>In statistics we try to learn about a <strong>data-generating process</strong> (DGP) using our observed data. Examples: surveys, GDP statistics.</p></li>
-<li><p>Usually we are restrained to <strong>samples</strong>, while our DGPs of interest are <strong>population-based</strong>.</p>
-<ul>
-<li>So we use <strong>random sampling</strong> or refer to <strong>superpopulations</strong> as a way to justify how the data we observe can approximate the population.</li>
-</ul></li>
-<li><p>Statistics has two main targets:</p>
-<ul>
-<li><strong>Estimation</strong>: how we find a reasonable guess of an unknown property (parameter) of a DGP</li>
-<li><strong>Inference</strong>: how we describe uncertainty about our estimate</li>
-</ul></li>
-<li><p>We use an <strong>estimator</strong> <span class="math inline">\(\hat\theta(\cdot)\)</span>, which is a function that summarizes data, as a guess about a parameter <span class="math inline">\(\theta\)</span>. A guess generated by an estimator in a given sample is called an <strong>estimate</strong>.</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose there’s a uniform distribution <span class="math inline">\(X \sim U(0, \text{unknown})\)</span> out there.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We want to use a sample from this distribution (let’s say of n=30 observations) to estimate the unknown upper bound.</p>
-<p>Discuss: would the sample maximum be a good estimator? Why or why not?</p>
-</div>
-</div>
-<ul>
-<li><p>Theoretical statistics is all about finding “good” estimators. A few properties of good estimators:</p>
-<ul>
-<li><strong>Unbiasedness</strong>: Across multiple random samples, an unbiased estimator gets the right answer on average.</li>
-<li><strong>Low variance</strong>: Across multiple random samples, a low-variance estimator is more concentrated around the true parameter.</li>
-<li>BUT it’s sometimes hard to get both unbiasedness and low variance. So we have to make sacrifices. We usually quantify this via the mean squared error: <span class="math inline">\(MSE = bias^2 + variance\)</span>. Comparing two estimators, the one with the lowest MSE is said to be more <strong>efficient</strong>.</li>
-<li><strong>Consistency</strong>: A consistent estimator converges in probability to the true value. “If we had enough data, the probability that our estimate would be far from the truth would be close to zero” (<a href="https://www.cambridge.org/core/books/foundations-of-agnostic-statistics/684756357E7E9B3DFF0A8157FB2DCECA">Aronow and Miller 2019</a>, p.&nbsp;105).</li>
-</ul></li>
-<li><p>Applied statistics is about using these techniques reasonably in messy real-world situations…</p></li>
-</ul>
-</section>
-<section id="simulations" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="simulations"><span class="header-section-number">8.3</span> Simulations</h2>
-<ul>
-<li>In simulations, we generate fake data following standard procedures. Why?
-<ul>
-<li>To better understand how our estimators work in different settings (the methods reason)</li>
-<li>To get insights about complex processes with many moving parts (the substantive reason) (let’s talk about gerrymandering).</li>
-</ul></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Simulate drawing an n=30 random sample from a <span class="math inline">\(X \sim U(0, 10)\)</span> distribution and take its maximum value.</p>
-</div>
-</div>
-<section id="loops" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="loops"><span class="header-section-number">8.3.1</span> Loops</h3>
-<p>Loops allow us to repeat operations in R. The most common construct is the for-loop:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5
-[1] 6
-[1] 7
-[1] 8
-[1] 9
-[1] 10</code></pre>
-</div>
-</div>
-<p>It’s common to perform operations at each step and save the results. We typically create an empty object and “fill it in” at each step:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">double</span>(<span class="dv">10</span>)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  results[i] <span class="ot">&lt;-</span> i <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1]   1   4   9  16  25  36  49  64  81 100</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Functional loops
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Another way to do loops is with the <code>*apply()</code> family of functions:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="cf">function</span>(x){x <span class="sc">^</span> <span class="dv">2</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1]   1   4   9  16  25  36  49  64  81 100</code></pre>
-</div>
-</div>
-</div>
-</div>
-<blockquote class="blockquote">
-<p>We talked about loops and various extensions in one of our methods workshops last year: <a href="https://arcruz0.github.io/workshops/speedyr">Speedy R</a>.</p>
-</blockquote>
-</section>
-<section id="an-example-simulation" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="an-example-simulation"><span class="header-section-number">8.3.2</span> An example simulation</h3>
-<p>We will simulate our exercise from above 10,000 times:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">10000</span> <span class="co"># number of simulations</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">30</span>    <span class="co"># number of observations in each simulation</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># define an empty numeric object</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>simulated_estimates <span class="ot">&lt;-</span> <span class="fu">double</span>(k)</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># loop: at each step draw a random n=30 sample and get its maximum </span></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  random_sample <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>  simulated_estimates[i] <span class="ot">&lt;-</span> <span class="fu">max</span>(random_sample)</span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Now we can analyze our simulated estimates:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(simulated_estimates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9.677225</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> simulated_estimates), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="at">closed =</span> <span class="st">"right"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="08_stats_sims_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="images/new_project_step2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
 </figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/new_project_step3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div></li>
+<li><p>Call your project some version of “methodscamptest” and choose carefully where you wish to store the project on your machine.</p></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>If you don’t store your project (and your other files, too!) somewhere reasonable, it will be hard to find it in the future! We recommend creating a clear organizational scheme for yourself early on.</p>
+</div>
+</div>
+<section id="using-rstudio-projects" class="level4" data-number="9.1.1.1">
+<h4 data-number="9.1.1.1" class="anchored" data-anchor-id="using-rstudio-projects"><span class="header-section-number">9.1.1.1</span> Using RStudio projects</h4>
+<p>When using an RStudio project, you should see its name in the top-right corner of RStudio, next to a light blue icon. You can check with R the folder in which your project operates:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Now, as an example, let’s run the following commands in the script editor and save the files into the project directory.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot =</span> my_plot,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">filename =</span> <span class="st">"plot_mtcars.pdf"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(mtcars, <span class="st">"mtcars.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Quit RStudio and check out the folder associated with the project.</p></li>
+<li><p>You should see the PDF file for the plot, the .csv file for the data, and the <code>.Rproj</code> file for the project itself.</p></li>
+<li><p>Double-click the <code>.Rproj</code> file to reopen the project and pick up where you left off! Everything you need should be ready to go.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="quarto-documents-and-r-scripts" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="quarto-documents-and-r-scripts"><span class="header-section-number">9.2</span> Quarto documents and R Scripts</h2>
+<p>We have worked with .qmd scripts during Methods Camp. <a href="https://quarto.org/">Quarto</a> is a very flexible format that allows code, math, and text. People use it to make reports (PDF or HTML), presentations, websites, etc. You can create a Quarto document from RStudio using <code>File &gt; New File &gt; Quarto Document</code>, and then compile it to its final form using the “Render” button.</p>
+<p>You should also be aware of regular R scripts, with a .R extension. They can be created in RStudio using <code>File &gt; New File &gt; R Script</code>. They just allow code: to add comments, you need to preface them by the pound sign (<code>#</code>).</p>
+</section>
+<section id="other-software-resources" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="other-software-resources"><span class="header-section-number">9.3</span> Other software resources</h2>
+<section id="overleaf" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="overleaf"><span class="header-section-number">9.3.1</span> Overleaf</h3>
+<div style="float: right; position: relative; top: 0px; padding: 30px;">
+<p><img src="images/overleaf.png" class="img-fluid" width="250"></p>
+</div>
+<ul>
+<li><p><a href="https://www.overleaf.com/">Overleaf</a> is a collaborative cloud-based LaTeX editor designed for writing, editing, and publishing documents.</p>
+<ul>
+<li>LaTeX is a software used for typesetting technical documents. It is used widely in our discipline for the preparation for manuscripts to journals and other publishing venues.</li>
+</ul></li>
+<li><p>UT Austin actually provides free access to Overleaf Professional to graduate students using your UT email. (The Professional accounts allows more collaborators on projects and other goodies.)</p></li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -871,38 +590,145 @@ Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We just simulated to evaluate the sample maximum as an estimator. Modify the code above to evaluate the following two estimators:</p>
-<ul>
-<li><p><span class="math inline">\(\displaystyle\text{(sample maximum)} \cdot \frac{(n+1)}{n}\)</span></p></li>
-<li><p><span class="math inline">\(\displaystyle 2 \cdot \text{(sample mean)}\)</span></p></li>
-</ul>
+<p>Create an Overleaf Professional account using your UT email address. You can do so <a href="https://www.overleaf.com/edu/utexas">here</a>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\hat{\beta} = (X'X)^{-1}X'Y
+\]</span></p>
+<p>LaTeX is actually the markup language that the math in Quarto and this website! If you are curious about general syntax and commands, you can access <a href="https://github.com/methodscamp/methodscamp.github.io">our repository</a> at any time to get a closer look.</p>
 </div>
 </div>
 </section>
-<section id="another-example-simulation-bootstrapping" class="level3" data-number="8.3.3">
-<h3 data-number="8.3.3" class="anchored" data-anchor-id="another-example-simulation-bootstrapping"><span class="header-section-number">8.3.3</span> Another example simulation: bootstrapping</h3>
-<p>Bootstrap (and its relatives) is one way in which we can do <em>inference</em>, i.e., assess uncertainty. (We’ll go through the intuition on the board.)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set seed an number of simulations</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>bootstrapped_means <span class="ot">&lt;-</span> <span class="fu">double</span>(k)</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> my_mtcars <span class="sc">|&gt;</span> <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="dv">1</span>, <span class="at">replace =</span> T)</span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  bootstrapped_means[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(m<span class="sc">$</span>mpg)</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="zotero" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="zotero"><span class="header-section-number">9.3.2</span> Zotero</h3>
+<div style="float: right; position: relative; top: 0px; padding: 30px;">
+<p><img src="images/zotero_512x512x32.png" class="img-fluid" width="200"></p>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(bootstrapped_means), <span class="fu">aes</span>(<span class="at">x =</span> bootstrapped_means)) <span class="sc">+</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.25</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="at">closed =</span> <span class="st">"right"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="08_stats_sims_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<ul>
+<li><p>Zotero is an open-source reference manager used to store, manage, and cite bibliographic references, such as books and articles.</p></li>
+<li><p>When it is time to write, you can insert your sources directly into your paper as in-text citations via a word processor plugin, which generates a bibliography in your style of choice (e.g., APA). It works with Word, Google Docs, Overleaf, and RStudio.</p>
+<ul>
+<li>This can save a lot of time, especially when you have to change citation styles for submission to another journal.</li>
+</ul></li>
+<li><p>You can download the software for free <a href="https://www.zotero.org/">here</a>.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Zotero is one of many other reference managers out there. Alternatives include Mendeley and EndNote, among others. You should choose whatever option best suits your needs.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="methods-at-ut" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="methods-at-ut"><span class="header-section-number">9.4</span> Methods at UT</h2>
+<section id="required-methods-courses" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="required-methods-courses"><span class="header-section-number">9.4.1</span> Required methods courses</h3>
+<ul>
+<li><p>Scope and Methods of Political Science</p></li>
+<li><p>Statistics I (Statistics/linear regression)</p></li>
+<li><p>Statistics II (Linear regression and more)</p></li>
+<li><p>Statistics III (Maximum likelihood estimation)</p>
+<ul>
+<li>Only required if your major field is methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="other-methods-courses" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="other-methods-courses"><span class="header-section-number">9.4.2</span> Other methods courses</h3>
+<ul>
+<li><p><strong>Statistics / Econometrics / Machine Learning:</strong></p>
+<ul>
+<li>Causal Inference</li>
+<li>Bayesian Statistics</li>
+<li>Math Methods for Political Analysis</li>
+<li>Time Series and Panel Data</li>
+<li>Panel and Multilevel Analysis</li>
+<li>Network Analysis</li>
+<li>Machine Learning in Political Science</li>
+<li>Making Big Data</li>
+</ul></li>
+<li><p><strong>Formal Theory</strong></p>
+<ul>
+<li>Intro to Formal Political Analysis</li>
+<li>Formal Political Analysis II</li>
+<li>Formal Theories of International Relations</li>
+</ul></li>
+<li><p><strong>Everything else</strong></p>
+<ul>
+<li>Conceptualization and Measurement</li>
+<li>Experimental Methods in Political Science</li>
+<li>Qualitative Methods</li>
+<li>Seminar in Field Experiments</li>
+</ul></li>
+</ul>
+</section>
+<section id="other-departments-at-ut" class="level3" data-number="9.4.3">
+<h3 data-number="9.4.3" class="anchored" data-anchor-id="other-departments-at-ut"><span class="header-section-number">9.4.3</span> Other departments at UT</h3>
+<p>You can also take courses through the Economics, Business (IROM), Sociology, Mathematics, or Statistics (SDS) departments.</p>
+<ul>
+<li><p><a href="https://stat.utexas.edu/academics/master-science-statistics">M.S. in Statistics</a></p></li>
+<li><p>Software and Topic Short Courses at SDS (see their <a href="https://stat.utexas.edu/events">Events</a> page): R, Python, Stata, etc.</p></li>
+</ul>
+</section>
+<section id="methods-fellow" class="level3" data-number="9.4.4">
+<h3 data-number="9.4.4" class="anchored" data-anchor-id="methods-fellow"><span class="header-section-number">9.4.4</span> Methods Fellow</h3>
+<p>The Methods Fellow is a grad student who serves as a Methods TA for all other UT Gov grad students.</p>
+<ul>
+<li>Holds office hours</li>
+<li>Hosts a Methods Co-working Hour</li>
+<li>Organizes workshops</li>
+</ul>
+</section>
+<section id="methods-summer-programs" class="level3" data-number="9.4.5">
+<h3 data-number="9.4.5" class="anchored" data-anchor-id="methods-summer-programs"><span class="header-section-number">9.4.5</span> Methods summer programs</h3>
+<ul>
+<li><p><a href="https://www.icpsr.umich.edu/web/pages/">ICPSR</a> (Inter-university Consortium for Political and Social Research)</p>
+<ul>
+<li>Ann Arbor, Michigan</li>
+</ul></li>
+<li><p><a href="https://www.maxwell.syr.edu/research/center-for-qualitative-and-multi-method-inquiry/institute-for-qualitative-multi-method-research">IQMR</a> (Institute for Qualitative and Multi-Method Research)</p>
+<ul>
+<li>Syracuse, NY</li>
+</ul></li>
+<li><p><a href="https://eitminstitute.org/">EITM</a> (Empirical Implications of Theoretical Models)</p>
+<ul>
+<li>Various locations</li>
+</ul></li>
+</ul>
+</section>
+<section id="more-methods-camps" class="level3" data-number="9.4.6">
+<h3 data-number="9.4.6" class="anchored" data-anchor-id="more-methods-camps"><span class="header-section-number">9.4.6</span> More methods camps!</h3>
+<ul>
+<li><p><a href="https://methodscamp.github.io/">UT Methods Camp Website</a></p>
+<ul>
+<li>Check out the PDF download!</li>
+</ul></li>
+<li><p><a href="https://iqss.github.io/prefresher/">Harvard Math Prefresher</a></p></li>
+<li><p><a href="https://github.com/NUpolisci/NU-math-camp?tab=readme-ov-file">Northwestern Math Camp (2022)</a></p></li>
+<li><p><a href="https://people.duke.edu/~das76/Math_Camp_Info_2019.pdf">Duke Math Camp (2019)</a></p>
+<ul>
+<li>Make sure to follow the links for the videos, etc.</li>
+</ul></li>
+</ul>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -959,12 +785,6 @@ Wickham, Hadley, Danielle Navarro, and Thomas Lin Pedersen. 2023. <em>Ggplot2: <
 </div>
 </div>
 </section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>This is a fascinating distribution with a rich history, and it is used in many statistical textbooks (<a href="https://www.tandfonline.com/doi/pdf/10.1080/10691898.2001.11910653">Whittinghill and Hogg, 2001</a>). It is thoroughly covered in the UT SDS <a href="https://web.archive.org/web/20210716123200/https://web.ma.utexas.edu/users/parker/384/index.htm">Mathematical Statistics</a> sequence.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1382,13 +1202,13 @@ Wickham, Hadley, Danielle Navarro, and Thomas Lin Pedersen. 2023. <em>Ggplot2: <
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./07_probability.html" class="pagination-link" aria-label="Probability">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span>
+      <a href="./08_stats_sims.html" class="pagination-link" aria-label="Statistics and simulations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Statistics and simulations</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./11_wrapup.html" class="pagination-link" aria-label="Wrap-up">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap-up</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
