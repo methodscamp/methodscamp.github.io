@@ -47,15 +47,7 @@ As you can see from the above schedule, we'll be meeting on Monday, August 18th,
 -   Optimization
 -   Integrals
 
-**5 Wednesday morning: [Matrices](05_matrices.html)**
-
--   Matrices
--   Systems of linear equations
--   Matrix operations (multiplication, transpose, inverse, determinant)
--   Solving systems of linear equations in matrix form (and why that's cool)
--   Introduction to OLS
-
-**6 Wednesday afternoon: [Tidy data analysis II](06_tidy_data2.html)**
+**5 Wednesday morning: [Tidy data analysis II](06_tidy_data2.html)**
 
 -   Loading data in different formats (.csv, R, Excel, Stata, SPSS)
 -   Recoding values (`if_else()`, `case_when()`)
@@ -64,17 +56,25 @@ As you can see from the above schedule, we'll be meeting on Monday, August 18th,
 -   Merging data
 -   Plotting extensions (trend graphs, facets, customization)
 
-**7 Thursday morning: [Probability](07_probability.html)**
+**6 Wednesday afternoon: [Probability](07_probability.html)**
 
 -   Probability: basic concepts
 -   Random variables, probability distributions, and their properties
 -   Common probability distributions
 
-**8 Thursday afternoon: [Statistics and simulations](08_stats_sims.html)**
+**7 Thursday morning: [Statistics and simulations](08_stats_sims.html)**
 
 -   Statistics: basic concepts
 -   Random sampling and loops in R
 -   Simulation example: bootstrapping
+
+**8 Thursday afternoon: [Matrices](05_matrices.html)**
+
+-   Matrices
+-   Systems of linear equations
+-   Matrix operations (multiplication, transpose, inverse, determinant)
+-   Solving systems of linear equations in matrix form (and why that's cool)
+-   Introduction to OLS
 
 **9 Thursday afternoon: Wrap-up**
 
@@ -92,7 +92,7 @@ If you have any questions during or outside of the methods camp, you can contact
 
 ## Acknowledgements {.unnumbered}
 
-We thank previous Methods Camp instructors for their accumulated experience and materials, upon which we have based ours upon. UT Gov Prof. Max Goplerud gave us amazing feedback for this iteration of Methods Camp (2025). All errors remain our own (and will hopefully be fixed with your help!).
+We thank previous Methods Camp instructors for their accumulated experience and materials, upon which we have based ours. UT Gov Prof. Max Goplerud gave us amazing feedback for this iteration of Methods Camp (2025). All errors remain our own (and will hopefully be fixed with your help!).
 
 ## Materials from previous editions {.unnumbered}
 
