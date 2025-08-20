@@ -2,50 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://methodscamp.github.io/index.html</loc>
-    <lastmod>2025-08-20T01:56:47.475Z</lastmod>
+    <lastmod>2025-08-20T02:00:40.729Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/00_setup.html</loc>
-    <lastmod>2025-08-20T01:56:47.441Z</lastmod>
+    <lastmod>2025-08-20T02:00:40.695Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/01_r_intro.html</loc>
-    <lastmod>2025-08-20T01:56:47.441Z</lastmod>
+    <lastmod>2025-08-20T02:00:40.695Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/02_tidy_data1.html</loc>
-    <lastmod>2025-08-20T01:56:47.441Z</lastmod>
+    <lastmod>2025-08-20T02:00:40.695Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/03_functions.html</loc>
-    <lastmod>2025-08-20T01:56:47.441Z</lastmod>
+    <lastmod>2025-08-20T02:00:40.696Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/04_calculus.html</loc>
-    <lastmod>2025-08-20T01:56:47.441Z</lastmod>
+    <lastmod>2025-08-20T02:00:40.696Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/06_tidy_data2.html</loc>
-    <lastmod>2025-08-20T01:56:47.441Z</lastmod>
+    <lastmod>2025-08-20T02:00:40.696Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/07_probability.html</loc>
-    <lastmod>2025-08-20T01:56:47.441Z</lastmod>
+    <lastmod>2025-08-20T02:00:40.696Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/08_stats_sims.html</loc>
-    <lastmod>2025-08-20T01:56:47.441Z</lastmod>
+    <lastmod>2025-08-20T02:00:40.696Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/05_matrices.html</loc>
-    <lastmod>2025-08-20T01:56:47.441Z</lastmod>
+    <lastmod>2025-08-20T02:00:40.696Z</lastmod>
+  </url>
+  <url>
+    <loc>https://methodscamp.github.io/11_wrapup.html</loc>
+    <lastmod>2025-08-20T02:00:40.697Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/references.html</loc>
-    <lastmod>2025-08-20T01:56:47.585Z</lastmod>
+    <lastmod>2025-08-20T02:00:40.839Z</lastmod>
   </url>
   <url>
     <loc>https://methodscamp.github.io/Methods-Camp.pdf</loc>
-    <lastmod>2025-08-20T02:01:21.271Z</lastmod>
+    <lastmod>2025-08-20T02:04:36.275Z</lastmod>
   </url>
 </urlset>
