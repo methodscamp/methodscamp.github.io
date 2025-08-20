@@ -19,10 +19,10 @@ book:
     - 02_tidy_data1.qmd
     - 03_functions.qmd
     - 04_calculus.qmd
-    - 05_matrices.qmd
     - 06_tidy_data2.qmd
     - 07_probability.qmd
     - 08_stats_sims.qmd
+    - 05_matrices.qmd
     - references.qmd
   downloads: pdf
   site-url: https://methodscamp.github.io/
