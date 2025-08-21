@@ -30,7 +30,7 @@ That's it for the installation! We also *strongly* recommend that you change a c
 
 - `Tools > Global Options > Appearance` to change to a dark theme, if you want! Pros: better for night sessions, hacker vibes...
 
-[^settings]: The idea behind these settings (or at least the first two) is to force R to start from scratch with each new session. No lingering objects from previous coding sessions avoids misunderstandings and helps with reproducibility!
+[^settings]: The idea behind these settings (or at least the first two) is to force R to start from scratch with each new session. No lingering objects from previous coding sessions avoid misunderstandings and help with reproducibility!
 
 ## Setting up for Methods Camp
 
@@ -42,10 +42,7 @@ Below are RStudio projects for you to download, available as .zip compressed fil
 - [Download Part 1 of the class materials](materials/methodscamp_part1.zip).
 - [Download Part 2 of the class materials](materials/methodscamp_part2.zip).
 - [Download Part 3 of the class materials](materials/methodscamp_part3.zip).
-
-<!--
 - [Download Part 4 of the class materials](materials/methodscamp_part4.zip).
--->
 
 ::: {.callout-warning}
 Make sure to properly unzip the materials. Double-clicking the .zip file on most Windows systems *will not* unzip the folder---you must do `Right click > Extract all`. 
