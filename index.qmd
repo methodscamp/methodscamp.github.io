@@ -4,7 +4,7 @@
 |---------------|-------------------|------------|
 | Mon, Aug. 18  | 1:00 PM - 5:30 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/information/nlogon/maps/utm/rlp/) 2.606  |
 | Tue, Aug. 19  | 1:00 PM - 5:30 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/information/nlogon/maps/utm/rlp/) 2.606 |
-| Wed, Aug. 20  | 9:00 AM - 12:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/information/nlogon/maps/utm/rlp/)1.302D|
+| Wed, Aug. 20  | 9:00 AM - 12:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/information/nlogon/maps/utm/rlp/) 1.302D|
 |               | 1:00 PM - 4:30 PM  | [BAT](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/UTM/BAT/) 5.108 |
 | Thu, Aug. 21  | 9:00 AM - 12:00 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 3.106 |
 |               | 1:00 AM - 4:30 PM | [RLP](https://utdirect.utexas.edu/apps/campus/buildings/nlogon/maps/utm/rlp/) 3.106 |
