@@ -7,6 +7,7 @@ This document has notes with possible changes for future iterations:
 - Students tend to have trouble with the R project, repository, from the very beginning. Future instructors of this camp might want to go over some of the materials in 11_wrapup.qmd at the beginning of the class, not as a conclusion
 - We also recommend discussing the difference between the R language, the markdown language, and LaTeX
 - We find discussing what "render" is in R and common problems with rendering helpful
+- Don't use 5.108. It is horrible. Try to book RLP conference rooms early as they get reserved quite fast.... 
 
 ### 2023 version
 
