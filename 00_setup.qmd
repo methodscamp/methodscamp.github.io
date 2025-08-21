@@ -44,6 +44,7 @@ Below are RStudio projects for you to download, available as .zip compressed fil
 - [Download Part 3 of the class materials](materials/methodscamp_part3.zip).
 - [Download Part 4 of the class materials](materials/methodscamp_part4.zip).
 
+
 ::: {.callout-warning}
 Make sure to properly unzip the materials. Double-clicking the .zip file on most Windows systems *will not* unzip the folder---you must do `Right click > Extract all`. 
 :::
@@ -52,6 +53,6 @@ You should now have a folder called `methodscamp_part1/` on your computer. Navig
 
 ![How the bottom-right corner of RStudio looks after opening our project.](images/rstudio_project.png){#fig-rstudio-project}
 
-That's all for setup! We can now start coding. After opening our RStudio project, we'll begin by opening the `01_r_intro.qmd` file from the "Files" panel, in the bottom-right portion of RStudio. This is a Quarto document,[^rmarkdown] which contains both code and explanations (you can also read the materials in the next chapter of this website). 
+That's all for setup! We can now start coding. After opening our RStudio project, we'll begin by opening the `01_r_intro.qmd` file from the "Files" panel, in the bottom-right portion of RStudio. This is a Quarto document,[^rmarkdown], which contains both code and explanations (you can also read the materials in the next chapter of this website). 
 
 [^rmarkdown]: Perhaps you have used [R Markdown](https://rmarkdown.rstudio.com/) before. [Quarto](https://quarto.org/) is the next iteration of R Markdown, and is both more flexible and more powerful!
