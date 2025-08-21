@@ -115,7 +115,7 @@ Zotero is one of many other reference managers out there. Alternatives include M
 ::: callout-warning
 ### Consume AI wisely! 
 
-* GPT can help with programming, but you must have [domain knowledge](https://www.youtube.com/shorts/yj73GIEKmLI).
+* GPT can help with programming, but you must have domain knowledge.
 * Interactions with ChatGPT are not exactly repeatable.
 * GPT can help with expediting search from Google or Stack Overflow for troubleshooting, but it is not always correct.
 * Read GPT’s explanation carefully to make sure it does what you want. It is a tool to help you learn, not to do the work for you!
