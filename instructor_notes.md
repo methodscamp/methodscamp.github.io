@@ -1,5 +1,13 @@
 This document has notes with possible changes for future iterations:
 
+### 2025 version
+**Meiying**
+- The methods camp session is shorter, so we removed text analysis and AI from the curriculum.
+- We find tidy data sections quite useful
+- Students tend to have trouble with the R project, repository, from the very beginning. Future instructors of this camp might want to go over some of the materials in 11_wrapup.qmd at the beginning of the class, not as a conclusion
+- We also recommend discussing the difference between the R language, the markdown language, and LaTeX
+- We find discussing what "render" is in R and common problems with rendering helpful
+
 ### 2023 version
 
 **Andrés.** A few ideas:
